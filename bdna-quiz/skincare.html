@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Assessment Tool</title>
+    <style>
+        .prague-footer {
+            position: relative;
+            background: #000;
+            color: white;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        /* Video Background Styles */
+        .footer-video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .footer-video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3; /* Adjust opacity so text remains readable */
+        }
+
+       
+        .footer-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 2;
+        }
+
+        .footer-content-outer {
+            position: relative;
+            z-index: 3;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .prague-footer-main-block {
+            flex: 0 0 50%;
+            text-align: left;
+            padding-right: 20px;
+        }
+
+        .prague-footer-info-block {
+            flex: 0 0 50%;
+            text-align: right;
+            padding-left: 20px;
+        }
+
+        .prague-logo {
+            margin-bottom: 20px;
+        }
+
+        .prague-logo img {
+            max-width: 200px;
+            height: auto;
+            filter: brightness(1.2); 
+        }
+
+        .footer-main-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-info-block-title {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-info-block-content {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-info-block-content p {
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-info-block-content a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-info-block-content a:hover {
+            color: #ddd;
+        }
+
+        .footer-bottom-content {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-block__details-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-block__details-content a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-block__details-content a:hover {
+            color: #fff;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-top-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .prague-footer-main-block,
+            .prague-footer-info-block {
+                flex: 0 0 100%;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-block__details-content {
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+
+        /* Video controls (hidden by default) */
+        .video-controls {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 4;
+            display: none; /* Hidden by default, can be shown if needed */
+        }
+
+        .video-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url();
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {                                                                                                                                                        
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+    background-image: url(https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748836008/skingenius-v2-banner_gwhhod.webp);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding: 0px;
+    text-align: center;
+    color: #ffffff;
+    height: 400px;
+}
+.option-img{
+    background-size:contain;
+    background-repeat: no-repeat;
+    
+}
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .step {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .option:hover {
+            background: #e7f3ff;
+            border-color: #4dabf7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(77, 171, 247, 0.2);
+        }
+
+        .option.selected {
+            background: #4dabf7;
+            border-color: #339af0;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(77, 171, 247, 0.3);
+        }
+
+        .option input {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .btn {
+            background: #8d641a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn.secondary {
+            background: #6c757d;
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+        }
+
+        .progress {
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .results {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .results h3 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .skin-type {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            color: #2d3436;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .recommendations {
+            display: grid;
+            gap: 15px;
+        }
+
+        .recommendation {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .recommendation h4 {
+            color: #495057;
+            margin-bottom: 8px;
+        }
+
+        .recommendation p {
+            color: #6c757d;
+            line-height: 1.5;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 2px solid #e9ecef;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .product-card-content {
+            padding: 15px;
+        }
+
+        .product-card h5 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .product-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .product-section h4 {
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✨ Skincare Assessment</h1>
+            <p>Discover your skin type and get personalized recommendations</p>
+        </div>
+        <div class="home">
+
+        </div>
+        
+        <div class="content">
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            
+            <div class="step active" id="step1">
+                <div class="question">
+                    <h3>How does your skin typically feel by midday?</h3>
+                    <div class="options">
+                         <label class="option-img">
+                            <img src="/images/oily-skin.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="midday_feel" value="oily">
+                            Oily all over, especially T-zone
+                        </label>
+                         <label class="option-img">
+                            <img src="/images/flaky.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="midday_feel" value="dry">
+                            Tight, flaky, or rough
+                        </label>
+                         <label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="midday_feel" value="combination">
+                            Oily T-zone, normal or dry cheeks
+                        </label>
+                         <label class="option-img">
+                            <img src="/images/balanced_skin.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="midday_feel" value="normal">
+                            Comfortable and balanced
+                        </label>
+                         <label class="option-img">
+                            <img src="/images/irritated-skin.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="midday_feel" value="sensitive">
+                            Irritated, red, or reactive
+                        </label>
+                        
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="step" id="step2">
+                <div class="question">
+                    <h3>How would you describe your pores?</h3>
+                    <div class="options">
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748849661/large-pores_y0eeak.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="pore_size" value="large">
+                            Large and visible, especially on nose and cheeks
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748849662/small_pores_mo25p4.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="pore_size" value="small">
+                            Small and barely visible
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748849662/t-bone_pores_cdxnnw.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="pore_size" value="mixed">
+                            Large in T-zone, small on cheeks
+                        </label>
+<label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="pore_size" value="normal">
+                            Medium-sized and occasionally visible
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="step" id="step3">
+                <div class="question">
+                    <h3>How often do you experience breakouts?</h3>
+                    <div class="options">
+                        <label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748916173/breakouts-3_qfucx2.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="breakouts" value="frequent">
+                            Frequently (weekly or more)
+                        </label>
+                        <label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748916173/breakouts-5_km4hxn.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="breakouts" value="occasional">
+                            Occasionally (monthly)
+                        </label>
+                        <label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748916173/breakouts-4_wprxjh.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="breakouts" value="hormonal">
+                            Only during hormonal changes
+                        </label>
+                        <label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748916173/breakouts-1_vjrs3n.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="breakouts" value="rare">
+                            Rarely or never
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="step" id="step4">
+                <div class="question">
+                    <h3>How does your skin react to sun exposure?</h3>
+                    <div class="options">
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748917646/sun-exposure-4_dm39g5.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="sun_reaction" value="burns_easily">
+                            Burns easily, rarely tans
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748917646/sun-exposure-1_y51roh.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="sun_reaction" value="burns_sometimes">
+                            Burns sometimes, tans gradually
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748917645/sun-exposure-3_jlajji.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="sun_reaction" value="tans_easily">
+                            Rarely burns, tans easily
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748917645/sun-exposure-2_ogpyn9.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="sun_reaction" value="very_tolerant">
+                            Very tolerant, deep tan
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="step" id="step5">
+                <div class="question">
+                    <h3>What are your main skin concerns? (Select all that apply)</h3>
+                    <div class="options">
+<label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="concerns" value="acne">
+                            Acne and breakouts
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748919178/wrinkles_onvauj.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="concerns" value="aging">
+                            Fine lines and wrinkles
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748919179/hyperpigmentation_xyhbfl.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="concerns" value="dark_spots">
+                            Dark spots and hyperpigmentation
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748919179/uneven-skin_wlqal5.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="concerns" value="dullness">
+                            Dull or uneven skin tone
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748919178/redness_osbntc.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="concerns" value="sensitivity">
+                            Redness and sensitivity
+                        </label>
+<label class="option-img">
+                            <img src="https://res.cloudinary.com/dlrdkvxiz/image/upload/v1748919178/dehydrated-sklin_mraafu.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="concerns" value="dryness">
+                            Dryness and dehydration
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="step" id="step6">
+                <div class="question">
+                    <h3>How would you describe your current skincare routine?</h3>
+                    <div class="options">
+<label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="routine" value="minimal">
+                            Minimal (cleanser and moisturizer only)
+                        </label>
+<label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="routine" value="basic">
+                            Basic (cleanser, moisturizer, sunscreen)
+                        </label>
+<label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="routine" value="moderate">
+                            Moderate (5-7 products including serums)
+                        </label>
+<label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="routine" value="extensive">
+                            Extensive (8+ products, multiple steps)
+                        </label>
+<label class="option-img">
+                            <img src="/images/skin-types.jpg" alt="Oily skin" class="option-icon">
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="routine" value="none">
+                            No routine currently
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="step" id="results" style="display: none;">
+                <div class="results">
+                    <h3>Your Personalized Skincare Assessment</h3>
+                    <div class="skin-type" id="skinTypeResult"></div>
+                    <div class="recommendations" id="recommendationsResult"></div>
+                    <div class="disclaimer">
+                        <strong>Disclaimer:</strong> This assessment provides general skincare guidance based on your responses. For persistent skin concerns or conditions, please consult with a dermatologist or skincare professional.
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="btn secondary" id="prevBtn" onclick="changeStep(-1)" style="display: none;">Previous</button>
+                <button class="btn" id="nextBtn" onclick="changeStep(1)">Next</button>
+            </div>
+        </div>
+    </div>
+<footer class="prague-footer default s-img-switch">
+         <div class="footer-video-background">
+        <video autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dlrdkvxiz/video/upload/v1748630321/SKIN1004_2_dqhato.mp4" type="video/mp4">           
+            Your browser does not support the video tag.
+        </video>
+    </div>  
+    <div class="footer-video-overlay"></div>
+    <div class="video-controls">
+        <button onclick="toggleVideo()">⏸️</button>
+        <button onclick="toggleMute()">🔇</button>
+    </div>
+        <div class="footer-content-outer">
+            <div class="footer-top-content">
+                <div class="prague-footer-main-block">
+                    <div><div class="footer-block"><div class="prague-logo">
+                                <a href="/">
+                                  <img src="/images/icons/logos/logo-main-white.png" 
+                                  data-lazy-src="/images/icons/logos/logo-main-white.png" 
+                                  class="attachment-full size-full" alt="logo" />
+                                </a>
+                              </div>
+                            <div class="footer-main-content">
+                              Anantara Holdings Private Limited is at the forefront of luxury beauty supply, catering exclusively to B2B clients who demand nothing but the best. As a world-leading, exclusive members-only buying group, we offer unparalleled access to premium beauty brands, ensuring our members always stay ahead with the finest products in the market. Join us to elevate your beauty business to the next level of luxury and distinction.
+</div></div><div class="footer-block"></div><div class="footer-block"></div></div>
+                </div>
+                <div class="prague-footer-info-block"><div class="footer-block "><div class="footer-info-block-content"></div>
+                        </div><div class="footer-block "><h6 class="footer-info-block-title">GET IN TOUCH</h6><div class="footer-info-block-content"><p><a href="tel:+27 65 858 7261" target="_blank" title="tel:+27 65 858 7261">+27 65 858 7261</a></p><p><a href="mailto:info@anantara.africa" target="_blank" title="mailto:info@anantara.africa">info@anantara.africa</a></p><p>West Tower, 2nd Floor</p><p>Mandela Square,</p><p>Sandton City, Sandton </p><p>South Africa</p>
+</div>
+                        </div>
+                        <div class="footer-block  footer-block--menu">
+                          <div class="footer-info-block-content"></div>
+                        </div></div>
+            </div>
+            <div class="footer-bottom-content">
+              <ul class="footer-block__details-content">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                              <a
+                                href="/pages/modern-slavery-act"
+                                class="header__menu-item list-menu__item link link--text focus-inset"
+                              >
+                                Modern Slavery Act
+                              </a>
+                            </li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                              <a
+                                href="/pages/privacy-policy"
+                                class="header__menu-item list-menu__item link link--text focus-inset"
+                              >
+                                Privacy Policy
+                              </a>
+                            </li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                              <a
+                                href="/pages/terms"
+                                class="header__menu-item list-menu__item link link--text focus-inset"
+                              >
+                                Terms & Conditions
+                              </a>
+                            </li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                              <a
+                                href="https://intercom.help/lbw-group-support/en"
+                                class="header__menu-item list-menu__item link link--text focus-inset"
+                              >
+                                Help Centre
+                              </a>
+                            </li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ">
+                              <a
+                                href="/pages/shipping-policy"
+                                class="header__menu-item list-menu__item link link--text focus-inset"
+                              >
+                                Company Shipping Policy
+                              </a>
+                            </li></ul><!-- Footer copyright -->
+                <div class="footer-copyright">
+                  <p>ANANTARA SKINCARE (C) ALL RIGHTS RESERVED</p></div>
+                <!-- End footer copyright -->
+
+                <div class="prague-social-nav"></div>
+            </div>
+        </div>
+
+    </footer>
+    <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+        const answers = {};
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function changeStep(direction) {
+            // Collect current step data
+            if (direction === 1 && !validateCurrentStep()) {
+                return;
+            }
+
+            // Hide current step
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+
+            // Update step number
+            currentStep += direction;
+
+            // Show new step or results
+            if (currentStep > totalSteps) {
+                showResults();
+                return;
+            }
+
+            document.getElementById(`step${currentStep}`).classList.add('active');
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').style.display = currentStep > 1 ? 'inline-block' : 'none';
+            document.getElementById('nextBtn').textContent = currentStep === totalSteps ? 'Get Results' : 'Next';
+
+            updateProgress();
+        }
+
+        function validateCurrentStep() {
+            const step = document.getElementById(`step${currentStep}`);
+            const radios = step.querySelectorAll('input[type="radio"]');
+            const checkboxes = step.querySelectorAll('input[type="checkbox"]');
+
+            if (radios.length > 0) {
+                const checked = step.querySelector('input[type="radio"]:checked');
+                if (!checked) {
+                    alert('Please select an option before continuing.');
+                    return false;
+                }
+                const name = checked.name;
+                answers[name] = checked.value;
+            }
+
+            if (checkboxes.length > 0) {
+                const checkedBoxes = step.querySelectorAll('input[type="checkbox"]:checked');
+                const name = checkboxes[0].name;
+                answers[name] = Array.from(checkedBoxes).map(cb => cb.value);
+            }
+
+            return true;
+        }
+
+        function determineSkinType() {
+            const { midday_feel, pore_size, breakouts } = answers;
+            
+            if (midday_feel === 'oily' && pore_size === 'large' && ['frequent', 'occasional'].includes(breakouts)) {
+                return 'Oily';
+            } else if (midday_feel === 'dry' && pore_size === 'small' && breakouts === 'rare') {
+                return 'Dry';
+            } else if (midday_feel === 'combination' && pore_size === 'mixed') {
+                return 'Combination';
+            } else if (midday_feel === 'sensitive' || answers.concerns?.includes('sensitivity')) {
+                return 'Sensitive';
+            } else {
+                return 'Normal';
+            }
+        }
+
+        function generateRecommendations(skinType) {
+            const baseRecommendations = {
+                'Oily': [
+                    {
+                        title: 'Gentle Foam Cleanser',
+                        description: 'Use a salicylic acid or tea tree oil cleanser twice daily to control excess oil production without over-drying.',
+                        image: 'https://images.unsplash.com/photo-1556228578-dd6e4813a0c7?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Lightweight Moisturizer',
+                        description: 'Choose oil-free, non-comedogenic moisturizers with hyaluronic acid to hydrate without clogging pores.',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'BHA Treatment',
+                        description: 'Incorporate salicylic acid (BHA) 2-3 times per week to unclog pores and reduce breakouts.',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop'
+                    }
+                ],
+                'Dry': [
+                    {
+                        title: 'Cream Cleanser',
+                        description: 'Use a gentle, creamy cleanser that won\'t strip natural oils. Avoid foaming cleansers.',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Rich Moisturizer',
+                        description: 'Apply a ceramide or hyaluronic acid-rich moisturizer twice daily, especially after cleansing.',
+                        image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Hydrating Serum',
+                        description: 'Add a hyaluronic acid serum before moisturizer to boost hydration levels.',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop'
+                    }
+                ],
+                'Combination': [
+                    {
+                        title: 'Balanced Cleanser',
+                        description: 'Use a gentle gel cleanser that can address both oily and dry areas without causing irritation.',
+                        image: 'https://images.unsplash.com/photo-1556228578-dd6e4813a0c7?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Zone Treatment',
+                        description: 'Apply lightweight moisturizer to T-zone and richer cream to dry areas like cheeks.',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Targeted Treatments',
+                        description: 'Use BHA on oily areas and hydrating treatments on dry areas as needed.',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop'
+                    }
+                ],
+                'Sensitive': [
+                    {
+                        title: 'Gentle Cleanser',
+                        description: 'Use fragrance-free, gentle cleansers with minimal ingredients. Avoid sulfates and harsh scrubs.',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Barrier Repair',
+                        description: 'Focus on ceramide and niacinamide products to strengthen your skin barrier.',
+                        image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Patch Test',
+                        description: 'Always patch test new products and introduce them one at a time.',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop'
+                    }
+                ],
+                'Normal': [
+                    {
+                        title: 'Maintenance Routine',
+                        description: 'Stick to a simple routine: gentle cleanser, moisturizer, and daily sunscreen.',
+                        image: 'https://images.unsplash.com/photo-1556228578-dd6e4813a0c7?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Prevention Focus',
+                        description: 'Use antioxidant serums (Vitamin C) in the morning and consider retinol at night for anti-aging.',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop'
+                    },
+                    {
+                        title: 'Weekly Treatments',
+                        description: 'Add gentle exfoliation or hydrating masks 1-2 times per week for maintenance.',
+                        image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=150&h=150&fit=crop'
+                    }
+                ]
+            };
+
+            let recommendations = [...baseRecommendations[skinType]];
+
+            if (answers.concerns?.includes('acne')) {
+                recommendations.push({
+                    title: 'Acne Treatment',
+                    description: 'Consider benzoyl peroxide or salicylic acid treatments. Start with lower concentrations.',
+                    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop'
+                });
+            }
+
+            if (answers.concerns?.includes('aging')) {
+                recommendations.push({
+                    title: 'Anti-Aging',
+                    description: 'Incorporate retinol or retinoid products gradually, starting 2-3 times per week.',
+                    image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=150&h=150&fit=crop'
+                });
+            }
+
+            if (answers.concerns?.includes('dark_spots')) {
+                recommendations.push({
+                    title: 'Brightening Treatment',
+                    description: 'Use Vitamin C serum in the morning and consider niacinamide for hyperpigmentation.',
+                    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop'
+                });
+            }
+
+          
+            recommendations.push({
+                title: 'Daily Sunscreen (Essential!)',
+                description: 'Use broad-spectrum SPF 30+ every day, regardless of weather. This is the most important anti-aging step.',
+                image: 'https://images.unsplash.com/photo-1556228578-dd6e4813a0c7?w=150&h=150&fit=crop'
+            });
+
+            return recommendations;
+        }
+
+        function generateProductRecommendations(skinType) {
+            const productsByType = {
+                'Oily': [
+                    {
+                        name: 'CeraVe Foaming Facial Cleanser',
+                        description: 'Gentle foaming cleanser with ceramides',
+                        price: 'R250-R300',
+                        image: 'https://images.unsplash.com/photo-1556228578-dd6e4813a0c7?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'The Ordinary Niacinamide 10%',
+                        description: 'Reduces sebum production and pore appearance',
+                        price: 'R200-R250',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'Neutrogena Oil-Free Moisturizer',
+                        description: 'Lightweight, non-comedogenic hydration',
+                        price: 'R200-R300',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&h=200&fit=crop'
+                    }
+                ],
+                'Dry': [
+                    {
+                        name: 'Cetaphil Gentle Skin Cleanser',
+                        description: 'Non-foaming, moisturizing cleanser',
+                        price: 'R220-R350',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'The Ordinary Hyaluronic Acid',
+                        description: 'Intense hydration serum',
+                        price: 'R200-R250',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'CeraVe Daily Moisturizing Lotion',
+                        description: 'Rich ceramide moisturizer',
+                        price: 'R260-R350',
+                        image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=200&h=200&fit=crop'
+                    }
+                ],
+                'Combination': [
+                    {
+                        name: 'Neutrogena Ultra Gentle Cleanser',
+                        description: 'Balanced cleansing for mixed skin types',
+                        price: 'R200-R330',
+                        image: 'https://images.unsplash.com/photo-1556228578-dd6e4813a0c7?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'The Ordinary Niacinamide + Zinc',
+                        description: 'Balances oil production',
+                        price: 'R100-R200',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'Clinique Dramatically Different Lotion',
+                        description: 'Lightweight yet moisturizing',
+                        price: 'R300-R450',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&h=200&fit=crop'
+                    }
+                ],
+                'Sensitive': [
+                    {
+                        name: 'Vanicream Gentle Facial Cleanser',
+                        description: 'Fragrance-free, gentle formula',
+                        price: 'R150-R200',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'La Roche-Posay Toleriane Serum',
+                        description: 'Soothing niacinamide serum',
+                        price: 'R550-R800',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'Aveeno Ultra-Calming Moisturizer',
+                        description: 'Calming, barrier-repairing formula',
+                        price: 'R250-R350',
+                        image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=200&h=200&fit=crop'
+                    }
+                ],
+                'Normal': [
+                    {
+                        name: 'CeraVe Hydrating Cleanser',
+                        description: 'Maintains skin barrier',
+                        price: 'R350-R450',
+                        image: 'https://images.unsplash.com/photo-1556228578-dd6e4813a0c7?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'The Ordinary Vitamin C Serum',
+                        description: 'Antioxidant protection and brightening',
+                        price: 'R300-R400',
+                        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop'
+                    },
+                    {
+                        name: 'Neutrogena Hydro Boost',
+                        description: 'Lightweight hyaluronic acid moisturizer',
+                        price: 'R300-R450',
+                        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&h=200&fit=crop'
+                    }
+                ]
+            };
+
+            return productsByType[skinType] || productsByType['Normal'];
+        }
+
+        function showResults() {
+            
+            document.querySelector('.navigation').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            
+            const skinType = determineSkinType();
+            const recommendations = generateRecommendations(skinType);
+
+            document.getElementById('skinTypeResult').textContent = `Your Skin Type: ${skinType}`;
+
+            const recommendationsContainer = document.getElementById('recommendationsResult');
+            recommendationsContainer.innerHTML = recommendations.map(rec => `
+                <div class="recommendation">
+                    <img src="${rec.image}" alt="${rec.title}" class="product-image" onerror="this.style.display='none'">
+                    <div class="product-info">
+                        <h4>${rec.title}</h4>
+                        <p>${rec.description}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add product recommendations section
+            const products = generateProductRecommendations(skinType);
+            const productSection = document.createElement('div');
+            productSection.className = 'product-section';
+            productSection.innerHTML = `
+                <h4>🛍️ Recommended Products for ${skinType} Skin</h4>
+                <div class="product-gallery">
+                    ${products.map(product => `
+                        <div class="product-card">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x150/667eea/white?text=Product'">
+                            <div class="product-card-content">
+                                <h5>${product.name}</h5>
+                                <p>${product.description}</p>
+                                <div class="price">${product.price}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            recommendationsContainer.appendChild(productSection);
+
+          
+            document.getElementById('progressBar').style.width = '100%';
+        }
+
+       
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.option')) {
+                const option = e.target.closest('.option');
+                const input = option.querySelector('input');
+                
+                if (input.type === 'radio') {
+                    // Remove selected class from all options in the group
+                    const groupName = input.name;
+                    document.querySelectorAll(`input[name="${groupName}"]`).forEach(radio => {
+                        radio.closest('.option').classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked option
+                    option.classList.add('selected');
+                    input.checked = true;
+                } else if (input.type === 'checkbox') {
+                    option.classList.toggle('selected');
+                    input.checked = !input.checked;
+                }
+            }
+        });
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>

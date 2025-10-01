@@ -1,0 +1,406 @@
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-200-normal.810e263e.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-200-normal.729d42f3.woff)
+      format("woff");
+  unicode-range:
+    u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-200-normal.fd6c76eb.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-200-normal.bdee903b.woff)
+      format("woff");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-200-normal.736083a3.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-200-normal.4df7e9d2.woff)
+      format("woff");
+  unicode-range:
+    u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020,
+    u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-200-normal.9748d9a6.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-200-normal.f56d8788.woff)
+      format("woff");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212,
+    u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-300-normal.7fb7b01c.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-300-normal.5dcb1d24.woff)
+      format("woff");
+  unicode-range:
+    u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-300-normal.7ce6b454.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-300-normal.4df33123.woff)
+      format("woff");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-300-normal.f61fd099.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-300-normal.9c86fc29.woff)
+      format("woff");
+  unicode-range:
+    u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020,
+    u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-300-normal.62ca6eeb.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-300-normal.caf36fd7.woff)
+      format("woff");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212,
+    u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-400-normal.5e4a34a9.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-400-normal.e2187b81.woff)
+      format("woff");
+  unicode-range:
+    u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-400-normal.9375d7fd.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-400-normal.7d4cc8f2.woff)
+      format("woff");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-400-normal.01010979.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-400-normal.fb2c3eb7.woff)
+      format("woff");
+  unicode-range:
+    u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020,
+    u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-400-normal.b3f7fd10.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-400-normal.9588b884.woff)
+      format("woff");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212,
+    u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-500-normal.cf500352.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-500-normal.b81b31ce.woff)
+      format("woff");
+  unicode-range:
+    u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-500-normal.eb45c429.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-500-normal.1ec52e3a.woff)
+      format("woff");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-500-normal.8fe0b4aa.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-500-normal.b2c099d4.woff)
+      format("woff");
+  unicode-range:
+    u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020,
+    u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-500-normal.91bf9c18.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-500-normal.08900deb.woff)
+      format("woff");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212,
+    u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-600-normal.a69e32a6.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-600-normal.f9f1606e.woff)
+      format("woff");
+  unicode-range:
+    u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-600-normal.b60095ad.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-600-normal.e7d0abef.woff)
+      format("woff");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-600-normal.f7795d50.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-600-normal.b9199e13.woff)
+      format("woff");
+  unicode-range:
+    u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020,
+    u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-600-normal.7987501f.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-600-normal.5c010c30.woff)
+      format("woff");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212,
+    u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-700-normal.600ebce6.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-700-normal.41b9a560.woff)
+      format("woff");
+  unicode-range:
+    u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-700-normal.b59508b2.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-700-normal.68976cf4.woff)
+      format("woff");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-700-normal.a097ca85.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-700-normal.74af2825.woff)
+      format("woff");
+  unicode-range:
+    u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020,
+    u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-700-normal.095a988e.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-700-normal.db5b0444.woff)
+      format("woff");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212,
+    u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-800-normal.cc582d08.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-cyrillic-ext-800-normal.0d1d2f5e.woff)
+      format("woff");
+  unicode-range:
+    u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-800-normal.ea40dfbd.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-vietnamese-800-normal.1f7babbe.woff)
+      format("woff");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-800-normal.3c7c2951.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-ext-800-normal.75eee1f3.woff)
+      format("woff");
+  unicode-range:
+    u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020,
+    u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    url(/_next/static/media/plus-jakarta-sans-latin-800-normal.663c38a2.woff2)
+      format("woff2"),
+    url(/_next/static/media/plus-jakarta-sans-latin-800-normal.9689e66e.woff)
+      format("woff");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212,
+    u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Katsu;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/_next/static/media/KatsuSerif-Bold.6d546fef.woff2) format("woff2");
+}

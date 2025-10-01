@@ -1,0 +1,15 @@
+.tf-v1-sidetab-button {
+  height: 43px !important;
+  left: -43px !important;
+}
+.tf-v1-sidetab-button-text {
+  font-size: 16px !important;
+  font-family:
+    Plus Jakarta Sans,
+    sans-serif !important;
+}
+.tf-v1-sidetab-button-icon {
+  width: 21px !important;
+  height: 21px !important;
+  font-size: 21px !important;
+}

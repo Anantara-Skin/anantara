@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Skin Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .upload-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .upload-area:hover {
+            border-color: #764ba2;
+            background: rgba(118, 75, 162, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .upload-area.dragover {
+            border-color: #764ba2;
+            background: rgba(118, 75, 162, 0.2);
+        }
+
+        .camera-section {
+            margin: 20px 0;
+        }
+
+        #video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+
+        #canvas {
+            display: none;
+        }
+
+        .preview-image {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .analysis-section {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .analysis-card, .recommendations-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .analysis-card h3, .recommendations-card h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .skin-metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+        }
+
+        .metric-bar {
+            width: 60%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(118, 75, 162, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateX(5px);
+        }
+
+        .product-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .disclaimer {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .results {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 AI Skin Analysis</h1>
+        
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <h3>📸 Upload Your Photo</h3>
+                <p>Drop your image here or click to browse</p>
+                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                    For best results: Use natural lighting, face the camera directly, and ensure your face is clearly visible
+                </p>
+            </div>
+            
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            
+            <div class="camera-section">
+                <button class="btn" id="cameraBtn">📷 Use Camera</button>
+                <button class="btn" id="captureBtn" style="display: none;">📸 Capture Photo</button>
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas"></canvas>
+            </div>
+            
+            <div id="imagePreview"></div>
+            
+            <button class="btn" id="analyzeBtn" style="display: none;">🔍 Analyze My Skin</button>
+        </div>
+
+        <div class="analysis-section" id="analysisSection">
+            <div class="loading" id="loadingDiv">
+                <div class="spinner"></div>
+                <p>Analyzing your skin... This may take a few moments</p>
+            </div>
+            
+            <div class="results" id="resultsDiv" style="display: none;">
+                <div class="analysis-card">
+                    <h3>📊 Skin Analysis Results</h3>
+                    <div id="skinMetrics"></div>
+                </div>
+                
+                <div class="recommendations-card">
+                    <h3>💆‍♀️ Recommended Products</h3>
+                    <div id="productRecommendations"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <strong>⚠️ Important Disclaimer:</strong> This AI analysis is for informational purposes only and should not replace professional dermatological advice. For serious skin concerns, please consult with a qualified dermatologist.
+        </div>
+    </div>
+
+    <script>
+        class SkinAnalyzer {
+            constructor() {
+                this.currentImage = null;
+                this.stream = null;
+                this.initializeElements();
+                this.bindEvents();
+            }
+
+            initializeElements() {
+                this.uploadArea = document.getElementById('uploadArea');
+                this.fileInput = document.getElementById('fileInput');
+                this.cameraBtn = document.getElementById('cameraBtn');
+                this.captureBtn = document.getElementById('captureBtn');
+                this.video = document.getElementById('video');
+                this.canvas = document.getElementById('canvas');
+                this.imagePreview = document.getElementById('imagePreview');
+                this.analyzeBtn = document.getElementById('analyzeBtn');
+                this.analysisSection = document.getElementById('analysisSection');
+                this.loadingDiv = document.getElementById('loadingDiv');
+                this.resultsDiv = document.getElementById('resultsDiv');
+            }
+
+            bindEvents() {
+                // File upload events
+                this.uploadArea.addEventListener('click', () => this.fileInput.click());
+                this.uploadArea.addEventListener('dragover', this.handleDragOver.bind(this));
+                this.uploadArea.addEventListener('dragleave', this.handleDragLeave.bind(this));
+                this.uploadArea.addEventListener('drop', this.handleDrop.bind(this));
+                this.fileInput.addEventListener('change', this.handleFileSelect.bind(this));
+
+                // Camera events
+                this.cameraBtn.addEventListener('click', this.startCamera.bind(this));
+                this.captureBtn.addEventListener('click', this.capturePhoto.bind(this));
+
+                // Analysis event
+                this.analyzeBtn.addEventListener('click', this.analyzeSkin.bind(this));
+            }
+
+            handleDragOver(e) {
+                e.preventDefault();
+                this.uploadArea.classList.add('dragover');
+            }
+
+            handleDragLeave(e) {
+                e.preventDefault();
+                this.uploadArea.classList.remove('dragover');
+            }
+
+            handleDrop(e) {
+                e.preventDefault();
+                this.uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    this.processFile(files[0]);
+                }
+            }
+
+            handleFileSelect(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    this.processFile(file);
+                }
+            }
+
+            processFile(file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select an image file.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    this.currentImage = e.target.result;
+                    this.displayPreview(this.currentImage);
+                };
+                reader.readAsDataURL(file);
+            }
+
+            async startCamera() {
+                try {
+                    this.stream = await navigator.mediaDevices.getUserMedia({
+                        video: { 
+                            facingMode: 'user',
+                            width: { ideal: 640 },
+                            height: { ideal: 480 }
+                        }
+                    });
+                    this.video.srcObject = this.stream;
+                    this.video.style.display = 'block';
+                    this.captureBtn.style.display = 'inline-block';
+                    this.cameraBtn.textContent = '❌ Stop Camera';
+                    this.cameraBtn.onclick = () => this.stopCamera();
+                } catch (err) {
+                    console.error('Error accessing camera:', err);
+                    alert('Unable to access camera. Please use file upload instead.');
+                }
+            }
+
+            stopCamera() {
+                if (this.stream) {
+                    this.stream.getTracks().forEach(track => track.stop());
+                    this.video.style.display = 'none';
+                    this.captureBtn.style.display = 'none';
+                    this.cameraBtn.textContent = '📷 Use Camera';
+                    this.cameraBtn.onclick = () => this.startCamera();
+                }
+            }
+
+            capturePhoto() {
+                const context = this.canvas.getContext('2d');
+                this.canvas.width = this.video.videoWidth;
+                this.canvas.height = this.video.videoHeight;
+                context.drawImage(this.video, 0, 0);
+                
+                this.currentImage = this.canvas.toDataURL('image/jpeg');
+                this.displayPreview(this.currentImage);
+                this.stopCamera();
+            }
+
+            displayPreview(imageSrc) {
+                this.imagePreview.innerHTML = `<img src="${imageSrc}" class="preview-image" alt="Preview">`;
+                this.analyzeBtn.style.display = 'inline-block';
+            }
+
+            async analyzeSkin() {
+                if (!this.currentImage) {
+                    alert('Please select an image first.');
+                    return;
+                }
+
+                this.analysisSection.style.display = 'block';
+                this.loadingDiv.style.display = 'block';
+                this.resultsDiv.style.display = 'none';
+
+                // Simulate AI analysis delay
+                await new Promise(resolve => setTimeout(resolve, 3000));
+
+                const analysisResults = this.generateMockAnalysis();
+                this.displayResults(analysisResults);
+
+                this.loadingDiv.style.display = 'none';
+                this.resultsDiv.style.display = 'grid';
+            }
+
+            generateMockAnalysis() {
+                // This would be replaced with actual AI analysis
+                const skinTypes = ['Oily', 'Dry', 'Combination', 'Normal', 'Sensitive'];
+                const concerns = ['Acne', 'Dark Spots', 'Fine Lines', 'Large Pores', 'Dullness'];
+                
+                return {
+                    skinType: skinTypes[Math.floor(Math.random() * skinTypes.length)],
+                    hydration: Math.floor(Math.random() * 40) + 30,
+                    oiliness: Math.floor(Math.random() * 60) + 20,
+                    texture: Math.floor(Math.random() * 50) + 40,
+                    acne: Math.floor(Math.random() * 30) + 10,
+                    pigmentation: Math.floor(Math.random() * 40) + 20,
+                    aging: Math.floor(Math.random() * 35) + 15,
+                    concerns: concerns.slice(0, Math.floor(Math.random() * 3) + 2)
+                };
+            }
+
+            displayResults(results) {
+                // Display skin metrics
+                const metricsHtml = `
+                    <div class="skin-metric">
+                        <span><strong>Skin Type:</strong> ${results.skinType}</span>
+                    </div>
+                    <div class="skin-metric">
+                        <span>Hydration Level</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: ${results.hydration}%"></div>
+                        </div>
+                        <span>${results.hydration}%</span>
+                    </div>
+                    <div class="skin-metric">
+                        <span>Oil Production</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: ${results.oiliness}%"></div>
+                        </div>
+                        <span>${results.oiliness}%</span>
+                    </div>
+                    <div class="skin-metric">
+                        <span>Skin Texture</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: ${results.texture}%"></div>
+                        </div>
+                        <span>${results.texture}%</span>
+                    </div>
+                    <div class="skin-metric">
+                        <span>Acne Severity</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: ${results.acne}%"></div>
+                        </div>
+                        <span>${results.acne}%</span>
+                    </div>
+                `;
+
+                document.getElementById('skinMetrics').innerHTML = metricsHtml;
+
+                // Generate product recommendations
+                const products = this.generateProductRecommendations(results);
+                const productsHtml = products.map(product => `
+                    <div class="product-item">
+                        <div class="product-icon">${product.icon}</div>
+                        <div>
+                            <strong>${product.name}</strong>
+                            <p style="margin: 5px 0; color: #666;">${product.description}</p>
+                            <small style="color: #888;">For: ${product.concern}</small>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.getElementById('productRecommendations').innerHTML = productsHtml;
+            }
+
+            generateProductRecommendations(results) {
+                const allProducts = [
+                    { name: 'Gentle Cleanser', icon: '🧴', description: 'Removes impurities without stripping natural oils', concern: 'Daily cleansing' },
+                    { name: 'Hyaluronic Acid Serum', icon: '💧', description: 'Intensive hydration for plump, healthy skin', concern: 'Dehydration' },
+                    { name: 'Niacinamide Treatment', icon: '✨', description: 'Minimizes pores and controls oil production', concern: 'Large pores, oiliness' },
+                    { name: 'Vitamin C Serum', icon: '🍊', description: 'Brightens skin and fades dark spots', concern: 'Pigmentation, dullness' },
+                    { name: 'Retinol Cream', icon: '🌙', description: 'Reduces fine lines and improves texture', concern: 'Aging, texture' },
+                    { name: 'Salicylic Acid Cleanser', icon: '🫧', description: 'Unclogs pores and prevents breakouts', concern: 'Acne' },
+                    { name: 'Moisturizing Cream', icon: '🧴', description: 'Long-lasting hydration for all skin types', concern: 'Dryness' },
+                    { name: 'Broad Spectrum SPF', icon: '☀️', description: 'Essential protection against UV damage', concern: 'Prevention' }
+                ];
+
+                // Select products based on analysis results
+                let recommendedProducts = [];
+                
+                if (results.hydration < 50) {
+                    recommendedProducts.push(allProducts.find(p => p.name.includes('Hyaluronic')));
+                    recommendedProducts.push(allProducts.find(p => p.name.includes('Moisturizing')));
+                }
+                
+                if (results.oiliness > 60) {
+                    recommendedProducts.push(allProducts.find(p => p.name.includes('Niacinamide')));
+                }
+                
+                if (results.acne > 20) {
+                    recommendedProducts.push(allProducts.find(p => p.name.includes('Salicylic')));
+                }
+                
+                if (results.aging > 25) {
+                    recommendedProducts.push(allProducts.find(p => p.name.includes('Retinol')));
+                }
+                
+                recommendedProducts.push(allProducts.find(p => p.name.includes('Vitamin C')));
+                recommendedProducts.push(allProducts.find(p => p.name.includes('SPF')));
+                
+                // Remove duplicates and ensure we have 4-6 products
+                recommendedProducts = [...new Set(recommendedProducts)].filter(Boolean);
+                
+                if (recommendedProducts.length < 4) {
+                    const remaining = allProducts.filter(p => !recommendedProducts.includes(p));
+                    recommendedProducts = [...recommendedProducts, ...remaining.slice(0, 4 - recommendedProducts.length)];
+                }
+                
+                return recommendedProducts.slice(0, 6);
+            }
+        }
+
+        // Initialize the skin analyzer when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new SkinAnalyzer();
+        });
+    </script>
+</body>
+</html>
