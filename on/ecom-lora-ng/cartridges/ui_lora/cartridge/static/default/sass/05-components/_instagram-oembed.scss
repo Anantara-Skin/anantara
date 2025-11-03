@@ -1,0 +1,25 @@
+// content
+$instagram-oembed-justify-content: center !default;
+$instagram-oembed-error-padding: rem-calc(100 20) !default;
+$instagram-oembed-error-padding--large: rem-calc(100 40) !default;
+$instagram-oembed-error-border: 1px solid color(border) !default;
+// text
+$instagram-oembed-error-text-align: center !default;
+$instagram-oembed-error-font: #{rem-calc(12)} / 1.25 $font-primary !default;
+$instagram-oembed-error-font--large: 300 #{rem-calc(14)} / 1.25 $font-primary !default;
+@mixin lora-components-instagram-oembed {
+  .c-instagram-oembed {
+    display: flex;
+    justify-content: $instagram-oembed-justify-content;
+  }
+  .c-instagram-oembed__error {
+    padding: $instagram-oembed-error-padding;
+    text-align: $instagram-oembed-error-text-align;
+    font: $instagram-oembed-error-font;
+    border: $instagram-oembed-error-border;
+    @include breakpoint(large) {
+      padding: $instagram-oembed-error-padding--large;
+      font: $instagram-oembed-error-font--large;
+    }
+  }
+}

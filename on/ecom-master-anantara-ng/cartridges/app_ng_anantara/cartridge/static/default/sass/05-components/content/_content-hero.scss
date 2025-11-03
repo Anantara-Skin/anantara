@@ -1,0 +1,15 @@
+// Layout
+$content-hero-body-padding: rem-calc(40 0 25);
+$content-hero-body-padding--large: rem-calc(40 0 30);
+$content-hero-unstack-body-padding: rem-calc(40 0 25);
+$content-hero-unstack-body-padding--large: rem-calc(40 0 30);
+// Title
+$content-hero-title-font: #{rem-calc(24)} / 1.33 $font-primary;
+$content-hero-title-font--large: #{rem-calc(30)} / 1.33 $font-primary;
+$content-hero-title-text-transform: none;
+// Description
+$content-hero-description-font: #{rem-calc(14)} / 1.5 $font-primary;
+// Label
+$content-hero-label-font: #{rem-calc(14)} / 1.5 $font-primary-medium;
+$content-hero-label-text-transform: none;
+@use "@lora/05-components/content/content-hero";

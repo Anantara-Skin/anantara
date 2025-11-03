@@ -1,0 +1,85 @@
+$carousel-product-vertical-item-padding: 0 0 rem-calc(5) !default;
+$carousel-product-vertical-tile-figure: rem-calc(100) !default;
+$carousel-product-vertical-tile-figure-margin: rem-calc(0 30 0 0) !default;
+$carousel-product-vertical-tile-margin: rem-calc(5) !default;
+$carousel-product-vertical-tile-info-margin: $carousel-product-vertical-tile-margin;
+$carousel-product-vertical-tile-caption-flex: 0 1 100% !default;
+$carousel-product-vertical-tile-caption-margin: 0 !default;
+$carousel-product-vertical-tile-caption-vertical-align: middle !default;
+$carousel-product-vertical-height: rem-calc(465) !default;
+$carousel-product-vertical-tile-price-font: null !default;
+$carousel-product-vertical-tile-name-font-weight: null !default;
+$carousel-product-vertical-tile-font-size: rem-calc(14) !default;
+$carousel-product-vertical-tile-name-line-height: 1.2 !default;
+$carousel-product-vertical-tile-name-max-lines: 2 !default;
+$carousel-product-vertical-tile-name-height: $carousel-product-vertical-tile-name-line-height *
+  $carousel-product-vertical-tile-font-size *
+  $carousel-product-vertical-tile-name-max-lines !default;
+@mixin lora-components-carousel-product-vertical {
+  .c-carousel.m-style-product {
+    &.m-vertical {
+      @include lora-helper-carousel-product-vertical;
+      height: $carousel-product-vertical-height;
+      // show all products stacked (carousel will be disabled)
+      &.m-full-height {
+        height: auto;
+      }
+    }
+  }
+}
+@mixin lora-helper-carousel-product-vertical {
+  .c-carousel__item {
+    margin: 0;
+  }
+  .c-product-grid__tile {
+    width: 100%;
+    height: auto;
+  }
+  .c-product-tile {
+    flex-flow: row;
+    width: 100%;
+  }
+  .c-product-tile__caption {
+    flex: $carousel-product-vertical-tile-caption-flex;
+    margin: $carousel-product-vertical-tile-caption-margin;
+    text-align: $global-left;
+    vertical-align: $carousel-product-vertical-tile-caption-vertical-align;
+  }
+  .c-product-tile__figure {
+    flex: 0 0 auto;
+    margin: $carousel-product-vertical-tile-figure-margin;
+    width: $carousel-product-vertical-tile-figure;
+  }
+  .c-product-tile__brand {
+    height: auto;
+    overflow: visible;
+    margin-bottom: $carousel-product-vertical-tile-margin;
+  }
+  .c-product-tile__name {
+    font-weight: $carousel-product-vertical-tile-name-font-weight;
+    min-height: $carousel-product-vertical-tile-name-height;
+    margin-bottom: $carousel-product-vertical-tile-margin;
+    font-size: $carousel-product-vertical-tile-font-size;
+    @include text-line-clamp($carousel-product-vertical-tile-name-max-lines);
+    > a {
+      @include text-line-clamp($carousel-product-vertical-tile-name-max-lines);
+      text-decoration: none;
+    }
+  }
+  .c-product-tile__info {
+    margin-top: $carousel-product-vertical-tile-info-margin;
+    min-height: auto;
+  }
+  .c-product-tile__info.m-multiple-items {
+    display: block;
+    .c-product-tile__info-item,
+    .c-product-tile__info-item:first-child {
+      border: none;
+      padding: $carousel-product-vertical-item-padding;
+      text-align: $global-left;
+    }
+    .c-product-tile__info-item.c-product-tile__price {
+      font: $carousel-product-vertical-tile-price-font;
+    }
+  }
+}

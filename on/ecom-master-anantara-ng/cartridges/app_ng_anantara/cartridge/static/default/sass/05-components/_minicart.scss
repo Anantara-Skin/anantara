@@ -1,0 +1,39 @@
+// Minicart global style
+$minicart-width: rem-calc(405);
+// Header
+$minicart-header-padding: rem-calc(16 48 16 16);
+$minicart-header-border: 1px solid color(border);
+// Footer
+$minicart-footer-border: $minicart-header-border;
+$minicart-footer-content-padding: rem-calc(0 16);
+// Empty minicart
+$minicart-empty-padding: rem-calc(16);
+$minicart-empty-background: color(light);
+$minicart-empty-title-margin: rem-calc(0 0 20);
+$minicart-empty-title-color: color(dark);
+$minicart-empty-title-text-transform: none;
+$minicart-empty-title-font: #{rem-calc(20)} / 1.3 $font-primary;
+// Minicart Subtotal
+$minicart-subtotal-padding: rem-calc(8 0);
+$minicart-subtotal-price-font: #{rem-calc(14)} / #{rem-calc(16.8)}
+  $font-primary-medium;
+$minicart-subtotal-title-font: 700 #{rem-calc(14)} / #{rem-calc(16.8)}
+  $font-primary;
+$minicart-subtotal-item-padding: rem-calc(8 0);
+// Minicart items container
+$minicart-items-background: color(light);
+$minicart-items-padding: rem-calc(20);
+// Minicart product item
+$minicart-item-margin: 0;
+$minicart-item-content-padding: rem-calc(12);
+$minicart-item-content-border-radius: 0;
+$minicart-item-content-hover-border-color: color(border-active);
+// Product Remove Icon
+$minicart-remove-icon-padding: rem-calc(4);
+$minicart-remove-icon-transform: scale(1);
+$minicart-remove-icon: cross-minicart;
+// Minicart Product
+$minicart-product-title-font: #{rem-calc(14)} / 1.5 $font-primary-medium;
+// Recommendation
+$minicart-recommendation-padding: rem-calc(10 20 30);
+@use "@lora/05-components/minicart";

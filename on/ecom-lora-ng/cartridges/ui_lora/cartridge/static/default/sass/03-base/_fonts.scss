@@ -1,0 +1,32 @@
+/**
+* Example:
+* In case of usage of same font name for all font extensions
+* @include font-face('Roboto', 'roboto', normal, normal)
+*
+* In case different font names is used for for all font extension
+* @include font-face('Roboto', ("woff2": "robotoRegular", "woff": "robotRegular2", "ttf": "robotoRegular3"), normal, normal)
+**/
+@mixin font-face($font-family, $file-url, $font-weight, $font-style) {
+  $woff2: "" !default;
+  $woff: "" !default;
+  $ttf: "" !default;
+  @if (type-of($file-url) == "map") {
+    $woff2: '#{$global-font-path}/#{map-get($file-url, "woff2")}';
+    $woff: '#{$global-font-path}/#{map-get($file-url, "woff")}';
+    $ttf: '#{$global-font-path}/#{map-get($file-url, "ttf")}';
+  } @else {
+    $woff2: "#{$global-font-path}/#{$file-url}";
+    $woff: "#{$global-font-path}/#{$file-url}";
+    $ttf: "#{$global-font-path}/#{$file-url}";
+  }
+  @font-face {
+    font-family: $font-family;
+    src:
+      url("#{$woff2}.woff2") format("woff2"),
+      url("#{$woff}.woff") format("woff"),
+      url("#{$ttf}.ttf") format("truetype");
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+  }
+}

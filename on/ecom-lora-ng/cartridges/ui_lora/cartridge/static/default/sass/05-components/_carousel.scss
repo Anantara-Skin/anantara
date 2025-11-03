@@ -1,0 +1,1364 @@
+$carousel-grid-columns: 1 !default;
+$carousel-grid-columns--large: 3 !default;
+$carousel-slides-max-columns: 8 !default;
+$carousel-item-margin-right: rem-calc(20) !default;
+// Arrows
+$carousel-arrow-sizes: (
+  default: (
+    arrow-width: rem-calc(48),
+    arrow-height: rem-calc(48),
+    arrow-icon-width: rem-calc(15),
+    arrow-icon-height: rem-calc(40),
+    arrow-icon: chevron2-right,
+  ),
+  small: (
+    arrow-width: rem-calc(40),
+    arrow-height: rem-calc(30),
+    arrow-icon-width: rem-calc(6),
+    arrow-icon-height: rem-calc(11),
+    arrow-icon: chevron-right,
+  ),
+  medium: (
+    arrow-width: rem-calc(24),
+    arrow-height: rem-calc(24),
+    arrow-icon-width: rem-calc(6),
+    arrow-icon-height: rem-calc(14),
+    arrow-icon: chevron2-right,
+  ),
+) !default;
+$carousel-arrow-theme: (
+  light: (
+    background: color(light),
+    color: color(primary),
+    box-shadow: rem-calc(0 0 3) color(organism-background),
+  ),
+  dark: (
+    background: color(dark),
+    color: color(light),
+  ),
+) !default;
+$carousel-arrow-hover-theme: () !default;
+$carousel-arrows-transition: opacity ease 0.4s 0.2s !default;
+$carousel-arrow-color: color(primary) !default;
+$carousel-arrow-icon-usesvg: true !default;
+$carousel-arrow-inside-prev-left: 0 !default;
+$carousel-arrow-inside-next-right: 0 !default;
+$carousel-arrow-aside-pagination-prev-left: 0 !default;
+$carousel-arrow-aside-pagination-next-right: 0 !default;
+$carousel-arrow-aside-pagination-bottom: 0 !default;
+$carousel-arrow-aside-pagination-offset: rem-calc(30) !default;
+$carousel-arrow-aside-pagination-height: rem-calc(25) !default;
+$carousel-arrow-aside-pagination-custom-height: rem-calc(40) !default;
+/// Color for arrows.
+/// @type Map
+$carousel-arrow-custom-color: (
+  light: color(light),
+  dark: $carousel-arrow-color,
+) !default;
+$carousel-arrow-background: transparent !default;
+$carousel-arrow-border: null !default;
+$carousel-arrow-border-radius: null !default;
+// Pagination
+$carousel-pagination-margin: rem-calc(20 0 0) !default;
+$carousel-pagination-list-padding: 0 !default;
+// Pagination space-reserve height
+$carousel-pagination-space-reserve-height: rem-calc(25) !default;
+$carousel-pagination-space-reserve-height--large: null !default;
+$carousel-pagination-space-reserve-small-height: rem-calc(18) !default;
+$carousel-pagination-space-reserve-small-height--large: null !default;
+$carousel-pagination-space-reserve-custom-height: rem-calc(40) !default;
+$carousel-pagination-space-reserve-custom-height--large: null !default;
+// Pagination bullet
+$carousel-pagination-bullet-size: rem-calc(15) !default;
+$carousel-pagination-bullet-padding: rem-calc(10) !default;
+$carousel-pagination-bullet-color: color(element-background) !default;
+$carousel-pagination-bullet-border: null !default;
+$carousel-pagination-bullet-border-radius: 100% !default;
+$carousel-pagination-bullet-active-border: null !default;
+$carousel-pagination-bullet-active-color: color(primary) !default;
+$carousel-pagination-bullet-active-scale: 1.5 !default;
+$carousel-pagination-bullet-active-scale--large: 1.5 !default;
+$carousel-pagination-bullet-hover-border: null !default;
+$carousel-pagination-bullet-hover-color: null !default;
+$carousel-pagination-text-align: center !default;
+$carousel-pagination-bullet-size-default--large: null !default;
+$carousel-pagination-bullet-padding-default--large: null !default;
+$carousel-pagination-bullet-size-small: rem-calc(7) !default;
+$carousel-pagination-bullet-size-small--large: null !default;
+$carousel-pagination-bullet-padding-small: rem-calc(10) !default;
+$carousel-pagination-bullet-padding-small--large: null !default;
+$carousel-pagination-bullet-active-scale-small: 2 !default;
+$carousel-pagination-bullet-active-scale-small--large: null !default;
+$carousel-pagination-heights: (
+  default: (
+    small: $carousel-pagination-space-reserve-height,
+    large: $carousel-pagination-space-reserve-height--large,
+  ),
+  small: (
+    small: $carousel-pagination-space-reserve-small-height,
+    large: $carousel-pagination-space-reserve-small-height--large,
+  ),
+) !default;
+$carousel-bullet-sizes: (
+  default: (
+    bullet-size: $carousel-pagination-bullet-size,
+    bullet-padding: $carousel-pagination-bullet-padding,
+    bullet-active-scale: $carousel-pagination-bullet-active-scale,
+  ),
+  small: (
+    bullet-size: $carousel-pagination-bullet-size-small,
+    bullet-padding: $carousel-pagination-bullet-padding-small,
+    bullet-active-scale: $carousel-pagination-bullet-active-scale-small,
+  ),
+) !default;
+$carousel-bullet-sizes--large: (
+  default: (
+    bullet-size: $carousel-pagination-bullet-size-default--large,
+    bullet-padding: $carousel-pagination-bullet-padding-default--large,
+    bullet-active-scale: $carousel-pagination-bullet-active-scale--large,
+  ),
+  small: (
+    bullet-size: $carousel-pagination-bullet-size-small--large,
+    bullet-padding: $carousel-pagination-bullet-padding-small--large,
+    bullet-active-scale: $carousel-pagination-bullet-active-scale-small--large,
+  ),
+) !default;
+$carousel-bullet-custom-color: (
+  dark: (
+    color: $carousel-pagination-bullet-color,
+    border: $carousel-pagination-bullet-border,
+    active-color: $carousel-pagination-bullet-active-color,
+    active-border: $carousel-pagination-bullet-active-border,
+  ),
+  light: (
+    color: color(organism-background),
+    border: null,
+    active-color: color(light),
+    active-border: null,
+  ),
+) !default;
+// Custom Pagination Bullets
+$carousel-pagination-bullet-custom-enabled: true !default;
+$carousel-pagination-bullet-custom-width: rem-calc(30) !default;
+$carousel-pagination-bullet-custom-height: rem-calc(30) !default;
+$carousel-pagination-bullet-custom-width--large: null !default;
+$carousel-pagination-bullet-custom-margin: rem-calc(0 6) !default;
+$carousel-pagination-bullet-custom-margin--large: null !default;
+$carousel-pagination-bullet-custom-before-background: color(
+  element-background
+) !default;
+$carousel-pagination-bullet-custom-before-border-radius: null !default;
+$carousel-pagination-bullet-custom-active-before-background: color(
+  primary
+) !default;
+$carousel-pagination-bullet-custom-active-scale: 1.5 !default;
+$carousel-pagination-bullet-custom-active-margin: rem-calc(0 13) !default;
+$carousel-pagination-bullet-custom-active-margin--large: null !default;
+$carousel-pagination-bullet-custom-before-width: rem-calc(30) !default;
+$carousel-pagination-bullet-custom-before-width--large: null !default;
+$carousel-pagination-bullet-custom-before-height: rem-calc(3) !default;
+// Scrollbar
+$carousel-scrollbar-background: color(border) !default;
+$carousel-scrollbar-border-radius: rem-calc(0) !default;
+$carousel-scrollbar-drag-background: color(primary) !default;
+$carousel-scrollbar-drag-border-radius: rem-calc(0) !default;
+$carousel-scrollbar-height: rem-calc(24) !default;
+$carousel-scrollbar-width: 100% !default;
+$carousel-scrollbar-margin: rem-calc(20) auto 0 !default;
+$carousel-scrollbar-padding: rem-calc(10 0) !default;
+$carousel-scrollbar-width-list: (
+  "25": cell-width(3 of 12),
+  "50": cell-width(6 of 12),
+  "75": cell-width(9 of 12),
+  "100": cell-width(12 of 12),
+) !default;
+$carousel-scrollbar-custom-color: (
+  dark: (
+    background: $carousel-scrollbar-background,
+    drag-background: $carousel-scrollbar-drag-background,
+  ),
+  light: (
+    background: color(organism-background),
+    drag-background: color(light),
+  ),
+) !default;
+// Sticked Scrollbar
+$carousel-scrollbar-sticked-height: rem-calc(3) !default;
+$carousel-scrollbar-sticked-width: 100% !default;
+$carousel-scrollbar-sticked-margin: 0 !default;
+$carousel-scrollbar-sticked-padding: 0 !default;
+$carousel-scrollbar-sticked-left: 50% !default;
+$carousel-scrollbar-sticked-transform: translateX(-50%) !default;
+$carousel-scrollbar-sticked-fullscreen-width: 100vw !default;
+// Separator
+$carousel-separator-before-right: 100% !default;
+$carousel-separator-before-background: null !default;
+$carousel-separator-before-color: color(text) !default;
+$carousel-separator-before-content: "+" !default;
+$carousel-separator-before-font: #{rem-calc(24)} / 1 $font-primary !default;
+$carousel-separator-before-font--large: null !default;
+$carousel-separator-before-padding: rem-calc(20) !default;
+$carousel-separator-before-padding--large: null !default;
+// Item Title
+$carousel-item-title-color: color(text-secondary) !default;
+$carousel-item-title-color--large: null !default;
+$carousel-item-title-font: bold #{rem-calc(14)} / 1.4 $font-primary !default;
+$carousel-item-title-font--large: null !default;
+$carousel-item-title-margin: rem-calc(0 0 10) !default;
+$carousel-item-title-margin--large: null !default;
+$carousel-item-title-text-align: center !default;
+$carousel-item-title-text-align--large: null !default;
+$carousel-item-title-text-transform: uppercase !default;
+$carousel-item-title-text-transform--large: null !default;
+$carousel-item-title-flex-grow: 1 !default;
+// Item Description
+$carousel-item-description-color: color(text-secondary) !default;
+$carousel-item-description-color--large: null !default;
+$carousel-item-description-font: bold #{rem-calc(14)} / 1.4 $font-primary !default;
+$carousel-item-description-font--large: null !default;
+$carousel-item-description-margin: rem-calc(0 0 15) !default;
+$carousel-item-description-margin--large: null !default;
+$carousel-item-description-text-align: center !default;
+$carousel-item-description-text-align--large: null !default;
+$carousel-item-description-text-transform: uppercase !default;
+$carousel-item-description-text-transform--large: null !default;
+$carousel-item-description-flex-grow: 1 !default;
+// Carousel autoplay
+$carousel-autoplay-button-icon: "pause" !default;
+$carousel-autoplay-button-icon-usesvg: true !default;
+$carousel-autoplay-button-color: color(primary) !default;
+$carousel-autoplay-button-color-hover: color(primary-active) !default;
+$carousel-autoplay-button-size: rem-calc(35) !default;
+$carousel-autoplay-button-border: null !default;
+// Carousel autoplay active
+$carousel-autoplay-button-active-icon: "play" !default;
+$carousel-autoplay-button-active-icon-usesvg: true !default;
+$carousel-autoplay-custom-color: (
+  dark: (
+    color: $carousel-autoplay-button-color,
+    hover-color: $carousel-autoplay-button-color-hover,
+  ),
+  light: (
+    color: color(light),
+    hover-color: color(organism-background),
+  ),
+) !default;
+// Fullscreen mode
+$carousel-fullscreen-pagination-side-offset: rem-calc(50) !default;
+$carousel-fullscreen-pagination-side-offset--large: rem-calc(100) !default;
+$carousel-fullscreen-pagination-position-bottom: rem-calc(25) !default;
+$carousel-fullscreen-pagination-position-bottom--large: null !default;
+$carousel-fullscreen-video-asset-control-position-bottom: rem-calc(25) !default;
+$carousel-fullscreen-video-asset-control-flex-flow--medium-down: column !default;
+$carousel-fullscreen-video-asset-control-button-position-margin: rem-calc(
+  3 0
+) !default;
+$carousel-fullscreen-scrollbar-side-offset: rem-calc(50) !default;
+$carousel-fullscreen-scrollbar-side-offset--large: rem-calc(100) !default;
+$carousel-fullscreen-scrollbar-position-bottom: 0 !default;
+$carousel-fullscreen-scrollbar-position-bottom--large: null !default;
+@mixin lora-helper-carousel-arrow-size($size) {
+  height: map-deep-get($carousel-arrow-sizes, $size, "arrow-height");
+  width: map-deep-get($carousel-arrow-sizes, $size, "arrow-width");
+  &::before {
+    @include svg-icon(
+      map-deep-get($carousel-arrow-sizes, $size, "arrow-icon"),
+      $carousel-arrow-color,
+      100%,
+      left,
+      no-repeat,
+      $usesvg: $carousel-arrow-icon-usesvg
+    );
+    height: map-deep-get($carousel-arrow-sizes, $size, "arrow-icon-height");
+    width: map-deep-get($carousel-arrow-sizes, $size, "arrow-icon-width");
+  }
+}
+@mixin lora-helper-carousel-arrow-color($color, $size) {
+  .c-carousel__arrow-prev,
+  .c-carousel__arrow-next {
+    &::before {
+      @include svg-icon(
+        map-deep-get($carousel-arrow-sizes, $size, "arrow-icon"),
+        map-get($carousel-arrow-custom-color, $color),
+        100%,
+        left,
+        no-repeat,
+        $color-change: true,
+        $usesvg: $carousel-arrow-icon-usesvg
+      );
+    }
+  }
+}
+// Add carousel side margin to keep arrows on a container edge, but not overlapping carousel elements
+@mixin lora-helper-carousel-arrows-on-edge($size) {
+  // When the carousel is disabled and no arrows present do not set a side margin for a better alignment
+  &.m-ready:not(.m-disabled) {
+    margin: 0 (map-deep-get($carousel-arrow-sizes, $size, "arrow-width") / 2);
+  }
+}
+// Place arrows inside a carousel
+@mixin lora-helper-carousel-arrows-inside {
+  .c-carousel__arrow-prev {
+    left: $carousel-arrow-inside-prev-left;
+    right: inherit;
+  }
+  .c-carousel__arrow-next {
+    right: $carousel-arrow-inside-next-right;
+    left: inherit;
+  }
+}
+// Place arrows aside the pagination
+@mixin lora-helper-carousel-arrows-aside-pagination {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $carousel-arrow-aside-pagination-height;
+  .c-carousel__arrow-prev {
+    left: $carousel-arrow-aside-pagination-prev-left;
+    right: auto;
+  }
+  .c-carousel__arrow-next {
+    right: $carousel-arrow-aside-pagination-next-right;
+    left: auto;
+  }
+  // Add the pagination offset on sides to avoid an overlap with arrows
+  + .c-carousel__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $carousel-arrow-aside-pagination-height;
+    margin-left: $carousel-arrow-aside-pagination-offset;
+    margin-right: $carousel-arrow-aside-pagination-offset;
+    position: relative;
+  }
+  &.m-custom-pagination {
+    height: $carousel-arrow-aside-pagination-custom-height;
+    + .c-carousel__pagination {
+      height: $carousel-arrow-aside-pagination-custom-height;
+    }
+  }
+}
+@mixin lora-helper-carousel-show-arrows-on-hover {
+  .c-carousel__arrow-prev,
+  .c-carousel__arrow-next {
+    transition: $carousel-arrows-transition;
+  }
+  &:not(:hover) {
+    .c-carousel__arrow-prev,
+    .c-carousel__arrow-next {
+      &:not(:focus) {
+        opacity: 0;
+      }
+    }
+  }
+}
+@mixin lora-helper-carousel-bullet-size($size) {
+  padding: map-deep-get($carousel-bullet-sizes, $size, "bullet-padding");
+  &::before {
+    height: map-deep-get($carousel-bullet-sizes, $size, "bullet-size");
+    width: map-deep-get($carousel-bullet-sizes, $size, "bullet-size");
+  }
+  &.m-active::before {
+    transform: scale(
+      map-deep-get($carousel-bullet-sizes, $size, "bullet-active-scale")
+    );
+  }
+}
+@mixin lora-helper-carousel-bullet-size-large($size) {
+  padding: map-deep-get($carousel-bullet-sizes--large, $size, "bullet-padding");
+  &::before {
+    height: map-deep-get($carousel-bullet-sizes--large, $size, "bullet-size");
+    width: map-deep-get($carousel-bullet-sizes--large, $size, "bullet-size");
+  }
+  &.m-active::before {
+    transform: scale(
+      map-deep-get($carousel-bullet-sizes--large, $size, "bullet-active-scale")
+    );
+  }
+}
+@mixin lora-helper-carousel-bullet-color($color) {
+  &::before {
+    background: map-deep-get($carousel-bullet-custom-color, $color, "color");
+    border: map-deep-get($carousel-bullet-custom-color, $color, "border");
+  }
+  &.m-active::before {
+    background: map-deep-get(
+      $carousel-bullet-custom-color,
+      $color,
+      "active-color"
+    );
+    border: map-deep-get(
+      $carousel-bullet-custom-color,
+      $color,
+      "active-border"
+    );
+  }
+  &:hover::before,
+  &:focus::before {
+    background: map-deep-get(
+      $carousel-bullet-custom-color,
+      $color,
+      "active-color"
+    );
+    border: map-deep-get(
+      $carousel-bullet-custom-color,
+      $color,
+      "active-border"
+    );
+  }
+}
+@mixin lora-helper-carousel-bullet-custom-color($color) {
+  &::before {
+    background: map-deep-get($carousel-bullet-custom-color, $color, "color");
+  }
+  &.m-active::before {
+    background: map-deep-get(
+      $carousel-bullet-custom-color,
+      $color,
+      "active-color"
+    );
+  }
+  &:hover::before,
+  &:focus::before {
+    background: map-deep-get(
+      $carousel-bullet-custom-color,
+      $color,
+      "active-color"
+    );
+  }
+}
+@mixin lora-helper-carousel-arrow-layout {
+  align-items: center;
+  color: $carousel-arrow-color;
+  background: $carousel-arrow-background;
+  border: $carousel-arrow-border;
+  border-radius: $carousel-arrow-border-radius;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  z-index: z(carousel, arrows);
+  transform: translateY(-50%) translateZ(0);
+  &::before {
+    content: "";
+    display: block;
+  }
+  &.m-disabled {
+    cursor: auto;
+    opacity: 0.35;
+  }
+}
+@mixin lora-helper-carousel-arrow-background($theme, $size) {
+  .c-carousel__arrow-prev,
+  .c-carousel__arrow-next {
+    background: map-deep-get(
+      $carousel-arrow-theme,
+      $theme,
+      "background"
+    ); /* stylelint-disable-line */
+    box-shadow: map-deep-get($carousel-arrow-theme, $theme, "box-shadow");
+    &::before {
+      @include svg-icon(
+        map-deep-get($carousel-arrow-sizes, $size, "arrow-icon"),
+        map-deep-get($carousel-arrow-theme, $theme, "color"),
+        100%,
+        left,
+        no-repeat,
+        $color-change: true,
+        $usesvg: $carousel-arrow-icon-usesvg
+      );
+    }
+  }
+}
+@mixin lora-helper-carousel-arrow-hover-background($hover-theme, $size) {
+  .c-carousel__arrow-prev,
+  .c-carousel__arrow-next {
+    &:not(.m-disabled) {
+      &:hover,
+      &:focus {
+        background: map-deep-get(
+          $carousel-arrow-hover-theme,
+          $hover-theme,
+          "background"
+        ); /* stylelint-disable-line */
+        &::before {
+          @include svg-icon(
+            map-deep-get($carousel-arrow-sizes, $size, "arrow-icon"),
+            map-deep-get($carousel-arrow-hover-theme, $hover-theme, "color"),
+            100%,
+            left,
+            no-repeat,
+            $color-change: true,
+            $usesvg: $carousel-arrow-icon-usesvg
+          );
+        }
+      }
+    }
+  }
+}
+@mixin lora-components-carousel() {
+  @include lora-carousel-layout;
+  @include lora-carousel-arrows;
+  @include lora-carousel-pagination;
+  @include lora-carousel-scrollbar;
+  @include lora-carousel-separator;
+  @include lora-carousel-disabled;
+  @include lora-carousel-slides-size;
+}
+@mixin lora-carousel-layout() {
+  .c-carousel {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    /* stylelint-disable selector-max-compound-selectors */
+    &.m-center:not(.m-ready) {
+      & > .c-carousel__inner > .c-carousel__content {
+        justify-content: center;
+        & > .c-carousel__item:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+    &.m-overflow-visible--medium-down {
+      .c-carousel__inner {
+        @include breakpoint(medium down) {
+          overflow: visible;
+        }
+      }
+    }
+  }
+  .c-carousel__inner {
+    overflow: hidden;
+  }
+  .c-carousel__content {
+    box-sizing: content-box;
+    display: flex;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    &.m-expanded {
+      flex-wrap: wrap;
+    }
+    /* stylelint-disable declaration-no-important */
+    @include reduced-motion {
+      transition-duration: 0ms !important;
+    }
+    /* stylelint-enable declaration-no-important */
+  }
+  .c-carousel__item {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    width: percentage(1 / $carousel-grid-columns);
+    @include breakpoint(large) {
+      width: percentage(1 / $carousel-grid-columns--large);
+    }
+  }
+  .c-carousel__item-title {
+    @include text-style(
+      $color: (
+        small: $carousel-item-title-color,
+        large: $carousel-item-title-color--large,
+      ),
+      $font: (
+        small: $carousel-item-title-font,
+        large: $carousel-item-title-font--large,
+      ),
+      $margin: (
+        small: $carousel-item-title-margin,
+        large: $carousel-item-title-margin--large,
+      ),
+      $text-align: (
+        small: $carousel-item-title-text-align,
+        large: $carousel-item-title-text-align--large,
+      ),
+      $text-transform: (
+        small: $carousel-item-title-text-transform,
+        large: $carousel-item-title-text-transform--large,
+      )
+    );
+    flex-grow: $carousel-item-title-flex-grow;
+    height: 100%;
+  }
+  .c-carousel__item-description {
+    @include text-style(
+      $color: (
+        small: $carousel-item-description-color,
+        large: $carousel-item-description-color--large,
+      ),
+      $font: (
+        small: $carousel-item-description-font,
+        large: $carousel-item-description-font--large,
+      ),
+      $margin: (
+        small: $carousel-item-description-margin,
+        large: $carousel-item-description-margin--large,
+      ),
+      $text-align: (
+        small: $carousel-item-description-text-align,
+        large: $carousel-item-description-text-align--large,
+      ),
+      $text-transform: (
+        small: $carousel-item-description-text-transform,
+        large: $carousel-item-description-text-transform--large,
+      )
+    );
+    flex-grow: $carousel-item-description-flex-grow;
+    height: 100%;
+  }
+  .c-carousel__arrows {
+    opacity: 0;
+    .c-carousel.m-ready & {
+      opacity: 1;
+      transition: $carousel-arrows-transition;
+    }
+  }
+  .c-carousel__notification {
+    display: none;
+  }
+  .c-carousel__autoplay {
+    height: $carousel-autoplay-button-size;
+    width: $carousel-autoplay-button-size;
+    border: $carousel-autoplay-button-border;
+    &::before {
+      @include svg-icon(
+        $carousel-autoplay-button-icon,
+        $carousel-autoplay-button-color,
+        100%,
+        left,
+        no-repeat,
+        $usesvg: $carousel-autoplay-button-icon-usesvg
+      );
+      content: "";
+      cursor: pointer;
+      pointer-events: all;
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      height: 100%;
+    }
+    &:hover {
+      &::before {
+        @include svg-icon(
+          $carousel-autoplay-button-icon,
+          $carousel-autoplay-button-color-hover,
+          100%,
+          left,
+          no-repeat,
+          $color-change: true,
+          $usesvg: $carousel-autoplay-button-icon-usesvg
+        );
+      }
+    }
+    &.m-active {
+      &::before {
+        @include svg-icon(
+          $carousel-autoplay-button-active-icon,
+          $carousel-autoplay-button-color,
+          100%,
+          left,
+          no-repeat,
+          $usesvg: $carousel-autoplay-button-active-icon-usesvg
+        );
+      }
+      &:hover {
+        &::before {
+          @include svg-icon(
+            $carousel-autoplay-button-active-icon,
+            $carousel-autoplay-button-color-hover,
+            100%,
+            left,
+            no-repeat,
+            $color-change: true,
+            $usesvg: $carousel-autoplay-button-active-icon-usesvg
+          );
+        }
+      }
+    }
+  }
+  .c-carousel.m-fullscreen {
+    width: 100%;
+    height: vh(100);
+    .c-carousel__inner,
+    .c-carousel__content,
+    .c-carousel__item,
+    .c-image-zoom__imagelink {
+      height: 100%;
+      width: 100%;
+      .c-video-asset {
+        height: 100%;
+        width: 100%;
+      }
+      .c-video-asset__container {
+        padding-bottom: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      video,
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .c-video-asset__control {
+        bottom: $carousel-fullscreen-video-asset-control-position-bottom;
+        @include breakpoint(medium down) {
+          display: flex;
+          flex-flow: $carousel-fullscreen-video-asset-control-flex-flow--medium-down;
+        }
+      }
+      .c-video-asset__control-button {
+        margin: $carousel-fullscreen-video-asset-control-button-position-margin;
+      }
+    }
+    .c-carousel__pagination {
+      position: absolute;
+      left: $carousel-fullscreen-pagination-side-offset; // side offset to not overlap carousel components, like video play button, etc.
+      right: $carousel-fullscreen-pagination-side-offset;
+      bottom: $carousel-fullscreen-pagination-position-bottom;
+      @include breakpoint(large) {
+        left: $carousel-fullscreen-pagination-side-offset--large; // side offset to not overlap carousel components, like video play button, etc.
+        right: $carousel-fullscreen-pagination-side-offset--large;
+        bottom: $carousel-fullscreen-pagination-position-bottom--large;
+      }
+    }
+    .c-carousel__scrollbar {
+      position: absolute;
+      width: auto;
+      left: $carousel-fullscreen-scrollbar-side-offset; // side offset to not overlap carousel components, like video play button, etc.
+      right: $carousel-fullscreen-scrollbar-side-offset;
+      bottom: $carousel-fullscreen-scrollbar-position-bottom;
+      @include breakpoint(large) {
+        left: $carousel-fullscreen-scrollbar-side-offset--large; // side offset to not overlap carousel components, like video play button, etc.
+        right: $carousel-fullscreen-scrollbar-side-offset--large;
+        bottom: $carousel-fullscreen-scrollbar-position-bottom--large;
+      }
+    }
+  }
+}
+@mixin lora-helper-carousel-arrow-themes($sizename) {
+  // Will generate rules for arrow themes
+  @each $themename, $theme in $carousel-arrow-theme {
+    .c-carousel__arrows.m-background-#{$themename} {
+      @include lora-helper-carousel-arrow-background($themename, $sizename);
+    }
+  }
+  // Will generate hover rules for arrow themes
+  @if (map-values($carousel-arrow-hover-theme)) {
+    @each $themename, $theme in $carousel-arrow-hover-theme {
+      .c-carousel__arrows.m-background-#{$themename} {
+        @include lora-helper-carousel-arrow-hover-background(
+          $themename,
+          $sizename
+        );
+      }
+    }
+  }
+  //Will generate rules for arrow colors
+  @each $colorarrow, $color in $carousel-arrow-custom-color {
+    .c-carousel__arrows.m-color-#{$colorarrow} {
+      @include lora-helper-carousel-arrow-color($colorarrow, $sizename);
+    }
+  }
+}
+@mixin lora-carousel-arrows() {
+  .c-carousel {
+    // Will generate the rules for the sizes
+    // m-small, m-medium, etc..
+    // stylelint-disable max-nesting-depth
+    @each $sizename, $size in $carousel-arrow-sizes {
+      @if ($sizename != "default") {
+        &.m-arrows-#{$sizename} {
+          .c-carousel__arrow-prev,
+          .c-carousel__arrow-next {
+            @include lora-helper-carousel-arrow-size($sizename);
+          }
+          @include lora-helper-carousel-arrow-themes($sizename);
+        }
+        &.m-arrows-#{$sizename}-for-medium-down {
+          @include breakpoint(medium down) {
+            .c-carousel__arrow-prev,
+            .c-carousel__arrow-next {
+              @include lora-helper-carousel-arrow-size($sizename);
+            }
+            @include lora-helper-carousel-arrow-themes($sizename);
+          }
+        }
+      }
+    }
+    // stylelint-enable max-nesting-depth
+    @include lora-helper-carousel-arrow-themes(default);
+  }
+  .c-carousel__arrow-prev,
+  .c-carousel__arrow-next {
+    @include vertical-center;
+    @include lora-helper-carousel-arrow-layout;
+    @include lora-helper-carousel-arrow-size(default);
+  }
+  .c-carousel__arrow-prev {
+    right: 100%;
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+  .c-carousel__arrow-next {
+    left: 100%;
+  }
+  // Arrows located inside the carousel
+  .c-carousel__arrows.m-inside {
+    @include lora-helper-carousel-arrows-inside;
+  }
+  .c-carousel__arrows.m-inside-for-medium-down {
+    @include breakpoint(medium down) {
+      @include lora-helper-carousel-arrows-inside;
+    }
+  }
+  .c-carousel.m-show-arrows-on-hover {
+    @include lora-helper-carousel-show-arrows-on-hover;
+  }
+  // Hide arrow when disabled (by default it's greyed out)
+  .c-carousel__arrows.m-hide-on-disabled {
+    .c-carousel__arrow-prev,
+    .c-carousel__arrow-next {
+      &.m-disabled {
+        display: none;
+      }
+    }
+  }
+  // Add carousel side margin to keep arrows on a container edge, but not overlapping carousel elements
+  .c-carousel.m-arrows-on-edge {
+    @include lora-helper-carousel-arrows-on-edge(default);
+    @each $sizename, $size in $carousel-arrow-sizes {
+      @if ($sizename != "default") {
+        &.m-arrows-#{$sizename} {
+          @include lora-helper-carousel-arrows-on-edge($sizename);
+        }
+      }
+    }
+  }
+  .c-carousel.m-arrows-on-edge-for-large {
+    @include breakpoint(large) {
+      @include lora-helper-carousel-arrows-on-edge(default);
+      @each $sizename, $size in $carousel-arrow-sizes {
+        @if ($sizename != "default") {
+          // stylelint-disable max-nesting-depth
+          &.m-arrows-#{$sizename} {
+            @include lora-helper-carousel-arrows-on-edge($sizename);
+          }
+          // stylelint-enable max-nesting-depth
+        }
+      }
+    }
+  }
+  .c-carousel.m-arrows-on-edge-for-medium-down {
+    @include breakpoint(medium down) {
+      @include lora-helper-carousel-arrows-on-edge(default);
+      @each $sizename, $size in $carousel-arrow-sizes {
+        @if ($sizename != "default") {
+          // stylelint-disable max-nesting-depth
+          &.m-arrows-#{$sizename} {
+            @include lora-helper-carousel-arrows-on-edge($sizename);
+          }
+          // stylelint-enable max-nesting-depth
+        }
+      }
+    }
+  }
+  // Arrows located aside the pagination
+  .c-carousel__arrows.m-aside-pagination {
+    @include lora-helper-carousel-arrows-aside-pagination;
+  }
+  .c-carousel__arrows.m-aside-pagination-for-medium-down {
+    @include breakpoint(medium down) {
+      @include lora-helper-carousel-arrows-aside-pagination;
+    }
+  }
+}
+@mixin lora-carousel-pagination {
+  .c-carousel__pagination {
+    margin: $carousel-pagination-margin;
+    text-align: $carousel-pagination-text-align;
+    // Will generate the rules for the sizes
+    // m-small, m-medium, etc..
+    // stylelint-disable max-nesting-depth
+    @each $sizename, $size in $carousel-bullet-sizes {
+      @if ($sizename != "default") {
+        &.m-#{$sizename} {
+          .c-carousel__pagination-bullet {
+            @include lora-helper-carousel-bullet-size($sizename);
+            @include breakpoint(large) {
+              @include lora-helper-carousel-bullet-size-large($sizename);
+            }
+          }
+        }
+      } @else {
+        .c-carousel__pagination-bullet {
+          @include lora-helper-carousel-bullet-size("default");
+          @include breakpoint(large) {
+            @include lora-helper-carousel-bullet-size-large("default");
+          }
+        }
+      }
+    }
+    .c-carousel__pagination-list {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 0;
+      margin: 0;
+      padding: $carousel-pagination-list-padding;
+    }
+    @each $bulletcolor, $color in $carousel-bullet-custom-color {
+      &.m-color-#{$bulletcolor} {
+        .c-carousel__pagination-bullet {
+          @include lora-helper-carousel-bullet-color($bulletcolor);
+        }
+        @if ($carousel-pagination-bullet-custom-enabled) {
+          .c-carousel__pagination-bullet-custom {
+            @include lora-helper-carousel-bullet-custom-color($bulletcolor);
+          }
+        }
+        .c-carousel__autoplay {
+          &::before {
+            @include svg-icon(
+              $carousel-autoplay-button-icon,
+              map-deep-get(
+                $carousel-autoplay-custom-color,
+                $bulletcolor,
+                "color"
+              ),
+              100%,
+              left,
+              no-repeat,
+              $usesvg: $carousel-autoplay-button-icon-usesvg
+            );
+            content: "";
+          }
+          &:hover {
+            &::before {
+              @include svg-icon(
+                $carousel-autoplay-button-icon,
+                map-deep-get(
+                  $carousel-autoplay-custom-color,
+                  $bulletcolor,
+                  "hover-color"
+                ),
+                100%,
+                left,
+                no-repeat,
+                $color-change: true,
+                $usesvg: $carousel-autoplay-button-icon-usesvg
+              );
+            }
+          }
+          &.m-active {
+            &::before {
+              @include svg-icon(
+                $carousel-autoplay-button-active-icon,
+                map-deep-get(
+                  $carousel-autoplay-custom-color,
+                  $bulletcolor,
+                  "color"
+                ),
+                100%,
+                left,
+                no-repeat,
+                $usesvg: $carousel-autoplay-button-active-icon-usesvg
+              );
+            }
+            &:hover {
+              &::before {
+                @include svg-icon(
+                  $carousel-autoplay-button-active-icon,
+                  map-deep-get(
+                    $carousel-autoplay-custom-color,
+                    $bulletcolor,
+                    "hover-color"
+                  ),
+                  100%,
+                  left,
+                  no-repeat,
+                  $color-change: true,
+                  $usesvg: $carousel-autoplay-button-active-icon-usesvg
+                );
+              }
+            }
+          }
+        }
+      }
+    }
+    .c-carousel__pagination-list-item {
+      display: inline-flex;
+    }
+    // stylelint-enable max-nesting-depth
+  }
+  /* Bullets */
+  .c-carousel__pagination-bullet {
+    display: inline-block;
+    padding: $carousel-pagination-bullet-padding;
+    &::before {
+      content: "";
+      display: block;
+      transition: all 150ms ease;
+      border: $carousel-pagination-bullet-border;
+      border-radius: $carousel-pagination-bullet-border-radius;
+      background: $carousel-pagination-bullet-color;
+    }
+    @include breakpoint(large) {
+      pointer-events: all;
+    }
+    &.m-clickable {
+      cursor: pointer;
+    }
+    &.m-active::before {
+      background: $carousel-pagination-bullet-active-color;
+      border: $carousel-pagination-bullet-active-border;
+    }
+    @include hover {
+      &:hover::before,
+      &:focus::before {
+        background: $carousel-pagination-bullet-active-color;
+        border: $carousel-pagination-bullet-active-border;
+      }
+    }
+  }
+  .c-carousel__pagination-list.m-clickable .c-carousel__pagination-bullet {
+    cursor: pointer;
+  }
+  // stylelint-disable max-nesting-depth
+  .c-carousel:not(.m-ready) {
+    .c-carousel__pagination-list {
+      display: none;
+    }
+    .c-carousel__pagination.m-space-reserve {
+      height: map-deep-get($carousel-pagination-heights, "default", "small");
+      @include breakpoint(large) {
+        height: map-deep-get($carousel-pagination-heights, "default", "large");
+      }
+      // Will generate the rules for the sizes
+      // m-small, m-medium, etc..
+      @each $sizename, $size in $carousel-pagination-heights {
+        @if ($sizename != "default") {
+          &.m-#{$sizename} {
+            height: map-deep-get(
+              $carousel-pagination-heights,
+              $sizename,
+              "small"
+            );
+            @include breakpoint(large) {
+              height: map-deep-get(
+                $carousel-pagination-heights,
+                $sizename,
+                "large"
+              );
+            }
+          }
+        }
+      }
+      @if ($carousel-pagination-bullet-custom-enabled) {
+        &.m-custom-pagination {
+          height: $carousel-pagination-space-reserve-custom-height;
+          @include breakpoint(large) {
+            height: $carousel-pagination-space-reserve-custom-height--large;
+          }
+        }
+      }
+    }
+    @each $breakpoint in (large medium small) {
+      @include breakpoint($breakpoint down) {
+        .c-carousel__pagination.m-space-reserve-for-#{$breakpoint}-down {
+          height: map-deep-get(
+            $carousel-pagination-heights,
+            "default",
+            "small"
+          );
+          // Will generate the rules for the sizes
+          // m-small, m-medium, etc..
+          @each $sizename, $size in $carousel-bullet-sizes {
+            @if ($sizename != "default") {
+              &.m-#{$sizename} {
+                height: map-deep-get(
+                  $carousel-pagination-heights,
+                  $sizename,
+                  "small"
+                );
+              }
+            }
+          }
+        }
+      }
+    }
+    @each $breakpoint in $breakpoint-classes {
+      @include breakpoint($breakpoint) {
+        .c-carousel__pagination.m-space-reserve-for-#{$breakpoint} {
+          @if ($breakpoint == "large" or $breakpoint == "xlarge") {
+            height: $carousel-pagination-space-reserve-height--large;
+          } @else {
+            height: map-deep-get(
+              $carousel-pagination-heights,
+              "default",
+              "small"
+            );
+          }
+          // Will generate the rules for the sizes
+          // m-small, m-medium, etc..
+          @each $sizename, $size in $carousel-bullet-sizes {
+            @if ($sizename != "default") {
+              &.m-#{$sizename} {
+                @if ($breakpoint == "large" or $breakpoint == "xlarge") {
+                  height: map-deep-get(
+                    $carousel-pagination-heights,
+                    $sizename,
+                    "large"
+                  );
+                } @else {
+                  height: map-deep-get(
+                    $carousel-pagination-heights,
+                    $sizename,
+                    "small"
+                  );
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // stylelint-enable max-nesting-depth
+  @if ($carousel-pagination-bullet-custom-enabled) {
+    /* Bullets Custom */
+    .c-carousel__pagination-bullet-custom {
+      display: inline-block;
+      height: $carousel-pagination-bullet-custom-height;
+      padding: 0;
+      margin: $carousel-pagination-bullet-custom-margin;
+      position: relative;
+      width: $carousel-pagination-bullet-custom-width;
+      transition: transform 150ms ease;
+      &::before {
+        @include absolute-center;
+        background: $carousel-pagination-bullet-custom-before-background;
+        content: "";
+        height: $carousel-pagination-bullet-custom-before-height;
+        width: $carousel-pagination-bullet-custom-before-width;
+        border-radius: $carousel-pagination-bullet-custom-before-border-radius;
+      }
+      &.m-active {
+        transform: scale($carousel-pagination-bullet-custom-active-scale);
+        margin: $carousel-pagination-bullet-custom-active-margin;
+      }
+      &.m-clickable {
+        cursor: pointer;
+      }
+      &.m-active::before {
+        background: $carousel-pagination-bullet-custom-active-before-background;
+      }
+      @include breakpoint(large) {
+        width: $carousel-pagination-bullet-custom-width--large;
+        margin: $carousel-pagination-bullet-custom-margin--large;
+        pointer-events: all;
+        &::before {
+          width: $carousel-pagination-bullet-custom-before-width--large;
+        }
+        &.m-active {
+          margin: $carousel-pagination-bullet-custom-active-margin--large;
+        }
+      }
+    }
+    .c-carousel__pagination-list-item {
+      // Need to reset side margins of bullets for correct left and right alignment, overriding all modifiers
+      &:first-child {
+        .c-carousel__pagination-bullet-custom {
+          margin-#{$global-left}: 0 !important; /* stylelint-disable-line */
+        }
+      }
+      &:last-child {
+        .c-carousel__pagination-bullet-custom {
+          margin-#{$global-right}: 0 !important; /* stylelint-disable-line */
+        }
+      }
+    }
+  }
+}
+@mixin lora-carousel-scrollbar {
+  .c-carousel__scrollbar {
+    background: $carousel-scrollbar-background;
+    background-clip: content-box;
+    border-radius: $carousel-scrollbar-border-radius;
+    height: $carousel-scrollbar-height;
+    width: $carousel-scrollbar-width;
+    margin: $carousel-scrollbar-margin;
+    padding: $carousel-scrollbar-padding;
+    position: relative;
+    &.m-lock,
+    &:empty {
+      display: none;
+    }
+    @each $width, $value in $carousel-scrollbar-width-list {
+      &.m-width-#{$width} {
+        width: $value;
+      }
+    }
+    @each $width, $value in $carousel-scrollbar-width-list {
+      &.m-width-#{$width}--large {
+        @include breakpoint(large) {
+          width: $value;
+        }
+      }
+    }
+    &.m-sticked {
+      height: $carousel-scrollbar-sticked-height;
+      width: $carousel-scrollbar-sticked-width;
+      margin: $carousel-scrollbar-sticked-margin;
+      padding: $carousel-scrollbar-sticked-padding;
+      left: $carousel-scrollbar-sticked-left;
+      transform: $carousel-scrollbar-sticked-transform;
+      &.m-full-screen {
+        width: $carousel-scrollbar-sticked-fullscreen-width;
+      }
+    }
+  }
+  .c-carousel__scrollbar-drag {
+    background: $carousel-scrollbar-drag-background;
+    border-radius: $carousel-scrollbar-drag-border-radius;
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+  @each $colorscrollbar, $color in $carousel-scrollbar-custom-color {
+    .c-carousel__scrollbar.m-color-#{$colorscrollbar} {
+      background-color: map-deep-get(
+        $carousel-scrollbar-custom-color,
+        $colorscrollbar,
+        "background"
+      ); // stylelint-disable-line scale-unlimited/declaration-strict-value
+      .c-carousel__scrollbar-drag {
+        background-color: map-deep-get(
+          $carousel-scrollbar-custom-color,
+          $colorscrollbar,
+          "drag-background"
+        ); // stylelint-disable-line scale-unlimited/declaration-strict-value
+      }
+    }
+  }
+}
+@mixin lora-carousel-disabled {
+  /* stylelint-disable selector-max-compound-selectors */
+  .c-carousel__content.m-disabled {
+    &.m-center {
+      justify-content: center;
+      > .c-carousel__item:last-child {
+        margin-#{$global-right}: 0 !important; /* stylelint-disable-line */
+      }
+    }
+    > .c-carousel__item.m-duplicate {
+      display: none;
+    }
+  }
+  /* stylelint-enable selector-max-compound-selectors */
+}
+@mixin lora-carousel-separator {
+  /* stylelint-disable selector-max-compound-selectors */
+  .c-carousel.m-ready.m-separator > .c-carousel__inner > .c-carousel__content {
+    & > .c-carousel__item:not(:first-child) {
+      position: relative;
+      &::before {
+        @include vertical-center;
+        #{$global-right}: $carousel-separator-before-right;
+        background: $carousel-separator-before-background;
+        color: $carousel-separator-before-color;
+        content: $carousel-separator-before-content;
+        font: $carousel-separator-before-font;
+        padding: $carousel-separator-before-padding;
+        @include breakpoint(large) {
+          font: $carousel-separator-before-font--large;
+          padding: $carousel-separator-before-padding--large;
+        }
+      }
+    }
+  }
+  /* stylelint-enable selector-max-compound-selectors */
+}
+/* stylelint-disable max-nesting-depth, selector-max-compound-selectors */
+@mixin lora-carousel-slides-size(
+  $carousel-columns: $carousel-slides-max-columns
+) {
+  @for $column from 1 through $carousel-columns {
+    .c-carousel.m-slidesperview-#{$column}:not(.m-ready) {
+      & > .c-carousel__inner > .c-carousel__content > .c-carousel__item {
+        width: calc(
+          (100% - (#{$column} - 1) * #{$carousel-item-margin-right}) /
+            #{$column}
+        );
+        @if ($column - 1 > 0) {
+          margin-right: $carousel-item-margin-right;
+        }
+      }
+      &.m-spacebetween-0
+        > .c-carousel__inner
+        > .c-carousel__content
+        > .c-carousel__item {
+        width: calc(100% / #{$column});
+        margin-right: 0 !important; /* stylelint-disable-line */
+      }
+    }
+  }
+  @each $breakpoint in (large medium small) {
+    @include breakpoint($breakpoint down) {
+      @for $column from 1 through $carousel-columns {
+        .c-carousel.m-slidesperview-#{$column}-for-#{$breakpoint}-down:not(
+            .m-ready
+          ) {
+          & > .c-carousel__inner > .c-carousel__content > .c-carousel__item {
+            width: calc(
+              (100% - (#{$column} - 1) * #{$carousel-item-margin-right}) /
+                #{$column}
+            );
+            @if ($column - 1 > 0) {
+              margin-right: $carousel-item-margin-right;
+            }
+          }
+          &.m-spacebetween-0-for-#{$breakpoint}-down {
+            & > .c-carousel__inner > .c-carousel__content > .c-carousel__item {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @each $breakpoint in $breakpoint-classes {
+    @include breakpoint($breakpoint) {
+      @for $column from 1 through $carousel-columns {
+        .c-carousel.m-slidesperview-#{$column}-for-#{$breakpoint}:not(
+            .m-ready
+          ) {
+          & > .c-carousel__inner > .c-carousel__content > .c-carousel__item {
+            width: calc(
+              (100% - (#{$column} - 1) * #{$carousel-item-margin-right}) /
+                #{$column}
+            );
+            @if ($column - 1 > 0) {
+              margin-right: $carousel-item-margin-right;
+            }
+          }
+          &.m-spacebetween-0-for-#{$breakpoint} {
+            & > .c-carousel__inner > .c-carousel__content > .c-carousel__item {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* stylelint-enable */

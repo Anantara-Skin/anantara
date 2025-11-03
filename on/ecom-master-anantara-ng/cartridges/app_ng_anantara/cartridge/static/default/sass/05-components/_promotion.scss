@@ -1,0 +1,8 @@
+// 1st type of a promo message
+$promotion-product-background: color(alabaster-400);
+$promotion-icon-color: color(dark);
+$promotion-product-border: none;
+$promotion-product-border-radius: 0;
+// 3rd type of a promo message
+$promotion-approaching-discount-background: color(alabaster-400);
+@use "@lora/05-components/promotion";

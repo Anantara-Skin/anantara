@@ -1,0 +1,17 @@
+$progress-bar-background-color: color(grey-4);
+$progress-bar-value-background-color: color(neutral-900);
+$progress-bar-border-radius: rem-calc(4);
+$progress-bar-border: 1px solid color(secondary);
+$progress-bar-point-description-color: color(secondary);
+$progress-bar-point-description-active-color: color(primary);
+$progress-bar-point-description-font: #{rem-calc(12)} / 1.5 $font-primary;
+$progress-bar-point-description-active-font: #{rem-calc(12)} / 1.5 $font-primary;
+$progress-bar-before-icon-color: color(neutral-grey);
+$progress-bar-before-background-color: color(light);
+$progress-bar-after-background-color: transparent;
+$progress-bar-point-price-color: color(secondary);
+$progress-bar-point-price-active-color: color(primary);
+$progress-bar-point-price-active-font: 700 #{rem-calc(12)} / 1.2 $font-primary;
+$progress-bar-point-price-font: #{rem-calc(12)} / 1.5 $font-primary;
+$progress-bar-point-description-active-font: #{rem-calc(12)} / 1.4 $font-primary;
+@use "@lora/05-components/progress-bar";

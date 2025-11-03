@@ -1,0 +1,114 @@
+$tag-link-background: color(dark) !default;
+$tag-link-border: null !default;
+$tag-link-border-width: null !default;
+$tag-link-border-radius: rem-calc(5) !default;
+$tag-link-box-shadow: null !default;
+$tag-link-color: color(light) !default;
+$tag-display: inline-block !default;
+$tag-font: 600 #{rem-calc(10)} / 1 $font-primary !default;
+$tag-font--large: null !default;
+$tag-padding: rem-calc(5 10) !default;
+$tag-padding--large: null !default;
+$tag-margin: rem-calc(0 10 10 0) !default;
+$tag-margin--large: null !default;
+$tag-text-decoration: none !default;
+$tag-text-transform: uppercase !default;
+$tag-link-hover-background: color(primary-active) !default;
+$tag-link-hover-border: null !default;
+$tag-link-hover-color: color(light) !default;
+$tag-link-active-background: color(primary-active) !default;
+$tag-link-active-border: null !default;
+$tag-link-active-color: color(light) !default;
+$tag-link-hover-border-color: null !default;
+$tag-link-active-border-color: $tag-link-hover-border-color !default;
+$tag-active-text-transform: null !default;
+$tag-link-active-box-shadow: null !default;
+$tag-link-active-border-width: null !default;
+$tag-secondary-font: 450 #{rem-calc(10)} / 1 $font-primary !default;
+$tag-secondary-font--large: null !default;
+$tag-secondary-text-transform: none !default;
+$tag-secondary-border: null !default;
+// Disabled state
+$tag-disabled-background: color(light) !default;
+$tag-disabled-border: 1px solid !default;
+$tag-disabled-color: color(organism-background) !default;
+$tag-disabled-border-color: color(organism-background) !default;
+// Single state
+$tag-single-margin: rem-calc(0 10) !default;
+@mixin lora-components-tag {
+  .c-tag {
+    background: $tag-link-background;
+    border: $tag-link-border;
+    border-width: $tag-link-border-width;
+    border-radius: $tag-link-border-radius;
+    display: $tag-display;
+    vertical-align: middle;
+    box-shadow: $tag-link-box-shadow;
+    @include text-style(
+      $font: (
+        small: $tag-font,
+        large: $tag-font--large,
+      ),
+      $margin: (
+        small: $tag-margin,
+        large: $tag-margin--large,
+      ),
+      $padding: (
+        small: $tag-padding,
+        large: $tag-padding--large,
+      ),
+      $text-transform: (
+        small: $tag-text-transform,
+      ),
+      $text-decoration: (
+        small: $tag-text-decoration,
+      ),
+      $color: (
+        small: $tag-link-color,
+      )
+    );
+  }
+  .c-tag.m-link:not(.m-disabled) {
+    cursor: pointer;
+    &:hover {
+      background: $tag-link-hover-background;
+      border: $tag-link-hover-border;
+      color: $tag-link-hover-color;
+      border-color: $tag-link-hover-border-color;
+    }
+  }
+  .c-tag.m-active {
+    background: $tag-link-active-background;
+    border: $tag-link-active-border;
+    border-width: $tag-link-active-border-width;
+    color: $tag-link-active-color;
+    border-color: $tag-link-active-border-color;
+    box-shadow: $tag-link-active-box-shadow;
+    text-transform: $tag-active-text-transform;
+  }
+  .c-tag.m-disabled {
+    background: $tag-disabled-background;
+    border: $tag-disabled-border;
+    color: $tag-disabled-color;
+    cursor: auto;
+    border-color: $tag-disabled-border-color;
+  }
+  .c-tag.m-single {
+    margin: $tag-single-margin;
+  }
+  .c-tag.m-secondary {
+    border: $tag-secondary-border;
+    @include text-style(
+      $font: (
+        small: $tag-secondary-font,
+        large: $tag-secondary-font--large,
+      ),
+      $text-transform: (
+        small: $tag-secondary-text-transform,
+      )
+    );
+  }
+  .c-tag.m-plain {
+    margin: 0;
+  }
+}

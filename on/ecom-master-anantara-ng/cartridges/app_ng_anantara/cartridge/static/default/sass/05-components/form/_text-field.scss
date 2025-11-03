@@ -1,0 +1,6 @@
+$form-text-field-border: 1px solid color(border);
+$form-text-field-radius: 0;
+$form-text-field-padding: rem-calc(0 16);
+$form-text-field-placeholder-color: color(dark);
+$form-text-field-color-disabled: color(primary-active);
+@use "@lora/05-components/form/text-field";

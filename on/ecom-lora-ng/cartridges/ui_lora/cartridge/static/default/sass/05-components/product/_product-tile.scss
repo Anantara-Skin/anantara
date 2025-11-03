@@ -1,0 +1,983 @@
+@use "../button";
+// Tile wrapper
+$product-tile-wrapper-disabled-opacity: 0.5 !default;
+// Tile
+$product-tile-color: color(text) !default;
+$product-tile-default-text-align: $global-left !default;
+$product-tile-font-size: rem-calc(12) !default;
+$product-tile-button-margin: rem-calc(10) 0 0 !default;
+$product-tile-button-min-width: auto !default;
+$product-tile-button-min-width--large: rem-calc(150) !default;
+$product-tile-caption-display: flex !default;
+$product-tile-caption-flex-direction: column !default;
+$product-tile-caption-flex-grow: 1 !default;
+$product-tile-figure-flex-grow: 0 !default;
+$product-tile-caption-inner-flex-grow: 1 !default;
+$product-tile-padding: 0 !default;
+$product-tile-light-mode-price-old-opacity: 0.7 !default;
+$product-tile-dark-mode-price-old-opacity: 0.7 !default;
+// Tile Secondary
+$product-tile-secondary-border: 1px solid color(dark) !default;
+$product-tile-secondary-border--large: null !default;
+$product-tile-secondary-padding: rem-calc(20) !default;
+$product-tile-secondary-padding--large: rem-calc(40) !default;
+$product-tile-secondary-text-align: $global-left !default;
+$product-tile-secondary-text-align--large: null !default;
+/// Tile Secondary actions
+$product-tile-secondary-actions-margin: rem-calc(20 -12 0) !default;
+$product-tile-secondary-actions-margin--large: null !default;
+/// Tile Secondary variations
+$product-tile-secondary-variations-width: 100% !default;
+$product-tile-secondary-variations-width--large: null !default;
+// Tile Selectable
+$product-tile-selectable-border: 1px solid color(transparent) !default;
+$product-tile-selectable-padding: rem-calc(8) !default;
+$product-tile-selectable-active-border-color: color(dark) !default;
+$product-tile-selectable-secondary-active-border-color: color(
+  secondary-active
+) !default;
+// Product add to bag
+$product-tile-add-bag-button-min-width: 100% !default;
+$product-tile-add-bag-button-min-width--large: null !default;
+$product-tile-add-bag-price-font: #{rem-calc(14)} / #{rem-calc(10)}
+  $font-primary !default;
+$product-tile-add-bag-price-font--large: null !default;
+$product-tile-add-bag-price-transform: none !default;
+$product-tile-add-bag-price-transform--large: null !default;
+$product-tile-add-bag-text-font: #{rem-calc(12)} / #{rem-calc(10)} $font-primary !default;
+$product-tile-add-bag-text-font--large: null !default;
+$product-tile-add-bag-text-transform: capitalize !default;
+$product-tile-add-bag-text-transform--large: null !default;
+// Product comparison button
+$product-tile-comparison-button-min-width: 100% !default;
+$product-tile-comparison-button-min-width--large: null !default;
+// Product comparison message
+$product-tile-comparison-message-max-width: $product-tile-comparison-button-min-width--large;
+$product-tile-comparison-message-margin: rem-calc(15 0 0) !default;
+$product-tile-comparison-message-margin--large: rem-calc(8) auto 0 !default;
+// Product brand
+$product-tile-brand-line-height: 1.2 !default;
+$product-tile-brand-line-height--large: $product-tile-brand-line-height !default;
+$product-tile-brand-font-size: rem-calc(12) !default;
+$product-tile-brand-font-size--large: $product-tile-brand-font-size !default;
+$product-tile-brand-max-lines: 1 !default;
+$product-tile-brand-max-lines--large: $product-tile-brand-max-lines !default;
+$product-tile-brand-margin: rem-calc(5 0 0) !default;
+$product-tile-brand-margin--large: null !default;
+// Product name
+$product-tile-name-font-weight: 500 !default;
+$product-tile-name-font-size: rem-calc(14) !default;
+$product-tile-name-font-size--large: $product-tile-name-font-size !default;
+$product-tile-name-font-family: $font-primary !default;
+$product-tile-name-line-height: 1.2 !default;
+$product-tile-name-line-height--large: $product-tile-name-line-height !default;
+$product-tile-name-font: $product-tile-name-font-weight
+  #{$product-tile-name-font-size} / $product-tile-name-line-height
+  $product-tile-name-font-family !default;
+$product-tile-name-color: color(text) !default;
+$product-tile-name-color-hover: color(primary-active) !default;
+$product-tile-name-color-visited: #551a8b !default; // default color of a visited link in Chrome
+$product-tile-name-margin: rem-calc(0 0 8) !default;
+$product-tile-name-margin--large: null !default;
+$product-tile-name-decoration: none !default;
+$product-tile-name-decoration-hover: none !default;
+$product-tile-name-max-lines: 2 !default;
+$product-tile-name-max-lines--large: $product-tile-name-max-lines !default;
+$product-tile-name-text-transform: none !default;
+// Product description
+$product-tile-description-font-weight: 400 !default;
+$product-tile-description-font-style: null !default;
+$product-tile-description-font-size: rem-calc(12) !default;
+$product-tile-description-font-size--large: $product-tile-description-font-size !default;
+$product-tile-description-line-height: 1.17 !default;
+$product-tile-description-line-height--large: $product-tile-description-line-height !default;
+$product-tile-description-font-family: $font-primary !default;
+$product-tile-description-font: $product-tile-description-font-style
+  $product-tile-description-font-weight #{$product-tile-description-font-size} /
+  $product-tile-description-line-height $product-tile-description-font-family !default;
+$product-tile-description-color: color(text-secondary) !default;
+$product-tile-description-max-lines: 2 !default;
+$product-tile-description-max-lines--large: $product-tile-description-max-lines !default;
+$product-tile-description-long-max-lines: 7 !default;
+$product-tile-description-long-max-lines--large: null !default;
+$product-tile-description-margin: rem-calc(0 0 8) !default;
+$product-tile-description-margin--large: null !default;
+$product-tile-description-text-transform: null !default;
+$product-tile-description-letter-spacing: null !default;
+// Product intensity
+$product-tile-intensity-height: null !default;
+// Product info
+$product-tile-info-margin: rem-calc(0 0 8) !default;
+$product-tile-info-margin--large: null !default;
+$product-tile-info-min-height: $body-font-size * $global-lineheight !default;
+$product-tile-info-min-height-multiple-lines: (
+    $body-font-size * $global-lineheight
+  ) *
+  2 !default;
+$product-tile-info-separator: 1px solid color(border) !default;
+$product-tile-info-item-margin: 0 !default;
+$product-tile-info-item-margin--large: 0 !default;
+$product-tile-info-item-align: $global-left !default;
+$product-tile-info-item-align--large: null !default;
+// Display product tile info on multiple line
+$product-tile-info-single-line--medium-down: false !default;
+$product-tile-info-single-line: false !default;
+$product-tile-info-multiple-items-padding--large: rem-calc(0 12) !default;
+$product-tile-info-multiple-items-compact-padding--large: rem-calc(
+  0 5
+) !default;
+$product-tile-info-multiple-items-variations-count-text-align: $global-right !default;
+$product-tile-info-multiple-items-variations-count-text-align--large: $global-right !default;
+// Product actions
+$product-tile-actions-margin: rem-calc(4 0 0) !default;
+$product-tile-actions-margin--large: null !default;
+$product-tile-actions-padding: 0 !default;
+$product-tile-actions-padding--large: null !default;
+$product-tile-actions-placeholder-height: rem-calc(35) !default;
+$product-tile-actions-placeholder-height--large: $product-tile-actions-placeholder-height !default;
+// Product overlay
+$product-tile-overlay-is-enabled: false !default;
+$product-tile-overlay-flex-direction: column !default;
+$product-tile-overlay-align-items: center !default; // Horizontal alignment: center/flex-start/flex-end
+$product-tile-overlay-justify-content: center !default; // Vertical alignment: center/flex-start/flex-end
+$product-tile-overlay-transition:
+  opacity ease 0.4s 0.2s,
+  visibility ease 0.4s 0.2s !default;
+$product-tile-overlay-background: rgba(255, 255, 255, 0.4) !default;
+$product-tile-overlay-button-min-width: rem-calc(130) !default;
+$product-tile-overlay-button-width: auto !default;
+// Product Price
+$product-tile-price-order: null !default;
+$product-tile-price-font: #{rem-calc(14)} / 1.2 $font-primary !default;
+$product-tile-price-font--large: null !default;
+$product-tile-price-color: inherit !default;
+$product-tile-price-color--large: inherit !default;
+$product-tile-price-padding: 0 !default;
+$product-tile-price-padding--large: $product-tile-price-padding !default;
+// Product rating
+$product-tile-rating-font-size: 0 !default;
+$product-tile-rating-order: 0 !default;
+$product-tile-rating-align: $global-left !default;
+$product-tile-rating-align--large: null !default;
+$product-tile-rating-padding: 0 !default;
+$product-tile-rating-padding--large: $product-tile-rating-padding !default;
+$product-tile-rating-margin: rem-calc(0 0 8) !default;
+$product-tile-rating-margin--large: null !default;
+$product-tile-rating-empty-info-item-padding: 0 !default;
+$product-tile-rating-empty-display: none !default;
+$product-tile-rating-height: auto !default;
+$product-tile-rating-review-value-margin: rem-calc(0 4) !default;
+$product-tile-rating-review-value-icon-display: none !default;
+// Product rating star
+$product-tile-rating-star-margin: rem-calc(0 0 2 3) !default;
+// Product Variations Count
+$product-tile-variations-count-font: #{rem-calc(12)} / 1.5 $font-primary !default;
+$product-tile-variations-count-font--large: #{rem-calc(12)} / 1.5 $font-primary !default;
+$product-tile-variations-count-color: color(text-secondary) !default;
+$product-tile-variations-count-color--large: color(text-secondary) !default;
+$product-tile-variations-count-letter-spacing: null !default;
+// Product thumbnail
+$product-tile-thumbnail-background: none !default;
+$product-tile-thumbnail-margin: rem-calc(0 0 12) !default;
+$product-tile-thumbnail-width: 100% !default;
+$product-tile-thumbnail-overlay-button-opacity--large: 1 !default;
+$product-tile-thumbnail-disabled-opacity: 0.3 !default;
+$product-tile-thumbnail-on-hover-badge-opacity: null !default;
+$product-tile-thumbnail-overflow: hidden !default;
+// Small product
+$product-tile-compact-thumbnail-margin: rem-calc(0 0 10) !default;
+// Product variation group
+$product-tile-variation-group-height: rem-calc(47) !default;
+$product-tile-variation-group-height--large: null !default;
+$product-tile-variation-group-margin: rem-calc(12 0) !default;
+$product-tile-variation-group-margin--large: null !default;
+// Product swatch
+$product-tile-swatch-group-padding: null !default;
+$product-tile-swatch-group-padding--large: null !default;
+$product-tile-swatch-group-margin: rem-calc(0 0 4) !default;
+$product-tile-swatch-group-margin--large: null !default;
+$product-tile-swatch-selected-color: color(text) !default;
+$product-tile-swatch-selected-font-size: rem-calc(12) !default;
+$product-tile-swatch-selected-font-size--large: null !default;
+$product-tile-swatch-selected-font-weight: 700 !default;
+$product-tile-swatch-selected-padding: 0 !default;
+$product-tile-swatch-selected-text-align: $global-left !default;
+$product-tile-swatch-selected-text-transform: null !default;
+/// Swatches carousel
+$product-tile-swatch-group-swatches-padding: rem-calc(0 2) !default;
+$product-tile-swatch-group-swatches-padding--large: null !default;
+// Product swatch name
+$product-tile-swatch-name-display: inline-flex !default;
+$product-tile-swatch-name-align-items: center !default;
+$product-tile-swatch-name-gap: rem-calc(0 3) !default;
+$product-tile-swatch-name-margin: rem-calc(0 0 5) !default;
+// Product variations
+$product-tile-variations-margin: 0 auto !default;
+$product-tile-variations-margin--large: null !default;
+$product-tile-variations-padding: rem-calc(7 0 0) !default;
+$product-tile-variations-padding--large: null !default;
+$product-tile-variations-width: 100% !default;
+$product-tile-variations-width--large: null !default;
+// Product variations fullwidth
+$product-tile-variations-fullwidth-margin: null !default;
+// Product variations single label
+$product-tile-variations-label-font: #{rem-calc(12)} / $global-lineheight
+  $font-primary !default;
+$product-tile-variations-label-margin: 0 !default;
+$product-tile-variations-label-color: color(text-secondary) !default;
+$product-tile-variations-label-letter-spacing: null !default;
+// Product badge
+$product-tile-badge-left: 0 !default;
+$product-tile-badge-left--large: null !default;
+$product-tile-badge-top: rem-calc(4) !default;
+$product-tile-badge-top--large: rem-calc(8) !default;
+$product-tile-badge-text-transform: none !default;
+$product-tile-badge-font: #{rem-calc(12)} $font-primary;
+$product-tile-badge-color: inherit !default;
+$product-tile-badge-text-align: $global-left !default;
+$product-tile-badge-max-width: 40% !default;
+$product-tile-badge-max-width--large: null !default;
+$product-tile-badge-width--large: null !default;
+$product-tile-badge-transition: opacity ease 0.4s 0.2s !default;
+/// Selectable tile, badge
+$product-tile-selectable-badge-left: null !default;
+$product-tile-selectable-badge-left--large: null !default;
+$product-tile-selectable-badge-top: 0 !default;
+$product-tile-selectable-badge-top--large: null !default;
+// Product wishlist
+$product-tile-wishlist-right: rem-calc(4) !default;
+$product-tile-wishlist-right--large: rem-calc(8) !default;
+$product-tile-wishlist-top: rem-calc(4) !default;
+$product-tile-wishlist-top--large: rem-calc(8) !default;
+/// Selectable tile, wishlist
+$product-tile-selectable-wishlist-top: 0 !default;
+$product-tile-selectable-wishlist-top--large: null !default;
+$product-tile-selectable-wishlist-right: 0 !default;
+$product-tile-selectable-wishlist-right--large: null !default;
+// Product price capacity
+$product-tile-price-capacity-margin: rem-calc(15 0 0) !default;
+$product-tile-price-capacity-margin--large: rem-calc(8 0 0) !default;
+$product-tile-price-capacity-padding: 0 !default;
+$product-tile-price-capacity-padding--large: null !default;
+$product-tile-price-capacity-min-height: rem-calc(18) !default;
+$product-tile-price-capacity-min-height--large: null !default;
+// Dark mode
+$product-tile-wrapper-dark-mode-padding: rem-calc(20 10) !default;
+$product-tile-wrapper-dark-mode-padding--large: rem-calc(20) !default;
+// Check field
+$product-tile-check-field-left: rem-calc(8) !default;
+$product-tile-check-field-left--large: null !default;
+$product-tile-check-field-top: rem-calc(8) !default;
+$product-tile-check-field-top--large: null !default;
+/// Selectable tile, check field
+$product-tile-selectable-check-field-left: rem-calc(16) !default;
+$product-tile-selectable-check-field-left--large: null !default;
+$product-tile-selectable-check-field-top: rem-calc(16) !default;
+$product-tile-selectable-check-field-top--large: null !default;
+@mixin lora-components-product-tile {
+  $overlay-pseudo-element: if(
+    $product-tile-overlay-is-enabled,
+    "::after",
+    null
+  );
+  .c-product-tile__config {
+    &.m-hide-badge {
+      .c-product-badge {
+        display: none;
+      }
+    }
+  }
+  .c-product-tile__wrapper {
+    position: relative;
+    height: 100%;
+    &.m-dark {
+      background: color(light);
+      padding: $product-tile-wrapper-dark-mode-padding;
+      @include breakpoint(large) {
+        padding: $product-tile-wrapper-dark-mode-padding--large;
+      }
+    }
+    &.m-disabled {
+      opacity: $product-tile-wrapper-disabled-opacity;
+      cursor: default;
+    }
+  }
+  .c-product-tile {
+    color: $product-tile-color;
+    display: flex;
+    flex-flow: column;
+    font-size: $product-tile-font-size;
+    height: 100%;
+    position: relative;
+    padding: $product-tile-padding;
+    text-align: $product-tile-default-text-align;
+    &.m-color-light {
+      color: color(light);
+      .c-product-tile__name,
+      .c-product-tile__name a,
+      .c-product-tile__description,
+      .c-product-tile__variations-count,
+      .c-product-tile__price,
+      .c-product-tile__caption-inner .c-product-price__value,
+      .c-price-capacity,
+      .c-product-tile__caption-inner .c-product-price__value.m-old,
+      .c-product-tile__swatch-selected,
+      .c-product-tile__variations-label {
+        color: color(light);
+      }
+      .c-product-price__value.m-old {
+        opacity: $product-tile-light-mode-price-old-opacity;
+      }
+    }
+    &.m-color-dark {
+      color: color(dark);
+      .c-product-tile__name,
+      .c-product-tile__name a,
+      .c-product-tile__description,
+      .c-product-tile__variations-count,
+      .c-product-tile__price,
+      .c-product-tile__caption-inner .c-product-price__value,
+      .c-price-capacity,
+      .c-product-tile__caption-inner .c-product-price__value.m-old,
+      .c-product-tile__swatch-selected,
+      .c-product-tile__variations-label {
+        color: color(dark);
+      }
+      .c-product-price__value.m-old {
+        opacity: $product-tile-dark-mode-price-old-opacity;
+      }
+    }
+    .c-product-add-bag__price {
+      font: $product-tile-add-bag-price-font;
+      text-transform: $product-tile-add-bag-price-transform;
+      @include breakpoint(large) {
+        font: $product-tile-add-bag-price-font--large;
+        text-transform: $product-tile-add-bag-price-transform--large;
+      }
+    }
+    .c-product-add-bag__text {
+      font: $product-tile-add-bag-text-font;
+      text-transform: $product-tile-add-bag-text-transform;
+      @include breakpoint(large) {
+        font: $product-tile-add-bag-text-font--large;
+        text-transform: $product-tile-add-bag-text-transform--large;
+      }
+    }
+  }
+  .c-product-tile.m-secondary {
+    border: $product-tile-secondary-border;
+    padding: $product-tile-secondary-padding;
+    text-align: $product-tile-secondary-text-align;
+    @include breakpoint(large) {
+      border: $product-tile-secondary-border--large;
+      padding: $product-tile-secondary-padding--large;
+      text-align: $product-tile-secondary-text-align--large;
+    }
+    .c-product-tile__actions {
+      display: flex;
+      margin: $product-tile-secondary-actions-margin;
+      @include breakpoint(large) {
+        margin: $product-tile-secondary-actions-margin--large;
+      }
+    }
+    .c-product-tile__variations {
+      width: $product-tile-secondary-variations-width;
+      @include breakpoint(large) {
+        width: $product-tile-secondary-variations-width--large;
+      }
+    }
+  }
+  .c-product-tile.m-selectable,
+  .c-product-tile.m-selectable--secondary {
+    border: $product-tile-selectable-border;
+    padding: $product-tile-selectable-padding;
+    &.m-active,
+    .c-product-tile__wrapper.m-active & {
+      border-color: $product-tile-selectable-active-border-color;
+    }
+    .c-product-tile__wishlist {
+      top: $product-tile-selectable-wishlist-top;
+      #{$global-right}: $product-tile-selectable-wishlist-right;
+      @include breakpoint(large) {
+        top: $product-tile-selectable-wishlist-top--large;
+        #{$global-right}: $product-tile-selectable-wishlist-right--large;
+      }
+    }
+    .c-product-tile__badge {
+      #{$global-left}: $product-tile-selectable-badge-left;
+      top: $product-tile-selectable-badge-top;
+      @include breakpoint(large) {
+        #{$global-left}: $product-tile-selectable-badge-left--large;
+        top: $product-tile-selectable-badge-top--large;
+      }
+    }
+    .c-product-tile__check-field {
+      top: $product-tile-selectable-check-field-top;
+      #{$global-left}: $product-tile-selectable-check-field-left;
+      @include breakpoint(large) {
+        top: $product-tile-selectable-check-field-top--large;
+        #{$global-left}: $product-tile-selectable-check-field-left--large;
+      }
+    }
+  }
+  .c-product-tile.m-selectable--secondary {
+    &.m-active,
+    .c-product-tile__wrapper.m-active & {
+      border-color: $product-tile-selectable-secondary-active-border-color;
+    }
+  }
+  // Required for the case when the whole tile is clickable, while in other places it can be selected with the CTA inside
+  .c-product-tile.m-clickable {
+    cursor: pointer;
+  }
+  .c-product-tile.m-compact {
+    .c-product-tile__thumbnail {
+      margin: $product-tile-compact-thumbnail-margin;
+    }
+    // stylelint-disable max-nesting-depth
+    .c-product-tile__info.m-multiple-items {
+      .c-product-tile__info-item {
+        @include breakpoint(large) {
+          @if ($product-tile-info-single-line) {
+            padding: $product-tile-info-multiple-items-compact-padding--large;
+            &:first-child {
+              padding-#{$global-left}: 0;
+            }
+            &:last-child {
+              padding-#{$global-right}: 0;
+            }
+          }
+        }
+      }
+    }
+    // stylelint-enable max-nesting-depth
+  }
+  .c-product-tile.m-disabled {
+    .c-product-tile__thumbnail {
+      opacity: $product-tile-thumbnail-disabled-opacity;
+    }
+  }
+  .c-product-tile__figure {
+    flex-grow: $product-tile-figure-flex-grow;
+  }
+  .c-product-tile__caption {
+    display: $product-tile-caption-display;
+    flex-flow: $product-tile-caption-flex-direction;
+    flex-grow: $product-tile-caption-flex-grow;
+    min-width: 0;
+  }
+  .c-product-tile__caption-inner {
+    flex-grow: $product-tile-caption-inner-flex-grow;
+  }
+  .c-product-add-bag__button {
+    min-width: $product-tile-add-bag-button-min-width;
+    @include breakpoint(large) {
+      min-width: $product-tile-add-bag-button-min-width--large;
+    }
+    &.m-loading::after {
+      display: none;
+    }
+  }
+  .c-product-comparison__button {
+    min-width: $product-tile-comparison-button-min-width;
+    @include breakpoint(large) {
+      min-width: $product-tile-comparison-button-min-width--large;
+    }
+  }
+  .c-product-tile__brand {
+    line-height: $product-tile-brand-line-height;
+    font-size: $product-tile-brand-font-size;
+    min-height: $product-tile-brand-line-height *
+      $product-tile-brand-font-size * $product-tile-brand-max-lines;
+    margin: $product-tile-brand-margin;
+    @include text-line-clamp($product-tile-brand-max-lines);
+    @include breakpoint(large) {
+      margin: $product-tile-brand-margin--large;
+      min-height: $product-tile-brand-line-height--large *
+        $product-tile-brand-font-size--large *
+        $product-tile-brand-max-lines--large;
+      @include text-line-clamp($product-tile-brand-max-lines--large);
+    }
+  }
+  .c-product-tile__name {
+    color: $product-tile-name-color;
+    font: $product-tile-name-font;
+    min-height: $product-tile-name-line-height * $product-tile-name-font-size *
+      $product-tile-name-max-lines;
+    margin: $product-tile-name-margin;
+    text-transform: $product-tile-name-text-transform;
+    @include text-line-clamp($product-tile-name-max-lines);
+    @include breakpoint(large) {
+      font-size: $product-tile-name-font-size--large;
+      min-height: $product-tile-name-line-height--large *
+        $product-tile-name-font-size--large *
+        $product-tile-name-max-lines--large;
+      margin: $product-tile-name-margin--large;
+      @include text-line-clamp($product-tile-name-max-lines--large);
+    }
+  }
+  .c-product-tile__name a {
+    @include text-line-clamp($product-tile-name-max-lines);
+    color: $product-tile-name-color;
+    text-decoration: $product-tile-name-decoration;
+    text-transform: $product-tile-name-text-transform;
+    @include breakpoint(large) {
+      @include text-line-clamp($product-tile-name-max-lines--large);
+    }
+    &:hover,
+    &:focus {
+      color: $product-tile-name-color-hover;
+      text-decoration: $product-tile-name-decoration-hover;
+    }
+    &:visited {
+      color: $product-tile-name-color-visited;
+    }
+  }
+  .c-product-tile__description {
+    color: $product-tile-description-color;
+    font: $product-tile-description-font;
+    min-height: $product-tile-description-line-height *
+      $product-tile-description-font-size * $product-tile-description-max-lines;
+    margin: $product-tile-description-margin;
+    text-transform: $product-tile-description-text-transform;
+    letter-spacing: $product-tile-description-letter-spacing;
+    @include text-line-clamp($product-tile-description-max-lines);
+    @include breakpoint(large) {
+      font-size: $product-tile-description-font-size--large;
+      line-height: $product-tile-description-line-height--large;
+      min-height: $product-tile-description-line-height--large *
+        $product-tile-description-font-size--large *
+        $product-tile-description-max-lines--large;
+      margin: $product-tile-description-margin--large;
+      @include text-line-clamp($product-tile-description-max-lines--large);
+    }
+    &.m-long {
+      @include text-line-clamp($product-tile-description-long-max-lines);
+      @include breakpoint(large) {
+        @include text-line-clamp(
+          $product-tile-description-long-max-lines--large
+        );
+      }
+    }
+  }
+  .c-product-tile__intensity {
+    height: $product-tile-intensity-height;
+  }
+  .c-product-tile__info {
+    display: flex;
+    margin: $product-tile-info-margin;
+    min-height: $product-tile-info-min-height;
+    @if ($product-tile-info-single-line) {
+      flex-flow: row nowrap;
+    } @else {
+      flex-flow: column;
+    }
+    @include breakpoint(medium down) {
+      @if ($product-tile-info-single-line--medium-down) {
+        flex-flow: row nowrap;
+      } @else {
+        flex-flow: column;
+        min-height: $product-tile-info-min-height-multiple-lines;
+      }
+    }
+    @include breakpoint(large) {
+      margin: $product-tile-info-margin--large;
+    }
+  }
+  .c-product-tile__info-item {
+    margin: $product-tile-info-item-margin;
+    @include breakpoint(large) {
+      margin: $product-tile-info-item-margin--large;
+      width: 100%;
+    }
+  }
+  .c-product-tile__info.m-multiple-items {
+    @if ($product-tile-info-single-line) {
+      align-items: baseline;
+      justify-content: space-around;
+    }
+    .c-product-tile__info-item {
+      @if ($product-tile-info-single-line) {
+        align-self: center;
+      }
+      text-align: $product-tile-info-item-align;
+      @include breakpoint(large) {
+        @if ($product-tile-info-single-line) {
+          border-#{$global-left}: $product-tile-info-separator;
+          padding: $product-tile-info-multiple-items-padding--large;
+          // stylelint-disable max-nesting-depth
+          &:first-child {
+            padding-#{$global-left}: 0;
+            border-#{$global-left}: none;
+          }
+          &:last-child {
+            padding-#{$global-right}: 0;
+          }
+          // stylelint-enable max-nesting-depth
+        }
+        text-align: $product-tile-info-item-align--large;
+      }
+    }
+    .c-product-tile__variations-count {
+      text-align: $product-tile-info-multiple-items-variations-count-text-align;
+      @include breakpoint(large) {
+        text-align: $product-tile-info-multiple-items-variations-count-text-align--large;
+      }
+    }
+  }
+  .c-product-tile__rating {
+    font-size: $product-tile-rating-font-size;
+    text-align: $product-tile-rating-align;
+    order: $product-tile-rating-order;
+    padding: $product-tile-rating-padding;
+    margin: $product-tile-rating-margin;
+    height: $product-tile-rating-height;
+    @include breakpoint(large) {
+      text-align: $product-tile-rating-align--large;
+      @if ($product-tile-info-single-line) {
+        padding: $product-tile-rating-padding--large;
+        margin: $product-tile-rating-margin--large;
+        border-#{$global-left}: none;
+      }
+    }
+    .c-rating__star {
+      margin: $product-tile-rating-star-margin;
+      &:first-child {
+        margin-#{$global-left}: 0;
+      }
+    }
+    .c-rating__review-value {
+      margin: $product-tile-rating-review-value-margin;
+      &:first-child {
+        margin-#{$global-left}: 0;
+      }
+      &:last-child {
+        margin-#{$global-right}: 0;
+      }
+      &::before {
+        display: $product-tile-rating-review-value-icon-display;
+      }
+    }
+  }
+  .c-product-tile__rating:empty {
+    display: $product-tile-rating-empty-display;
+    @if ($product-tile-info-single-line) {
+      & + .c-product-tile__info-item {
+        border: none;
+        text-align: inherit;
+        padding: $product-tile-rating-empty-info-item-padding;
+      }
+    }
+  }
+  .c-product-tile__variations-count {
+    color: $product-tile-variations-count-color;
+    font: $product-tile-variations-count-font;
+    letter-spacing: $product-tile-variations-count-letter-spacing;
+    @include breakpoint(large) {
+      color: $product-tile-variations-count-color--large;
+      font: $product-tile-variations-count-font--large;
+    }
+  }
+  .c-product-tile__price {
+    order: $product-tile-price-order;
+    font: $product-tile-price-font;
+    color: $product-tile-price-color;
+    padding: $product-tile-price-padding;
+    @include breakpoint(large) {
+      font: $product-tile-price-font--large;
+      padding: $product-tile-price-padding--large;
+    }
+    .c-product-price {
+      display: inline;
+    }
+  }
+  .c-product-tile__thumbnail {
+    background: $product-tile-thumbnail-background;
+    margin: $product-tile-thumbnail-margin;
+    position: relative;
+    width: $product-tile-thumbnail-width;
+    overflow: $product-tile-thumbnail-overflow;
+    // Trick to avoid height 0 when image is not there yet and avoid jumping effect
+    &::after {
+      content: "";
+      display: block;
+      height: 0;
+      width: 100%;
+      padding-bottom: 100%;
+    }
+    @include breakpoint(large) {
+      &:hover,
+      &:focus {
+        .c-product-tile__overlay,
+        .c-product-tile__overlay#{$overlay-pseudo-element},
+        .c-product-tile__overlay .c-product-tile__button {
+          opacity: $product-tile-thumbnail-overlay-button-opacity--large;
+        }
+        // stylelint-disable max-nesting-depth, selector-max-compound-selectors
+        .c-product-image.m-with-alternatives {
+          .c-product-image__primary {
+            opacity: 0;
+          }
+          .c-product-image__secondary {
+            opacity: 1;
+          }
+        }
+        // stylelint-enable max-nesting-depth, selector-max-compound-selectors
+        .c-product-tile__badge {
+          opacity: $product-tile-thumbnail-on-hover-badge-opacity;
+        }
+      }
+    }
+    .c-product-image__secondary {
+      display: block;
+    }
+    .c-product-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .c-product-image__carousel,
+    .c-product-image__carousel .c-carousel,
+    .c-product-image__carousel .c-carousel__inner {
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      #{$global-left}: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+  .c-product-tile__button {
+    @include lora-helper-button-expand;
+    margin: $product-tile-button-margin;
+    min-width: $product-tile-button-min-width;
+    @include breakpoint(large) {
+      min-width: $product-tile-button-min-width--large;
+    }
+  }
+  .c-product-tile__overlay {
+    display: none;
+    @if ($product-tile-overlay-is-enabled) {
+      &#{$overlay-pseudo-element} {
+        @include breakpoint(large) {
+          content: "";
+          opacity: 0;
+          transition: $product-tile-overlay-transition;
+          background: $product-tile-overlay-background;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    @include breakpoint(large) {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      #{$global-left}: 0;
+      flex-flow: $product-tile-overlay-flex-direction;
+      align-items: $product-tile-overlay-align-items;
+      justify-content: $product-tile-overlay-justify-content;
+      pointer-events: none;
+      .c-product-tile__button {
+        opacity: 0;
+        white-space: nowrap;
+        transition: $product-tile-overlay-transition;
+        min-width: $product-tile-overlay-button-min-width;
+        width: $product-tile-overlay-button-width;
+        pointer-events: visible;
+        z-index: 1; // stylelint-disable-line
+        &:focus {
+          opacity: $product-tile-thumbnail-overlay-button-opacity--large;
+        }
+      }
+    }
+  }
+  .c-product-tile__variations {
+    max-width: 100%;
+    width: $product-tile-variations-width;
+    margin: $product-tile-variations-margin;
+    padding: $product-tile-variations-padding;
+    @include breakpoint(large) {
+      margin: $product-tile-variations-margin--large;
+      padding: $product-tile-variations-padding--large;
+      width: $product-tile-variations-width--large;
+    }
+    &.m-fullwidth {
+      margin: $product-tile-variations-fullwidth-margin;
+      width: 100%;
+    }
+  }
+  .c-product-tile__variations-group {
+    display: flex;
+    flex-flow: column;
+    height: $product-tile-variation-group-height;
+    margin: $product-tile-variation-group-margin;
+    @include breakpoint(large) {
+      height: $product-tile-variation-group-height--large;
+      margin: $product-tile-variation-group-margin--large;
+    }
+  }
+  .c-product-tile__swatch-group {
+    display: block;
+    padding: $product-tile-swatch-group-padding;
+    margin: $product-tile-swatch-group-margin;
+    position: relative;
+    @include breakpoint(large) {
+      padding: $product-tile-swatch-group-padding--large;
+      margin: $product-tile-swatch-group-margin--large;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .c-swatches {
+      padding: $product-tile-swatch-group-swatches-padding;
+      @include breakpoint(large) {
+        padding: $product-tile-swatch-group-swatches-padding--large;
+      }
+    }
+  }
+  .c-product-tile__swatch-name {
+    display: $product-tile-swatch-name-display;
+    align-items: $product-tile-swatch-name-align-items;
+    gap: $product-tile-swatch-name-gap;
+    margin: $product-tile-swatch-name-margin;
+    max-width: 100%;
+  }
+  .c-product-tile__swatch-selected {
+    @include text-truncate;
+    color: $product-tile-swatch-selected-color;
+    font-size: $product-tile-swatch-selected-font-size;
+    font-weight: $product-tile-swatch-selected-font-weight;
+    padding: $product-tile-swatch-selected-padding;
+    text-align: $product-tile-swatch-selected-text-align;
+    text-transform: $product-tile-swatch-selected-text-transform;
+    @include breakpoint(large) {
+      font-size: $product-tile-swatch-selected-font-size--large;
+    }
+  }
+  .c-product-tile__variations-label {
+    @include text-truncate;
+    font: $product-tile-variations-label-font;
+    margin: $product-tile-variations-label-margin;
+    color: $product-tile-variations-label-color;
+    letter-spacing: $product-tile-variations-label-letter-spacing;
+    flex-shrink: 0;
+  }
+  .c-product-tile__actions {
+    margin: $product-tile-actions-margin;
+    padding: $product-tile-actions-padding;
+    @include breakpoint(large) {
+      margin: $product-tile-actions-margin--large;
+      padding: $product-tile-actions-padding--large;
+    }
+    &.m-add-bag-disabled {
+      &:not(.m-comparison) {
+        @include breakpoint(large) {
+          display: none;
+        }
+      }
+      .c-carousel__content.m-show-add-bag-placeholder & {
+        height: $product-tile-actions-placeholder-height;
+        @include breakpoint(large) {
+          display: block;
+          height: $product-tile-actions-placeholder-height--large;
+        }
+      }
+    }
+    &:not(.m-comparison) {
+      .c-product-comparison__message {
+        display: none;
+      }
+    }
+    .c-product-comparison__message {
+      margin: $product-tile-comparison-message-margin;
+      @include breakpoint(large) {
+        margin: $product-tile-comparison-message-margin--large;
+        max-width: $product-tile-comparison-message-max-width;
+      }
+    }
+    .c-product-tile__button {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    &.m-comparison {
+      .c-product-add-bag__button,
+      .c-product-tile__button {
+        display: none;
+      }
+    }
+  }
+  .c-product-tile__wishlist {
+    position: absolute;
+    #{$global-right}: $product-tile-wishlist-right;
+    top: $product-tile-wishlist-top;
+    transform: translate3d(0, 0, 0); // FIX blinking items on IOS - NGLORA-2585
+    @include breakpoint(large) {
+      top: $product-tile-wishlist-top--large;
+      #{$global-right}: $product-tile-wishlist-right--large;
+    }
+  }
+  .c-product-tile__badge {
+    font: $product-tile-badge-font;
+    #{$global-left}: $product-tile-badge-left;
+    max-width: $product-tile-badge-max-width;
+    position: absolute;
+    text-align: $product-tile-badge-text-align;
+    top: $product-tile-badge-top;
+    text-transform: $product-tile-badge-text-transform;
+    color: $product-tile-badge-color;
+    transition: $product-tile-badge-transition;
+    @include breakpoint(large) {
+      #{$global-left}: $product-tile-badge-left--large;
+      max-width: $product-tile-badge-max-width--large;
+      width: $product-tile-badge-width--large;
+      top: $product-tile-badge-top--large;
+    }
+    img {
+      position: static;
+      width: auto;
+    }
+    @if $product-tile-badge-left == 0 {
+      .c-product-badge__title {
+        border-top-#{$global-left}-radius: 0;
+        border-bottom-#{$global-left}-radius: 0;
+      }
+    }
+    @if $product-tile-badge-left--large == 0 {
+      @include breakpoint(large) {
+        .c-product-badge__title {
+          border-top-#{$global-left}-radius: 0;
+          border-bottom-#{$global-left}-radius: 0;
+        }
+      }
+    }
+  }
+  .c-product-tile__price-capacity {
+    margin: $product-tile-price-capacity-margin;
+    padding: $product-tile-price-capacity-padding;
+    min-height: $product-tile-price-capacity-min-height;
+    @include breakpoint(large) {
+      margin: $product-tile-price-capacity-margin--large;
+      padding: $product-tile-price-capacity-padding--large;
+      min-height: $product-tile-price-capacity-min-height--large;
+    }
+  }
+  .c-product-tile__check-field {
+    position: absolute;
+    top: $product-tile-check-field-top;
+    #{$global-left}: $product-tile-check-field-left;
+    @include breakpoint(large) {
+      top: $product-tile-check-field-top--large;
+      #{$global-left}: $product-tile-check-field-left--large;
+    }
+  }
+}

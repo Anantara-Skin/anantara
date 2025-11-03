@@ -1,0 +1,212 @@
+$progress-bar-height: rem-calc(7) !default;
+$progress-bar-border-width: rem-calc(1) !default;
+$progress-bar-border: $progress-bar-border-width solid color(primary) !default;
+$progress-bar-margin: rem-calc(10 0) !default;
+$progress-bar-padding: 0 !default;
+$progress-bar-background-color: color(light) !default;
+$progress-bar-border-radius: rem-calc(3.5) !default;
+// Value
+$progress-bar-value-background-color: color(primary) !default;
+$progress-bar-value-secondary-background-color: color(secondary) !default;
+$progress-bar-secondary-active-background-color: null !default;
+// Icon, before
+$progress-bar-before-size: rem-calc(15) !default;
+$progress-bar-before-icon: cross !default;
+$progress-bar-before-icon-color: color(primary) !default;
+$progress-bar-before-icon-size: rem-calc(7) !default;
+$progress-bar-before-icon-usesvg: false !default;
+/// Active
+$progress-bar-before-active-icon: tick !default;
+$progress-bar-before-active-icon-color: color(light) !default;
+$progress-bar-before-active-icon-size: rem-calc(9) !default;
+$progress-bar-before-active-icon-usesvg: false !default;
+$progress-bar-before-background-color: $progress-bar-background-color !default;
+$progress-bar-before-active-background-color: $progress-bar-value-background-color !default;
+$progress-bar-after-background-color: $progress-bar-background-color !default;
+$progress-bar-after-active-background-color: $progress-bar-value-background-color !default;
+$progress-bar-point-descriptions-margin: rem-calc(30 0 0) !default;
+$progress-bar-container-padding: rem-calc(10 0) !default;
+$progress-bar-point-description-margin: rem-calc(0 0 0 8) !default;
+$progress-bar-point-description-color: color(text-secondary) !default;
+$progress-bar-point-description-active-color: color(dark) !default;
+$progress-bar-point-description-font: 450 #{rem-calc(12)} / 1.4 $font-primary !default;
+$progress-bar-point-description-active-font: 700 #{rem-calc(12)} / 1.4
+  $font-primary !default;
+$progress-bar-toggle-link-text-decoration: underline !default;
+$progress-bar-point-price-top: rem-calc(23) !default;
+$progress-bar-point-price-color: color(text-secondary) !default;
+$progress-bar-point-price-active-color: color(dark) !default;
+$progress-bar-point-price-font: 450 #{rem-calc(12)} / 1.2 $font-primary !default;
+$progress-bar-point-price-active-font: 700 #{rem-calc(12)} / 1.2 $font-primary !default;
+@mixin lora-helper-progress-bar-point {
+  @include svg-icon(
+    $progress-bar-before-icon,
+    $progress-bar-before-icon-color,
+    $progress-bar-before-icon-size,
+    center,
+    no-repeat,
+    $usesvg: $progress-bar-before-icon-usesvg
+  );
+  width: $progress-bar-before-size;
+  height: $progress-bar-before-size;
+  border: $progress-bar-border;
+  background-color: $progress-bar-before-background-color;
+  border-radius: 50%;
+}
+@mixin lora-helper-progress-bar-point-active {
+  @include svg-icon(
+    $progress-bar-before-active-icon,
+    $progress-bar-before-active-icon-color,
+    $progress-bar-before-active-icon-size,
+    center,
+    no-repeat,
+    $color-change: true,
+    $usesvg: $progress-bar-before-active-icon-usesvg
+  );
+  background-color: $progress-bar-before-active-background-color;
+}
+// Removing the bullet point border from a side
+@mixin lora-helper-progress-bar-point-side($side) {
+  position: absolute;
+  #{$side}: $progress-bar-before-size - (3 * $progress-bar-border-width);
+  top: 50%;
+  transform: translate(0, -50%);
+  height: $progress-bar-height - (2 * $progress-bar-border-width);
+  background-color: $progress-bar-after-background-color;
+  width: $progress-bar-border-width * 2;
+}
+@mixin lora-helper-progress-bar-point-side-active {
+  background-color: $progress-bar-after-active-background-color;
+}
+@mixin lora-components-progress-bar {
+  .c-progress-bar {
+    position: relative;
+    width: 100%;
+    height: $progress-bar-height;
+    border: $progress-bar-border;
+    border-radius: $progress-bar-border-radius;
+    margin: $progress-bar-margin;
+    padding: $progress-bar-padding;
+    appearance: none;
+    &:not(.m-multiple):not(.m-no-icon) {
+      &::before {
+        @include lora-helper-progress-bar-point;
+        @include vertical-center;
+        content: "";
+        right: -#{$progress-bar-border-width};
+      }
+      &::after {
+        @include lora-helper-progress-bar-point-side(right);
+        content: "";
+      }
+    }
+    &::-webkit-progress-bar {
+      background-color: $progress-bar-background-color;
+      border-radius: $progress-bar-border-radius;
+      overflow: hidden;
+    }
+    &::-webkit-progress-value {
+      background-color: $progress-bar-value-background-color;
+    }
+    /* Firefox provides a single pseudo class to style the progress element value and not for container. -moz-progress-bar */
+    &::-moz-progress-bar {
+      background-color: $progress-bar-value-background-color;
+    }
+    &.m-secondary {
+      &::-webkit-progress-value {
+        background-color: $progress-bar-value-secondary-background-color;
+      }
+      /* Firefox provides a single pseudo class to style the progress element value and not for container. -moz-progress-bar */
+      &::-moz-progress-bar {
+        background-color: $progress-bar-value-secondary-background-color;
+      }
+      & + .c-progress-bar__points .c-progress-bar__point.m-active {
+        background-color: $progress-bar-secondary-active-background-color;
+      }
+    }
+  }
+  .c-progress-bar__container {
+    position: relative;
+    font-size: 0;
+    line-height: 1;
+    width: 100%;
+  }
+  .c-progress-bar__points {
+    @include vertical-center;
+    left: 0;
+    width: 100%;
+    font-size: 0;
+  }
+  .c-progress-bar__point {
+    @include lora-helper-progress-bar-point;
+    display: inline-block;
+    position: relative;
+    .c-progress-bar__points & {
+      &:not(.m-absolute) {
+        &::before {
+          @include lora-helper-progress-bar-point-side(left);
+          content: "";
+        }
+        &::after {
+          @include lora-helper-progress-bar-point-side(right);
+          content: "";
+        }
+      }
+      &.m-active {
+        &::before {
+          @include lora-helper-progress-bar-point-side-active;
+        }
+        &::after {
+          @include lora-helper-progress-bar-point-side-active;
+        }
+      }
+    }
+    &.m-active {
+      @include lora-helper-progress-bar-point-active;
+      .c-progress-bar__point-price {
+        color: $progress-bar-point-price-active-color;
+        font: $progress-bar-point-price-active-font;
+      }
+    }
+    &.m-absolute {
+      @include absolute-center;
+      &.m-last {
+        left: calc(100% - (#{$progress-bar-before-size} / 2));
+      }
+    }
+    &.m-absolute:last-child {
+      .c-progress-bar__point-price {
+        right: 0;
+        left: auto;
+        transform: translateX(0);
+      }
+    }
+  }
+  .c-progress-bar__point-descriptions {
+    margin: $progress-bar-point-descriptions-margin;
+  }
+  .c-progress-bar__point-description {
+    margin: $progress-bar-point-description-margin;
+    color: $progress-bar-point-description-color;
+    font: $progress-bar-point-description-font;
+    &.m-active {
+      color: $progress-bar-point-description-active-color;
+      font: $progress-bar-point-description-active-font;
+    }
+  }
+  .c-progress-bar__point-row {
+    display: flex;
+    .c-progress-bar__point {
+      flex: 0 0 auto;
+    }
+  }
+  .c-progress-bar__toggle-link {
+    text-decoration: $progress-bar-toggle-link-text-decoration;
+  }
+  .c-progress-bar__point-price {
+    @include horizontal-center;
+    font: $progress-bar-point-price-font;
+    top: $progress-bar-point-price-top;
+    color: $progress-bar-point-price-color;
+  }
+}

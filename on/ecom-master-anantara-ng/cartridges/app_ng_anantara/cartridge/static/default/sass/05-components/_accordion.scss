@@ -1,0 +1,15 @@
+$accordion-icon: "\203a";
+$accordion-icon-expanded: "\203a";
+$accordion-icon-transform: rotateZ(90deg);
+$accordion-icon-expanded-transform: rotateZ(0);
+$accordion-icon-font-size: rem-calc(16);
+$accordion-icon-margin: rem-calc(0 16);
+$accordion-title-padding: rem-calc(14 60 14 0);
+$accordion-title-font: #{rem-calc(14)} / 1.5 $font-primary;
+$accordion-title-text-transform: none;
+$accordion-icon-width: rem-calc(25);
+// Secondary
+$accordion-title-secondary-collapsed-font: #{rem-calc(14)} / 1.5 $font-primary;
+$accordion-title-secondary-color-expanded: color(primary);
+$accordion-title-secondary-background-color-expanded: color(light);
+@use "@lora/05-components/accordion";

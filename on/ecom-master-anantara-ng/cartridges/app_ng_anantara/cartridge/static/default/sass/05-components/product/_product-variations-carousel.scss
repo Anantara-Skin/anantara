@@ -1,0 +1,10 @@
+$product-variations-carousel-link-border-radius: 0;
+$product-variations-carousel-link-font: #{rem-calc(14)} / 1.2 $font-primary;
+// Selected state
+$product-variations-carousel-link-selected-background: color(light);
+$product-variations-carousel-link-selected-font: 550 #{rem-calc(14)} / 1.2
+  $font-primary-medium;
+$product-variations-carousel-link-padding: rem-calc(8);
+$product-variations-carousel-link-hover-border: 1px solid
+  color(organism-background);
+@use "@lora/05-components/product/product-variations-carousel";

@@ -1,0 +1,94 @@
+// Product set
+$product-set-border-top: 1px solid color(border) !default;
+$product-set-padding: rem-calc(20 0 0) !default;
+$product-set-padding--large: null !default;
+$product-set-margin: rem-calc(20 0 0) !default;
+$product-set-margin--large: null !default;
+// Product set subtitle
+$product-set-subtitle-font: #{rem-calc(18)} / 1.25 $font-primary !default;
+$product-set-subtitle-text-transform: none !default;
+$product-set-subtitle-margin: rem-calc(0 0 30) !default;
+$product-set-subtitle-padding: 0 !default;
+$product-set-border-bottom: none !default;
+$product-set-subtitle-color: null !default;
+// Product set list and item
+$product-set-list-style-type: none !default;
+$product-set-list-margin: 0 !default;
+$product-set-item-margin: rem-calc(0 0 20) !default;
+// Separator
+$product-set-separator-font-size: rem-calc(13) !default;
+$product-set-separator-color: color(border) !default;
+$product-set-separator-margin: rem-calc(15 0) !default;
+$product-set-separator-z-index: 0 !default;
+$product-set-separator-text-align: center !default;
+// Separator title
+$product-set-separator-title-background-color: color(light) !default;
+$product-set-separator-title-padding: rem-calc(0 10) !default;
+$product-set-separator-title-text-transform: uppercase !default;
+$product-set-separator-title-border: 1px solid color(border) !default;
+$product-set-separator-title-border-radius: 50% !default;
+$product-set-separator-title-width: rem-calc(30) !default;
+$product-set-separator-title-height: rem-calc(30) !default;
+$product-set-separator-title-line-height: rem-calc(28) !default;
+$product-set-separator-title-display: inline-block !default;
+// Separator: before element
+$product-set-separator-before-border-top: 1px solid color(border) !default;
+$product-set-separator-before-top: 50% !default;
+$product-set-separator-before-z-index: -1 !default;
+@mixin lora-components-product-set {
+  .c-product-set {
+    border-top: $product-set-border-top;
+    padding: $product-set-padding;
+    margin: $product-set-margin;
+    @include breakpoint(large) {
+      margin: $product-set-margin--large;
+      padding: $product-set-padding--large;
+    }
+  }
+  .c-product-set__subtitle {
+    font: $product-set-subtitle-font;
+    text-transform: $product-set-subtitle-text-transform;
+    margin: $product-set-subtitle-margin;
+    border-bottom: $product-set-border-bottom;
+    padding: $product-set-subtitle-padding;
+    color: $product-set-subtitle-color;
+  }
+  .c-product-set__list {
+    list-style-type: $product-set-list-style-type;
+    margin: $product-set-list-margin;
+  }
+  .c-product-set__item {
+    margin: $product-set-item-margin;
+  }
+  .c-product-set__item:last-child .c-product-set__separator {
+    display: none;
+  }
+  .c-product-set__separator {
+    position: relative;
+    text-align: $product-set-separator-text-align;
+    font-size: $product-set-separator-font-size;
+    color: $product-set-separator-color;
+    margin: $product-set-separator-margin;
+    z-index: $product-set-separator-z-index;
+    &::before {
+      content: "";
+      position: absolute;
+      #{$global-right}: 0;
+      #{$global-left}: 0;
+      z-index: $product-set-separator-before-z-index;
+      top: $product-set-separator-before-top;
+      border-top: $product-set-separator-before-border-top;
+    }
+  }
+  .c-product-set__separator-title {
+    background: $product-set-separator-title-background-color;
+    padding: $product-set-separator-title-padding;
+    text-transform: $product-set-separator-title-text-transform;
+    border: $product-set-separator-title-border;
+    border-radius: $product-set-separator-title-border-radius;
+    width: $product-set-separator-title-width;
+    height: $product-set-separator-title-height;
+    line-height: $product-set-separator-title-line-height;
+    display: $product-set-separator-title-display;
+  }
+}

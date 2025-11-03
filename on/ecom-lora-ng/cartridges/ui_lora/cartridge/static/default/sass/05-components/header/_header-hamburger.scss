@@ -1,0 +1,256 @@
+$header-hamburger-position: right !default; // position of the hamburger button
+// Button
+$header-hamburger-button-background: color(light) !default;
+$header-hamburger-button-active-background: null !default;
+$header-hamburger-button-active-padding: null !default;
+$header-hamburger-button-active-border: null !default;
+$header-hamburger-button-active-border-width: null !default;
+$header-hamburger-button-active-position: null !default;
+$header-hamburger-button-active-top: null !default;
+$header-hamburger-button-active-color: color(primary) !default;
+$header-hamburger-button-icon-active-width: null !default;
+$header-hamburger-button-icon-active-height: null !default;
+$header-hamburger-button-padding: rem-calc(10 10 7) !default;
+$header-hamburger-button-width: $header-hamburger-width !default;
+// Button icon
+$header-hamburger-button-icon-height: rem-calc(17) !default;
+$header-hamburger-button-icon-width: rem-calc(16) !default;
+$header-hamburger-icon-name: burger !default;
+$header-hamburger-icon-close-name: cross !default;
+$header-hamburger-icon-close-usesvg: true !default;
+$header-hamburger-icon-color: color(primary) !default;
+$header-hamburger-icon-usesvg: true !default;
+// Content
+$header-hamburger-content-background: color(global-background) !default;
+$header-hamburger-content-flex--large: 1 0 0 !default;
+$header-hamburger-content-alignment--large: center !default;
+$header-hamburger-content-transition: transform 150ms ease-in-out !default;
+// Item
+$header-hamburger-item-color: color(text-secondary) !default;
+$header-hamburger-item-font-size: rem-calc(14) !default;
+$header-hamburger-item-padding: rem-calc(0 16) !default;
+$header-hamburger-item-border-bottom: 1px solid color(border) !default;
+/// Navigation
+$header-hamburger-item-navigation-margin: null !default;
+$header-hamburger-item-navigation-margin--large: null !default;
+/// Quicklinks
+$header-hamburger-item-quicklinks-padding: null !default;
+$header-hamburger-item-quicklinks-background: color(light) !default;
+$header-hamburger-item-quicklinks-border: $global-border !default;
+$header-hamburger-item-quicklinks-border-width: rem-calc(0 0 1) !default;
+//// Quicklinks list
+$header-hamburger-item-quicklinks-list-gap: rem-calc(0 8) !default;
+$header-hamburger-item-quicklinks-list-padding: rem-calc(8) !default;
+// Item link
+$header-hamburger-item-link-color: color(text) !default;
+$header-hamburger-item-link-padding: rem-calc(11 0) !default;
+$header-hamburger-item-link-text-decoration: underline !default;
+$header-hamburger-item-link-transform: none !default;
+$header-hamburger-item-link-font-weight: null !default;
+$header-hamburger-item-link-account-margin: null !default;
+$header-hamburger-item-link-letter-spacing: null !default;
+// localization
+$header-hamburger-localization-button-padding: rem-calc(16 40 16 16) !default;
+$header-hamburger-localization-button-color: color(light) !default;
+$header-hamburger-localization-button-background: color(primary) !default;
+$header-hamburger-localization-button-icon: chevron2-right !default;
+$header-hamburger-localization-button-icon-color: $header-hamburger-localization-button-color !default;
+$header-hamburger-localization-button-icon-size: rem-calc(10) !default;
+$header-hamburger-localization-button-icon-side: rem-calc(16) !default;
+$header-hamburger-localization-button-icon-usesvg: true !default;
+@mixin lora-components-hamburger {
+  .c-hamburger {
+    position: relative;
+  }
+  .c-hamburger__button {
+    background: $header-hamburger-button-background;
+    padding: $header-hamburger-button-padding;
+    text-align: center;
+    width: $header-hamburger-button-width;
+    @include breakpoint(xlarge) {
+      display: none;
+    }
+    &::before {
+      @include svg-icon(
+        $header-hamburger-icon-name,
+        $header-hamburger-icon-color,
+        100%,
+        center,
+        no-repeat,
+        $usesvg: $header-hamburger-icon-usesvg
+      );
+      content: "";
+      display: inline-block;
+      height: $header-hamburger-button-icon-height;
+      width: $header-hamburger-button-icon-width;
+    }
+  }
+  .c-hamburger__item-link,
+  .c-hamburger .c-asset-link {
+    color: $header-hamburger-item-link-color;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: $header-hamburger-item-link-padding;
+    text-align: $global-left;
+    text-decoration: $header-hamburger-item-link-text-decoration;
+    text-transform: $header-hamburger-item-link-transform;
+    font-weight: $header-hamburger-item-link-font-weight;
+    letter-spacing: $header-hamburger-item-link-letter-spacing;
+  }
+  .c-hamburger__content {
+    @include breakpoint(large down) {
+      background: $header-hamburger-content-background;
+      overflow: hidden auto;
+      overscroll-behavior: contain; // stylelint-disable-line
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      will-change: position;
+      transition: $header-hamburger-content-transition;
+      @if $header-hamburger-position == "right" {
+        #{$global-right}: -100%;
+      } @else {
+        #{$global-left}: -100%;
+      }
+      @include reduced-motion {
+        transition-duration: 0ms;
+        transition-timing-function: unset;
+      }
+    }
+    @include breakpoint(xlarge) {
+      flex: $header-hamburger-content-flex--large;
+      justify-content: $header-hamburger-content-alignment--large;
+    }
+  }
+  .c-hamburger:not(.m-opened) {
+    .c-hamburger__content {
+      @include breakpoint(large down) {
+        visibility: hidden;
+      }
+    }
+    // Accessibility fix when auto-expanded on page load navigation items were focusable despite the hamburger menu is hidden
+    .c-navigation__item.m-expanded > .c-navigation__container {
+      @include breakpoint(large down) {
+        visibility: hidden;
+      }
+    }
+  }
+  .c-hamburger.m-opened .c-hamburger__content {
+    @if $header-hamburger-position == "right" {
+      #{$global-right}: 0;
+    } @else {
+      #{$global-left}: 0;
+    }
+  }
+  .c-hamburger.m-active .c-hamburger__button {
+    background: $header-hamburger-button-active-background;
+    position: $header-hamburger-button-active-position;
+    top: $header-hamburger-button-active-top;
+    padding: $header-hamburger-button-active-padding;
+    border: $header-hamburger-button-active-border;
+    border-width: $header-hamburger-button-active-border-width;
+    @if $header-hamburger-position == "right" {
+      #{$global-left}: 0;
+    } @else {
+      #{$global-right}: 0;
+    }
+    &::before {
+      @include svg-icon(
+        $header-hamburger-icon-close-name,
+        $header-hamburger-button-active-color,
+        100%,
+        center,
+        no-repeat,
+        $usesvg: $header-hamburger-icon-close-usesvg
+      );
+      width: $header-hamburger-button-icon-active-width;
+      height: $header-hamburger-button-icon-active-height;
+    }
+  }
+  .c-hamburger.m-menu-submenu-active {
+    .c-hamburger__item:not(.m-account),
+    .c-user-menu__logout-link,
+    .c-user-menu.m-logged-out {
+      display: none;
+    }
+  }
+  .c-hamburger__item {
+    text-decoration: none;
+    &:not(.m-navigation) {
+      @include breakpoint(xlarge) {
+        display: none;
+      }
+    }
+    &.m-account-menu .c-hamburger__item-link::before {
+      margin: $header-hamburger-item-link-account-margin;
+    }
+    &.m-navigation {
+      margin: $header-hamburger-item-navigation-margin;
+      @include breakpoint(xlarge) {
+        margin: $header-hamburger-item-navigation-margin--large;
+      }
+    }
+    &.m-separator {
+      border-bottom: $header-hamburger-item-border-bottom;
+    }
+    /* stylelint-disable selector-max-compound-selectors */
+    & + & {
+      .c-navigation__list.m-level-1 {
+        .c-navigation__item.m-level-1:first-child {
+          border-top: 0;
+        }
+      }
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+  }
+  .c-hamburger__item:not(.m-navigation):not(.m-account):not(.m-custom-menu):not(
+      .m-quicklinks
+    ) {
+    color: $header-hamburger-item-color;
+    font-size: $header-hamburger-item-font-size;
+    @include breakpoint(large down) {
+      padding: $header-hamburger-item-padding;
+    }
+  }
+  .c-hamburger__item.m-quicklinks {
+    @include breakpoint(large down) {
+      padding: $header-hamburger-item-quicklinks-padding;
+      background: $header-hamburger-item-quicklinks-background;
+      border: $header-hamburger-item-quicklinks-border;
+      border-width: $header-hamburger-item-quicklinks-border-width;
+    }
+    .c-hamburger__quicklinks-list {
+      @include breakpoint(large down) {
+        padding: $header-hamburger-item-quicklinks-list-padding;
+        gap: $header-hamburger-item-quicklinks-list-gap;
+      }
+    }
+  }
+  .c-hamburger .c-user {
+    flex-grow: 1;
+  }
+  .c-hamburger__localization-button {
+    position: relative;
+    width: 100%;
+    padding: $header-hamburger-localization-button-padding;
+    background: $header-hamburger-localization-button-background;
+    color: $header-hamburger-localization-button-color;
+    &::after {
+      @include svg-icon(
+        $header-hamburger-localization-button-icon,
+        $header-hamburger-localization-button-icon-color,
+        contain,
+        center,
+        no-repeat,
+        $usesvg: $header-hamburger-localization-button-icon-usesvg
+      );
+      @include vertical-center;
+      content: "";
+      width: $header-hamburger-localization-button-icon-size;
+      height: $header-hamburger-localization-button-icon-size;
+      #{$global-right}: $header-hamburger-localization-button-icon-side;
+    }
+  }
+}

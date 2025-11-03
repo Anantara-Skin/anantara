@@ -1,0 +1,111 @@
+$carousel-thumbs-horizontal-content-disabled-padding: rem-calc(0 7) !default;
+$carousel-thumbs-horizontal-content-disabled-padding--large: rem-calc(
+  0 10
+) !default;
+$carousel-thumbs-item-width: rem-calc(70) !default;
+$carousel-thumbs-item-width--large: null !default;
+$carousel-thumbs-item-height: rem-calc(70) !default;
+$carousel-thumbs-item-height--large: null !default;
+$carousel-thumbs-item-border: 1px solid color(border) !default;
+$carousel-thumbs-item-inactive-opacity: 1 !default;
+$carousel-thumbs-item-active-border: 2px solid color(dark) !default;
+$carousel-thumbs-height: auto !default;
+$carousel-thumbs-margin: rem-calc(16) auto !default;
+$carousel-thumbs-padding: null !default;
+$carousel-thumbs-width: 100% !default;
+$carousel-thumbs-max-width: rem-calc(320) !default;
+$carousel-thumbs-max-width--large: rem-calc(660) !default;
+$carousel-thumbs-border-secondary-item-border: 0 !default;
+$carousel-thumbs-border-secondary-item-current-thumb-before-border: 2px solid
+  color(primary) !default;
+$carousel-thumbs-border-secondary-item-current-thumb-border: 0 !default;
+$carousel-thumbs-border-secondary-item-before-border: 1px solid
+  color(element-background) !default;
+$carousel-thumbs-border-secondary-item-before-top: rem-calc(0) !default;
+$carousel-thumbs-border-secondary-item-before-left: rem-calc(0) !default;
+$carousel-thumbs-border-secondary-item-before-right: rem-calc(0) !default;
+$carousel-thumbs-border-secondary-item-before-bottom: rem-calc(0) !default;
+@mixin lora-components-carousel-thumbs {
+  .c-carousel.m-style-thumbs {
+    &.m-horizontal {
+      .c-carousel__content.m-disabled {
+        justify-content: center;
+        padding: $carousel-thumbs-horizontal-content-disabled-padding;
+        @include breakpoint(large) {
+          padding: $carousel-thumbs-horizontal-content-disabled-padding--large;
+        }
+      }
+    }
+    .c-carousel__item {
+      overflow: hidden;
+      border: $carousel-thumbs-item-border;
+      height: $carousel-thumbs-item-height;
+      opacity: $carousel-thumbs-item-inactive-opacity;
+      width: $carousel-thumbs-item-width;
+      @include breakpoint(large) {
+        height: $carousel-thumbs-item-height--large;
+        width: $carousel-thumbs-item-width--large;
+      }
+      &.m-current-thumb {
+        opacity: 1;
+        border: $carousel-thumbs-item-active-border;
+      }
+    }
+    &.m-border-secondary {
+      .c-carousel__item {
+        border: $carousel-thumbs-border-secondary-item-border;
+        &::before {
+          content: "";
+          position: absolute;
+          top: $carousel-thumbs-border-secondary-item-before-top;
+          left: $carousel-thumbs-border-secondary-item-before-left;
+          right: $carousel-thumbs-border-secondary-item-before-right;
+          bottom: $carousel-thumbs-border-secondary-item-before-bottom;
+          border: $carousel-thumbs-border-secondary-item-before-border;
+          pointer-events: none;
+          z-index: 1; // stylelint-disable-line scale-unlimited/declaration-strict-value
+        }
+        &.m-current-thumb {
+          border: $carousel-thumbs-border-secondary-item-current-thumb-border;
+          // stylelint-disable max-nesting-depth
+          &::before {
+            border: $carousel-thumbs-border-secondary-item-current-thumb-before-border;
+          }
+          // stylelint-enable max-nesting-depth
+        }
+      }
+    }
+  }
+  .c-carousel-thumbs {
+    height: $carousel-thumbs-height;
+    margin: $carousel-thumbs-margin;
+    padding: $carousel-thumbs-padding;
+    width: $carousel-thumbs-width;
+    max-width: $carousel-thumbs-max-width;
+    @include breakpoint(large) {
+      display: block;
+      max-width: $carousel-thumbs-max-width--large;
+    }
+    /* stylelint-disable selector-max-compound-selectors */
+    .c-carousel {
+      .c-carousel__item {
+        height: auto;
+        img,
+        picture {
+          width: 100%;
+        }
+      }
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+  }
+  .c-carousel-thumbs__item {
+    height: 100%;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

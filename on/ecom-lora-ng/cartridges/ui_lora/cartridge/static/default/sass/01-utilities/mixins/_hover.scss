@@ -1,0 +1,10 @@
+/// Interaction Media Features. The “interaction” media features reflect various aspects of how the user interacts with the page.
+/// More information by link https://drafts.csswg.org/mediaqueries-4/#mf-interaction
+/// Hover ensure device can handle hover action - [this prevents sticky hover glitch](https://medium.com/@mezoistvan/c498af39c31c)
+///
+/// @param {String} $val [hover:$val] - Hover value: none or hover
+@mixin hover($val: hover) {
+  @media (hover: $val) {
+    @content;
+  }
+}

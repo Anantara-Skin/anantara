@@ -1,0 +1,27 @@
+$add-to-homescreen-background: color(light) !default;
+$add-to-homescreen-color: color(text) !default;
+$add-to-homescreen-padding: rem-calc(10 15) !default;
+$add-to-homescreen-padding--large: rem-calc(0 60 0 20) !default;
+$add-to-homescreen-transition: transform 0.1s ease-in-out !default;
+$add-to-homescreen-box-shadow: rem-calc(0 -2 4 0) rgba(color(dark), 0.2) !default;
+$add-to-homescreen-border-radius: rem-calc(8 8 0 0) !default;
+$add-to-homescreen-border-radius--large: 0 !default;
+@mixin lora-components-add-to-homescreen {
+  .c-add-to-homescreen {
+    position: relative;
+    display: block;
+    padding: $add-to-homescreen-padding;
+    background: $add-to-homescreen-background;
+    color: $add-to-homescreen-color;
+    box-shadow: $add-to-homescreen-box-shadow;
+    border-radius: $add-to-homescreen-border-radius;
+    transition: $add-to-homescreen-transition;
+    @include breakpoint(large) {
+      padding: $add-to-homescreen-padding--large;
+      border-radius: $add-to-homescreen-border-radius--large;
+    }
+    &.m-closed {
+      transform: translate(0, 100%);
+    }
+  }
+}

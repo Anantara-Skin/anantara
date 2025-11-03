@@ -1,0 +1,258 @@
+$scrollable-fade-area-width: rem-calc(60) !default;
+// Arrows
+$scrollable-arrow-sizes: (
+  default: (
+    arrow-width: rem-calc(48),
+    arrow-height: rem-calc(48),
+    arrow-icon-width: rem-calc(15),
+    arrow-icon-height: rem-calc(24),
+    arrow-icon: chevron-right,
+  ),
+  small: (
+    arrow-width: rem-calc(40),
+    arrow-height: rem-calc(30),
+    arrow-icon-width: rem-calc(6),
+    arrow-icon-height: rem-calc(11),
+    arrow-icon: chevron-right,
+  ),
+  medium: (
+    arrow-width: rem-calc(20),
+    arrow-height: rem-calc(24),
+    arrow-icon-width: rem-calc(6),
+    arrow-icon-height: rem-calc(14),
+    arrow-icon: chevron2-right,
+  ),
+) !default;
+$scrollable-arrow-theme: (
+  light: (
+    background: color(light),
+    color: color(primary),
+    box-shadow: rem-calc(0 0 3) color(organism-background),
+  ),
+  dark: (
+    background: color(dark),
+    color: color(light),
+  ),
+) !default;
+$scrollable-arrows-transition: opacity ease 0.4s 0.2s !default;
+$scrollable-arrow-color: color(primary) !default;
+$scrollable-arrow-background: transparent !default;
+$scrollable-arrow-border-radius: null !default;
+$scrollable-arrow-icon-usesvg: true !default;
+@mixin lora-helper-scrollable-wrapper(
+  $arrow-color: $scrollable-arrow-color,
+  $background-color: $scrollable-arrow-background
+) {
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  @include lora-scrollable-arrows($arrow-color, $background-color);
+}
+@mixin lora-helper-scrollable-items {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+  overflow: auto hidden;
+  scrollbar-width: none; // FF fix
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome fix
+  }
+  &.m-scrollable-prev,
+  &.m-scrollable-next {
+    // Should be always left aligned in case if scrollbar is available
+    justify-content: flex-start !important; /* stylelint-disable-line */
+  }
+  &:not(.m-no-shadow) {
+    &.m-scrollable-prev {
+      mask-image: linear-gradient(
+        to right,
+        transparent 1px,
+        #000 $scrollable-fade-area-width
+      );
+    }
+    &.m-scrollable-next {
+      mask-image: linear-gradient(
+        to left,
+        transparent 1px,
+        #000 $scrollable-fade-area-width
+      );
+    }
+    &.m-scrollable-prev.m-scrollable-next {
+      mask-image: linear-gradient(
+        to right,
+        transparent 1px,
+        #000 $scrollable-fade-area-width,
+        #000 calc(100% - #{$scrollable-fade-area-width}),
+        transparent calc(100% - 1px)
+      );
+    }
+  }
+  &.m-drag-active {
+    cursor: grabbing;
+  }
+}
+@mixin lora-helper-scrollable-item {
+  flex-shrink: 0;
+}
+@mixin lora-components-scrollable {
+  .c-scrollable {
+    @include lora-helper-scrollable-wrapper;
+  }
+  .c-scrollable__items {
+    @include lora-helper-scrollable-items;
+  }
+  .c-scrollable__item {
+    @include lora-helper-scrollable-item;
+  }
+}
+@mixin lora-helper-scrollable-arrow-size(
+  $size,
+  $arrow-color: $scrollable-arrow-color
+) {
+  height: map-deep-get($scrollable-arrow-sizes, $size, "arrow-height");
+  width: map-deep-get($scrollable-arrow-sizes, $size, "arrow-width");
+  &::before {
+    @include svg-icon(
+      map-deep-get($scrollable-arrow-sizes, $size, "arrow-icon"),
+      $arrow-color,
+      100%,
+      left,
+      no-repeat,
+      $usesvg: $scrollable-arrow-icon-usesvg
+    );
+    height: map-deep-get($scrollable-arrow-sizes, $size, "arrow-icon-height");
+    width: map-deep-get($scrollable-arrow-sizes, $size, "arrow-icon-width");
+  }
+}
+@mixin lora-helper-scrollable-arrow-layout(
+  $arrow-color: $scrollable-arrow-color,
+  $background-color: $scrollable-arrow-background
+) {
+  align-items: center;
+  color: $arrow-color;
+  background: $background-color;
+  border-radius: $scrollable-arrow-border-radius;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  z-index: z(scrollable, arrows);
+  &::before {
+    content: "";
+    display: block;
+  }
+  &.m-disabled {
+    display: none;
+  }
+}
+@mixin lora-helper-scrollable-arrow-background($theme, $size) {
+  .c-scrollable__arrow-prev,
+  .c-scrollable__arrow-next {
+    background: map-deep-get(
+      $scrollable-arrow-theme,
+      $theme,
+      "background"
+    ); /* stylelint-disable-line */
+    box-shadow: map-deep-get($scrollable-arrow-theme, $theme, "box-shadow");
+    &::before {
+      @include svg-icon(
+        map-deep-get($scrollable-arrow-sizes, $size, "arrow-icon"),
+        map-deep-get($scrollable-arrow-theme, $theme, "color"),
+        100%,
+        left,
+        no-repeat,
+        $color-change: true,
+        $usesvg: $scrollable-arrow-icon-usesvg
+      );
+    }
+  }
+}
+@mixin lora-helper-scrollable-arrow-color($theme, $size) {
+  .c-scrollable__arrow-prev::before,
+  .c-scrollable__arrow-next::before {
+    @include svg-icon(
+      map-deep-get($scrollable-arrow-sizes, $size, "arrow-icon"),
+      map-deep-get($scrollable-arrow-theme, $theme, "color"),
+      100%,
+      left,
+      no-repeat,
+      $color-change: true,
+      $usesvg: $scrollable-arrow-icon-usesvg
+    );
+  }
+}
+@mixin lora-scrollable-arrows(
+  $arrow-color: $scrollable-arrow-color,
+  $background-color: $scrollable-arrow-background
+) {
+  .c-scrollable__arrow-prev,
+  .c-scrollable__arrow-next {
+    @include vertical-center;
+    @include lora-helper-scrollable-arrow-size(default, $arrow-color);
+    @include lora-helper-scrollable-arrow-layout(
+      $arrow-color,
+      $background-color
+    );
+  }
+  .c-scrollable__arrow-prev {
+    #{$global-right}: 100%;
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+  .c-scrollable__arrow-next {
+    #{$global-left}: 100%;
+  }
+  // Will generate the rules for the sizes
+  // m-small, m-medium, etc..
+  // stylelint-disable max-nesting-depth
+  @each $sizename, $size in $scrollable-arrow-sizes {
+    @if ($sizename != "default") {
+      &.m-arrows-#{$sizename} {
+        .c-scrollable__arrow-prev,
+        .c-scrollable__arrow-next {
+          @include lora-helper-scrollable-arrow-size($sizename, $arrow-color);
+        }
+      }
+      &.m-arrows-#{$sizename}-for-medium-down {
+        @include breakpoint(medium down) {
+          .c-scrollable__arrow-prev,
+          .c-scrollable__arrow-next {
+            @include lora-helper-scrollable-arrow-size($sizename, $arrow-color);
+          }
+        }
+      }
+      // Will generate rules for arrow themes
+      @each $themename, $theme in $scrollable-arrow-theme {
+        .c-scrollable__arrows.m-background-#{$themename} {
+          @include lora-helper-scrollable-arrow-background(
+            $themename,
+            $sizename
+          );
+        }
+        .c-scrollable__arrows.m-#{$themename}-theme {
+          @include lora-helper-scrollable-arrow-color($themename, $sizename);
+        }
+      }
+    }
+  }
+  // stylelint-enable max-nesting-depth
+  &.m-arrows-inside {
+    @include lora-helper-scrollable-arrows-inside;
+  }
+  &.m-arrows-inside-for-medium-down {
+    @include breakpoint(medium down) {
+      @include lora-helper-scrollable-arrows-inside;
+    }
+  }
+}
+@mixin lora-helper-scrollable-arrows-inside {
+  .c-scrollable__arrow-prev {
+    #{$global-right}: auto;
+    #{$global-left}: 0;
+  }
+  .c-scrollable__arrow-next {
+    #{$global-left}: auto;
+    #{$global-right}: 0;
+  }
+}

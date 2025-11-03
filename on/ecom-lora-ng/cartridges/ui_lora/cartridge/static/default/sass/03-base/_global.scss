@@ -1,0 +1,58 @@
+/*
+---
+name: Global
+category:
+  - base
+  - base/0-Global
+---
+#### Type Size
+When possible, use the rem and em units to size everything. Not just font size, but also padding, margins, and any length
+value. This ensures that your design scales up and down uniformly if the user changes their browser's text size. It's
+common for vision-impaired users to resize their browser up to 200% zoom.
+We want to use the `rem` unit nearly everywhere in LORA, and even wrote a Sass function to make it a little easier.
+The `rem-calc()` function can take one or more pixel values and convert them to proper rem values.
+```scss
+.element {
+    width: rem-calc(300);
+    padding: rem-calc(10 16);
+}
+```
+*/
+/*------------------------------------*\
+        #GLOBAL (the existing variable and mixin should never be modified)
+\*------------------------------------*/
+//stylelint-disable lora/variable-pattern
+// scss-lint:disable ColorVariable, QualifyingElement, VendorPrefix
+/// Font size attribute applied to `<html>` and `<body>`. We use 100% by default so the value is inherited from the user's browser settings.
+/// @type Number
+$global-font-size: 100% !default;
+/// Default line height for all type. `$global-lineheight` is 24px while `$global-font-size` is 16px
+/// @type Number
+$global-lineheight: 1.5 !default;
+/// Global value used for margin on components.
+/// @type Number
+$global-margin: 1rem !default;
+/// Global value used for padding on components.gi
+/// @type Number
+$global-padding: 1rem !default;
+/// Global font weight used for normal type.
+/// @type Keyword | Number
+$global-weight-normal: normal !default;
+/// Global font weight used for bold type.
+/// @type Keyword | Number
+$global-weight-bold: bold !default;
+/// Global value used for all elements that have a border radius.
+/// @type Number
+$global-radius: rem-calc(4) !default;
+/// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @type Keyword
+$global-text-direction: ltr !default;
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+// Remove this in 6.3
+$-zf-menu-icon-imported: false;
+$-zf-flex-classes-imported: false;
+$global-input-primary-height-small: rem-calc(25) !default;
+$global-input-primary-height: rem-calc(35) !default;
+$global-input-primary-height-large: rem-calc(40) !default;

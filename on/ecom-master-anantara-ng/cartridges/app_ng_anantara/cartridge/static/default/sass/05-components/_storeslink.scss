@@ -1,0 +1,6 @@
+$storeslink-icon-height: rem-calc(20);
+$storeslink-icon-width: rem-calc(16);
+$storeslink-icon-height--large: rem-calc(19);
+$storeslink-icon-width--large: 0;
+$storeslink-icon-color--large: color(primary);
+@use "@lora/05-components/storeslink";

@@ -1,0 +1,30 @@
+$header-hamburger-button-padding: rem-calc(18 16 10 10);
+$header-hamburger-button-width: rem-calc(50);
+// Localization
+$header-hamburger-localization-button-color: color(primary);
+$header-hamburger-localization-button-background: color(light);
+// Button icon
+$header-hamburger-button-icon-height: rem-calc(20);
+$header-hamburger-button-icon-width: rem-calc(20);
+$header-hamburger-button-active-color: color(primary);
+// Item
+$header-hamburger-item-font-size: rem-calc(14);
+$header-hamburger-item-link-transform: none;
+$header-hamburger-item-link-color: color(primary);
+$header-hamburger-item-color: color(primary);
+// Icons
+$header-hamburger-storeslink-icon-size: rem-calc(20 20);
+$header-hamburger-asset-link-why-shop-online-icon-size: rem-calc(20 20);
+$header-hamburger-asset-link-may-we-help-you-icon-size: rem-calc(20 20);
+$header-hamburger-account-menu-icon-size: rem-calc(16 16);
+// Localization
+$header-hamburger-localization-button-padding: rem-calc(16 40 16 22);
+$header-hamburger-localization-button-icon-size: rem-calc(15);
+$header-hamburger-localization-button-icon: arrow-forward;
+//Quicklinks
+$header-hamburger-item-quicklinks-border: 1px solid color(alabaster-400);
+$header-hamburger-item-quicklinks-border-width: rem-calc(1 0);
+//Item link
+$header-hamburger-item-link-padding: rem-calc(13.5 0);
+$header-hamburger-item-link-text-decoration: none;
+@use "@lora/05-components/header/header-hamburger";

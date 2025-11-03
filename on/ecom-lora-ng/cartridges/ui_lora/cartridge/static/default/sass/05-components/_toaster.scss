@@ -1,0 +1,151 @@
+$toaster-position: fixed !default;
+$toaster-position-bottom: rem-calc(40) !default;
+$toaster-position-margin: rem-calc(0 0 $toaster-position-bottom) !default;
+$toaster-position-margin--large: null !default;
+$toaster-plain-position-margin: 0 !default;
+// Toaster panel
+$toaster-panel-width: 100% !default;
+$toaster-panel-width--large: rem-calc(570) !default;
+$toaster-panel-padding: rem-calc(0 16) !default;
+$toaster-panel-padding--large: rem-calc(0 100) !default;
+$toaster-panel-background: color(global-background) !default;
+$toaster-panel-background--large: null !default;
+$toaster-panel-text-transform: null !default;
+/// Title
+$toaster-title-font: 300 #{rem-calc(14)} / 1.4 $font-primary !default;
+$toaster-title-font--large: 300 #{rem-calc(18)} / 1.4 $font-primary !default;
+$toaster-title-color: color(text) !default;
+$toaster-title-color--large: null !default;
+$toaster-title-text-transform: uppercase !default;
+$toaster-title-text-transform--large: null !default;
+$toaster-title-margin: 0 !default;
+$toaster-title-margin--large: null !default;
+$toaster-title-padding: rem-calc(15 0) !default;
+$toaster-title-padding--large: null !default;
+/// Image
+$toaster-content-image-margin: rem-calc(5 0 20) !default;
+$toaster-content-image-margin--large: rem-calc(15 0 30) !default;
+// Footer
+$toaster-footer-margin: rem-calc(
+  20 0 100
+) !default; // Iphone X fix with cut bottom area
+$toaster-footer-margin--large: rem-calc(20 0) !default;
+@mixin lora-components-toaster {
+  .c-toaster {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: z(toaster);
+    margin: $toaster-position-margin;
+    @include breakpoint(large) {
+      margin: $toaster-position-margin--large;
+    }
+    &.m-plain {
+      margin: $toaster-plain-position-margin;
+    }
+    &.m-no-margin {
+      margin: 0;
+    }
+  }
+  .c-toaster__inner {
+    display: flex;
+    height: 0;
+    align-items: flex-end;
+    &:not(.m-fullwidth) {
+      @include breakpoint(large) {
+        @include layout;
+      }
+    }
+  }
+  .c-toaster.m-expanded {
+    @include breakpoint(medium down) {
+      top: 0;
+      bottom: auto;
+      margin: 0;
+      height: vh(100, $toaster-position-bottom);
+    }
+    .c-toaster__inner {
+      @include breakpoint(medium down) {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+    .c-toaster__content {
+      display: block;
+    }
+  }
+  .c-toaster-overlayed.m-expanded {
+    z-index: z(toasterOverlayed);
+    @include breakpoint(medium down) {
+      height: vh(100);
+    }
+    .c-toaster__panel {
+      @include breakpoint(medium down) {
+        height: vh(100);
+        max-height: vh(100);
+      }
+    }
+  }
+  .c-toaster__panel {
+    position: relative;
+    padding: $toaster-panel-padding;
+    background: $toaster-panel-background;
+    overflow: auto;
+    max-height: vh(100, $toaster-position-bottom);
+    width: $toaster-panel-width;
+    text-transform: $toaster-panel-text-transform;
+    @include breakpoint(large) {
+      padding: $toaster-panel-padding--large;
+      background: $toaster-panel-background--large;
+      width: $toaster-panel-width--large;
+    }
+  }
+  .c-toaster__heading {
+    cursor: pointer;
+  }
+  .c-toaster__title {
+    @include text-style(
+      $color: (
+        small: $toaster-title-color,
+        large: $toaster-title-color--large,
+      ),
+      $font: (
+        small: $toaster-title-font,
+        large: $toaster-title-font--large,
+      ),
+      $margin: (
+        small: $toaster-title-margin,
+        large: $toaster-title-margin--large,
+      ),
+      $padding: (
+        small: $toaster-title-padding,
+        large: $toaster-title-padding--large,
+      ),
+      $text-transform: (
+        small: $toaster-title-text-transform,
+        large: $toaster-title-text-transform--large,
+      )
+    );
+    cursor: pointer;
+  }
+  .c-toaster__content {
+    display: none;
+  }
+  .c-toaster__content-image {
+    margin: $toaster-content-image-margin;
+    @include breakpoint(large) {
+      margin: $toaster-content-image-margin--large;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .c-toaster__footer {
+    margin: $toaster-footer-margin;
+    @include breakpoint(large) {
+      margin: $toaster-footer-margin--large;
+    }
+  }
+}

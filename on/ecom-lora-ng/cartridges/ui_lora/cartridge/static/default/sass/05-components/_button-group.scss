@@ -1,0 +1,176 @@
+////
+/// @group button-group
+////
+/// Margin for button groups.
+/// @type Number
+$button-group-margin: 1rem !default;
+/// Margin between buttons in a button group.
+/// @type Number
+$button-group-spacing: 1px !default;
+/// Selector for the buttons inside a button group.
+/// @type String
+$button-group-child-selector: ".c-button" !default;
+$button-group-child-selector-flex: 1 1 0px !default; // stylelint-disable length-zero-no-unit
+/// Maximum number of buttons that can be in an even-width button group.
+/// @type Number
+$button-group-expand-max: 6 !default;
+/// Determines if $button-radius is applied to each button or the button group as a whole. Use $global-radius in _settings.scss to change radius.
+/// @type Boolean
+$button-group-radius-on-each: true !default;
+/// Add styles for a button group container.
+/// @param {String} $child-selector [$button-group-child-selector] - Selector for the buttons inside a button group.
+/// @param {Number} $spacing [$button-group-spacing] - Spacing between buttons in a button group.
+@mixin lora-helper-button-group(
+  $child-selector: $button-group-child-selector,
+  $spacing: $button-group-spacing,
+  $margin: $button-group-margin
+) {
+  @include clearfix;
+  margin-bottom: $margin;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  #{$child-selector} {
+    margin: 0;
+    margin-#{$global-right}: $spacing;
+    margin-bottom: $spacing;
+    font-size: $button-font-size;
+    flex: 0 0 auto;
+    &:last-child {
+      margin-#{$global-right}: 0;
+    }
+    &:empty {
+      display: none;
+    }
+    @if not $button-group-radius-on-each {
+      border-radius: 0;
+      &:first-child {
+        border-top-#{$global-left}-radius: $global-radius;
+        border-bottom-#{$global-left}-radius: $global-radius;
+      }
+      &:last-child {
+        border-top-#{$global-right}-radius: $global-radius;
+        border-bottom-#{$global-right}-radius: $global-radius;
+      }
+    }
+  }
+}
+/// Creates a full-width button group, making each button equal width.
+/// @param {String} $selector [$button-group-child-selector] - Selector for the buttons inside a button group.
+/// @param {Number} $spacing [$button-group-spacing] - Spacing between buttons in a button group.
+@mixin lora-helper-button-group-expand(
+  $selector: $button-group-child-selector,
+  $spacing: $button-group-spacing,
+  $count: null
+) {
+  #{$selector} {
+    min-width: 0;
+    margin-bottom: 0;
+    flex: $button-group-child-selector-flex;
+    // Expand the button to container size if it's nested within the button group child selector
+    .c-button {
+      width: 100%;
+    }
+  }
+  // Reset min width for buttons inside expanded button group
+  .c-button {
+    min-width: 0;
+  }
+}
+/// Stacks the buttons in a button group.
+/// @param {String} $selector [$button-group-child-selector] - Selector for the buttons inside the button group.
+@mixin lora-helper-button-group-stack($selector: $button-group-child-selector) {
+  flex-wrap: wrap;
+  #{$selector} {
+    margin-#{$global-right}: 0;
+    flex: 0 0 100%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @if not $button-group-radius-on-each {
+      border-radius: 0;
+      &:first-child {
+        border-top-#{$global-left}-radius: $global-radius;
+        border-top-#{$global-right}-radius: $global-radius;
+      }
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom-#{$global-left}-radius: $global-radius;
+        border-bottom-#{$global-right}-radius: $global-radius;
+      }
+    }
+  }
+}
+/// Un-stacks the buttons in a button group.
+/// @param {String} $selector [$button-group-child-selector] - Selector for the buttons inside the button group.
+@mixin lora-helper-button-group-unstack(
+  $selector: $button-group-child-selector,
+  $spacing: $button-group-spacing
+) {
+  #{$selector} {
+    flex: 0 1 auto;
+    margin-bottom: 0;
+    margin-#{$global-right}: $spacing;
+    &:last-child {
+      margin-#{$global-right}: 0;
+    }
+    @if not $button-group-radius-on-each {
+      &:first-child {
+        border-top-#{$global-left}-radius: $global-radius;
+        border-top-#{$global-right}-radius: 0;
+        border-bottom-#{$global-left}-radius: $global-radius;
+      }
+      &:last-child {
+        border-top-#{$global-right}-radius: $global-radius;
+        border-bottom-#{$global-right}-radius: $global-radius;
+        border-bottom-#{$global-left}-radius: 0;
+      }
+    }
+  }
+}
+@mixin lora-components-button-group {
+  .c-button-group {
+    @include lora-helper-button-group;
+    &.m-expanded {
+      @include lora-helper-button-group-expand;
+    }
+    @each $size in $breakpoint-classes {
+      &.m-expanded-for-#{$size} {
+        @include breakpoint($size) {
+          @include lora-helper-button-group-expand;
+        }
+      }
+      &.m-expanded-for-#{$size}-down {
+        @include breakpoint($size down) {
+          @include lora-helper-button-group-expand;
+        }
+      }
+    }
+    // Even-width Group
+    &.m-stacked,
+    &.m-stacked-for-small,
+    &.m-stacked-for-medium {
+      @include lora-helper-button-group-stack;
+    }
+    &.m-stacked-for-small {
+      @include breakpoint(medium) {
+        @include lora-helper-button-group-unstack;
+      }
+      &.m-expanded {
+        @include breakpoint(small only) {
+          display: block;
+          #{$button-group-child-selector} {
+            // stylelint-disable max-nesting-depth
+            display: block;
+            margin-#{$global-right}: 0;
+          }
+        }
+      }
+    }
+    &.m-stacked-for-medium {
+      @include breakpoint(large) {
+        @include lora-helper-button-group-unstack;
+      }
+    }
+  }
+}

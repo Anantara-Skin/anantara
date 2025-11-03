@@ -1,0 +1,12 @@
+$byondxr-padding: 0 !default;
+@mixin lora-components-byondxr {
+  .c-byondxr {
+    padding: $byondxr-padding;
+    width: 100vw;
+    height: vh(100);
+    .c-byondxr__frame {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

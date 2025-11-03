@@ -1,0 +1,42 @@
+// Title
+$content-tile-title-font-size: rem-calc(16);
+$content-tile-title-font-size--large: $content-tile-title-font-size;
+$content-tile-title-line-height: 1.5;
+$content-tile-title-line-height--large: 1.7;
+$content-tile-title-font: #{$content-tile-title-font-size} /
+  $content-tile-title-line-height $font-primary-medium;
+$content-tile-title-font--large: #{$content-tile-title-font-size--large} /
+  $content-tile-title-line-height--large $font-primary-medium;
+$content-tile-title-text-transform: none;
+// Description
+$content-tile-description-font-size: rem-calc(14);
+$content-tile-description-color: color(text-secondary);
+$content-tile-description-color--large: color(text-secondary);
+/// Description Large
+$content-tile-large-description-font: #{rem-calc(14)} / 1.5 $font-primary;
+// Label
+$content-tile-label-text-transform: none;
+$content-tile-label-color: color(primary);
+$content-tile-label-font: #{rem-calc(14)} / 1.25 $font-primary-medium;
+/// Title Large
+$content-tile-large-title-font: #{rem-calc(25)} / 1.2 $font-secondary;
+$content-tile-large-title-font--large: #{rem-calc(31)} / 1.2 $font-secondary;
+$content-tile-large-title-text-transform: none;
+/// Label Large
+$content-tile-large-label-font: #{rem-calc(14)} / 1.5 $font-primary-medium;
+$content-tile-large-label-font--large: #{rem-calc(14)} / 1.25
+  $font-primary-medium;
+$content-tile-large-label-text-transform--large: none;
+$content-tile-section-padding: rem-calc(20);
+/// Space between sections on horizontal position
+$content-tile-gutter: (
+  default: (
+    small: rem-calc(20),
+    large: rem-calc(20),
+  ),
+  large: (
+    small: rem-calc(20),
+    large: rem-calc(40),
+  ),
+);
+@use "@lora/05-components/content-tile";

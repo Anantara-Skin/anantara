@@ -1,0 +1,68 @@
+/* stylelint-disable declaration-no-important, max-nesting-depth */
+$spacing-placement: (bottom top) !default;
+////
+/// @group spacing - padding
+////
+@mixin lora-helpers-spacing {
+  @each $name, $spacing in $global-spacing {
+    .h-padding-#{$name} {
+      padding: $spacing !important;
+    }
+  }
+  @each $name, $spacing in $global-spacing {
+    @each $size in $breakpoint-classes {
+      $range: if($size == "small" or $size == "medium", only, null);
+      @if ($range == "only") {
+        @include breakpoint($size $range) {
+          .h-padding-#{$name}-for-#{$size}-only {
+            padding: $spacing !important;
+          }
+        }
+      } @else {
+        @include breakpoint($size $range) {
+          .h-padding-#{$name}-for-#{$size} {
+            padding: $spacing !important;
+          }
+        }
+      }
+    }
+  }
+}
+@mixin lora-helpers-margin-spacing {
+  @each $name, $spacing in $global-margin-spacing {
+    @each $sp in $spacing-placement {
+      // Margin Bottom
+      @if ($sp == "bottom") {
+        .h-margin-#{$sp}-#{$name} {
+          margin-bottom: $spacing !important;
+        }
+      }
+      // Margin Top
+      @if ($sp == "top") {
+        .h-margin-#{$sp}-#{$name} {
+          margin-top: $spacing !important;
+        }
+      }
+    }
+  }
+  @each $name, $spacing in $global-margin-spacing {
+    @each $sp in $spacing-placement {
+      // Margin Bottom for large
+      @if ($sp == "bottom") {
+        @include breakpoint(large) {
+          .h-margin-#{$sp}-#{$name}-for-large {
+            margin-bottom: $spacing !important;
+          }
+        }
+      }
+      // Margin Top for large
+      @if ($sp == "top") {
+        @include breakpoint(large) {
+          .h-margin-#{$sp}-#{$name}-for-large {
+            margin-top: $spacing !important;
+          }
+        }
+      }
+    }
+  }
+}

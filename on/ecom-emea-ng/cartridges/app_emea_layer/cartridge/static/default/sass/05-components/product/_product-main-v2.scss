@@ -1,0 +1,9 @@
+@use "@root/05-components/product/product-main-v2";
+.c-button-where-to-buy__wrapper {
+  .c-product-main__where-to-buy {
+    min-width: 11rem;
+  }
+}
+.c-product-main__buy-by-phone {
+  min-width: 11rem;
+}

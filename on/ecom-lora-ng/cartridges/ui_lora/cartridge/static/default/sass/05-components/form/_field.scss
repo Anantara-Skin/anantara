@@ -1,0 +1,172 @@
+////
+/// @group forms
+////
+/// Background color to use for invalid text inputs.
+/// @type Color
+$form-field-background-invalid: color(light) !default;
+/// Default font color for form error text.
+/// @type Color
+$form-field-error-color: color(alert) !default;
+/// Box shadow outside text inputs for form error text.
+/// @type Shadow
+$form-field-error-box-shadow: null !default;
+/// Box shadow outside text inputs when hovered for form error text.
+/// @type Shadow
+$form-field-error-box-shadow-hover: rem-calc(0 0 0 1) color(alert) !default;
+/// Default font color for form valid text.
+/// @type Color
+$form-field-valid-color: color(success) !default;
+/// Box shadow outside text inputs for form valid text.
+/// @type Shadow
+$form-field-valid-box-shadow: null !default;
+/// Box shadow outside text inputs when hovered for form valid text.
+/// @type Shadow
+$form-field-valid-box-shadow-hover: rem-calc(0 0 0 1) color(success) !default;
+/// Default margin for form error text.
+/// @type Margin
+$form-field-error-margin: rem-calc(4) 0 0 !default;
+/// Margin for group form error text.
+/// @type Margin
+$form-field-error-margin-group: 0 0 rem-calc(8) 0 !default;
+/// Default text transform for form error text.
+/// @type String
+$form-field-error-text-transform: null !default;
+/// Default letter spacing for form error text.
+/// @type Number
+$form-field-error-letter-spacing: null !default;
+/// Default font size for form error text.
+/// @type Number
+$form-field-error-font-size: rem-calc(10) !default;
+/// Default font weight for form error text.
+/// @type Keyword
+$form-field-error-font-weight: null !default;
+/// Styles the background and border of an input field to have an error state.
+///
+/// @param {Color} $background [color(alert)] - Color to use for the background and border.
+/// @param {Number} $background-alpha [0.1] - Transparency level of the background color.
+/// Default style for error list
+$form-field-error-list-style: none !default;
+$form-field-error-list-margin: 0 !default;
+@mixin form-input-error(
+  $disablefocus: true,
+  $border-color: $form-field-error-color,
+  $box-shadow: $form-field-error-box-shadow,
+  $box-shadow-hover: $form-field-error-box-shadow-hover,
+  $background: $form-field-background-invalid
+) {
+  @if $disablefocus {
+    &:not(:focus) {
+      border-color: $border-color;
+      box-shadow: $box-shadow;
+      @if has-value($background) {
+        background: $background;
+      }
+      // Hover state
+      &:hover {
+        box-shadow: $box-shadow-hover;
+      }
+    }
+  } @else {
+    border-color: $border-color;
+    box-shadow: $box-shadow;
+    @if has-value($background) {
+      background: $background;
+    }
+    &:hover,
+    &:focus {
+      box-shadow: $box-shadow-hover;
+    }
+  }
+}
+@mixin form-input-valid(
+  $disablefocus: true,
+  $border-color: $form-field-valid-color,
+  $box-shadow: $form-field-valid-box-shadow,
+  $box-shadow-hover: $form-field-valid-box-shadow-hover,
+  $background: $form-field-background-invalid
+) {
+  @if $disablefocus {
+    &:not(:focus) {
+      border-color: $border-color;
+      box-shadow: $box-shadow;
+      @if has-value($background) {
+        background: $background;
+      }
+      // Hover state
+      &:hover {
+        box-shadow: $box-shadow-hover;
+      }
+    }
+  } @else {
+    border-color: $border-color;
+    box-shadow: $box-shadow;
+    @if has-value($background) {
+      background: $background;
+    }
+  }
+}
+@mixin lora-form-field {
+  .c-field {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 100%;
+    &:empty {
+      display: none;
+    }
+  }
+  .c-field.m-autosize {
+    flex-basis: auto;
+  }
+  .c-field.m-nowrap {
+    flex-wrap: nowrap;
+  }
+  // Error class for invalid inputs
+  .c-field.m-error {
+    input,
+    select,
+    textarea,
+    .c-text-field__input-text {
+      @include form-input-error(false);
+    }
+  }
+  .c-field.m-error.c-check-field .c-check-field__label::before {
+    @include form-input-error(false);
+  }
+  // Valid class for valid inputs
+  .c-field.m-valid {
+    input,
+    select,
+    textarea {
+      @include form-input-valid;
+    }
+  }
+  .c-field.m-valid.c-check-field .c-check-field__label::before {
+    @include form-input-valid(false);
+  }
+  .c-field__error-wrapper {
+    flex-basis: 100%;
+  }
+  .c-field__error-list {
+    list-style: $form-field-error-list-style;
+    margin: $form-field-error-list-margin;
+    &.m-inline-block {
+      display: inline-block;
+    }
+  }
+  .c-field__error-message {
+    color: $form-field-error-color;
+    flex-basis: 100%;
+    font-size: $form-field-error-font-size;
+    margin: $form-field-error-margin;
+    text-transform: $form-field-error-text-transform;
+    letter-spacing: $form-field-error-letter-spacing;
+    font-weight: $form-field-error-font-weight;
+    @media (forced-colors: active) {
+      color: ActiveText !important; /* stylelint-disable-line */
+    }
+    &.m-group {
+      margin: $form-field-error-margin-group;
+    }
+  }
+}

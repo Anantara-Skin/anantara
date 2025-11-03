@@ -1,0 +1,46 @@
+$shoppable-image-tag-size: rem-calc(36) !default;
+$shoppable-image-tag-border-radius: 50% !default;
+$shoppable-image-tag-border: rem-calc(4) solid color(light) !default;
+$shoppable-image-tag-background: radial-gradient(
+  circle,
+  color(light) 0%,
+  color(light) rem-calc(10),
+  color(primary) rem-calc(10),
+  color(primary) 100%
+) !default;
+$shoppable-image-tag-transition: null !default;
+$shoppable-image-tag-box-shadow: null !default;
+// active state
+$shoppable-image-tag-active-background: color(primary) !default;
+$shoppable-image-tag-active-box-shadow: null !default;
+@mixin lora-components-shoppable-image {
+  .c-shoppable-image {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .c-shoppable-image__tag {
+    cursor: pointer;
+    width: $shoppable-image-tag-size;
+    height: $shoppable-image-tag-size;
+    @include absolute-center;
+    &::before {
+      content: "";
+      position: absolute;
+      #{$global-left}: 0;
+      top: 0;
+      background: $shoppable-image-tag-background;
+      border-radius: $shoppable-image-tag-border-radius;
+      border: $shoppable-image-tag-border;
+      height: $shoppable-image-tag-size;
+      width: $shoppable-image-tag-size;
+      transition: $shoppable-image-tag-transition;
+      box-shadow: $shoppable-image-tag-box-shadow;
+    }
+    &[aria-expanded="true"]::before {
+      background: $shoppable-image-tag-active-background;
+      box-shadow: $shoppable-image-tag-active-box-shadow;
+    }
+  }
+}

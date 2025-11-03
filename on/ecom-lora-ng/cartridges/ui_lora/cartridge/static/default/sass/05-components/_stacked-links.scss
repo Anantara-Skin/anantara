@@ -1,0 +1,161 @@
+$stacked-links-border: 1px solid color(border) !default;
+$stacked-links-border-top: 0 !default;
+$stacked-links-margin: rem-calc(15 0) !default;
+$stacked-links-link-padding: rem-calc(16 0 16 30) !default;
+$stacked-links-link-padding--large: null !default;
+$stacked-links-link-font: #{rem-calc(14)} / 1.25 $font-primary !default;
+$stacked-links-link-hover-font: bold #{rem-calc(14)} / 1.25 $font-primary !default;
+$stacked-links-link-active-font: bold #{rem-calc(14)} / 1.25 $font-primary !default;
+$stacked-links-link-color: color(text) !default;
+$stacked-links-link-hover-color: color(primary-active) !default;
+$stacked-links-link-active-color: color(primary-active) !default;
+$stacked-links-link-active-margin: 0 !default;
+$stacked-links-link-active-background: color(light) !default;
+$stacked-links-link-text-transform: null !default;
+$stacked-links-link-letter-spacing: null !default;
+$stacked-links-item-first-child-border-top: none !default;
+$stacked-links-link-icon: chevron2-right !default;
+$stacked-links-link-icon-color: $stacked-links-link-color !default;
+$stacked-links-link-icon-height: rem-calc(12) !default;
+$stacked-links-link-icon-width: rem-calc(7) !default;
+$stacked-links-link-icon-margin: rem-calc(0 15 0 0) !default;
+$stacked-links-link-icon-usesvg: true !default;
+$stacked-links-link-logout-icon: power-button !default;
+$stacked-links-link-logout-icon-color: color(light) !default;
+$stacked-links-link-logout-icon-margin: rem-calc(0 20 0 0) !default;
+$stacked-links-link-logout-icon-margin--large: null !default;
+$stacked-links-link-logout-icon-width: rem-calc(20) !default;
+$stacked-links-link-logout-icon-height: rem-calc(20) !default;
+$stacked-links-link-logout-icon-usesvg: true !default;
+$stacked-links-link-logout-color: color(light) !default;
+$stacked-links-link-logout-background: color(secondary) !default;
+$stacked-links-link-logout-hover-background: color(secondary-active) !default;
+$stacked-links-link-logout-hover-color: $stacked-links-link-logout-color !default;
+$stacked-links-link-logout-text-transform: null !default;
+$stacked-links-link-logout-font: null !default;
+$stacked-links-link-logout-padding: null !default;
+$stacked-links-link-logout-margin: 0 !default;
+$stacked-links-link-logout-margin--large: null !default;
+$stacked-links-link-logout-justify-content--large: null !default;
+$stacked-links-link-logout-border-radius: null !default;
+$stacked-links-link-logout-letter-spacing: null !default;
+$stacked-links-link-logout-border: null !default;
+$stacked-links-link-logout-hover-border: null !default;
+$stacked-links-item-last-child-border-bottom: null !default;
+$stacked-links-item-logout-border: null !default;
+$stacked-links-item-logout-background: null !default;
+@mixin lora-components-stacked-links {
+  .c-stacked-links {
+    list-style: none;
+    margin: $stacked-links-margin;
+  }
+  .c-stacked-links__item {
+    border-bottom: $stacked-links-border;
+    border-top: $stacked-links-border-top;
+    &:first-child {
+      border-top: $stacked-links-item-first-child-border-top;
+    }
+    &:last-child {
+      border-bottom: $stacked-links-item-last-child-border-bottom;
+    }
+    &.m-logout {
+      border: $stacked-links-item-logout-border;
+      background: $stacked-links-item-logout-background;
+    }
+    &.m-active {
+      .c-stacked-links__link {
+        color: $stacked-links-link-active-color;
+        font: $stacked-links-link-active-font;
+        background: $stacked-links-link-active-background;
+        margin: $stacked-links-link-active-margin;
+      }
+    }
+  }
+  .c-stacked-links__link {
+    align-items: center;
+    color: $stacked-links-link-color;
+    display: flex;
+    font: $stacked-links-link-font;
+    justify-content: space-between;
+    padding: $stacked-links-link-padding;
+    text-decoration: none;
+    text-transform: $stacked-links-link-text-transform;
+    letter-spacing: $stacked-links-link-letter-spacing;
+    @include breakpoint(large) {
+      padding: $stacked-links-link-padding--large;
+    }
+    &::after {
+      @include svg-icon(
+        $stacked-links-link-icon,
+        $stacked-links-link-icon-color,
+        100%,
+        left,
+        no-repeat,
+        $usesvg: $stacked-links-link-icon-usesvg
+      );
+      content: "";
+      display: block;
+      flex-shrink: 0;
+      height: $stacked-links-link-icon-height;
+      margin: $stacked-links-link-icon-margin;
+      width: $stacked-links-link-icon-width;
+    }
+    &:hover {
+      color: $stacked-links-link-hover-color;
+      font: $stacked-links-link-hover-font;
+    }
+    &.m-border-top {
+      border-top: $stacked-links-border;
+    }
+    &.m-border-bottom {
+      border-bottom: $stacked-links-border;
+    }
+  }
+  .c-stacked-links__link.m-logout {
+    background: $stacked-links-link-logout-background;
+    color: $stacked-links-link-logout-color;
+    font: $stacked-links-link-logout-font;
+    text-transform: $stacked-links-link-logout-text-transform;
+    padding: $stacked-links-link-logout-padding;
+    margin: $stacked-links-link-logout-margin;
+    border-radius: $stacked-links-link-logout-border-radius;
+    letter-spacing: $stacked-links-link-logout-letter-spacing;
+    border: $stacked-links-link-logout-border;
+    @include breakpoint(large) {
+      margin: $stacked-links-link-logout-margin--large;
+      justify-content: $stacked-links-link-logout-justify-content--large;
+    }
+    &:hover {
+      background: $stacked-links-link-logout-hover-background;
+      color: $stacked-links-link-logout-hover-color;
+      border: $stacked-links-link-logout-hover-border;
+      &::after {
+        @include svg-icon(
+          $stacked-links-link-logout-icon,
+          $stacked-links-link-logout-hover-color,
+          100%,
+          right,
+          no-repeat,
+          $color-change: true,
+          $usesvg: $stacked-links-link-logout-icon-usesvg
+        );
+      }
+    }
+    &::after {
+      @include svg-icon(
+        $stacked-links-link-logout-icon,
+        $stacked-links-link-logout-icon-color,
+        100%,
+        right,
+        no-repeat,
+        $usesvg: $stacked-links-link-logout-icon-usesvg
+      );
+      height: $stacked-links-link-logout-icon-height;
+      margin: $stacked-links-link-logout-icon-margin;
+      width: $stacked-links-link-logout-icon-width;
+      @include breakpoint(large) {
+        margin: $stacked-links-link-logout-icon-margin--large;
+      }
+    }
+  }
+}

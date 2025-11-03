@@ -1,0 +1,218 @@
+/*------------------------------------*\
+        #FOOTER SOCIAL
+\*------------------------------------*/
+$footer-social-list-justify-content: space-between !default;
+$footer-social-list-justify-content--large: null !default;
+$footer-social-list-margin: rem-calc(0) !default;
+$footer-social-list-margin--large: 0 !default;
+$footer-social-list-line-height: 1 !default;
+$footer-social-list-flex-wrap: nowrap !default;
+$footer-social-list-flex-wrap--large: null !default;
+$footer-social-list-padding: 0 !default;
+$footer-social-list-padding--large: null !default;
+$footer-social-list-text-align: $global-left !default;
+$footer-social-list-text-align--large: null !default;
+$footer-social-item-margin: null !default;
+$footer-social-item-margin--large: null !default;
+$footer-social-item-title-flex: 0 0 100% !default;
+$footer-social-item-title-flex--large: null !default;
+$footer-social-item-title-margin--large: 0 !default;
+$footer-social-title-color: color(light) !default;
+$footer-social-title-text-transform: none !default;
+$footer-social-title-text-transform--large: null !default;
+$footer-social-title-font: bold #{rem-calc(14)} / 1.25 $font-primary !default;
+$footer-social-title-font--large: null !default;
+$footer-social-title-letter-spacing: null !default;
+$footer-social-title-letter-spacing--large: null !default;
+$footer-social-title-margin: null !default;
+$footer-social-title-margin--large: 0 !default;
+$footer-social-link-color: color(light) !default;
+$footer-social-link-padding: rem-calc(10) !default;
+$footer-social-link-padding--large: 0 !default;
+$footer-social-link-border-radius: null !default;
+$footer-social-link-border: 0 !default;
+$footer-social-link-hover-border: null !default;
+$footer-social-link-background: none !default;
+$footer-social-link-hover-color: $footer-social-link-color !default;
+$footer-social-list-wrapper-flex-wrap: nowrap !default;
+$footer-social-list-wrapper-flex-wrap--large: null !default;
+$footer-social-link-icon-usesvg: true !default;
+$footer-social-list: (
+  messenger: (
+    enabled: false,
+    icon: messenger,
+    icon-height: rem-calc(16),
+    icon-width: rem-calc(16),
+  ),
+  facebook: (
+    enabled: true,
+    icon: facebook,
+    icon-height: rem-calc(16),
+    icon-width: rem-calc(16),
+  ),
+  twitter: (
+    enabled: true,
+    icon: twitter,
+    icon-height: rem-calc(18),
+    icon-width: rem-calc(18),
+  ),
+  google: (
+    enabled: true,
+    icon: google,
+    icon-height: rem-calc(24),
+    icon-width: rem-calc(24),
+  ),
+  pinterest: (
+    enabled: true,
+    icon: pinterest,
+    icon-height: rem-calc(18),
+    icon-width: rem-calc(18),
+  ),
+  instagram: (
+    enabled: true,
+    icon: instagram,
+    icon-height: rem-calc(18),
+    icon-width: rem-calc(18),
+  ),
+  whatsapp: (
+    enabled: true,
+    icon: whatsapp,
+    icon-height: rem-calc(18),
+    icon-width: rem-calc(18),
+  ),
+  youtube: (
+    enabled: true,
+    icon: youtube,
+    icon-height: rem-calc(23),
+    icon-width: rem-calc(23),
+  ),
+  tiktok: (
+    enabled: false,
+    icon: tiktok,
+    icon-height: rem-calc(18),
+    icon-width: rem-calc(18),
+  ),
+  snapchat: (
+    enabled: false,
+    icon: snapchat,
+    icon-height: rem-calc(18),
+    icon-width: rem-calc(18),
+  ),
+  line: (
+    enabled: false,
+    icon: lineme,
+    icon-height: rem-calc(18),
+    icon-width: rem-calc(18),
+  ),
+) !default;
+@mixin lora-components-footer-social {
+  .c-footer-social__list {
+    align-items: center;
+    display: flex;
+    justify-content: $footer-social-list-justify-content;
+    flex-wrap: $footer-social-list-flex-wrap;
+    line-height: $footer-social-list-line-height;
+    list-style: none;
+    margin: $footer-social-list-margin;
+    padding: $footer-social-list-padding;
+    text-align: $footer-social-list-text-align;
+    @include breakpoint(large) {
+      flex-wrap: $footer-social-list-flex-wrap--large;
+      justify-content: $footer-social-list-justify-content--large;
+      padding: $footer-social-list-padding--large;
+      text-align: $footer-social-list-text-align--large;
+      margin: $footer-social-list-margin--large;
+    }
+  }
+  .c-footer-social__list-wrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: $footer-social-list-wrapper-flex-wrap;
+    @include breakpoint(large) {
+      flex-wrap: $footer-social-list-wrapper-flex-wrap--large;
+    }
+  }
+  .c-footer-social__item {
+    margin: $footer-social-item-margin;
+    @include breakpoint(large) {
+      margin: $footer-social-item-margin--large;
+    }
+  }
+  .c-footer-social__item.m-title {
+    flex: $footer-social-item-title-flex;
+    @include breakpoint(large) {
+      flex: $footer-social-item-title-flex--large;
+      margin: $footer-social-item-title-margin--large;
+    }
+  }
+  .c-footer-social__title {
+    @include text-style(
+      $font: (
+        small: $footer-social-title-font,
+        large: $footer-social-title-font--large,
+      ),
+      $color: (
+        small: $footer-social-title-color,
+      ),
+      $margin: (
+        small: $footer-social-title-margin,
+        large: $footer-social-title-margin--large,
+      ),
+      $text-transform: (
+        small: $footer-social-title-text-transform,
+        large: $footer-social-title-text-transform--large,
+      ),
+      $letter-spacing: (
+        small: $footer-social-title-letter-spacing,
+        large: $footer-social-title-letter-spacing--large,
+      )
+    );
+  }
+  .c-footer-social__link {
+    color: $footer-social-link-color;
+    display: inline-block;
+    padding: $footer-social-link-padding;
+    background: $footer-social-link-background;
+    border-radius: $footer-social-link-border-radius;
+    border: $footer-social-link-border;
+    @include breakpoint(large) {
+      padding: $footer-social-link-padding--large;
+    }
+    &:hover {
+      border: $footer-social-link-hover-border;
+    }
+    &::before {
+      content: "";
+      display: block;
+    }
+    @each $provider, $type in $footer-social-list {
+      @if (map-deep-get($footer-social-list, $provider, "enabled")) {
+        &.m-#{$provider}::before {
+          @include svg-icon(
+            map-deep-get($footer-social-list, $provider, "icon"),
+            $footer-social-link-color,
+            100%,
+            left,
+            no-repeat,
+            $usesvg: $footer-social-link-icon-usesvg
+          );
+          height: map-deep-get($footer-social-list, $provider, "icon-height");
+          width: map-deep-get($footer-social-list, $provider, "icon-width");
+        }
+      }
+      @if ($footer-social-link-hover-color != $footer-social-link-color) {
+        &.m-#{$provider}:hover::before {
+          @include svg-icon(
+            map-deep-get($footer-social-list, $provider, "icon"),
+            $footer-social-link-hover-color,
+            100%,
+            left,
+            no-repeat,
+            $color-change: true,
+            $usesvg: $footer-social-link-icon-usesvg
+          );
+        }
+      }
+    }
+  }
+}

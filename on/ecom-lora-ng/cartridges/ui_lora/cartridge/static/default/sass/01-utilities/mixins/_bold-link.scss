@@ -1,0 +1,11 @@
+// This mixin preserves space for the font-weight: bold change
+@mixin bold-link {
+  &::after {
+    display: block;
+    content: attr(data-title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}

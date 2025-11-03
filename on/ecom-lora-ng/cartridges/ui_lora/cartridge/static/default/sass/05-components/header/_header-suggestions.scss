@@ -1,0 +1,737 @@
+$header-suggestions-display: flex !default;
+$header-suggestions-flex-direction: column !default;
+$header-suggestions-flex-direction--large: row !default;
+$header-suggestions-row-flex-direction--large: column !default;
+$header-suggestions-sections-separator: 1px solid color(border) !default;
+$header-suggestions-padding--large: null !default;
+// Text Suggestions
+$header-suggestions-text-height: rem-calc(60) !default;
+$header-suggestions-text-height--large: rem-calc(45) !default;
+$header-suggestions-text-font: #{rem-calc(12)} / 1.25 $font-primary !default;
+$header-suggestions-text-font--large: #{rem-calc(14)} / 1.25 $font-primary !default;
+$header-suggestions-text-color: color(text-secondary) !default;
+$header-suggestions-text-match-font: bold #{rem-calc(12)} / 1.25 $font-primary !default;
+$header-suggestions-text-match-font--large: bold #{rem-calc(14)} / 1.25
+  $font-primary !default;
+$header-suggestions-text-match-color: color(text) !default;
+$header-suggestions-text-separator: $header-suggestions-sections-separator !default;
+$header-suggestions-text-separator--large: none !default;
+$header-suggestions-text-list-separator: null !default;
+$header-suggestions-text-list-separator--large: null !default;
+$header-suggestions-text-list-padding: null !default;
+$header-suggestions-text-list-padding--large: null !default;
+$header-suggestions-text-list-margin: 0 !default;
+$header-suggestions-text-list-margin--large: null !default;
+$header-suggestions-text-link-padding: rem-calc(0 0 0 30) !default;
+$header-suggestions-text-link-padding--large: rem-calc(0) !default;
+$header-suggestions-text-link-active-background: color(
+  element-background
+) !default;
+$header-suggestions-text-link-text-transform: null !default;
+// Product Suggestions
+$header-suggestions-products-separator: $header-suggestions-sections-separator !default;
+$header-suggestions-products-separator--large: none !default;
+$header-suggestions-products-padding: rem-calc(0) !default;
+$header-suggestions-products-flex--large: 1 1 auto !default;
+$header-suggestions-products-max-width--large: 100% !default;
+$header-suggestions-products-padding--large: rem-calc(30 0 40) !default;
+$header-suggestions-products-list-padding: null !default;
+$header-suggestions-products-list-padding--large: rem-calc(24 0 0) !default;
+$header-suggestions-products-list-gap--large: rem-calc(24) !default;
+$header-suggestions-products-list-separator: null !default;
+$header-suggestions-products-list-separator--large: null !default;
+$header-suggestions-products-height: $header-suggestions-text-height !default;
+$header-suggestions-products-height--large: auto !default;
+$header-suggestions-products-item-padding: rem-calc(0) !default;
+$header-suggestions-products-item-max-width--large: null !default;
+$header-suggestions-products-item-flex--large: 1 1 30% !default;
+$header-suggestions-products-item-padding--large: null !default;
+$header-suggestions-products-link-padding: $header-suggestions-text-link-padding !default;
+$header-suggestions-products-link-padding--large: rem-calc(0) !default;
+$header-suggestions-products-link-letter-spacing: null !default;
+$header-suggestions-products-image-width: rem-calc(100) !default;
+$header-suggestions-products-image-margin: rem-calc(0 12 0 0) !default;
+$header-suggestions-products-name-font-size: rem-calc(14) !default;
+$header-suggestions-products-name-line-height: 1.25 !default;
+$header-suggestions-products-name-max-lines: 2 !default;
+$header-suggestions-products-name-font: $header-suggestions-text-font !default;
+$header-suggestions-products-name-font--large: #{$header-suggestions-products-name-font-size} /
+  $header-suggestions-products-name-line-height $font-primary !default;
+$header-suggestions-products-name-color: $header-suggestions-text-color !default;
+$header-suggestions-products-name-color--large: color(text) !default;
+$header-suggestions-products-name-margin--large: rem-calc(0 0 5) !default;
+$header-suggestions-products-name-text-transform: null !default;
+$header-suggestions-products-name-text-transform--large: none !default;
+$header-suggestions-products-description-font-size: rem-calc(12) !default;
+$header-suggestions-products-description-line-height: 1.25 !default;
+$header-suggestions-products-description-max-lines: 2 !default;
+$header-suggestions-products-description-font: #{$header-suggestions-products-description-font-size} /
+  $header-suggestions-products-description-line-height $font-primary !default;
+$header-suggestions-products-description-color: color(text-secondary) !default;
+$header-suggestions-products-description-margin: rem-calc(0 0 5) !default;
+$header-suggestions-products-description-text-transform: null !default;
+$header-suggestions-products-rating-margin: rem-calc(0 0 10) !default;
+$header-suggestions-products-price-font: #{rem-calc(12)} / 1.25 $font-primary !default;
+$header-suggestions-products-price-color: color(text) !default;
+// Content Suggestions
+$header-suggestions-content-separator: $header-suggestions-sections-separator !default;
+$header-suggestions-content-separator--large: none !default;
+$header-suggestions-content-padding: rem-calc(0) !default;
+$header-suggestions-content-padding--large: rem-calc(30 0 40) !default;
+$header-suggestions-content-only-separator--large: none !default;
+$header-suggestions-content-only-margin--large: rem-calc(0) !default;
+$header-suggestions-content-only-padding--large: rem-calc(0 0 40) !default;
+$header-suggestions-content-only-view-all-top--large: rem-calc(5) !default;
+$header-suggestions-content-height: $header-suggestions-text-height !default;
+$header-suggestions-content-height--large: auto !default;
+$header-suggestions-content-max-width--large: 100% !default;
+$header-suggestions-content-item-padding: rem-calc(0) !default;
+$header-suggestions-content-item-padding--large: rem-calc(30 0 0 30) !default;
+$header-suggestions-content-link-padding: $header-suggestions-text-link-padding !default;
+$header-suggestions-content-link-padding--large: rem-calc(0) !default;
+$header-suggestions-content-link-align-items: center !default;
+$header-suggestions-content-image-width: rem-calc(100) !default;
+$header-suggestions-content-image-margin: rem-calc(0 12 0 0) !default;
+$header-suggestions-content-name-font: $header-suggestions-text-font !default;
+$header-suggestions-content-name-font--large: #{rem-calc(14)} / 1.25
+  $font-primary !default;
+$header-suggestions-content-name-color: $header-suggestions-text-color !default;
+$header-suggestions-content-name-color--large: color(text-secondary) !default;
+$header-suggestions-content-description-font: #{rem-calc(14)} / 1.25
+  $font-primary !default;
+$header-suggestions-content-description-font--large: null !default;
+$header-suggestions-content-description-color: color(text) !default;
+$header-suggestions-content-description-color--large: null !default;
+$header-suggestions-content-description-margin: rem-calc(5 0) !default;
+$header-suggestions-content-description-margin--large: null !default;
+$header-suggestions-content-description-max-lines: 1 !default;
+$header-suggestions-content-date-font: #{rem-calc(12)} / 1.25 $font-primary !default;
+$header-suggestions-content-date-font--large: null !default;
+$header-suggestions-content-date-color: color(text-secondary) !default;
+$header-suggestions-content-date-color--large: null !default;
+// Suggestions Title
+$header-suggestions-title-font: bold #{rem-calc(12)} / 1 $font-primary !default;
+$header-suggestions-title-font--large: #{rem-calc(18)} / 1.25 $font-primary !default;
+$header-suggestions-title-text-transform: null !default;
+$header-suggestions-title-text-transform--large: null !default;
+$header-suggestions-title-color: color(text) !default;
+$header-suggestions-title-color--large: null !default;
+$header-suggestions-title-padding: rem-calc(20 0 0) !default;
+$header-suggestions-title-padding--large: rem-calc(0) !default;
+$header-suggestions-title-margin: rem-calc(0) !default;
+/// Secondary title
+$header-suggestions-title-secondary-font: bold #{rem-calc(14)} / 1 $font-primary !default;
+$header-suggestions-title-secondary-font--large: #{rem-calc(18)} / 1.25
+  $font-primary !default;
+$header-suggestions-title-secondary-text-transform: null !default;
+$header-suggestions-title-secondary-text-transform--large: uppercase !default;
+// Suggestions View All
+$header-suggestions-view-all-font: 500 #{rem-calc(12)} / 1.25 $font-primary !default;
+$header-suggestions-view-all-font--large: 500 #{rem-calc(10)} / 1.25
+  $font-primary !default;
+$header-suggestions-view-all-color: color(text-secondary) !default;
+$header-suggestions-view-all-top: rem-calc(16) !default;
+$header-suggestions-view-all-top--large: rem-calc(35) !default;
+$header-suggestions-view-all-right: 0 !default;
+$header-suggestions-view-all-text-transform: initial !default;
+$header-suggestions-view-all-text-transform--large: uppercase !default;
+$header-suggestions-view-all-letter-spacing: null !default;
+// Secondary view
+$header-suggestions-secondary-padding--large: rem-calc(0 65) !default;
+$header-suggestions-secondary-width--large: null !default;
+$header-suggestions-secondary-border--large: 0 !default;
+$header-suggestions-main-secondary-width--large: rem-calc(540) !default;
+$header-suggestions-aside-secondary-margin--large: rem-calc(
+  40 0 40 30
+) !default;
+$header-suggestions-aside-secondary-width--large: rem-calc(230) !default;
+$header-suggestions-secondary-row-flex-wrap--large: wrap !default;
+$header-suggestions-secondary-text-list-padding--large: rem-calc(20 0) !default;
+$header-suggestions-secondary-products-max-width--large: none !default;
+$header-suggestions-secondary-products-list-gap--large: rem-calc(24) !default;
+$header-suggestions-secondary-products-item-padding--large: null !default;
+$header-suggestions-secondary-products-border--large: none !default;
+$header-suggestions-secondary-content-max-width--large: none !default;
+$header-suggestions-secondary-content-border-left--large: none !default;
+$header-suggestions-secondary-content-border-top--large: $header-suggestions-sections-separator !default;
+$header-suggestions-secondary-content-only-margin--large: 0 !default;
+$header-suggestions-secondary-content-only-padding--large: rem-calc(
+  30 0 40
+) !default;
+$header-suggestions-secondary-content-only-view-all-top--large: rem-calc(
+  30
+) !default;
+// Main section
+$header-suggestions-main-width: 100% !default;
+// Aside section
+$header-suggestions-aside-flex--large: 1 0 auto !default;
+$header-suggestions-aside-align-self--large: flex-start !default;
+$header-suggestions-aside-background: color(light) !default;
+$header-suggestions-aside-background--large: null !default;
+$header-suggestions-aside-padding: rem-calc(20 20 5 20) !default;
+$header-suggestions-aside-padding--large: rem-calc(20 30 10) !default;
+$header-suggestions-aside-margin: rem-calc(-1 0 15 0) !default;
+$header-suggestions-aside-margin--large: rem-calc(25 0 40 100) !default;
+$header-suggestions-aside-width--large: rem-calc(200) !default;
+// Aside search block
+$header-suggestions-aside-title-color: color(text-secondary) !default;
+$header-suggestions-aside-title-font: #{rem-calc(14)} / 1.5 $font-primary !default;
+$header-suggestions-aside-title-margin: rem-calc(0 0 3) !default;
+$header-suggestions-aside-title-margin--large: rem-calc(0 0 5) !default;
+$header-suggestions-aside-title-text-transform: null !default;
+$header-suggestions-aside-list-margin: rem-calc(0 0 15 10) !default;
+$header-suggestions-aside-list-margin--large: rem-calc(0 0 10 10) !default;
+$header-suggestions-aside-link-color: color(text) !default;
+$header-suggestions-aside-link-font: #{rem-calc(14)} / 1.5 $font-primary !default;
+$header-suggestions-aside-link-padding: rem-calc(7 0) !default;
+$header-suggestions-aside-link-padding--large: rem-calc(0) !default;
+$header-suggestions-aside-link-text-decoration: none !default;
+$header-suggestions-aside-link-text-transform: null !default;
+$header-suggestions-aside-link-hover-color: color(text) !default;
+$header-suggestions-aside-link-hover-text-decoration: none !default;
+$header-suggestions-aside-link-font-letter-spacing: null !default;
+// Product
+$header-suggestions-products-item-tile-padding--medium-down: rem-calc(
+  16 0
+) !default;
+$header-suggestions-products-item-tile-link-padding--medium-down: 0 !default;
+$header-suggestions-products-item-tile-link-height--medium-down: auto !default;
+$header-suggestions-products-item-tile-name-font: bold #{rem-calc(14)} / 1.25
+  $font-primary !default;
+$header-suggestions-products-item-tile-name-color: color(text) !default;
+$header-suggestions-products-item-tile-name-font--large: null !default;
+$header-suggestions-products-item-tile-name-color--large: null !default;
+$header-suggestions-products-item-tile-image-width--medium-down: rem-calc(
+  60
+) !default;
+$header-suggestions-products-item-tile-image-margin--medium-down: rem-calc(
+  0 16 0 0
+) !default;
+// Content
+$header-suggestions-content-item-tile-padding--medium-down: rem-calc(
+  16 0
+) !default;
+$header-suggestions-content-item-tile-link-padding--medium-down: 0 !default;
+$header-suggestions-content-item-tile-link-height--medium-down: auto !default;
+$header-suggestions-content-item-tile-name-font--medium-down: bold
+  #{rem-calc(14)} / 1.25 $font-primary !default;
+$header-suggestions-content-item-tile-name-color--medium-down: color(
+  text
+) !default;
+$header-suggestions-content-item-tile-image-width--medium-down: rem-calc(
+  60
+) !default;
+$header-suggestions-content-item-tile-image-margin--medium-down: rem-calc(
+  0 16 0 0
+) !default;
+@mixin lora-components-suggestions {
+  .c-suggestions {
+    display: $header-suggestions-display;
+    flex-flow: $header-suggestions-flex-direction;
+    @include breakpoint(large) {
+      flex-flow: $header-suggestions-flex-direction--large;
+      padding: $header-suggestions-padding--large;
+    }
+  }
+  .c-suggestions__row {
+    @include breakpoint(large) {
+      display: flex;
+      flex-flow: $header-suggestions-row-flex-direction--large;
+    }
+  }
+  .c-suggestions-text__doyoumean,
+  .c-suggestions-products__title,
+  .c-suggestions-content__title {
+    display: inline-block;
+    @include text-style(
+      $font: (
+        small: $header-suggestions-title-font,
+        large: $header-suggestions-title-font--large,
+      ),
+      $margin: (
+        small: $header-suggestions-title-margin,
+      ),
+      $padding: (
+        small: $header-suggestions-title-padding,
+        large: $header-suggestions-title-padding--large,
+      ),
+      $text-transform: (
+        small: $header-suggestions-title-text-transform,
+        large: $header-suggestions-title-text-transform--large,
+      ),
+      $color: (
+        small: $header-suggestions-title-color,
+        large: $header-suggestions-title-color--large,
+      )
+    );
+    &.m-secondary {
+      @include text-style(
+        $font: (
+          small: $header-suggestions-title-secondary-font,
+          large: $header-suggestions-title-secondary-font--large,
+        ),
+        $text-transform: (
+          small: $header-suggestions-title-secondary-text-transform,
+          large: $header-suggestions-title-secondary-text-transform--large,
+        )
+      );
+    }
+  }
+  .c-suggestions-text__list {
+    list-style: none;
+    margin: $header-suggestions-text-list-margin;
+    border-bottom: $header-suggestions-text-list-separator;
+    padding: $header-suggestions-text-list-padding;
+    @include breakpoint(large) {
+      border-bottom: $header-suggestions-text-list-separator--large;
+      margin: $header-suggestions-text-list-margin--large;
+      padding: $header-suggestions-text-list-padding--large;
+    }
+  }
+  .c-suggestions-text__item {
+    border-bottom: $header-suggestions-text-separator;
+    &.m-active {
+      background: $header-suggestions-text-link-active-background;
+    }
+    @include breakpoint(large) {
+      border-bottom: $header-suggestions-text-separator--large;
+    }
+  }
+  .c-suggestions-text__link {
+    align-items: center;
+    display: flex;
+    height: $header-suggestions-text-height;
+    padding: $header-suggestions-text-link-padding;
+    text-decoration: none;
+    text-transform: $header-suggestions-text-link-text-transform;
+    @include breakpoint(large) {
+      height: $header-suggestions-text-height--large;
+      padding: $header-suggestions-text-link-padding--large;
+    }
+    b {
+      color: $header-suggestions-text-match-color;
+      font: $header-suggestions-text-match-font;
+      @include breakpoint(large) {
+        font: $header-suggestions-text-match-font--large;
+      }
+    }
+  }
+  .c-suggestions-text__name {
+    color: $header-suggestions-text-color;
+    font: $header-suggestions-text-font;
+    @include breakpoint(large) {
+      font: $header-suggestions-text-font--large;
+    }
+  }
+  .c-suggestions-products {
+    padding: $header-suggestions-products-padding;
+    position: relative;
+    @include breakpoint(large) {
+      flex: $header-suggestions-products-flex--large;
+      max-width: $header-suggestions-products-max-width--large;
+      padding: $header-suggestions-products-padding--large;
+    }
+  }
+  .c-suggestions-products__list {
+    list-style: none;
+    margin: 0;
+    padding: $header-suggestions-products-list-padding;
+    border-bottom: $header-suggestions-products-list-separator;
+    @include breakpoint(large) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $header-suggestions-products-list-gap--large;
+      padding: $header-suggestions-products-list-padding--large;
+      border-bottom: $header-suggestions-products-list-separator--large;
+    }
+    &.m-column-2 {
+      .c-suggestions-products__item {
+        @include breakpoint(large) {
+          flex-basis: 45%;
+        }
+      }
+    }
+  }
+  .c-suggestions-products__item {
+    display: flex;
+    border-bottom: $header-suggestions-products-separator;
+    padding: $header-suggestions-products-item-padding;
+    @include breakpoint(large) {
+      border-bottom: $header-suggestions-products-separator--large;
+      flex: $header-suggestions-products-item-flex--large;
+      padding: $header-suggestions-products-item-padding--large;
+      max-width: $header-suggestions-products-item-max-width--large;
+    }
+    &.c-section__item {
+      margin: 0;
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+  // Show full product tile with image on mobile instead of a text recommendation
+  .c-suggestions-products__item.m-tile-for-mobile {
+    @include breakpoint(medium down) {
+      padding: $header-suggestions-products-item-tile-padding--medium-down;
+      .c-suggestions-products__image,
+      .c-suggestions-products__description,
+      .c-suggestions-products__rating,
+      .c-suggestions-products__price {
+        display: block;
+      }
+    }
+    .c-suggestions-products__link {
+      @include breakpoint(medium down) {
+        padding: $header-suggestions-products-item-tile-link-padding--medium-down;
+        height: $header-suggestions-products-item-tile-link-height--medium-down;
+      }
+    }
+    .c-suggestions-products__name {
+      font: $header-suggestions-products-item-tile-name-font;
+      color: $header-suggestions-products-item-tile-name-color;
+      @include breakpoint(large) {
+        font: $header-suggestions-products-item-tile-name-font--large;
+        color: $header-suggestions-products-item-tile-name-color--large;
+      }
+    }
+    .c-suggestions-products__image {
+      @include breakpoint(medium down) {
+        width: $header-suggestions-products-item-tile-image-width--medium-down;
+        margin: $header-suggestions-products-item-tile-image-margin--medium-down;
+      }
+    }
+  }
+  .c-suggestions-products__link {
+    align-items: center;
+    display: flex;
+    height: $header-suggestions-products-height;
+    padding: $header-suggestions-products-link-padding;
+    text-decoration: none;
+    letter-spacing: $header-suggestions-products-link-letter-spacing;
+    @include breakpoint(large) {
+      display: flex;
+      height: $header-suggestions-products-height--large;
+      padding: $header-suggestions-products-link-padding--large;
+    }
+  }
+  .c-suggestions-products__image {
+    margin: $header-suggestions-products-image-margin;
+    width: $header-suggestions-products-image-width;
+    flex: 0 0 auto;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .c-suggestions-products__content {
+    @include breakpoint(large) {
+      flex: 0 1 auto;
+    }
+  }
+  .c-suggestions-products__name {
+    @include text-style(
+      $font: (
+        small: $header-suggestions-products-name-font,
+        large: $header-suggestions-products-name-font--large,
+      ),
+      $margin: (
+        large: $header-suggestions-products-name-margin--large,
+      ),
+      $text-transform: (
+        small: $header-suggestions-products-name-text-transform,
+        large: $header-suggestions-products-name-text-transform--large,
+      ),
+      $color: (
+        small: $header-suggestions-products-name-color,
+        large: $header-suggestions-products-name-color--large,
+      )
+    );
+    @include text-line-clamp($header-suggestions-products-name-max-lines);
+  }
+  .c-suggestions-products__description {
+    color: $header-suggestions-products-description-color;
+    font: $header-suggestions-products-description-font;
+    margin: $header-suggestions-products-description-margin;
+    text-transform: $header-suggestions-products-description-text-transform;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    @include text-line-clamp(
+      $header-suggestions-products-description-max-lines
+    );
+  }
+  .c-suggestions-products__rating {
+    margin: $header-suggestions-products-rating-margin;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
+  .c-suggestions-products__price {
+    color: $header-suggestions-products-price-color;
+    font: $header-suggestions-products-price-font;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
+  .c-suggestions-products__view-all,
+  .c-suggestions-content__view-all {
+    color: $header-suggestions-view-all-color;
+    font: $header-suggestions-view-all-font;
+    position: absolute;
+    #{$global-right}: $header-suggestions-view-all-right;
+    text-transform: $header-suggestions-view-all-text-transform;
+    top: $header-suggestions-view-all-top;
+    letter-spacing: $header-suggestions-view-all-letter-spacing;
+    @include breakpoint(large) {
+      font: $header-suggestions-view-all-font--large;
+      text-transform: $header-suggestions-view-all-text-transform--large;
+      top: $header-suggestions-view-all-top--large;
+    }
+  }
+  .c-suggestions-content {
+    padding: $header-suggestions-content-padding;
+    position: relative;
+    @include breakpoint(large) {
+      flex: 1 1 auto;
+      max-width: $header-suggestions-content-max-width--large;
+      padding: $header-suggestions-content-padding--large;
+    }
+  }
+  .c-suggestions-content__list {
+    list-style: none;
+    margin: 0;
+    @include breakpoint(large) {
+      display: flex;
+    }
+  }
+  .c-suggestions-content__item {
+    border-bottom: $header-suggestions-content-separator;
+    padding: $header-suggestions-content-item-padding;
+    @include breakpoint(large) {
+      border-bottom: $header-suggestions-content-separator--large;
+      flex: 1 1 0;
+      padding: $header-suggestions-content-item-padding--large;
+    }
+    &:first-child {
+      padding-#{$global-left}: 0;
+    }
+  }
+  // Show full content tile with image on mobile instead of a text recommendation
+  .c-suggestions-content__item.m-tile-for-mobile {
+    @include breakpoint(medium down) {
+      padding: $header-suggestions-content-item-tile-padding--medium-down;
+      .c-suggestions-content__image {
+        display: block;
+      }
+    }
+    .c-suggestions-content__link {
+      @include breakpoint(medium down) {
+        padding: $header-suggestions-content-item-tile-link-padding--medium-down;
+        height: $header-suggestions-content-item-tile-link-height--medium-down;
+      }
+    }
+    .c-suggestions-content__name {
+      @include breakpoint(medium down) {
+        font: $header-suggestions-content-item-tile-name-font--medium-down;
+        color: $header-suggestions-content-item-tile-name-color--medium-down;
+      }
+    }
+    .c-suggestions-content__image {
+      @include breakpoint(medium down) {
+        width: $header-suggestions-content-item-tile-image-width--medium-down;
+        margin: $header-suggestions-content-item-tile-image-margin--medium-down;
+      }
+    }
+  }
+  .c-suggestions-content__link {
+    align-items: $header-suggestions-content-link-align-items;
+    display: flex;
+    height: $header-suggestions-content-height;
+    padding: $header-suggestions-content-link-padding;
+    text-decoration: none;
+    @include breakpoint(large) {
+      display: flex;
+      height: $header-suggestions-content-height--large;
+      padding: $header-suggestions-content-link-padding--large;
+    }
+  }
+  .c-suggestions-content__image {
+    margin: $header-suggestions-content-image-margin;
+    width: $header-suggestions-content-image-width;
+    flex: 0 0 auto;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .c-suggestions-content__content {
+    @include breakpoint(large) {
+      flex: 0 1 auto;
+    }
+  }
+  .c-suggestions-content__name {
+    color: $header-suggestions-content-name-color;
+    font: $header-suggestions-content-name-font;
+    @include breakpoint(large) {
+      color: $header-suggestions-content-name-color--large;
+      font: $header-suggestions-content-name-font--large;
+    }
+  }
+  .c-suggestions-content__description {
+    color: $header-suggestions-content-description-color;
+    font: $header-suggestions-content-description-font;
+    margin: $header-suggestions-content-description-margin;
+    @include text-line-clamp($header-suggestions-content-description-max-lines);
+    @include breakpoint(large) {
+      color: $header-suggestions-content-description-color--large;
+      font: $header-suggestions-content-description-font--large;
+      margin: $header-suggestions-content-description-margin--large;
+    }
+  }
+  .c-suggestions-content__date {
+    color: $header-suggestions-content-date-color;
+    font: $header-suggestions-content-date-font;
+    @include breakpoint(large) {
+      color: $header-suggestions-content-date-color--large;
+      font: $header-suggestions-content-date-font--large;
+    }
+  }
+  .c-suggestions-products + .c-suggestions-content,
+  .c-suggestions-content + .c-suggestions-content {
+    @include breakpoint(large) {
+      // Add separator only in case both sections present
+      border-#{$global-left}: $header-suggestions-content-only-separator--large;
+      padding: $header-suggestions-content-only-padding--large;
+      margin: $header-suggestions-content-only-margin--large;
+    }
+    .c-suggestions-products__view-all,
+    .c-suggestions-content__view-all {
+      @include breakpoint(large) {
+        top: $header-suggestions-content-only-view-all-top--large;
+      }
+    }
+  }
+  .c-suggestions__main {
+    width: $header-suggestions-main-width;
+  }
+  .c-suggestions__aside {
+    background: $header-suggestions-aside-background;
+    padding: $header-suggestions-aside-padding;
+    margin: $header-suggestions-aside-margin;
+    position: relative;
+    @include breakpoint(large) {
+      flex: $header-suggestions-aside-flex--large;
+      align-self: $header-suggestions-aside-align-self--large;
+      background: $header-suggestions-aside-background--large;
+      padding: $header-suggestions-aside-padding--large;
+      margin: $header-suggestions-aside-margin--large;
+      width: $header-suggestions-aside-width--large;
+    }
+  }
+  .c-suggestions__aside-title {
+    color: $header-suggestions-aside-title-color;
+    display: block;
+    font: $header-suggestions-aside-title-font;
+    margin: $header-suggestions-aside-title-margin;
+    text-transform: $header-suggestions-aside-title-text-transform;
+    @include breakpoint(large) {
+      margin: $header-suggestions-aside-title-margin--large;
+    }
+  }
+  .c-suggestions__aside-list {
+    list-style: none;
+    margin: $header-suggestions-aside-list-margin;
+    @include breakpoint(large) {
+      margin: $header-suggestions-aside-list-margin--large;
+    }
+  }
+  .c-suggestions__aside-link {
+    color: $header-suggestions-aside-link-color;
+    display: block;
+    font: $header-suggestions-aside-link-font;
+    padding: $header-suggestions-aside-link-padding;
+    text-decoration: $header-suggestions-aside-link-text-decoration;
+    text-transform: $header-suggestions-aside-link-text-transform;
+    letter-spacing: $header-suggestions-products-link-letter-spacing;
+    &:hover {
+      color: $header-suggestions-aside-link-hover-color;
+      text-decoration: $header-suggestions-aside-link-hover-text-decoration;
+    }
+    @include breakpoint(large) {
+      padding: $header-suggestions-aside-link-padding--large;
+    }
+  }
+  // Secondary styles
+  .c-simple-search.m-secondary {
+    .c-suggestions {
+      @include breakpoint(large) {
+        padding: $header-suggestions-secondary-padding--large;
+        width: $header-suggestions-secondary-width--large;
+        border: $header-suggestions-secondary-border--large;
+      }
+    }
+    .c-suggestions__main {
+      @include breakpoint(large) {
+        width: $header-suggestions-main-secondary-width--large;
+      }
+    }
+    .c-suggestions__aside {
+      @include breakpoint(large) {
+        margin: $header-suggestions-aside-secondary-margin--large;
+        width: $header-suggestions-aside-secondary-width--large;
+      }
+    }
+    .c-suggestions__row {
+      @include breakpoint(large) {
+        flex-wrap: $header-suggestions-secondary-row-flex-wrap--large;
+      }
+    }
+    .c-suggestions-text__list {
+      @include breakpoint(large) {
+        padding: $header-suggestions-secondary-text-list-padding--large;
+      }
+    }
+    .c-suggestions-products {
+      @include breakpoint(large) {
+        max-width: $header-suggestions-secondary-products-max-width--large;
+        border: $header-suggestions-secondary-products-border--large;
+      }
+    }
+    .c-suggestions-products__list {
+      @include breakpoint(large) {
+        gap: $header-suggestions-secondary-products-list-gap--large;
+      }
+    }
+    .c-suggestions-products__item {
+      @include breakpoint(large) {
+        padding: $header-suggestions-secondary-products-item-padding--large;
+      }
+    }
+    .c-suggestions-content {
+      @include breakpoint(large) {
+        max-width: $header-suggestions-secondary-content-max-width--large;
+      }
+    }
+    .c-suggestions-products + .c-suggestions-content,
+    .c-suggestions-content + .c-suggestions-content {
+      @include breakpoint(large) {
+        border-#{$global-left}: $header-suggestions-secondary-content-border-left--large;
+        border-top: $header-suggestions-secondary-content-border-top--large;
+        margin: $header-suggestions-secondary-content-only-margin--large;
+        padding: $header-suggestions-secondary-content-only-padding--large;
+      }
+      /* stylelint-disable selector-max-compound-selectors */
+      .c-suggestions-products__view-all,
+      .c-suggestions-content__view-all {
+        @include breakpoint(large) {
+          top: $header-suggestions-secondary-content-only-view-all-top--large;
+        }
+      }
+      /* stylelint-enable selector-max-compound-selectors */
+    }
+  }
+}

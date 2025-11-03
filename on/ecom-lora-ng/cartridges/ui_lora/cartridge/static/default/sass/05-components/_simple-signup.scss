@@ -1,0 +1,40 @@
+// Deprecated components
+@use "../100-deprecated/simple-signup";
+$simple-signup-color: color(text) !default;
+$simple-signup-link-color: color(text) !default;
+$simple-signup-link-font-weight: null !default;
+$simple-signup-title-display: block !default;
+$simple-signup-title-font: #{rem-calc(14)} $font-primary !default;
+$simple-signup-title-margin: rem-calc(0 0 15) !default;
+$simple-signup-title-text-transform: null !default;
+$simple-signup-title-letter-spacing: null !default;
+//Contact Preferences
+$simple-signup-group-title-default-display: none !default;
+$simple-signup-group-title-sms-signup-display: block !default;
+@mixin lora-components-simple-signup {
+  .c-simple-signup {
+    color: $simple-signup-color;
+  }
+  .c-simple-signup__group-label {
+    display: $simple-signup-group-title-default-display;
+  }
+  .c-simple-signup__sms-signup {
+    .c-simple-signup__group-label {
+      display: $simple-signup-group-title-sms-signup-display;
+    }
+  }
+  .c-simple-signup__title {
+    display: $simple-signup-title-display;
+    font: $simple-signup-title-font;
+    margin: $simple-signup-title-margin;
+    text-transform: $simple-signup-title-text-transform;
+    letter-spacing: $simple-signup-title-letter-spacing;
+  }
+  .c-simple-signup .c-check-field__label {
+    color: $simple-signup-color;
+  }
+  .c-simple-signup a {
+    color: $simple-signup-link-color;
+    font-weight: $simple-signup-link-font-weight;
+  }
+}

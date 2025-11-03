@@ -1,0 +1,132 @@
+// Dependency:
+// - ui_lora/05-components/scrollbar
+@use "../05-components/overlay";
+// Sticky panel
+$sliding-panel-padding: rem-calc(20 0) !default;
+$sliding-panel-background: color(global-background) !default;
+// Details
+$sliding-panel-details-padding: null !default;
+$sliding-panel-details-padding--large: rem-calc(40) !default;
+$sliding-panel-details-width: 100% !default;
+$sliding-panel-details-width--large: rem-calc(400) !default;
+$sliding-panel-details-flex-direction: column !default;
+// Details content
+$sliding-panel-details-content-padding: rem-calc(0 16 16) !default;
+$sliding-panel-details-content-padding--large: rem-calc(0) !default;
+// Account panel header
+$sliding-panel-header-padding: rem-calc(16 40 16 16) !default;
+$sliding-panel-header-padding--large: null !default;
+$sliding-panel-header-margin: null !default;
+$sliding-panel-header-margin--large: null !default;
+$sliding-panel-header-border: 1px solid color(border) !default;
+$sliding-panel-header-border--large: null !default;
+$sliding-panel-header-border-width: rem-calc(0 0 1) !default;
+$sliding-panel-header-border-width--large: null !default;
+$sliding-panel-header-background: color(light) !default;
+$sliding-panel-header-background--large: null !default;
+@mixin lora-components-sliding-panel {
+  .c-sliding-panel {
+    background: $sliding-panel-background;
+    left: 0;
+    padding: $sliding-panel-padding;
+    position: fixed;
+    width: 100%;
+    max-height: vh(100);
+    will-change: position;
+    z-index: z(slidingPanel);
+    &.m-overlaid {
+      z-index: z(slidingPanelOverlaid);
+    }
+    &.m-overmodal {
+      z-index: z(slidingPanelOverModal);
+    }
+    &.m-side {
+      height: vh(100);
+      @include breakpoint(large) {
+        width: auto;
+      }
+    }
+    &.m-fullheight {
+      height: vh(100);
+    }
+    &.m-bottom {
+      bottom: -100%;
+    }
+    &.m-top {
+      top: -100%;
+    }
+    &.m-right {
+      left: auto;
+      right: -100%;
+      top: 0;
+    }
+    &.m-left {
+      left: -100%;
+      top: 0;
+    }
+    &.m-opened {
+      &.m-bottom {
+        bottom: 0;
+      }
+      &.m-top {
+        top: 0;
+      }
+      &.m-right {
+        right: 0;
+      }
+      &.m-left {
+        left: 0;
+      }
+    }
+    &:not(.m-active) {
+      display: none;
+    }
+  }
+  .c-sliding-panel__inner {
+    @include layout;
+  }
+  .c-sliding-panel__overlay {
+    @include lora-helper-overlay-element(-1);
+  }
+  .c-sliding-panel__header {
+    padding: $sliding-panel-header-padding;
+    margin: $sliding-panel-header-margin;
+    position: relative;
+    border: $sliding-panel-header-border;
+    border-width: $sliding-panel-header-border-width;
+    background: $sliding-panel-header-background;
+    @include breakpoint(large) {
+      padding: $sliding-panel-header-padding--large;
+      margin: $sliding-panel-header-margin--large;
+      border: $sliding-panel-header-border--large;
+      border-width: $sliding-panel-header-border-width--large;
+      background: $sliding-panel-header-background--large;
+    }
+  }
+  .c-sliding-panel__container {
+    background: inherit;
+    height: 100%;
+    overflow: hidden auto;
+    width: 100%;
+    @include breakpoint(large) {
+      @include lora-helper-scrollbar-vertical;
+    }
+  }
+  .c-sliding-panel__details {
+    display: flex;
+    flex-direction: $sliding-panel-details-flex-direction;
+    height: 100%;
+    width: $sliding-panel-details-width;
+    padding: $sliding-panel-details-padding;
+    @include breakpoint(large) {
+      width: $sliding-panel-details-width--large;
+      padding: $sliding-panel-details-padding--large;
+    }
+  }
+  .c-sliding-panel__details-content {
+    padding: $sliding-panel-details-content-padding;
+    @include breakpoint(large) {
+      padding: $sliding-panel-details-content-padding--large;
+    }
+  }
+}

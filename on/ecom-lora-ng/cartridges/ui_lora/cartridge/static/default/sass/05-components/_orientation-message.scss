@@ -1,0 +1,55 @@
+$orientation-message-background: color(dark) !default;
+/// Content
+$orientation-message-content-max-width: rem-calc(200) !default;
+/// Image
+$orientation-message-image-width: rem-calc(152) !default;
+$orientation-message-image-height: rem-calc(125) !default;
+/// Text
+$orientation-message-text-font: 300 #{rem-calc(14)} / 1.4 $font-primary !default;
+$orientation-message-text-font--large: null !default;
+$orientation-message-text-color: color(light) !default;
+$orientation-message-text-color--large: null !default;
+$orientation-message-text-text-transform: uppercase !default;
+$orientation-message-text-text-transform--large: null !default;
+$orientation-message-text-margin: rem-calc(50 0 0) !default;
+$orientation-message-text-margin--large: null !default;
+@mixin lora-components-orientation-message {
+  .c-orientation-message {
+    position: fixed;
+    width: 100vw;
+    height: vh(100);
+    #{$global-left}: 0;
+    top: 0;
+    background: $orientation-message-background;
+    z-index: z(orientationMessage);
+  }
+  .c-orientation-message__content {
+    @include absolute-center;
+    width: 100%;
+    max-width: $orientation-message-content-max-width;
+  }
+  .c-orientation-message__image {
+    width: $orientation-message-image-width;
+    height: $orientation-message-image-height;
+  }
+  .c-orientation-message__text {
+    @include text-style(
+      $color: (
+        small: $orientation-message-text-color,
+        large: $orientation-message-text-color--large,
+      ),
+      $font: (
+        small: $orientation-message-text-font,
+        large: $orientation-message-text-font--large,
+      ),
+      $margin: (
+        small: $orientation-message-text-margin,
+        large: $orientation-message-text-margin--large,
+      ),
+      $text-transform: (
+        small: $orientation-message-text-text-transform,
+        large: $orientation-message-text-text-transform--large,
+      )
+    );
+  }
+}

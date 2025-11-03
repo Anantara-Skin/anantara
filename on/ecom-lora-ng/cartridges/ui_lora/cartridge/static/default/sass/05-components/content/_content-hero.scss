@@ -1,0 +1,494 @@
+/// Width for hero body content.
+/// @type Map
+$content-hero-body-width: (
+  "25": cell-width(3 of 12),
+  "50": cell-width(6 of 12),
+  "75": cell-width(9 of 12),
+  "100": cell-width(12 of 12),
+) !default;
+// Layout
+$content-hero-body-columns--large: 4 of 12 !default;
+$content-hero-body-width--large: cell-width(
+  $content-hero-body-columns--large
+) !default;
+$content-hero-body-padding: rem-calc(20 0) !default;
+$content-hero-body-padding--large: rem-calc(40 0) !default;
+$content-hero-unstack-body-padding: rem-calc(15 0) !default;
+$content-hero-unstack-body-padding--large: $content-hero-body-padding--large !default;
+$content-hero-rounded-border-radius: rem-calc(8) !default;
+// Plain body
+$content-hero-body-plain-padding: rem-calc(40 0) !default;
+$content-hero-body-plain-padding--large: rem-calc(50 60) !default;
+// label
+$content-hero-label-font: 300 #{rem-calc(12)} / 1.25 $font-primary !default;
+$content-hero-label-font--large: null !default;
+$content-hero-label-color: color(text) !default;
+$content-hero-label-color--large: color(light) !default;
+$content-hero-label-text-transform: uppercase !default;
+$content-hero-label-text-transform--large: null !default;
+$content-hero-label-margin: rem-calc(0 0 10) !default;
+$content-hero-label-margin--large: rem-calc(0 0 12) !default;
+$content-hero-no-image-label-color--large: color(text) !default;
+$content-hero-label-text-decoration: null !default;
+$content-hero-label-padding: null !default;
+$content-hero-label-display: block !default;
+$content-hero-label-border-left: null !default;
+// Label with background
+$content-hero-label-background-padding: rem-calc(5 10) !default;
+$content-hero-label-background-border-radius: null !default;
+// Title
+$content-hero-title-font: #{rem-calc(18)} / 1.25 $font-primary !default;
+$content-hero-title-font--large: #{rem-calc(30)} / 1.25 $font-primary !default;
+$content-hero-title-color: color(text) !default;
+$content-hero-title-color--large: color(light) !default;
+$content-hero-title-text-transform: uppercase !default;
+$content-hero-title-text-transform--large: null !default;
+$content-hero-title-margin: rem-calc(0 0 10) !default;
+$content-hero-title-margin--large: rem-calc(0 0 15) !default;
+$content-hero-no-image-title-color--large: color(text) !default;
+$content-hero-title-letter-spacing: null !default;
+// Description
+$content-hero-description-font: #{rem-calc(12)} / 1.5 $font-primary !default;
+$content-hero-description-font--large: #{rem-calc(14)} / 1.5 $font-primary !default;
+$content-hero-description-color: color(text-secondary) !default;
+$content-hero-description-color--large: color(light) !default;
+$content-hero-description-margin: rem-calc(0 0 15) !default;
+$content-hero-description-margin--large: rem-calc(0 0 20) !default;
+$content-hero-description-text-transform: none !default;
+$content-hero-description-text-transform--large: null !default;
+$content-hero-no-image-description-color--large: color(text) !default;
+$content-hero-description-letter-spacing: null !default;
+$content-hero-description-letter-spacing--large: null !default;
+// Info block
+$content-hero-info-margin: rem-calc(0 0 20) !default;
+$content-hero-info-margin--large: null !default;
+$content-hero-info-color: color(text-secondary) !default;
+$content-hero-info-color--large: color(light) !default;
+$content-hero-info-item-color: color(light) !default;
+$content-hero-info-item-color--large: null !default;
+$content-hero-no-image-info-item-color--large: color(text-secondary) !default;
+// Button
+$content-hero-button-display: inline-block !default;
+// Content hero actions
+$content-hero-actions-flex-direction: null !default;
+$content-hero-actions-gap: rem-calc(10) !default;
+$content-hero-actions-gap--large: null !default;
+// Body is clickable
+$content-hero-body-is-clickable: true !default;
+//Dispatch Slider
+$content-hero-slider-column-transition--large: flex-basis 0.3s ease-in-out !default;
+@mixin lora-helper-content-hero-fullsize {
+  .c-content-hero__image-wrapper,
+  .c-content-hero__image {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .c-content-hero__media-wrapper,
+  .c-content-hero__media,
+  .c-content-hero__video-wrapper,
+  .c-content-hero__video {
+    height: 100%;
+    .c-video-asset {
+      height: 100%;
+      width: 100%;
+    }
+    video {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .c-content-hero__caption {
+    pointer-events: none;
+  }
+  .c-content-hero__body {
+    pointer-events: auto;
+  }
+}
+@mixin lora-components-content-hero {
+  .c-content-hero {
+    position: relative;
+    @each $align in (left, right, center) {
+      &.m-caption-#{$align} {
+        .c-content-hero__caption {
+          text-align: $align;
+        }
+      }
+    }
+    @each $align in (left, right, center) {
+      &.m-caption-#{$align}--large .c-content-hero__caption {
+        @include breakpoint(large) {
+          text-align: $align;
+        }
+      }
+    }
+    &.m-caption-top--large {
+      .c-content-hero__caption {
+        @include breakpoint(large) {
+          top: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &.m-caption-bottom--large {
+      .c-content-hero__caption {
+        @include breakpoint(large) {
+          bottom: 0;
+          top: auto;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &.m-no-image {
+      .c-content-hero__caption {
+        @include breakpoint(large) {
+          position: static;
+          transform: none;
+        }
+      }
+      .c-content-hero__label {
+        @include breakpoint(large) {
+          color: $content-hero-no-image-label-color--large;
+        }
+      }
+      .c-content-hero__title,
+      .c-content-hero__title a {
+        @include breakpoint(large) {
+          color: $content-hero-no-image-title-color--large;
+        }
+      }
+      .c-content-hero__description {
+        @include breakpoint(large) {
+          color: $content-hero-no-image-description-color--large;
+        }
+      }
+      .c-content-hero__info-item {
+        @include breakpoint(large) {
+          color: $content-hero-no-image-info-item-color--large;
+        }
+      }
+    }
+    &.m-unstack {
+      position: relative;
+      .c-content-hero__caption {
+        @include breakpoint(medium down) {
+          @include absolute-center;
+        }
+      }
+      .c-content-hero__body {
+        padding: $content-hero-unstack-body-padding;
+        display: inline-block;
+        @include breakpoint(large) {
+          padding: $content-hero-unstack-body-padding--large;
+        }
+      }
+    }
+    &.m-stack--large .c-content-hero__caption {
+      pointer-events: initial;
+      @include breakpoint(large) {
+        position: static;
+        transform: none;
+      }
+      .c-content-hero__body {
+        pointer-events: initial;
+      }
+    }
+    &.m-clickable .c-content-hero__caption {
+      pointer-events: none;
+      // enables pointer events on the body if you need the CTA hover effect and ability to select the text
+      @if not $content-hero-body-is-clickable {
+        .c-content-hero__body {
+          pointer-events: initial;
+        }
+      }
+      .c-content-hero__body {
+        @include breakpoint(medium down) {
+          pointer-events: initial;
+        }
+      }
+    }
+    &.m-clickable.m-unstack .c-content-hero__body {
+      @include breakpoint(medium down) {
+        pointer-events: none;
+        // enables pointer events on the body if you need the CTA hover effect and ability to select the text
+        @if not $content-hero-body-is-clickable {
+          pointer-events: initial;
+        }
+      }
+    }
+    &.m-zoom-out {
+      .c-content-hero__image-wrapper,
+      .c-content-hero__video-wrapper,
+      .c-content-hero__media-wrapper {
+        overflow: hidden;
+      }
+    }
+    &.m-fullscreen {
+      @include lora-helper-content-hero-fullsize;
+      height: vh(100);
+    }
+    .c-content-spot & {
+      @include lora-helper-content-hero-fullsize;
+      height: 100%;
+    }
+    &.m-overlap-on-scroll.m-sticky-image {
+      clip-path: inset(0);
+      .c-content-hero__image-wrapper,
+      .c-content-hero__video-wrapper,
+      .c-content-hero__media-wrapper {
+        position: fixed;
+        top: 0;
+      }
+    }
+  }
+  .c-content-hero__image {
+    display: block;
+    position: relative;
+    &.m-link {
+      @include breakpoint(large) {
+        pointer-events: none;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .c-content-hero__caption {
+    position: relative;
+    z-index: z(contentHero, caption);
+    @include layout;
+    @include breakpoint(large) {
+      @include absolute-center;
+    }
+    &.m-caption-flex {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+  }
+  .c-content-hero__body {
+    padding: $content-hero-body-padding;
+    @include breakpoint(large) {
+      display: inline-block;
+      padding: $content-hero-body-padding--large;
+      width: $content-hero-body-width--large;
+    }
+    & > :last-child {
+      margin-bottom: 0;
+    }
+    @each $width, $value in $content-hero-body-width {
+      &.m-width-#{$width} {
+        width: $value;
+      }
+    }
+    @each $width, $value in $content-hero-body-width {
+      &.m-width-#{$width}--large {
+        @include breakpoint(large) {
+          width: $value;
+        }
+      }
+    }
+    &.m-plain {
+      padding: $content-hero-body-plain-padding;
+      @include breakpoint(medium down) {
+        @include pseudo-off-the-isle(inherit);
+      }
+      @include breakpoint(large) {
+        padding: $content-hero-body-plain-padding--large;
+      }
+    }
+    &.m-countdown-unstack {
+      @include breakpoint(medium down) {
+        position: relative;
+        .c-countdown__container {
+          position: absolute;
+          width: 100%;
+          bottom: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+  .c-content-hero__rounded-media {
+    border-radius: $content-hero-rounded-border-radius;
+    overflow: hidden;
+    position: relative;
+  }
+  .c-content-hero__label {
+    display: $content-hero-label-display;
+    border-left: $content-hero-label-border-left;
+    @include text-style(
+      $color: (
+        small: $content-hero-label-color,
+        large: $content-hero-label-color--large,
+      ),
+      $font: (
+        small: $content-hero-label-font,
+        large: $content-hero-label-font--large,
+      ),
+      $margin: (
+        small: $content-hero-label-margin,
+        large: $content-hero-label-margin--large,
+      ),
+      $text-transform: (
+        small: $content-hero-label-text-transform,
+        large: $content-hero-label-text-transform--large,
+      ),
+      $text-decoration: (
+        small: $content-hero-label-text-decoration,
+      ),
+      $padding: (
+        small: $content-hero-label-padding,
+      )
+    );
+    &.m-background {
+      display: inline-block;
+      vertical-align: middle;
+      padding: $content-hero-label-background-padding;
+      border-radius: $content-hero-label-background-border-radius;
+    }
+  }
+  .c-content-hero__title,
+  .c-content-hero__title a,
+  .c-content-hero .c-countdown__title {
+    @include text-style(
+      $color: (
+        small: $content-hero-title-color,
+        large: $content-hero-title-color--large,
+      ),
+      $font: (
+        small: $content-hero-title-font,
+        large: $content-hero-title-font--large,
+      ),
+      $margin: (
+        small: $content-hero-title-margin,
+        large: $content-hero-title-margin--large,
+      ),
+      $text-transform: (
+        small: $content-hero-title-text-transform,
+        large: $content-hero-title-text-transform--large,
+      ),
+      $letter-spacing: (
+        small: $content-hero-title-letter-spacing,
+      )
+    );
+  }
+  .c-content-hero__description {
+    @include text-style(
+      $color: (
+        small: $content-hero-description-color,
+        large: $content-hero-description-color--large,
+      ),
+      $font: (
+        small: $content-hero-description-font,
+        large: $content-hero-description-font--large,
+      ),
+      $margin: (
+        small: $content-hero-description-margin,
+        large: $content-hero-description-margin--large,
+      ),
+      $text-transform: (
+        small: $content-hero-description-text-transform,
+        large: $content-hero-description-text-transform--large,
+      ),
+      $letter-spacing: (
+        small: $content-hero-description-letter-spacing,
+        large: $content-hero-description-letter-spacing--large,
+      )
+    );
+  }
+  .c-content-hero__info {
+    margin: $content-hero-info-margin;
+    color: $content-hero-info-color;
+    @include breakpoint(large) {
+      margin: $content-hero-info-margin--large;
+      color: $content-hero-info-color--large;
+    }
+  }
+  .c-content-hero__info-item {
+    color: $content-hero-info-item-color;
+    @include breakpoint(large) {
+      color: $content-hero-info-item-color--large;
+    }
+  }
+  .c-content-hero__link-banner {
+    text-decoration: none;
+  }
+  .c-content-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: $content-hero-actions-flex-direction;
+    gap: $content-hero-actions-gap;
+    @include breakpoint(large) {
+      gap: $content-hero-actions-gap--large;
+    }
+  }
+  .c-content-hero__button {
+    position: relative;
+    display: $content-hero-button-display;
+    vertical-align: top;
+    &:last-child {
+      margin: 0;
+    }
+    &:only-child {
+      width: 100%;
+    }
+  }
+  .c-content-hero__slider-column {
+    @include breakpoint(large) {
+      flex: 1;
+      transition: $content-hero-slider-column-transition--large;
+      position: relative;
+      overflow: hidden;
+      .c-content-hero__image {
+        img {
+          width: 100vw;
+          max-width: none;
+        }
+      }
+      &:hover {
+        flex-basis: var(
+          --hero-slider-offset,
+          25%
+        ); // Adjusts the column's width on hover.
+      }
+      // Specific styles for right-aligned slider column
+      &.m-right {
+        >div,                // Target PD service div
+                .c-content-hero,
+                .c-content-hero__image {
+          height: 100%;
+        }
+        .c-content-hero__image img {
+          right: 0;
+          position: absolute;
+        }
+      }
+      // Styles for fullscreen layout
+      &.m-fullscreen {
+        .c-content-hero {
+          height: vh(100); // Sets the height to 100% of the viewport.
+        }
+        .c-content-hero__image,
+        .c-content-hero__image-wrapper {
+          height: 100%; // Ensures the image and wrapper fill the full height.
+        }
+        .c-content-hero__image img {
+          height: 100%; // Stretches the image to fit the container's height.
+          object-fit: cover; // Ensures the image covers the container without distortion.
+        }
+        // Adjusts image alignment for right-aligned fullscreen column
+        &.m-right .c-content-hero__image img {
+          object-position: right center;
+        }
+        // Adjusts image alignment for left-aligned fullscreen column
+        &.m-left .c-content-hero__image img {
+          object-position: left center;
+        }
+      }
+    }
+  }
+}

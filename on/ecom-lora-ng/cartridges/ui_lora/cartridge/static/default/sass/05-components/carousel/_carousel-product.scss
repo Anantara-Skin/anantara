@@ -1,0 +1,34 @@
+$carousel-product-item-width: rem-calc(150) !default;
+$carousel-product-item-justify-content: space-between !default;
+@mixin lora-components-carousel-product {
+  .c-carousel.m-style-product:not(.m-vertical),
+  .c-carousel.m-style-product.m-horizontal {
+    @include breakpoint(medium down) {
+      overflow: visible;
+    }
+    > .c-carousel__inner {
+      @include breakpoint(medium down) {
+        overflow: visible;
+      }
+      > .c-carousel__content {
+        align-items: stretch;
+        > .c-carousel__item {
+          // stylelint-disable-line
+          height: auto;
+          min-height: 100%;
+          display: flex;
+          flex-flow: column;
+          justify-content: $carousel-product-item-justify-content;
+          @include breakpoint(medium down) {
+            // stylelint-disable-line
+            width: $carousel-product-item-width;
+          }
+          .c-product-tile {
+            // stylelint-disable-line
+            width: unquote("round(down, 100%, 1px)");
+          }
+        }
+      }
+    }
+  }
+}

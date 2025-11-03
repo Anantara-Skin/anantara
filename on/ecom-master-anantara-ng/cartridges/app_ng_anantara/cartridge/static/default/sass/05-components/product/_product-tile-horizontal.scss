@@ -1,0 +1,15 @@
+$product-tile-horizontal-table-margin: rem-calc(0 0 0 8);
+$product-tile-horizontal-figure-width--large: rem-calc(60);
+$product-tile-horizontal-info-item-padding--large: rem-calc(16 15 0 0);
+$product-tile-horizontal-name-font-family: $font-primary-medium;
+$product-tile-horizontal-name-font: #{rem-calc(14)} / 1.5 $font-primary-medium;
+$product-tile-horizontal-name-line-height: 1.5;
+$product-tile-horizontal-name-margin: rem-calc(0 0 4 0);
+$product-tile-horizontal-subtitle-line-height: 1.5;
+$product-tile-horizontal-subtitle-color: color(secondary);
+$product-tile-horizontal-quantity-justify-content: flex-start;
+$product-tile-horizontal-quantity-justify-content--large: $product-tile-horizontal-quantity-justify-content;
+$product-tile-horizontal-variations-padding--large: 0;
+$product-tile-horizontal-tertiary-figure-width--large: rem-calc(100);
+$product-tile-horizontal-add-bag-text-transform: none;
+@use "@lora/05-components/product/product-tile-horizontal";

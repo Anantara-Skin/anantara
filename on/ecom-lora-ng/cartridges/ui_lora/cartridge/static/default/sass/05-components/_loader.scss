@@ -1,0 +1,59 @@
+$loader-layer-bg: #fff !default;
+$loader-opacity: 0.7 !default;
+$loader-image: "loader.gif" !default;
+$loader-image--reduced-motion: "loader.png" !default;
+$loader-height: 80px !default;
+$loader-width: 80px !default;
+@mixin lora-components-loader {
+  .c-loader {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: z(pageLoader);
+    // Loader should always cover content. Since it is an inherited property it is purposely set to auto.
+    pointer-events: auto;
+    // loader layer
+    &::before {
+      background: $loader-layer-bg;
+      content: "";
+      height: 100%;
+      opacity: $loader-opacity;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: z(pageLoader, overlay);
+    }
+    // loader icon
+    &::after {
+      @include absolute-center;
+      background: transparent url("#{$global-image-path}/#{$loader-image}")
+        no-repeat center;
+      background-size: contain;
+      content: "";
+      height: $loader-height;
+      width: $loader-width;
+      max-width: 50%;
+      max-height: 50%;
+      z-index: z(pageLoader, icon);
+      @include reduced-motion {
+        background: transparent
+          url("#{$global-image-path}/#{$loader-image--reduced-motion}")
+          no-repeat 0 0;
+      }
+    }
+  }
+  .c-loader.m-fixed {
+    position: fixed;
+  }
+  .c-loader.m-icon-fixed {
+    &::after {
+      position: fixed;
+    }
+  }
+  .c-loader__wrapper {
+    position: relative;
+  }
+}

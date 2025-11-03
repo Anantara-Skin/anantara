@@ -1,0 +1,10 @@
+// Load More button
+$load-more-button-min-width: 100%;
+$load-more-button-min-width--large: rem-calc(170);
+$load-more-button-background: transparent;
+$load-more-button-hover-background: color(primary);
+$load-more-button-border: rem-calc(1) solid color(grey-2);
+$load-more-button-hover-border: rem-calc(1) solid color(primary);
+$load-more-button-color: color(primary);
+$load-more-button-hover-color: color(light);
+@use "@lora/05-components/load-more";

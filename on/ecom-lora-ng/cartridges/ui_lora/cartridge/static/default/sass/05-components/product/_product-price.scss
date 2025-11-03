@@ -1,0 +1,104 @@
+$product-price-value-padding: 0 rem-calc(2) !default;
+$product-price-caption-padding: $product-price-value-padding !default;
+$product-price-old-margin: 0 !default;
+$product-price-value-color: null !default;
+$product-price-value-old-color: color(text-secondary) !default;
+$product-price-old-text-decoration-color: null !default;
+$product-price-value-new-color: null !default;
+// Price inside a CTA
+$product-price-for-button-value-old-color: inherit !default;
+$product-price-for-button-value-old-hover-color: inherit !default;
+$product-price-for-button-value-old-opacity: 0.7 !default;
+$product-price-for-button-value-new-color: null !default;
+$product-price-for-button-value-new-hover-color: null !default;
+// Price per Capacity
+$product-price-capacity-flex: 1 1 100% !default;
+$product-price-capacity-margin: null !default;
+// Price Range
+$product-price-value-range-standard-text-decoration: line-through !default;
+$product-price-value-range-standard-color: null !default;
+$product-price-value-range-sale-color: null !default;
+// Range Price inside a CTA
+$product-price-value-for-button-range-standard-color: inherit !default;
+$product-price-value-for-button-range-standard-hover-color: inherit !default;
+$product-price-value-for-button-range-standard-opacity: 0.7 !default;
+$product-price-value-for-button-range-sale-color: null !default;
+$product-price-value-for-button-range-sale-hover-color: null !default;
+// Price suffix
+$product-price-suffix-display: null !default;
+// Price Total
+$product-price-total-flex-wrap: wrap !default;
+@mixin lora-components-product-price {
+  .c-product-price {
+    display: inline-flex;
+    flex-wrap: $product-price-total-flex-wrap;
+  }
+  .c-product-price__caption {
+    padding: $product-price-caption-padding;
+  }
+  .c-product-price__text {
+    // reserved for text element, like MSRP, discounts, dashes etc.
+  }
+  .c-product-price__label {
+    @include element-invisible;
+  }
+  .c-product-price__value {
+    padding: $product-price-value-padding;
+    color: $product-price-value-color;
+    white-space: nowrap;
+    &.m-old {
+      margin: $product-price-old-margin;
+      text-decoration: line-through $product-price-old-text-decoration-color;
+      color: $product-price-value-old-color;
+      font-weight: normal;
+      &:empty {
+        display: none;
+      }
+      button & {
+        color: $product-price-for-button-value-old-color;
+        opacity: $product-price-for-button-value-old-opacity;
+      }
+      button:hover & {
+        color: $product-price-for-button-value-old-hover-color;
+      }
+    }
+    &.m-new {
+      color: $product-price-value-new-color;
+      button & {
+        color: $product-price-for-button-value-new-color;
+      }
+      button:hover & {
+        color: $product-price-for-button-value-new-hover-color;
+      }
+    }
+    &.m-rangestandardprice {
+      text-decoration: $product-price-value-range-standard-text-decoration;
+      color: $product-price-value-range-standard-color;
+      button & {
+        color: $product-price-value-for-button-range-standard-color;
+        opacity: $product-price-value-for-button-range-standard-opacity;
+      }
+      button:hover & {
+        color: $product-price-value-for-button-range-standard-hover-color;
+      }
+    }
+    &.m-rangesaleprice,
+    &.m-rangemaxprice {
+      color: $product-price-value-range-sale-color;
+      button & {
+        color: $product-price-value-for-button-range-sale-color;
+      }
+      button:hover & {
+        color: $product-price-value-for-button-range-sale-hover-color;
+      }
+    }
+  }
+  .c-product-price__capacity {
+    display: block;
+    flex: $product-price-capacity-flex;
+    margin: $product-price-capacity-margin;
+  }
+  .c-product-price__suffix {
+    display: $product-price-suffix-display;
+  }
+}

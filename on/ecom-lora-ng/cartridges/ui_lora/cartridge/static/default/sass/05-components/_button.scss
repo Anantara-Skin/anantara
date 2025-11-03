@@ -1,0 +1,1031 @@
+$button-social-color: color(light) !default;
+$button-social-icon-color: color(light) !default;
+$button-social-icon-size: rem-calc(16) !default;
+$button-social-icon-margin: rem-calc(5) !default;
+$button-social-icon-left: true !default;
+$button-social-icon-text-transform: uppercase !default;
+// Social buttons
+$button-social-list: (
+  facebook: (
+    icon: facebook-2,
+    icon-color: color(light),
+    icon-color-hover: color(light),
+    background: #35599e,
+    background-hover: #1674d1,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  twitter: (
+    icon: twitter,
+    icon-color: null,
+    icon-color-hover: null,
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  instagram: (
+    icon: instagram,
+    icon-color: null,
+    icon-color-hover: null,
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  google: (
+    icon: google-2,
+    icon-color: null,
+    icon-color-hover: null,
+    background: color(light),
+    background-hover: rgba(#80868b, 0.04),
+    color: #000,
+    color-hover: null,
+    border: 1px solid #ddd,
+    border-hover: null,
+  ),
+  linkedin: (
+    icon: linkedin,
+    icon-color: null,
+    icon-color-hover: null,
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  gmail: (
+    icon: gmail,
+    icon-color: null,
+    icon-color-hover: null,
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  pinterest: (
+    icon: pinterest,
+    icon-color: null,
+    icon-color-hover: null,
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  line: (
+    icon: lineme,
+    icon-color: null,
+    icon-color-hover: null,
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  yahoo: (
+    icon: yahoo,
+    icon-color: null,
+    icon-color-hover: null,
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+  apple: (
+    icon: apple,
+    icon-color: color(light),
+    icon-color-hover: color(light),
+    background: null,
+    background-hover: null,
+    color: null,
+    color-hover: null,
+    border: null,
+    border-hover: null,
+  ),
+) !default;
+////
+/// @group button
+////
+/// Padding inside buttons.x
+/// @type List
+$button-padding: rem-calc(11 12 10) !default;
+$button-padding-link: $button-padding !default;
+/// box shadow  inside buttons.x
+/// @type List
+$button-box-shadow-hover: null !default;
+/// Default fill for buttons. Can either be `solid` or `hollow`.
+/// @type Keyword
+$button-fill: solid !default;
+/// Default background color for buttons.
+/// @type Color
+$button-background: color(primary) !default;
+/// Default border color for buttons.
+/// @type Color
+$button-border: 1px solid transparent !default;
+/// Default border color on hover for buttons.
+/// @type Color
+$button-hover-border: 1px solid transparent !default;
+/// Background color on hover for buttons.
+/// @type Color
+$button-hover-background: color(primary-active) !default;
+/// Sizes for buttons.
+/// @type Map
+$button-sizes: (
+  tiny: (
+    padding: rem-calc(5 12 4),
+    font-size: rem-calc(12),
+  ),
+  small: (
+    padding: rem-calc(8 12),
+    font-size: rem-calc(12),
+  ),
+  large: (
+    padding: rem-calc(12),
+    font-size: rem-calc(14),
+  ),
+) !default;
+/// Default font size for buttons.
+/// @type Number
+$button-font-size: rem-calc(12) !default;
+/// Default line-height for buttons.
+/// @type Number
+$button-line-height: 1 !default;
+/// Default font family for buttons.
+/// @type Keyword
+$button-font-family: $font-primary !default;
+/// Default font weight for buttons.
+/// @type Number
+$button-font-weight: normal !default;
+/// Default font for buttons.
+/// @type Font
+$button-font: $button-font-weight #{$button-font-size} / $button-line-height
+  $button-font-family !default;
+/// Text shadow on hover for buttons.
+/// @type Number
+$button-hover-text-shadow: null !default;
+/// Font color for buttons.
+/// @type Color
+$button-color: color(light) !default;
+/// Font color on hover for buttons.
+/// @type Color
+$button-hover-color: color(light) !default;
+/// Alternative background color for buttons.
+/// @type Color
+$button-alt-background: color(light) !default;
+/// Alternative background color on hover for buttons.
+/// @type Color
+$button-alt-hover-background: rgba(color(light), 0.8) !default;
+/// Alternative border color for buttons.
+/// @type Color
+$button-alt-border: 1px solid color(primary) !default;
+/// Alternative border color on hover for buttons.
+/// @type Color
+$button-alt-hover-border: 1px solid color(primary-active) !default;
+/// Alternative font color for buttons.
+/// @type Color
+$button-alt-color: color(primary) !default;
+/// Alternative font color on hover for buttons.
+/// @type Color
+$button-alt-hover-color: color(primary-active) !default;
+/// Alternative light border and font color for buttons.
+/// @type Color
+$button-alt-light-border: 1px solid color(light) !default;
+$button-alt-light-color: color(light) !default;
+$button-alt-light-background: transparent !default;
+/// Alternative light background color on hover for buttons.
+$button-alt-light-hover-background: rgba(color(light), 0.07) !default;
+$button-alt-light-hover-border: 1px solid color(light) !default;
+$button-alt-light-hover-color: color(light) !default;
+/// Minimal width for buttons.
+/// @type Number
+$button-min-width: rem-calc(170) !default;
+/// Border radius for buttons, defaulted to global-radius.
+/// @type Number
+$button-radius: $global-radius !default;
+$button-text-transform: uppercase !default;
+/// Primary button color.
+/// @type Map
+$button-primary: (
+  background: color(element-background),
+  background-hover: rgba(color(element-background), 0.8),
+  color: color(dark),
+) !default;
+/// Secondary button color.
+/// @type Map
+$button-secondary: (
+  background: color(secondary),
+  background-hover: color(secondary-active),
+  color: color(light),
+) !default;
+/// Alert button color.
+/// @type Map
+$button-alert: (
+  background: color(alert),
+  background-hover: rgba(color(alert), 0.8),
+  color: $button-color,
+) !default;
+/// Coloring classes. A map of classes to output in your CSS, like `.secondary`, `.success`, and so on.
+/// @type Map
+$button-palette: (
+  primary: $button-primary,
+  secondary: $button-secondary,
+  alert: $button-alert,
+) !default;
+/// Background color for a disabled button.
+/// @type Color
+$button-disabled-background: color(element-background) !default;
+/// Border color for a disabled button.
+/// @type Color
+$button-disabled-border: $button-border !default;
+/// Font Color for a disabled button.
+/// @type Color
+$button-disabled-color: color(disabled) !default;
+/// Background color for a disabled button m-link.
+/// @type Color
+$button-link-disabled-background: color(transparent) !default;
+/// Font Color for a disabled button m-link.
+/// @type Color
+$button-link-disabled-color: color(element-background) !default;
+/// Background color lightness on hover for buttons.
+/// @type Number
+$button-hover-background-lightness: -20% !default;
+/// Color lightness on hover for hollow buttons.
+/// @type Number
+$button-hollow-hover-lightness: -50% !default;
+/// transitions for buttons.
+/// @type List
+$button-transition:
+  background-color 0.25s ease-out,
+  color 0.25s ease-out !default;
+/// letter spacing for buttons.
+/// @type Number
+$button-letter-spacing: null !default;
+/// Default margin distance between icon and text
+/// @type Number
+$button-icon-margin: rem-calc(5) !default;
+/// Default button icon transition
+$button-icon-transition: $button-transition !default;
+/// Verical margin of icon (allows to make the icon bigger than allowed by button padding)
+/// @type Number
+$button-icon-margin-vertical: rem-calc(-10) !default;
+/// Default Icon size
+/// @type Number
+$button-icon-size: rem-calc(15) !default;
+$button-icon-usesvg: true !default;
+/// Default border for links.
+/// @type Border
+$button-link-border: 0 !default;
+/// Default text transform for links.
+/// @type String
+$button-link-text-transform: none !default;
+/// Default font for links.
+/// @type String
+$button-link-font: null !default;
+/// Default font-weight for links.
+/// @type String
+$button-link-font-weight: null !default;
+/// Default font-family for links.
+/// @type String
+$button-link-font-family: null !default;
+/// Default letter-spacing for links.
+/// @type String
+$button-link-letter-spacing: null !default;
+// Button loading
+$button-loading-icon: "reload" !default;
+$button-loading-icon-size: rem-calc(14) !default;
+$button-loading-icon-color: color(light) !default;
+$button-loading-icon-hover-color: $button-loading-icon-color !default;
+$button-loading-icon-margin: rem-calc(8) !default;
+$button-loading-icon-animation: loader-spin 1s infinite !default;
+$button-loading-icon-left: true;
+// Button loading dark icon
+$button-loading-dark-icon-color: color(dark) !default;
+$button-loading-dark-icon-hover-color: $button-loading-dark-icon-color !default;
+// Print Button
+$button-print-min-width: 0 !default;
+$button-print-icon: "print" !default;
+$button-print-icon-size: rem-calc(20) !default;
+$button-print-icon-color: color(dark) !default;
+$button-print-icon-hover-color: color(primary-active) !default;
+$button-print-icon-margin: rem-calc(0 10 0 0) !default;
+$button-print-icon-usesvg: true !default;
+$button-print-border: $button-link-border !default;
+$button-print-text-transform: $button-link-text-transform !default;
+$button-print-text-decoration: $anchor-text-decoration !default;
+$button-print-letter-spacing: null !default;
+$button-print-font-weight: null !default;
+$button-print-font: null !default;
+$button-print-color-hover: $anchor-color-hover !default;
+$button-print-text-decoration-hover: $anchor-text-decoration-hover !default;
+// Search button
+$button-search-icon: search !default;
+$button-search-icon-color: color(light) !default;
+$button-search-icon-hover-color: $button-search-icon-color !default;
+$button-search-icon-size: rem-calc(12) !default;
+$button-search-icon-left: rem-calc(12) !default;
+$button-search-icon-margin: 0 !default;
+$button-search-height: rem-calc(35) !default;
+//chat button
+$button-chat-icon: chat !default;
+$button-chat-icon-color: color(light) !default;
+$button-chat-icon-hover-color: $button-chat-icon-color !default;
+$button-chat-icon-size: rem-calc(20) !default;
+$button-chat-icon-left: rem-calc(12) !default;
+$button-chat-icon-margin: 0 !default;
+$button-chat-height: rem-calc(35) !default;
+// Edit button
+$button-edit-icon: edit !default;
+$button-edit-icon-color: color(text-secondary) !default;
+$button-edit-icon-hover-color: color(primary-active) !default;
+$button-edit-icon-size: rem-calc(11) !default;
+$button-edit-icon-left: rem-calc(11) !default;
+$button-edit-icon-margin: rem-calc(5) !default;
+// Remove button
+$button-remove-icon: cross !default;
+$button-remove-icon-color: color(text-secondary) !default;
+$button-remove-icon-hover-color: color(primary-active) !default;
+$button-remove-icon-size: rem-calc(11) !default;
+$button-remove-icon-left: rem-calc(11) !default;
+$button-remove-icon-margin: rem-calc(5) !default;
+// Geolocation button
+$button-geolocation-icon: pin !default;
+$button-geolocation-icon-color: color(light) !default;
+$button-geolocation-icon-hover-color: $button-geolocation-icon-color !default;
+$button-geolocation-icon-size: rem-calc(18) !default;
+$button-geolocation-icon-margin: rem-calc(5) !default;
+$button-geolocation-left: false !default;
+$button-geolocation-color: null !default;
+$button-geolocation-border-radius: null !default;
+// Logout button
+$button-logout-icon: "power-button" !default;
+$button-logout-icon-size: rem-calc(14) !default;
+$button-logout-icon-color: color(dark) !default;
+$button-logout-icon-hover-color: color(primary-active) !default;
+$button-logout-icon-margin: rem-calc(8) !default;
+$button-logout-icon-left: false !default;
+//Icon only button
+$button-icon-only-height: rem-calc(35) !default;
+// Button with price below the text
+$button-row-2-padding: rem-calc(4 12) !default;
+$button-row-2-price-font: #{rem-calc(14)} / #{rem-calc(18)} $font-primary !default;
+$button-row-2-price-font--large: null !default;
+$button-row-2-text-font: #{rem-calc(12)} / #{rem-calc(20)} $font-primary !default;
+$button-row-2-text-font--large: null !default;
+$button-row-2-line-loading-min-height: rem-calc(48) !default;
+// Button link secondary
+$button-link-secondary-text-decoration: none !default;
+$button-link-secondary-hover-text-decoration: none !default;
+$button-link-secondary-button-text-padding: rem-calc(0 0 3) !default;
+$button-link-secondary-button-text-border-bottom: 1px solid !default;
+$button-alt-secondary-color: color(dark) !default;
+@mixin lora-helper-button-base {
+  @include disable-mouse-outline;
+  appearance: none;
+  border-radius: $button-radius;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font: $button-font;
+  min-width: $button-min-width;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none;
+  text-transform: $button-text-transform;
+  transition: $button-transition;
+  vertical-align: middle;
+  letter-spacing: $button-letter-spacing;
+}
+/// Expands a button to make it full-width.
+@mixin lora-helper-button-expand {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  min-width: auto;
+}
+@mixin lora-helper-button-autosize {
+  min-width: auto;
+  white-space: nowrap;
+}
+/// Sets the visual style of a button.
+/// @param {Color} $background [$button-background] - Background color of the button.
+/// @param {Color} $background-hover [$button-hover-background] - Background color of the button on hover. Set to `auto` to have the mixin automatically generate a hover color.
+/// @param {Color} $color [$button-color] - Text color of the button. Set to `auto` to automatically generate a color based on the background color.
+@mixin lora-helper-button-style(
+  $background: $button-background,
+  $background-hover: $button-hover-background,
+  $border: $button-border,
+  $border-hover: $button-hover-border,
+  $color: $button-color,
+  $color-hover: $button-hover-color,
+  $box-shadow-hover: $button-box-shadow-hover,
+  $text-shadow-hover: $button-hover-text-shadow,
+  $background-hover-lightness: $button-hover-background-lightness
+) {
+  background-color: $background;
+  border: $border;
+  color: $color;
+  @if $background-hover == auto {
+    $background-hover: scale-color(
+      $background,
+      $lightness: $background-hover-lightness
+    );
+  }
+  @if $background != transparent and $background != none {
+    &.m-link {
+      color: $background;
+    }
+  }
+  @include hover {
+    &:hover {
+      background-color: $background-hover;
+      border: $border-hover;
+      color: $color-hover;
+      text-decoration: none;
+      box-shadow: $box-shadow-hover;
+      text-shadow: $text-shadow-hover;
+    }
+    @if $background != transparent and $background != none {
+      &.m-link:hover {
+        color: $background-hover;
+      }
+    }
+  }
+}
+/// Adds disabled styles to a button by fading the element, reseting the cursor, and disabling pointer events.
+@mixin lora-helper-button-disabled(
+  $background: $button-disabled-background,
+  $background-hover: $button-disabled-background,
+  $border: $button-disabled-border,
+  $border-hover: $button-disabled-border,
+  $color: $button-disabled-color,
+  $color-hover: $button-disabled-color
+) {
+  @include lora-helper-button-style(
+    $background,
+    $background-hover,
+    $border,
+    $border-hover,
+    $color,
+    $color-hover
+  );
+  cursor: not-allowed;
+  pointer-events: none;
+}
+/// Adds all styles for a button. For more granular control over styles, use the individual button mixins.
+/// @param {Boolean} $expand [false] - Set to `true` to make the button full-width.
+/// @param {Color} $background [$button-background] - Background color of the button.
+/// @param {Color} $background-hover [$button-hover-background] - Background color of the button on hover. Set to `auto` to have the mixin automatically generate a hover color.
+/// @param {Color} $color [$button-color] - Text color of the button. Set to `auto` to automatically generate a color based on the background color.
+/// @param {Keyword} $style [solid] - Set to `hollow` to create a hollow button. The color defined in `$background` will be used as the primary color of the button.
+@mixin lora-helper-button(
+  $expand: false,
+  $background: $button-background,
+  $background-hover: $button-hover-background,
+  $border: $button-border,
+  $border-hover: $button-hover-border,
+  $color: $button-color,
+  $color-hover: $button-hover-color,
+  $style: $button-fill
+) {
+  @include lora-helper-button-base;
+  @include lora-helper-button-style(
+    $background,
+    $background-hover,
+    $border,
+    $border-hover,
+    $color,
+    $color-hover
+  );
+  @if $expand {
+    @include lora-helper-button-expand;
+  }
+  &.m-disabled,
+  &[disabled] {
+    @include lora-helper-button-disabled;
+  }
+}
+@mixin lora-helper-button-alt(
+  $color: $button-alt-color,
+  $border: $button-alt-border,
+  $color-hover: $button-alt-hover-color,
+  $border-hover: $button-alt-hover-border
+) {
+  background-color: $button-alt-background;
+  border: $border;
+  color: $color;
+  @include hover {
+    &:hover {
+      background-color: $button-alt-hover-background;
+      border: $border-hover;
+      color: $color-hover;
+    }
+  }
+  &.m-color-light {
+    border: $button-alt-light-border;
+    color: $button-alt-light-color;
+    background: $button-alt-light-background;
+    @include hover {
+      &:hover {
+        background-color: $button-alt-light-hover-background;
+        border: $button-alt-light-hover-border;
+        color: $button-alt-light-hover-color;
+      }
+    }
+  }
+}
+@mixin lora-helper-button-link(
+  $color: $anchor-color,
+  $padding: $button-padding-link,
+  $text-decoration: $anchor-text-decoration,
+  $text-decoration-hover: $anchor-text-decoration-hover
+) {
+  background: none;
+  border: $button-link-border;
+  color: $color;
+  min-width: 0;
+  padding: $padding;
+  text-decoration: $text-decoration;
+  text-transform: $button-link-text-transform;
+  font: $button-link-font;
+  font-weight: $button-link-font-weight;
+  font-family: $button-link-font-family;
+  letter-spacing: $button-link-letter-spacing;
+  @include hover {
+    &:hover {
+      background: none;
+      color: $anchor-color-hover;
+      text-decoration: $text-decoration-hover;
+      border: $button-link-border;
+    }
+  }
+  &:focus {
+    outline-width: 1px;
+  }
+}
+@mixin lora-helper-button-row-2 {
+  padding: $button-row-2-padding;
+  .c-button__price {
+    font: $button-row-2-price-font;
+    @include breakpoint(large) {
+      font: $button-row-2-price-font--large;
+    }
+  }
+  .c-button__text {
+    font: $button-row-2-text-font;
+    @include breakpoint(large) {
+      font: $button-row-2-text-font--large;
+    }
+  }
+  &.m-loading {
+    min-height: $button-row-2-line-loading-min-height;
+    &::after {
+      display: none;
+    }
+  }
+}
+@mixin lora-helper-button-icon(
+  $icon,
+  $color: $button-color,
+  $left: true,
+  $size: $button-icon-size,
+  $margin: $button-icon-margin,
+  $color-disabled: $button-disabled-color,
+  $color-hover: $button-hover-color
+) {
+  // stylelint-disable-next-line
+  &::#{if($left, "before", "after")} {
+    @include svg-icon($icon, $color, $usesvg: $button-icon-usesvg);
+    @if ($global-text-direction == rtl) {
+      margin-#{if($left, 'left', 'right')}: $margin;
+    } @else {
+      margin-#{if($left, 'right', 'left')}: $margin;
+    }
+    width: $size;
+    height: $size;
+    background-size: contain;
+  }
+  &:empty,
+  &.m-icon-only {
+    // stylelint-disable-next-line
+    &::#{if($left, "before", "after")} {
+      @if ($global-text-direction == rtl) {
+        margin-#{if($left, 'left', 'right')}: 0;
+      } @else {
+        margin-#{if($left, 'right', 'left')}: 0;
+      }
+    }
+    height: $button-icon-only-height;
+  }
+  &.m-disabled,
+  &[disabled] {
+    // stylelint-disable-next-line
+    &::#{if($left, "before", "after")} {
+      @include svg-icon(
+        $icon,
+        $color-disabled,
+        $color-change: true,
+        $usesvg: $button-icon-usesvg
+      );
+    }
+  }
+  &:hover,
+  &:focus {
+    // stylelint-disable-next-line
+    &::#{if($left, "before", "after")} {
+      @include svg-icon(
+        $icon,
+        $color-hover,
+        $color-change: true,
+        $usesvg: $button-icon-usesvg
+      );
+    }
+  }
+  &.m-alt {
+    // stylelint-disable-next-line
+    &::#{if($left, "before", "after")} {
+      @include svg-icon(
+        $icon,
+        $button-alt-color,
+        $color-change: true,
+        $usesvg: $button-icon-usesvg
+      );
+    }
+  }
+  &.m-link-secondary.m-alt {
+    // stylelint-disable-next-line
+    &::#{if($left, "before", "after")} {
+      @include svg-icon(
+        $icon,
+        $button-alt-secondary-color,
+        $color-change: true,
+        $usesvg: $button-icon-usesvg
+      );
+    }
+  }
+  &.m-link {
+    // Colors
+    @each $name, $type in $button-palette {
+      &.m-#{$name} {
+        // stylelint-disable-next-line
+        &::#{if($left, "before", "after")} {
+          @include svg-icon(
+            $icon,
+            map-deep-get($button-palette, $name, "background"),
+            $color-change: true,
+            $usesvg: $button-icon-usesvg
+          );
+        }
+        &:hover {
+          // stylelint-disable-next-line
+          &::#{if($left, "before", "after")} {
+            @include svg-icon(
+              $icon,
+              map-deep-get($button-palette, $name, "background-hover"),
+              $color-change: true,
+              $usesvg: $button-icon-usesvg
+            );
+          }
+        }
+      }
+    }
+  }
+}
+@mixin lora-helper-button-icon-base {
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: $button-icon-margin-vertical;
+    margin-bottom: $button-icon-margin-vertical;
+    transition: $button-icon-transition;
+  }
+}
+@mixin lora-helper-button-icon-list {
+  &.m-icon {
+    @include lora-helper-button-icon-base;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @each $provider, $type in $button-social-list {
+    &.m-#{$provider}:not([disabled]) {
+      @if (map-deep-get($button-social-list, $provider, "icon")) {
+        @include lora-helper-button-icon(
+          $icon: map-deep-get($button-social-list, $provider, "icon"),
+          $color: map-deep-get($button-social-list, $provider, "icon-color"),
+          $color-hover: map-deep-get(
+              $button-social-list,
+              $provider,
+              "icon-color-hover"
+            ),
+          $margin: $button-social-icon-margin,
+          $size: $button-social-icon-size,
+          $left: $button-social-icon-left
+        );
+      }
+      text-transform: $button-social-icon-text-transform;
+      background: map-deep-get($button-social-list, $provider, "background");
+      color: map-deep-get(
+        $button-social-list,
+        $provider,
+        "color"
+      ); // stylelint-disable-line
+      border: map-deep-get($button-social-list, $provider, "border");
+      &:hover,
+      &:focus {
+        background: map-deep-get(
+          $button-social-list,
+          $provider,
+          "background-hover"
+        );
+        color: map-deep-get(
+          $button-social-list,
+          $provider,
+          "color-hover"
+        ); // stylelint-disable-line
+        border: map-deep-get($button-social-list, $provider, "border-hover");
+      }
+    }
+  }
+  // Print button
+  &.m-print {
+    min-width: $button-print-min-width;
+    border: $button-print-border;
+    text-transform: $button-print-text-transform;
+    text-decoration: $button-print-text-decoration;
+    letter-spacing: $button-print-letter-spacing;
+    font: $button-print-font;
+    font-weight: $button-print-font-weight;
+    &::before {
+      @include svg-icon(
+        $button-print-icon,
+        $button-print-icon-color,
+        $usesvg: $button-print-icon-usesvg
+      );
+      content: "";
+      display: inline-block;
+      height: $button-print-icon-size;
+      margin: $button-print-icon-margin;
+      width: $button-print-icon-size;
+    }
+    &:hover {
+      color: $button-print-color-hover;
+      text-decoration: $button-print-text-decoration-hover;
+      @if ($button-print-icon-color != $button-print-icon-hover-color) {
+        &::before {
+          @include svg-icon(
+            $button-print-icon,
+            $button-print-icon-hover-color,
+            $color-change: true,
+            $usesvg: $button-print-icon-usesvg
+          );
+        }
+      }
+    }
+  }
+  // Search button
+  &.m-search {
+    @include lora-helper-button-icon(
+      $icon: "#{$button-search-icon}",
+      $color: $button-search-icon-color,
+      $color-hover: $button-search-icon-hover-color,
+      $size: $button-search-icon-size,
+      $margin: $button-search-icon-margin,
+      $left: $button-search-icon-left
+    );
+    height: $button-search-height;
+    .c-button__label {
+      @include text-hide;
+    }
+  }
+  //Chat Button
+  &.m-chat {
+    @include lora-helper-button-icon(
+      $icon: "#{$button-chat-icon}",
+      $color: $button-chat-icon-color,
+      $color-hover: $button-chat-icon-hover-color,
+      $size: $button-chat-icon-size,
+      $margin: $button-chat-icon-margin,
+      $left: $button-chat-icon-left
+    );
+    height: $button-chat-height;
+  }
+  // Edit button
+  &.m-edit {
+    @include lora-helper-button-icon(
+      $icon: "#{$button-edit-icon}",
+      $color: $button-edit-icon-color,
+      $color-hover: $button-edit-icon-hover-color,
+      $size: $button-edit-icon-size,
+      $margin: $button-edit-icon-margin,
+      $left: $button-edit-icon-left
+    );
+  }
+  // Remove button
+  &.m-remove {
+    @include lora-helper-button-icon(
+      $icon: "#{$button-remove-icon}",
+      $color: $button-remove-icon-color,
+      $color-hover: $button-remove-icon-hover-color,
+      $size: $button-remove-icon-size,
+      $margin: $button-remove-icon-margin,
+      $left: $button-remove-icon-left
+    );
+  }
+  // Geolocation button
+  &.m-geolocation {
+    position: relative;
+    color: $button-geolocation-color;
+    border-radius: $button-geolocation-border-radius;
+    @include lora-helper-button-icon(
+      $icon: "#{$button-geolocation-icon}",
+      $color: $button-geolocation-icon-color,
+      $color-hover: $button-geolocation-icon-hover-color,
+      $size: $button-geolocation-icon-size,
+      $margin: $button-geolocation-icon-margin,
+      $left: $button-geolocation-left
+    );
+  }
+  /* Should be last included to overload default icons in case of loading */
+  &.m-loading {
+    cursor: default;
+    @include lora-helper-button-icon-base;
+    // stylelint-disable-next-line
+    &::#{if($button-loading-icon-left, "before", "after")} {
+      animation: loader-spin 1s infinite;
+    }
+    @include lora-helper-button-icon(
+      $icon: $button-loading-icon,
+      $color: $button-loading-icon-color,
+      $color-hover: $button-loading-icon-hover-color,
+      $margin: $button-loading-icon-margin,
+      $size: $button-loading-icon-size,
+      $left: $button-loading-icon-left
+    );
+    &.m-dark {
+      @include lora-helper-button-icon(
+        $icon: $button-loading-icon,
+        $color: $button-loading-dark-icon-color,
+        $color-hover: $button-loading-dark-icon-hover-color,
+        $margin: $button-loading-icon-margin,
+        $size: $button-loading-icon-size,
+        $left: $button-loading-icon-left
+      );
+    }
+  }
+  &.m-logout {
+    .c-button__text {
+      @include lora-helper-button-icon(
+        $icon: $button-logout-icon,
+        $color: $button-logout-icon-color,
+        $color-hover: $button-logout-icon-hover-color,
+        $margin: $button-logout-icon-margin,
+        $size: $button-logout-icon-size,
+        $left: $button-logout-icon-left
+      );
+      display: inline-flex;
+      align-items: center;
+      transition: $button-transition;
+      &::#{if($button-logout-icon-left, "before", "after")} {
+        content: "";
+        transition: $button-icon-transition;
+      }
+    }
+    &:hover {
+      color: $button-logout-icon-hover-color;
+      @if ($button-logout-icon-color != $button-logout-icon-hover-color) {
+        .c-button__text::#{if($button-logout-icon-left, "before", "after")} {
+          @include svg-icon(
+            $button-logout-icon,
+            $button-logout-icon-hover-color,
+            $color-change: true,
+            $usesvg: $button-icon-usesvg
+          );
+        }
+      }
+    }
+  }
+}
+@mixin lora-components-button {
+  .c-button {
+    @include lora-helper-button;
+    // Colors
+    @each $name, $type in $button-palette {
+      &.m-#{$name} {
+        @include lora-helper-button-style(
+          map-deep-get($button-palette, $name, "background"),
+          map-deep-get($button-palette, $name, "background-hover"),
+          map-deep-get($button-palette, $name, "border"),
+          map-deep-get($button-palette, $name, "border-hover"),
+          map-deep-get($button-palette, $name, "color"),
+          map-deep-get($button-palette, $name, "color-hover"),
+          map-deep-get($button-palette, $name, "shadow-hover"),
+          map-deep-get($button-palette, $name, "text-shadow-hover")
+        );
+      }
+    }
+    @each $name, $value in $button-sizes {
+      &.m-#{$name} {
+        padding: map-deep-get($button-sizes, $name, "padding");
+        font-size: map-deep-get($button-sizes, $name, "font-size");
+      }
+    }
+    &.m-disabled,
+    &[disabled] {
+      @include lora-helper-button-disabled;
+    }
+    @include lora-helper-button-icon-list;
+  }
+  .c-button.m-expand {
+    @include lora-helper-button-expand;
+  }
+  .c-button.m-autosize {
+    @include lora-helper-button-autosize;
+  }
+  @each $size in $breakpoint-classes {
+    .c-button.m-expand-for-#{$size} {
+      @include breakpoint($size) {
+        @include lora-helper-button-expand;
+      }
+    }
+    .c-button.m-expand-for-#{$size}-only {
+      @include breakpoint($size only) {
+        @include lora-helper-button-expand;
+      }
+    }
+    .c-button.m-expand-for-#{$size}-down {
+      @include breakpoint($size down) {
+        @include lora-helper-button-expand;
+      }
+    }
+    .c-button.m-autosize-for-#{$size} {
+      @include breakpoint($size) {
+        @include lora-helper-button-autosize;
+      }
+    }
+    .c-button.m-autosize-for-#{$size}-only {
+      @include breakpoint($size only) {
+        @include lora-helper-button-autosize;
+      }
+    }
+    .c-button.m-autosize-for-#{$size}-down {
+      @include breakpoint($size down) {
+        @include lora-helper-button-autosize;
+      }
+    }
+  }
+  .c-button.m-link {
+    @include lora-helper-button-link;
+    &.m-disabled,
+    &[disabled] {
+      @include lora-helper-button-disabled(
+        $background: $button-link-disabled-background,
+        $border: $button-link-disabled-color
+      );
+    }
+  }
+  .c-button.m-link-secondary {
+    @include lora-helper-button-link(
+      $text-decoration: $button-link-secondary-text-decoration,
+      $text-decoration-hover: $button-link-secondary-hover-text-decoration
+    );
+    .c-button__text {
+      padding: $button-link-secondary-button-text-padding;
+      border-bottom: $button-link-secondary-button-text-border-bottom;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &.m-alt {
+      @include lora-helper-button-alt(
+        $color: $button-alt-secondary-color,
+        $border: none,
+        $border-hover: none
+      );
+    }
+  }
+  .c-button.m-row-2 {
+    @include lora-helper-button-row-2;
+  }
+  .c-button.m-alt {
+    @include lora-helper-button-alt;
+  }
+  .c-button__icon {
+    height: $button-icon-size;
+  }
+}

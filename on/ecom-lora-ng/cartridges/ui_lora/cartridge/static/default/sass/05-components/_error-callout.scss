@@ -1,0 +1,147 @@
+/*------------------------------------*\
+        #ERROR PAGE
+\*------------------------------------*/
+$error-callout-text-align: center !default;
+$error-callout-text-align--large: null !default;
+$error-callout-copy-text-align: $global-left !default;
+$error-callout-copy-font: #{rem-calc(16)} / 1.4 $font-primary !default;
+$error-callout-title-font: #{rem-calc(24)} / 1 $font-primary !default;
+$error-callout-title-font--large: #{rem-calc(30)} / 1 $font-primary !default;
+$error-callout-title-margin: rem-calc(0 0 15) !default;
+$error-callout-title-margin--large: rem-calc(0 0 30) !default;
+$error-callout-title-text-transform: uppercase !default;
+$error-callout-subtitle-font: #{rem-calc(18)} / 1 $font-primary !default;
+$error-callout-subtitle-font--large: null !default;
+$error-callout-subtitle-margin: rem-calc(0 0 30) !default;
+$error-callout-subtitle-margin--large: null !default;
+$error-callout-subtitle-text-transform: uppercase !default;
+$error-callout-subtitle-letter-spacing: null !default;
+$error-callout-subtitle-letter-spacing--large: null !default;
+$error-callout-info-font: #{rem-calc(16)} / 1.4 $font-primary !default;
+$error-callout-info-font--large: null !default;
+$error-callout-info-margin: rem-calc(0 0 30) !default;
+$error-callout-info-letter-spacing: null !default;
+$error-callout-info-letter-spacing--large: null !default;
+$error-callout-head-link-font-size: null !default;
+$error-callout-head-link-margin: 0 !default;
+$error-callout-max-width: null !default;
+$error-callout-max-width--large: null !default;
+$error-callout-font-size: rem-calc(16) !default;
+$error-callout-img-margin: 0 auto rem-calc(20) !default;
+$error-callout-img-max-width: 80% !default;
+$error-callout-padding: rem-calc(40 0) !default;
+$error-callout-padding--large: null !default;
+$error-callout-title-color: null !default;
+$error-callout-title-color--large: null !default;
+$error-callout-subtitle-color: null !default;
+$error-callout-subtitle-color--large: null !default;
+$error-callout-title-max-width: none !default;
+$error-callout-title-max-width--large: none !default;
+$error-callout-color: null !default;
+$error-callout-color--large: null !default;
+$error-callout-title-text-align: null !default;
+$error-callout-title-text-align--large: null !default;
+$error-callout-subtitle-text-align: null !default;
+$error-callout-subtitle-text-align--large: null !default;
+$error-callout-info-text-align: null !default;
+$error-callout-info-text-align--large: null !default;
+@mixin lora-components-error-callout {
+  .c-error-callout {
+    padding: $error-callout-padding;
+    text-align: $error-callout-text-align;
+    color: $error-callout-color;
+    max-width: $error-callout-max-width;
+    @include breakpoint(large) {
+      padding: $error-callout-padding--large;
+      color: $error-callout-color--large;
+      text-align: $error-callout-text-align--large;
+      max-width: $error-callout-max-width--large;
+    }
+  }
+  .c-error-callout__title {
+    max-width: $error-callout-title-max-width;
+    @include breakpoint(large) {
+      max-width: $error-callout-title-max-width--large;
+    }
+    @include text-style(
+      $font: (
+        small: $error-callout-title-font,
+        large: $error-callout-title-font--large,
+      ),
+      $margin: (
+        small: $error-callout-title-margin,
+        large: $error-callout-title-margin--large,
+      ),
+      $text-align: (
+        small: $error-callout-title-text-align,
+        large: $error-callout-title-text-align--large,
+      ),
+      $text-transform: (
+        small: $error-callout-title-text-transform,
+      ),
+      $color: (
+        small: $error-callout-title-color,
+        large: $error-callout-title-color--large,
+      )
+    );
+  }
+  .c-error-callout__subtitle {
+    @include text-style(
+      $font: (
+        small: $error-callout-subtitle-font,
+        large: $error-callout-subtitle-font--large,
+      ),
+      $margin: (
+        small: $error-callout-subtitle-margin,
+        large: $error-callout-subtitle-margin--large,
+      ),
+      $text-align: (
+        small: $error-callout-subtitle-text-align,
+        large: $error-callout-subtitle-text-align--large,
+      ),
+      $letter-spacing: (
+        small: $error-callout-subtitle-letter-spacing,
+        large: $error-callout-subtitle-letter-spacing--large,
+      ),
+      $text-transform: (
+        small: $error-callout-subtitle-text-transform,
+      ),
+      $color: (
+        small: $error-callout-subtitle-color,
+        large: $error-callout-subtitle-color--large,
+      )
+    );
+  }
+  .c-error-callout__head-link {
+    font-size: $error-callout-head-link-font-size;
+    margin: $error-callout-head-link-margin;
+  }
+  .c-error-callout__info {
+    @include text-style(
+      $font: (
+        small: $error-callout-info-font,
+        large: $error-callout-info-font--large,
+      ),
+      $margin: (
+        small: $error-callout-info-margin,
+      ),
+      $text-align: (
+        small: $error-callout-info-text-align,
+        large: $error-callout-info-text-align--large,
+      ),
+      $letter-spacing: (
+        small: $error-callout-info-letter-spacing,
+        large: $error-callout-info-letter-spacing--large,
+      )
+    );
+  }
+  .c-error-callout__img {
+    display: block;
+    margin: $error-callout-img-margin;
+    max-width: $error-callout-img-max-width;
+  }
+  .c-error-callout__copy {
+    text-align: $error-callout-copy-text-align;
+    font: $error-callout-copy-font;
+  }
+}

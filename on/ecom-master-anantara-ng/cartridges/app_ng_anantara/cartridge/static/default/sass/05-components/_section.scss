@@ -1,0 +1,10 @@
+// Title
+$section-title-font: #{rem-calc(25)} / 1.33 $font-secondary;
+$section-title-font--large: #{rem-calc(31)} / 1.33 $font-secondary;
+$section-title-text-transform: none;
+$section-secondary-title-font: #{rem-calc(20)} / 1.3 $font-primary;
+// Description
+$section-description-font: #{rem-calc(14)} / 1.5 $font-primary;
+// Headings
+$section-headings-max-width--large: 100%;
+@use "@lora/05-components/section";

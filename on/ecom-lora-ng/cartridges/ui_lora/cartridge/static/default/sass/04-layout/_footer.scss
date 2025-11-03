@@ -1,0 +1,263 @@
+/*------------------------------------*\
+        #FOOTER
+\*------------------------------------*/
+// Deprecated components
+@use "../100-deprecated/footer/footer";
+$footer-background: color(organism-background) !default;
+$footer-background--large: null !default;
+$footer-padding: rem-calc(0 0 16) !default;
+$footer-padding--large: 0 !default;
+$footer-error-color: #ffd2d2 !default;
+$footer-error-color--large: null !default;
+$footer-top-background: color(dark) !default;
+$footer-top-background--large: null !default;
+$footer-top-layout-size: null !default;
+$footer-bottom-border-top: rem-calc(1) solid color(light) !default;
+$footer-bottom-border-top--large: rem-calc(1) solid color(border) !default;
+$footer-bottom-inner-border-top--large: null !default;
+$footer-newsletter-color: color(light) !default;
+$footer-newsletter-color--large: color(light) !default;
+$footer-newsletter-font: null !default;
+$footer-newsletter-link-color: color(light) !default;
+$footer-newsletter-link-color--large: color(light) !default;
+$footer-newsletter-link-hover-color: color(primary-active) !default;
+$footer-newsletter-link-font: null !default;
+$footer-newsletter-margin: rem-calc(20 0 0) !default;
+$footer-newsletter-margin--large: null !default;
+$footer-newsletter-padding: 0 !default;
+$footer-newsletter-padding--large: 0 !default;
+$footer-newsletter-background: transparent !default;
+$footer-newsletter-background--large: transparent !default;
+$footer-newsletter-signup-title-color: color(light) !default;
+$footer-newsletter-signup-title-color--large: null !default;
+$footer-newsletter-signup-title-display: block !default;
+$footer-newsletter-signup-title-display--large: null !default;
+$footer-newsletter-signup-title-font: #{rem-calc(14)} $font-primary !default;
+$footer-newsletter-signup-title-font--large: null !default;
+$footer-newsletter-signup-title-text-transform: null !default;
+$footer-newsletter-captcha-text-color: color(light) !default;
+$footer-newsletter-captcha-text-color--large: color(light) !default;
+$footer-newsletter-captcha-text-font: null !default;
+$footer-newsletter-captcha-text-text-align: null !default;
+$footer-newsletter-captcha-text-text-align--large: null !default;
+$footer-newsletter-captcha-link-color: $footer-newsletter-captcha-text-color !default;
+$footer-newsletter-captcha-link-color--large: $footer-newsletter-captcha-text-color !default;
+$footer-newsletter-captcha-link-hover-color: color(primary-active) !default;
+$footer-newsletter-captcha-link-font: null !default;
+$footer-row-item-indent: rem-calc(10) !default;
+$footer-row-item-margin: 0 !default;
+$footer-row-item-first-padding-left: 0 !default;
+$footer-row-item-last-padding-left: $footer-row-item-indent !default;
+$footer-row-variants-margin: rem-calc(0 0 15) !default;
+$footer-row-variants-padding: 0 !default;
+$footer-row-variants-order: 0 !default;
+$footer-row-variants-flex-direction: row !default;
+$footer-social-margin: rem-calc(0 -10) !default;
+$footer-social-margin--large: rem-calc(0 0 20) !default;
+$footer-top-border-bottom: 0 !default;
+$footer-top-border-bottom--large: null !default;
+$footer-top-border-top: 0 !default;
+$footer-middle-border-bottom: 0 !default;
+$footer-top-inner-border-bottom: 0 !default;
+$footer-bottom-inner-display: null !default;
+$footer-bottom-inner-display--large: null !default;
+$footer-bottom-inner-flex-direction: null !default;
+$footer-bottom-inner-flex-direction--large: null !default;
+$footer-bottom-inner-padding: null !default;
+$footer-bottom-inner-padding--large: null !default;
+$footer-middle-inner-border-bottom: 0 !default;
+$footer-middle-inner-border-bottom--large: 0 !default;
+$footer-middle-inner-padding--large: 0 !default;
+$footer-localeselector-margin: rem-calc(0 0 20) !default;
+$footer-secondary-bottom-inner-flex-direction: column !default;
+$footer-secondary-bottom-inner-border-top: null !default;
+@mixin lora-layout-footer {
+  .l-footer {
+    background: $footer-background;
+    direction: $global-text-direction;
+    position: relative;
+    z-index: z(footer);
+    padding: $footer-padding;
+    @include breakpoint(large) {
+      background: $footer-background--large;
+      padding: $footer-padding--large;
+    }
+  }
+  .l-footer__top {
+    background: $footer-top-background;
+    z-index: z(footer, footerTop);
+    border-bottom: $footer-top-border-bottom;
+    border-top: $footer-top-border-top;
+    @include breakpoint(large) {
+      background: $footer-top-background--large;
+      border-bottom: $footer-top-border-bottom--large;
+    }
+  }
+  .l-footer__top-layout {
+    @if $footer-top-layout-size != "full" {
+      @include layout;
+    }
+  }
+  .l-footer__top-inner {
+    border-bottom: $footer-top-inner-border-bottom;
+  }
+  .l-footer__bottom-inner {
+    display: $footer-bottom-inner-display;
+    flex-flow: $footer-bottom-inner-flex-direction;
+    padding: $footer-bottom-inner-padding;
+    @include breakpoint(large) {
+      display: $footer-bottom-inner-display--large;
+      flex-flow: $footer-bottom-inner-flex-direction--large;
+      border-top: $footer-bottom-inner-border-top--large;
+      padding: $footer-bottom-inner-padding--large;
+    }
+    &.m-secondary {
+      flex-direction: $footer-secondary-bottom-inner-flex-direction;
+      border-top: $footer-secondary-bottom-inner-border-top;
+    }
+  }
+  .l-footer__middle {
+    border-bottom: $footer-middle-border-bottom;
+  }
+  .l-footer__middle-inner {
+    border-bottom: $footer-middle-inner-border-bottom;
+    @include breakpoint(large) {
+      padding: $footer-middle-inner-padding--large;
+      border-bottom: $footer-middle-inner-border-bottom--large;
+    }
+  }
+  .l-footer__bottom {
+    border-top: $footer-bottom-border-top;
+    @include breakpoint(large) {
+      border-top: $footer-bottom-border-top--large;
+    }
+  }
+  .l-footer__content-section {
+    display: flex;
+    flex-flow: column;
+    @include breakpoint(large) {
+      @include cell(4 of 12);
+    }
+  }
+  .l-footer__newsletter {
+    margin: $footer-newsletter-margin;
+    padding: $footer-newsletter-padding;
+    background: $footer-newsletter-background;
+    @include breakpoint(large) {
+      margin: $footer-newsletter-margin--large;
+      padding: $footer-newsletter-padding--large;
+      background: $footer-newsletter-background--large;
+    }
+  }
+  .l-footer__newsletter .c-simple-signup__group-label,
+  .l-footer__newsletter .c-simple-signup__content,
+  .l-footer__newsletter .c-form__legend {
+    color: $footer-newsletter-color;
+  }
+  .l-footer__newsletter .c-simple-signup .c-check-field__label {
+    color: $footer-newsletter-color;
+    font: $footer-newsletter-font;
+    @include breakpoint(large) {
+      color: $footer-newsletter-color--large;
+    }
+  }
+  .l-footer__newsletter .c-check-field.m-checkbox {
+    // Checkbox button error state
+    &.m-error .c-check-field__label {
+      color: $footer-newsletter-color;
+      @include breakpoint(large) {
+        color: $footer-newsletter-color--large;
+      }
+      &::before {
+        border-color: $footer-error-color;
+      }
+    }
+  }
+  .l-footer__newsletter .c-simple-signup a {
+    color: $footer-newsletter-link-color;
+    font: $footer-newsletter-link-font;
+    @include breakpoint(large) {
+      color: $footer-newsletter-link-color--large;
+    }
+    &:hover,
+    &:focus {
+      color: $footer-newsletter-link-hover-color;
+    }
+  }
+  .l-footer__newsletter .c-simple-signup__title {
+    color: $footer-newsletter-signup-title-color;
+    display: $footer-newsletter-signup-title-display;
+    font: $footer-newsletter-signup-title-font;
+    text-transform: $footer-newsletter-signup-title-text-transform;
+    @include breakpoint(large) {
+      color: $footer-newsletter-signup-title-color--large;
+      display: $footer-newsletter-signup-title-display--large;
+      font: $footer-newsletter-signup-title-font--large;
+    }
+  }
+  .l-footer__newsletter .c-field__error-message {
+    color: $footer-error-color;
+  }
+  .l-footer__newsletter .c-text-field {
+    &.m-error .c-text-field__input {
+      border-color: $footer-error-color;
+    }
+  }
+  .l-footer__newsletter .c-captcha__text {
+    text-align: $footer-newsletter-captcha-text-text-align;
+    color: $footer-newsletter-captcha-text-color;
+    font: $footer-newsletter-captcha-text-font;
+    @include breakpoint(large) {
+      text-align: $footer-newsletter-captcha-text-text-align--large;
+      color: $footer-newsletter-captcha-text-color--large;
+    }
+  }
+  .l-footer__newsletter .c-captcha__text a {
+    color: $footer-newsletter-captcha-link-color;
+    font: $footer-newsletter-captcha-link-font;
+    @include breakpoint(large) {
+      color: $footer-newsletter-captcha-link-color--large;
+    }
+    &:hover {
+      @include breakpoint(large) {
+        color: $footer-newsletter-captcha-link-hover-color;
+      }
+    }
+  }
+  // l-footer__row
+  .l-footer__row {
+    display: flex;
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+  .l-footer__row-item {
+    padding-#{$global-left}: $footer-row-item-indent;
+    width: 100%;
+    margin: $footer-row-item-margin;
+    &:first-child {
+      padding-#{$global-left}: $footer-row-item-first-padding-left;
+    }
+    &:empty {
+      display: none;
+    }
+    &:last-child {
+      padding-#{$global-left}: $footer-row-item-last-padding-left;
+    }
+  }
+  .l-footer__row.m-site-variants {
+    margin: $footer-row-variants-margin;
+    flex-flow: $footer-row-variants-flex-direction;
+    padding: $footer-row-variants-padding;
+    order: $footer-row-variants-order;
+  }
+  .l-footer__social {
+    margin: $footer-social-margin;
+    @include breakpoint(large) {
+      margin: $footer-social-margin--large;
+    }
+  }
+  .l-footer__localeselector {
+    margin: $footer-localeselector-margin;
+  }
+}

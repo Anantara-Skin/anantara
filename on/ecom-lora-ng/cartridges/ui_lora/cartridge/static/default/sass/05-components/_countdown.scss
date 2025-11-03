@@ -1,0 +1,312 @@
+$countdown-justify-content: center !default;
+$countdown-padding: rem-calc(15 10) !default;
+$countdown-padding--large: null !default;
+$countdown-background: color(element-background) !default;
+$countdown-background--large: null !default;
+$countdown-margin: rem-calc(0 0 30) !default;
+$countdown-margin--large: null !default;
+$countdown-border-radius: rem-calc(6) !default;
+$countdown-border-radius--large: null !default;
+// Item
+$countdown-item-flex: 1 0 auto !default;
+$countdown-item-padding: rem-calc(0 5) !default;
+$countdown-item-padding--large: null !default;
+// Item separator
+$countdown-separator-item-after-width: rem-calc(1) !default;
+$countdown-separator-item-after-height: 100% !default;
+$countdown-separator-item-after-right: 0 !default;
+$countdown-separator-item-after-background: color(organism-background) !default;
+// Count
+$countdown-count-justify-content: center !default;
+/// Count item
+$countdown-count-item-font: #{rem-calc(24)} / 1 $font-primary !default;
+$countdown-count-item-font--large: #{rem-calc(30)} / 1 $font-primary !default;
+$countdown-count-item-color: color(text) !default;
+$countdown-count-item-color--large: null !default;
+$countdown-count-item-width: auto !default;
+$countdown-count-item-width--large: null !default;
+/// Description
+$countdown-description-margin: rem-calc(5 0 0) !default;
+$countdown-description-margin--large: null !default;
+$countdown-description-font: #{rem-calc(12)} / 1 $font-primary !default;
+$countdown-description-font--large: #{rem-calc(14)} / 1 $font-primary !default;
+$countdown-description-color: color(text) !default;
+$countdown-description-color--large: null !default;
+$countdown-description-text-align: center !default;
+$countdown-description-letter-spacing: null !default;
+//Animation duration
+$countdown-count-animation-duration: 0.4s !default;
+/// Lift count animation
+$countdown-count-item-lift-top-animation-name: countdown-last-lift !default;
+$countdown-count-item-lift-bottom-animation-name: countdown-new-lift !default;
+/// Flip count
+$countdown-count-item-flip-width: rem-calc(20) !default;
+$countdown-count-item-flip-width--large: rem-calc(30) !default;
+$countdown-count-item-flip-height: rem-calc(30) !default;
+$countdown-count-item-flip-height--large: rem-calc(40) !default;
+$countdown-count-item-flip-perspective: $countdown-count-item-flip-height * 2 !default;
+$countdown-count-item-flip-perspective--large: $countdown-count-item-flip-height--large *
+  2 !default;
+$countdown-count-item-flip-margin: rem-calc(0 2) !default;
+$countdown-count-item-flip-margin--large: null !default;
+$countdown-count-item-flip-box-shadow: rem-calc(3 3 5) rgba(color(primary), 0.2) !default;
+$countdown-count-item-flip-box-shadow--large: null !default;
+$countdown-count-item-flip-top-background: darken(color(light), 3%) !default;
+$countdown-count-item-flip-bottom-background: color(light) !default;
+$countdown-count-item-flip-separator: 1px solid color(border) !default;
+/// Lift count animation
+$countdown-count-item-flip-top-animation-name: countdown-last-flip !default;
+$countdown-count-item-flip-bottom-animation-name: countdown-new-flip !default;
+@mixin lora-helper-countdown-lift {
+  .c-countdown__count-new-placeholder {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .c-countdown__count-last-rotate,
+  .c-countdown__count-new-rotate {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    #{$global-left}: 0;
+    top: 0;
+    overflow: hidden;
+    animation-duration: $countdown-count-animation-duration;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transform-origin: 100% 100%;
+  }
+  .c-countdown__count-new-rotated-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+  }
+  .c-countdown__count-last-rotate {
+    top: 100%;
+    animation-name: $countdown-count-item-lift-top-animation-name;
+  }
+  .c-countdown__count-new-rotate {
+    top: 0;
+    animation-name: $countdown-count-item-lift-top-animation-name;
+  }
+  .c-countdown__count-new-rotated {
+    width: 100%;
+    height: 100%;
+  }
+  @keyframes countdown-last-lift {
+    0% {
+      transform: translateY(-100%);
+      z-index: 0;
+    }
+    100% {
+      transform: translateY(0);
+      z-index: 1; // stylelint-disable-line
+    }
+  }
+  @keyframes countdown-last-lift {
+    0% {
+      transform: translateY(-100%);
+      z-index: 0;
+    }
+    100% {
+      transform: translateY(0);
+      z-index: 1; // stylelint-disable-line
+    }
+  }
+}
+@mixin lora-helper-countdown-flip {
+  .c-countdown__count-item {
+    perspective: $countdown-count-item-flip-perspective;
+    width: $countdown-count-item-flip-width;
+    height: $countdown-count-item-flip-height;
+    margin: $countdown-count-item-flip-margin;
+    line-height: $countdown-count-item-flip-height;
+    box-shadow: $countdown-count-item-flip-box-shadow;
+    @include breakpoint(large) {
+      perspective: $countdown-count-item-flip-perspective--large;
+      width: $countdown-count-item-flip-width--large;
+      height: $countdown-count-item-flip-height--large;
+      margin: $countdown-count-item-flip-margin--large;
+      line-height: $countdown-count-item-flip-height--large;
+      box-shadow: $countdown-count-item-flip-box-shadow--large;
+    }
+  }
+  .c-countdown__count-last-placeholder,
+  .c-countdown__count-new-placeholder {
+    position: absolute;
+    #{$global-left}: 0;
+    width: 100%;
+    height: 50%;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+  }
+  .c-countdown__count-new-placeholder {
+    top: 0;
+    background: $countdown-count-item-flip-top-background;
+  }
+  .c-countdown__count-last-placeholder {
+    bottom: 0;
+    background: $countdown-count-item-flip-bottom-background;
+  }
+  .c-countdown__count-last-placeholder-inner {
+    position: absolute;
+    #{$global-left}: 0;
+    bottom: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .c-countdown__count-last-rotate,
+  .c-countdown__count-new-rotate {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    #{$global-left}: 0;
+    overflow: hidden;
+    animation-duration: $countdown-count-animation-duration;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transform-origin: 100% 100%;
+  }
+  .c-countdown__count-last-rotate {
+    background: $countdown-count-item-flip-top-background;
+    animation-name: $countdown-count-item-flip-top-animation-name;
+  }
+  .c-countdown__count-new-rotate {
+    background: $countdown-count-item-flip-bottom-background;
+    animation-name: $countdown-count-item-flip-bottom-animation-name;
+  }
+  .c-countdown__count-last-rotate::after,
+  .c-countdown__count-new-rotate::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    #{$global-left}: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: $countdown-count-item-flip-separator;
+  }
+  .c-countdown__count-new-rotated {
+    width: 100%;
+    height: 100%;
+    transform: rotateX(180deg);
+  }
+  .c-countdown__count-new-rotated-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50%;
+    position: absolute;
+  }
+  @keyframes countdown-last-flip {
+    0% {
+      transform: rotateX(0);
+      z-index: 1; // stylelint-disable-line
+    }
+    100% {
+      transform: rotateX(-180deg);
+      z-index: 0;
+    }
+  }
+  @keyframes countdown-new-flip {
+    0% {
+      transform: rotateX(0);
+      z-index: 0;
+    }
+    100% {
+      transform: rotateX(-180deg);
+      z-index: 1; // stylelint-disable-line
+    }
+  }
+}
+@mixin lora-components-countdown {
+  .c-countdown {
+    display: flex;
+    justify-content: $countdown-justify-content;
+    padding: $countdown-padding;
+    background: $countdown-background;
+    margin: $countdown-margin;
+    border-radius: $countdown-border-radius;
+    @include breakpoint(large) {
+      padding: $countdown-padding--large;
+      background: $countdown-background--large;
+      margin: $countdown-margin--large;
+      border-radius: $countdown-border-radius--large;
+    }
+    // Animation with lift counters
+    &.m-lift {
+      @include lora-helper-countdown-lift;
+    }
+    // Animation with flip counters
+    &.m-flip {
+      @include lora-helper-countdown-flip;
+    }
+    &.m-separator {
+      .c-countdown__item {
+        &:not(:last-child)::after {
+          @include vertical-center;
+          content: "";
+          width: $countdown-separator-item-after-width;
+          height: $countdown-separator-item-after-height;
+          #{$global-right}: $countdown-separator-item-after-right;
+          background: $countdown-separator-item-after-background;
+        }
+      }
+    }
+  }
+  .c-countdown__item {
+    position: relative;
+    flex: $countdown-item-flex;
+    padding: $countdown-item-padding;
+    @include breakpoint(large) {
+      padding: $countdown-item-padding--large;
+    }
+  }
+  .c-countdown__count {
+    display: flex;
+    justify-content: $countdown-count-justify-content;
+  }
+  .c-countdown__count-item {
+    position: relative;
+    overflow: hidden;
+    font: $countdown-count-item-font;
+    color: $countdown-count-item-color;
+    width: $countdown-count-item-width;
+    @include breakpoint(large) {
+      font: $countdown-count-item-font--large;
+      color: $countdown-count-item-color--large;
+      width: $countdown-count-item-width--large;
+    }
+  }
+  .c-countdown__description {
+    margin: $countdown-description-margin;
+    font: $countdown-description-font;
+    color: $countdown-description-color;
+    text-align: $countdown-description-text-align;
+    letter-spacing: $countdown-description-letter-spacing;
+    @include breakpoint(large) {
+      margin: $countdown-description-margin--large;
+      font: $countdown-description-font--large;
+      color: $countdown-description-color--large;
+    }
+  }
+  .c-countdown__count-last-placeholder,
+  .c-countdown__count-last-rotate,
+  .c-countdown__count-new-rotate {
+    display: none;
+  }
+}

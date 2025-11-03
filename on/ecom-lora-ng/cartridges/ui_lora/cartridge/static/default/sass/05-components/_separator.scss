@@ -1,0 +1,55 @@
+$separator-font-size: rem-calc(13) !default;
+$separator-color: color(text) !default;
+$separator-margin: rem-calc(10 0) !default;
+$separator-gutter-medium-margin: rem-calc(15 0) !default;
+$separator-gutter-large-margin: rem-calc(25 0) !default;
+$separator-min-height: rem-calc(1) !default;
+$separator-title-background-color: color(light) !default;
+$separator-title-padding: rem-calc(0 10) !default;
+$separator-title-font-family: $font-primary !default;
+$separator-title-font-style: null !default;
+$separator-title-font-weight: normal !default;
+$separator-title-text-transform: uppercase !default;
+$separator-before-display: block !default;
+$separator-thick-before-border-width: 3px !default;
+$separator-title-font: $separator-title-font-style $separator-title-font-weight
+  #{$separator-font-size} $separator-title-font-family !default;
+@mixin lora-components-separator {
+  .c-separator {
+    width: 100%;
+    color: $separator-color;
+    font-size: $separator-font-size;
+    margin: $separator-margin;
+    position: relative;
+    text-align: center;
+    min-height: $separator-min-height;
+    z-index: 0;
+    &::before {
+      display: $separator-before-display;
+      border-top: $global-border;
+      content: "";
+      #{$global-left}: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      z-index: -1;
+    }
+    &.m-gutter-medium {
+      margin: $separator-gutter-medium-margin;
+    }
+    &.m-gutter-large {
+      margin: $separator-gutter-large-margin;
+    }
+    &.m-thick {
+      &::before {
+        border-width: $separator-thick-before-border-width;
+      }
+    }
+  }
+  .c-separator__title {
+    background: $separator-title-background-color;
+    padding: $separator-title-padding;
+    text-transform: $separator-title-text-transform;
+    font: $separator-title-font;
+  }
+}

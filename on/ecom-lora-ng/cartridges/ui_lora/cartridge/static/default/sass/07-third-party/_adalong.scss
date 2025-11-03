@@ -1,0 +1,13 @@
+/* stylelint-disable declaration-no-important */
+$third-party-adalong-overlay-z-index: z(adalongOverlay) !default;
+$third-party-adalong-thumbnail-content-active-z-index: z(
+  adalongActiveThumbnail
+) !default;
+@mixin lora-third-party-adalong {
+  .adl-wdgt-overlay {
+    z-index: $third-party-adalong-overlay-z-index !important;
+  }
+  .adl-wdgt-thumbnail-content-active {
+    z-index: $third-party-adalong-thumbnail-content-active-z-index !important;
+  }
+}

@@ -1,0 +1,85 @@
+//Link Image
+$header-navigation-link-image-margin: rem-calc(-6 0);
+//Navigation List level 2
+$header-navigation-container-grid-list-level-2-padding--large: rem-calc(0 0 16);
+$header-navigation-item-title-level-1-padding-left: rem-calc(16);
+$header-navigation-item-title-level-2-background: color(global-background);
+$header-navigation-item-title-level-2-expanded-color: color(primary);
+$header-navigation-item-title-level-2-padding-left: rem-calc(24);
+$header-navigation-item-title-level-2-font-size: rem-calc(14);
+$header-navigation-item-title-level-2-font-weight--large: 500;
+$header-navigation-list-level-2-padding--large: rem-calc(15 0 32);
+$header-navigation-item-title-level-3-background: color(global-background);
+$header-navigation-link-hover-font-weight: 500;
+$header-navigation-link-color: color(secondary);
+$header-navigation-link-level-1-hover-color: color(primary-active);
+$header-navigation-link-level-1-padding--large: rem-calc(17);
+$header-navigation-list-level-3-margin--large: rem-calc(6 0 0);
+$header-navigation-link-level-3-hover-color: color(primary-active);
+$header-navigation-item-border-bottom: 1px solid color(grey-2);
+$header-navigation-item-level-2-padding--large: 0;
+$header-navigation-link-level-2-font-weight--large: 700;
+// Content tile
+$header-navigation-content-font--large: #{rem-calc(14)} / 1.5 $font-primary;
+$header-navigation-content-hover-font--large: #{rem-calc(14)} / 1.5
+  $font-primary-medium;
+$header-navigation-content-title-margin--large: rem-calc(16 0 0);
+$header-navigation-content-title-text-transform--large: none;
+$header-navigation-content-margin--large: rem-calc(0 24 0 0);
+// Flyout
+$header-navigation-flyout-element-background--large: color(light);
+$header-navigation-link-level-1-font-family--large: $font-primary-medium;
+//Items Lists
+$header-navigation-list-level-2-margin--large: 0;
+//View all link in level 2
+$header-navigation-item-level-2-all-link-font: 400 #{rem-calc(14)} / 1.2
+  $font-primary;
+$header-navigation-item-level-2-all-link-text-decoration: underline solid;
+//Item titles
+$header-navigation-item-title-padding: rem-calc(15.61 0);
+$header-navigation-item-title-level-1-font: 400 #{rem-calc(14)} / 1.2
+  $font-primary;
+$header-navigation-item-title-level-1-expanded-font: 700 #{rem-calc(14)} / 1.2
+  $font-primary;
+$header-navigation-item-title-level-2-font: 500 #{rem-calc(14)} / 1.2
+  $font-primary-medium;
+$header-navigation-item-title-level-2-expanded-font: $header-navigation-item-title-level-1-expanded-font;
+$header-navigation-link-level-3-font: $header-navigation-item-title-level-1-font;
+//Item accordion controls
+$header-navigation-item-title-accordion-padding: rem-calc(15.61 50 15.61 0);
+$header-navigation-item-title-accordion-level-1-expanded-border: 1px solid
+  color(alabaster-400);
+//View all link in level 3
+$header-navigation-item-level-3-all-link-color: color(primary);
+$header-navigation-item-level-3-all-link-font: 400 #{rem-calc(14)} / 1.2
+  $font-primary;
+$header-navigation-item-level-3-all-link-text-decoration: underline solid;
+$header-navigation-item-level-3-padding--large: rem-calc(6 0);
+$header-navigation-item-level-3-all-link-color--large: color(secondary);
+$header-navigation-item-level-3-all-link-text-decoration--large: none;
+//View all link in level 3 hover
+$header-navigation-item-level-3-all-link-hover-color: color(primary);
+//Link level 3
+$header-navigation-link-level-3-padding--medium-down: rem-calc(
+  11.61 0 11.61 48
+);
+$header-navigation-link-level-3-color: color(primary);
+$header-navigation-link-level-3-color--large: color(primary);
+//Hover link level 3
+$header-navigation-link-level-3-hover-color: color(primary);
+$header-navigation-link-level-3-hover-text-decoration: underline;
+//Container
+$header-navigation-container-content-padding: rem-calc(16);
+//Accordion Icon
+$header-navigation-item-title-accordion-icon-size: rem-calc(12);
+//Flyout
+$header-navigation-flyout-element-border-top--large: 1px solid
+  rgba(color(primary), 0.2);
+$header-navigation-flyout-element-box-shadow--large:
+  rem-calc(0 0 6 0) rgba(color(primary-active), 0.02),
+  rem-calc(0 2 4 0) rgba(color(primary-active), 0.08);
+//Navigation Grid
+$header-navigation-container-grid-padding--xlarge: rem-calc(24 0 28);
+//// Hover link level 2
+$header-navigation-link-level-2-hover-color: color(primary);
+@use "@lora/05-components/header/header-navigation";

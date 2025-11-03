@@ -1,0 +1,58 @@
+$skip-link-background: color(secondary) !default;
+$skip-link-color: color(light) !default;
+$skip-link-font: #{rem-calc(12)} / 1.5 $font-primary !default;
+$skip-link-left: rem-calc(15) !default;
+$skip-link-top: rem-calc(10) !default;
+$skip-link-padding: rem-calc(4 12 3) !default;
+$skip-link-text-transform: uppercase !default;
+// Icon
+$skip-link-icon: "back" !default;
+$skip-link-icon-color: $skip-link-color !default;
+$skip-link-icon-height: rem-calc(14) !default;
+$skip-link-icon-width: rem-calc(14) !default;
+$skip-link-icon-margin: rem-calc(0 0 0 5) !default;
+$skip-link-icon-transform: rotate(180deg) !default;
+$skip-link-transition:
+  opacity 0.2s ease-out,
+  clip 0.2s ease-out !default;
+$skip-link-icon-usesvg: true !default;
+@mixin lora-components-skip-link {
+  .c-skip-link {
+    align-items: center;
+    background: $skip-link-background;
+    color: $skip-link-color;
+    display: flex;
+    font: $skip-link-font;
+    #{$global-left}: $skip-link-left;
+    padding: $skip-link-padding;
+    position: absolute;
+    text-decoration: none;
+    text-transform: $skip-link-text-transform;
+    top: $skip-link-top;
+    transition: $skip-link-transition;
+    z-index: z(skiplink);
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+    &:focus {
+      color: $skip-link-color;
+      clip: auto;
+      opacity: 1;
+    }
+    &::after {
+      @include svg-icon(
+        $skip-link-icon,
+        $skip-link-icon-color,
+        100%,
+        left,
+        no-repeat,
+        $usesvg: $skip-link-icon-usesvg
+      );
+      content: "";
+      display: inline-block;
+      height: $skip-link-icon-height;
+      margin: $skip-link-icon-margin;
+      transform: $skip-link-icon-transform;
+      width: $skip-link-icon-width;
+    }
+  }
+}

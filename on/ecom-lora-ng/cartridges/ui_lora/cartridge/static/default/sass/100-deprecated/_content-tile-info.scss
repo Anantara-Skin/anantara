@@ -1,0 +1,41 @@
+// Could be used by NGL-based brands before 9.0.0 release
+// Variables migrated to 05-components/_publishing-info.scss
+//stylelint-disable lora/variable-pattern
+// Content info
+$content-tile-info-display: flex !default; // @new: $publishing-info-display: $content-tile-info-display !default;
+$content-tile-info-display--large: null !default; // @new: $publishing-info-display--large: $content-tile-info-display--large !default;
+$content-tile-info-margin: rem-calc(
+  10 0 15
+) !default; // @new: $publishing-info-margin: $content-tile-info-margin !default;
+$content-tile-info-margin--large: null !default; // @new: $publishing-info-margin--large: $content-tile-info-margin--large !default;
+/// Date
+$content-tile-date-font: #{rem-calc(12)} / 1.4 $font-primary !default; // @new: $publishing-info-date-font: $content-tile-date-font !default;
+$content-tile-date-font--large: null !default; // @new: $publishing-info-date-font--large: $content-tile-date-font--large !default;
+$content-tile-date-color: color(
+  text-secondary
+) !default; // @new: $publishing-info-date-color: $content-tile-date-color !default;
+$content-tile-date-color--large: null !default; // @new: $publishing-info-date-color--large: $content-tile-date-color--large !default;
+$content-tile-date-text-transform: none !default; // @new: $publishing-info-date-text-transform: $content-tile-date-text-transform !default;
+$content-tile-date-text-transform--large: null !default; // @new: $publishing-info-date-text-transform--large: $content-tile-date-text-transform--large !default;
+$content-tile-date-margin: rem-calc(
+  5 0 0
+) !default; // @new: $publishing-info-date-margin: $content-tile-date-margin !default;
+$content-tile-date-margin--large: 0 !default; // @new: $publishing-info-date-margin--large: $content-tile-date-margin--large !default;
+/// Author
+$content-tile-author-font: #{rem-calc(12)} / 1.4 $font-primary !default; // @new: $publishing-info-author-font: $content-tile-author-font !default;
+$content-tile-author-font--large: null !default; // @new: $publishing-info-author-font--large: $content-tile-author-font--large !default;
+$content-tile-author-color: color(
+  text-secondary
+) !default; // @new: $publishing-info-author-color: $content-tile-author-color !default;
+$content-tile-author-color--large: null !default; // @new: $publishing-info-author-color--large: $content-tile-author-color--large !default;
+$content-tile-author-text-transform: none !default; // @new: $publishing-info-author-text-transform: $content-tile-author-text-transform !default;
+$content-tile-author-text-transform--large: null !default; // @new: $publishing-info-author-text-transform--large: $content-tile-author-text-transform--large !default;
+$content-tile-author-margin: rem-calc(
+  0
+) !default; // @new: $publishing-info-author-margin: $content-tile-author-margin !default;
+$content-tile-author-margin--large: null !default; // @new: $publishing-info-author-margin--large: $content-tile-author-margin--large !default;
+/// Author link
+$content-tile-author-link-font: #{rem-calc(12)} / 1.4 $font-secondary !default; // @new: $publishing-info-author-link-font: $content-tile-author-link-font !default;
+$content-tile-author-link-font--large: null !default; // @new: $publishing-info-author-link-font--large: $content-tile-author-link-font--large !default;
+$content-tile-author-link-text-transform: none !default; // @new: $publishing-info-author-link-text-transform: $content-tile-author-link-text-transform !default;
+$content-tile-author-link-text-transform--large: null !default; // @new: $publishing-info-author-link-text-transform--large: $content-tile-author-link-text-transform--large !default;

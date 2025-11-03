@@ -1,0 +1,45 @@
+$captcha-text-font-size: rem-calc(12) !default;
+$captcha-text-color: color(text-secondary) !default;
+$captcha-text-link-color: color(primary-active) !default;
+$captcha-text-link-hover-color: color(text-secondary) !default;
+$captcha-text-font-weight: null !default;
+$captcha-text-text-transform: null !default;
+$captcha-text-letter-spacing: null !default;
+$captcha-recaptcha-turnstile-margin: rem-calc(0 0 15) !default;
+@mixin lora-components-captcha {
+  .c-captcha__invisible {
+    .g-recaptcha {
+      display: inline-block;
+      @include fixed-center;
+    }
+    .grecaptcha-badge {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  .c-captcha__text {
+    font-size: $captcha-text-font-size;
+    color: $captcha-text-color;
+    font-weight: $captcha-text-font-weight;
+    text-transform: $captcha-text-text-transform;
+    letter-spacing: $captcha-text-letter-spacing;
+  }
+  .c-captcha__text a {
+    color: $captcha-text-link-color;
+    &:hover {
+      color: $captcha-text-link-hover-color;
+    }
+  }
+  // Version 3 config, overridden for v2
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+  .c-captcha.m-v2 {
+    .grecaptcha-badge {
+      visibility: visible;
+    }
+  }
+  .g-recaptcha.m-turnstile {
+    margin: $captcha-recaptcha-turnstile-margin;
+  }
+}

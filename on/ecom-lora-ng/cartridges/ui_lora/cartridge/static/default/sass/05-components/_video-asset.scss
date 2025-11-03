@@ -1,0 +1,383 @@
+$video-asset-aspect-ratio: 16 / 9 !default;
+$video-asset-icon: "play" !default;
+$video-asset-icon-color: color(primary) !default;
+$video-asset-icon-height: rem-calc(70) !default;
+$video-asset-icon-height--large: null !default;
+$video-asset-icon-width: rem-calc(70) !default;
+$video-asset-icon-width--large: null !default;
+$video-asset-icon-filter: null !default;
+$video-asset-icon-background: color(light) !default;
+$video-asset-icon-box-shadow: rem-calc(0 0 4 0) rgba(color(dark), 0.2) !default;
+$video-asset-icon-border-radius: 50% !default;
+$video-asset-icon-opacity: 0.75 !default;
+$video-asset-icon-usesvg: false !default;
+$video-asset-info-margin: rem-calc(15) 0 0 !default;
+$video-asset-info-margin--large: rem-calc(30) 0 0 !default;
+$video-asset-info-name-font: bold #{rem-calc(14)} / 1.5 $font-primary !default;
+$video-asset-info-name-font--large: bold #{rem-calc(14)} / 1.5 $font-primary !default;
+$video-asset-info-name-text-transform: none !default;
+$video-asset-info-name-text-transform--large: null !default;
+$video-asset-info-name-margin: rem-calc(0 0 10) !default;
+$video-asset-info-name-margin--large: 0 !default;
+$video-asset-info-name-letter-spacing: null !default;
+$video-asset-info-name-color: null !default;
+$video-asset-info-description-color: color(text-secondary) !default;
+$video-asset-info-description-color--large: null !default;
+$video-asset-info-description-font: #{rem-calc(14)} / 1.5 $font-primary !default;
+$video-asset-info-description-font--large: #{rem-calc(14)} / 1.5 $font-primary !default;
+$video-asset-info-description-margin: rem-calc(8) 0 0 !default;
+$video-asset-info-description-margin--large: 0 !default;
+$video-asset-info-description-letter-spacing: null !default;
+$video-asset-info-description-text-transform: null !default;
+// Video asset autoplay
+$video-asset-control-bottom: rem-calc(10) !default;
+$video-asset-control-bottom--large: rem-calc(20) !default;
+$video-asset-control-left: rem-calc(10) !default;
+$video-asset-control-left--large: rem-calc(20) !default;
+// Video asset autoplay button
+$video-asset-control-button-icon-color: color(primary) !default;
+$video-asset-control-button-icon-hover-color: color(primary-active) !default;
+$video-asset-control-button-background-color: color(light) !default;
+$video-asset-control-button-box-shadow: rem-calc(0 0 4 0) rgba(color(dark), 0.2) !default;
+$video-asset-control-button-size: rem-calc(40) !default;
+$video-asset-control-button-border: null !default;
+$video-asset-control-button-border-radius: 50% !default;
+$video-asset-control-button-margin: rem-calc(0 5 0 0) !default;
+$video-asset-control-button-padding: null !default;
+// Video asset autoplay modifiers
+$video-asset-control-button-icon--pause: "pause" !default;
+$video-asset-control-button-icon--pause-usesvg: true !default;
+$video-asset-control-button-icon--play: "play" !default;
+$video-asset-control-button-icon--play-usesvg: true !default;
+$video-asset-control-button-icon--mute: "mute" !default;
+$video-asset-control-button-icon--mute-usesvg: true !default;
+$video-asset-control-button-icon--speaker: "speaker" !default;
+$video-asset-control-button-icon--speaker-usesvg: true !default;
+// Video asset tiktok modifiers
+$video-asset-tiktok-max-width: rem-calc(
+  325
+) !default; // needs to align width with tiktok iframe
+$video-asset-tiktok-margin: 0 auto !default;
+$video-asset-tiktok-blockquote-margin: 0 auto !default;
+$video-asset-tiktok-container-padding: 0 !default;
+@mixin lora-components-video-asset {
+  .c-video-asset__inner,
+  .c-video-asset__media {
+    position: relative;
+    height: 100%;
+  }
+  .c-video-asset__container {
+    padding: 0 0 (100% / $video-asset-aspect-ratio);
+    position: relative;
+    transform: translateZ(0);
+    &.m-auto-ratio {
+      padding-bottom: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    &.m-control-button-enabled {
+      pointer-events: none;
+      // Fix for a Flowplayer to hide the native UI when the custom one is enabled
+      .fp-ui {
+        display: none;
+      }
+      .disable-play {
+        pointer-events: none;
+      }
+    }
+    &.m-video-cover {
+      video {
+        object-fit: cover;
+      }
+    }
+  }
+  .c-video-asset__link {
+    cursor: pointer;
+  }
+  .c-video-asset__link,
+  .c-video-asset__container iframe,
+  .c-video-asset__container video,
+  .c-video-asset__container .flowplayer,
+  .c-video-asset__container img {
+    height: 100%;
+    #{$global-left}: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .c-video-asset__link:not(.m-no-play-icon) {
+    &::before,
+    &::after {
+      @include absolute-center;
+      content: "";
+      width: $video-asset-icon-width;
+      height: $video-asset-icon-height;
+      pointer-events: none;
+      max-width: 50%;
+      max-height: 50%;
+      opacity: $video-asset-icon-opacity;
+      @include breakpoint(large) {
+        width: $video-asset-icon-width--large;
+        height: $video-asset-icon-height--large;
+      }
+    }
+    &::before {
+      background: $video-asset-icon-background;
+      box-shadow: $video-asset-icon-box-shadow;
+      border-radius: $video-asset-icon-border-radius;
+    }
+    &::after {
+      @include svg-icon(
+        $video-asset-icon,
+        $video-asset-icon-color,
+        contain,
+        center,
+        no-repeat,
+        $usesvg: $video-asset-icon-usesvg
+      );
+      filter: $video-asset-icon-filter;
+    }
+  }
+  .c-video-asset img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+  .c-video-asset__info {
+    margin: $video-asset-info-margin;
+    @include breakpoint(large) {
+      margin: $video-asset-info-margin--large;
+    }
+    &.m-auto-ratio {
+      margin: 0;
+    }
+  }
+  .c-video-asset__info-name {
+    @include text-style(
+      $font: (
+        small: $video-asset-info-name-font,
+        large: $video-asset-info-name-font--large,
+      ),
+      $margin: (
+        small: $video-asset-info-name-margin,
+        large: $video-asset-info-name-margin--large,
+      ),
+      $letter-spacing: (
+        small: $video-asset-info-name-letter-spacing,
+      ),
+      $text-transform: (
+        small: $video-asset-info-name-text-transform,
+        large: $video-asset-info-name-text-transform--large,
+      ),
+      $color: (
+        small: $video-asset-info-name-color,
+      )
+    );
+  }
+  .c-video-asset__info-description {
+    @include text-style(
+      $font: (
+        small: $video-asset-info-description-font,
+        large: $video-asset-info-description-font--large,
+      ),
+      $margin: (
+        small: $video-asset-info-description-margin,
+        large: $video-asset-info-description-margin--large,
+      ),
+      $letter-spacing: (
+        small: $video-asset-info-description-letter-spacing,
+      ),
+      $text-transform: (
+        small: $video-asset-info-description-text-transform,
+      ),
+      $color: (
+        small: $video-asset-info-description-color,
+        large: $video-asset-info-description-color--large,
+      )
+    );
+  }
+  .c-video-asset__placeholder {
+    @include breakpoint(large) {
+      display: none;
+    }
+    &.m-large {
+      display: none;
+      @include breakpoint(large) {
+        display: block;
+      }
+    }
+  }
+  .c-video-asset__control {
+    pointer-events: none;
+    position: absolute;
+    bottom: $video-asset-control-bottom;
+    #{$global-left}: $video-asset-control-left;
+    z-index: z(contentHero, videoControl);
+    @include breakpoint(large) {
+      bottom: $video-asset-control-bottom--large;
+      #{$global-left}: $video-asset-control-left--large;
+    }
+    &.m-center {
+      @include horizontal-center;
+      text-align: center;
+    }
+  }
+  .c-video-asset__control-button {
+    cursor: pointer;
+    pointer-events: all;
+    display: inline-block;
+    vertical-align: middle;
+    background: $video-asset-control-button-background-color;
+    box-shadow: $video-asset-control-button-box-shadow;
+    height: $video-asset-control-button-size;
+    width: $video-asset-control-button-size;
+    border: $video-asset-control-button-border;
+    border-radius: $video-asset-control-button-border-radius;
+    margin: $video-asset-control-button-margin;
+    padding: $video-asset-control-button-padding;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    // stylelint-disable max-nesting-depth
+    &.m-pause {
+      &::before {
+        @include svg-icon(
+          $video-asset-control-button-icon--pause,
+          $video-asset-control-button-icon-color,
+          100%,
+          center,
+          no-repeat,
+          $usesvg: $video-asset-control-button-icon--pause-usesvg
+        );
+      }
+      @if $video-asset-control-button-icon-hover-color {
+        &:hover {
+          &::before {
+            @include svg-icon(
+              $video-asset-control-button-icon--pause,
+              $video-asset-control-button-icon-hover-color,
+              100%,
+              center,
+              no-repeat,
+              $color-change: true,
+              $usesvg: $video-asset-control-button-icon--pause-usesvg
+            );
+          }
+        }
+      }
+    }
+    &.m-play {
+      &::before {
+        @include svg-icon(
+          $video-asset-control-button-icon--play,
+          $video-asset-control-button-icon-color,
+          100%,
+          center,
+          no-repeat,
+          $usesvg: $video-asset-control-button-icon--play-usesvg
+        );
+      }
+      @if $video-asset-control-button-icon-hover-color {
+        &:hover {
+          &::before {
+            @include svg-icon(
+              $video-asset-control-button-icon--play,
+              $video-asset-control-button-icon-hover-color,
+              100%,
+              center,
+              no-repeat,
+              $color-change: true,
+              $usesvg: $video-asset-control-button-icon--play-usesvg
+            );
+          }
+        }
+      }
+    }
+    &.m-mute {
+      &::before {
+        @include svg-icon(
+          $video-asset-control-button-icon--mute,
+          $video-asset-control-button-icon-color,
+          100%,
+          center,
+          no-repeat,
+          $usesvg: $video-asset-control-button-icon--mute-usesvg
+        );
+      }
+      @if $video-asset-control-button-icon-hover-color {
+        &:hover {
+          &::before {
+            @include svg-icon(
+              $video-asset-control-button-icon--mute,
+              $video-asset-control-button-icon-color,
+              100%,
+              center,
+              no-repeat,
+              $color-change: true,
+              $usesvg: $video-asset-control-button-icon--mute-usesvg
+            );
+          }
+        }
+      }
+    }
+    &.m-unmute {
+      &::before {
+        @include svg-icon(
+          $video-asset-control-button-icon--speaker,
+          $video-asset-control-button-icon-color,
+          100%,
+          center,
+          no-repeat,
+          $usesvg: $video-asset-control-button-icon--speaker-usesvg
+        );
+      }
+      @if $video-asset-control-button-icon-hover-color {
+        &:hover {
+          &::before {
+            @include svg-icon(
+              $video-asset-control-button-icon--speaker,
+              $video-asset-control-button-icon-color,
+              100%,
+              center,
+              no-repeat,
+              $color-change: true,
+              $usesvg: $video-asset-control-button-icon--speaker-usesvg
+            );
+          }
+        }
+      }
+    }
+    // stylelint-enable max-nesting-depth
+  }
+  .c-video-asset .flowplayer {
+    z-index: 1; // stylelint-disable-line
+    &.no-controls .fp-ui {
+      pointer-events: none;
+      background-image: none;
+    }
+  }
+  .c-video-asset.m-tiktok {
+    max-width: $video-asset-tiktok-max-width;
+    margin: $video-asset-tiktok-margin;
+    .c-video-asset__container {
+      position: relative;
+      padding: $video-asset-tiktok-container-padding;
+    }
+    .c-video-asset__placeholder {
+      display: none;
+    }
+    blockquote {
+      margin: $video-asset-tiktok-blockquote-margin;
+    }
+    iframe {
+      position: relative;
+    }
+  }
+}

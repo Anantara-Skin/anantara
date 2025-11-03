@@ -1,0 +1,24 @@
+////
+/// @group position
+////
+@mixin position-absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  &.m-right {
+    left: auto;
+    right: 0;
+  }
+  &.m-bottom {
+    top: auto;
+    bottom: 0;
+  }
+}
+@mixin lora-helpers-position {
+  .h-position-absolute {
+    @include position-absolute;
+  }
+  .h-position-relative {
+    position: relative !important; /* stylelint-disable-line */
+  }
+}

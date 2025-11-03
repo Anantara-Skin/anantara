@@ -1,0 +1,218 @@
+// layout
+$section-padding: rem-calc(0) !default;
+$section-padding--large: rem-calc(0) !default;
+$section-content-margin: rem-calc(10 0 0) !default;
+$section-content-margin--large: rem-calc(40 0 0) !default;
+$section-content-no-title-margin-top: 0 !default;
+$section-item-margin: rem-calc(30 0 0) !default;
+$section-item-first-child-margin: 0 !default;
+$section-tertiary-content-margin: rem-calc(0) !default;
+// Headings
+$section-headings-max-width: 100% !default;
+$section-headings-max-width--large: 60% !default;
+/// Full width headings side padding
+$section-full-width-headings-side-padding: $global-padding !default;
+$section-full-width-headings-side-padding--large: null !default;
+// Title
+$section-title-margin: rem-calc(0 0 10) !default;
+$section-title-margin--large: rem-calc(0 0 10) !default;
+$section-title-font: #{rem-calc(18)} / 1.5 $font-primary !default;
+$section-title-font--large: #{rem-calc(30)} / 1.25 $font-primary !default;
+$section-title-text-transform: uppercase !default;
+$section-title-text-align: $global-left !default;
+$section-title-text-align--large: center !default;
+$section-secondary-title-font: #{rem-calc(18)} / 1 $font-primary !default;
+$section-secondary-title-font--large: null !default;
+$section-secondary-title-text-align: $global-left !default;
+$section-secondary-title-text-align--large: null !default;
+$section-secondary-title-margin: 0 !default;
+$section-secondary-title-color: null !default;
+$section-secondary-content-margin: rem-calc(30 0) !default;
+$section-tertiary-title-text-align: $global-left !default;
+$section-tertiary-title-font--large: #{rem-calc(30)} / 1 $font-primary !default;
+$section-tertiary-title-margin: rem-calc(0 0 15) !default;
+$section-tertiary-title-margin--large: rem-calc(0 0 30) !default;
+$section-title-secondary-font: $section-title-font !default;
+$section-title-secondary-font--large: null !default;
+$section-title-secondary-text-transform: none !default;
+$section-title-secondary-text-transform--large: null !default;
+// description
+$section-description-margin: rem-calc(0 0 10) !default;
+$section-description-font: #{rem-calc(12)} / 1.5 $font-primary !default;
+$section-description-font--large: null !default;
+$section-description-text-align: $global-left !default;
+$section-description-text-align--large: center !default;
+$section-description-color: null !default;
+$section-description-color--large: null !default;
+$section-description-margin--large: null !default;
+$section-description-text-transform: null !default;
+$section-description-letter-spacing: null !default;
+// label
+$section-label-font: 300 #{rem-calc(12)} / 1.25 $font-primary !default;
+$section-label-font--large: null !default;
+$section-label-text-transform: uppercase !default;
+$section-label-text-transform--large: null !default;
+$section-label-margin: rem-calc(0 0 10) !default;
+$section-label-margin--large: rem-calc(0 0 12) !default;
+$section-label-text-decoration: null !default;
+$section-label-padding: null !default;
+// Label with background
+$section-label-background-padding: rem-calc(5 10) !default;
+// View more
+$section-view-more-margin: rem-calc(0 0 20 0) !default;
+$section-view-more-margin--large: rem-calc(0) !default;
+$section-view-more-text-align: center !default;
+$section-view-more-text-align--large: null !default;
+$section-view-more-link-font: 500 #{rem-calc(10)} / 1.5 $font-primary !default;
+$section-view-more-link-font--large: normal #{rem-calc(12)} / 1.5 $font-primary !default;
+$section-view-more-link-text-transform: uppercase !default;
+$section-view-more-link-text-transform--large: none !default;
+$section-view-more-link-letter-spacing: null !default;
+@mixin lora-components-section {
+  .c-section {
+    padding: $section-padding;
+    position: relative;
+    @include breakpoint(large) {
+      display: flex;
+      flex-flow: column;
+      padding: $section-padding--large;
+      max-width: 100%;
+    }
+    &.m-dark {
+      .c-section__label:not(.m-background),
+      .c-section__title,
+      .c-section__description,
+      .c-section__view-more-link {
+        color: dark-mode-color(text);
+      }
+    }
+  }
+  .c-section.m-secondary {
+    .c-section__title {
+      font: $section-secondary-title-font;
+      text-align: $section-secondary-title-text-align;
+      margin: $section-secondary-title-margin;
+      @include breakpoint(large) {
+        font: $section-secondary-title-font--large;
+        text-align: $section-secondary-title-text-align--large;
+      }
+    }
+    .c-section__content {
+      margin: $section-secondary-content-margin;
+    }
+  }
+  .c-section__headings {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    .c-section__label,
+    .c-section__title,
+    .c-section__description {
+      max-width: $section-headings-max-width;
+      @include breakpoint(large) {
+        max-width: $section-headings-max-width--large;
+      }
+    }
+    // Add an equal padding on the other side for a full-width section (no need to align with a page wrapper)
+    .l-section.m-full-width > .c-section > & {
+      padding-#{$global-right}: $section-full-width-headings-side-padding;
+      padding-#{$global-left}: $section-full-width-headings-side-padding;
+      @include breakpoint(large) {
+        padding-#{$global-right}: $section-full-width-headings-side-padding--large;
+        padding-#{$global-left}: $section-full-width-headings-side-padding--large;
+      }
+    }
+  }
+  .c-section__title {
+    font: $section-title-font;
+    margin: $section-title-margin;
+    text-align: $section-title-text-align;
+    text-transform: $section-title-text-transform;
+    color: $section-secondary-title-color;
+    &.m-secondary {
+      font: $section-title-secondary-font;
+      text-transform: $section-title-secondary-text-transform;
+    }
+    @include breakpoint(large) {
+      font: $section-title-font--large;
+      margin: $section-title-margin--large;
+      text-align: $section-title-text-align--large;
+      &.m-secondary {
+        font: $section-title-secondary-font--large;
+        text-transform: $section-title-secondary-text-transform--large;
+      }
+    }
+  }
+  .c-section__description {
+    font: $section-description-font;
+    margin: $section-description-margin;
+    text-align: $section-description-text-align;
+    color: $section-description-color;
+    text-transform: $section-description-text-transform;
+    letter-spacing: $section-description-letter-spacing;
+    @include breakpoint(large) {
+      font: $section-description-font--large;
+      text-align: $section-description-text-align--large;
+      color: $section-description-color--large;
+      margin: $section-description-margin--large;
+    }
+  }
+  .c-section__label {
+    display: inline-block;
+    @include text-style(
+      $font: (
+        small: $section-label-font,
+        large: $section-label-font--large,
+      ),
+      $margin: (
+        small: $section-label-margin,
+        large: $section-label-margin--large,
+      ),
+      $text-transform: (
+        small: $section-label-text-transform,
+        large: $section-label-text-transform--large,
+      ),
+      $text-decoration: (
+        small: $section-label-text-decoration,
+      ),
+      $padding: (
+        small: $section-label-padding,
+      )
+    );
+    &.m-background {
+      padding: $section-label-background-padding;
+    }
+  }
+  .c-section__content {
+    margin: $section-content-margin;
+    @include breakpoint(large) {
+      margin: $section-content-margin--large;
+    }
+    &.m-no-title {
+      margin-top: $section-content-no-title-margin-top;
+    }
+  }
+  .c-section__item {
+    margin: $section-item-margin;
+    &:first-child {
+      margin: $section-item-first-child-margin;
+    }
+  }
+  .c-section__view-more {
+    margin: $section-view-more-margin;
+    text-align: $section-view-more-text-align;
+    @include breakpoint(large) {
+      margin: $section-view-more-margin--large;
+      text-align: $section-view-more-text-align--large;
+    }
+  }
+  .c-section__view-more-link {
+    font: $section-view-more-link-font;
+    text-transform: $section-view-more-link-text-transform;
+    letter-spacing: $section-view-more-link-letter-spacing;
+    @include breakpoint(large) {
+      font: $section-view-more-link-font--large;
+      text-transform: $section-view-more-link-text-transform--large;
+    }
+  }
+}

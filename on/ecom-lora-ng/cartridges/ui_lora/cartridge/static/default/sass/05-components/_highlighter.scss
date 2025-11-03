@@ -1,0 +1,37 @@
+$highlighter-color: color(primary) !default;
+$highlighter-color-inverted: color(light) !default;
+$highlighter-border-radius: rem-calc(1) !default;
+$highlighter-transition-timing-function: cubic-bezier(0, 0.2, 0, 1) !default;
+$highlighter-toolkit-color: color(primary-active) !default;
+@mixin lora-components-highlighter {
+  .c-highlighter {
+    border: rem-calc(3) solid $highlighter-color-inverted;
+    border-radius: $highlighter-border-radius;
+    box-sizing: content-box;
+    color: $highlighter-color;
+    opacity: 0;
+    outline: rem-calc(3) solid $highlighter-color;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: scale(1.2);
+    transition-duration: 0.15s;
+    transition-property:
+      top, left, width, height, visibility, transform, opacity;
+    transition-timing-function: $highlighter-transition-timing-function;
+    visibility: hidden;
+    z-index: z(highlighter);
+    &.m-visible {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+    &.m-hurry {
+      transition-duration: 0;
+    }
+    &.m-toolkit {
+      z-index: z(highlighterToolkit);
+      outline-color: $highlighter-toolkit-color;
+    }
+  }
+}

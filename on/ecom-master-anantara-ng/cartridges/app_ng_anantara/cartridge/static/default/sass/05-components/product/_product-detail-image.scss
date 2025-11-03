@@ -1,0 +1,6 @@
+$product-detail-image-zoom-display: none;
+$product-detail-image-badge-left: rem-calc(20);
+$product-detail-image-badge-left--large: 0;
+$product-detail-image-badge-top: 0;
+$product-detail-image-badge-large-top: 0;
+@use "@lora/05-components/product/product-detail-image";

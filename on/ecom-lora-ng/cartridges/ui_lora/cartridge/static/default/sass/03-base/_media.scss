@@ -1,0 +1,40 @@
+/*------------------------------------*\
+        #MEDIA ELEMENTS
+\*------------------------------------*/
+/* stylelint-disable selector-max-type */
+/* stylelint-disable selector-no-qualifying-type */
+@mixin lora-base-media {
+  /**
+      * Make media elements responsive
+      */
+  img {
+    // Get rid of gap under images by making them display: inline-block; by default
+    display: inline-block;
+    // Grid defaults to get images and embeds to work properly
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  video,
+  object {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  figure {
+    margin: 0;
+  }
+  // Lazyload
+  img.m-blur {
+    transition: filter 400ms;
+    will-change: transition;
+    &.m-lazyload,
+    &.m-lazyloading {
+      filter: blur(5px);
+    }
+    &.m-lazyloaded {
+      filter: blur(0);
+    }
+  }
+}
+/* stylelint-enable */

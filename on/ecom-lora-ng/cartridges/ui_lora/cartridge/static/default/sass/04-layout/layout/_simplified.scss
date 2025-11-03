@@ -1,0 +1,56 @@
+$layout-simplified-header-logo-wrapper-padding: rem-calc(10 0) !default;
+$layout-simplified-header-logo-wrapper-padding--large: rem-calc(20 0) !default;
+$layout-simplified-header-logo-max-width: null !default;
+$layout-simplified-header-logo-max-width--large: rem-calc(175) !default;
+$layout-simplified-main-background: color(global-background) !default;
+$layout-simplified-content-max-width--large: rem-calc(690) !default;
+$layout-simplified-content-padding: rem-calc(20 0) !default;
+$layout-simplified-content-padding--large: rem-calc(40 0) !default;
+$layout-simplified-footer-padding: rem-calc(10 0) !default;
+$layout-simplified-footer-padding--large: rem-calc(16 0) !default;
+$layout-simplified-footer-items-margin: rem-calc(5 0) !default;
+$layout-simplified-footer-items-margin--large: null !default;
+@mixin lora-layout-simplified {
+  .l-simplified {
+    // Make HTML page footer stay at bottom of the page with a minimum height, but not overlap the page
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .l-header__logo {
+      padding: $layout-simplified-header-logo-wrapper-padding;
+      @include breakpoint(large) {
+        padding: $layout-simplified-header-logo-wrapper-padding--large;
+      }
+      .c-logo {
+        max-width: $layout-simplified-header-logo-max-width;
+        @include breakpoint(large) {
+          max-width: $layout-simplified-header-logo-max-width--large;
+        }
+      }
+    }
+    .l-footer {
+      padding: $layout-simplified-footer-padding;
+      @include breakpoint(large) {
+        padding: $layout-simplified-footer-padding--large;
+      }
+    }
+    .l-footer__copyright,
+    .l-footer__links {
+      margin: $layout-simplified-footer-items-margin;
+      @include breakpoint(large) {
+        margin: $layout-simplified-footer-items-margin--large;
+      }
+    }
+  }
+  .l-simplified__main {
+    flex: 1;
+    background: $layout-simplified-main-background;
+  }
+  .l-simplified__main-content {
+    padding: $layout-simplified-content-padding;
+    @include breakpoint(large) {
+      max-width: $layout-simplified-content-max-width--large;
+      padding: $layout-simplified-content-padding--large;
+    }
+  }
+}

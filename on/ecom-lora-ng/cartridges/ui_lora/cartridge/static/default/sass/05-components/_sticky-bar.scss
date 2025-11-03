@@ -1,0 +1,48 @@
+$sticky-bar-panel-box-shadow: null !default;
+$sticky-bar-footer-vertical-space: rem-calc(11) !default;
+$sticky-bar-footer-line-height: rem-calc(18) !default;
+$sticky-bar-footer-height: ($sticky-bar-footer-vertical-space * 2) +
+  $sticky-bar-footer-line-height !default;
+$sticky-bar-footer-background: color(secondary) !default;
+$sticky-bar-footer-background--medium: color(secondary) !default;
+$sticky-bar-footer-text-transform: uppercase !default;
+@mixin lora-components-sticky-bar {
+  .c-sticky-bar {
+    position: relative;
+    &.m-cookie,
+    &.m-pwa-install-banner {
+      z-index: z(stickyBarCookie);
+    }
+  }
+  .c-sticky-bar__panel {
+    position: relative;
+    padding: 0;
+    overflow: visible;
+    box-shadow: $sticky-bar-panel-box-shadow;
+    &.m-sticked {
+      left: 0;
+      right: 0;
+      position: fixed;
+      z-index: z(stickyBar);
+    }
+    &.m-top {
+      top: 0;
+    }
+    &.m-bottom {
+      bottom: 0;
+    }
+  }
+  .c-sticky-bar__panel-inner {
+    @include layout;
+  }
+  .c-sticky-bar.m-footer {
+    .c-sticky-bar__panel {
+      background: $sticky-bar-footer-background;
+      text-transform: $sticky-bar-footer-text-transform;
+      height: $sticky-bar-footer-height;
+      @include breakpoint(medium) {
+        background: $sticky-bar-footer-background--medium;
+      }
+    }
+  }
+}

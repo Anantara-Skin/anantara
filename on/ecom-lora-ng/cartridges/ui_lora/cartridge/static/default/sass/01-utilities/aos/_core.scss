@@ -1,0 +1,29 @@
+/** Generate Duration && Delay
+ *
+ * The default Duration (400) and Delay (0) are set during the initialization
+ * https://github.com/michalsnik/aos#1-initialize-aos
+ * You can use values from the list to change the behavior via data attributes or create a custom list with values on a brand
+ * Please do not add values you're not going to use since it generates extra selectors to commons.css
+ * Usage examples: data-aos-delay="200" data-aos-duration="1000"
+ */
+$aos-duration: (50, 200, 400, 1000, 6000, 10000) !default;
+$aos-delay: (0, 50, 200, 500, 1000) !default;
+@mixin lora-aos-core() {
+  [data-aos] {
+    @each $val in $aos-duration {
+      body[data-aos-duration="#{$val}"] &,
+      &[data-aos][data-aos-duration="#{$val}"] {
+        transition-duration: #{$val}ms;
+      }
+    }
+    @each $val in $aos-delay {
+      body[data-aos-delay="#{$val}"] &,
+      &[data-aos][data-aos-delay="#{$val}"] {
+        transition-delay: 0;
+        &.aos-animate {
+          transition-delay: #{$val}ms;
+        }
+      }
+    }
+  }
+}

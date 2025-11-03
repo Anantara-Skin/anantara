@@ -1,0 +1,140 @@
+$content-panel-background: color(primary) !default;
+$content-panel-font: #{rem-calc(14)} / 1.5 $font-primary !default;
+$content-panel-font-color: color(light) !default;
+$content-panel-link-hover-color: color(primary-active) !default;
+$content-panel-close-color: color(light) !default;
+$content-panel-text-transform: null !default;
+$content-panel-text-align: initial !default;
+$content-panel-text-margin--large: null !default;
+$content-panel-text-letter-spacing: null !default;
+$content-panel-close-width: rem-calc(16) !default;
+$content-panel-text-margin: rem-calc(0 20) !default;
+$content-panel-padding: rem-calc(10 0) !default;
+$content-panel-has-close-icon-padding: rem-calc(10 46 10 10) !default;
+$content-panel-open-transition:
+  margin-top 0.1s ease-in,
+  padding 0.4s ease-out !default;
+$content-panel-close-transition:
+  margin-top 0.5s ease-in,
+  padding 0.1s ease-out !default;
+$content-panel-medium-min-height: rem-calc(25) !default;
+$content-panel-medium-min-height--large: rem-calc(40) !default;
+$content-panel-close-icon-size: rem-calc(16) !default;
+$content-panel-close-icon-size--large: null !default;
+$content-panel-close-icon: cross !default;
+$content-panel-close-icon-color: color(light) !default;
+$content-panel-close-icon-usesvg: true !default;
+$content-panel-colors: (
+  "error": color(alert),
+  "warning": color(warning),
+  "success": color(success),
+  "info": color(global-background),
+) !default;
+$content-panel-text-colors: (
+  "error": $content-panel-font-color,
+  "warning": $content-panel-font-color,
+  "success": $content-panel-font-color,
+  "info": $content-panel-font-color,
+) !default;
+@mixin lora-components-content-panel {
+  .c-content-panel {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: $content-panel-padding;
+    background: $content-panel-background;
+    color: $content-panel-font-color;
+    transition: $content-panel-open-transition;
+    @each $color-name, $color-code in $content-panel-colors {
+      &[data-type="#{$color-name}"] {
+        background: $color-code;
+      }
+    }
+    @each $color-name, $color-code in $content-panel-text-colors {
+      &[data-type="#{$color-name}"] {
+        .c-content-panel__text,
+        .c-content-panel__text a,
+        .c-content-panel__close {
+          color: $color-code;
+        }
+      }
+    }
+    &.m-hidden {
+      display: none;
+    }
+    &.m-medium {
+      .c-content-panel__inner {
+        min-height: $content-panel-medium-min-height;
+        @include breakpoint(large) {
+          min-height: $content-panel-medium-min-height--large;
+        }
+      }
+    }
+    &.m-has-close-icon {
+      padding: $content-panel-has-close-icon-padding;
+    }
+    &.m-closed {
+      visibility: hidden;
+      padding: 0;
+      transition: $content-panel-close-transition;
+    }
+  }
+  .c-content-panel__close {
+    @include vertical-center;
+    cursor: pointer;
+    font-size: 0; /* stylelint-disable-line */
+    position: absolute;
+    #{$global-right}: $content-panel-close-width;
+    width: $content-panel-close-width;
+    &::before {
+      @include svg-icon(
+        $content-panel-close-icon,
+        $content-panel-close-icon-color,
+        100%,
+        left,
+        no-repeat,
+        $usesvg: $content-panel-close-icon-usesvg
+      );
+      content: "";
+      display: block;
+      height: $content-panel-close-icon-size;
+      width: $content-panel-close-icon-size;
+      @include breakpoint(large) {
+        height: $content-panel-close-icon-size--large;
+        width: $content-panel-close-icon-size--large;
+      }
+    }
+  }
+  .c-content-panel__inner {
+    @include layout;
+    display: flex;
+    margin-top: 0;
+    transition: $content-panel-open-transition;
+    &.m-x-center {
+      justify-content: center;
+    }
+    &.m-y-center {
+      align-items: center;
+    }
+    a {
+      color: $content-panel-font-color;
+      &:hover {
+        color: $content-panel-link-hover-color;
+      }
+    }
+  }
+  .c-content-panel__text {
+    color: $content-panel-font-color;
+    font: $content-panel-font;
+    margin: $content-panel-text-margin;
+    text-transform: $content-panel-text-transform;
+    text-align: $content-panel-text-align;
+    letter-spacing: $content-panel-text-letter-spacing;
+    @include breakpoint(large) {
+      margin: $content-panel-text-margin--large;
+    }
+  }
+  .c-content-panel.m-closed .c-content-panel__inner {
+    margin-top: -100%;
+  }
+}

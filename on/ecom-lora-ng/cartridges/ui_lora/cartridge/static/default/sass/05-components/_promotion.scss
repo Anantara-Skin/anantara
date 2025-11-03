@@ -1,0 +1,189 @@
+/// info promotion
+/// @type Map
+$promotion-info: (
+  color: color(info),
+  icon: "info",
+  icon-color: color(info),
+) !default;
+/// Success promotion
+/// @type Map
+$promotion-success: (
+  color: color(success),
+  icon: "success",
+  icon-color: color(success),
+) !default;
+/// Error promotion
+/// @type Map
+$promotion-error: (
+  color: color(alert),
+  icon: "error",
+  icon-color: color(alert),
+) !default;
+/// promotion types classes. A map of classes to output in your CSS
+/// @type Map
+$promotion-palette: (
+  info: $promotion-info,
+  success: $promotion-success,
+  error: $promotion-error,
+) !default;
+// 1st type of a promo message
+$promotion-product-background: color(primary-background) !default;
+$promotion-product-color: color(text) !default;
+$promotion-product-margin: rem-calc(8 0) !default;
+$promotion-product-margin--large: null !default;
+$promotion-product-padding: rem-calc(8) !default;
+$promotion-product-text-align: null !default;
+$promotion-product-justify-content: null !default;
+$promotion-product-justify-content--large: space-between !default;
+$promotion-product-font: #{rem-calc(12)} / #{rem-calc(14)} $font-primary !default;
+$promotion-product-border: 1px dashed color(primary) !default;
+$promotion-product-border-radius: rem-calc(4) !default;
+$promotion-product-display: flex !default;
+$promotion-product-text-transform: null !default;
+$promotion-product-letter-spacing: null !default;
+$promotion-product-description-flex: 1 1 auto !default;
+$promotion-product-tooltip-color: color(text-secondary) !default;
+$promotion-product-tooltip-font: null !default;
+$promotion-product-tooltip-text-decoration: underline !default;
+$promotion-product-tooltip-text-transform: none !default;
+$promotion-product-tooltip-margin: rem-calc(0 0 0 10) !default;
+$promotion-product-tooltip-margin--large: rem-calc(0 0 0 20) !default;
+$promotion-product-tooltip-flex-shrink: null !default;
+$promotion-product-tile-background: none !default;
+$promotion-product-tile-border: none !default;
+$promotion-product-tile-color: color(highlight) !default;
+// Text sizes product tile promotion callout max lines
+$promotion-product-tile-description-max-lines: 2 !default;
+// 2nd type of a promo message
+$promotion-with-icon-font: #{rem-calc(12)} / 1.4 $font-primary !default;
+$promotion-with-icon-transform: null !default;
+$promotion-with-icon-padding: rem-calc(20) !default;
+$promotion-with-icon-background: none !default;
+// Message with icon
+$promotion-icon: success !default;
+$promotion-icon-color: color(info) !default;
+$promotion-icon-margin: rem-calc(3 5 0 0) !default;
+$promotion-icon-height: rem-calc(10) !default;
+$promotion-icon-width: rem-calc(10) !default;
+$promotion-icon-usesvg: true !default;
+/// Coupon icon
+$promotion-coupon-icon: coupon !default;
+$promotion-coupon-icon-color: color(primary) !default;
+$promotion-coupon-icon-size: rem-calc(12) !default;
+$promotion-coupon-icon-margin: rem-calc(0 5 0 0) !default;
+$promotion-coupon-icon-usesvg: true !default;
+// 3rd type of a promo message
+$promotion-approaching-discount-color: color(text) !default;
+$promotion-approaching-discount-padding: rem-calc(20) !default;
+$promotion-approaching-discount-background: color(element-background) !default;
+$promotion-approaching-discount-margin: rem-calc(5 0 0) !default;
+$promotion-approaching-discount-text-align: center !default;
+$promotion-approaching-discount-font: null !default;
+$promotion-approaching-discount-text-transform: null !default;
+@mixin lora-components-promotions {
+  .c-promotion {
+    @each $name, $type in $promotion-palette {
+      &.m-#{$name} {
+        color: map-deep-get($promotion-palette, $name, "color");
+        .c-promotion__icon {
+          @include svg-icon(
+            map-deep-get($promotion-palette, $name, "icon"),
+            map-deep-get($promotion-palette, $name, "icon-color"),
+            100%,
+            left,
+            no-repeat,
+            $usesvg: $promotion-icon-usesvg
+          );
+        }
+      }
+    }
+  }
+  // 1st type of a promo message
+  .c-product-promotion {
+    background: $promotion-product-background;
+    color: $promotion-product-color;
+    margin: $promotion-product-margin;
+    padding: $promotion-product-padding;
+    text-align: $promotion-product-text-align;
+    font: $promotion-product-font;
+    border: $promotion-product-border;
+    border-radius: $promotion-product-border-radius;
+    display: $promotion-product-display;
+    justify-content: $promotion-product-justify-content;
+    text-transform: $promotion-product-text-transform;
+    letter-spacing: $promotion-product-letter-spacing;
+    @include breakpoint(large) {
+      margin: $promotion-product-margin--large;
+    }
+    &.m-product-tile {
+      background: $promotion-product-tile-background;
+      border: $promotion-product-tile-border;
+      color: $promotion-product-tile-color;
+      .c-product-promotion__description {
+        @include text-line-clamp($promotion-product-tile-description-max-lines);
+      }
+    }
+  }
+  .c-product-promotion__description {
+    flex: $promotion-product-description-flex;
+  }
+  .c-product-promotion__info-text {
+    display: inline-block;
+    cursor: pointer;
+    color: $promotion-product-tooltip-color;
+    font: $promotion-product-tooltip-font;
+    text-decoration: $promotion-product-tooltip-text-decoration;
+    text-transform: $promotion-product-tooltip-text-transform;
+    margin: $promotion-product-tooltip-margin;
+    flex-shrink: $promotion-product-tooltip-flex-shrink;
+    @include breakpoint(large) {
+      margin: $promotion-product-tooltip-margin--large;
+    }
+  }
+  // 2nd type of a promo message
+  .c-promotion.m-icon {
+    display: flex;
+    text-transform: $promotion-with-icon-transform;
+    padding: $promotion-with-icon-padding;
+    background: $promotion-with-icon-background;
+    font: $promotion-with-icon-font;
+  }
+  .c-promotion__icon {
+    @include svg-icon(
+      $promotion-icon,
+      $promotion-icon-color,
+      100%,
+      left,
+      no-repeat,
+      $usesvg: $promotion-icon-usesvg
+    );
+    display: inline-block;
+    height: $promotion-icon-height;
+    margin: $promotion-icon-margin;
+    width: $promotion-icon-width;
+    flex: 0 0 auto;
+    &.m-coupon {
+      @include svg-icon(
+        $promotion-coupon-icon,
+        $promotion-coupon-icon-color,
+        100%,
+        left,
+        no-repeat,
+        $usesvg: $promotion-coupon-icon-usesvg
+      );
+      width: $promotion-coupon-icon-size;
+      height: $promotion-coupon-icon-size;
+      margin: $promotion-coupon-icon-margin;
+    }
+  }
+  // 3rd type of a promo message
+  .c-promotion.m-approaching-discount {
+    background: $promotion-approaching-discount-background;
+    margin: $promotion-approaching-discount-margin;
+    color: $promotion-approaching-discount-color;
+    padding: $promotion-approaching-discount-padding;
+    text-align: $promotion-approaching-discount-text-align;
+    text-transform: $promotion-approaching-discount-text-transform;
+    font: $promotion-approaching-discount-font;
+  }
+}

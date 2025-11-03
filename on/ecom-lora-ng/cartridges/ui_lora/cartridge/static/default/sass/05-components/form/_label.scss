@@ -1,0 +1,164 @@
+////
+/// @group forms
+////
+/// Color for form labels.
+/// @type Color
+$form-label-color: color(text) !default;
+/// Font size for form labels.
+/// @type Number
+$form-label-font-size: rem-calc(14) !default;
+/// Font weight for form labels.
+/// @type Keyword
+$form-label-font-weight: $global-weight-normal !default;
+/// Width for form labels.
+/// @type Number
+$form-label-width: 100% !default;
+/// Line height for form labels. The higher the number, the more space between the label and its input field.
+/// @type Number
+$form-label-line-height: 1.8 !default;
+/// Font family for form labels.
+/// @type String
+$form-label-font-family: $font-primary !default;
+/// Font for form labels.
+/// @type String
+$form-label-font: $form-label-font-weight #{$form-label-font-size} /
+  $form-label-line-height $form-label-font-family !default;
+/// Margin for form middle labels.
+/// @type Number
+$form-label-middle-margin: rem-calc(0 0 15) !default;
+/// Padding for form middle labels.
+/// @type Number
+$form-label-middle-padding: rem-calc(7 0) !default;
+/// Font color of text input labels.
+/// @type Color
+$form-label-float-height: $global-input-primary-height !default;
+/// Font color of text input labels.
+/// @type Color
+$form-label-float-line-height: $global-input-primary-height !default;
+/// Font color of text input labels.
+/// @type Color
+$form-label-float-color: color(text-secondary) !default;
+/// Font color of text input label on focus.
+/// @type Color
+$form-label-float-focus-color: color(text-secondary) !default;
+/// Padding of text input labels.
+/// @type Number
+$form-label-float-padding: rem-calc(0 5) !default;
+/// Padding of text input labels on focus.
+/// @type Number
+$form-label-float-focus-padding: rem-calc(0 5) !default;
+/// Font size of text input labels.
+/// @type Number
+$form-label-float-font-family: $font-primary !default;
+/// Font size of text input labels.
+/// @type Number
+$form-label-float-font-size: rem-calc(14) !default;
+/// Font weight of text input labels.
+/// @type String | Number
+$form-label-float-font-weight: null !default;
+/// Font of text input labels.
+/// @type String
+$form-label-float-font: $form-label-float-font-weight
+  #{$form-label-float-font-size} / $form-label-float-line-height
+  $form-label-float-font-family !default;
+/// Font size of text input labels when focused.
+/// @type Number
+$form-label-float-focus-font-size: rem-calc(11) !default;
+/// Letter spacing of text input labels.
+/// @type Number
+$form-label-float-focus-letter-spacing: null !default;
+/// Left offset of text input labels.
+/// @type Number
+$form-label-float-left: rem-calc(16) !default;
+/// Text input labels transition.
+/// @type Transition
+$form-label-float-transition:
+  transform 0.2s,
+  font-size 0.2s,
+  left 0.2s;
+/// Text input labels text-transform.
+/// @type String
+$form-label-float-text-transform: null !default;
+/// Text input labels letter spacing.
+/// @type Number
+$form-label-float-letter-spacing: null !default;
+/// Text input labels transform.
+/// @type Transform
+$form-label-float-transform: translate3d(0, 0, 0) !default;
+/// Text input labels transform on focus.
+/// @type Transform
+$form-label-float-focus-transform: translate3d(0, rem-calc(-8), 0) !default;
+$form-label-float-focus-height: auto !default;
+$form-label-float-focus-line-height: rem-calc(16) !default;
+$form-label-float-focus-font-family: $font-primary !default;
+$form-label-float-focus-font-weight: null !default;
+$form-label-float-focus-font: $form-label-float-focus-font-weight
+  #{$form-label-float-focus-font-size} / $form-label-float-focus-line-height
+  $form-label-float-focus-font-family !default;
+/// Text input label on focus
+/// (add background to hide the part of input field border and make the text readable over any form background)
+$form-label-float-before-height: calc(
+  50% + 2px
+) !default; // Fix rounding errror on some retina devices (NGLORA-2579)
+$form-label-float-before-background: $form-text-field-background !default;
+$form-label-float-before-border-radius: rem-calc(4 4 0 0) !default;
+@mixin form-label {
+  color: $form-label-color;
+  display: block;
+  font: $form-label-font;
+  margin: 0;
+  width: $form-label-width;
+  cursor: pointer;
+}
+@mixin form-label-middle {
+  $input-border-width: get-border-value($form-text-field-border, width);
+  margin: $form-label-middle-margin;
+  padding: $form-label-middle-padding;
+}
+@mixin lora-helper-form-label-float {
+  @include text-truncate;
+  position: absolute;
+  top: 0;
+  #{$global-left}: $form-label-float-left;
+  width: auto;
+  height: $form-label-float-height;
+  max-width: calc(100% - #{$form-label-float-left});
+  color: $form-label-float-color;
+  font: $form-label-float-font;
+  text-transform: $form-label-float-text-transform;
+  letter-spacing: $form-label-float-letter-spacing;
+  text-align: #{$global-left};
+  padding: $form-label-float-padding;
+  pointer-events: none;
+  transform: $form-label-float-transform;
+  transition: $form-label-float-transition;
+  z-index: 1; // stylelint-disable-line scale-unlimited/declaration-strict-value
+}
+@mixin lora-helper-form-label-float-focused {
+  color: $form-label-float-focus-color;
+  font: $form-label-float-focus-font;
+  padding: $form-label-float-focus-padding;
+  transform: $form-label-float-focus-transform;
+  height: $form-label-float-focus-height;
+  letter-spacing: $form-label-float-focus-letter-spacing;
+  &::before {
+    background: $form-label-float-before-background;
+    border-radius: $form-label-float-before-border-radius;
+    content: "";
+    height: $form-label-float-before-height;
+    #{$global-left}: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+@mixin lora-form-label {
+  /* stylelint-disable-next-line selector-max-type */
+  label {
+    @include form-label;
+    &--middle {
+      @include form-label-middle;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+$scrolldown-bottom: rem-calc(95) !default;
+$scrolldown-left: 50% !default;
+$scrolldown-transition: opacity 1s !default;
+$scrolldown-background-color: transparent !default;
+$scrolldown-light-color: color(light) !default;
+$scrolldown-dark-color: color(dark) !default;
+$scrolldown-icon-position-top: rem-calc(5) !default;
+$scrolldown-icon-width: rem-calc(35) !default;
+$scrolldown-icon-height: rem-calc(35) !default;
+$scrolldown-icon-before-width: rem-calc(23) !default;
+$scrolldown-icon-before-height: rem-calc(23) !default;
+$scrolldown-icon-before-animation: scrolldown-icon 0.9s infinite alternate
+  linear !default;
+@keyframes scrolldown-icon {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(5px, 5px);
+  }
+}
+@mixin lora-components-scrolldown {
+  .c-scrolldown {
+    background: $scrolldown-background-color;
+    position: absolute;
+    bottom: $scrolldown-bottom;
+    left: $scrolldown-left;
+    transform: translateX(-50%);
+    z-index: z(scrollDown);
+    opacity: 0;
+    transition: $scrolldown-transition;
+    // stylelint-disable max-nesting-depth
+    &.m-dark {
+      color: $scrolldown-dark-color;
+      .c-scrolldown__icon {
+        &::before,
+        &::after {
+          border-color: $scrolldown-dark-color;
+        }
+      }
+    }
+    &.m-light {
+      color: $scrolldown-light-color;
+      .c-scrolldown__icon {
+        &::before,
+        &::after {
+          border-color: $scrolldown-light-color;
+        }
+      }
+    }
+    // stylelint-enable max-nesting-depth
+    &.m-active {
+      opacity: 1;
+    }
+  }
+  .c-scrolldown__icon {
+    position: absolute;
+    left: 50%;
+    top: $scrolldown-icon-position-top;
+    transform: rotate(45deg);
+    z-index: z(scrollDown);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: z(scrollDown, icon);
+      width: $scrolldown-icon-width;
+      height: $scrolldown-icon-height;
+      border-bottom: 1px solid $scrolldown-dark-color;
+      border-right: 1px solid $scrolldown-dark-color;
+    }
+    &::before {
+      width: $scrolldown-icon-before-width;
+      height: $scrolldown-icon-before-height;
+      animation: $scrolldown-icon-before-animation;
+      @include reduced-motion {
+        animation: none;
+      }
+    }
+  }
+}

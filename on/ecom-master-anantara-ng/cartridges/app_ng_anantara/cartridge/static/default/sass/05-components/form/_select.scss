@@ -1,0 +1,30 @@
+// Default select
+$form-select-color: color(dark);
+$form-select-option-color: color(
+  dark
+); // Windows fix for select options inheriting styles
+$form-select-background: color(light);
+$form-select-border-color: color(border);
+$form-select-border-radius: 0;
+/// Select Arrow
+$form-select-arrow-color: color(primary);
+$form-select-arrow-size: rem-calc(22);
+$form-select-arrow-right: rem-calc(7);
+//Secondary
+$form-select-secondary-border: 1px solid color(light);
+$form-select-secondary-padding: rem-calc(0 16);
+$form-select-secondary-arrow-color: color(light);
+$form-select-secondary-arrow-right: rem-calc(16);
+$form-select-border-radius: 0;
+$form-select-border-color: color(border);
+//Third
+$form-select-third-background: color(light);
+$form-select-third-border-color: color(border);
+$form-select-third-color: color(primary);
+$form-select-third-arrow-color: color(primary);
+$form-select-font-size: rem-calc(14);
+$form-select-font-weight-hover: 500;
+$form-select-alt-padding: rem-calc(0 45 0 20);
+$form-select-height: rem-calc(40);
+$form-select-third-radius: 0;
+@use "@lora/05-components/form/select";

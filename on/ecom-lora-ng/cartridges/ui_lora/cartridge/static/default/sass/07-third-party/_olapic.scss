@@ -1,0 +1,86 @@
+//stylelint-disable lora/variable-pattern
+@use "../05-components/button";
+@use "../05-components/content-grid";
+@use "../05-components/carousel";
+$third-party-olapic-background: null !default;
+$third-party-olapic-padding: 0 !default;
+$third-party-olapic-wall-widget-max-width: none !default;
+$third-party-olapic-wall-widget-margin: 0 !default;
+$third-party-olapic-wall-widget-padding: null !default;
+$third-party-olapic-slider-header-padding: 0 !default;
+$third-party-olapic-slider-widget-margin: 0 !default;
+$third-party-olapic-nav-button-background: color(transparent) !default;
+$third-party-olapic-nav-button-margin: auto 0 !default;
+$third-party-olapic-wall-padding: null !default;
+$third-party-olapic-wall-header-cta-margin: null !default;
+$third-party-olapic-wall-bottom-margin: null !default;
+@mixin lora-third-party-olapic {
+  /* stylelint-disable selector-id-pattern, selector-max-id, selector-max-compound-selectors, declaration-no-important, max-nesting-depth */
+  #olapic_specific_widget {
+    background: $third-party-olapic-background;
+    padding: $third-party-olapic-padding !important;
+    #olapic-wall-widget {
+      max-width: $third-party-olapic-wall-widget-max-width;
+      margin: $third-party-olapic-wall-widget-margin;
+      padding: $third-party-olapic-wall-widget-padding;
+      .olapic-wall-cta {
+        @include lora-helper-content-grid-title;
+      }
+      .olapic-wall-subheader {
+        @include lora-helper-content-grid-description;
+      }
+      .olapic-btn {
+        @include lora-helper-button;
+      }
+      &.olapic-wall-widget {
+        .olapic-wall-header {
+          .olapic-header-cta {
+            margin: $third-party-olapic-wall-header-cta-margin;
+          }
+        }
+        .olapic-wall-body {
+          .olapic-wall {
+            padding: $third-party-olapic-wall-padding;
+          }
+        }
+        .olapic-wall-bottom {
+          margin: $third-party-olapic-wall-bottom-margin;
+        }
+      }
+    }
+    #olapic-slider-widget {
+      margin: $third-party-olapic-slider-widget-margin;
+      width: auto;
+      max-width: none;
+      .olapic-slider-header {
+        padding: $third-party-olapic-slider-header-padding;
+      }
+      .olapic-slider-cta {
+        @include lora-helper-content-grid-title;
+      }
+      .olapic-slider-subheader {
+        @include lora-helper-content-grid-description;
+      }
+      .olapic-slider-wrapper {
+        z-index: 0;
+      }
+      .olapic-nav-button {
+        @include lora-helper-carousel-arrow-size(default);
+        @include lora-helper-carousel-arrow-layout;
+        display: flex !important;
+        height: 100%;
+        margin: $third-party-olapic-nav-button-margin;
+        background: $third-party-olapic-nav-button-background;
+        transform: translate(0, 0);
+      }
+      .olapic-nav-prev {
+        transform: rotate(180deg);
+      }
+      .olapic-action-button a:link,
+      .olapic-action-button a:visited {
+        @include lora-helper-button;
+      }
+    }
+  }
+  /* stylelint-enable */
+}

@@ -1,0 +1,8 @@
+$tag-link-background: color(alabaster-300);
+$tag-link-color: color(dark);
+$tag-text-transform: none;
+$tag-font: #{rem-calc(11)} / 1.7 $font-primary-medium;
+$tag-font--large: #{rem-calc(11)} / 1.7 $font-primary-medium;
+$tag-padding: rem-calc(4 8);
+$tag-link-border-radius: rem-calc(4);
+@use "@lora/05-components/tag";

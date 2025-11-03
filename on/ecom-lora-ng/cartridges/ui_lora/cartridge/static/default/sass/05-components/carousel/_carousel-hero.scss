@@ -1,0 +1,173 @@
+$carousel-hero-item-width: percentage(0.95) !default;
+$carousel-hero-item-width--large: percentage(1) !default;
+$carousel-hero-prev-icon: chevron-right !default;
+$carousel-hero-prev-icon-usesvg: true !default;
+$carousel-hero-arrow-color: color(light) !default;
+$carousel-hero-arrow-color--medium-down: color(primary) !default;
+$carousel-hero-arrow-offset: rem-calc(35) !default;
+$carousel-hero-arrows-include-layout: true !default;
+$carousel-hero-pagination-margin: rem-calc(20 0 0) !default;
+$carousel-hero-pagination-bottom--large: rem-calc(25) !default;
+$carousel-hero-pagination-bullet-color--large: color(light) !default;
+$carousel-hero-pagination-bullet-active-color--large: color(primary) !default;
+$carousel-hero-pagination-bullet-active-border: null !default;
+$carousel-hero-pagination-bullet-active-border--large: null !default;
+$carousel-hero-pagination-bullet-hover-color--large: null !default;
+$carousel-hero-pagination-text-align: null !default;
+$carousel-hero-pagination-text-align--large: center !default;
+$carousel-hero-scrollbar-height: rem-calc(4) !default;
+$carousel-hero-scrollbar-bottom: 0 !default;
+$carousel-hero-scrollbar-top: 0 !default;
+$carousel-hero-scrollbar-margin: 0 !default;
+$carousel-hero-scrollbar-padding: 0 !default;
+$carousel-hero-inner-horizontal-margin: null !default;
+$carousel-hero-inner-horizontal-margin--large: null !default;
+$carousel-hero-has-background-padding-bottom--medium-down: rem-calc(
+  20
+) !default;
+$carousel-hero-arrows-display--medium-down: none !default;
+@mixin lora-components-carousel-hero {
+  .c-carousel.m-style-hero {
+    .c-carousel__arrows {
+      @include breakpoint(medium down) {
+        display: $carousel-hero-arrows-display--medium-down;
+      }
+      @include breakpoint(large) {
+        @include absolute-center;
+        @if ($carousel-hero-arrows-include-layout) {
+          @include layout;
+        } @else {
+          width: 100%;
+        }
+        z-index: z(carousel, arrows);
+      }
+    }
+    .c-carousel__arrow-prev,
+    .c-carousel__arrow-next {
+      &::before {
+        @include svg-icon(
+          $carousel-hero-prev-icon,
+          $carousel-hero-arrow-color,
+          100%,
+          left,
+          no-repeat,
+          $usesvg: $carousel-hero-prev-icon-usesvg
+        );
+      }
+      @include breakpoint(medium down) {
+        &::before {
+          @include svg-icon(
+            $carousel-hero-prev-icon,
+            $carousel-hero-arrow-color--medium-down,
+            100%,
+            left,
+            no-repeat,
+            $color-change: true,
+            $usesvg: $carousel-hero-prev-icon-usesvg
+          );
+        }
+      }
+    }
+    .c-carousel__arrow-prev {
+      @include breakpoint(large) {
+        left: -$carousel-hero-arrow-offset;
+        right: auto;
+      }
+    }
+    .c-carousel__arrow-next {
+      @include breakpoint(large) {
+        right: -$carousel-hero-arrow-offset;
+        left: auto;
+      }
+    }
+    .c-carousel__pagination {
+      @include layout;
+      margin: $carousel-hero-pagination-margin;
+      text-align: $carousel-hero-pagination-text-align;
+      @include breakpoint(large) {
+        @include horizontal-center;
+        pointer-events: none;
+        z-index: z(carousel, pagination);
+        text-align: $carousel-hero-pagination-text-align--large;
+      }
+    }
+    .c-carousel__scrollbar {
+      @include breakpoint(large) {
+        @include horizontal-center;
+        pointer-events: none;
+        height: $carousel-hero-scrollbar-height;
+        z-index: z(carousel, scrollbar);
+        bottom: $carousel-hero-scrollbar-bottom;
+        margin: $carousel-hero-scrollbar-margin;
+        padding: $carousel-hero-scrollbar-padding;
+      }
+      &.m-top {
+        @include breakpoint(large) {
+          bottom: auto;
+          top: $carousel-hero-scrollbar-top;
+        }
+      }
+    }
+    .c-carousel__inner.m-horizontal {
+      margin: $carousel-hero-inner-horizontal-margin;
+      @include breakpoint(large) {
+        margin: $carousel-hero-inner-horizontal-margin--large;
+      }
+      .c-carousel__pagination {
+        bottom: 0;
+        width: 100%;
+        @include breakpoint(large) {
+          bottom: $carousel-hero-pagination-bottom--large;
+        }
+      }
+    }
+    .c-carousel__pagination:not(.m-color-light) .c-carousel__pagination-bullet {
+      @include breakpoint(large) {
+        &::before {
+          background: $carousel-hero-pagination-bullet-color--large;
+        }
+        &:hover::before,
+        &:focus::before {
+          background: $carousel-hero-pagination-bullet-hover-color--large;
+        }
+      }
+      &.m-active::before {
+        border: $carousel-hero-pagination-bullet-active-border;
+        @include breakpoint(large) {
+          background: $carousel-hero-pagination-bullet-active-color--large;
+          border: $carousel-hero-pagination-bullet-active-border--large;
+        }
+      }
+    }
+    .c-carousel__item {
+      width: $carousel-hero-item-width;
+      @include breakpoint(large) {
+        width: $carousel-hero-item-width--large;
+      }
+      @include breakpoint(medium down) {
+        overflow: hidden;
+      }
+    }
+    .c-content-hero__body {
+      @include breakpoint(medium down) {
+        padding-bottom: 0;
+      }
+    }
+    &.m-has-background {
+      @include breakpoint(medium down) {
+        padding-bottom: $carousel-hero-has-background-padding-bottom--medium-down;
+      }
+    }
+    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors */
+    @each $size in (medium small) {
+      &.m-slidesperview-auto-for-#{$size}-down:not(.m-ready) {
+        & > .c-carousel__inner > .c-carousel__content > .c-carousel__item {
+          @include breakpoint($size down) {
+            width: $carousel-hero-item-width;
+          }
+        }
+      }
+    }
+    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors */
+  }
+}
