@@ -1,0 +1,1 @@
+function t(t,n,o){const r=n.split(".").reduce((t,n)=>void 0===t?void 0:t[n],t);return void 0===r?o:r}function n(t){try{const n=JSON.parse(t);if(n&&"object"==typeof n&&null!==n)return n}catch(t){}return!1}export{t as safeGet,n as tryParseJSON};

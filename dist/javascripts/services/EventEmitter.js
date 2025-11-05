@@ -1,0 +1,1 @@
+import{EventEmitter as t}from"../vendors/eventemitter3.js";const e=new class extends t{constructor(){super(),this._eventState={}}emitStateUpdate(t,e){this._eventState[t]=e,this.emit(t,e)}onStateUpdate(t,e,s){this.on(t,e,s),this._eventState[t]&&e.call(s,this._eventState[t])}};export{e as Event};
