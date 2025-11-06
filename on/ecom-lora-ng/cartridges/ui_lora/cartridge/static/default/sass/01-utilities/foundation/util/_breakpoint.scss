@@ -64,7 +64,7 @@ $breakpoint-classes: (small medium large xlarge) !default;
   $bp: -zf-bp-to-em($bp);
   @if $bp-max {
     $bp-max: -zf-bp-to-em($bp-max) -
-      0.00125; // Max value is 0.2px under the next breakpoint (0.02 / 16 = 0.00125).
+      00.00125; // Max value is 0.2px under the next breakpoint (0.02 / 16 = 00.00125).
     // Use a precision under 1px to support browser zoom, but not to low to avoid rounding.
     // See https://github.com/foundation/foundation-sites/issues/11313
   }
