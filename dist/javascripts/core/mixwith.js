@@ -1,83 +1,50 @@
-(function (System, SystemJS) {
-  "use strict";
-  System.register([], function (a) {
-    "use strict";
-    var b, c, d, e, f, g, h, i, j, k, l, m, n, o, p;
-    return {
-      setters: [],
-      execute: function () {
-        (c = "__mixwith_appliedMixin"),
-          (d = "__mixwith_wrappedMixin"),
-          a("unwrap", (e = (a) => a[d] || a)),
-          a(
-            "apply",
-            (f = (a, b) => {
-              const d = b(a);
-              return (d.prototype[c] = e(b)), d;
-            }),
-          ),
-          a(
-            "isApplicationOf",
-            (g = (a, b) => a.hasOwnProperty(c) && a[c] === e(b)),
-          ),
-          a(
-            "hasMixin",
-            (h = (a, b) => {
-              for (; null != a; ) {
-                if (g(a, b)) return !0;
-                a = Object.getPrototypeOf(a);
-              }
-              return !1;
-            }),
-          ),
-          a(
-            "wrap",
-            (i = (a, b) => (
-              Object.setPrototypeOf(b, a), a[d] || (a[d] = a), b
-            )),
-          ),
-          (j = "__mixwith_cachedApplications"),
-          a(
-            "Cached",
-            (k = (a) =>
-              i(a, (b) => {
-                let c = b[j];
-                c || ((b[j] = new Map()), (c = b[j]));
-                let d = c.get(a);
-                return d || ((d = a(b)), c.set(a, d)), d;
-              })),
-          ),
-          a("DeDupe", (l = (a) => i(a, (b) => (h(b.prototype, a) ? b : a(b))))),
-          a(
-            "HasInstance",
-            (m = (a) => (
-              Symbol &&
-                Symbol.hasInstance &&
-                !a[Symbol.hasInstance] &&
-                Object.defineProperty(a, Symbol.hasInstance, {
-                  value(b) {
-                    return h(b, a);
-                  },
-                }),
-              a
-            )),
-          ),
-          a("BareMixin", (n = (a) => i(a, (b) => f(b, a)))),
-          a("Mixin", (o = (a) => l(n(a)))),
-          (b = class {
-            constructor(a) {
-              this.superclass = a || class {};
-            }
-            with() {
-              for (var a = arguments.length, b = Array(a), c = 0; c < a; c++)
-                b[c] = arguments[c];
-              return b.reduce((a, b) => b(a), this.superclass);
-            }
-          }),
-          a("mix", (p = (a) => new b(a)));
-      },
-    };
-  });
-  //# sourceMappingURL=mixwith.js.map
-})(System, System);
-//# sourceURL=/dist/javascripts/core/mixwith.js
+const t = "__mixwith_appliedMixin"
+  , e = "__mixwith_wrappedMixin"
+  , r = t => t[e] || t
+  , s = (e, s) => {
+    const n = s(e);
+    return n.prototype[t] = r(s),
+    n
+}
+  , n = (e, s) => e.hasOwnProperty(t) && e[t] === r(s)
+  , o = (t, e) => {
+    for (; null != t; ) {
+        if (n(t, e))
+            return !0;
+        t = Object.getPrototypeOf(t)
+    }
+    return !1
+}
+  , c = (t, r) => (Object.setPrototypeOf(r, t),
+t[e] || (t[e] = t),
+r)
+  , i = "__mixwith_cachedApplications"
+  , p = t => c(t, e => {
+    let r = e[i];
+    r || (e[i] = new Map,
+    r = e[i]);
+    let s = r.get(t);
+    return s || (s = t(e),
+    r.set(t, s)),
+    s
+}
+)
+  , a = t => c(t, e => o(e.prototype, t) ? e : t(e))
+  , l = t => (Symbol && Symbol.hasInstance && !t[Symbol.hasInstance] && Object.defineProperty(t, Symbol.hasInstance, {
+    value: e => o(e, t)
+}),
+t)
+  , h = t => c(t, e => s(e, t))
+  , u = t => a(h(t));
+class y {
+    constructor(t) {
+        this.superclass = t || class {
+        }
+    }
+    with(...t) {
+        return t.reduce( (t, e) => e(t), this.superclass)
+    }
+}
+const _ = t => new y(t);
+export {h as BareMixin, p as Cached, a as DeDupe, l as HasInstance, u as Mixin, s as apply, o as hasMixin, n as isApplicationOf, _ as mix, r as unwrap, c as wrap};
+
