@@ -1,1 +1,246 @@
-import{Event as e}from"../services/EventEmitter.js";import{trigger as t}from"../toolbox/event.js";import o from"./Component.js";import n from"./libs/loader.js";import{watchComponentChanges as r}from"./libs/observer.js";let s;const i=new class{constructor(){return s||(s=this,this.componentSelector="data-component",this.observerOptions={rootMargin:"0px",threshold:.1},this.components={},this.componentContainers={},this.registrationCallbacks=new Map),s}run(){this._initObserver(),this._bindEvents()}_bindEvents(){window.addEventListener("load",this.onWindowLoad.bind(this)),e.on("mediaQuery.changed",this.onMediaQueryChange.bind(this)),e.on("registry.registerElement",this.registerElement.bind(this)),e.on("registry.registerChildren",this.registerChildren.bind(this))}onWindowLoad(){Object.entries(this.components).forEach(([e,t])=>{t.loaded||(t.loaded=!0,t.initLoad())})}onMediaQueryChange(){this.registerContextualComponents()}registerElement(e,t=!0){if(e.hasAttribute("data-component")){if(this.isEligible(e))return this.importComponent(e).then(()=>!!t&&this.registerChildren(e));if(t)return this.registerChildren(e)}return console.warn("You are trying to register a non-component",e),Promise.reject(e)}registerChildren(e=document){const t=[];e.querySelectorAll(`[${this.componentSelector}]`).forEach(e=>{this.isEligible(e)&&(this.unLoadComponentsCount+=1,n.isUnforceLoad(e)?(t.push(e),this.observer.observe(e)):t.some(t=>t.contains(e))&&!n.isForceLoad(e)?this.observer.observe(e):this.importComponent(e))})}registerContextualComponents(){this.pageComponents.forEach(e=>{this.isEligible(e)&&this.importComponent(e)})}isEligible(e){return!this.isRegistered(e)&&!!n.isContext(e)}importComponent(e){if(!e)return Promise.reject(new Error("ImportComponent is missing a mandatory param"));if(e._loading)return Promise.resolve();let t,o={},n=e instanceof HTMLElement;if(n){if(this.isRegistered(e))return Promise.reject(new Error(`${e} is already registered`));t=e.getAttribute(this.componentSelector);try{o=JSON.parse(e.getAttribute(`${this.componentSelector}-options`))}catch(o){window.lora.debug&&(console.info(e),console.error(`Please check that the options you have passed for "${t}" respect JSON format`))}}else t=e.name,o=e.options,e.elmt&&(n=!0,e=e.elmt);return e._loading=!0,import(`../components/${t}.js`).then(r=>{if(!r.default)throw new Error(`Export your ${t} module as default`);const s=n?e:null;let i=new r.default(s,o||{});return this.register(i),i})}_initObserver(){r(this.componentSelector,{registerElement:this.registerElement.bind(this),registerChildren:this.registerChildren.bind(this),unregister:this.unregister.bind(this)}),this._initComponentObservers()}_initComponentObservers(){if(this.observer=new IntersectionObserver(this.onViewport.bind(this),this.observerOptions),this.unLoadComponentsCount=this.pageComponents.length,0!==this.unLoadComponentsCount)for(const e of this.pageComponents)this.observer.observe(e)}onViewport(e){e.forEach(e=>{const{target:t}=e;if(!(e.intersectionRatio>this.observerOptions.threshold)&&!n.isForceLoad(t)||!n.isContext(t))return;const o=t.parentNode.closest("[data-component-container]");o?this.registerComponentFromContainer(o,t):(this.importComponent(t),this.unobserveComponent(t))}),this.unLoadComponentsCount<=0&&this.observer.disconnect()}unobserveComponent(e,t=this.observer){t.unobserve(e),t===this.observer&&(this.unLoadComponentsCount-=1)}registerComponentFromContainer(e,t){const o=e.getAttribute("data-root-id");if(o&&this.componentContainers[o])t.getAttribute("data-ready")?(this.importComponent(t),this.unobserveComponent(t,this.componentContainers[o].observer)):(t.setAttribute("data-ready",!0),this.unobserveComponent(t),this.componentContainers[o].observer.observe(t));else{this.unobserveComponent(t);const o=this.setRootContext(e);o&&(t.setAttribute("data-ready",!0),o.observe(t))}}setRootContext(e){const t=e.getAttribute("data-root-id");if(t&&this.componentContainers[t])return!1;const o=new IntersectionObserver(this.onViewport.bind(this),Object.assign(this.observerOptions,{root:e})),n=`root_${Math.random().toString(36).substring(2)}`;return e.setAttribute("data-root-id",n),this.componentContainers[n]={component:e,observer:o},o}register(n){if(!(n instanceof o))throw new Error(`${n.name} needs to extend from the Core Component Class`);n.element.setAttribute("data-component-id",n.id),n.element._id=n.id,e.emit(`component.register.${n.name}`,{name:n.name,id:n.id,element:n.element}),this.components[n.id]=n,t("component.ready",n.element,{bubbles:!0}),this.registrationCallbacks.has(n.element)&&(this.registrationCallbacks.get(n.element).forEach(e=>e()),this.registrationCallbacks.delete(n.element)),n.loaded||(n.loaded=!0,n.initLoad()),window.lora&&window.lora.debug&&console.info("%c New component registered: ","color: DodgerBlue",n)}unregister(t){const o=this.components[t];if(o instanceof Object){o._destroy(),window.lora.debug&&console.info("%c Component destroyed: ","color: Red",o),e.emit(`component.unregister.${o.name}`,{name:o.name,id:t,element:o.element});for(const e in o)o.hasOwnProperty(e)&&(o[e]=null);delete this.components[t]}}getComponent(e){if(e instanceof HTMLElement&&!(e=e.getAttribute("data-component-id")))throw new Error(`${e} is not a component or is not registered yet`);return this.components[e]||null}getComponentsByName(e){const t=[];return e&&"string"==typeof e?(e=e.toLowerCase(),Object.keys(this.components).forEach(o=>{const n=this.components[o];n.name.toLowerCase()===e&&t.push(n)}),t):t}get mountedComponents(){return this.components}get pageComponents(){return document.querySelectorAll(`[${this.componentSelector}]`)}isRegistered(e){if(!e._id)return!1;const t=e.getAttribute(`${this.componentSelector}-id`);return!!this.getComponent(t)}afterRegistered(e,t){return new Promise(o=>{this.isRegistered(e)?o():t?this.importComponent(e).then(o):this.registrationCallbacks.has(e)?this.registrationCallbacks.get(e).push(o):this.registrationCallbacks.set(e,[o])})}};export{i as default};
+import { Event as e } from "../services/EventEmitter.js";
+import { trigger as t } from "../toolbox/event.js";
+import o from "./Component.js";
+import n from "./libs/loader.js";
+import { watchComponentChanges as r } from "./libs/observer.js";
+let s;
+const i = new (class {
+  constructor() {
+    return (
+      s ||
+        ((s = this),
+        (this.componentSelector = "data-component"),
+        (this.observerOptions = { rootMargin: "0px", threshold: 0.1 }),
+        (this.components = {}),
+        (this.componentContainers = {}),
+        (this.registrationCallbacks = new Map())),
+      s
+    );
+  }
+  run() {
+    this._initObserver(), this._bindEvents();
+  }
+  _bindEvents() {
+    window.addEventListener("load", this.onWindowLoad.bind(this)),
+      e.on("mediaQuery.changed", this.onMediaQueryChange.bind(this)),
+      e.on("registry.registerElement", this.registerElement.bind(this)),
+      e.on("registry.registerChildren", this.registerChildren.bind(this));
+  }
+  onWindowLoad() {
+    Object.entries(this.components).forEach(([e, t]) => {
+      t.loaded || ((t.loaded = !0), t.initLoad());
+    });
+  }
+  onMediaQueryChange() {
+    this.registerContextualComponents();
+  }
+  registerElement(e, t = !0) {
+    if (e.hasAttribute("data-component")) {
+      if (this.isEligible(e))
+        return this.importComponent(e).then(
+          () => !!t && this.registerChildren(e),
+        );
+      if (t) return this.registerChildren(e);
+    }
+    return (
+      console.warn("You are trying to register a non-component", e),
+      Promise.reject(e)
+    );
+  }
+  registerChildren(e = document) {
+    const t = [];
+    e.querySelectorAll(`[${this.componentSelector}]`).forEach((e) => {
+      this.isEligible(e) &&
+        ((this.unLoadComponentsCount += 1),
+        n.isUnforceLoad(e)
+          ? (t.push(e), this.observer.observe(e))
+          : t.some((t) => t.contains(e)) && !n.isForceLoad(e)
+            ? this.observer.observe(e)
+            : this.importComponent(e));
+    });
+  }
+  registerContextualComponents() {
+    this.pageComponents.forEach((e) => {
+      this.isEligible(e) && this.importComponent(e);
+    });
+  }
+  isEligible(e) {
+    return !this.isRegistered(e) && !!n.isContext(e);
+  }
+  importComponent(e) {
+    if (!e)
+      return Promise.reject(
+        new Error("ImportComponent is missing a mandatory param"),
+      );
+    if (e._loading) return Promise.resolve();
+    let t,
+      o = {},
+      n = e instanceof HTMLElement;
+    if (n) {
+      if (this.isRegistered(e))
+        return Promise.reject(new Error(`${e} is already registered`));
+      t = e.getAttribute(this.componentSelector);
+      try {
+        o = JSON.parse(e.getAttribute(`${this.componentSelector}-options`));
+      } catch (o) {
+        window.lora.debug &&
+          (console.info(e),
+          console.error(
+            `Please check that the options you have passed for "${t}" respect JSON format`,
+          ));
+      }
+    } else (t = e.name), (o = e.options), e.elmt && ((n = !0), (e = e.elmt));
+    return (
+      (e._loading = !0),
+      import(`../components/${t}.js`).then((r) => {
+        if (!r.default) throw new Error(`Export your ${t} module as default`);
+        const s = n ? e : null;
+        let i = new r.default(s, o || {});
+        return this.register(i), i;
+      })
+    );
+  }
+  _initObserver() {
+    r(this.componentSelector, {
+      registerElement: this.registerElement.bind(this),
+      registerChildren: this.registerChildren.bind(this),
+      unregister: this.unregister.bind(this),
+    }),
+      this._initComponentObservers();
+  }
+  _initComponentObservers() {
+    if (
+      ((this.observer = new IntersectionObserver(
+        this.onViewport.bind(this),
+        this.observerOptions,
+      )),
+      (this.unLoadComponentsCount = this.pageComponents.length),
+      0 !== this.unLoadComponentsCount)
+    )
+      for (const e of this.pageComponents) this.observer.observe(e);
+  }
+  onViewport(e) {
+    e.forEach((e) => {
+      const { target: t } = e;
+      if (
+        (!(e.intersectionRatio > this.observerOptions.threshold) &&
+          !n.isForceLoad(t)) ||
+        !n.isContext(t)
+      )
+        return;
+      const o = t.parentNode.closest("[data-component-container]");
+      o
+        ? this.registerComponentFromContainer(o, t)
+        : (this.importComponent(t), this.unobserveComponent(t));
+    }),
+      this.unLoadComponentsCount <= 0 && this.observer.disconnect();
+  }
+  unobserveComponent(e, t = this.observer) {
+    t.unobserve(e), t === this.observer && (this.unLoadComponentsCount -= 1);
+  }
+  registerComponentFromContainer(e, t) {
+    const o = e.getAttribute("data-root-id");
+    if (o && this.componentContainers[o])
+      t.getAttribute("data-ready")
+        ? (this.importComponent(t),
+          this.unobserveComponent(t, this.componentContainers[o].observer))
+        : (t.setAttribute("data-ready", !0),
+          this.unobserveComponent(t),
+          this.componentContainers[o].observer.observe(t));
+    else {
+      this.unobserveComponent(t);
+      const o = this.setRootContext(e);
+      o && (t.setAttribute("data-ready", !0), o.observe(t));
+    }
+  }
+  setRootContext(e) {
+    const t = e.getAttribute("data-root-id");
+    if (t && this.componentContainers[t]) return !1;
+    const o = new IntersectionObserver(
+        this.onViewport.bind(this),
+        Object.assign(this.observerOptions, { root: e }),
+      ),
+      n = `root_${Math.random().toString(36).substring(2)}`;
+    return (
+      e.setAttribute("data-root-id", n),
+      (this.componentContainers[n] = { component: e, observer: o }),
+      o
+    );
+  }
+  register(n) {
+    if (!(n instanceof o))
+      throw new Error(
+        `${n.name} needs to extend from the Core Component Class`,
+      );
+    n.element.setAttribute("data-component-id", n.id),
+      (n.element._id = n.id),
+      e.emit(`component.register.${n.name}`, {
+        name: n.name,
+        id: n.id,
+        element: n.element,
+      }),
+      (this.components[n.id] = n),
+      t("component.ready", n.element, { bubbles: !0 }),
+      this.registrationCallbacks.has(n.element) &&
+        (this.registrationCallbacks.get(n.element).forEach((e) => e()),
+        this.registrationCallbacks.delete(n.element)),
+      n.loaded || ((n.loaded = !0), n.initLoad()),
+      window.lora &&
+        window.lora.debug &&
+        console.info("%c New component registered: ", "color: DodgerBlue", n);
+  }
+  unregister(t) {
+    const o = this.components[t];
+    if (o instanceof Object) {
+      o._destroy(),
+        window.lora.debug &&
+          console.info("%c Component destroyed: ", "color: Red", o),
+        e.emit(`component.unregister.${o.name}`, {
+          name: o.name,
+          id: t,
+          element: o.element,
+        });
+      for (const e in o) o.hasOwnProperty(e) && (o[e] = null);
+      delete this.components[t];
+    }
+  }
+  getComponent(e) {
+    if (e instanceof HTMLElement && !(e = e.getAttribute("data-component-id")))
+      throw new Error(`${e} is not a component or is not registered yet`);
+    return this.components[e] || null;
+  }
+  getComponentsByName(e) {
+    const t = [];
+    return e && "string" == typeof e
+      ? ((e = e.toLowerCase()),
+        Object.keys(this.components).forEach((o) => {
+          const n = this.components[o];
+          n.name.toLowerCase() === e && t.push(n);
+        }),
+        t)
+      : t;
+  }
+  get mountedComponents() {
+    return this.components;
+  }
+  get pageComponents() {
+    return document.querySelectorAll(`[${this.componentSelector}]`);
+  }
+  isRegistered(e) {
+    if (!e._id) return !1;
+    const t = e.getAttribute(`${this.componentSelector}-id`);
+    return !!this.getComponent(t);
+  }
+  afterRegistered(e, t) {
+    return new Promise((o) => {
+      this.isRegistered(e)
+        ? o()
+        : t
+          ? this.importComponent(e).then(o)
+          : this.registrationCallbacks.has(e)
+            ? this.registrationCallbacks.get(e).push(o)
+            : this.registrationCallbacks.set(e, [o]);
+    });
+  }
+})();
+export { i as default };

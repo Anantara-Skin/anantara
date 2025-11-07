@@ -16,7 +16,8 @@
   font-family: SuisseIntl;
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/SuisseIntl-Regular-WebXL.woff2) format("woff2"),
+  src:
+    url(../fonts/SuisseIntl-Regular-WebXL.woff2) format("woff2"),
     url(../fonts/SuisseIntl-Regular-WebXL.woff) format("woff"),
     url(../fonts/SuisseIntl-Regular-WebXL.ttf) format("truetype");
 }
@@ -25,7 +26,8 @@
   font-family: SuisseIntl-Medium;
   font-style: normal;
   font-weight: 500;
-  src: url(../fonts/SuisseIntl-Medium-WebXL.woff2) format("woff2"),
+  src:
+    url(../fonts/SuisseIntl-Medium-WebXL.woff2) format("woff2"),
     url(../fonts/SuisseIntl-Medium-WebXL.woff) format("woff"),
     url(../fonts/SuisseIntl-Medium-WebXL.ttf) format("truetype");
 }
@@ -34,7 +36,8 @@
   font-family: Zapf-Humanist;
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/Zapf-Humanist.woff2) format("woff2"),
+  src:
+    url(../fonts/Zapf-Humanist.woff2) format("woff2"),
     url(../fonts/Zapf-Humanist.woff) format("woff"),
     url(../fonts/Zapf-Humanist.ttf) format("truetype");
 }
@@ -369,7 +372,9 @@ body {
   background: #fffef2;
   color: #333;
   direction: ltr;
-  font: normal 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    normal 0.75rem/1.5 SuisseIntl,
+    sans-serif;
   min-height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   scroll-behavior: smooth;
@@ -1979,10 +1984,14 @@ textarea {
   box-sizing: border-box;
   color: #333;
   display: block;
-  font: normal 0.875rem/normal SuisseIntl, sans-serif;
+  font:
+    normal 0.875rem / normal SuisseIntl,
+    sans-serif;
   height: 2.5rem;
   padding: 0 1rem;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   width: 100%;
 }
 .c-text-field__input-text:hover,
@@ -2024,7 +2033,9 @@ textarea:hover {
 textarea:focus {
   border: 1px solid #333;
   box-shadow: 0 0 0 0.0625rem #333;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
 }
 textarea {
   max-width: 100%;
@@ -2206,7 +2217,9 @@ input[type="date"]::-webkit-date-and-time-value {
 }
 .c-text-field__label.m-float {
   color: #666;
-  font: 0.875rem/2.5rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/2.5rem SuisseIntl,
+    sans-serif;
   height: 2.5rem;
   left: 1rem;
   max-width: calc(100% - 1rem);
@@ -2218,7 +2231,10 @@ input[type="date"]::-webkit-date-and-time-value {
   text-overflow: ellipsis;
   top: 0;
   transform: translateZ(0);
-  transition: transform 0.2s, font-size 0.2s, left 0.2s;
+  transition:
+    transform 0.2s,
+    font-size 0.2s,
+    left 0.2s;
   white-space: nowrap;
   width: auto;
   z-index: 1;
@@ -2226,7 +2242,9 @@ input[type="date"]::-webkit-date-and-time-value {
 .c-text-field__input:focus + .c-text-field__label.m-float,
 .c-text-field__textarea:focus + .c-text-field__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -2246,7 +2264,9 @@ input[type="date"]::-webkit-date-and-time-value {
 .c-text-field__input:active + .c-text-field__label.m-float,
 .c-text-field__textarea:active + .c-text-field__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -2266,7 +2286,9 @@ input[type="date"]::-webkit-date-and-time-value {
 .c-text-field__input:not(:-moz-placeholder) + .c-text-field__label.m-float,
 .c-text-field__textarea:not(:-moz-placeholder) + .c-text-field__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -2274,7 +2296,9 @@ input[type="date"]::-webkit-date-and-time-value {
 .c-text-field__input:not(:placeholder-shown) + .c-text-field__label.m-float,
 .c-text-field__textarea:not(:placeholder-shown) + .c-text-field__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -2311,7 +2335,9 @@ input[type="date"]::-webkit-date-and-time-value {
 .c-text-field.m-date .c-text-field__label.m-float,
 .c-text-field.m-focus .c-text-field__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -2344,7 +2370,9 @@ input[type="date"]::-webkit-date-and-time-value {
 [type="url"]:-webkit-autofill + .c-text-field__label,
 [type="week"]:-webkit-autofill + .c-text-field__label {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -2483,7 +2511,9 @@ input[type="date"]::-webkit-date-and-time-value {
   color: #333;
   display: flex;
   flex-wrap: wrap;
-  font: 0.75rem/1 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
 }
 .c-text-field__requirements-item:last-child {
@@ -2574,7 +2604,9 @@ input[type="date"]::-webkit-date-and-time-value {
   left: 0;
   margin-top: 0.125rem;
   position: absolute;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   width: 1rem;
 }
 .c-check-field.m-radio .c-check-field__label:active:before,
@@ -2676,7 +2708,9 @@ input[type="date"]::-webkit-date-and-time-value {
   left: 0;
   margin-top: 0;
   position: absolute;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   width: 1.25rem;
 }
 .c-check-field.m-checkbox .c-check-field__label:active:before,
@@ -2909,7 +2943,9 @@ label {
   color: #666;
   cursor: pointer;
   display: block;
-  font: normal 0.875rem/1.8 SuisseIntl, sans-serif;
+  font:
+    normal 0.875rem/1.8 SuisseIntl,
+    sans-serif;
   margin: 0;
   width: 100%;
 }
@@ -3105,7 +3141,9 @@ label--middle {
   cursor: pointer;
   direction: ltr;
   display: block;
-  font: 0.875rem/2.5rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/2.5rem SuisseIntl,
+    sans-serif;
   height: 2.5rem;
   margin: 0;
   outline-width: 0;
@@ -3114,7 +3152,9 @@ label--middle {
   text-align: left;
   text-overflow: ellipsis;
   text-transform: none;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -3170,7 +3210,9 @@ label--middle {
   display: block;
   display: flex;
   flex-grow: 1;
-  font: 0.875rem/2.5rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/2.5rem SuisseIntl,
+    sans-serif;
   height: 2.5rem;
   margin: 0;
   outline-width: 0;
@@ -3180,7 +3222,9 @@ label--middle {
   text-align: left;
   text-overflow: ellipsis;
   text-transform: none;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -3327,7 +3371,9 @@ label--middle {
 }
 .c-select__label.m-float {
   color: #666;
-  font: 0.875rem/2.5rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/2.5rem SuisseIntl,
+    sans-serif;
   height: 2.5rem;
   left: 1rem;
   margin: 0;
@@ -3340,7 +3386,10 @@ label--middle {
   text-overflow: ellipsis;
   top: 0;
   transform: translateZ(0);
-  transition: transform 0.2s, font-size 0.2s, left 0.2s;
+  transition:
+    transform 0.2s,
+    font-size 0.2s,
+    left 0.2s;
   white-space: nowrap;
   width: auto;
   z-index: 1;
@@ -3349,7 +3398,9 @@ label--middle {
   background: #333;
   border-radius: 0.25rem;
   color: #fffef2;
-  font: 0.6875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.6875rem/1.2 SuisseIntl,
+    sans-serif;
   padding: 0.25rem 0.5rem;
 }
 .c-select__badge-image {
@@ -3366,7 +3417,9 @@ label--middle {
 }
 .c-select__field:focus + .c-select__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -3384,7 +3437,9 @@ label--middle {
 }
 .c-select__field:active + .c-select__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -3402,7 +3457,9 @@ label--middle {
 }
 .c-select__field:valid + .c-select__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -3421,7 +3478,9 @@ label--middle {
 .c-select.m-active .c-select__label.m-float,
 .c-select.m-focus .c-select__label.m-float {
   color: #666;
-  font: 0.75rem/1rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1rem SuisseIntl,
+    sans-serif;
   height: auto;
   padding: 0 0.3125rem;
   transform: translate3d(0, -0.5rem, 0);
@@ -3499,7 +3558,9 @@ label--middle {
 }
 .c-select__filter-result {
   color: #666;
-  font: 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.2 SuisseIntl,
+    sans-serif;
   padding: 0.625rem;
 }
 .c-select__filter-button {
@@ -3520,7 +3581,9 @@ label--middle {
   width: 15px;
 }
 .c-file-field__label {
-  font: 700 0.875rem SuisseIntl, sans-serif;
+  font:
+    700 0.875rem SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3824,7 +3887,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .l-header__search-button {
   cursor: pointer;
-  font: 700 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   height: 100%;
   padding: 0.875rem 0 0.86125rem;
   white-space: nowrap;
@@ -3882,7 +3947,9 @@ body.m-hide-header-banner .l-header__banner {
 .l-header__top-nav-link {
   color: #333;
   cursor: pointer;
-  font: 700 0.75rem/1.2 SuisseIntl, sans-serif;
+  font:
+    700 0.75rem/1.2 SuisseIntl,
+    sans-serif;
   text-decoration: inherit;
 }
 .l-header__top-nav .c-minicart-icon__link:hover,
@@ -4082,7 +4149,9 @@ body.m-hide-header-banner .l-header__banner {
 .l-footer__newsletter .c-simple-signup__title {
   color: #fffef2;
   display: block;
-  font: 0.875rem SuisseIntl, sans-serif;
+  font:
+    0.875rem SuisseIntl,
+    sans-serif;
 }
 .l-footer__newsletter .c-field__error-message {
   color: #ffd2d2;
@@ -4181,7 +4250,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-accordion__title {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 0.875rem 3.75rem 0.875rem 0;
   position: relative;
@@ -4326,7 +4397,9 @@ body.m-hide-header-banner .l-header__banner {
   background-color: #fffef2;
 }
 .c-accordion.m-secondary .c-accordion__title {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 0.9375rem 3.125rem 0.9375rem 1rem;
   text-transform: none;
@@ -4408,7 +4481,9 @@ body.m-hide-header-banner .l-header__banner {
   display: flex;
   flex-basis: 100%;
   flex-wrap: wrap;
-  font: 0.875rem/1.3125rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl,
+    sans-serif;
   margin: 1.25rem 0;
   padding: 0.6875rem 0.625rem 0.6875rem 0.875rem;
 }
@@ -4439,7 +4514,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-alert.m-tiny {
   box-shadow: none;
   flex-wrap: nowrap;
-  font: 0.75rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.2 SuisseIntl,
+    sans-serif;
   padding: 0.25rem 0.5rem;
 }
 .c-alert.m-icon:before {
@@ -4641,7 +4718,9 @@ body.m-hide-header-banner .l-header__banner {
   box-shadow: 0 0.125rem 0.25rem 0 rgba(255, 254, 242, 0.2);
   color: #fffef2;
   cursor: pointer;
-  font: 0/1 SuisseIntl, sans-serif;
+  font:
+    0/1 SuisseIntl,
+    sans-serif;
   height: 1.5rem;
   opacity: 0;
   padding: 0;
@@ -4650,7 +4729,9 @@ body.m-hide-header-banner .l-header__banner {
   right: 0.625rem;
   text-align: center;
   text-transform: uppercase;
-  transition: opacity, background 0.5s;
+  transition:
+    opacity,
+    background 0.5s;
   width: 1.5rem;
   z-index: 3;
 }
@@ -4683,14 +4764,18 @@ body.m-hide-header-banner .l-header__banner {
   color: #fffef2;
   cursor: pointer;
   display: inline-block;
-  font: normal 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    normal 0.875rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   min-width: 18.75rem;
   padding: 0.8125rem 1.5rem 0.75rem;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: none;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
   vertical-align: middle;
 }
 [data-whatinput="mouse"] .c-button {
@@ -4750,7 +4835,9 @@ body.m-hide-header-banner .l-header__banner {
   display: inline-block;
   margin-bottom: -0.625rem;
   margin-top: -0.625rem;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
   vertical-align: middle;
 }
 .c-button.m-facebook:not([disabled]) {
@@ -5125,7 +5212,9 @@ body.m-hide-header-banner .l-header__banner {
   display: inline-block;
   margin-bottom: -0.625rem;
   margin-top: -0.625rem;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
   vertical-align: middle;
 }
 .c-button.m-loading:before {
@@ -5220,7 +5309,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-button.m-logout .c-button__text {
   align-items: center;
   display: inline-flex;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 .c-button.m-logout .c-button__text:after {
   background-color: #333;
@@ -5269,7 +5360,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-button.m-logout .c-button__text:after {
   content: "";
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 .c-button.m-logout:hover {
   color: #000;
@@ -5360,10 +5453,14 @@ body.m-hide-header-banner .l-header__banner {
   padding: 0.25rem 0.75rem;
 }
 .c-button.m-row-2 .c-button__price {
-  font: 0.875rem/1.125rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.125rem SuisseIntl,
+    sans-serif;
 }
 .c-button.m-row-2 .c-button__text {
-  font: 0.75rem/1.125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.125rem SuisseIntl-Medium,
+    sans-serif;
 }
 .c-button.m-row-2.m-loading {
   min-height: 3rem;
@@ -5670,14 +5767,18 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-countdown__count-item {
   color: #333;
-  font: 1.625rem/1 Zapf-Humanist, sans-serif;
+  font:
+    1.625rem/1 Zapf-Humanist,
+    sans-serif;
   overflow: hidden;
   position: relative;
   width: auto;
 }
 .c-countdown__description {
   color: #333;
-  font: 0.75rem/1 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1 SuisseIntl,
+    sans-serif;
   margin: 0.3125rem 0 0;
   text-align: center;
 }
@@ -5690,13 +5791,17 @@ body.m-hide-header-banner .l-header__banner {
   padding: 0;
 }
 .c-content-grid__title {
-  font: 1.25rem/1.5 SuisseIntl, sans-serif;
+  font:
+    1.25rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-align: left;
   text-transform: none;
 }
 .c-content-grid__description {
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   padding: 0;
   text-align: left;
@@ -5716,7 +5821,9 @@ body.m-hide-header-banner .l-header__banner {
   text-align: center;
 }
 .c-content-grid__view-more-link {
-  font: 500 0.625rem/1.5 SuisseIntl, sans-serif;
+  font:
+    500 0.625rem/1.5 SuisseIntl,
+    sans-serif;
   text-transform: uppercase;
 }
 .c-content-hero {
@@ -5894,7 +6001,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-content-hero__label {
   color: #333;
   display: block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
@@ -5907,13 +6016,17 @@ body.m-hide-header-banner .l-header__banner {
 .c-content-hero__title,
 .c-content-hero__title a {
   color: #333;
-  font: 1.5rem/1.33 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1.33 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
 .c-content-hero__description {
   color: #666;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.9375rem;
   text-transform: none;
 }
@@ -5954,7 +6067,9 @@ body.m-hide-header-banner .l-header__banner {
   color: #fffef2;
 }
 .c-section.m-secondary .c-section__title {
-  font: 1.25rem/1.3 SuisseIntl, sans-serif;
+  font:
+    1.25rem/1.3 SuisseIntl,
+    sans-serif;
   margin: 0;
   text-align: left;
 }
@@ -5981,17 +6096,23 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-section__title,
 .c-section__title.m-secondary {
-  font: 1.5625rem/1.33 Zapf-Humanist, sans-serif;
+  font:
+    1.5625rem/1.33 Zapf-Humanist,
+    sans-serif;
   text-transform: none;
 }
 .c-section__description {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-align: left;
 }
 .c-section__label {
   display: inline-block;
-  font: 300 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    300 0.75rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: uppercase;
 }
@@ -6015,7 +6136,9 @@ body.m-hide-header-banner .l-header__banner {
   text-align: center;
 }
 .c-section__view-more-link {
-  font: 500 0.625rem/1.5 SuisseIntl, sans-serif;
+  font:
+    500 0.625rem/1.5 SuisseIntl,
+    sans-serif;
   text-transform: uppercase;
 }
 .c-icon {
@@ -6032,7 +6155,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-icon .c-icon__label {
   color: #333;
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0.625rem 0 0;
 }
 .c-icon.m-dark {
@@ -6049,7 +6174,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-icon.m-dark .c-icon__label {
   color: #fffef2;
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0.625rem 0 0;
 }
 .c-icon.m-after-text {
@@ -6704,14 +6831,18 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-locale-selector__title {
   color: #333;
-  font: 1.125rem/1.4 SuisseIntl, sans-serif;
+  font:
+    1.125rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.9375rem;
   text-align: left;
   text-transform: uppercase;
 }
 .c-locale-selector__description {
   color: #333;
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-locale-selector__description,
@@ -6721,7 +6852,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-locale-selector__stores-link {
   color: #333;
-  font: 0.875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.4 SuisseIntl,
+    sans-serif;
   text-decoration: underline;
   text-transform: uppercase;
 }
@@ -6761,7 +6894,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-locale-selector__item.m-active .c-locale-selector__item-link {
   color: #333;
   cursor: default;
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
   pointer-events: none;
   text-decoration: none;
 }
@@ -6769,7 +6904,9 @@ body.m-hide-header-banner .l-header__banner {
   color: #666;
   cursor: pointer;
   display: inline-block;
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
   padding: 0 1.25rem 0 0;
   position: relative;
   text-transform: none;
@@ -6791,7 +6928,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-locale-selector__item-link {
   color: #666;
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-content-tile {
@@ -6823,13 +6962,17 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-content-tile.m-large .c-content-tile__title {
   color: #333;
-  font: 1.5625rem/1.2 Zapf-Humanist, sans-serif;
+  font:
+    1.5625rem/1.2 Zapf-Humanist,
+    sans-serif;
   margin: 0 0 0.75rem;
   text-transform: none;
 }
 .c-content-tile.m-large .c-content-tile__label {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.4375rem;
   text-transform: none;
 }
@@ -6838,7 +6981,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-content-tile.m-large .c-content-tile__description {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.5625rem;
   text-transform: none;
 }
@@ -6950,7 +7095,9 @@ body.m-hide-header-banner .l-header__banner {
   max-width: 100%;
 }
 .c-content-tile.m-featured .c-content-tile__title {
-  font: 1rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    1rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.125rem;
 }
 .c-content-tile.m-equal-columns .c-content-tile__section {
@@ -7046,7 +7193,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-content-tile__title {
   color: #333;
-  font: 1rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    1rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.125rem;
   text-transform: none;
 }
@@ -7054,7 +7203,9 @@ body.m-hide-header-banner .l-header__banner {
   text-decoration: none;
 }
 .c-content-tile__subtitle {
-  font: 600 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    600 0.75rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.3125rem;
 }
 .c-content-tile__label {
@@ -7062,14 +7213,18 @@ body.m-hide-header-banner .l-header__banner {
   border-width: 0;
   color: #333;
   display: block;
-  font: 0.875rem/1.25 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.25 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.625rem;
   padding: 0;
   text-transform: none;
 }
 .c-content-tile__description {
   color: #666;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
@@ -7150,7 +7305,9 @@ body.m-hide-header-banner .l-header__banner {
   align-items: center;
   color: #333;
   display: flex;
-  font: 0.875rem/1.1 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.1 SuisseIntl,
+    sans-serif;
   margin: -0.5625rem 0;
   min-height: 2.125rem;
   width: 100%;
@@ -7171,19 +7328,25 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-content-box__title {
   color: #333;
-  font: 1.125rem/1.4 SuisseIntl, sans-serif;
+  font:
+    1.125rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
 .c-content-box__subtitle {
   color: #666;
-  font: 700 0.6875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    700 0.6875rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.25rem;
   text-transform: uppercase;
 }
 .c-content-box__headline {
   color: #333;
-  font: 1.125rem/1.6875rem SuisseIntl, sans-serif;
+  font:
+    1.125rem/1.6875rem SuisseIntl,
+    sans-serif;
   text-transform: uppercase;
 }
 .c-content-box__product .c-product-image {
@@ -7193,7 +7356,9 @@ body.m-hide-header-banner .l-header__banner {
   padding: 0 0 1rem;
 }
 .c-modal__body {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-modal__wrapper {
   background: #fffef2;
@@ -7241,18 +7406,24 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-modal__title {
   color: #333;
-  font: 1.5rem/1.25 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.5625rem;
   text-transform: none;
 }
 .c-modal__subtitle {
   color: #333;
-  font: 1.25rem/1.25 SuisseIntl, sans-serif;
+  font:
+    1.25rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.5rem;
   text-transform: none;
 }
 .c-modal__message {
-  font: 0.875rem SuisseIntl, sans-serif;
+  font:
+    0.875rem SuisseIntl,
+    sans-serif;
   margin: 0 0 1.25rem;
   text-align: center;
 }
@@ -7262,11 +7433,15 @@ body.m-hide-header-banner .l-header__banner {
   margin: 0 0 1.5625rem;
 }
 .c-modal__text.m-large {
-  font: normal 1.125rem/1.6 SuisseIntl, sans-serif;
+  font:
+    normal 1.125rem/1.6 SuisseIntl,
+    sans-serif;
 }
 .c-modal__header {
   color: #333;
-  font: 500 1.875rem/1.25 SuisseIntl, sans-serif;
+  font:
+    500 1.875rem/1.25 SuisseIntl,
+    sans-serif;
   text-transform: uppercase;
 }
 .c-modal__section {
@@ -7400,7 +7575,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-modal.m-slide-panel .c-modal__header .c-modal__title {
   border: solid #ebeade;
   border-width: 0 0 0.0625rem;
-  font: 1rem/1.2rem SuisseIntl, sans-serif;
+  font:
+    1rem/1.2rem SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 1rem 4.375rem 1rem 1rem;
   text-transform: none;
@@ -7410,7 +7587,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-modal.m-slide-panel .c-modal__close {
   color: #333;
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   padding: 1rem;
   right: 0;
   text-decoration: none;
@@ -7490,7 +7669,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-orientation-message__text {
   color: #fffef2;
-  font: 300 0.875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    300 0.875rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 3.125rem 0 0;
   text-transform: uppercase;
 }
@@ -7692,7 +7873,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-snackbar__content {
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   text-align: left;
 }
 .c-simple-signup {
@@ -7706,7 +7889,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-simple-signup__title {
   display: block;
-  font: 0.875rem SuisseIntl, sans-serif;
+  font:
+    0.875rem SuisseIntl,
+    sans-serif;
   margin: 0 0 0.5rem;
 }
 .c-simple-signup .c-check-field__label,
@@ -7726,11 +7911,15 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-tooltip[data-popper-placement^="bottom"] {
   transform: translateY(1.25rem);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 }
 .c-tooltip[data-popper-placement^="top"] {
   transform: translateY(-1.25rem);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 }
 .c-tooltip__arrow {
   background: #fffef2;
@@ -7888,7 +8077,9 @@ body.m-hide-header-banner .l-header__banner {
 .c-toaster__title {
   color: #333;
   cursor: pointer;
-  font: 300 0.875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    300 0.875rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 0.9375rem 0;
   text-transform: uppercase;
@@ -8542,7 +8733,9 @@ body.m-hide-header-banner .l-header__banner {
 }
 .c-minicart__empty-title {
   color: #333;
-  font: 1.25rem/1.3 SuisseIntl, sans-serif;
+  font:
+    1.25rem/1.3 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.25rem;
   text-transform: none;
 }
@@ -8563,7 +8756,9 @@ body.m-hide-header-banner .l-header__banner {
   position: absolute;
   right: 0;
   top: 0;
-  transition: opacity 0.3s, transform 0.3s ease-out;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
   width: 1.5rem;
 }
 .c-minicart__item .c-product-table-details__action.m-remove:before {
@@ -8574,7 +8769,9 @@ body.m-hide-header-banner .l-header__banner {
   -webkit-mask: url(../images/icons/cross-minicart.svg) no-repeat center/100%;
   mask: url(../images/icons/cross-minicart.svg) no-repeat center/100%;
   transform: scale(1);
-  transition: opacity 0.3s, transform 0.3s ease-out;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
   width: 100%;
 }
 .c-minicart__item .c-product-table-details__action.m-remove:focus,
@@ -8639,20 +8836,26 @@ a.c-minicart__item-content:hover {
 .c-minicart__subtotal-title {
   color: #333;
   flex: 1 0 auto;
-  font: 700 0.875rem/1.05rem SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.05rem SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-minicart__subtotal-price {
   color: #333;
   flex: 0 0 9.375rem;
-  font: 0.875rem/1.05rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.05rem SuisseIntl-Medium,
+    sans-serif;
   text-align: right;
 }
 .c-minicart__product-brand {
   margin: 0;
 }
 .c-minicart__product-title {
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.3125rem;
   text-transform: none;
 }
@@ -8683,13 +8886,17 @@ a.c-minicart__item-content:hover {
   text-align: center;
 }
 .c-error-callout__title {
-  font: 1.5rem/1 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.9375rem;
   max-width: none;
   text-transform: uppercase;
 }
 .c-error-callout__subtitle {
-  font: 1.125rem/1 SuisseIntl, sans-serif;
+  font:
+    1.125rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.875rem;
   text-transform: uppercase;
 }
@@ -8697,7 +8904,9 @@ a.c-minicart__item-content:hover {
   margin: 0;
 }
 .c-error-callout__info {
-  font: 1rem/1.4 SuisseIntl, sans-serif;
+  font:
+    1rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.875rem;
 }
 .c-error-callout__img {
@@ -8706,7 +8915,9 @@ a.c-minicart__item-content:hover {
   max-width: 80%;
 }
 .c-error-callout__copy {
-  font: 1rem/1.4 SuisseIntl, sans-serif;
+  font:
+    1rem/1.4 SuisseIntl,
+    sans-serif;
   text-align: left;
 }
 .c-separator {
@@ -8740,20 +8951,26 @@ a.c-minicart__item-content:hover {
 }
 .c-separator__title {
   background: #fffef2;
-  font: normal 0.8125rem SuisseIntl, sans-serif;
+  font:
+    normal 0.8125rem SuisseIntl,
+    sans-serif;
   padding: 0 0.625rem;
   text-transform: lowercase;
 }
 .c-price-capacity {
   color: #666;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-tag {
   background: #f0efe1;
   border-radius: 0.25rem;
   color: #333;
   display: inline-block;
-  font: 0.6875rem/1.7 SuisseIntl-Medium, sans-serif;
+  font:
+    0.6875rem/1.7 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0.625rem 0.625rem 0;
   padding: 0.25rem 0.5rem;
   text-decoration: none;
@@ -8778,7 +8995,9 @@ a.c-minicart__item-content:hover {
   margin: 0 0.625rem;
 }
 .c-tag.m-secondary {
-  font: 450 0.625rem/1 SuisseIntl, sans-serif;
+  font:
+    450 0.625rem/1 SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-tag.m-plain {
@@ -8790,7 +9009,9 @@ a.c-minicart__item-content:hover {
   background: #666;
   color: #fffef2;
   display: flex;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   left: 0.9375rem;
   opacity: 0;
   padding: 0.25rem 0.75rem 0.1875rem;
@@ -8798,7 +9019,9 @@ a.c-minicart__item-content:hover {
   text-decoration: none;
   text-transform: uppercase;
   top: 0.625rem;
-  transition: opacity 0.2s ease-out, clip 0.2s ease-out;
+  transition:
+    opacity 0.2s ease-out,
+    clip 0.2s ease-out;
   z-index: 14;
 }
 .c-skip-link:focus {
@@ -8929,7 +9152,9 @@ a.c-minicart__item-content:hover {
 }
 .c-progress-bar__point.m-active .c-progress-bar__point-price {
   color: #333;
-  font: 700 0.75rem/1.2 SuisseIntl, sans-serif;
+  font:
+    700 0.75rem/1.2 SuisseIntl,
+    sans-serif;
 }
 .c-progress-bar__point.m-absolute {
   left: 50%;
@@ -8950,12 +9175,16 @@ a.c-minicart__item-content:hover {
 }
 .c-progress-bar__point-description {
   color: #666;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0 0.5rem;
 }
 .c-progress-bar__point-description.m-active {
   color: #333;
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
 }
 .c-progress-bar__point-row {
   display: flex;
@@ -8968,7 +9197,9 @@ a.c-minicart__item-content:hover {
 }
 .c-progress-bar__point-price {
   color: #666;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   left: 50%;
   position: absolute;
   top: 1.4375rem;
@@ -9004,7 +9235,9 @@ a.c-minicart__item-content:hover {
   border-radius: 0;
   color: #333;
   display: flex;
-  font: 0.75rem/.875rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/0.875rem SuisseIntl,
+    sans-serif;
   margin: 0.5rem 0;
   padding: 0.5rem;
 }
@@ -9034,7 +9267,9 @@ a.c-minicart__item-content:hover {
 .c-promotion.m-icon {
   background: none;
   display: flex;
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
   padding: 1.25rem;
 }
 .c-promotion__icon {
@@ -9286,12 +9521,17 @@ a.c-minicart__item-content:hover {
   color: #666;
   flex: 0 0 auto;
   flex-shrink: 0;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0.3125rem;
   padding: 0 1.25rem 1.5625rem;
   position: relative;
   text-transform: none;
-  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+  transition:
+    border-color 0.5s,
+    background-color 0.5s,
+    color 0.5s;
 }
 .c-tabs__tab:after {
   border-bottom: 2px solid transparent;
@@ -9300,7 +9540,9 @@ a.c-minicart__item-content:hover {
   left: 50%;
   position: absolute;
   transform: translate3d(-50%, 0, 0);
-  transition: width 0.5s, border 0.5s;
+  transition:
+    width 0.5s,
+    border 0.5s;
   width: 0;
 }
 .c-tabs__tab:focus:after {
@@ -9524,7 +9766,9 @@ a.c-minicart__item-content:hover {
 .c-tabs.m-tertiary .c-tabs__tab {
   color: #666;
   flex-grow: 1;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.125rem;
   padding: 0.5rem 1.25rem;
   text-transform: none;
@@ -9601,7 +9845,9 @@ a.c-minicart__item-content:hover {
 .c-tabs.m-tertiary-for-all .c-tabs__tab {
   color: #666;
   flex-grow: 1;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.125rem;
   padding: 0.5rem 1.25rem;
   text-transform: none;
@@ -9707,7 +9953,9 @@ a.c-minicart__item-content:hover {
   flex: 1 0 0;
   font-weight: 400;
   outline-width: 0;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 .c-stepper-input__minus:focus,
 .c-stepper-input__plus:focus {
@@ -9842,7 +10090,9 @@ a.c-minicart__item-content:hover {
   height: 100%;
 }
 .c-quicklinks.m-secondary .c-quicklinks__label {
-  font: 700 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.3125rem;
 }
 .c-quicklinks.m-secondary .c-quicklinks__description {
@@ -9879,7 +10129,10 @@ a.c-minicart__item-content:hover {
   gap: 0.25rem;
   padding: 0.25rem 0.5rem 0.25rem 0.25rem;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s, border 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border 0.3s;
   white-space: nowrap;
 }
 .c-quicklinks__link:is(a):hover,
@@ -9937,11 +10190,15 @@ a.c-minicart__item-content:hover {
   margin-left: 0;
 }
 .c-quicklinks__label {
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
 }
 .c-product-brand {
   color: #666;
-  font: 0.75rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.2 SuisseIntl,
+    sans-serif;
   text-transform: uppercase;
 }
 .c-product-tile__config.m-hide-badge .c-product-badge {
@@ -10010,11 +10267,15 @@ a.c-minicart__item-content:hover {
   opacity: 0.7;
 }
 .c-product-tile .c-product-add-bag__price {
-  font: 0.875rem/.625rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/0.625rem SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-product-tile .c-product-add-bag__text {
-  font: 0.75rem/1.125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.125rem SuisseIntl-Medium,
+    sans-serif;
   text-transform: none;
 }
 .c-product-tile.m-secondary {
@@ -10100,7 +10361,9 @@ a.c-minicart__item-content:hover {
   overflow: hidden;
 }
 .c-product-tile__name {
-  font: normal 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    normal 0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.5rem;
   min-height: 2.625rem;
 }
@@ -10128,7 +10391,9 @@ a.c-minicart__item-content:hover {
 .c-product-tile__description {
   -webkit-line-clamp: 2;
   color: #666;
-  font: 400 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    400 0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.5rem;
   min-height: 2.25rem;
 }
@@ -10186,11 +10451,15 @@ a.c-minicart__item-content:hover {
 }
 .c-product-tile__variations-count {
   color: #666;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-product-tile__price {
   color: inherit;
-  font: 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.2 SuisseIntl,
+    sans-serif;
   padding: 0;
 }
 .c-product-tile__price .c-product-price {
@@ -10286,7 +10555,9 @@ a.c-minicart__item-content:hover {
 .c-product-tile__variations-label {
   color: #666;
   flex-shrink: 0;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -10321,7 +10592,9 @@ a.c-minicart__item-content:hover {
 }
 .c-product-tile__badge {
   color: inherit;
-  font: 0.75rem SuisseIntl, sans-serif;
+  font:
+    0.75rem SuisseIntl,
+    sans-serif;
   left: 0;
   max-width: 30%;
   position: absolute;
@@ -10466,7 +10739,9 @@ a.c-minicart__item-content:hover {
 }
 .c-product-tile-horizontal__name {
   display: block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.25rem;
   min-height: 1.3125rem;
 }
@@ -10495,7 +10770,9 @@ a.c-minicart__item-content:hover {
 .c-product-tile-horizontal__info-item {
   border: none;
   color: #333;
-  font: 500 0.875rem SuisseIntl, sans-serif;
+  font:
+    500 0.875rem SuisseIntl,
+    sans-serif;
   padding: 0 2.5rem 0 0;
   text-align: right;
 }
@@ -10509,7 +10786,9 @@ a.c-minicart__item-content:hover {
   justify-content: flex-start;
 }
 .c-product-tile-horizontal__price {
-  font: 500 0.875rem SuisseIntl, sans-serif;
+  font:
+    500 0.875rem SuisseIntl,
+    sans-serif;
 }
 .c-product-tile-horizontal__price.m-outside {
   margin: 0 0 1.25rem;
@@ -10552,7 +10831,9 @@ a.c-minicart__item-content:hover {
   margin: 0.9375rem 0 0;
 }
 .c-product-tile-horizontal__badge {
-  font: 0.75rem SuisseIntl, sans-serif;
+  font:
+    0.75rem SuisseIntl,
+    sans-serif;
   left: 0;
   max-width: 40%;
   position: absolute;
@@ -10603,7 +10884,9 @@ a.c-minicart__item-content:hover {
 }
 .c-product-set__subtitle {
   border-bottom: none;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 1.875rem;
   padding: 0;
   text-transform: none;
@@ -10699,7 +10982,9 @@ button:hover .c-product-price__value.m-rangestandardprice {
   flex: 1 1 100%;
 }
 .c-product-table__price {
-  font: 500 0.875rem/1 SuisseIntl, sans-serif;
+  font:
+    500 0.875rem/1 SuisseIntl,
+    sans-serif;
   white-space: nowrap;
 }
 .c-product-table__price-value.m-old {
@@ -10768,7 +11053,9 @@ button:hover .c-product-price__value.m-rangestandardprice {
   box-shadow: none;
   color: #945c26;
   display: block;
-  font: 0.6875rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.6875rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.75rem;
   padding: 0;
   text-align: left;
@@ -10779,7 +11066,9 @@ button:hover .c-product-price__value.m-rangestandardprice {
   background: #333;
   border-radius: 0.25rem;
   color: #fffef2;
-  font: 700 0.625rem/1.2 SuisseIntl, sans-serif;
+  font:
+    700 0.625rem/1.2 SuisseIntl,
+    sans-serif;
   padding: 0.1875rem 0.25rem 0.125rem;
   text-transform: uppercase;
 }
@@ -10787,7 +11076,9 @@ button:hover .c-product-price__value.m-rangestandardprice {
   border-radius: 0.3125rem;
   box-shadow: none;
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   padding: 0.375rem 0;
   text-transform: none;
 }
@@ -10865,8 +11156,12 @@ a.c-product-badge__category-title {
   border-bottom: 1px solid rgba(51, 51, 51, 0.2);
   color: #333;
   display: flex;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
-  font: 1.125rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
+  font:
+    1.125rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 1.5rem 1.875rem 1.5rem 0;
   position: relative;
@@ -10916,7 +11211,9 @@ a.c-product-badge__category-title {
   width: 1.375rem;
 }
 .c-product-bundle__title-qty {
-  font: 500 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    500 0.875rem/1.2 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-product-bundle__list {
   list-style-type: none;
@@ -10987,7 +11284,9 @@ a.c-product-badge__category-title {
   font-size: 0;
 }
 .c-product-variation__value {
-  font: 400 0.875rem/1.05rem SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.05rem SuisseIntl,
+    sans-serif;
   vertical-align: middle;
 }
 .c-swatches {
@@ -11021,7 +11320,9 @@ a.c-product-badge__category-title {
 }
 .c-swatches__toggle {
   border-bottom: 1px solid #333;
-  font: 500 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    500 0.75rem/1.25 SuisseIntl,
+    sans-serif;
   position: relative;
   text-align: left;
   text-transform: uppercase;
@@ -11069,7 +11370,9 @@ a.c-product-badge__category-title {
   display: block;
 }
 .c-swatches__swatch-selected {
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0.625rem 0 0;
   order: 1;
 }
@@ -11081,7 +11384,9 @@ a.c-product-badge__category-title {
   border: 0;
   color: #333;
   cursor: pointer;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   min-width: 0;
   padding: 0;
   text-decoration: underline;
@@ -11121,7 +11426,9 @@ a.c-product-badge__category-title {
   padding: 0.625rem 0 0;
 }
 .c-product-lineitem-highlight__title {
-  font: 0.75rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 1.375rem;
 }
 .c-product-lineitem-highlight__section
@@ -11145,25 +11452,33 @@ a.c-product-badge__category-title {
 }
 .c-product-lineitem-highlight__label {
   color: #333;
-  font: 0.75rem/1.3125rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.3125rem SuisseIntl,
+    sans-serif;
   margin: 0 0.625rem 0 0;
 }
 .c-product-lineitem-highlight__label-inner {
-  font: 700 0.75rem SuisseIntl, sans-serif;
+  font:
+    700 0.75rem SuisseIntl,
+    sans-serif;
 }
 .c-product-lineitem-highlight__value {
   align-items: center;
   color: #666;
   display: flex;
   flex-wrap: wrap;
-  font: 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.25 SuisseIntl,
+    sans-serif;
 }
 .c-product-lineitem-highlight__action {
   align-items: center;
   color: #5f5f5f;
   cursor: pointer;
   display: flex;
-  font: 0.75rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.2 SuisseIntl,
+    sans-serif;
   text-decoration: underline;
 }
 .c-product-lineitem-highlight__action:hover {
@@ -11220,7 +11535,9 @@ a.c-product-badge__category-title {
   flex-wrap: nowrap;
 }
 .c-variations-carousel__label .c-product-price__capacity {
-  font: 0.875rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 0 0.1875rem;
 }
 .c-variations-carousel__link {
@@ -11231,7 +11548,9 @@ a.c-product-badge__category-title {
   color: #333;
   display: flex;
   flex-flow: column;
-  font: 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.2 SuisseIntl,
+    sans-serif;
   height: 100%;
   justify-content: center;
   min-height: 3.125rem;
@@ -11247,7 +11566,9 @@ a.c-product-badge__category-title {
 .c-variations-carousel__link.m-selected {
   background: #fffef2;
   border: 2px solid #000;
-  font: 550 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    550 0.875rem/1.2 SuisseIntl-Medium,
+    sans-serif;
   pointer-events: none;
 }
 .c-variations-carousel__link.m-disabled {
@@ -11278,7 +11599,9 @@ a.c-product-badge__category-title {
   border-bottom: 1px solid #fffef2;
   border-radius: 0;
   color: #666;
-  font: 0.875rem/1 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1 SuisseIntl,
+    sans-serif;
   min-height: auto;
   min-width: 3.375rem;
   padding: 0.3125rem 0.5rem;
@@ -11379,7 +11702,9 @@ a.c-product-badge__category-title {
 .c-carousel__item-title {
   color: #666;
   flex-grow: 1;
-  font: 700 0.875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.4 SuisseIntl,
+    sans-serif;
   height: 100%;
   text-align: center;
   text-transform: uppercase;
@@ -12006,7 +12331,9 @@ a.c-product-badge__category-title {
   > .c-carousel__item:not(:first-child):before {
   color: #333;
   content: "+";
-  font: 1.5rem/1 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1 SuisseIntl,
+    sans-serif;
   padding: 1.25rem;
   position: absolute;
   right: 100%;
@@ -12574,11 +12901,15 @@ a.c-product-badge__category-title {
 .c-content-reassurance__text {
   color: #fffef2;
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   vertical-align: middle;
 }
 .c-content-reassurance__description {
-  font: 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.25 SuisseIntl,
+    sans-serif;
 }
 .c-content-panel {
   background: #333;
@@ -12587,7 +12918,9 @@ a.c-product-badge__category-title {
   overflow: hidden;
   padding: 0.625rem 0;
   position: relative;
-  transition: margin-top 0.1s ease-in, padding 0.4s ease-out;
+  transition:
+    margin-top 0.1s ease-in,
+    padding 0.4s ease-out;
 }
 .c-content-panel[data-type="error"] {
   background: #ca432f;
@@ -12626,7 +12959,9 @@ a.c-product-badge__category-title {
 }
 .c-content-panel.m-closed {
   padding: 0;
-  transition: margin-top 0.5s ease-in, padding 0.1s ease-out;
+  transition:
+    margin-top 0.5s ease-in,
+    padding 0.1s ease-out;
   visibility: hidden;
 }
 .c-content-panel__close {
@@ -12653,7 +12988,9 @@ a.c-product-badge__category-title {
   max-width: 75rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  transition: margin-top 0.1s ease-in, padding 0.4s ease-out;
+  transition:
+    margin-top 0.1s ease-in,
+    padding 0.4s ease-out;
   width: 100%;
 }
 .c-content-panel__inner.m-x-center {
@@ -12670,7 +13007,9 @@ a.c-product-badge__category-title {
 }
 .c-content-panel__text {
   color: #fffef2;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 1.25rem;
   text-align: initial;
 }
@@ -12692,13 +13031,17 @@ a.c-product-badge__category-title {
 }
 .c-may-we-help__title {
   color: #333;
-  font: normal 0.875rem SuisseIntl-Medium, sans-serif;
+  font:
+    normal 0.875rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 5px;
   text-transform: none;
 }
 .c-may-we-help__list {
   color: #666;
-  font: 0.75rem/2.25 SuisseIntl, sans-serif;
+  font:
+    0.75rem/2.25 SuisseIntl,
+    sans-serif;
   list-style: none;
   margin: 0;
 }
@@ -12784,7 +13127,9 @@ a.c-product-badge__category-title {
   padding: 1.25rem;
 }
 .c-navigation-flyout__category-title {
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.5rem;
   text-transform: none;
 }
@@ -12794,7 +13139,9 @@ a.c-product-badge__category-title {
 }
 .c-navigation-flyout__category-link {
   color: #666;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   text-decoration: underline;
 }
 .c-navigation-flyout__push {
@@ -12812,13 +13159,17 @@ a.c-product-badge__category-title {
 }
 .c-navigation-flyout__push-title {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.5rem;
   text-transform: none;
 }
 .c-navigation-flyout__push-cta,
 .c-navigation-flyout__push-description {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-navigation-flyout__push-cta,
 .c-navigation-flyout__push-image {
@@ -12851,7 +13202,9 @@ a.c-product-badge__category-title {
 }
 .c-navigation__item.m-level-2.m-view-all .c-navigation__link,
 .c-navigation__item.m-level-3.m-view-all .c-navigation__link {
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   -webkit-text-decoration: underline solid;
   text-decoration: underline solid;
   text-transform: none;
@@ -12868,12 +13221,16 @@ a.c-product-badge__category-title {
 }
 .c-navigation__item-title.m-level-1 {
   color: #333;
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   position: relative;
 }
 .c-navigation__item-title.m-level-2 {
   color: #333;
-  font: 500 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    500 0.875rem/1.2 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-navigation__item-title.m-level-3 {
   color: #333;
@@ -12919,7 +13276,9 @@ a.c-product-badge__category-title {
 }
 .c-navigation__link.m-level-3 {
   color: #333;
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
 }
 .c-navigation__link.m-level-3:is(a):hover {
   color: #333;
@@ -13017,7 +13376,9 @@ a.c-product-badge__category-title {
 .c-simple-search__search-label {
   color: #666;
   flex: 0 0 auto;
-  font: normal 1.5rem/4.75rem SuisseIntl, sans-serif;
+  font:
+    normal 1.5rem/4.75rem SuisseIntl,
+    sans-serif;
   width: auto;
 }
 .c-simple-search__field {
@@ -13385,7 +13746,9 @@ a.c-product-badge__category-title {
 }
 .c-user__list-item {
   color: #666;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-user__list-item-link {
   color: #666;
@@ -13451,7 +13814,9 @@ a.c-product-badge__category-title {
   border-bottom: 0.0625rem;
   color: #333;
   display: flex;
-  font: 400 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl-Medium,
+    sans-serif;
   gap: 1rem;
   justify-content: flex-start;
   padding: 1rem;
@@ -13465,7 +13830,9 @@ a.c-product-badge__category-title {
   display: flex;
   flex: 1 1 auto;
   flex-flow: wrap;
-  font: 400 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl-Medium,
+    sans-serif;
   gap: 0;
 }
 .c-user-menu__title-name a {
@@ -13480,7 +13847,9 @@ a.c-product-badge__category-title {
 .c-user-menu__logout-link {
   color: #333;
   display: block;
-  font: 400 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-user-menu__content {
   background: #fffef2;
@@ -13604,14 +13973,18 @@ a.c-product-badge__category-title {
 .c-suggestions-text__doyoumean {
   color: #333;
   display: inline-block;
-  font: 0.875rem/1.3 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.3 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 1.25rem 0 0;
 }
 .c-suggestions-content__title.m-secondary,
 .c-suggestions-products__title.m-secondary,
 .c-suggestions-text__doyoumean.m-secondary {
-  font: 0.875rem/1 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-suggestions-text__list {
   list-style: none;
@@ -13632,11 +14005,15 @@ a.c-product-badge__category-title {
 }
 .c-suggestions-text__link b {
   color: #333;
-  font: 0.75rem/1.25 SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.25 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-suggestions-text__name {
   color: #000;
-  font: 0.875rem/1.25 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.25 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-suggestions-products {
   padding: 0;
@@ -13657,7 +14034,9 @@ a.c-product-badge__category-title {
 }
 .c-suggestions-products__item.m-tile-for-mobile .c-suggestions-products__name {
   color: #000;
-  font: 0.875rem/1.45 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.45 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-suggestions-products__link {
   align-items: center;
@@ -13676,7 +14055,9 @@ a.c-product-badge__category-title {
 }
 .c-suggestions-products__name {
   color: #000;
-  font: 0.875rem/1.45 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.45 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-suggestions-products__description,
 .c-suggestions-products__name {
@@ -13688,7 +14069,9 @@ a.c-product-badge__category-title {
 }
 .c-suggestions-products__description {
   color: #5f5f5f;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.3125rem;
 }
 .c-suggestions-products__rating {
@@ -13696,12 +14079,16 @@ a.c-product-badge__category-title {
 }
 .c-suggestions-products__price {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-suggestions-content__view-all,
 .c-suggestions-products__view-all {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   position: absolute;
   right: 0;
   text-transform: none;
@@ -13739,21 +14126,27 @@ a.c-product-badge__category-title {
 }
 .c-suggestions-content__name {
   color: #000;
-  font: 0.875rem/1.25 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.25 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-suggestions-content__description {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   color: #666;
   display: -webkit-box;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0.3125rem 0;
   max-height: none;
   overflow: hidden;
 }
 .c-suggestions-content__date {
   color: #666;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-suggestions__main {
   width: 100%;
@@ -13767,7 +14160,9 @@ a.c-product-badge__category-title {
 .c-suggestions__aside-title {
   color: #333;
   display: block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.1875rem;
 }
 .c-suggestions__aside-list {
@@ -13777,7 +14172,9 @@ a.c-product-badge__category-title {
 .c-suggestions__aside-link {
   color: #666;
   display: block;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   padding: 0.4375rem 0;
   text-decoration: none;
 }
@@ -13807,7 +14204,9 @@ a.c-product-badge__category-title {
   border: 0.0625rem solid #fffef2;
   border-radius: 50%;
   color: #fffef2;
-  font: normal 0.625rem SuisseIntl, sans-serif;
+  font:
+    normal 0.625rem SuisseIntl,
+    sans-serif;
   height: 0.8125rem;
   line-height: 0.8125rem;
   position: absolute;
@@ -13838,7 +14237,9 @@ a.c-product-badge__category-title {
 }
 .c-footer-social__title {
   color: #fffef2;
-  font: 700 0.875rem/1.25 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.25 SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-footer-social__link {
@@ -13910,7 +14311,9 @@ a.c-product-badge__category-title {
 }
 .l-footer__nav-link.m-level-1 {
   color: #fffef2;
-  font: 700 1.125rem/1.6875rem SuisseIntl, sans-serif;
+  font:
+    700 1.125rem/1.6875rem SuisseIntl,
+    sans-serif;
   text-decoration: none;
   text-transform: none;
 }
@@ -13921,7 +14324,9 @@ a.c-product-badge__category-title {
 .l-footer__nav-link.m-level-2 {
   color: #fffef2;
   display: inline-block;
-  font: 400 0.875rem/1.05rem SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.05rem SuisseIntl,
+    sans-serif;
   padding: 0 0 0.5rem;
   text-decoration: none;
 }
@@ -13941,13 +14346,17 @@ a.c-product-badge__category-title {
 .l-footer__contacts-title {
   color: #fffef2;
   display: block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 1rem;
   text-transform: none;
 }
 .l-footer__contacts-description {
   color: #fffef2;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
 }
 .l-footer__contacts-description a,
@@ -13955,7 +14364,9 @@ a.c-product-badge__category-title {
   color: #fffef2;
 }
 .l-footer__contacts-link-simple {
-  font: 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.25 SuisseIntl,
+    sans-serif;
 }
 .l-footer__contacts-link,
 .l-footer__contacts-link-simple,
@@ -13969,7 +14380,9 @@ a.c-product-badge__category-title {
   border: 1px solid #fffef2;
   border-radius: 0.1875rem;
   display: flex;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   height: 2.5rem;
   justify-content: center;
   margin: 0 0.3125rem;
@@ -14018,7 +14431,9 @@ a.c-product-badge__category-title {
 }
 .l-footer__copyright {
   color: #fffef2;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 1.5rem 0 1rem;
 }
@@ -14035,7 +14450,9 @@ a.c-product-badge__category-title {
 .l-footer__links-item {
   color: #fffef2;
   display: inline-block;
-  font: 400 0.6875rem/.825rem SuisseIntl, sans-serif;
+  font:
+    400 0.6875rem/0.825rem SuisseIntl,
+    sans-serif;
 }
 .l-footer__links-item:not(:first-child):before {
   content: "—";
@@ -14044,7 +14461,9 @@ a.c-product-badge__category-title {
 }
 .l-footer__links-link {
   color: #fffef2;
-  font: 400 0.6875rem/.825rem SuisseIntl, sans-serif;
+  font:
+    400 0.6875rem/0.825rem SuisseIntl,
+    sans-serif;
   text-decoration: none;
 }
 .l-footer__links-link:hover {
@@ -14075,7 +14494,9 @@ a.c-product-badge__category-title {
 .c-footer-sticky-bar__item {
   align-items: center;
   display: flex;
-  font: 0.75rem SuisseIntl, sans-serif;
+  font:
+    0.75rem SuisseIntl,
+    sans-serif;
   justify-content: center;
   line-height: 2.5rem;
   padding: 0 0.9375rem;
@@ -14108,7 +14529,9 @@ a.c-footer-sticky-bar__item:hover {
   display: inline-block;
   margin-bottom: -0.625rem;
   margin-top: -0.625rem;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
   vertical-align: middle;
 }
 .c-button.m-secondary.m-readmore-light:after {
@@ -14167,7 +14590,9 @@ a.c-footer-sticky-bar__item:hover {
   display: inline-block;
   margin-bottom: -0.625rem;
   margin-top: -0.625rem;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
   vertical-align: middle;
 }
 .c-button.m-secondary.m-readmore-dark:after {
@@ -15902,7 +16327,9 @@ a.c-footer-sticky-bar__item:hover {
     color: #fffef2;
   }
   .l-footer__newsletter .c-simple-signup__title {
-    font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl-Medium,
+      sans-serif;
   }
   .l-footer__newsletter .c-captcha__text,
   .l-footer__newsletter .c-captcha__text a,
@@ -15947,7 +16374,9 @@ a.c-footer-sticky-bar__item:hover {
     padding: 1.25rem;
   }
   .c-accordion.m-secondary .c-accordion__title {
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
   }
   .c-anchor {
     margin-top: -11.25rem;
@@ -15985,7 +16414,9 @@ a.c-footer-sticky-bar__item:hover {
     white-space: nowrap;
   }
   .c-button.m-row-2 .c-button__text {
-    font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.3125rem SuisseIntl-Medium,
+      sans-serif;
   }
   .c-button-group.m-expanded-for-large .c-button {
     flex: 1 1 0px;
@@ -16012,10 +16443,14 @@ a.c-footer-sticky-bar__item:hover {
     width: 1.875rem;
   }
   .c-countdown__count-item {
-    font: 1.625rem/1 Zapf-Humanist, sans-serif;
+    font:
+      1.625rem/1 Zapf-Humanist,
+      sans-serif;
   }
   .c-countdown__description {
-    font: 0.875rem/1 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1 SuisseIntl,
+      sans-serif;
   }
   .c-content-grid {
     display: flex;
@@ -16023,12 +16458,16 @@ a.c-footer-sticky-bar__item:hover {
     padding: 0;
   }
   .c-content-grid__title {
-    font: 1.875rem/1.25 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1.25 SuisseIntl,
+      sans-serif;
     margin: 0 0 0.625rem;
     text-align: center;
   }
   .c-content-grid__description {
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     text-align: center;
   }
   .c-content-grid__items {
@@ -16055,7 +16494,9 @@ a.c-footer-sticky-bar__item:hover {
     margin: 0;
   }
   .c-content-grid__view-more-link {
-    font: normal 0.75rem/1.5 SuisseIntl, sans-serif;
+    font:
+      normal 0.75rem/1.5 SuisseIntl,
+      sans-serif;
     text-transform: none;
   }
   .c-content-hero.m-caption-left--large .c-content-hero__caption {
@@ -16135,12 +16576,16 @@ a.c-footer-sticky-bar__item:hover {
   .c-content-hero__title,
   .c-content-hero__title a {
     color: #fffef2;
-    font: 1.875rem/1.33 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1.33 SuisseIntl,
+      sans-serif;
     margin: 0 0 0.9375rem;
   }
   .c-content-hero__description {
     color: #fffef2;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0 0 1.25rem;
   }
   .c-content-hero__info {
@@ -16204,7 +16649,9 @@ a.c-footer-sticky-bar__item:hover {
     max-width: 100%;
   }
   .c-section__title {
-    font: 1.9375rem/1.33 Zapf-Humanist, sans-serif;
+    font:
+      1.9375rem/1.33 Zapf-Humanist,
+      sans-serif;
     margin: 0 0 0.625rem;
     text-align: center;
   }
@@ -16221,7 +16668,9 @@ a.c-footer-sticky-bar__item:hover {
     margin: 0;
   }
   .c-section__view-more-link {
-    font: normal 0.75rem/1.5 SuisseIntl, sans-serif;
+    font:
+      normal 0.75rem/1.5 SuisseIntl,
+      sans-serif;
     text-transform: none;
   }
   .c-image-overlay__inner.m-float-for-large {
@@ -16261,7 +16710,9 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-locale-selector__item.m-active .c-locale-selector__item-link {
     color: #333;
-    font: 0.75rem/1.4 SuisseIntl, sans-serif;
+    font:
+      0.75rem/1.4 SuisseIntl,
+      sans-serif;
   }
   .c-content-tile {
     margin: 0;
@@ -16277,19 +16728,25 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-content-tile.m-large .c-content-tile__title {
     color: #333;
-    font: 1.9375rem/1.2 Zapf-Humanist, sans-serif;
+    font:
+      1.9375rem/1.2 Zapf-Humanist,
+      sans-serif;
     margin: 0 0 1.25rem;
     text-transform: none;
   }
   .c-content-tile.m-large .c-content-tile__label {
     color: #333;
-    font: 0.875rem/1.25 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.25 SuisseIntl-Medium,
+      sans-serif;
     margin: 0 0 0.9375rem;
     text-transform: none;
   }
   .c-content-tile.m-large .c-content-tile__description {
     color: #333;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0 0 1.5625rem;
     text-transform: none;
   }
@@ -16320,7 +16777,9 @@ a.c-footer-sticky-bar__item:hover {
     max-width: 100%;
   }
   .c-content-tile.m-featured .c-content-tile__title {
-    font: 1rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      1rem/1.5 SuisseIntl-Medium,
+      sans-serif;
     margin: 0 0 0.625rem;
   }
   .c-content-tile.m-equal-rows .c-content-tile__title,
@@ -16359,11 +16818,15 @@ a.c-footer-sticky-bar__item:hover {
     padding-right: 1.25rem;
   }
   .c-content-tile__title {
-    font: 1rem/1.7 SuisseIntl-Medium, sans-serif;
+    font:
+      1rem/1.7 SuisseIntl-Medium,
+      sans-serif;
     margin: 0 0 0.625rem;
   }
   .c-content-tile__subtitle {
-    font: 600 0.75rem/1.5 SuisseIntl, sans-serif;
+    font:
+      600 0.75rem/1.5 SuisseIntl,
+      sans-serif;
   }
   .c-content-tile__label {
     background: none;
@@ -16372,27 +16835,37 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-content-tile__description {
     color: #666;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
   }
   .c-content-tile__actions {
     margin: 1.25rem 0 0;
   }
   .c-content-box__title {
-    font: 1.25rem/1.4 SuisseIntl, sans-serif;
+    font:
+      1.25rem/1.4 SuisseIntl,
+      sans-serif;
   }
   .c-content-box__headline {
-    font: 1.25rem/1.875rem SuisseIntl, sans-serif;
+    font:
+      1.25rem/1.875rem SuisseIntl,
+      sans-serif;
   }
   .c-modal__wrapper {
     padding: 1.5rem;
     width: 48.125rem;
   }
   .c-modal__title {
-    font: normal 1.875rem/1.25 SuisseIntl, sans-serif;
+    font:
+      normal 1.875rem/1.25 SuisseIntl,
+      sans-serif;
     margin: 0 0 1.875rem;
   }
   .c-modal__subtitle {
-    font: 1.25rem/1.25 SuisseIntl, sans-serif;
+    font:
+      1.25rem/1.25 SuisseIntl,
+      sans-serif;
   }
   .c-modal__section.m-secondary {
     background: #f6f5e8;
@@ -16460,7 +16933,9 @@ a.c-footer-sticky-bar__item:hover {
     height: 100%;
   }
   .c-modal.m-slide-panel .c-modal__header .c-modal__title {
-    font: 700 1.125rem/1.4 SuisseIntl, sans-serif;
+    font:
+      700 1.125rem/1.4 SuisseIntl,
+      sans-serif;
   }
   .c-storeslink:before {
     background-color: #333;
@@ -16482,7 +16957,9 @@ a.c-footer-sticky-bar__item:hover {
     width: 35.625rem;
   }
   .c-toaster__title {
-    font: 300 1.125rem/1.4 SuisseIntl, sans-serif;
+    font:
+      300 1.125rem/1.4 SuisseIntl,
+      sans-serif;
   }
   .c-toaster__content-image {
     margin: 0.9375rem 0 1.875rem;
@@ -16598,12 +17075,16 @@ a.c-footer-sticky-bar__item:hover {
     padding-top: 0;
   }
   .c-error-callout__title {
-    font: 1.875rem/1 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1 SuisseIntl,
+      sans-serif;
     margin: 0 0 1.875rem;
     max-width: none;
   }
   .c-tag {
-    font: 0.6875rem/1.7 SuisseIntl-Medium, sans-serif;
+    font:
+      0.6875rem/1.7 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-product-promotion__info-text {
     margin: 0 0 0 1.25rem;
@@ -16620,7 +17101,9 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-tabs__tab,
   .c-tabs__tab.m-active {
-    font: 1.5rem/1.3 SuisseIntl, sans-serif;
+    font:
+      1.5rem/1.3 SuisseIntl,
+      sans-serif;
   }
   .c-tabs__content {
     margin: 3.125rem 0 0;
@@ -16746,7 +17229,9 @@ a.c-footer-sticky-bar__item:hover {
     display: none !important;
   }
   .c-tabs.m-tertiary .c-tabs__tab {
-    font: 0.875rem/1 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1 SuisseIntl,
+      sans-serif;
     padding: 1.5625rem 1.25rem;
     text-transform: none;
   }
@@ -16754,7 +17239,9 @@ a.c-footer-sticky-bar__item:hover {
     top: 1.0625rem;
   }
   .c-tabs.m-tertiary-for-all .c-tabs__tab {
-    font: 0.875rem/1 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1 SuisseIntl,
+      sans-serif;
     padding: 1.5625rem 1.25rem;
     text-transform: none;
   }
@@ -16783,7 +17270,9 @@ a.c-footer-sticky-bar__item:hover {
     padding: 1.25rem;
   }
   .c-product-tile .c-product-add-bag__text {
-    font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.3125rem SuisseIntl-Medium,
+      sans-serif;
   }
   .c-product-tile.m-secondary {
     padding: 2.5rem;
@@ -16823,7 +17312,9 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-product-tile__variations-count {
     color: #666;
-    font: 0.75rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.75rem/1.5 SuisseIntl,
+      sans-serif;
   }
   .c-product-tile__price {
     padding: 0;
@@ -16873,7 +17364,9 @@ a.c-footer-sticky-bar__item:hover {
     min-width: 8.125rem;
     opacity: 0;
     pointer-events: visible;
-    transition: opacity 0.4s ease 0.2s, visibility 0.4s ease 0.2s;
+    transition:
+      opacity 0.4s ease 0.2s,
+      visibility 0.4s ease 0.2s;
     white-space: nowrap;
     width: auto;
     z-index: 1;
@@ -17013,7 +17506,9 @@ a.c-footer-sticky-bar__item:hover {
     padding: 0;
   }
   .c-product-table__price {
-    font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.3125rem SuisseIntl-Medium,
+      sans-serif;
   }
   .c-product-table__price-value.m-old {
     display: inline-block;
@@ -17041,14 +17536,18 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-swatches__toggle {
     cursor: pointer;
-    font: 0.875rem/1.25 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.25 SuisseIntl,
+      sans-serif;
   }
   .c-swatches__swatch-selected,
   .c-swatches__toggle-content {
     order: 1;
   }
   .c-swatches__swatch-selected {
-    font: 0.75rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.75rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0.625rem 0 0;
   }
   .c-swatches__view-all {
@@ -17065,7 +17564,9 @@ a.c-footer-sticky-bar__item:hover {
     padding: 0 0 0 0.625rem;
   }
   .c-product-lineitem-highlight__title {
-    font: 0.75rem/1.3125rem SuisseIntl-Medium, sans-serif;
+    font:
+      0.75rem/1.3125rem SuisseIntl-Medium,
+      sans-serif;
   }
   .c-product-lineitem-highlight__label {
     margin: 0 0.3125rem 0 0;
@@ -17247,10 +17748,14 @@ a.c-footer-sticky-bar__item:hover {
     max-width: 1.5rem;
   }
   .c-content-reassurance__text {
-    font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-content-reassurance__description {
-    font: 0.875rem/1.25 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.25 SuisseIntl,
+      sans-serif;
   }
   .c-content-panel.m-medium .c-content-panel__inner {
     min-height: 2.5rem;
@@ -17387,13 +17892,17 @@ a.c-footer-sticky-bar__item:hover {
   .c-suggestions-content__title,
   .c-suggestions-products__title,
   .c-suggestions-text__doyoumean {
-    font: 1.25rem/1.3 SuisseIntl, sans-serif;
+    font:
+      1.25rem/1.3 SuisseIntl,
+      sans-serif;
     padding: 0;
   }
   .c-suggestions-content__title.m-secondary,
   .c-suggestions-products__title.m-secondary,
   .c-suggestions-text__doyoumean.m-secondary {
-    font: 1.25rem/1.3 SuisseIntl-Medium, sans-serif;
+    font:
+      1.25rem/1.3 SuisseIntl-Medium,
+      sans-serif;
     text-transform: none;
   }
   .c-suggestions-text__item {
@@ -17404,10 +17913,14 @@ a.c-footer-sticky-bar__item:hover {
     padding: 0;
   }
   .c-suggestions-text__link b {
-    font: 0.75rem/1.25 SuisseIntl-Medium, sans-serif;
+    font:
+      0.75rem/1.25 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-suggestions-text__name {
-    font: 0.875rem/1.25 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.25 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-suggestions-products {
     flex: 1 1 auto;
@@ -17430,7 +17943,9 @@ a.c-footer-sticky-bar__item:hover {
   .c-suggestions-products__item.m-tile-for-mobile
     .c-suggestions-products__name {
     color: #000;
-    font: 0.875rem/1.45 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.45 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-suggestions-products__link {
     display: flex;
@@ -17442,13 +17957,17 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-suggestions-products__name {
     color: #000;
-    font: 0.875rem/1.45 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.45 SuisseIntl-Medium,
+      sans-serif;
     margin: 0 0 0.3125rem;
     text-transform: none;
   }
   .c-suggestions-content__view-all,
   .c-suggestions-products__view-all {
-    font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl-Medium,
+      sans-serif;
     text-transform: none;
     top: 2.1875rem;
   }
@@ -17475,7 +17994,9 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-suggestions-content__name {
     color: #000;
-    font: 0.875rem/1.25 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.25 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-suggestions-content__description {
     color: #666;
@@ -17579,7 +18100,9 @@ a.c-footer-sticky-bar__item:hover {
     margin: 0;
   }
   .c-footer-social__title {
-    font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl-Medium,
+      sans-serif;
     margin: 0;
   }
   .c-footer-social__link {
@@ -17604,11 +18127,15 @@ a.c-footer-sticky-bar__item:hover {
     margin: 0.3125rem 0 0;
   }
   .l-footer__nav-link.m-level-1 {
-    font: 700 1.125rem/1.6875rem SuisseIntl, sans-serif;
+    font:
+      700 1.125rem/1.6875rem SuisseIntl,
+      sans-serif;
     text-transform: none;
   }
   .l-footer__nav-link.m-level-2 {
-    font: 400 0.875rem/1.05rem SuisseIntl, sans-serif;
+    font:
+      400 0.875rem/1.05rem SuisseIntl,
+      sans-serif;
     padding: 0 0 0.5rem;
   }
   .l-footer__contacts {
@@ -17616,7 +18143,9 @@ a.c-footer-sticky-bar__item:hover {
     padding: 1rem 0 2rem;
   }
   .l-footer__contacts-title {
-    font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl-Medium,
+      sans-serif;
     margin: 0 0 0.5rem;
     text-transform: none;
   }
@@ -17649,7 +18178,9 @@ a.c-footer-sticky-bar__item:hover {
     padding: 0 0.375rem;
   }
   .c-footer-sticky-bar__item {
-    font: 700 0.75rem SuisseIntl, sans-serif;
+    font:
+      700 0.75rem SuisseIntl,
+      sans-serif;
     padding: 0 2.1875rem;
   }
   .c-footer-sticky-bar__item:first-child {
@@ -18890,7 +19421,9 @@ a.c-footer-sticky-bar__item:hover {
     display: inline-block;
   }
   .c-product-bundle__title-name {
-    font: 500 1.125rem/1 SuisseIntl, sans-serif;
+    font:
+      500 1.125rem/1 SuisseIntl,
+      sans-serif;
   }
   .c-carousel.m-overflow-visible--medium-down .c-carousel__inner {
     overflow: visible;
@@ -19243,7 +19776,9 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-simple-search__search-label {
     color: #666;
-    font: 0.875rem/2.5rem SuisseIntl, sans-serif;
+    font:
+      0.875rem/2.5rem SuisseIntl,
+      sans-serif;
     height: 2.5rem;
     left: 1rem;
     left: 2.25rem;
@@ -19258,7 +19793,10 @@ a.c-footer-sticky-bar__item:hover {
     text-overflow: ellipsis;
     top: 0;
     transform: translateZ(0);
-    transition: transform 0.2s, font-size 0.2s, left 0.2s;
+    transition:
+      transform 0.2s,
+      font-size 0.2s,
+      left 0.2s;
     white-space: nowrap;
     width: auto;
     z-index: 1;
@@ -19266,7 +19804,9 @@ a.c-footer-sticky-bar__item:hover {
   .c-simple-search__field:not(:-moz-placeholder)
     + .c-simple-search__search-label {
     color: #666;
-    font: 0.75rem/1rem SuisseIntl, sans-serif;
+    font:
+      0.75rem/1rem SuisseIntl,
+      sans-serif;
     height: auto;
     padding: 0 0.3125rem;
     transform: translate3d(0, -0.5rem, 0);
@@ -19275,7 +19815,9 @@ a.c-footer-sticky-bar__item:hover {
   .c-simple-search__field:not(:placeholder-shown)
     + .c-simple-search__search-label {
     color: #666;
-    font: 0.75rem/1rem SuisseIntl, sans-serif;
+    font:
+      0.75rem/1rem SuisseIntl,
+      sans-serif;
     height: auto;
     padding: 0 0.3125rem;
     transform: translate3d(0, -0.5rem, 0);
@@ -19414,7 +19956,9 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-suggestions-content__item.m-tile-for-mobile .c-suggestions-content__name {
     color: #333;
-    font: 0.875rem/1.25 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.25 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-suggestions-content__item.m-tile-for-mobile .c-suggestions-content__image {
     margin: 0 1rem 0 0;
@@ -19948,7 +20492,9 @@ a.c-footer-sticky-bar__item:hover {
   .c-navigation__item.m-level-1.m-expanded > .c-navigation__item-title,
   .c-navigation__item.m-level-2.m-expanded > .c-navigation__item-title {
     color: #333;
-    font: 700 0.875rem/1.2 SuisseIntl, sans-serif;
+    font:
+      700 0.875rem/1.2 SuisseIntl,
+      sans-serif;
   }
   .c-navigation__flyout-element {
     background: #f6f5e8;
@@ -22723,7 +23269,8 @@ a.c-footer-sticky-bar__item:hover {
   .c-navigation__flyout-element {
     background: #fffef2;
     border-top: 1px solid rgba(51, 51, 51, 0.2);
-    box-shadow: 0 0 0.375rem 0 rgba(0, 0, 0, 0.02),
+    box-shadow:
+      0 0 0.375rem 0 rgba(0, 0, 0, 0.02),
       0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.08);
     display: none;
     left: 0;
@@ -22808,14 +23355,18 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-navigation__content {
     color: #333;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0 1.5rem 0 0;
     text-decoration: none;
   }
   .c-navigation__content:focus,
   .c-navigation__content:is(a):hover {
     color: #333;
-    font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-navigation__content-title {
     margin: 1rem 0 0;

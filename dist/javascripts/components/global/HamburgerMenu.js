@@ -2,13 +2,13 @@
   "use strict";
   System.register(
     [
-      "core/Component",
-      "toolbox/deepMerge",
-      "core/mixwith",
-      "mixins/Accessibility",
-      "toolbox/event",
-      "toolbox/animate",
-      "services/EventEmitter",
+      "../../core/Component",
+      "../../toolbox/deepMerge",
+      "../../core/mixwith",
+      "../../mixins/Accessibility",
+      "../../toolbox/event",
+      "../../toolbox/animate",
+      "../../services/EventEmitter",
     ],
     function (a) {
       "use strict";

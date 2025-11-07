@@ -94,7 +94,9 @@
   text-transform: none;
 }
 .l-search__product-results-count .c-results-count {
-  font: 500 1.125rem/1.5 SuisseIntl, sans-serif;
+  font:
+    500 1.125rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .l-search__product-results-count-inline {
   color: #666;
@@ -242,7 +244,9 @@
 .c-back-to-parent__link {
   color: #333;
   display: inline-block;
-  font: 0.75rem/1 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1 SuisseIntl,
+    sans-serif;
   padding: 0.9375rem;
   text-decoration: none;
 }
@@ -280,7 +284,9 @@
   background: none;
 }
 .c-back-to-parent.m-secondary .c-back-to-parent__link {
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   padding: 0.9375rem 0;
   text-transform: none;
 }
@@ -337,14 +343,18 @@
 .c-stacked-links__item.m-active .c-stacked-links__link {
   background: #fffef2;
   color: #000;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0;
 }
 .c-stacked-links__link {
   align-items: center;
   color: #333;
   display: flex;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   justify-content: space-between;
   padding: 0.8125rem 0 0.8125rem 1.25rem;
   text-decoration: none;
@@ -362,7 +372,9 @@
 }
 .c-stacked-links__link:hover {
   color: #000;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-stacked-links__link.m-border-top {
   border-top: 1px solid rgba(51, 51, 51, 0.2);
@@ -401,7 +413,9 @@
 }
 .c-pagination__item {
   color: #666;
-  font: 0.75rem SuisseIntl, sans-serif;
+  font:
+    0.75rem SuisseIntl,
+    sans-serif;
   margin: 0;
   text-decoration: none;
 }
@@ -428,12 +442,16 @@
 }
 .c-pagination__item.m-all {
   color: #333;
-  font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0 0.375rem;
   text-decoration: none;
 }
 .c-sidebar-navigation__title {
-  font: 1.5rem/1 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.25rem;
   text-transform: none;
 }
@@ -537,7 +555,9 @@
 .c-table__header-cell {
   border: none;
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   padding: 0.625rem 0.3125rem;
   text-align: center;
   vertical-align: middle;
@@ -552,7 +572,9 @@
 .c-table__cell {
   background: #fffef2;
   border: none;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   padding: 0.75rem 0.3125rem;
   vertical-align: middle;
 }
@@ -590,7 +612,9 @@
 }
 .c-separator__title {
   background: #fffef2;
-  font: normal 0.8125rem SuisseIntl, sans-serif;
+  font:
+    normal 0.8125rem SuisseIntl,
+    sans-serif;
   padding: 0 0.625rem;
   text-transform: lowercase;
 }
@@ -670,14 +694,18 @@
 .c-selection-group__item-title {
   color: #333;
   display: block;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   text-transform: none;
 }
 .c-selection-group__item-subtitle {
   color: #666;
   display: block;
-  font: 300 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    300 0.75rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0.25rem 0 0;
 }
 .c-selection-group__item-actions {
@@ -755,7 +783,9 @@
   cursor: pointer;
   direction: ltr;
   display: block;
-  font: 0.875rem/2.5rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/2.5rem SuisseIntl,
+    sans-serif;
   height: 2.5rem;
   margin: 0;
   outline-width: 0;
@@ -764,7 +794,9 @@
   text-align: left;
   text-overflow: ellipsis;
   text-transform: none;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -809,14 +841,18 @@
   align-items: baseline;
   color: #666;
   display: flex;
-  font: 0.75rem/1.4 SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl-Medium,
+    sans-serif;
   list-style: none;
   text-transform: none;
 }
 .c-breadcrumbs__item .c-breadcrumbs__item-separator:before {
   color: #666;
   content: "❯";
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0 0.5rem;
   position: relative;
   vertical-align: middle;
@@ -1160,7 +1196,9 @@
   width: 1.25rem;
 }
 .c-social-share.m-xlarge .c-social-share__caption {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 1.25rem 0 0;
   text-transform: none;
 }
@@ -1179,7 +1217,9 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   display: -webkit-box;
-  font: 400 0.75rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    400 0.75rem/1.2 SuisseIntl-Medium,
+    sans-serif;
   max-height: none;
   min-height: 0.825rem;
   overflow: hidden;
@@ -1191,7 +1231,9 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   display: -webkit-box;
-  font: 700 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   max-height: none;
   min-height: 1.05rem;
   overflow: hidden;
@@ -1250,15 +1292,21 @@
   margin: 0 0 0 0.25rem;
 }
 .c-account__info {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.25rem;
 }
 .c-account__info-starred {
-  font: 500 0.875rem/1 SuisseIntl, sans-serif;
+  font:
+    500 0.875rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0.625rem 0.3125rem 0;
 }
 .c-account__title {
-  font: 1.5rem/1.4 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
@@ -1266,22 +1314,30 @@
   padding: 1.875rem 0 1.25rem;
 }
 .c-account__subtitle {
-  font: 1.25rem/1.3 SuisseIntl, sans-serif;
+  font:
+    1.25rem/1.3 SuisseIntl,
+    sans-serif;
   margin: 0 0 1rem;
   text-transform: none;
 }
 .c-account__sidebar-title {
-  font: 0.875rem/1 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.9375rem;
   text-transform: uppercase;
 }
 .c-account__user-name {
   display: inline-block;
-  font: 1rem/1.6 SuisseIntl-Medium, sans-serif;
+  font:
+    1rem/1.6 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 1.5rem 1.25rem;
 }
 .c-account__navigation-title {
-  font: 1.5rem/1 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.25rem;
   text-transform: uppercase;
 }
@@ -1307,7 +1363,9 @@
 .c-account-table__cell-header {
   background: #fffef2;
   color: #333;
-  font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   height: 3.125rem;
   padding: 0.1875rem 0.625rem;
   position: relative;
@@ -1370,7 +1428,9 @@
 }
 .c-account-table__cell {
   color: #333;
-  font: 0.875rem/1.3125rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl,
+    sans-serif;
   height: 3.125rem;
   padding: 0.1875rem 1.25rem;
   vertical-align: middle;
@@ -1379,14 +1439,18 @@
   width: 1.875rem;
 }
 .c-account-table__cell.m-status {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-account-table:not(.m-box):not(.m-box-for-mobile)
   .c-account-table__cell-label {
   display: none;
 }
 .c-account-table__link-details {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   text-decoration: none;
 }
 .c-account-table__link-details:after {
@@ -1400,7 +1464,9 @@
 }
 .c-account-table__link-details:hover {
   color: #000;
-  font: 700 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-account-table__link-track {
   display: block;
@@ -1441,7 +1507,9 @@
 .c-account-table.m-box .c-account-table__cell {
   color: #333;
   display: flex;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   gap: 0 0.625rem;
   height: auto;
   padding: 0.25rem 1rem;
@@ -1451,13 +1519,17 @@
 }
 .c-account-table.m-box .c-account-table__cell.m-date {
   background: #f6f5e8;
-  font: 700 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.75rem;
   padding: 0.75rem 1rem;
 }
 .c-account-table.m-box.m-link .c-account-table__cell.m-date {
   flex-direction: column;
-  font: 700 0.875rem/1.3 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.3 SuisseIntl,
+    sans-serif;
   padding: 0.5rem 1rem;
   position: relative;
 }
@@ -1557,7 +1629,9 @@
 }
 .c-account-reviews__title {
   display: inline-block;
-  font: 0.875rem SuisseIntl, sans-serif;
+  font:
+    0.875rem SuisseIntl,
+    sans-serif;
   margin: 0 1.875rem 0 0;
   vertical-align: middle;
 }
@@ -1575,11 +1649,15 @@
 .c-account__prefilled-info-label {
   word-wrap: break-word;
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.3125rem;
 }
 .c-account__prefilled-info-value {
-  font: 0.875rem/1.7 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.7 SuisseIntl-Medium,
+    sans-serif;
   word-break: break-all;
 }
 .c-account-preferences-table .c-form__row-title {
@@ -1620,13 +1698,17 @@
 .c-account-card__actions .c-account-card__link {
   color: inherit;
   color: #666;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   white-space: nowrap;
 }
 .c-account-card__nickname {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.5rem;
   text-transform: none;
 }
@@ -1665,7 +1747,9 @@
   left: 0;
   margin-top: 0.125rem;
   position: absolute;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   width: 1rem;
 }
 .c-account-card__radio:before:active:before,
@@ -1697,7 +1781,9 @@
 }
 .c-account-card__data-label,
 .c-account-card__data-value {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-order-details-summary {
   background: #fffef2;
@@ -1705,7 +1791,9 @@
   overflow: hidden;
 }
 .c-order-details-summary__title {
-  font: 500 1.125rem/1.2 SuisseIntl, sans-serif;
+  font:
+    500 1.125rem/1.2 SuisseIntl,
+    sans-serif;
   margin: 1.875rem 0 1.5625rem;
   text-align: center;
   text-transform: uppercase;
@@ -1725,7 +1813,9 @@
 .c-linked-accounts__icon {
   color: #333;
   display: inline-block;
-  font: 0.875rem/1.5rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5rem SuisseIntl,
+    sans-serif;
 }
 .c-linked-accounts__icon:before {
   content: "";
@@ -1785,7 +1875,9 @@
 .c-product-table__column-header {
   background: #fffef2;
   color: #333;
-  font: 0.875rem/1.3 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.3 SuisseIntl-Medium,
+    sans-serif;
   padding: 1.25rem;
   text-align: left;
 }
@@ -1871,7 +1963,9 @@
   width: 100%;
 }
 .c-product-table__message {
-  font: 500 0.875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    500 0.875rem/1.4 SuisseIntl,
+    sans-serif;
 }
 .c-product-table__price {
   width: 100%;
@@ -2124,7 +2218,9 @@
 .c-product-table-details__promo-exclusion {
   background: #f6f5e8;
   color: #666;
-  font: 0.75rem SuisseIntl, sans-serif;
+  font:
+    0.75rem SuisseIntl,
+    sans-serif;
   padding: 0.3125rem 1.25rem;
 }
 .c-product-table-details__brand {
@@ -2134,13 +2230,17 @@
   padding: 0 1.875rem 0 0;
 }
 .c-product-table-details__title {
-  font: 700 0.875rem/1.05rem SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.05rem SuisseIntl,
+    sans-serif;
   margin: 0 0 0.5rem;
   text-transform: none;
 }
 .c-product-table-details__title .c-product-table-details__action {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   text-align: left;
   text-decoration: none;
   white-space: normal;
@@ -2178,7 +2278,9 @@
   word-break: break-word;
 }
 .c-product-table-details__gift-label {
-  font: 0.875rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem SuisseIntl-Medium,
+    sans-serif;
 }
 .c-product-table-details__gift-text {
   display: block;
@@ -2200,7 +2302,9 @@
 .c-product-table-allocation__status {
   color: #333;
   flex: 1 1 auto;
-  font: 0.75rem/1.17 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.17 SuisseIntl,
+    sans-serif;
   text-align: left;
 }
 .c-product-quantity {
@@ -2251,7 +2355,9 @@
   font-size: 0;
 }
 .c-product-variation__value {
-  font: 400 0.875rem/1.05rem SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.05rem SuisseIntl,
+    sans-serif;
   vertical-align: middle;
 }
 .c-media-selector {
@@ -2283,10 +2389,15 @@
   color: #666;
   cursor: pointer;
   display: block;
-  font: 400 0.75rem/1 SuisseIntl, sans-serif;
+  font:
+    400 0.75rem/1 SuisseIntl,
+    sans-serif;
   padding: 1.8125rem 1rem;
   text-align: center;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s ease-out;
+  transition:
+    background-color 0.25s,
+    color 0.25s,
+    border-color 0.25s ease-out;
   width: 100%;
 }
 .c-media-selector__add-product:before {
@@ -2396,7 +2507,9 @@
   border-bottom: 1px solid #333;
   color: #333;
   cursor: pointer;
-  font: 500 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    500 0.75rem/1.25 SuisseIntl,
+    sans-serif;
   padding: 0 0.9375rem 0 0;
   position: relative;
   text-align: left;
@@ -2426,7 +2539,9 @@
 }
 .c-selected-products__title {
   color: #333;
-  font: 0.75rem/1.4 SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
@@ -2434,7 +2549,9 @@
   background: none;
   color: #333;
   display: flex;
-  font: 0.75rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.2 SuisseIntl-Medium,
+    sans-serif;
   justify-content: space-between;
   margin: 0;
   padding: 0.625rem 0;
@@ -2543,7 +2660,9 @@
 .c-order-details-box__title {
   background: #fffef2;
   color: #333;
-  font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0;
   padding: 1.25rem 0 0.625rem;
 }
@@ -2551,12 +2670,16 @@
   margin: 0 0 1.875rem;
 }
 .c-order-details-box__section-title {
-  font: 1rem/1.6875rem SuisseIntl-Medium, sans-serif;
+  font:
+    1rem/1.6875rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.9375rem;
   text-transform: none;
 }
 .c-order-details-box__sub-title {
-  font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.4375rem;
   text-transform: none;
 }
@@ -2579,7 +2702,9 @@
 }
 .c-order-details-summary-table__cell.m-label {
   color: #666;
-  font: 0.875rem/1.25rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.25rem SuisseIntl,
+    sans-serif;
   font-weight: 300;
   text-align: left;
   text-transform: none;
@@ -2589,7 +2714,9 @@
 }
 .c-order-details-summary-table__cell.m-small {
   color: #666;
-  font: 0.875rem/1.25rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.25rem SuisseIntl,
+    sans-serif;
   font-weight: 300;
   text-align: left;
 }
@@ -2598,7 +2725,9 @@
 }
 .c-order-details-summary-table__item.m-total
   .c-order-details-summary-table__cell {
-  font: 0.875rem/1.25rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.25rem SuisseIntl-Medium,
+    sans-serif;
   padding: 2.1875rem 0 0;
   text-transform: uppercase;
 }
@@ -2619,12 +2748,16 @@
   padding: 0 0 0.625rem;
 }
 .c-order-info__label {
-  font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0.625rem 0 0;
 }
 .c-order-info__value {
   color: #666;
-  font: 0.875rem/1.3125rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl,
+    sans-serif;
   text-align: right;
 }
 .c-storelocator {
@@ -2648,7 +2781,9 @@
   margin: 0 0 1.25rem;
 }
 .c-storelocator__title {
-  font: 1.5rem/1 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.5rem;
   text-transform: none;
 }
@@ -2741,7 +2876,9 @@
   display: block;
 }
 .c-storelocator__store-title {
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-storelocator__store-marker {
   left: 0.625rem;
@@ -2752,7 +2889,9 @@
 }
 .c-storelocator__store-marker-label {
   color: #fff;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   left: 0;
   position: absolute;
   text-align: center;
@@ -2761,7 +2900,9 @@
 }
 .c-storelocator__store-distance {
   color: #333;
-  font: 0.875rem/2 SuisseIntl, sans-serif;
+  font:
+    0.875rem/2 SuisseIntl,
+    sans-serif;
   margin: 0;
 }
 .c-storelocator__store-distance:before {
@@ -2776,13 +2917,19 @@
   width: 0.75rem;
 }
 .c-storelocator__store-details-link {
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-storelocator__store-address {
-  font: 0.875rem/2 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/2 SuisseIntl-Medium,
+    sans-serif;
 }
 .c-storelocator__store-phone-text {
-  font: 0.875rem/2 SuisseIntl, sans-serif;
+  font:
+    0.875rem/2 SuisseIntl,
+    sans-serif;
   text-decoration: none;
 }
 .c-storelocator__store-phone-text:before {
@@ -2853,7 +3000,9 @@
   border-radius: 0.9375rem;
   color: #fffef2;
   cursor: pointer;
-  font: 300 0.875rem/1 SuisseIntl, sans-serif;
+  font:
+    300 0.875rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0.625rem 0.625rem 0;
   padding: 0.5rem 0.9375rem;
 }
@@ -2886,13 +3035,17 @@
   padding: 0.5rem 0;
 }
 .c-cart-summary-table__cell.m-label {
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   text-align: left;
   text-transform: none;
   white-space: nowrap;
 }
 .c-cart-summary-table__cell.m-value {
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   text-align: right;
   vertical-align: top;
 }
@@ -2946,11 +3099,15 @@
   border-top: none;
 }
 .c-cart-summary-table__item.m-total .c-cart-summary-table__cell {
-  font: 400 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-cart-summary-table__item.m-total .c-cart-summary-table__cell.m-value {
-  font: 700 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.2 SuisseIntl,
+    sans-serif;
 }
 .c-cart-samples .c-product-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3042,7 +3199,9 @@
 }
 .c-cart-samples__result-title {
   color: #333;
-  font: 400 1.125rem/1 SuisseIntl, sans-serif;
+  font:
+    400 1.125rem/1 SuisseIntl,
+    sans-serif;
   margin: 0 0 1.25rem;
   text-align: center;
   text-transform: none;
@@ -3122,7 +3281,9 @@
   left: 0;
   margin-top: 0.125rem;
   position: absolute;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   width: 1rem;
 }
 .c-ngcheckout-selection__header.m-radio:active:before,
@@ -3179,7 +3340,9 @@
   margin: 0 0.5rem 0 0;
 }
 .c-ngcheckout-selection__title {
-  font: 700 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.2 SuisseIntl,
+    sans-serif;
   margin: 0 0.625rem 0 0;
   max-width: 100%;
 }
@@ -3221,7 +3384,9 @@
 .c-ngcheckout-selection__icon .c-icon__label {
   color: #333;
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0.625rem 0 0;
 }
 .c-ngcheckout-selection__icon.m-home:not(.m-radio) .c-icon__svg:before {
@@ -3292,16 +3457,22 @@
 }
 .c-ngcheckout-selection__description {
   color: #666;
-  font: 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.2 SuisseIntl,
+    sans-serif;
   margin: 0.5rem 0 0;
 }
 .c-ngcheckout-selection__description.m-payment {
   color: #333;
-  font: 0.875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0.625rem 0 0;
 }
 .c-ngcheckout-selection__actions {
-  font: 700 0.875rem/1 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1 SuisseIntl,
+    sans-serif;
   margin: 0;
 }
 .c-ngcheckout-selection__form {
@@ -3563,7 +3734,9 @@
     display: none;
   }
   .l-search__product-results-count .c-results-count {
-    font: 1.875rem/1.25 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1.25 SuisseIntl,
+      sans-serif;
   }
   .l-search__product-results-count.m-no-refinements {
     display: flex;
@@ -3574,7 +3747,9 @@
   }
   .l-search__tools .l-search__product-results-count {
     display: block;
-    font: 1.875rem/1.25 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1.25 SuisseIntl,
+      sans-serif;
     left: 0;
     position: relative;
     text-align: left;
@@ -3717,7 +3892,9 @@
     margin: 0 0 0 0.375rem;
   }
   .c-sidebar-navigation__title {
-    font: 1.25rem/1.3 SuisseIntl, sans-serif;
+    font:
+      1.25rem/1.3 SuisseIntl,
+      sans-serif;
     margin: 0 0 1.25rem 1.25rem;
   }
   .c-sidebar-navigation__links {
@@ -3802,7 +3979,9 @@
     width: 2rem;
   }
   .c-coupon-card__code {
-    font: 400 0.75rem/1.2 SuisseIntl-Medium, sans-serif;
+    font:
+      400 0.75rem/1.2 SuisseIntl-Medium,
+      sans-serif;
     min-height: 0.825rem;
   }
   .c-coupon-card__code,
@@ -3814,20 +3993,26 @@
     overflow: hidden;
   }
   .c-coupon-card__name {
-    font: 700 0.75rem/.9rem SuisseIntl, sans-serif;
+    font:
+      700 0.75rem/0.9rem SuisseIntl,
+      sans-serif;
     min-height: 1.05rem;
   }
   .c-account__info {
     margin: 0 0 1.25rem;
   }
   .c-account__title {
-    font: 1.875rem/1.4 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1.4 SuisseIntl,
+      sans-serif;
   }
   .c-account__title-wishlist {
     padding: 1.875rem 0 0;
   }
   .c-account__navigation-title {
-    font: 1.125rem/1 SuisseIntl, sans-serif;
+    font:
+      1.125rem/1 SuisseIntl,
+      sans-serif;
   }
   .c-account__empty-page {
     border: none;
@@ -3836,7 +4021,9 @@
     margin: 1.5rem auto 2.125rem;
   }
   .c-account-table__cell-header {
-    font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.3125rem SuisseIntl-Medium,
+      sans-serif;
     padding: 0.1875rem 0.9375rem;
   }
   .c-account-table__cell-header.m-sort {
@@ -3878,7 +4065,9 @@
     max-width: none;
   }
   .c-account__prefilled-info-value {
-    font: 0.875rem/1.7 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.7 SuisseIntl,
+      sans-serif;
   }
   .c-account-card__name {
     flex-basis: 13.125rem;
@@ -3974,7 +4163,9 @@
     padding: 3.4375rem 0 0;
   }
   .c-product-table__message {
-    font: 500 1rem/1.4 SuisseIntl, sans-serif;
+    font:
+      500 1rem/1.4 SuisseIntl,
+      sans-serif;
   }
   .c-product-table__divider {
     border-bottom: 4px solid #fffef2;
@@ -4035,7 +4226,9 @@
     margin: 0 0 0.5rem;
   }
   .c-product-table-details__title .c-product-table-details__action {
-    font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-product-table-allocation {
     flex-flow: column;
@@ -4044,7 +4237,9 @@
     margin: 0 0 2.1875rem;
   }
   .c-product-table-allocation__status {
-    font: 0.75rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.75rem/1.5 SuisseIntl,
+      sans-serif;
     text-align: left;
   }
   .c-media-selector__add-product:before {
@@ -4067,11 +4262,15 @@
     padding: 0;
   }
   .c-selected-products__title {
-    font: 0.875rem/1.4 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.4 SuisseIntl-Medium,
+      sans-serif;
     margin: 0;
   }
   .c-selected-products__total {
-    font: 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.2 SuisseIntl-Medium,
+      sans-serif;
     justify-content: space-between;
   }
   .c-selected-products__carousel {
@@ -4144,7 +4343,9 @@
     margin: 1.5rem 0 0;
   }
   .c-storelocator__title {
-    font: 1.875rem/1 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1 SuisseIntl,
+      sans-serif;
   }
   .c-storelocator__top {
     flex-basis: 100%;
@@ -4217,7 +4418,9 @@
     margin: 0 0 2.5rem;
   }
   .c-cart-samples__result-title {
-    font: 400 1.125rem/1 SuisseIntl, sans-serif;
+    font:
+      400 1.125rem/1 SuisseIntl,
+      sans-serif;
     margin: 0 0 1.25rem;
     text-align: left;
   }
@@ -4287,7 +4490,9 @@
     background-color: #333;
     border: 1px solid #fffef2;
     color: #fffef2;
-    font: 0.75rem/1.2 SuisseIntl-Medium, sans-serif;
+    font:
+      0.75rem/1.2 SuisseIntl-Medium,
+      sans-serif;
     margin: 0 0 1rem;
     min-width: auto;
     padding: 0.75rem 1.25rem;
@@ -4354,7 +4559,9 @@
   }
   .c-sorting__field {
     color: #666;
-    font: 0.75rem/1.2 SuisseIntl, sans-serif;
+    font:
+      0.75rem/1.2 SuisseIntl,
+      sans-serif;
     height: 100%;
     padding-top: 0.9375rem;
   }
@@ -4364,7 +4571,9 @@
   }
   .c-sorting__label.c-text-field__label.m-float.c-select__label {
     color: #333;
-    font: 0.75rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.75rem/1.5 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-breadcrumbs.m-scrollable {
     display: flex;
@@ -4602,7 +4811,9 @@
   .c-account-table.m-box-for-mobile .c-account-table__cell {
     color: #333;
     display: flex;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     gap: 0 0.625rem;
     height: auto;
     padding: 0.25rem 1rem;
@@ -4612,13 +4823,17 @@
   }
   .c-account-table.m-box-for-mobile .c-account-table__cell.m-date {
     background: #f6f5e8;
-    font: 700 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      700 0.875rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0 0 0.75rem;
     padding: 0.75rem 1rem;
   }
   .c-account-table.m-box-for-mobile.m-link .c-account-table__cell.m-date {
     flex-direction: column;
-    font: 700 0.875rem/1.3 SuisseIntl, sans-serif;
+    font:
+      700 0.875rem/1.3 SuisseIntl,
+      sans-serif;
     padding: 0.5rem 1rem;
     position: relative;
   }
@@ -4881,7 +5096,9 @@
   .c-product-review__author-button {
     color: #333;
     cursor: pointer;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0;
     padding: 0.875rem 3.75rem 0.875rem 0;
     position: relative;

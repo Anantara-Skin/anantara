@@ -90,7 +90,9 @@
 }
 .l-plp__result-count-inline {
   color: #666;
-  font: 0.875rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.25 SuisseIntl,
+    sans-serif;
 }
 .l-plp__comparison-toggle:empty {
   display: none;
@@ -101,7 +103,9 @@
   white-space: nowrap;
 }
 .l-plp__results-count .c-results-count {
-  font: 0.875rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.25 SuisseIntl,
+    sans-serif;
 }
 .l-plp__pagination {
   order: 3;
@@ -126,7 +130,9 @@
   margin: 0;
 }
 .l-plp__bottom-description {
-  font: 0.75rem/1.6 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.6 SuisseIntl,
+    sans-serif;
   margin: 1.25rem 0;
   order: 4;
   padding: 0;
@@ -338,13 +344,17 @@
 }
 .c-category-cover__title {
   color: #333;
-  font: 1.5rem/1.25 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.3125rem;
   text-transform: none;
 }
 .c-category-cover__description {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-sorting {
@@ -381,7 +391,9 @@
   cursor: pointer;
   direction: ltr;
   display: block;
-  font: 0.875rem/2.5rem SuisseIntl, sans-serif;
+  font:
+    0.875rem/2.5rem SuisseIntl,
+    sans-serif;
   height: 2.5rem;
   margin: 0;
   outline-width: 0;
@@ -390,7 +402,9 @@
   text-align: left;
   text-overflow: ellipsis;
   text-transform: none;
-  transition: box-shadow 0.2s, border-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -417,7 +431,9 @@
 .c-back-to-parent__link {
   color: #333;
   display: inline-block;
-  font: 0.75rem/1 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1 SuisseIntl,
+    sans-serif;
   padding: 0.9375rem;
   text-decoration: none;
 }
@@ -455,7 +471,9 @@
   background: none;
 }
 .c-back-to-parent.m-secondary .c-back-to-parent__link {
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   padding: 0.9375rem 0;
   text-transform: none;
 }
@@ -508,7 +526,9 @@
 }
 .c-plp-top-banner__category-description {
   display: none;
-  font: 0.75rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.9375rem;
   text-transform: none;
 }
@@ -518,7 +538,9 @@
 }
 .c-plp-top-banner__category-name {
   display: block;
-  font: 1.5rem/1.25 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 2rem 1.25rem;
   text-transform: none;
 }
@@ -534,7 +556,9 @@
   text-transform: none;
 }
 .c-plp-top-banner__results-count .c-results-count {
-  font: 0.875rem/1.25 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.25 SuisseIntl,
+    sans-serif;
 }
 .c-refinement-category {
   list-style: none;
@@ -551,7 +575,9 @@
 .c-refinement-category__link {
   color: #333;
   display: block;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   padding: 0.5rem 0;
   text-decoration: none;
   text-transform: none;
@@ -576,7 +602,9 @@
   color: #333;
   cursor: pointer;
   display: inline-block;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   outline-width: 0;
   position: relative;
   text-decoration: none;
@@ -608,7 +636,9 @@
 }
 .c-refinement-swatches__group-name {
   color: #666;
-  font: 0.75rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.2 SuisseIntl,
+    sans-serif;
   margin: 0 0.6875rem;
   padding: 0.6875rem 0 0;
 }
@@ -724,7 +754,9 @@
 }
 .c-refinement__title {
   color: #333;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 0.9375rem;
   position: relative;
@@ -775,7 +807,9 @@
 .c-refinement.m-expanded .c-refinement__title,
 .c-refinement.m-selected .c-refinement__title {
   color: #000;
-  font: 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.2 SuisseIntl-Medium,
+    sans-serif;
   padding: 0.9375rem;
 }
 .c-refinement__title-text {
@@ -784,7 +818,9 @@
 }
 .c-refinement__applied-values {
   color: #666;
-  font: 0.75rem/.9rem SuisseIntl, sans-serif;
+  font:
+    0.75rem/0.9rem SuisseIntl,
+    sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -798,7 +834,9 @@
   color: #333;
   cursor: pointer;
   display: flex;
-  font: 0.875rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   height: 100%;
   padding: 0 0.625rem 0 0.9375rem;
   position: relative;
@@ -835,7 +873,9 @@
 }
 .c-refinements-toggler__applied-list {
   color: #666;
-  font: 0.875rem/1.2 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.2 SuisseIntl,
+    sans-serif;
   max-width: 31.25rem;
   padding: 0 0.625rem;
 }
@@ -849,7 +889,9 @@
   border-bottom: 1px solid rgba(51, 51, 51, 0.2);
   border-top: none;
   color: #333;
-  font: 1.5rem/1.25 SuisseIntl, sans-serif;
+  font:
+    1.5rem/1.25 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.3125rem;
   padding: 0 0 0.625rem;
   text-transform: none;
@@ -861,7 +903,9 @@
   color: #333;
   cursor: pointer;
   flex: 0 0 1%;
-  font: 400 0.875rem/1.05rem SuisseIntl, sans-serif;
+  font:
+    400 0.875rem/1.05rem SuisseIntl,
+    sans-serif;
   text-decoration: underline;
   text-transform: none;
   white-space: nowrap;
@@ -872,7 +916,9 @@
   display: inline-block;
   margin-bottom: -0.625rem;
   margin-top: -0.625rem;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition:
+    background-color 0.25s ease-out,
+    color 0.25s ease-out;
   vertical-align: middle;
 }
 .c-refinements__header-back:after {
@@ -925,7 +971,9 @@
   padding: 0.3125rem 0.75rem;
 }
 .c-refinements__header-title {
-  font: 1rem/1.5 SuisseIntl-Medium, sans-serif;
+  font:
+    1rem/1.5 SuisseIntl-Medium,
+    sans-serif;
   margin: 0;
   text-transform: none;
 }
@@ -977,7 +1025,9 @@
 }
 .c-refinements.m-sliding-panel .c-refinements__header-title {
   flex: 1 0 auto;
-  font: 300 0.66667 SuisseIntl, sans-serif;
+  font:
+    300 0.66667 SuisseIntl,
+    sans-serif;
   text-transform: none;
 }
 .c-content-spot {
@@ -1082,13 +1132,17 @@
   margin: 0;
 }
 .c-video-asset__info-name {
-  font: 700 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
 .c-video-asset__info-description {
   color: #666;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0.5rem 0 0;
 }
 .c-video-asset__placeholder.m-large {
@@ -1356,7 +1410,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .c-pagination__item {
   color: #666;
-  font: 0.75rem SuisseIntl, sans-serif;
+  font:
+    0.75rem SuisseIntl,
+    sans-serif;
   margin: 0;
   text-decoration: none;
 }
@@ -1383,7 +1439,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .c-pagination__item.m-all {
   color: #333;
-  font: 0.875rem/1.3125rem SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1.3125rem SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0 0.375rem;
   text-decoration: none;
 }
@@ -1397,14 +1455,18 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   align-items: baseline;
   color: #666;
   display: flex;
-  font: 0.75rem/1.4 SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl-Medium,
+    sans-serif;
   list-style: none;
   text-transform: none;
 }
 .c-breadcrumbs__item .c-breadcrumbs__item-separator:before {
   color: #666;
   content: "❯";
-  font: 0.75rem/1.4 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0 0.5rem;
   position: relative;
   vertical-align: middle;
@@ -1435,7 +1497,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .c-simple-navigation {
   border-bottom: none;
-  font: 0.875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.875rem/1.5 SuisseIntl,
+    sans-serif;
 }
 .c-simple-navigation,
 .c-simple-navigation__back-link {
@@ -1662,7 +1726,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .c-simple-navigation__list.m-subcategories .c-simple-navigation__item.m-active {
   color: #000;
-  font: 0.875rem/1 SuisseIntl-Medium, sans-serif;
+  font:
+    0.875rem/1 SuisseIntl-Medium,
+    sans-serif;
   padding: 0.875rem 0.625rem;
 }
 .c-simple-navigation__list.m-subcategories .c-simple-navigation__link {
@@ -1738,7 +1804,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   background-color: #333;
 }
 .c-product-intensity__label {
-  font: 700 0.75rem/.875rem SuisseIntl, sans-serif;
+  font:
+    700 0.75rem/0.875rem SuisseIntl,
+    sans-serif;
 }
 .c-product-intensity__bullets {
   display: flex;
@@ -1801,7 +1869,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   border-collapse: collapse;
 }
 .c-product-table-compare__cell {
-  font: 0.6875rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.6875rem/1.5 SuisseIntl,
+    sans-serif;
   max-width: 10.625rem;
   min-width: 10.625rem;
   padding: 0.625rem;
@@ -1823,7 +1893,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .c-product-table-compare__addmore {
   cursor: pointer;
   display: block;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 2.0625rem 0 0;
   padding: 1.25rem 0.625rem;
   width: 100%;
@@ -1848,7 +1920,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .c-product-table-compare__cell-label {
   border-bottom: none;
   display: block;
-  font: 0.75rem/1.5 SuisseIntl, sans-serif;
+  font:
+    0.75rem/1.5 SuisseIntl,
+    sans-serif;
   margin: 0;
   padding: 0 0 0.3125rem;
 }
@@ -1913,7 +1987,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .c-toggle-panel__title {
   color: #333;
-  font: 700 0.875rem/1.4 SuisseIntl, sans-serif;
+  font:
+    700 0.875rem/1.4 SuisseIntl,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
@@ -1966,7 +2042,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .c-selected-products__title {
   color: #333;
-  font: 0.75rem/1.4 SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.4 SuisseIntl-Medium,
+    sans-serif;
   margin: 0 0 0.625rem;
   text-transform: none;
 }
@@ -1974,7 +2052,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   background: none;
   color: #333;
   display: flex;
-  font: 0.75rem/1.2 SuisseIntl-Medium, sans-serif;
+  font:
+    0.75rem/1.2 SuisseIntl-Medium,
+    sans-serif;
   justify-content: space-between;
   margin: 0;
   padding: 0.625rem 0;
@@ -2352,12 +2432,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   }
   .c-category-cover__title {
     color: #333;
-    font: 1.875rem/1.25 SuisseIntl, sans-serif;
+    font:
+      1.875rem/1.25 SuisseIntl,
+      sans-serif;
     margin: 0 0 0.5rem;
   }
   .c-category-cover__description {
     color: #333;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     text-transform: none;
   }
   .c-back-to-parent.m-secondary .c-back-to-parent__link {
@@ -2411,7 +2495,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .c-refinements-toggler {
     border: 1px solid #bcbbb4;
     border-radius: 0.25rem;
-    font: 500 0.875rem/1 SuisseIntl, sans-serif;
+    font:
+      500 0.875rem/1 SuisseIntl,
+      sans-serif;
     height: 2.1875rem;
     padding: 0 2.5rem 0 1rem;
     width: auto;
@@ -2446,7 +2532,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     width: 1.25rem;
   }
   .c-refinements__header-title {
-    font: 1rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      1rem/1.5 SuisseIntl-Medium,
+      sans-serif;
     margin: 0;
     padding: 0 0.625rem 0 0;
   }
@@ -2486,17 +2574,23 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     border-radius: 0.625rem;
   }
   .c-refinements.m-sliding-panel .c-refinements__header-title {
-    font: 300 0.66667 SuisseIntl, sans-serif;
+    font:
+      300 0.66667 SuisseIntl,
+      sans-serif;
   }
   .c-video-asset__info {
     margin: 1.875rem 0 0;
   }
   .c-video-asset__info-name {
-    font: 700 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      700 0.875rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0;
   }
   .c-video-asset__info-description {
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     margin: 0;
   }
   .c-video-asset__placeholder {
@@ -2523,7 +2617,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   }
   .c-simple-navigation {
     border-bottom: none;
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
   }
   .c-product-table-compare.m-secondary .c-product-table-compare__cell {
     max-width: 292px;
@@ -2531,13 +2627,17 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     padding: 0.75rem 2.5rem;
   }
   .c-product-table-compare__cell {
-    font: 0.75rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.75rem/1.5 SuisseIntl,
+      sans-serif;
     max-width: 12.875rem;
     min-width: 12.875rem;
     padding: 0.75rem 0.9375rem;
   }
   .c-product-table-compare__addmore {
-    font: 0.875rem/1.5 SuisseIntl, sans-serif;
+    font:
+      0.875rem/1.5 SuisseIntl,
+      sans-serif;
     padding: 2.0625rem 1.25rem 1.5625rem;
   }
   .c-product-table-compare__addmore:before {
@@ -2552,11 +2652,15 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     margin: 0;
   }
   .c-selected-products__title {
-    font: 0.875rem/1.4 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.4 SuisseIntl-Medium,
+      sans-serif;
     margin: 0;
   }
   .c-selected-products__total {
-    font: 0.875rem/1.2 SuisseIntl-Medium, sans-serif;
+    font:
+      0.875rem/1.2 SuisseIntl-Medium,
+      sans-serif;
     justify-content: space-between;
   }
   .c-selected-products__carousel {
@@ -2701,7 +2805,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   }
   .c-sorting__field {
     color: #666;
-    font: 0.75rem/1.2 SuisseIntl, sans-serif;
+    font:
+      0.75rem/1.2 SuisseIntl,
+      sans-serif;
     height: 100%;
     padding-top: 0.9375rem;
   }
@@ -2711,7 +2817,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   }
   .c-sorting__label.c-text-field__label.m-float.c-select__label {
     color: #333;
-    font: 0.75rem/1.5 SuisseIntl-Medium, sans-serif;
+    font:
+      0.75rem/1.5 SuisseIntl-Medium,
+      sans-serif;
   }
   .c-plp-top-banner {
     overflow: auto;

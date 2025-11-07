@@ -1,1 +1,16 @@
-import{safeGet as r}from"./object.js";import{mediaQuery as t}from"./mediaQuery.js";function s(t,s){return"string"==typeof t&&s?t.replace(/{{([\w.]+)}}/g,(t,e)=>r(s,e,"")):t}function e(r){return"string"!=typeof r?r:r.replace(/{@\s*([\w\s]+)\s*\?@\s*([\w\s]+)\s*:@\s*([\w\s]+)\s*@}/g,(r,s,e,i)=>t.is(s.trim())?e.trim():i.trim())}export{s as format,e as formatByMediaQuery};
+import { safeGet as r } from "./object.js";
+import { mediaQuery as t } from "./mediaQuery.js";
+function s(t, s) {
+  return "string" == typeof t && s
+    ? t.replace(/{{([\w.]+)}}/g, (t, e) => r(s, e, ""))
+    : t;
+}
+function e(r) {
+  return "string" != typeof r
+    ? r
+    : r.replace(
+        /{@\s*([\w\s]+)\s*\?@\s*([\w\s]+)\s*:@\s*([\w\s]+)\s*@}/g,
+        (r, s, e, i) => (t.is(s.trim()) ? e.trim() : i.trim()),
+      );
+}
+export { s as format, e as formatByMediaQuery };
