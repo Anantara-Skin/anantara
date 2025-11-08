@@ -38,7 +38,7 @@ const i = new (class {
     if (e.hasAttribute("data-component")) {
       if (this.isEligible(e))
         return this.importComponent(e).then(
-          () => !!t && this.registerChildren(e),
+          () => !!t && this.registerChildren(e)
         );
       if (t) return this.registerChildren(e);
     }
@@ -55,8 +55,8 @@ const i = new (class {
         n.isUnforceLoad(e)
           ? (t.push(e), this.observer.observe(e))
           : t.some((t) => t.contains(e)) && !n.isForceLoad(e)
-            ? this.observer.observe(e)
-            : this.importComponent(e));
+          ? this.observer.observe(e)
+          : this.importComponent(e));
     });
   }
   registerContextualComponents() {
@@ -70,7 +70,7 @@ const i = new (class {
   importComponent(e) {
     if (!e)
       return Promise.reject(
-        new Error("ImportComponent is missing a mandatory param"),
+        new Error("ImportComponent is missing a mandatory param")
       );
     if (e._loading) return Promise.resolve();
     let t,
@@ -86,7 +86,7 @@ const i = new (class {
         window.lora.debug &&
           (console.info(e),
           console.error(
-            `Please check that the options you have passed for "${t}" respect JSON format`,
+            `Please check that the options you have passed for "${t}" respect JSON format`
           ));
       }
     } else (t = e.name), (o = e.options), e.elmt && ((n = !0), (e = e.elmt));
@@ -112,7 +112,7 @@ const i = new (class {
     if (
       ((this.observer = new IntersectionObserver(
         this.onViewport.bind(this),
-        this.observerOptions,
+        this.observerOptions
       )),
       (this.unLoadComponentsCount = this.pageComponents.length),
       0 !== this.unLoadComponentsCount)
@@ -158,7 +158,7 @@ const i = new (class {
     if (t && this.componentContainers[t]) return !1;
     const o = new IntersectionObserver(
         this.onViewport.bind(this),
-        Object.assign(this.observerOptions, { root: e }),
+        Object.assign(this.observerOptions, { root: e })
       ),
       n = `root_${Math.random().toString(36).substring(2)}`;
     return (
@@ -170,7 +170,7 @@ const i = new (class {
   register(n) {
     if (!(n instanceof o))
       throw new Error(
-        `${n.name} needs to extend from the Core Component Class`,
+        `${n.name} needs to extend from the Core Component Class`
       );
     n.element.setAttribute("data-component-id", n.id),
       (n.element._id = n.id),
@@ -236,10 +236,10 @@ const i = new (class {
       this.isRegistered(e)
         ? o()
         : t
-          ? this.importComponent(e).then(o)
-          : this.registrationCallbacks.has(e)
-            ? this.registrationCallbacks.get(e).push(o)
-            : this.registrationCallbacks.set(e, [o]);
+        ? this.importComponent(e).then(o)
+        : this.registrationCallbacks.has(e)
+        ? this.registrationCallbacks.get(e).push(o)
+        : this.registrationCallbacks.set(e, [o]);
     });
   }
 })();

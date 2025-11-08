@@ -799,5 +799,25 @@ function trackPage() {
 <!-- Demandware Active Data (body_end-active_data.js) -->
 <script src="/internal/jscript/dwac-21.7.js" type="text/javascript" async="async"></script><!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
 <script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const closeBtn = document.querySelector(".mobile-menu__close");
+
+  hamburgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("is-open");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
+    mobileMenu.setAttribute("aria-hidden", "false");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("is-open");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+  });
+});
+
+</script>
 </body>
 </html>

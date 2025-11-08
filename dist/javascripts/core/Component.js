@@ -77,7 +77,7 @@ class c {
       } catch (t) {
         window.lora.debug &&
           console.error(
-            `Please check that the data-analytics you have passed for "${this.element}" respect JSON format`,
+            `Please check that the data-analytics you have passed for "${this.element}" respect JSON format`
           );
       }
     i &&
@@ -93,7 +93,7 @@ class c {
   }
   _initActions() {
     Array.from(this.element.querySelectorAll("[data-action]")).forEach(
-      o.register.bind(this),
+      o.register.bind(this)
     );
   }
   _createId() {
@@ -179,7 +179,7 @@ class c {
         console.info(
           "%c Reinit frozen component: ",
           "color: Orange",
-          this.element,
+          this.element
         );
   }
   render(e, i = {}) {
@@ -192,7 +192,7 @@ class c {
               template: e.template || this.options.template,
               data: e,
               isPlainHTML: i.isPlainHTML,
-            }),
+            })
           )
           .then((e) => {
             if (i.replaceChildren)
@@ -215,14 +215,14 @@ class c {
     if (this.state.isReloading) return Promise.resolve();
     if (((this.state.isReloading = !0), !this.options.reloadData))
       throw new Error(
-        "Reload a component works only if you set the reloadData options for the component",
+        "Reload a component works only if you set the reloadData options for the component"
       );
     if (
       ((t = Object.assign(this.options.reloadData, t)),
       !this.options.reloadData.id || !this.options.reloadData.section)
     )
       throw new Error(
-        "ReloadData is missing section and id property that are mandatory",
+        "ReloadData is missing section and id property that are mandatory"
       );
     return e()
       .then(i.bind(this, t))
@@ -251,7 +251,7 @@ class c {
             console.info(
               "%c Component frozen: ",
               "color: #5a65ab; font-weight:bold",
-              this.element,
+              this.element
             ),
           (this._frozen = !0),
           this.destroy());
@@ -325,7 +325,7 @@ class c {
           i.classList.add(
             "h-bgcolor-element-background",
             "h-position-absolute",
-            "h-padding-3",
+            "h-padding-3"
           ),
           (i.innerHTML = e.content.INLINE_CONSENT),
           this.element.appendChild(i);

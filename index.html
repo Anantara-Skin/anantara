@@ -78,6 +78,14 @@
     <link href="/dw3f974289/images/app/ipadpro2_splash.png"
         media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
         rel="apple-touch-startup-image">
+    <style>
+        /* Slide-in animation (optional) */
+    
+        .c-hamburger__content.is-open {
+            max-height: 1000px; /* adjust as needed */
+            opacity: 1;
+        }
+        </style>
     <script>window.lazySizesConfig = { "lazyClass": "m-lazyload", "loadedClass": "m-lazyloaded", "preloadClass": "m-lazypreload", "init": false, "loadHidden": false, "loadMode": 1 }, true && (window.lazySizesConfig.nativeLoading = { setLoadingAttribute: !0, disableListeners: !0 })</script>
     <script>window.performance && window.performance.mark("startStylesheetLoading")</script>
     <link href="/dist/css/commons.css" rel="stylesheet">
@@ -250,11 +258,13 @@
                     data-component="global/EventTrigger"
                     data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}"
                     data-analytics="{}"
-                    data-js-skip-to-content>Skip to content</a> </li>
+                    data-js-skip-to-content>Skip to content</a> 
+                </li>
             <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#footer-nav" data-component="global/EventTrigger"
                     data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}"
                     data-analytics="{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;skip to footer navigation&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;skip_to_content&quot;}}">Skip
-                    to footer navigation</a> </li>
+                    to footer navigation</a> 
+                </li>
         </ul>
         <header data-component="global/Header" class="l-header " data-js-header
             data-component-options="{&quot;hideOnScroll&quot;:true}" data-component-force>
@@ -338,7 +348,8 @@
                                         data-component="global/EventTrigger"
                                         data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}"
                                         data-analytics="{&quot;events&quot;:[{&quot;category&quot;:&quot;header&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;store locator&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;header_click&quot;,&quot;cta_name&quot;:&quot;store locator&quot;}},{&quot;category&quot;:&quot;store locator&quot;,&quot;action&quot;:&quot;find a store&quot;,&quot;label&quot;:&quot;header&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;store_locator&quot;,&quot;position&quot;:&quot;header&quot;}}]}"
-                                        aria-label="Stores"> <span class="c-storeslink__text">Stores</span> </a> </li>
+                                        aria-label="Stores"> <span class="c-storeslink__text">Stores</span> </a> 
+                                    </li>
                                 <li class='l-header__top-nav-item m-help'> <button class="l-header__top-nav-link"
                                         data-component="global/PopOver"
                                         data-analytics="{&quot;category&quot;:&quot;header&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;may we help you&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;header_click&quot;,&quot;cta_name&quot;:&quot;may we help you&quot;}}"
@@ -397,13 +408,15 @@
                             </div>
                         </div>
                         <div class="l-header__break m-hide-on-sticky-for-large"></div>
-                        <div class="c-hamburger l-header__hamburger" data-component="global/Hamburger"
-                            data-component-options="{&quot;contentPosition&quot;:&quot;right&quot;,&quot;expandActiveAccordionItem&quot;:false,&quot;reloadData&quot;:{&quot;section&quot;:&quot;common&quot;,&quot;id&quot;:&quot;hamburger&quot;,&quot;configid&quot;:&quot;header&quot;}}"
-                            data-component-context="large down" data-component-force="large down" aria-label="Main menu"
-                            data-js-alt-tabindex="2" data-js-hamburger=""> 
-                            <button class="c-hamburger__button" aria-controls="hamburger-navigation" aria-expanded="false" aria-label="Main menu" data-js-hamburger-button=""> 
-                            </button>
-                            <div class="c-hamburger__content" id="hamburger-navigation" data-js-hamburger-content  data-js-anchor-large>
+                        <div class="c-hamburger l-header__hamburger header__container"  
+                        aria-label="Main menu"data-js-hamburger=""> 
+                             <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+      ☰
+    </button>
+                            <div class="c-hamburger__content" 
+                            id="hamburger-navigation" 
+                            data-js-hamburger-content  
+                            data-js-anchor-large>
                                 <div class='c-hamburger__item m-account'>
                                     <div data-component="global/ComponentPlaceholder"
                                         data-component-options="{&quot;_lazyload&quot;:true,&quot;reloadData&quot;:{&quot;id&quot;:&quot;menucustomerinfo&quot;,&quot;section&quot;:&quot;header&quot;,&quot;reloadUrl&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/CDSLazyload-header_menucustomerinfo?data&#x3D;&amp;id&#x3D;menucustomerinfo&amp;section&#x3D;header&quot;}}"
@@ -417,7 +430,10 @@
                                     <div class="c-navigation__wrapper" data-component="global/EventTrigger"
                                         data-analytics="{&quot;action&quot;:&quot;select&quot;}"
                                         data-component-options="{&quot;isDelegate&quot;:true,&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}">
-                                        <nav class="c-navigation" aria-label="Main menu"  data-component="global/Navigation"  data-component-options="{&quot;displayTimeout&quot;:200}" data-component-context="large">
+                                        <nav class="c-navigation" aria-label="Main menu"  
+                                        data-component="global/Navigation"  
+                                        data-component-options="{&quot;displayTimeout&quot;:200}" 
+                                        data-component-context="large">
                                             <ul class="c-navigation__list m-level-1" data-component="global/Accordion" data-js-navigation-accordion data-component-context="large down">
                                                 <li class="c-navigation__item m-parent m-level-1 m-gifts  "
                                                     data-category="gifts" data-js-accordion-item="1"
@@ -3114,13 +3130,32 @@
                                     aria-expanded="false" id="localization-082408"> R - SA (EN) </button> </div>
                             <div class="c-user-menu__content" id="localization-menu-008379"> </div>
                         </div>
+                        
                     </div>
                     <div class="l-header__search-cta" role="search" aria-label="Sitewide"> <button
                             class="l-header__search-button"
                             data-analytics="{&quot;event&quot;:&quot;uaevent&quot;,&quot;category&quot;:&quot;internal search&quot;,&quot;action&quot;:&quot;display&quot;,&quot;label&quot;:&quot;search...&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;internal_search_click&quot;}}"
                             aria-controls="headerSimpleSearch" aria-label="Search" data-js-header-search-cta-large
                             aria-expanded="false"> <span class="l-header__search-button-label">Search...</span> <span
-                                class="l-header__search-close"> Close </span> </button> </div>
+                                class="l-header__search-close"> Close </span> 
+                            </button> 
+                        </div>
+                          <div class="mobile-menu" aria-hidden="true">
+                            <button class="mobile-menu__close" aria-label="Close menu">✕</button>
+                            <ul class="mobile-menu__list">
+                            <li><a href="/gifts.html">Gifts</a></li>
+                            <li><a href="/new-notable.html">New & Notable</a></li>
+                            <li><a href="/hand-and-body.html">Hand & Body</a></li>
+                            <li><a href="/fragrance.html">Fragrance</a></li>
+                            <li><a href="/home-fragrance.html">Home</a></li>
+                            <li><a href="/hair.html">Hair</a></li>
+                            <li><a href="/library.html">Library</a></li>
+                            <li><a href="/experience.html">Experience</a></li>
+                            </ul>
+                            <div class="mobile-menu__search">
+                            <input type="text" placeholder="Search..." aria-label="Search" />
+                            </div>
+                        </div> 
                 </div>
             </div>
             <div class="l-header__simple-search" data-js-header-search-container id="headerSimpleSearch">
@@ -3158,57 +3193,76 @@
     </div>
     <span class="c-anchor h-show-for-sr" id="site-content" tabindex="-1">Main content</span>
     <main id="homepage" class="l-homepage">
-        <nav class="c-simple-navigation h-hide-for-xlarge" data-js-simple-navigation aria-label="Breadcrumb trail">
+        <nav class="c-simple-navigation h-hide-for-xlarge" 
+        data-js-simple-navigation aria-label="Breadcrumb trail">
             <div class="c-simple-navigation__list-wrapper m-arrows-inside m-arrows-medium"
                 data-component="global/Scrollable" data-component-context="" data-component-options="{}">
                 <ul class="c-simple-navigation__list" data-js-scrollable-items data-component="global/EventTrigger"
                     data-component-options="{&quot;isDelegate&quot;:true,&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}"
                     data-analytics="{&quot;action&quot;:&quot;select&quot;}">
-                    <li class="c-simple-navigation__item m-gifts  "> <a class="c-simple-navigation__link "
+                    <li class="c-simple-navigation__item m-gifts  "> 
+                        <a class="c-simple-navigation__link "
                             href="/gifts.html" data-js-navigation-item="gifts" data-js-navigation-analytics="gifts"
                             data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;gifts&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;gifts&quot;}}}}">
-                            Gifts </a> </li>
-                    <li class="c-simple-navigation__item m-new-notable  "> <a class="c-simple-navigation__link "
+                            Gifts </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-new-notable  "> 
+                        <a class="c-simple-navigation__link "
                             href="/new-notable.html" data-js-navigation-item="new-notable"
                             data-js-navigation-analytics="new &amp; notable" data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;new &amp; notable&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text::image&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;new &amp; notable&quot;}}}}">
-                            New &amp; Notable </a> </li>
-                    <li class="c-simple-navigation__item m-skin-care  "> <a class="c-simple-navigation__link "
+                            New &amp; Notable </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-skin-care  "> 
+                        <a class="c-simple-navigation__link "
                             href="/skin-care.html" data-js-navigation-item="skin-care"
                             data-js-navigation-analytics="skin care" data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;skin care&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text::image&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;skin care&quot;}}}}">
-                            Skin Care </a> </li>
-                    <li class="c-simple-navigation__item m-hand-body  "> <a class="c-simple-navigation__link "
+                            Skin Care </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-hand-body  "> 
+                        <a class="c-simple-navigation__link "
                             href="/hand-and-body.html" data-js-navigation-item="hand-body"
                             data-js-navigation-analytics="hand &amp; body" data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;hand &amp; body&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text::image&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;hand &amp; body&quot;}}}}">
-                            Hand &amp; Body </a> </li>
-                    <li class="c-simple-navigation__item m-fragrance  "> <a class="c-simple-navigation__link "
+                            Hand &amp; Body </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-fragrance  "> 
+                        <a class="c-simple-navigation__link "
                             href="/fragrance.html" data-js-navigation-item="fragrance"
                             data-js-navigation-analytics="fragrance" data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;fragrance&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text::image&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;fragrance&quot;}}}}">
-                            Fragrance </a> </li>
-                    <li class="c-simple-navigation__item m-home-fragrance  "> <a class="c-simple-navigation__link "
+                            Fragrance </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-home-fragrance  "> 
+                        <a class="c-simple-navigation__link "
                             href="/home-fragrance.html" data-js-navigation-item="home-fragrance"
                             data-js-navigation-analytics="home" data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;home&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text::image&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;home&quot;}}}}">
-                            Home </a> </li>
-                    <li class="c-simple-navigation__item m-hair  "> <a class="c-simple-navigation__link "
+                            Home </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-hair  "> 
+                        <a class="c-simple-navigation__link "
                             href="/hair.html" data-js-navigation-item="hair" data-js-navigation-analytics="hair"
                             data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;hair&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;hair&quot;}}}}">
-                            Hair </a> </li>
-                    <li class="c-simple-navigation__item m-read  "> <a class="c-simple-navigation__link "
+                            Hair </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-read  "> 
+                        <a class="c-simple-navigation__link "
                             href="/library.html" data-js-navigation-item="read" data-js-navigation-analytics="library"
                             data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;library&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text::image&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;library&quot;}}}}">
-                            Library </a> </li>
-                    <li class="c-simple-navigation__item m-services  "> <a class="c-simple-navigation__link "
+                            Library </a> 
+                        </li>
+                    <li class="c-simple-navigation__item m-services  "> 
+                        <a class="c-simple-navigation__link "
                             href="/experience.html" data-js-navigation-item="services"
                             data-js-navigation-analytics="experience" data-js-trigger
                             data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;experience&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;experience&quot;}}}}">
-                            Experience </a> </li>
+                            Experience </a> 
+                        </li>
                 </ul>
             </div>
         </nav>
@@ -3419,11 +3473,8 @@
     <script>window.performance && window.performance.mark("startJavascriptLoading")</script>
     <script
         src="/dist/javascripts/vendors/system.js"></script>
-    <script>System.config({ baseURL: "/dist/" })</script>
     <script
-        src="/dist/javascripts/system.config.js"></script>
-    <script src="/dist/javascripts/main.js"></script>
-    <script>System.import("/dist/javascripts/app.js")</script>
+        src="/dist/javascripts/system.config.js"></script>   
     <script>window.performance && (window.performance.mark("endJavascriptLoading"), window.performance.measure("javascriptsLoading", "startJavascriptLoading", "endJavascriptLoading"))</script>
     <div data-component="global/Optanon"
         data-component-options="{&quot;changeSessionTrackingUrl&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/CookiesManagement-UpdateTrackingStatus&quot;,&quot;optanonCookieGroupsToDisableSFCCTracking&quot;:&quot;2&quot;,&quot;optanonDomainScriptID&quot;:&quot;0195f62a-ae51-787e-be7c-ae3696a70da4&quot;,&quot;optanonCookieToggleInfoDisplayEnable&quot;:true,&quot;buttons&quot;:{&quot;confirmMyChoices&quot;:&quot;Confirm My Choices&quot;,&quot;allowAll&quot;:&quot;Allow All&quot;},&quot;styles&quot;:{&quot;confirmMyChoices&quot;:&quot;margin-top: 0;&quot;,&quot;allowAll&quot;:&quot;margin-left: 0;&quot;}}"
@@ -3468,6 +3519,27 @@
                 <button type="button" class="c-modal__close" data-js-close-modal="">Close</button>
             </div>
         </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const closeBtn = document.querySelector(".mobile-menu__close");
+
+  hamburgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("is-open");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
+    mobileMenu.setAttribute("aria-hidden", "false");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("is-open");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+  });
+});
+
+</script>
+
 
 </body>
 </html>

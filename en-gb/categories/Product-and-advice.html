@@ -282,5 +282,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
   <script src="/hc/assets/hc_enduser-bedb18a23c2889ba6bad97d9b401e7aa.js"></script>
   <script type="text/javascript" src="/en-gb/css/script.js?digest=13908416539407"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const closeBtn = document.querySelector(".mobile-menu__close");
+
+  hamburgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("is-open");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
+    mobileMenu.setAttribute("aria-hidden", "false");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("is-open");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+  });
+});
+
+</script>
 </body>
 </html>
