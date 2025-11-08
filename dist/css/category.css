@@ -1404,7 +1404,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   display: flex;
   justify-content: center;
 }
-.c-pagination.m-loading {
+.c-pagination. {
   height: 6.25rem;
   position: relative;
 }

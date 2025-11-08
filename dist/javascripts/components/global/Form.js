@@ -80,7 +80,7 @@ class f extends (s(e).with(l, c)) {
             formErrorMessage: "c-form__error-message",
             reCaptcha: "g-recaptcha",
             formCustomMessage: "c-form__custom-message",
-            loadingClass: "m-loading"
+            loadingClass: ""
         },
         this.element.noValidate = !1,
         this.selectors.buttons = this.element.querySelectorAll("button[name][type=submit]"),

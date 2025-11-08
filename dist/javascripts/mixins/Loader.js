@@ -29,7 +29,7 @@
                     c(
                       {
                         classNames: {
-                          loading: "m-loading",
+                          loading: "",
                           overlayLoading: "c-loader",
                         },
                         loadTime: 200,

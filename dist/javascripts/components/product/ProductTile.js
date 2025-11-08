@@ -67,7 +67,7 @@
                         reloadData: { section: "search", expand: "helpers" },
                         classNames: {
                           buttonClass: "c-button",
-                          loadingClass: "m-loading",
+                          loadingClass: "",
                           selected: "m-active",
                         },
                         isEditable: !1,

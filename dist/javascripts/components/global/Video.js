@@ -65,7 +65,7 @@
                         width: "100%",
                         height: "100%",
                         classNames: {
-                          loading: "m-loading",
+                          loading: "",
                           playerActive: "m-player-active",
                         },
                         mute: !0,

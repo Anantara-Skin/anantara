@@ -1,8 +1,0 @@
-$countdown-background: color(grey-1);
-$countdown-border-radius: 0;
-// Item separator
-$countdown-separator-item-after-background: color(dark);
-/// Count item
-$countdown-count-item-font: #{rem-calc(26)} / 1 $font-secondary;
-$countdown-count-item-font--large: #{rem-calc(26)} / 1 $font-secondary;
-@use "@lora/05-components/countdown";

@@ -1,8 +1,0 @@
-$price-capacity-color: color(text-secondary) !default;
-$price-capacity-font: #{rem-calc(12)} / 1.5 $font-primary !default;
-@mixin lora-components-price-capacity {
-  .c-price-capacity {
-    font: $price-capacity-font;
-    color: $price-capacity-color;
-  }
-}

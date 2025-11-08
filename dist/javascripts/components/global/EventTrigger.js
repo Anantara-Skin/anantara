@@ -79,7 +79,7 @@ class d extends (e(t).with(r, l, p, h)) {
         })
     }
     enableElement() {
-        this.element.classList.remove("m-loading"),
+        this.element.classList.remove(""),
         this.element.removeAttribute("disabled")
     }
     onKeyDown(t) {

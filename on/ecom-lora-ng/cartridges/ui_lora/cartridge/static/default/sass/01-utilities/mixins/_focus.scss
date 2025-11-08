@@ -1,8 +1,0 @@
-/// Emulate the Browser’s Native Focus Styles
-/// Firefox supports a Highlight keyword and both Chrome and Safari support a -webkit-focus-ring-color keyword.
-/// Can be useful if you, for example, have removed focus from something and want to put it back in the same style as the browser default,
-/// or want to apply a focus style to an element when it isn’t directly in focus itself.
-@mixin focus-style() {
-  outline: 3px solid Highlight;
-  outline: 3px auto -webkit-focus-ring-color;
-}

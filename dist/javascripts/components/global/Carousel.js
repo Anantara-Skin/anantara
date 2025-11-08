@@ -60,7 +60,7 @@ class A extends (n(t).with(v)) {
                 paginationList: "js-carousel__pagination-list",
                 scrollbar: "js-carousel__scrollbar",
                 lazy: "js-carousel__lazy",
-                lazyLoading: "m-loading",
+                lazyLoading: "",
                 lazyLoaded: "m-loaded",
                 lazyPreloader: "js-carousel__lazy-preloader"
             },

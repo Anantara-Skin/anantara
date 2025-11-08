@@ -1,9 +1,0 @@
-$font-primary: "SuisseIntl", sans-serif;
-$font-primary-medium: "SuisseIntl-Medium", sans-serif;
-$font-secondary: "Zapf-Humanist", sans-serif;
-$font-list: (
-  ("SuisseIntl", "SuisseIntl-Regular-WebXL", 400, normal),
-  ("SuisseIntl-Medium", "SuisseIntl-Medium-WebXL", 500, normal),
-  ("Zapf-Humanist", "Zapf-Humanist", normal, normal)
-);
-@use "@lora/font-settings";
