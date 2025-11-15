@@ -1,0 +1,470 @@
+/*custom font*/
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    a
+    /*Image only BG fallback*/
+    /*background = gradient + image pattern combo*/
+    background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+}
+
+
+/*form styles*/
+
+#webform {
+    width: 750px;
+    margin: 20px auto;
+    position: relative;
+    font-family: montserrat;
+    font-size: 13px;
+}
+
+#webform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 4px;
+    /*box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4); 
+padding: 20px 40px;
+padding-bottom: 30px;
+padding: 0px 60px;*/
+    box-sizing: border-box;
+    width: 100%;
+    /* margin: 0 10%; */
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+
+/*Hide all except first fieldset*/
+
+#webform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+
+/*START Error message */
+
+.ctn_contact .pave_contact .ctn_line input.error,
+.ctn_contact .pave_contact .ctn_line input.frmError,
+.ctn_contact .pave_contact .ctn_line textarea.error,
+.ctn_contact .pave_contact .ctn_line textarea.frmError,
+.ctn_contact .pave_contact a.b_toggle.error,
+.ctn_contact .pave_contact a.b_toggle.frmError {
+    border: 1px solid #b30000 !important;
+}
+
+.pg_contact .obj_recaptcha.error {
+    display: inline-block;
+    border: 1px solid #b30000;
+}
+
+.ctn_error,
+.error {
+    border: 1px solid #b30000 !important;
+}
+
+.subErrorMessage {
+    display: none;
+    border: 1px solid white!important;
+    color: #b30000;
+}
+
+
+/*END Error message */
+
+
+/*START inputs*/
+
+#webform input,
+#webform textarea {
+    padding: 15px;
+    border: 1px solid #D8DDE6;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: black;
+    font-size: 12px;
+    height: 40px;
+}
+
+#webform textarea {
+    height: 120px !important;
+}
+
+#webform select {
+    border: 1px solid #D8DDE6;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: black;
+    font-size: 11px;
+    height: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0px;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    border: 1px solid #56738f !important;
+    box-shadow: 0 0 3px #56738f !important;
+    -moz-box-shadow: 0 0 3px #56738f !important;
+    -webkit-box-shadow: 0 0 3px #56738f !important;
+    outline-offset: 0px !important;
+    outline: none !important;
+}
+
+
+/*END inputs*/
+
+
+/* START buttons*/
+
+#webform .obj_btn {
+    width: 100%;
+    height: 50px;
+    background: #56738f;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: auto;
+}
+
+.ctn_btn .success {
+    background-color: #04844b !important;
+    color: white;
+}
+
+#webform .obj_btn:hover,
+#webform .obj_btn:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.ctn_btn .obj_btn {
+    display: inline-block;
+    border: none;
+    padding: 14px 20px;
+    font: 1em/1em SFS, Arial, Helvetica, sans-serif;
+    color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    text-align: center;
+    cursor: pointer;
+}
+
+body button,
+body .x-btn,
+body .btn,
+body .btnDisabled,
+body .btnCancel,
+body .menuButton .menuButtonButton {
+    color: #333;
+    margin: 1px;
+    padding: 2px 3px;
+    border: 1px solid #b5b5b5;
+    border-bottom-color: #7f7f7f;
+    background: #e8e8e9 url(/img/alohaSkin/btn_sprite.png) repeat-x right top;
+    font-weight: bold;
+    font-size: .9em;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+/*END buttons*/
+
+
+/*headings*/
+
+h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    font-family: montserrat;
+}
+
+label {
+    font-weight: normal;
+    font-family: montserrat;
+    font-size: 12px;
+    color: #54698d;
+    margin-bottom: 5px !important;
+    margin-top: 3px;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+
+.ctn_contact {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+}
+
+label.label.footer {
+    text-align: justify;
+    font-size: 10px;
+    margin-bottom: 25px !important;
+    float: none !important;
+}
+
+p {
+    text-align: justify;
+    font-size: 10px;
+    margin-bottom: 10px;
+    font-family: montserrat;
+}
+
+.day,
+.month,
+.year {
+    width: 32.6% !important;
+    margin-right: 5px;
+}
+
+.ctn_gdpr {
+    padding: 1.5% !important;
+    clear: both;
+    height: auto;
+    text-align: justify;
+    clear: both;
+    position: relative;
+    margin: 10px 0 15px 0;
+}
+
+.obj_recaptcha {
+    padding-left: 1.5%;
+}
+
+.ctn_contact .pave_contact .ctn_line.duo_col {
+    width: 45%;
+    padding-right: 1.5% !important;
+    padding-left: 1.5% !important;
+}
+
+
+/*START Style of radio-buttons */
+
+label.radio_label {
+    width: 130px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: checkbox;
+}
+
+.ctn_radio {
+    width: 100%;
+    position: relative;
+}
+
+.ctn_contact .pave_contact input[type=radio] {
+    margin-right: 10px;
+    margin-left: 0px !important;
+    width: 15px !important;
+    height: 15px;
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    -ms-appearance: radio;
+    -o-appearance: radio;
+    appearance: radio;
+    border-radius: 10px;
+    height: 20px !important;
+}
+
+.ctn_contact .pave_contact input[type=radio]:hover {
+    background: white;
+}
+
+.ctn_contact .pave_contact input[type=radio]:checked {
+    background: white;
+}
+
+.ctn_contact .pave_contact input[type=radio].radio {
+    border-radius: 50%;
+}
+
+.ctn_contact .pave_contact input[type=radio].radio::after {
+    border-radius: 50%;
+}
+
+
+/*END Style of radio-buttons */
+
+
+/*START Style of arrows on the select input */
+
+.obj_select {
+    position: relative;
+}
+
+.obj_select:after,
+.ctn_select:after {
+    content: 'â—„ â–º';
+    font-size: 8px;
+    color: #b1bdcd;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-top: 13px;
+    margin-right: 1.5%;
+    padding: 0 0 5px;
+    border-bottom: 1px solid #D8DDE6;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+}
+
+.obj_select.small_obj:after {
+    margin-right: 3%;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
+/*END Style of arrows on the select input */
+
+
+/*START To manage responsivity of the page*/
+
+@media screen and (max-width: 767px) {
+    #webform {
+        width: 100%;
+    }
+    .ctn_contact .pave_contact .ctn_line.duo_col.small_col {
+        width: 100%;
+        padding-right: 1.5% !important;
+        padding-left: 1.5% !important;
+        padding-bottom: 10px;
+    }
+    .ctn_contact .pave_contact .ctn_line h4.small_title {
+        width: 100%;
+    }
+    .ctn_contact .pave_contact .ctn_line h4~.obj_input.small_obj {
+        float: none;
+    }
+    .ctn_contact .pave_contact .ctn_line h4.radioStyle {
+        width: 100%;
+        padding: 0px;
+    }
+    .ctn_radio {
+        width: 100%;
+        position: relative;
+    }
+    .obj_select:after,
+    .ctn_select:after {
+        margin-right: 2.5%;
+    }
+    .obj_recaptcha {
+	transform:scale(0.8);
+	-webkit-transform:scale(0.8);
+	transform-origin:0 0;
+	-webkit-transform-origin:0 0;
+    }
+}
+
+
+}
+@media screen and (max-width: 768px) {
+    .pg_contact section.content {
+        width: 100%;
+    }
+    
+    #webform {
+        margin: 0px;
+    }
+}
+
+/*END To manage responsivity of the page*/
+div {
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: inherit;
+    font-size: 11px;
+}
+.ctn_message {
+    text-align: justify;
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+}
+.pg_contact {
+    text-align: left;
+}
+.input-file {
+    text-align: center;
+}
+.input-file .clear-input {
+    border: 1px solid #56738f;
+    color: white !important;
+    background-color: #56738f;
+    border-radius: 2px;
+}
+.ctn_contact .pave_contact .ctn_line h4~.obj_input,
+.ctn_contact .pave_contact .ctn_line h4~p {
+    width: 100% !important;
+}
+
+/*Style for the modal message if exist */
+#modalMessage p {
+    font-size: 13px !important;
+    color: #2C3E50;
+    font-family: montserrat;
+    padding-top: 20px;
+}
+p#messageLink {
+    font-size: 11px !important;
+    color: #2C3E50;
+    font-family: montserrat;
+    padding-top: 30px;
+}
+h3#headerMessage {
+    font-size: 25px;
+}
+.obj_recaptcha.error {
+    padding: 0 !important;
+}
+
+/*Added for CCC-3749 - Ridwaan.m.jawaheer@accenture.com*/
+input[type='checkbox'] {
+    height: 25px !important;
+    float: left !important;
+    width: 25px !important;
+    margin-left: 10px !important;
+	margin-top: 20px;
+}
+#Label_Checkbox {
+    width: auto !important;
+}

@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Webform</title>
+    <script
+      src="/Webform/static/111213/js/perf/stub.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/Webform/jslibrary/1637251311258/sfdc/VFRemote.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/Webform/jslibrary/1746634855258/sfdc/IframeThirdPartyContextLogging.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/Webform/resource/1527166928000/CCare063_QualificationResources/jquery/jquery-3.2.1.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/Webform/resource/1536236404000/Underscore"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/Webform/resource/1563774003000/chosen187/chosen.jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      class="user"
+      href="/Webform/sCSS/65.0/sprites/1755548151000/Theme3/fr/gc/zen-componentsCompatible.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/Webform/sCSS/65.0/sprites/1755548151000/Theme3/fr/gc/elements.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/Webform/sCSS/65.0/sprites/1755548151000/Theme3/fr/gc/common.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/sCSS/65.0/sprites/1761874819000/Theme3/gc/dStandard.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/sCSS/65.0/sprites/1761874819000/Theme3/00D20000000oE0x/0050O000008bdVI/gc/dCustom0.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/sCSS/65.0/sprites/1761874819000/Theme3/00D20000000oE0x/0050O000008bdVI/gc/dCustom1.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/Webform/sCSS/65.0/sprites/1755548151000/Theme3/fr/gc/extended.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/Webform/sCSS/65.0/sprites/1755548151000/Theme3/fr/gc/setup.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/Webform/resource/1563774003000/chosen187/chosen.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      class="user"
+      href="/Webform/resource/1636631429000/RS01_WebformCSS_Standard"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="/Webform/jslibrary/1647410351258/sfdc/NetworkTracking.js"
+      type="text/javascript"
+    ></script>
+    <script>
+      try {
+        NetworkTracking.init(
+          "/Webform/_ui/networks/tracking/NetworkTrackingServlet",
+          "network",
+          "0660O000003FmoK"
+        );
+      } catch (x) {}
+    </script>
+    <script>
+      (function (UITheme) {
+        UITheme.getUITheme = function () {
+          return UserContext.uiTheme;
+        };
+      })((window.UITheme = window.UITheme || {}));
+    </script>
+    <script type="text/javascript">
+      Visualforce.remoting.Manager.add(
+        new $VFRM.RemotingProviderImpl({
+          vf: {
+            vid: "0660O000003FmoK",
+            xhr: false,
+            dev: false,
+            tst: false,
+            dbg: false,
+            tm: 1763203051714,
+            ovrprm: false,
+          },
+          actions: {
+            VFC77_Webform: {
+              ms: [
+                {
+                  name: "remoteSaveWebform",
+                  len: 8,
+                  ns: "",
+                  ver: 62.0,
+                  csrf: "VmpFPSxNakF5TlMweE1TMHhPRlF4TURvek56b3pNUzQzTVRWYSxxT3hSS1poNWE0RXN3REJTcXFqRV9kY2ZlbVNlNlNnMHk5TWhmVXlzN0UwPSxaV05sWkRnMQ==",
+                  authorization:
+                    "eyJub25jZSI6ImkwWHV0NlNJS0g1UGpJU2VFZGR4OTViODZZMy1nQVZ4RU1zbHV4T2VqMmtcdTAwM2QiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IntcInRcIjpcIjAwRDIwMDAwMDAwb0UweFwiLFwidlwiOlwiMDJHME8wMDAwMDA3ZFIzXCIsXCJhXCI6XCJ2ZnJlbW90aW5nc2lnbmluZ2tleVwiLFwidVwiOlwiMDA1ME8wMDAwMDhiZFZJXCJ9IiwiY3JpdCI6WyJpYXQiXSwiaWF0IjoxNzYzMjAzMDUxNzE5LCJleHAiOjB9.Q2g5V1JrTTNOMTlYWldKbWIzSnRMbkpsYlc5MFpWTmhkbVZYWldKbWIzSnQ=.WEEz5yUX7ISWDsdxH6XOYan5d_t24SQXFBZuq0oafIE=",
+                },
+                {
+                  name: "remoteWebformParameters",
+                  len: 5,
+                  ns: "",
+                  ver: 62.0,
+                  csrf: "VmpFPSxNakF5TlMweE1TMHhPRlF4TURvek56b3pNUzQzTWpCYSxsa1E5clhZZkpla1JjanVrWFVJVW9XTGthaEpIMkJLc1lFYXptQndEY09vPSxaRFpsWWpBMg==",
+                  authorization:
+                    "eyJub25jZSI6InhBNE9NZEZqbGFSZnliTnBvTzF0bkxmNlJWNmkwcnIyUjZXNS10UTVRZUFcdTAwM2QiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IntcInRcIjpcIjAwRDIwMDAwMDAwb0UweFwiLFwidlwiOlwiMDJHME8wMDAwMDA3ZFIzXCIsXCJhXCI6XCJ2ZnJlbW90aW5nc2lnbmluZ2tleVwiLFwidVwiOlwiMDA1ME8wMDAwMDhiZFZJXCJ9IiwiY3JpdCI6WyJpYXQiXSwiaWF0IjoxNzYzMjAzMDUxNzIzLCJleHAiOjB9.Q2lWV1JrTTNOMTlYWldKbWIzSnRMbkpsYlc5MFpWZGxZbVp2Y20xUVlYSmhiV1YwWlhKeg==.6enT9z6uKL5aUlx6gLaB6pCRRa5X7IqcFqEBQ-RA494=",
+                },
+              ],
+              prm: 0,
+            },
+          },
+          service: "Webform/apexremote",
+        })
+      );
+    </script>
+    <meta
+      http-equiv="origin-trial"
+      content="AoeiQ3Ow/BnNjoZ1k2kL0ix9SXzlnjm47YFisfuVAskKVTny0NGo4CEkVQNe1OCi48F77X4EZc6G69wDDJtAlggAAABleyJvcmlnaW4iOiJodHRwczovL3NhbGVzZm9yY2Utc2l0ZXMuY29tOjQ0MyIsImZlYXR1cmUiOiJUcGNkIiwiZXhwaXJ5IjoxNzM1MzQzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0="
+    />
+  </head>
+  <body>
+    <style>
+      .input-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+      .input-checkbox input[type="checkbox"] {
+        width: 18px !important;
+        height: 18px !important;
+        margin-top: 10px !important;
+        padding: 0 !important;
+        box-sizing: content-box !important;
+        vertical-align: middle !important;
+      }
+      .input-checkbox p {
+        margin: 0 !important;
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+      }
+      .consent-input {
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        transform: scale(1.2);
+        width: 18px;
+        height: 18px;
+      }
+      select {
+        /* color: #000; */
+        display: inline-block;
+        width: 100%;
+        padding: 6px 29px 6px 9px;
+        background: #fff;
+        cursor: pointer;
+        margin: 3px 0;
+      }
+      iframe {
+        overflow: hidden;
+      }
+      .message {
+        background: none;
+        margin: 0px;
+      }
+      .subErrorMessage {
+        position: absolute;
+        display: none;
+      }
+      .day,
+      .month,
+      .year {
+        width: 120px;
+        margin-right: 5px;
+      }
+      @media screen and (max-width: 767px) {
+        .day,
+        .month,
+        .year {
+          width: 30%;
+          margin-right: 5px;
+        }
+      }
+      select {
+        height: 37.2px;
+      }
+      .ctn_contact .pave_contact .ctn_line textarea.message.error {
+        border-color: #b30000;
+      }
+      .ctn_contact .pave_contact .ctn_line h4 ~ .obj_input,
+      .ctn_contact .pave_contact .ctn_line h4 ~ p {
+        float: right;
+        width: 70%;
+      }
+    </style>
+
+    <style>
+      .ctn_contact .pave_contact .ctn_line h4.radioStyle {
+        /*width: 8%;
+        padding: 0px;*/
+      }
+      input[type="radio"] {
+        -webkit-appearance: radio;
+      }
+      @media screen and (max-width: 767px) .ctn_contact {
+        margin: 20px auto;
+      }
+      @media screen and (min-width: 768px) {
+        .ctn_contact .pave_contact .ctn_line.duo_col.small_col {
+          width: 50%;
+        }
+        .ctn_contact .pave_contact .ctn_line h4.small_title {
+          width: 100%;
+        }
+        .ctn_contact .pave_contact .ctn_line h4 ~ .obj_input.small_obj {
+          float: none;
+        }
+        .ctn_contact .pave_contact .ctn_line h4.radioStyle {
+          width: 100%;
+          padding: 0px;
+        }
+      }
+      .ctn_contact .pave_contact input[type="radio"] {
+        float: none;
+        margin: 4px;
+        margin-left: 15px;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      .ctn_btn .success {
+        background-color: #04844b;
+        color: white;
+      }
+      .ctn_radio {
+        width: 300px;
+        position: relative;
+      }
+      .ctn_gdpr {
+        padding: 2.5%;
+        text-align: justify;
+      }
+      .input-file .show-cross {
+        width: 50% !important;
+        float: left;
+      }
+      .input-file .clear-input {
+        width: 2% !important;
+        float: left;
+        font-weight: bold;
+        font-size: 13px;
+        margin-top: 10px;
+        color: red;
+        padding: 0 3px 0px 3px;
+        height: 18px;
+        margin-left: 5%;
+        position: relative;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+      input#inputText {
+        border: none;
+        width: 50%;
+        float: left;
+        padding: 8px;
+      }
+      .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+      .clearfix {
+        display: block;
+      }
+      .ctn_btn {
+        clear: both;
+        margin-top: 20px;
+      }
+      .ctn_contact .pave_contact .ctn_line.duo_col {
+        float: left;
+        width: 100%;
+        padding: 5px 0;
+      }
+
+      .height-100-100,
+      body,
+      html {
+        height: 100%;
+      }
+
+      .scrollable {
+        overflow: auto;
+      }
+
+      .obj_recaptcha {
+        padding: 0px !important;
+      }
+
+      .topMessage {
+        text-align: center;
+      }
+
+      .input-file-error {
+        display: none;
+        color: #b30000;
+      }
+    </style>
+    <div
+      class="pg_article article_html article_v3_contact_form fr portalv4 portalv4_5 pg_contact height-100-100"
+    >
+      <section class="content scrollable height-100-100">
+        <form id="webform">
+          <fieldset>
+            <h2>
+              <a
+                href="#"
+                id="errorLink"
+                style="cursor: pointer; display: none"
+                target="_blankjhgUJjhj"
+                >Cliquez ici si la page ne s'affiche pas</a
+              >
+            </h2>
+
+            <div class="ctn_contact objet" id="idModal" style="display: none">
+              <div class="modal-content pave_contact clearfix">
+                <h3 id="headerMessage"></h3>
+                <p id="modalMessage" style="font-size: 16px"></p>
+                <p id="messageLink"></p>
+                <div class="ctn_btn modal">
+                  <button
+                    class="obj_btn"
+                    id="submitBtnModal"
+                    onclick="modal_Submit(); return false;"
+                  ></button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="ctn_contact objet"
+              id="idWebform"
+              style="display: block"
+            >
+              <div class="ctn_gdpr">
+                <label class="label objet topMessage" id="topMessage"></label>
+              </div>
+              <div class="pave_contact clearfix loadWebform"></div>
+              <div class="ctn_gdpr">
+                <label class="label footer"></label>
+              </div>
+              <div class="pg_contact loadCaptcha"></div>
+            </div>
+
+            <div class="ctn_contact" id="idSubmit">
+              <span
+                id="errorMessages"
+                style="
+                  color: #b30000;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  float: left;
+                  margin-bottom: 3%;
+                "
+              ></span
+              ><span id="j_id0:apexerrors"></span>
+              <p class="ctn_btn">
+                <button
+                  class="obj_btn"
+                  id="submitBtn"
+                  onclick="form_Submit(); return false;"
+                ></button>
+              </p>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+    <script>
+      String.prototype.replaceAll = function (search, replacement) {
+        var target = this;
+        return target.replace(new RegExp(search, "g"), replacement);
+      };
+      var recaptchaValidate = false;
+      var captchaOn = true;
+      var isLihClub = false;
+      var recaptchaToken;
+      var correctCaptcha = function (response) {
+        recaptchaValidate = true;
+      };
+      var incorrectCaptcha = function (response) {
+        recaptchaValidate = false;
+      };
+      var mapWebform = {};
+      var buildPicklist = [];
+      var setValueInMap = [];
+      var description;
+      var brandName;
+      var brandId;
+      var countryName;
+      var countryId;
+      var countryCode;
+      var caseRecordType;
+      var submitLabel;
+      var urlRedirection;
+      var accountObject = new Object();
+      var caseObject = new Object();
+      var attachments = [];
+      // Modal message variables
+      var messageModal;
+      var messageLink;
+      var submitBtnModal;
+      var hasPopUp;
+      var headerMessage;
+      var sourceURL;
+      var dayFormat; //added for CBSD-6665
+      var monthFormat; //added for CBSD-6665
+      var yearFormat; //added for CBSD-6665
+
+      // To define the first error message,to scroll top to his position
+      var fieldsError = [];
+
+      //STRY0621116 - Global variable to hold grouped children
+      var groupedChildTranscos = [];
+      //STRY0621116
+      var patternEmail = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+      var patternDate =
+        /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/;
+      var patternPhone = /^[0-9+ -]{2,25}$/;
+      var isRTL = false;
+
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split("&"),
+          sParameterName,
+          i;
+        for (i = 0; i < sURLVariables.length; i++) {
+          let token = sURLVariables[i];
+          for (var j = i + 1; j < sURLVariables.length; j++) {
+            if (sURLVariables[j].indexOf("=") >= 0) {
+              break;
+            }
+            token += "&" + sURLVariables[j];
+          }
+          sParameterName = token.split("=");
+          if (
+            sParameterName[0] &&
+            sParameterName[0].toLowerCase() === sParam.toLowerCase()
+          ) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+        }
+      };
+
+      function htmlDecode(input) {
+        var e = document.createElement("div");
+        e.innerHTML = input;
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+      }
+
+      function compare(a, b) {
+        if (a.Picklist_Order__c < b.Picklist_Order__c) return -1;
+        if (a.Picklist_Order__c > b.Picklist_Order__c) return 1;
+        return 0;
+      }
+
+      function generatePicklist(value) {
+        if (value[0].FieldType__c == "Radio") {
+          var generatePicklist =
+            '<div class="ctn_line duo_col clearfix ' +
+            (value[0].smallField__c ? "small_col" : "") +
+            " classInputPicklist" +
+            value[0].WebformObjectField__c +
+            '" ' +
+            (value[0].Display__c ? "" : "style='display:none;'") +
+            ">" +
+            '<h4 class="radioStyle' +
+            (value[0].smallField__c ? "small_title" : "") +
+            '"><label for="inputPiscklist' +
+            value[0].WebformObjectField__c +
+            '">' +
+            value[0].Name +
+            " " +
+            (value[0].Required__c ? "*" : "") +
+            '</label></h4> <div class="ctn_radio ' +
+            (value[0].smallField__c ? "small_obj" : "") +
+            " radioAuto" +
+            value[1].Order__c +
+            '">';
+
+          for (var i = 0; i < value.length; i++) {
+            generatePicklist =
+              generatePicklist +
+              '<label for="" class="radio_label"><input id="' +
+              value[0].WebformObjectField__c +
+              "_" +
+              value[i].WebformFieldValue__c +
+              '" name="' +
+              value[0].WebformObjectField__c +
+              '" value="' +
+              value[i].WebformFieldValue__c +
+              '" class="formValueRadio" type="radio" ' +
+              " " +
+              (value[0].Required__c ? "required" : "") +
+              ' data-object="' +
+              value[0].WebformTargetObject__c +
+              '" data-field="' +
+              value[0].WebformObjectField__c +
+              '"/>' +
+              value[i].Picklist_Label__c +
+              "</label>";
+          }
+
+          generatePicklist =
+            generatePicklist +
+            '</div><label><sub class="error subErrorMessage" id="errorMessage' +
+            value[0].WebformTargetObject__c +
+            value[0].WebformObjectField__c +
+            '">' +
+            (value[0].ErrorMessage__c ? value[0].ErrorMessage__c : "") +
+            "</sub></label></div>";
+        } else {
+          var generatePicklist =
+            '<div class="ctn_line duo_col clearfix classInputPicklist' +
+            value[0].WebformObjectField__c +
+            " " +
+            (value[0].smallField__c ? "small_col" : "") +
+            '" ' +
+            (value[0].Display__c ? "" : "style='display:none; width: 100%'") +
+            ">" +
+            '<h4 class="' +
+            (value[0].smallField__c ? "small_title" : "") +
+            '"><label for="inputPicklist' +
+            value[0].WebformObjectField__c +
+            '">' +
+            value[0].Name +
+            " " +
+            (value[0].Required__c ? "*" : "") +
+            '</label></h4> <div class="picklistAuto' +
+            value[1].Order__c +
+            " " +
+            (value[0].smallField__c ? "small_obj" : "") +
+            '">' +
+            '<select  id="inputPicklist' +
+            value[0].WebformObjectField__c +
+            '" class="formValue picklist" ' +
+            (value[0].Required__c ? "required" : "") +
+            " " +
+            'data-object="' +
+            value[0].WebformTargetObject__c +
+            '" data-field="' +
+            value[0].WebformObjectField__c +
+            '">';
+
+          for (var i = 0; i < value.length; i++) {
+            if (typeof value[i].WebformFieldValue__c == "undefined") {
+              if (value[i].Picklist_Order__c == 0) {
+                generatePicklist =
+                  generatePicklist +
+                  '<option value="" selected notvisible="' +
+                  (value[i].Not_Visible_On_Page_Load__c
+                    ? value[i].Not_Visible_On_Page_Load__c
+                    : "") +
+                  '">' +
+                  value[i].Picklist_Label__c +
+                  "</option>";
+              } else {
+                generatePicklist =
+                  generatePicklist +
+                  '<option value="' +
+                  value[i].Picklist_Label__c +
+                  '" isecom="' +
+                  value[i].Is_ECOM__c +
+                  '" notvisible="' +
+                  (value[i].Not_Visible_On_Page_Load__c || "") +
+                  '">' +
+                  value[i].Picklist_Label__c +
+                  "</option>";
+              }
+            } else {
+              if (
+                value[i].WebformObjectField__c === "Typology__c" &&
+                value[i].WebformTargetObject__c === "Case"
+              ) {
+                generatePicklist =
+                  generatePicklist +
+                  '<option value="' +
+                  value[i].WebformFieldValue__c +
+                  '" isecom="' +
+                  value[i].Is_ECOM__c +
+                  '" notvisible="' +
+                  (value[i].Not_Visible_On_Page_Load__c || "") +
+                  '">' +
+                  value[i].Picklist_Label__c +
+                  "</option>";
+              } else {
+                generatePicklist =
+                  generatePicklist +
+                  '<option value="' +
+                  value[i].WebformFieldValue__c +
+                  '">' +
+                  value[i].Picklist_Label__c +
+                  "</option>";
+              }
+            }
+          }
+
+          generatePicklist =
+            generatePicklist +
+            '</select><sub class="error subErrorMessage" id="errorMessage' +
+            value[0].WebformTargetObject__c +
+            value[0].WebformObjectField__c +
+            '">' +
+            (value[0].ErrorMessage__c ? value[0].ErrorMessage__c : "") +
+            "</sub></div></div>";
+        }
+        $(".loadWebform").append(generatePicklist);
+      }
+
+      function decodeHtmlEntities(str) {
+        var textarea = document.createElement("textarea");
+        textarea.innerHTML = str;
+        return textarea.value;
+      }
+
+      function generateInput(value) {
+        var inputType = value[0].FieldType__c ? value[0].FieldType__c : "text";
+        if (value[0].FieldType__c == "Section") {
+          var generateInput =
+            '<div class="ctn_contact" style="float:right;"><h3>' +
+            value[0].Name +
+            "</h3></div>";
+        } else if (value[0].WebformObjectField__c == "Description") {
+          console.log(" description :: " + value[0].WebformFieldValue__c);
+          var generateInput =
+            '<div class="ctn_line ctn_message clearfix classInputText' +
+            value[0].WebformObjectField__c +
+            '" ' +
+            (value[0].Display__c ? "" : "style='display:none;'") +
+            '><h4><label for="inputText' +
+            value[0].WebformObjectField__c +
+            '">' +
+            value[0].Name +
+            " " +
+            (value[0].Required__c ? "*" : "") +
+            "</label></h4>" +
+            " <p>" +
+            (description && description !== "undefined" ? description : "") +
+            '</p><div class="obj_input obj_textarea"><textarea class="message formValue" ' +
+            'id="inputText' +
+            value[0].WebformObjectField__c +
+            '" ' +
+            (value[0].Required__c ? "required" : "") +
+            ' data-object="' +
+            value[0].WebformTargetObject__c +
+            '" data-field="' +
+            value[0].WebformObjectField__c +
+            '">' +
+            ' </textarea><sub class="error subErrorMessage" id="errorMessage' +
+            value[0].WebformTargetObject__c +
+            value[0].WebformObjectField__c +
+            '">' +
+            (value[0].ErrorMessage__c ? value[0].ErrorMessage__c : "") +
+            "</sub></div></div>";
+        } else if (value[0].FieldType__c == "Date") {
+          const dateTmpl = $("#Date_tmpl").html();
+          var compiled = _.template(dateTmpl);
+          var generateInput = compiled({ value: value[0] });
+        } else if (value[0].FieldType__c == "file") {
+          const tmpl = $("#file_tmpl").html();
+          var compiled = _.template(tmpl);
+          var generateInput = compiled({ value: value[0] });
+        } else if (value[0].FieldType__c == "Consent") {
+          const ctmpl = $("#consent_tmpl").html();
+          var compiled = _.template(ctmpl);
+          var generateInput = compiled({ value: value[0] });
+        } else {
+          var generateInput =
+            '<div class="ctn_line duo_col clearfix ' +
+            (value[0].smallField__c ? "small_col" : "") +
+            " classInputText" +
+            value[0].WebformObjectField__c +
+            '" ' +
+            (value[0].Display__c ? "" : "style='display:none;'") +
+            " >" +
+            '<h4 class="' +
+            (value[0].smallField__c ? "small_title" : "") +
+            '"><label for="inputText' +
+            value[0].WebformObjectField__c +
+            '">' +
+            value[0].Name +
+            " " +
+            (value[0].Required__c ? "*" : "") +
+            "</label></h4>" +
+            '<div class="obj_input ' +
+            (value[0].smallField__c ? "small_obj" : "") +
+            '"><input type="' +
+            inputType +
+            '" ' +
+            (value[0].WebformObjectField__c == "Country__c"
+              ? "disabled value='" + countryName + "'"
+              : "") +
+            " " +
+            'class="formValue" id="inputText' +
+            value[0].WebformObjectField__c +
+            '" ' +
+            " " +
+            (value[0].Required__c ? "required" : "") +
+            ' data-original-required="' +
+            (value[0].Required__c ? "true" : "false") +
+            '"' +
+            ' data-object="' +
+            value[0].WebformTargetObject__c +
+            '" data-field="' +
+            value[0].WebformObjectField__c +
+            '" >' +
+            '<sub class="error subErrorMessage" id="errorMessage' +
+            value[0].WebformTargetObject__c +
+            value[0].WebformObjectField__c +
+            '">' +
+            (value[0].ErrorMessage__c ? value[0].ErrorMessage__c : "") +
+            "</sub></div></div>";
+        }
+        $(".loadWebform").append(generateInput);
+
+        if (value[0].FieldType__c == "Consent" && value[0].Consent_Message__c) {
+          var decoded = decodeHtmlEntities(value[0].Consent_Message__c);
+          $("#consentMessage_" + value[0].WebformObjectField__c).html(decoded);
+        }
+      }
+
+      // CCC-2362
+      function addHeader(value) {
+        if (typeof value === "string") {
+          $("#topMessage").html(htmlDecode(value));
+        }
+      }
+
+      function remoteWebformParameters() {
+        var lang = getUrlParameter("Lang");
+        var brand = getUrlParameter("Brand");
+        var country = getUrlParameter("Country");
+        captchaOn = getUrlParameter("CaptchaOn");
+        isLihClub = getUrlParameter("IsLIHClub");
+        if (captchaOn == null || captchaOn == "" || captchaOn == undefined) {
+          captchaOn = true;
+        } else {
+          captchaOn = captchaOn == "true" ? true : false;
+        }
+        if (isLihClub == null || isLihClub == "" || isLihClub == undefined) {
+          isLihClub = false;
+        } else {
+          isLihClub = isLihClub == "true" ? true : false;
+        }
+        if (captchaOn) {
+          var captchaTag =
+            '<div class="obj_recaptcha" style="padding-left: 0 !important;">' +
+            '<div class="g-recaptcha" id="turnstileCaptcha"></div>' +
+            "</div>";
+          $(".loadCaptcha").append(captchaTag);
+        }
+        if (lang == null || lang == "" || lang == undefined) {
+          lang = "";
+        }
+        isRTL =
+          country.toLowerCase() == "israel" || (lang != null && lang == "ar");
+        let recordType = getUrlParameter("recordType");
+        if (!recordType) {
+          recordType = "";
+        }
+
+        Visualforce.remoting.Manager.invokeAction(
+          "VFC77_Webform.remoteWebformParameters",
+          brand,
+          country,
+          lang,
+          recordType,
+          isLihClub,
+          function (result, event) {
+            if (event.status) {
+              for (var i = 0; i < result.length; i++) {
+                console.log("result[i] = ", result[i]);
+                /* Load webform parameter information */
+                if (result[i].Footer__c) {
+                  $(".footer").html(htmlDecode(result[i].Footer__c));
+                }
+                description = htmlDecode(result[i].warningDescription__c);
+                description = $("<div>").html(description).text();
+                brandName = result[i].Brand__r.Code__c;
+                brandId = result[i].Brand__c;
+                countryName = result[i].Country__r.Name;
+                countryId = result[i].Country__c;
+                countryCode = result[i].Country__r.Code__c;
+                console.debug(
+                  " countryName :: " +
+                    countryName +
+                    " countryId:: " +
+                    countryId +
+                    " countryCode:: " +
+                    countryCode
+                );
+                caseRecordType = result[i].Case_RecordType__c;
+                submitLabel = result[i].Submit_Label__c;
+                submitedLabel = result[i].Submited_label__c;
+                inSubmissionLabel = result[i].InSubmission_label__c;
+                urlRedirection = result[i].URL_Redirection__c;
+                sourceURL = result[i].Name;
+                dayFormat = result[i].Day_format__c; //added for CBSD-6665
+                monthFormat = result[i].Month_format__c; //added for CBSD-6665
+                yearFormat = result[i].Year_format__c; //added for CBSD-6665
+                $("#submitBtn").html(submitLabel);
+
+                // Loading pop up variables
+                hasPopUp = result[i].HasPopUp__c;
+                console.log(" hasPopUp value :: ", hasPopUp);
+                messageModal = result[i].Text_modal_message__c;
+                messageLink = result[i].Text_Redirection__c;
+                submitBtnModal = result[i].Modal_Button_Label__c;
+                headerMessage = result[i].Modal_Header__c;
+                // CCC-2362
+                addHeader(result[i].Header__c);
+                if (typeof messageModal != "undefined") {
+                  $("#modalMessage").html(htmlDecode(messageModal));
+                }
+                $("#messageLink").html(messageLink);
+                $("#submitBtnModal").html(htmlDecode(submitBtnModal)).text();
+                if (typeof result[i].Modal_Header__c != "undefined") {
+                  $("#headerMessage").html(htmlDecode(headerMessage));
+                }
+
+                /*Building webform */
+                let webformTranscos = result[i].CCare_WebFormTranscos__r || [];
+                //STRY0621116
+                // Get grouped child mappings
+                groupedChildTranscos = result[i].Grouped_Children__r || [];
+                //STRY0621116
+                for (var j = 0; j < webformTranscos.length; j++) {
+                  if (
+                    typeof mapWebform[
+                      webformTranscos[j].WebformObjectField__c
+                    ] == "undefined"
+                  ) {
+                    setValueInMap = [];
+                    setValueInMap.push(webformTranscos[j]);
+                    if (webformTranscos[j].WebformObjectField__c) {
+                      mapWebform[webformTranscos[j].WebformObjectField__c] =
+                        setValueInMap;
+                    } else {
+                      mapWebform["autoGenerate" + j] = setValueInMap;
+                    }
+                  } else {
+                    buildPicklist = [];
+                    for (
+                      var h = 0;
+                      h <
+                      mapWebform[webformTranscos[j].WebformObjectField__c]
+                        .length;
+                      h++
+                    ) {
+                      buildPicklist.push(
+                        mapWebform[webformTranscos[j].WebformObjectField__c][h]
+                      );
+                    }
+                    buildPicklist.push(webformTranscos[j]);
+                    buildPicklist.sort(compare);
+                    mapWebform[webformTranscos[j].WebformObjectField__c] =
+                      buildPicklist;
+                  }
+                }
+                /*Generate picklist or Input field */
+                for (var key in mapWebform) {
+                  var value = mapWebform[key];
+                  if (value.length > 1) {
+                    generatePicklist(value);
+                  } else {
+                    generateInput(value);
+                  }
+                }
+                let params = {
+                  allow_single_deselect: true,
+                  rtl: isRTL,
+                  width: "100%",
+                };
+                console.log("params", params);
+                $(".picklist").chosen(params);
+              }
+              addListeners();
+              $("#errorLink").hide();
+            } else {
+              $("#errorLink").show();
+              console.log("error", JSON.stringify(event));
+            }
+            setRtlIsrael();
+          },
+          { escape: true }
+        );
+      }
+
+      remoteWebformParameters();
+
+      function addListeners() {
+        const checker = function ($event) {
+          const objectValidators =
+            VALIDATORS[$event.data("object")] || VALIDATORS["default"];
+          const fieldValidator =
+            objectValidators[$event.data("field")] ||
+            objectValidators["default"];
+          if (fieldValidator && fieldValidator($event)) {
+            $event.removeClass("error");
+            $(
+              "#errorMessage" +
+                $event.WebformTargetObject__c +
+                $event.data("field")
+            ).css("display", "none");
+            console.log("IF je passe ici pour retirer erreur ");
+            return true;
+          } else {
+            console.log("je passe ici pour ajouter erreur !! ");
+            $event.addClass("error");
+            $(
+              "#errorMessage" +
+                $event.WebformTargetObject__c +
+                $event.data("field")
+            ).css("display", "block");
+            return false;
+          }
+        };
+        $("input.formValue, select.formValue, textarea.formValue").each(
+          function (i, e) {
+            var $this = $(this);
+            var type = $this.attr("type");
+            if (type === "file") {
+              $this.on("change", function (e) {
+                uploadFile($(this)[0]);
+              });
+            }
+            $this.on("change", function (e) {
+              checker($(this));
+            });
+          }
+        );
+
+        $("span.clear-input").each(function (i, e) {
+          var $this = $(this);
+          $this.on("click", function (e) {
+            $('input[type="file"]').val("");
+            attachments = [];
+            $(".input-file").find("input.formValue").attr("class", "formValue");
+            $this.hide();
+          });
+        });
+        $("#inputPicklistTypology__c").each(function (i, e) {
+          var $this = $(this);
+          var orderLabel = $('label[for="inputTextOrder_nr__c"]').text();
+          $this.on("change", function (e) {
+            if (
+              $("#inputPicklistTypology__c option:selected").attr("isecom") ===
+              "true"
+            ) {
+              $("#inputTextOrder_nr__c").prop("required", true);
+              $('label[for="inputTextOrder_nr__c"]').text(orderLabel + "*");
+            } else {
+              $("#inputTextOrder_nr__c").prop("required", false);
+              $('label[for="inputTextOrder_nr__c"]').text(orderLabel);
+            }
+          });
+        });
+        //Subject
+        $("#inputPicklistSubject").each(function (i, e) {
+          var $this = $(this);
+          var orderLabel = $('label[for="inputTextOrder_nr__c"]').text();
+          $this.on("change", function (e) {
+            if (
+              $("#inputPicklistSubject option:selected").attr("isecom") ===
+              "true"
+            ) {
+              $("#inputTextOrder_nr__c").prop("required", true);
+              $('label[for="inputTextOrder_nr__c"]').text(orderLabel + "*");
+            } else {
+              $("#inputTextOrder_nr__c").prop("required", false);
+              $('label[for="inputTextOrder_nr__c"]').text(orderLabel);
+            }
+          });
+        });
+
+        $(document).ready(function () {
+          var $picklist = $("#inputPicklistSubject");
+          // Hide fields based on API list
+          function hideFieldsByApiList(apiList) {
+            if (!apiList) return;
+            apiList.split(";").forEach(function (apiName) {
+              apiName = apiName.trim();
+              if (apiName) {
+                const $input = $("#inputText" + apiName);
+                const $label = $('label[for="inputText' + apiName + '"]');
+
+                $label.closest(".ctn_line").hide();
+                $input.closest(".ctn_line").hide();
+                if ($input.data("original-required") === undefined) {
+                  $input.data("original-required", $input.prop("required"));
+                }
+                console.log($input.data("original-required"));
+                $input.prop("required", false).val("");
+              }
+            });
+          }
+
+          // Function to show all fields again
+          function showAllDynamicFields() {
+            $(".ctn_line").each(function () {
+              const $line = $(this);
+              // Only show if it’s not globally hidden)
+              if (
+                !$line.is('[style*="display:none"]') ||
+                $line.data("can-show") === true
+              ) {
+                $line.show();
+                const $input = $line.find("input.formValue");
+                console.log(
+                  "TEST : " +
+                    $input.data("field") +
+                    $input.data("original-required")
+                );
+                if ($input.attr("data-original-required") === "true") {
+                  $input.attr("required", true);
+                }
+              }
+            });
+          }
+
+          // Function to handle visibility when picklist changes
+          function toggleDynamicFields() {
+            var selected = $picklist.find("option:selected");
+            var notVisibleFields = selected.attr("notvisible");
+
+            // Show all dynamic fields
+            showAllDynamicFields();
+
+            //Hide Not visible fields
+            hideFieldsByApiList(notVisibleFields);
+          }
+
+          toggleDynamicFields();
+          $picklist.on("change", toggleDynamicFields);
+        });
+        /**
+         * class .birthdate is used to
+         */
+        $(".birthdate").each(function (e) {
+          const $this = $(this);
+          const inputId = $this.data("target-field");
+          const input = $("#" + inputId);
+          const $day = $this.find("#" + inputId + "_DAY");
+          const $month = $this.find("#" + inputId + "_MONTH");
+          const $year = $this.find("#" + inputId + "_YEAR");
+          const $date = [$day, $month, $year];
+          $date.forEach(function (elem) {
+            elem.on("change", function () {
+              const date = $date.reduce(function (prev, current) {
+                return prev === "" ? current.val() : prev + "/" + current.val();
+              }, "");
+              input.val(date);
+              const checked = checker(input);
+              if (checked) {
+                $day.removeClass("error");
+                $month.removeClass("error");
+                $year.removeClass("error");
+              } else {
+                $day.addClass("error");
+                $month.addClass("error");
+                $year.addClass("error");
+              }
+              console.log(checked, input.val());
+            });
+          });
+        });
+      }
+
+      let fieldDefaultValidator = function (input) {
+        if (input.attr("type") === "email" && !patternEmail.test(input.val())) {
+          console.log("Checking email");
+          return !input.prop("required");
+        } else if (
+          input.data("type") === "Date" &&
+          !patternDate.test(input.val())
+        ) {
+          console.log("Checking Date");
+          return !input.prop("required");
+        } else if (
+          input.attr("type") === "tel" &&
+          countryName == "France" &&
+          input.val() &&
+          !patternPhone.test(input.val())
+        ) {
+          console.log("Checking Tel");
+          //return !input.prop('required'); commented for CBSD-7299
+          return false; // added for CBSD-7299
+        } else if (
+          input.attr("type") === "tel" &&
+          input.val() &&
+          !patternPhone.test(input.val())
+        ) {
+          console.log("Checking Tel");
+          return false; // added for CBSD-7299
+        } else if (input.attr("type") === "Checkbox" && !input.is(":checked")) {
+          console.log("Checking Checkbox");
+          return !input.prop("required");
+        }
+        if (input.attr("type") === "Checkbox") {
+          input.val(input.is(":checked"));
+        }
+        console.log(" input :: ", input.val());
+        return true;
+      };
+
+      const VALIDATORS = {
+        default: {
+          default: fieldDefaultValidator,
+        },
+
+        Account: {
+          PersonBirthdate: function (input) {
+            console.log("input", input);
+            if (!input.prop("required")) {
+              return true;
+            }
+            if (!patternDate.test(input.val())) {
+              return false;
+            }
+            var oneYear = 1000 * 60 * 60 * 24 * 365.25;
+            var dateParts = input.val().split("/");
+            var dateOfBirth = new Date(
+              dateParts[2],
+              dateParts[1] - 1,
+              dateParts[0]
+            ).getTime();
+            var now = new Date();
+            var currentDate = new Date(
+              now.getFullYear(),
+              now.getMonth(),
+              now.getDate()
+            ).getTime();
+            var age = (currentDate - dateOfBirth) / oneYear;
+            console.log("Age...", age);
+            if (age < 16) {
+              // Mineur...
+              return false;
+            }
+            return true;
+          },
+          ShippingCountry: function (input) {
+            return true;
+          },
+          ShippingCity: function (input) {
+            return !input.prop("required") || input.val() !== "";
+          },
+
+          default: fieldDefaultValidator,
+        },
+      };
+
+      function uploadFile(elem) {
+        var maxSize = 4 * 1024 * 1024;
+        var totalFileSize = 0;
+        let accept = elem.accept;
+        console.log("accept", accept);
+        let ALLOWED_TYPES = ["application/pdf", "image/.*", "video/.*"];
+        _.each(elem.files, function (file) {
+          totalFileSize += file.size;
+        });
+        console.log("totalFileSize", totalFileSize);
+        console.log("maxSize", maxSize);
+        function isValid(type) {
+          return ALLOWED_TYPES.find((it) => {
+            return new RegExp(it).test(type);
+          });
+        }
+        if (totalFileSize > maxSize) {
+          $(".input-file-error").css("display", "block");
+          $('input[type="file"]').val("");
+          $(".input-file").addClass("error");
+          return;
+        } else {
+          $(".input-file").removeClass("error");
+          $(".input-file-error").css("display", "none");
+        }
+        _.each(elem.files, function (file) {
+          var fileReader = new FileReader();
+          var contentType = file.type;
+          console.log("contentType", contentType);
+
+          if (
+            !isValid(contentType) ||
+            file.name.indexOf(".htm") >= 0 ||
+            file.name.indexOf(".html") >= 0 ||
+            file.name.indexOf(".htt") >= 0 ||
+            file.name.indexOf(".htx") >= 0 ||
+            file.name.indexOf(".mhtm") >= 0 ||
+            file.name.indexOf(".mhtml") >= 0 ||
+            file.name.indexOf(".mhtml") >= 0 ||
+            file.name.indexOf(".shtm") >= 0 ||
+            file.name.indexOf(".shtml") >= 0 ||
+            file.name.indexOf(".acgi") >= 0 ||
+            file.name.indexOf(".exe") >= 0 ||
+            file.name.indexOf(".php") >= 0 ||
+            file.name.indexOf(".svg") >= 0
+          ) {
+            $('input[type="file"]').val("");
+            alert(
+              "The file " +
+                file.name +
+                " is not autorized. Only images and pdf are allowed."
+            );
+          } else {
+            fileReader.onloadend = function (e) {
+              var attachment = {};
+              attachment.Name = file.name;
+              attachment.ContentType = contentType;
+              attachment.Body = window.btoa(this.result); //Base 64 encode the file before sending it
+              attachments.push(attachment);
+              $(".input-file")
+                .find("input.formValue")
+                .attr("class", "formValue show-cross");
+              $(".input-file").find("span.clear-input").show();
+              // .htm, .html, .htt, .htx, .mhtm, .mhtml, .shtm, .shtml, .acgi, .svg
+            };
+            fileReader.onerror = function (e) {
+              alert("There was an error reading the file.  Please try again.");
+            };
+            fileReader.onabort = function (e) {
+              alert("There was an error reading the file.  Please try again.");
+            };
+            fileReader.readAsBinaryString(file); //Read the body of the file
+          }
+        });
+      }
+
+      function modal_Submit() {
+        if (typeof urlRedirection != "undefined") {
+          setTimeout(function () {
+            window.top.location.href = urlRedirection;
+          }, 2000);
+        }
+      }
+
+      function setRtlIsrael() {
+        var country = getUrlParameter("Country");
+        console.log("Country", country);
+        var lang = getUrlParameter("Lang");
+        if (lang != null) {
+          lang = lang.toLowerCase();
+        }
+        if (
+          country.toLowerCase() == "israel" ||
+          (lang != null && lang == "ar")
+        ) {
+          $("label").css("text-align", "right");
+          $("label").css("font-size", "medium");
+          $("html").attr("dir", "rtl");
+          $("input#inputText").css("float", "right");
+          $(".input-file .clear-input").css("float", "right");
+          $("#errorMessages").css("float", "right");
+          $(".input-file-error").css("float", "right");
+          $(".obj_recaptcha").attr("style", "float: right !important;");
+          $(".ctn_contact").css("float", "right");
+          $("p").css("font-size", "medium");
+        }
+      }
+
+      window.onload = function () {
+        //setRtlIsrael();
+        if (captchaOn) {
+          turnstile.ready(function () {
+            turnstile.render("#turnstileCaptcha", {
+              sitekey: "0x4AAAAAAARSmTjTKD1I1hjd",
+              callback: function (token) {
+                recaptchaValidate = true;
+                recaptchaToken = token;
+                console.log("Challenge Success: " + token);
+              },
+            });
+          });
+        }
+      };
+
+      function form_Submit() {
+        $("#errorMessages").html("");
+        var submitWebform = true;
+        $("#submitBtn").prop("disabled", true);
+        $("#submitBtn").html(inSubmissionLabel);
+
+        if (captchaOn && !recaptchaValidate) {
+          submitWebform = false;
+        } else {
+          submitWebform = true;
+        }
+
+        // START of code added for CBSD-7826
+        var objectMap = {};
+
+        $("#webform")
+          .find('input[type="radio"]')
+          .each(function () {
+            var mapKey = $(this).data("object") + $(this).data("field");
+
+            if (objectMap[mapKey]) {
+              objectMap[mapKey].push($(this));
+              //objectMap.set(mapKey, arrayInput);
+            } else {
+              objectMap[mapKey] = [$(this)];
+            }
+          });
+
+        $("#webform")
+          .find('input[type="checkbox"], input[type="radio"]')
+          .each(function () {
+            var mapKey = $(this).data("object") + $(this).data("field");
+
+            if (objectMap[mapKey]) {
+              objectMap[mapKey].push($(this));
+              //objectMap.set(mapKey, arrayInput);
+            } else {
+              objectMap[mapKey] = [$(this)];
+            }
+          });
+
+        // iterate over keys
+        for (var objectField in objectMap) {
+          var fieldRequired = false;
+          var radioChecked = false;
+
+          // iterate over values
+          objectMap[objectField].map(function (varInputValues) {
+            if (varInputValues.prop("required")) {
+              fieldRequired = true;
+            }
+            if (varInputValues.prop("checked")) {
+              radioChecked = true;
+            }
+          });
+
+          // check if field is required and value is checked
+          if (fieldRequired && !radioChecked) {
+            var listFields = objectMap[objectField];
+            listFields.map(function (field) {
+              field.addClass("error");
+            });
+
+            var varObj = objectMap[objectField][listFields.length - 1];
+            $(
+              "#errorMessage" + varObj.data("object") + varObj.data("field")
+            ).css("display", "block");
+            console.log(
+              "CONSENT ERROR MESSAGE",
+              "#errorMessage" + varObj.data("object") + varObj.data("field")
+            );
+            submitWebform = false;
+            fieldsError.push(objectMap[objectField][listFields.length - 1]);
+          }
+        } //end for loop of keys
+        // END of code added for CBSD-7826
+
+        // modified for CBSD-7826: input[type="radio"]:checked - removed
+        $("#webform")
+          .find(
+            '.formValue, .formValueDate, input[type="radio"]:checked,input[type="checkbox"]:checked'
+          )
+          .each(function () {
+            console.log("field :", $(this).data("object"));
+            /*Verify required field */
+            if ($(this).prop("required") && !$(this).val().trim()) {
+              $(this).addClass("error");
+              $(
+                "#errorMessage" + $(this).data("object") + $(this).data("field")
+              ).css("display", "block");
+              submitWebform = false;
+              fieldsError.push($(this));
+              console.log(" le champs en question ", $(this).data("field"));
+              console.log(" le champs en question 2 ", fieldsError[0]);
+            } else {
+              $(this).removeClass("error");
+              $(
+                "#errorMessage" + $(this).data("object") + $(this).data("field")
+              ).css("display", "none");
+            }
+
+            /*Load webform into salesforce object */
+            if ($(this).data("object") === "Account") {
+              accountObject[$(this).data("field")] = $(this).val();
+            } else if ($(this).data("object") === "Case") {
+              if (
+                $(this).data("field") === "Typology__c" &&
+                (!caseObject.Subject || caseObject.Subject.trim() == "")
+                /*|| caseObject.Subject === $("#inputPicklistTypology__c").prop("selectedIndex", 0).val()*/
+              ) {
+                caseObject[$(this).data("field")] = $(this).val();
+                caseObject.Subject =
+                  $("#inputPicklistTypology__c option:selected").val().trim() !=
+                  ""
+                    ? $("#inputPicklistTypology__c option:selected").text()
+                    : "";
+              } else {
+                caseObject[$(this).data("field")] = $(this).val();
+              }
+            }
+            console.log(" account values :: ", accountObject);
+            console.log(" case values :: ", caseObject);
+            console.log(
+              "valeur du subject " +
+                $("#inputPicklistSubject option:selected").text()
+            );
+            const objectValidators =
+              VALIDATORS[$(this).data("object")] || VALIDATORS["default"];
+            const fieldValidator =
+              objectValidators[$(this).data("field")] ||
+              objectValidators["default"];
+            console.log(
+              "Je passe ici pour erreur avant ! object " +
+                $(this).data("object") +
+                " field :: " +
+                $(this).data("field")
+            );
+            console.log(
+              "Puis Validator ",
+              VALIDATORS[$(this).data("object")] || VALIDATORS["default"]
+            );
+            console.log("Puis fieldValidator ", fieldValidator($(this)));
+            if (fieldValidator && !fieldValidator($(this))) {
+              console.log("Je passe ici pour erreur ! ");
+              $(this).addClass("error");
+              $(
+                "#errorMessage" + $(this).data("object") + $(this).data("field")
+              ).css("display", "block");
+              submitWebform = false;
+            }
+          });
+
+        if (submitWebform) {
+          /* Load additional parameters */
+          if (accountObject.Email__c) {
+            accountObject.Email__c = accountObject.Email__c.toLowerCase();
+            accountObject.PersonEmail = accountObject.Email__c;
+          }
+          accountObject.T_Brand_Country_code_couples__c =
+            brandName + "_" + countryCode;
+          accountObject.T_Brand__c = brandId;
+          accountObject.T_Country__c = countryId;
+          //START of code added for CBSD-7368
+          var caseOrigin = getUrlParameter("Origin");
+          var urlLang = getUrlParameter("Lang");
+
+          if (caseOrigin === "" || caseOrigin === null || !caseOrigin) {
+            caseOrigin = $("#inputPicklistOrigin option")
+              .filter(function () {
+                return (
+                  $(this).html() ==
+                  $("#inputPicklistOrigin option:selected").text()
+                );
+              })
+              .val();
+          }
+
+          if (urlLang != "" || urlLang != null) {
+            caseObject.Solution_Language__c = urlLang;
+          }
+
+          if (caseOrigin === "" || caseOrigin === null || !caseOrigin) {
+            caseOrigin = "Web Form";
+          }
+
+          caseObject.Origin = caseOrigin;
+          caseObject.T_Webform_type__c = "Web Form Site";
+          //END of code added for CBSD-7368
+
+          // CBSD-11376 + CBSD-11695 : Merge cases - date mark for Webform messages
+          // const today = new Date();
+          // const desc = caseObject.Description;
+          // caseObject.Description = ( String(today.getDate()).padStart(2, '0') + '/' +
+          //                           String(today.getMonth() + 1).padStart(2, '0') + '/' +
+          //                           today.getFullYear() + ' ' +
+          //                           today.getHours() + ":" + today.getMinutes() ) + '\n\n' +
+          //                           desc + '\n';
+          caseObject.Status = "New";
+          caseObject.SuppliedEmail = accountObject.PersonEmail; // CCC-2469
+          caseObject.T_Case_origin_description__c = sourceURL;
+          caseObject.Tech_country_of_purchase_code__c = countryCode;
+          caseObject.Entry_tone__c = $("#inputPicklistEntry_tone__c option")
+            .filter(function () {
+              return (
+                $(this).html() ==
+                $("#inputPicklistTypology__c option:selected").text()
+              );
+            })
+            .val();
+          caseObject.Priority = $("#inputPicklistPriority option")
+            .filter(function () {
+              return (
+                $(this).html() ==
+                $("#inputPicklistTypology__c option:selected").text()
+              );
+            })
+            .val();
+
+          console.log("caseObject", caseObject);
+          console.log("attachments", attachments);
+          console.log("countryName", countryName, "brandName", brandName);
+
+          // Added for checkbox values -CCC-3749
+          Object.keys(accountObject).forEach(function (key) {
+            if (accountObject[key] == "true") {
+              accountObject[key] = true;
+            }
+            if (accountObject[key] == "on" || accountObject[key] == "false") {
+              delete accountObject[key];
+            }
+          });
+          Object.keys(caseObject).forEach(function (key) {
+            if (caseObject[key] == "true") {
+              caseObject[key] = true;
+            }
+            if (caseObject[key] == "on" || caseObject[key] == "false") {
+              delete caseObject[key];
+            }
+          });
+          caseObject.Web_Brand__c = brandName;
+          caseObject.Web_Country__c = countryName;
+
+          //STRY0621116
+
+          var selectedParentId = $("#inputPicklistSubject option:selected")
+            .text()
+            .trim();
+
+          console.log("Parent Id", selectedParentId);
+          console.log("Child Transco", groupedChildTranscos);
+          console.log("Child Transco", groupedChildTranscos[selectedParentId]);
+          if (
+            groupedChildTranscos &&
+            selectedParentId &&
+            Array.isArray(groupedChildTranscos[selectedParentId])
+          ) {
+            groupedChildTranscos[selectedParentId].forEach(function (child) {
+              if (
+                child.WebformTargetObject__c === "Case" &&
+                child.WebformObjectField__c &&
+                child.WebformFieldValue__c !== undefined
+              ) {
+                caseObject[child.WebformObjectField__c] =
+                  child.WebformFieldValue__c;
+              }
+            });
+          }
+          console.log("CASE OBJECT AFTER:", caseObject);
+          //STRY0621116
+
+          if (
+            countryName.toLowerCase() !== "inter" &&
+            (!accountObject.ShippingCountry ||
+              accountObject.ShippingCountry.trim() === "")
+          ) {
+            accountObject.ShippingCountry = countryName;
+          }
+
+          var acc1 = JSON.stringify(accountObject);
+          Visualforce.remoting.Manager.invokeAction(
+            "VFC77_Webform.remoteSaveWebform",
+            acc1,
+            caseObject,
+            caseRecordType,
+            attachments,
+            countryName,
+            brandName,
+            recaptchaToken,
+            captchaOn,
+            function (result, event) {
+              console.log("result", result);
+              if (event.status) {
+                $("#submitBtn").html(submitedLabel);
+                $("#submitBtn").addClass("success");
+                if (typeof urlRedirection != "undefined") {
+                  if (hasPopUp != true) {
+                    setTimeout(function () {
+                      window.top.location.href = urlRedirection;
+                    }, 2000);
+                  } else {
+                    document.getElementById("idWebform").style.display = "none";
+                    document.getElementById("idSubmit").style.display = "none";
+                    document.getElementById("idModal").style.display = "block";
+                    window.scrollTo(0, 0);
+                  }
+                }
+              }
+            },
+            { escape: true }
+          );
+        } else {
+          $("#submitBtn").prop("disabled", false);
+          $("#submitBtn").html(submitLabel);
+          console.log(fieldsError);
+          let errorMessage = fieldsError
+            .map(function (errorField) {
+              //added for CBSD-7826
+              let errorMsg = $(
+                "#errorMessage" +
+                  errorField.data("object") +
+                  errorField.data("field")
+              ).html();
+
+              //return errorField[0].nextSibling.innerHTML; commented for CBSD-7826
+              return errorMsg; //added for CBSD-7826
+            })
+            .reduce(function (preview, current) {
+              // CCC-2256
+              if (!current) current = "";
+              let curr =
+                current.trim() != ""
+                  ? (current.trim() != "" && preview != "" ? "<br/>- " : "") +
+                    current
+                  : "";
+              let val =
+                preview === ""
+                  ? (curr != "" ? "- " : "") + curr
+                  : preview + curr;
+              return val;
+            }, "");
+
+          console.log("errorMessage", errorMessage);
+          $("#errorMessages").html(errorMessage);
+          fieldsError = [];
+        }
+      }
+    </script>
+
+    <script id="file_tmpl" type="text/html">
+      <div
+        class='ctn_line duo_col clearfix <%= value.smallField__c ? "small_col" : "" %> classInputText<%= value.WebformObjectField__c %>'
+      >
+        <h4>
+          <label for="inputText<%=value.WebformObjectField__c %>">
+            <%= value.Name + ' ' + (value.Required__c ? '*' : '') %></label
+          >
+        </h4>
+        <div class="input-file obj_input">
+          <input class="formValue" accept="<%= (value.AllowedFileFormat__c ||
+          '').replaceAll(';', ',') %>"
+          id="inputText<%=value.WebformObjectField__c %>" type="file" <%=
+          value.Multiple__c ? 'multiple' : '' %> <%= value.Required__c ?
+          "required" : ""%> />
+          <span style="display: none;" class="clear-input">X</span>
+        </div>
+        <sub
+          id="errorMessage<%=value.WebformTargetObject__c%><%=value.WebformObjectField__c%>"
+          class="input-file-error"
+        >
+          <%=value.ErrorMessage__c ? value.ErrorMessage__c : ""%></sub
+        >
+      </div>
+    </script>
+
+    <script id="consent_tmpl" type="text/html">
+      <div
+        class="ctn_line duo_col clearfix classInputConsent<%= value.WebformObjectField__c %>"
+      >
+        <div class="input-checkbox">
+          <input type="checkbox" id="inputConsent<%= value.WebformObjectField__c
+          %>" <%= value.Required__c ? "required" : ""%>
+          value='<%=value.WebformFieldValue__c%>'
+          data-object='<%=value.WebformTargetObject__c%>'
+          data-field='<%=value.WebformObjectField__c%>'/> <%
+          if(value.Required__c){%>
+          <span style="color: black;margin-top: 10px;">*</span>
+          <%}%> <% if (value.Consent_Message__c) { %>
+          <div
+            id="consentMessage_<%= value.WebformObjectField__c%>"
+            class="input-checkbox"
+            style="font-size: 0.95em; line-height: 1.4;
+        margin-top:10px"
+          >
+            <p class="input-checkbox"><%- value.Consent_Message__c %></p>
+          </div>
+          <% } %>
+        </div>
+
+        <sub
+          id="errorMessage<%=value.WebformTargetObject__c%><%=value.WebformObjectField__c%>"
+          class="error subErrorMessage"
+        >
+          <%=value.ErrorMessage__c ? value.ErrorMessage__c : ""%></sub
+        >
+      </div>
+    </script>
+    <script id="Date_tmpl" type="text/html">
+      <div
+        class='ctn_line duo_col clearfix <%= value.smallField__c ? "small_col" : "" %> classInputText<%= value.WebformObjectField__c %>'
+      >
+        <input
+        id='<%=value.WebformTargetObject__c%>_<%=value.WebformObjectField__c%>'
+        type='hidden' data-type='<%= value.FieldType__c %>'
+        class='formValueDate' name='input' placeholder='jj/mm/aaaa'
+        <%=value.Required__c ? "required" : ""%>
+        data-object='<%=value.WebformTargetObject__c%>'
+        data-field='<%=value.WebformObjectField__c%>'/>
+        <h4
+          class='<%=value.smallField__c ? "small_title" : ""%>'
+          data-aox-labelfor="UserProperty_USERPROPERTY_BIRTH_DAY"
+        >
+          <label
+            for="<%=value.WebformTargetObject__c%>_<%=value.WebformObjectField__c%>"
+          >
+            <%=value.Name %> <%=value.Required__c ? "*" : ""%>
+          </label>
+        </h4>
+        <div
+          data-target-field="<%=value.WebformTargetObject__c%>_<%=value.WebformObjectField__c%>"
+          class="ctn_select birthdate clearfix"
+        >
+          <!--**********--><!--***********-->
+          <select
+            class="day"
+            name="<%=value.WebformObjectField__c%>_DAY"
+            id="<%=value.WebformTargetObject__c%>_<%=value.WebformObjectField__c%>_DAY"
+            data-minvalue="1"
+            data-maxvalue="31"
+            required="required"
+            aria-hidden="false"
+            autocomplete="nope"
+            aria-required="true"
+          >
+            <option value=""><%=dayFormat%></option>
+            //modified for CBSD-6665 <% for(var i = 1; i <= 31; i++) { %> <%
+            const value = i < 10 ? ('0' + i) : i; %>
+            <option value="<%=value %>"><%=value %></option>
+            <% } %>
+          </select>
+          <!--*************-->
+          <select
+            class="month"
+            name="<%=value.WebformObjectField__c%>_MONTH"
+            id="<%=value.WebformTargetObject__c%>_<%=value.WebformObjectField__c%>_MONTH"
+            data-minvalue="1"
+            data-maxvalue="12"
+            required="required"
+            aria-hidden="false"
+            autocomplete="nope"
+            aria-required="true"
+          >
+            <option value=""><%=monthFormat%></option>
+            //modified for CBSD-6665 <% for(var i = 1; i <= 12; i++) { %> <%
+            const value = i < 10 ? ('0' + i) : i; %>
+            <option value="<%=value %>"><%=value %></option>
+            <% } %>
+          </select>
+          <!--************-->
+          <select
+            class="year"
+            name="<%=value.WebformObjectField__c%>_YEAR"
+            id="<%=value.WebformTargetObject__c%>_<%=value.WebformObjectField__c%>_YEAR"
+            data-minvalue="1900"
+            data-maxvalue="2002"
+            aox-order="desc"
+            required="required"
+            aria-hidden="false"
+            autocomplete="nope"
+            aria-required="true"
+          >
+            <option value=""><%=yearFormat%></option>
+            //modified for CBSD-6665 <% for(var i = new Date().getFullYear() -
+            16; i >= 1900 ; i--) { %> <% const value = i; %>
+            <option value="<%=value %>"><%=value %></option>
+            <% } %>
+          </select>
+        </div>
+        <sub
+          id="errorMessage<%=value.WebformTargetObject__c%><%=value.WebformObjectField__c%>"
+          class="error subErrorMessage"
+        >
+          <%=value.ErrorMessage__c ? value.ErrorMessage__c : ""%></sub
+        >
+      </div>
+    </script>
+  </body>
+</html>
