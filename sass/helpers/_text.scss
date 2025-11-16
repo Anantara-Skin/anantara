@@ -1,0 +1,180 @@
+//stylelint-disable lora/variable-pattern
+/* stylelint-disable declaration-no-important, max-nesting-depth */
+// Main text colors
+$main-text-colors: (
+    primary,
+    secondary,
+    text,
+    text-secondary,
+    info,
+    success,
+    warning,
+    alert,
+    light,
+    dark,
+    highlight
+) !default;
+
+// Text sizes per style guide
+$main-text-sizes: (
+    30,
+    24,
+    18,
+    16,
+    14,
+    12,
+    10
+) !default;
+
+$text-bold-font-weight: bold !default;
+
+@mixin lora-helpers-text-alignment {
+    @each $align in (left, right, center, justify) {
+        .h-text-align-#{$align} {
+            text-align: $align !important;
+        }
+    }
+
+    @each $align in (left, right, center, justify) {
+        @each $size in $breakpoint-classes {
+            $range: if($size == 'large', null, only);
+
+            @include breakpoint($size $range) {
+                .h-text-align-#{$align}-for-#{$size} {
+                    text-align: $align !important;
+                }
+            }
+        }
+    }
+
+    @each $align in (auto, stretch, center, flex-start, flex-end, baseline, initial, inherit) {
+        .h-text-self-align-#{$align} {
+            align-self: $align !important;
+        }
+
+        .h-text-align-items-#{$align} {
+            align-items: $align !important;
+        }
+    }
+
+    @each $align in (auto, stretch, center, flex-start, flex-end, baseline, initial, inherit) {
+        @each $size in $breakpoint-classes {
+            $range: if($size == 'large', null, only);
+
+            @include breakpoint($size $range) {
+                .h-text-self-align-#{$align}-for-#{$size} {
+                    align-self: $align !important;
+                }
+
+                .h-text-align-items-#{$align}-for-#{$size} {
+                    align-items: $align !important;
+                }
+            }
+        }
+    }
+
+    @each $align in (auto, stretch, center, start, end, flex-start, flex-end, space-around, space-between, baseline, initial, inherit) {
+        .h-text-justify-content-#{$align} {
+            @if ($align == 'start' or $align == 'end') {
+                justify-content: flex-#{$align} !important;
+            }
+            @else {
+                justify-content: $align !important;
+            }
+        }
+    }
+
+    @each $align in (auto, stretch, center, start, end, flex-start, flex-end, space-around, space-between, baseline, initial, inherit) {
+        @each $size in $breakpoint-classes {
+            $range: if($size == 'large', null, only);
+
+            @include breakpoint($size $range) {
+                .h-text-justify-content-#{$align}-for-#{$size} {
+                    @if ($align == 'start' or $align == 'end') {
+                        justify-content: flex-#{$align} !important;
+                    }
+                    @else {
+                        justify-content: $align !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin lora-helpers-text-color($colors: $main-text-colors) {
+    @each $color in $colors {
+        .h-color-#{$color},
+        .h-color-#{$color} a:not([class*="c-button"]):not([data-css-ignore-color-helpers]),
+        .h-color-#{$color} div:not(button *):not([class*="h-color-"]),
+        .h-color-#{$color} p,
+        .h-color-#{$color} .c-link {
+            color: color($color) !important;
+        }
+    }
+
+    @each $color in $colors {
+        @each $size in $breakpoint-classes {
+            $range: if($size == 'large', null, only);
+
+            @include breakpoint($size $range) {
+                .h-color-#{$color}-for-#{$size},
+                .h-color-#{$color}-for-#{$size} a:not([class*="c-button"]),
+                .h-color-#{$color}-for-#{$size} div:not(button *):not([class*="h-color-"]),
+                .h-color-#{$color}-for-#{$size} p,
+                .h-color-#{$color}-for-#{$size} .c-link {
+                    color: color($color) !important;
+                }
+            }
+        }
+    }
+
+    .h-color-inherit,
+    .h-color-inherit a,
+    .h-color-inherit div,
+    .h-color-inherit p {
+        color: inherit !important;
+    }
+}
+
+@mixin lora-helpers-text-sizes($font-sizes: $main-text-sizes) {
+    @each $font-size in $font-sizes {
+        .h-text-size-#{$font-size} {
+            font-size: rem-calc($font-size) !important;
+        }
+    }
+
+    @each $font-size in $font-sizes {
+        @each $size in $breakpoint-classes {
+            $range: if($size == 'large', null, only);
+
+            @include breakpoint($size $range) {
+                .h-text-size-#{$font-size}-for-#{$size} {
+                    font-size: rem-calc($font-size) !important;
+                }
+            }
+        }
+    }
+}
+
+@mixin lora-helpers-text-styles {
+    .h-text-uppercase {
+        text-transform: uppercase !important;
+    }
+
+    .h-text-bold {
+        font-weight: $text-bold-font-weight !important;
+    }
+
+    .h-text-no-wrap {
+        white-space: nowrap !important;
+    }
+}
+
+@mixin lora-helpers-text-truncate {
+    .h-text-truncate {
+        @include text-truncate;
+
+        display: block !important;
+    }
+}

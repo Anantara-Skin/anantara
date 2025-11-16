@@ -1,0 +1,42 @@
+@mixin lora-helper-overlay-element($z-index: 1) {
+    background: color(overlay);
+    content: '';
+    height: 100%;
+    #{$global-left}: 0;
+    position: fixed;
+    // Fix for Iphone issue with blinking effect when tap on overlay
+    top: 0;
+    width: 100%;
+    will-change: opacity;
+    z-index: $z-index;
+}
+
+@mixin lora-components-overlay {
+    .c-overlay {
+        @include lora-helper-overlay-element(z(overlay));
+
+        display: none;
+
+        &.m-active {
+            display: block;
+        }
+
+        &:not([data-component]) {
+            pointer-events: none;
+        }
+    }
+
+    @each $theme in (light, dark) {
+        .c-overlay.m-#{$theme}-gradient {
+            @include gradient-block(transparent, color($theme), vertical, 85%);
+
+            will-change: auto;
+        }
+    }
+
+    .c-overlay.m-custom-gradient {
+        @include gradient-block(transparent, color(overlay), vertical, 85%);
+
+        will-change: auto;
+    }
+}

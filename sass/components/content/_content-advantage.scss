@@ -1,0 +1,40 @@
+$content-advantage-flex-direction: null !default;
+$content-advantage-align-items: flex-start !default;
+$content-advantage-title-font-size: rem-calc(14) !default;
+$content-advantage-title-font-weight: bold !default;
+$content-advantage-text-font-weight: null !default;
+$content-advantage-title-text-transform: uppercase !default;
+$content-advantage-title-line-height: null !default;
+$content-advantage-text-color: color(text-secondary) !default;
+$content-advantage-text-font-size: rem-calc(12) !default;
+$content-advantage-text-line-height: 1.5 !default;
+$content-advantage-text-margin: rem-calc(15 0 0) !default;
+$content-advantage-icon-margin: rem-calc(0 20 0 0) !default;
+
+@mixin lora-components-advantage {
+    .c-advantage {
+        display: flex;
+        align-items: $content-advantage-align-items;
+        flex-flow: $content-advantage-flex-direction;
+    }
+
+    .c-advantage__icon {
+        flex-shrink: 0;
+        margin: $content-advantage-icon-margin;
+    }
+
+    .c-advantage__title {
+        font-size: $content-advantage-title-font-size;
+        font-weight: $content-advantage-title-font-weight;
+        text-transform: $content-advantage-title-text-transform;
+        line-height: $content-advantage-title-line-height;
+    }
+
+    .c-advantage__text {
+        color: $content-advantage-text-color;
+        font-size: $content-advantage-text-font-size;
+        line-height: $content-advantage-text-line-height;
+        margin: $content-advantage-text-margin;
+        font-weight: $content-advantage-text-font-weight;
+    }
+}

@@ -1,0 +1,139 @@
+//stylelint-disable lora/variable-pattern
+/* stylelint-disable selector-max-type */
+
+/*
+---
+name: Headings
+category:
+  - base
+  - base/headings
+---
+
+```html
+<h1>h1. This is a very large header.</h1>
+<h2>h2. This is a large header.</h2>
+<h3>h3. This is a medium header.</h3>
+<h4>h4. This is a moderate header.</h4>
+<h5>h5. This is a small header.</h5>
+<h6>h6. This is a tiny header.</h6>
+```
+*/
+@use "sass:map";
+@use 'body' as body;
+@use '../base/global' as g;
+@use '../base/colors' as colors;
+
+/*------------------------------------*\
+        #HEADINGS
+\*------------------------------------*/
+
+/// Font family for header elements.
+/// @type String | List
+$headings-font-family: body.$body-font-family !default;
+$headings-font-weight: g.$global-weight-normal !default;
+
+/// Font weight of headers.
+/// @type String
+$headings-font-weight: $global-weight-normal !default;
+
+/// Font style (e.g. italicized) of headers.
+/// @type String
+$headings-font-style: normal !default;
+
+/// Font stack used for elements that use monospaced type, such as code samples
+/// @type String | List
+$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace !default;
+
+/// Sizes of headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading sizes.
+/// @type Map
+$headings-sizes: (
+    small: (
+        'h1': 24,
+        'h2': 20,
+        'h3': 19,
+        'h4': 18,
+        'h5': 14,
+        'h6': 12,
+    ),
+    large: (
+        'h1': 36,
+        'h2': 30,
+        'h3': 24,
+        'h4': 18,
+        'h5': 14,
+        'h6': 12,
+    ),
+) !default;
+
+/// Color of headers.
+/// @type Color
+$headings-color: inherit !default;
+
+/// Line height of headers.
+/// @type Number
+$headings-lineheight: 1.4 !default;
+
+/// Bottom margin of headers.
+/// @type Number
+$headings-margin-bottom: 0.5rem !default;
+
+/// Text rendering method of headers.
+/// @type String
+$headings-text-rendering: optimizeLegibility !default;
+
+/// Font size of `<small>` elements.
+/// @type Number
+$small-font-size: 80% !default;
+
+/// Color of `<small>` elements when placed inside headers.
+/// @type Color
+$headings-small-font-color: map.get(colors.$semantic-colors, 'text-secondary') !default;
+
+
+@mixin lora-base-headings {
+    // Headings
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        font-family: $headings-font-family;
+        font-weight: $headings-font-weight;
+        font-style: $headings-font-style;
+        color: $headings-color;
+        text-rendering: $headings-text-rendering;
+        margin-top: 0;
+        margin-bottom: $headings-margin-bottom;
+        line-height: $headings-lineheight;
+
+        small {
+            color: $headings-small-font-color;
+            line-height: 0;
+        }
+    }
+
+    // Heading sizes
+    @each $size, $headers in $headings-sizes {
+        @include breakpoint($size) {
+            @each $header, $font-size in $headers {
+                #{$header} {
+                    /* stylelint-disable-next-line scale-unlimited/declaration-strict-value */
+                    font-size: rem-calc($font-size);
+                }
+
+                .#{$header} {
+                    /* stylelint-disable-next-line scale-unlimited/declaration-strict-value */
+                    /* stylelint-disable-next-line declaration-no-important */
+                    font-size: rem-calc($font-size) !important;
+                }
+            }
+        }
+    }
+}

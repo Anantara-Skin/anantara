@@ -1,0 +1,45 @@
+/*------------------------------------*\
+        #FOOTER COPYRIGHT
+\*------------------------------------*/
+
+// Deprecated components
+@use "sass:map";
+@use '../../base/colors' as colors;
+@use '../../base/fonts' as fonts;
+@use '../../layout/header' as header;
+@use '../../layout/footer' as footer;
+@use '../../_settings' as settings;
+$footer-copyright-color: map.get(colors.$palette, light) !default;
+$footer-copyright-font: #{rem-calc(12)} / 1.6 fonts.$font-primary !default;
+$footer-copyright-margin: rem-calc(15 auto) !default;
+$footer-copyright-columns--large: 8 of 12 !default;
+$footer-copyright-padding: footer.$footer-copyright-padding--medium-down !default;
+$footer-copyright-text-align: footer.$footer-copyright-text-align--medium-down !default;
+$footer-copyright-padding--large: null !default;
+$footer-copyright-text-align--large: null !default;
+$footer-copyright-letter-spacing: null !default;
+$footer-copyright-footer-secondary-margin: rem-calc(16 0 8) !default;
+
+@mixin lora-components-footer-copyright {
+    .l-footer__copyright {
+        color: $footer-copyright-color;
+        font: $footer-copyright-font;
+        margin: $footer-copyright-margin;
+        padding: $footer-copyright-padding;
+        text-align: $footer-copyright-text-align;
+        width: $footer-copyright-width--medium-down;
+        letter-spacing: $footer-copyright-letter-spacing;
+
+        @include breakpoint(large) {
+            @include cell($footer-copyright-columns--large);
+
+            margin-#{$global-right}: auto;
+            padding: $footer-copyright-padding--large;
+            text-align: $footer-copyright-text-align--large;
+        }
+
+        &.m-secondary {
+            margin: $footer-copyright-footer-secondary-margin;
+        }
+    }
+}

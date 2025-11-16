@@ -1,0 +1,214 @@
+$stepper-input-border: 1px solid map.get($palette, dark) !default;
+$stepper-input-width: rem-calc(100) !default;
+$stepper-input-width--large: null !default;
+$stepper-input-height: rem-calc(40) !default;
+$stepper-input-hover-border-color: map.get($palette, dark) !default;
+$stepper-input-hover-color: null !default;
+$stepper-input-field-hover-color: null !default;
+$stepper-input-border-radius: rem-calc(4) !default;
+$stepper-input-minus-border-radius: null !default;
+$stepper-input-plus-border-radius: null !default;
+$stepper-input-overflow: unset !default;
+$stepper-input-font: null !default;
+// Control buttons
+$stepper-input-buttons-background: map.get($palette, light) !default;
+$stepper-input-buttons-border: 0 !default;
+$stepper-input-buttons-color: map.get($palette, dark) !default;
+$stepper-input-buttons-font-weight: initial !default;
+$stepper-input-transition: background 0.3s, color 0.3s !default;
+// Input field
+$stepper-input-field-border: 0 !default;
+$stepper-input-field-border-radius: inherit !default;
+$stepper-input-field-box-shadow: null !default;
+$stepper-input-field-padding: 0 !default;
+$stepper-input-field-font-weight: initial !default;
+$stepper-input-field-min-width: rem-calc(30) !default;
+$stepper-input-field-hover-font-weight: null !default;
+$stepper-input-field-font-size: null !default;
+$stepper-input-field-font: null !default;
+$stepper-input-field-readonly-color: null !default;
+// Controls disabled state
+$stepper-input-controls-disabled-color: color(border) !default;
+// Stepper disabled
+$stepper-input-disabled-border: 1px solid map.get($palette, dark) !default;
+$stepper-input-disabled-background: null !default;
+$stepper-input-disabled-opacity: 0.5 !default;
+$stepper-input-disabled-color: color(text) !default;
+$stepper-input-box-shadow: null !default;
+// Stepper focused
+$stepper-input-focus-border: rem-calc(1) solid map.get($palette, dark) !default;
+$stepper-input-focus-box-shadow: rem-calc(0 0 0 1) map.get($palette, dark) !default;
+// Stepper input label
+$stepper-input-label-color: color(text-secondary) !default;
+$stepper-input-label-font-size: rem-calc(11) !default;
+$stepper-input-label-padding: rem-calc(0 5) !default;
+$stepper-input-label-transform: translate3d(0, rem-calc(-8), 0) !default;
+$stepper-input-label-height: auto !default;
+$stepper-input-label-line-height: rem-calc(16) !default;
+$stepper-input-label-font-weight: null !default;
+$stepper-input-label-before-background: map.get($palette, light) !default;
+$stepper-input-label-before-border-radius: rem-calc(4 4 0 0) !default;
+$stepper-input-label-before-height: calc(100% - 1px) !default;
+/// Disabled state
+$stepper-input-label-disabled-color: null !default;
+
+@mixin lora-components-stepper-input {
+    .c-stepper-input {
+        background: $stepper-input-buttons-background;
+        border: $stepper-input-border;
+        display: flex;
+        flex-flow: row nowrap;
+        width: $stepper-input-width;
+        height: $stepper-input-height;
+        border-radius: $stepper-input-border-radius;
+        overflow: $stepper-input-overflow;
+        font: $stepper-input-font;
+        position: relative;
+
+        @include breakpoint(large) {
+            width: $stepper-input-width--large;
+        }
+
+        &.m-inline {
+            display: inline-flex;
+        }
+
+        &.m-fullwidth {
+            width: 100%;
+        }
+
+        &:hover {
+            border-color: $stepper-input-hover-border-color;
+
+            .c-stepper-input__field {
+                color: $stepper-input-field-hover-color;
+            }
+
+            .c-stepper-input__minus,
+            .c-stepper-input__plus {
+                color: $stepper-input-hover-color;
+            }
+        }
+
+        &.m-disabled {
+            border: $stepper-input-disabled-border;
+            background: $stepper-input-disabled-background;
+            opacity: $stepper-input-disabled-opacity;
+
+            .c-stepper-input__field,
+            .c-stepper-input__minus,
+            .c-stepper-input__plus {
+                color: $stepper-input-disabled-color;
+                cursor: not-allowed;
+                pointer-events: none;
+                opacity: 1;
+                box-shadow: $stepper-input-box-shadow;
+            }
+
+            .c-stepper-input__field {
+                background: $stepper-input-disabled-background;
+            }
+
+            .c-stepper-input__label {
+                color: $stepper-input-label-disabled-color;
+            }
+        }
+    }
+
+    .c-stepper-input__minus,
+    .c-stepper-input__plus {
+        border: $stepper-input-buttons-border;
+        color: $stepper-input-buttons-color;
+        font-weight: $stepper-input-buttons-font-weight;
+        cursor: pointer;
+        flex: 1 0 0;
+        transition: $stepper-input-transition;
+        outline-width: 0;
+
+        &:focus {
+            border: $stepper-input-focus-border;
+            box-shadow: $stepper-input-focus-box-shadow;
+            z-index: z(stepperInput, input);
+        }
+    }
+
+    .c-stepper-input__minus {
+        border-radius: $stepper-input-minus-border-radius;
+    }
+
+    .c-stepper-input__plus {
+        border-radius: $stepper-input-plus-border-radius;
+    }
+
+    .c-stepper-input__field {
+        border: $stepper-input-field-border;
+        border-radius: $stepper-input-field-border-radius;
+        box-shadow: $stepper-input-field-box-shadow;
+        padding: $stepper-input-field-padding;
+        font: $stepper-input-field-font;
+        font-weight: $stepper-input-field-font-weight;
+        font-size: $stepper-input-field-font-size;
+        text-align: center;
+        max-width: $stepper-input-field-min-width;
+        flex: 1 1 100%;
+        height: auto;
+
+        &:hover {
+            border: $stepper-input-field-border;
+            box-shadow: none;
+            font-weight: $stepper-input-field-hover-font-weight;
+        }
+
+        &:focus {
+            border: $stepper-input-focus-border;
+            box-shadow: $stepper-input-focus-box-shadow;
+            z-index: z(stepperInput, input);
+        }
+
+        &[readonly] {
+            color: $stepper-input-field-readonly-color;
+            cursor: default;
+        }
+    }
+
+    .c-stepper-input__minus[disabled],
+    .c-stepper-input__plus[disabled] {
+        color: $stepper-input-controls-disabled-color;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    .c-stepper-input__label {
+        color: $stepper-input-label-color;
+        font-size: $stepper-input-label-font-size;
+        padding: $stepper-input-label-padding;
+        transform: $stepper-input-label-transform;
+        height: $stepper-input-label-height;
+        line-height: $stepper-input-label-line-height;
+        font-weight: $stepper-input-label-font-weight;
+        z-index: z(stepperInput, label);
+        position: absolute;
+        left: rem-calc(5);
+        width: max-content;
+
+        &::before {
+            background: $stepper-input-label-before-background;
+            border-radius: $stepper-input-label-before-border-radius;
+            content: '';
+            height: $stepper-input-label-before-height;
+            #{$global-left}: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+
+    .c-stepper-input__inner {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}

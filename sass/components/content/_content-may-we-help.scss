@@ -1,0 +1,49 @@
+$content-may-we-help-title-color: color(text) !default;
+$content-may-we-help-title-font-family: fonts.$font-primary !default;
+$content-may-we-help-title-font-size: rem-calc(14) !default;
+$content-may-we-help-title-font-weight: bold !default;
+$content-may-we-help-title-font: $content-may-we-help-title-font-weight #{$content-may-we-help-title-font-size} $content-may-we-help-title-font-family !default;
+$content-may-we-help-title-margin: 0 0 5px !default;
+$content-may-we-help-title-text-transform: uppercase !default;
+$content-may-we-help-list-color: color(text-secondary) !default;
+$content-may-we-help-list-font-size: rem-calc(12) !default;
+$content-may-we-help-list-font-weight: null !default;
+$content-may-we-help-list-line-height: 2.25 !default;
+$content-may-we-help-list-font: $content-may-we-help-list-font-weight #{$content-may-we-help-list-font-size} / $content-may-we-help-list-line-height fonts.$font-primary !default;
+$content-may-we-help-list-margin: 0 !default;
+$content-may-we-help-link-color: color(text-secondary) !default;
+$content-may-we-help-item-icon-margin: 0 10px 0 0 !default;
+$content-may-we-help-item-flex-direction: null !default;
+$content-may-we-help-item-padding: 0 !default;
+
+@mixin lora-components-may-we-help {
+    .c-may-we-help__title {
+        color: $content-may-we-help-title-color;
+        font: $content-may-we-help-title-font;
+        margin: $content-may-we-help-title-margin;
+        text-transform: $content-may-we-help-title-text-transform;
+    }
+
+    .c-may-we-help__list {
+        color: $content-may-we-help-list-color;
+        font: $content-may-we-help-list-font;
+        margin: $content-may-we-help-list-margin;
+        list-style: none;
+    }
+
+    .c-may-we-help__item {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: $content-may-we-help-item-flex-direction;
+        padding: $content-may-we-help-item-padding;
+    }
+
+    .c-may-we-help__link {
+        color: $content-may-we-help-link-color;
+        text-decoration: none;
+    }
+
+    .c-may-we-help__item-icon {
+        margin: $content-may-we-help-item-icon-margin;
+    }
+}

@@ -1,0 +1,150 @@
+// Product badge
+$product-badge-margin: rem-calc(0 0 8) !default;
+// Product badge image
+$product-badge-image-max-width: rem-calc(30) !default;
+$product-badge-image-width: max-content;
+$product-badge-image-max-width--large: null !default;
+$product-badge-image-background: null !default;
+$product-badge-image-margin: rem-calc(0 0 13) !default;
+$product-badge-image-margin--large: $product-badge-image-margin !default;
+// Product badge title
+$product-badge-title-text-decoration: underline !default;
+$product-badge-title-background: map.get($palette, light) !default;
+$product-badge-title-color: map.get($palette, dark) !default;
+$product-badge-title-padding: rem-calc(3 10) !default;
+$product-badge-title-padding--large: null !default;
+$product-badge-title-text-transform: none !default;
+$product-badge-title-text-align: $global-left !default;
+$product-badge-title-font: null !default;
+$product-badge-title-font--large: null !default;
+$product-badge-title-shadow: rem-calc(0 0 4 0) rgba(map.get($palette, dark), 0.2) !default;
+$product-badge-title-border-width: null !default;
+$product-badge-title-border-style: null !default;
+$product-badge-title-border-color: null !default;
+$product-badge-title-border-radius: rem-calc(4) !default;
+$product-badge-title-margin: rem-calc(0 0 5 0) !default;
+$product-badge-title-margin--large: null !default;
+// Product badge category title
+$product-badge-category-title-padding: rem-calc(4 8) !default;
+$product-badge-category-title-font: #{rem-calc(11)} / 1.2 fonts.$font-primary !default;
+$product-badge-category-title-text-transform: null !default;
+$product-badge-category-title-border-radius: rem-calc(5) !default;
+$product-badge-category-title-box-shadow: rem-calc(0 0 2 0) rgba(map.get($palette, dark), 0.2) !default;
+$product-badge-category-title-border: null !default;
+$product-badge-category-title-border-left: null !default;
+$product-badge-category-title-background: null !default;
+$product-badge-inline-title-margin: rem-calc(0 5 5 0) !default;
+$product-badge-inline-title-margin--large: null !default;
+// Product badge title in variations
+$product-badge-title-variations-background: color(primary) !default;
+$product-badge-title-variations-shadow: null !default;
+$product-badge-title-variations-border: null !default;
+$product-badge-title-variations-border-radius: rem-calc(4) !default;
+$product-badge-title-variations-color: map.get($palette, light) !default;
+$product-badge-title-variations-font: 700 #{rem-calc(10)} / 1.2 fonts.$font-primary !default;
+$product-badge-title-variations-padding: rem-calc(3 4 2) !default;
+$product-badge-title-variations-text-transform: uppercase !default;
+
+@mixin lora-components-product-badge {
+    .c-product-badge {
+        margin: $product-badge-margin;
+        transform: translate3d(0, 0, 0); // FIX blinking items on IOS - NGLORA-2585
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+
+        &.m-inline {
+            flex-flow: row;
+
+            .c-product-badge__title,
+            .c-product-badge__category-title {
+                margin: $product-badge-inline-title-margin;
+
+                @include breakpoint(large) {
+                    margin: $product-badge-inline-title-margin--large;
+                }
+            }
+        }
+    }
+
+    .c-product-badge__image {
+        background: $product-badge-image-background;
+        display: block;
+        max-width: $product-badge-image-max-width;
+        width: $product-badge-image-width;
+        margin: $product-badge-image-margin;
+
+        @include breakpoint(large) {
+            max-width: $product-badge-image-max-width--large;
+            margin: $product-badge-image-margin--large;
+        }
+    }
+
+    .c-product-badge__title {
+        @include text-style(
+            $font: (
+                small: $product-badge-title-font,
+                large: $product-badge-title-font--large
+            ),
+            $margin: (
+                small: $product-badge-title-margin,
+                large: $product-badge-title-margin--large
+            ),
+            $padding: (
+                small: $product-badge-title-padding,
+                large: $product-badge-title-padding--large
+            ),
+            $text-align: (
+                small: $product-badge-title-text-align
+            ),
+            $text-transform: (
+                small: $product-badge-title-text-transform
+            ),
+            $text-decoration: (
+                small: $product-badge-title-text-transform
+            ),
+            $color: (
+                small: $product-badge-title-color
+            )
+        );
+
+        background: $product-badge-title-background;
+        display: block;
+        box-shadow: $product-badge-title-shadow;
+        border-width: $product-badge-title-border-width;
+        border-style: $product-badge-title-border-style;
+        border-color: $product-badge-title-border-color;
+        border-radius: $product-badge-title-border-radius;
+
+        &.m-variations {
+            background: $product-badge-title-variations-background;
+            box-shadow: $product-badge-title-variations-shadow;
+            border: $product-badge-title-variations-border;
+            border-radius: $product-badge-title-variations-border-radius;
+            color: $product-badge-title-variations-color;
+            font: $product-badge-title-variations-font;
+            padding: $product-badge-title-variations-padding;
+            text-transform: $product-badge-title-variations-text-transform;
+        }
+    }
+
+    .c-product-badge__category-title {
+        display: inline-block;
+        padding: $product-badge-category-title-padding;
+        font: $product-badge-category-title-font;
+        text-transform: $product-badge-category-title-text-transform;
+        border-radius: $product-badge-category-title-border-radius;
+        box-shadow: $product-badge-category-title-box-shadow;
+        border: $product-badge-category-title-border;
+        border-#{$global-left}: $product-badge-category-title-border-left;
+        background: $product-badge-category-title-background;
+    }
+
+    a.c-product-badge__category-title { // stylelint-disable-line
+        text-decoration: none;
+    }
+
+    .c-product-badge__title a {
+        color: inherit;
+    }
+}

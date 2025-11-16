@@ -1,0 +1,39 @@
+// Dependency:
+// - ui_lora/03-base/links
+
+////
+/// @group link
+////
+
+/// Default color for links.
+/// @type Color
+$link-color: $anchor-color !default;
+
+/// Default color for links on hover.
+/// @type String
+$link-color-hover: $anchor-color-hover !default;
+
+/// Default text deocration for links.
+/// @type String
+$link-text-decoration: $anchor-text-decoration !default;
+
+@mixin link(
+    $color: $link-color,
+    $color-hover: $link-color-hover,
+    $text-decoration: $link-text-decoration
+) {
+    color: $link-color;
+    text-decoration: $text-decoration;
+    line-height: inherit;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-hover;
+    }
+}
+
+@mixin lora-components-link {
+    .c-link {
+        @include link;
+    }
+}

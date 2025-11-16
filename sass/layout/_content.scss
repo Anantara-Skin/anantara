@@ -1,0 +1,230 @@
+/*------------------------------------*\
+        #Content PAGE
+\*------------------------------------*/
+$content-gutters: rem-calc(15) !default;
+$content-gutters--large: rem-calc(20) !default;
+
+// Main Content
+$content-padding: rem-calc(0) !default;
+$content-padding--large: rem-calc(0 0 50) !default;
+$content-secondary-padding: 0 !default;
+$content-secondary-padding--large: rem-calc(0 0 40) !default;
+$content-secondary-background: color(global-background) !default;
+
+// Breadcrumbs
+$content-main-top-border-bottom: 1px solid color(border) !default;
+$content-main-top-margin: rem-calc(0 0 15) !default;
+$content-main-top-margin--large: null !default;
+$content-main-top-padding: rem-calc(10 15) !default;
+$content-main-top-padding--large: rem-calc(10 0) !default;
+
+// Sidebar and Content
+$content-sidebar-columns--large: 4 of 12 !default;
+$content-container-columns--large: 8 of 12 !default;
+$content-aside-padding: rem-calc(20 $content-gutters) !default;
+
+// Content Title
+$content-title-font: #{rem-calc(24)} / 1.4 fonts.$font-primary !default;
+$content-title-font--large: #{rem-calc(30)} / 1.4 fonts.$font-primary !default;
+$content-title-margin: rem-calc(0 0 10) !default;
+$content-title-margin--large: rem-calc(0 0 30) !default;
+$content-title-text-transform: uppercase !default;
+$content-title-text-align: $global-left !default;
+$content-title-text-align--large: null !default;
+$content-title-width: auto !default;
+$content-title-width--large: auto !default;
+$content-title-max-width: auto !default;
+$content-title-max-width--large: auto !default;
+$content-title-color: null !default;
+$content-title-color--large: null !default;
+
+// Content Section
+$content-section-background: map.get($palette, light) !default;
+$content-section-padding: $content-gutters !default;
+$content-section-padding--large: rem-calc(30 $content-gutters--large) !default;
+$content-section-margin: rem-calc(0 (-$content-gutters) 2) !default;
+$content-section-margin--large: rem-calc(0 0 20) !default;
+
+// Content Section Item
+$content-section-item-margin: rem-calc(0 (-$content-gutters) 20) !default;
+$content-section-item-margin--large: rem-calc(0 (-$content-gutters--large) 20) !default;
+
+// Check order status Section
+$content-check-order-width--large: rem-calc(270) !default;
+
+// Content Centered
+$content-centered-padding: rem-calc(40 $content-gutters) !default;
+$content-centered-padding--large: rem-calc(80 40) !default;
+$content-centered-align-items: center !default;
+$content-centered-align-items--large: $content-centered-align-items !default;
+$content-centered-secondary-background: color(element-background) !default;
+$content-centered-secondary-background--large: $content-centered-secondary-background !default;
+$content-centered-inner-max-width--large: rem-calc(400) !default;
+
+//Content container
+$content-container-margin: 0 !default;
+$content-container-margin--large: 0 !default;
+
+@mixin lora-layout-content {
+    .l-content {
+        padding: $content-padding;
+
+        @include breakpoint(large) {
+            padding: $content-padding--large;
+        }
+
+        &.m-secondary {
+            background: $content-secondary-background;
+            padding: $content-secondary-padding;
+
+            @include breakpoint(large) {
+                padding: $content-secondary-padding--large;
+            }
+        }
+
+        &.m-full-width {
+            .l-content__container {
+                width: 100%;
+            }
+
+            .l-content__main-top {
+                @include breakpoint(medium down) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .l-content__main {
+        @include breakpoint(large) {
+            @include layout;
+        }
+    }
+
+    .l-content__main-top {
+        border-bottom: $content-main-top-border-bottom;
+        margin: $content-main-top-margin;
+        padding: $content-main-top-padding;
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+        @include breakpoint(large) {
+            padding: $content-main-top-padding--large;
+            margin: $content-main-top-margin--large;
+        }
+    }
+
+    .l-content__main-container {
+        @include breakpoint(large) {
+            @include grid;
+        }
+    }
+
+    .l-content__sidebar {
+        @include cell;
+
+        @include breakpoint(large) {
+            @include cell($content-sidebar-columns--large);
+        }
+    }
+
+    .l-content__container {
+        margin: $content-container-margin;
+
+        @include cell;
+
+        @include breakpoint(large) {
+            margin: $content-container-margin--large;
+
+            @include cell($content-container-columns--large);
+        }
+    }
+
+    .l-content__title {
+        width: $content-title-width;
+        max-width: $content-title-max-width;
+
+        @include breakpoint(large) {
+            width: $content-title-width--large;
+            max-width: $content-title-max-width--large;
+        }
+
+        @include text-style(
+            $font: (
+                small: $content-title-font,
+                large: $content-title-font--large
+            ),
+            $color: (
+                small: $content-title-color,
+                large: $content-title-color--large
+            ),
+            $margin: (
+                small: $content-title-margin,
+                large: $content-title-margin--large
+            ),
+            $text-align: (
+                small: $content-title-text-align,
+                large: $content-title-text-align--large
+            ),
+            $text-transform: (
+                small: $content-title-text-transform
+            )
+        );
+    }
+
+    .l-content__section {
+        background: $content-section-background;
+        margin: $content-section-margin;
+        padding: $content-section-padding;
+
+        @include breakpoint(large) {
+            margin: $content-section-margin--large;
+            padding: $content-section-padding--large;
+        }
+    }
+
+    .l-content__section-item {
+        margin: $content-section-item-margin;
+
+        @include breakpoint(large) {
+            margin: $content-section-item-margin--large;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .l-content__check-order {
+        @include breakpoint(large) {
+            width: $content-check-order-width--large;
+        }
+    }
+
+    .l-content__centered {
+        align-items: $content-centered-align-items;
+        padding: $content-centered-padding;
+
+        @include breakpoint(large) {
+            align-items: $content-centered-align-items--large;
+            padding: $content-centered-padding--large;
+        }
+
+        &.m-secondary {
+            background: $content-centered-secondary-background;
+
+            @include breakpoint(large) {
+                background: $content-centered-secondary-background--large;
+            }
+        }
+    }
+
+    .l-content__centered-inner {
+        width: 100%;
+
+        @include breakpoint(large) {
+            max-width: $content-centered-inner-max-width--large;
+        }
+    }
+}

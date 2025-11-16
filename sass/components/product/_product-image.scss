@@ -1,0 +1,50 @@
+$product-image-transition: opacity ease 0.4s 0.2s !default;
+$product-image-carousel-scrollbar-height: rem-calc(4) !default;
+$product-image-carousel-scrollbar-bottom: 0 !default;
+$product-image-carousel-scrollbar-top: 0 !default;
+$product-image-carousel-scrollbar-margin: 0 !default;
+$product-image-carousel-scrollbar-padding: 0 !default;
+
+@mixin lora-components-product-image {
+    .c-product-image {
+        img {
+            width: 100%;
+        }
+    }
+
+    .c-product-image__link {
+        display: block;
+        cursor: pointer;
+    }
+
+    // PLP alternative image logic
+    .c-product-image.m-with-alternatives {
+        .c-product-image__primary {
+            transition: $product-image-transition;
+        }
+    }
+
+    .c-product-image__secondary {
+        display: none;
+        opacity: 0;
+        transition: $product-image-transition;
+    }
+
+    .c-product-image__carousel {
+        .c-carousel__scrollbar {
+            @include horizontal-center;
+
+            pointer-events: none;
+            height: $product-image-carousel-scrollbar-height;
+            z-index: z(carousel, scrollbar);
+            bottom: $product-image-carousel-scrollbar-bottom;
+            margin: $product-image-carousel-scrollbar-margin;
+            padding: $product-image-carousel-scrollbar-padding;
+
+            &.m-top {
+                bottom: auto;
+                top: $product-image-carousel-scrollbar-top;
+            }
+        }
+    }
+}

@@ -1,0 +1,448 @@
+/*------------------------------------*\
+        #SEARCH PAGE
+\*------------------------------------*/
+@use '../05-components/product/product-grid';
+// Main Search container
+$search-padding: rem-calc(0 0 20) !default;
+$search-padding--large: rem-calc(0 0 50) !default;
+$search-sorting-placeholder-border-radius: 0 !default;
+// Breadcrumbs
+$search-breadcrumbs-separator: 1px solid color(border) !default;
+$search-breadcrumbs-height: rem-calc(40) !default;
+// Search Phrase
+$search-phrases-separator: 1px solid color(border) !default;
+$search-phrases-height: rem-calc(45) !default;
+$search-phrases-height--large: rem-calc(60) !default;
+$search-phrases-margin: rem-calc(0 0 20) !default;
+$search-phrases-margin--large: rem-calc(0 0 20) !default;
+$search-phrases-padding: null !default;
+$search-phrases-padding--large: null !default;
+// Search Panel
+$search-panel-display: block !default;
+$search-panel-display--large: block !default;
+$search-panel-separator--medium-down: 1px solid map.get($palette, light) !default;
+$search-panel-separator: $search-panel-separator--medium-down !default;
+$search-panel-margin: rem-calc(0 0 20) !default;
+$search-panel-margin--large: rem-calc(0 0 20) !default;
+$search-panel-padding: rem-calc(0 0 4) !default;
+$search-panel-padding--large: rem-calc(0 0 4) !default;
+// Search Panel Button
+$search-panel-button-background--medium-down: color(primary-active) !default;
+$search-panel-button-background-hover--medium-down: color(primary) !default;
+$search-panel-button-border--medium-down: $search-panel-separator--medium-down !default;
+$search-panel-button-border-hover--medium-down: $search-panel-button-border--medium-down !default;
+$search-panel-button-border-right: none !default;
+$search-panel-button-border: $search-panel-separator !default;
+$search-panel-button-color--medium-down: map.get($palette, light) !default;
+$search-panel-button-font--medium-down: #{rem-calc(12)} / 1.2 fonts.$font-primary !default;
+$search-panel-button-min-width--medium-down: auto !default;
+$search-panel-button-margin--medium-down: rem-calc(0 0 16 0) !default;
+$search-panel-button-margin: $search-panel-button-margin--medium-down !default;
+$search-panel-button-padding--medium-down: rem-calc(12 20) !default;
+$search-panel-button-text-transform--medium-down: capitalize !default;
+// Sidebar
+$search-sidebar-background: map.get($palette, light) !default;
+// Tools
+$search-tools-position: static !default;
+$search-tools-border: 1px solid color(border) !default;
+$search-tools-margin: rem-calc(0 -15) !default;
+$search-tools-border-radius: null !default;
+// View swithcer
+$search-results-view-switcher-border-right: 1px solid color(border) !default;
+$search-results-view-switcher-padding: null !default;
+// Refinements CTA
+$search-refinements-cta-flex: 1 0 0 !default;
+$search-refinements-cta-min-height: rem-calc(40) !default;
+// Refinements sorting
+$search-refinements-sorting: 1 0 0 !default;
+$search-refinements-sorting-min-height: rem-calc(40) !default;
+$search-refinements-sorting-border-right: 1px solid color(border) !default;
+// Product Results Count
+$search-product-results-count-color: color(text) !default;
+$search-product-results-count-color--large: null !default;
+$search-product-results-count-font: 500 #{rem-calc(18)} / 1.5 fonts.$font-primary !default;
+$search-product-results-count-text-transform: uppercase !default;
+$search-product-results-count-text-transform--large: null !default;
+$search-product-results-count-margin--medium-down: rem-calc(25 0 15) !default;
+$search-product-results-count-font--large: #{rem-calc(30)} / 1.25 fonts.$font-primary !default;
+$search-product-results-count-position: absolute !default;
+$search-product-results-count-text-align: center !default;
+$search-product-results-count-text-align--medium-down: null !default;
+$search-product-results-count-text-width: 100% !default;
+$search-results-count-inline-justify-content: center !default;
+$search-results-count-inline-color: color(text-secondary) !default;
+$search-results-count-inline-border-right: 1px solid color(border) !default;
+$search-results-count-inline-flex: 1 0 0 !default;
+$search-results-count-inline-margin: rem-calc(0 10 0 0) !default;
+$search-product-results-count-no-refinements-justify-content: center !default;
+// Product Results
+$search-product-results-separator--large: 1px solid color(border) !default;
+$search-product-results-padding: rem-calc(20 0 0) !default;
+$search-product-results-padding--large: null !default;
+$search-product-results-margin--large: rem-calc(22 0 0 0) !default;
+// Pagination
+$search-pagination-margin: rem-calc(16 0 0) !default;
+$search-pagination-margin--large: rem-calc(24 0 0) !default;
+// Recommendations
+$search-recommendations-separator: 1px solid color(border) !default;
+$search-recommendations-padding: rem-calc(20 0 0) !default;
+$search-recommendations-padding--large: rem-calc(55 0 0) !default;
+$search-recommendations-margin: rem-calc(30 0 0) !default;
+$search-recommendations-margin--large: rem-calc(5 0 0) !default;
+// No results
+$search-no-results-phrases-height: $search-phrases-height !default;
+$search-no-results-phrases-height--large: $search-phrases-height--large !default;
+$search-no-results-phrases-justify-content: null !default;
+$search-no-results-phrases-justify-content--large: null !default;
+$search-no-results-phrases-padding: rem-calc(0) !default;
+$search-no-results-phrases-padding--large: null !default;
+// No refinements grid
+$search-no-refinements-product-grid-columns: 2 !default;
+$search-no-refinements-product-grid-columns--large: 4 !default;
+$search-no-refinements-search-sorting-min-width: rem-calc(180) !default;
+
+@mixin lora-layout-search {
+    .l-search {
+        padding: $search-padding;
+
+        @include breakpoint(large) {
+            padding: $search-padding--large;
+        }
+
+        // PLP contextualization
+        .c-sorting {
+            flex-grow: 1;
+        }
+
+        .c-sorting__field,
+        .l-search__sorting .c-select__placeholder {
+            @include breakpoint(medium down) {
+                border: 0;
+                border-radius: $search-sorting-placeholder-border-radius;
+            }
+        }
+
+        &.m-no-results {
+            .l-search__phrases {
+                height: $search-no-results-phrases-height;
+                justify-content: $search-no-results-phrases-justify-content;
+                padding: $search-no-results-phrases-padding;
+
+                @include breakpoint(large) {
+                    height: $search-no-results-phrases-height--large;
+                    justify-content: $search-no-results-phrases-justify-content--large;
+                    padding: $search-no-results-phrases-padding--large;
+                }
+            }
+        }
+    }
+
+    .l-search__top {
+        @include layout;
+    }
+
+    .l-search__main {
+        @include layout;
+
+        @include breakpoint(large) {
+            position: relative;
+        }
+    }
+
+    .l-search__main-wrapper {
+        @include breakpoint(large) {
+            @include grid;
+        }
+
+        &.m-no-refinements {
+            @include lora-helper-product-grid-columns(
+                $search-no-refinements-product-grid-columns,
+                $search-no-refinements-product-grid-columns--large
+            );
+
+            .l-search__products {
+                width: 100%;
+            }
+            
+            .l-search__sorting {
+                min-width: $search-no-refinements-search-sorting-min-width;
+            }
+
+            .l-search__refinements-cta.m-large {
+                display: none;
+
+                @include breakpoint(large) {
+                    display: flex;
+                }
+            }
+
+            .c-refinements-toggler {
+                @include breakpoint(large) {
+                    z-index: z(filter);
+                }
+            }
+        }
+    }
+
+    .l-search__sidebar {
+        @include breakpoint(medium down) {
+            background: $search-sidebar-background;
+            height: 100%;
+            #{$global-left}: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: z(searchSidebar);
+        }
+        @include breakpoint(large) {
+            @include cell(3 of 12);
+        }
+    }
+
+    .l-search__main:not(.m-refinements-panel-active) .l-search__sidebar {
+        @include breakpoint(medium down) {
+            display: none;
+        }
+    }
+
+    .l-search__products {
+        @include breakpoint(large) {
+            //@@ Change to grid mixins - column 9
+            @include cell(9 of 12);
+        }
+    }
+
+    .l-search__tools {
+        position: $search-tools-position;
+        align-items: stretch;
+        display: flex;
+
+        @include breakpoint(medium down) {
+            @include gutters($negative: true);
+
+            border: $search-tools-border;
+            flex-wrap: wrap;
+            margin: $search-tools-margin;
+            border-radius: $search-tools-border-radius;
+        }
+        @include breakpoint(large) {
+            justify-content: flex-end;
+        }
+    }
+
+    .l-search__refinements {
+        @include breakpoint(medium down) {
+            height: 100%;
+        }
+    }
+
+    .l-search__content-results {
+        @include grid;
+    }
+
+    .l-search__view-switcher,
+    .l-search__refinements-cta,
+    .l-search__sorting,
+    .l-search__product-results-count-inline,
+    .l-search__breadcrumbs,
+    .l-search__phrases {
+        align-items: center;
+        display: flex;
+    }
+
+    .l-search__breadcrumbs {
+        border-bottom: $search-breadcrumbs-separator;
+        height: $search-breadcrumbs-height;
+    }
+
+    .l-search__phrases {
+        border-bottom: $search-phrases-separator;
+        height: $search-phrases-height;
+        margin: $search-phrases-margin;
+        padding: $search-phrases-padding;
+
+        @include breakpoint(large) {
+            height: $search-phrases-height--large;
+            margin: $search-phrases-margin--large;
+            padding: $search-phrases-padding--large;
+        }
+    }
+
+    .l-search__panel {
+        display: $search-panel-display;
+        border-bottom: $search-panel-separator;
+        margin: $search-panel-margin;
+        padding: $search-panel-padding;
+
+        @include breakpoint(large) {
+            display: $search-panel-display--large;
+            margin: $search-panel-margin--large;
+            padding: $search-panel-padding--large;
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    .l-search__panel-items {
+        .l-search__panel-button {
+            @include breakpoint(medium down) {
+                @include lora-helper-button-style(
+                    $background: $search-panel-button-background--medium-down,
+                    $background-hover: $search-panel-button-background-hover--medium-down,
+                    $border: $search-panel-button-border--medium-down,
+                    $border-hover: $search-panel-button-border-hover--medium-down,
+                    $color: $search-panel-button-color--medium-down
+                );
+
+                font: $search-panel-button-font--medium-down;
+                min-width: $search-panel-button-min-width--medium-down;
+                margin: $search-panel-button-margin--medium-down;
+                padding: $search-panel-button-padding--medium-down;
+                text-transform: $search-panel-button-text-transform--medium-down;
+                border-#{$global-right}: $search-panel-button-border--medium-down;
+            }
+
+            margin: $search-panel-button-margin;
+            border-#{$global-right}: $search-panel-button-border;
+
+            &:last-child {
+                margin-#{$global-right}: 0;
+                border-#{$global-right}: $search-panel-button-border-right;
+            }
+        }
+    }
+
+    .l-search__view-switcher {
+        flex: 0 0 auto;
+        display: none;
+
+        @include breakpoint(medium down) {
+            border-#{$global-right}: $search-results-view-switcher-border-right;
+            padding: $search-results-view-switcher-padding;
+        }
+    }
+
+    .l-search__refinements-cta {
+        flex: $search-refinements-cta-flex;
+
+        @include breakpoint(large) {
+            display: none;
+        }
+        @include breakpoint(medium down) {
+            min-height: $search-refinements-cta-min-height;
+        }
+    }
+
+    .l-search__sorting {
+        @include breakpoint(medium down) {
+            flex: $search-refinements-sorting;
+            min-height: $search-refinements-sorting-min-height;
+            border-#{$global-right}: $search-refinements-sorting-border-right;
+        }
+    }
+
+    .l-search__product-results-count {
+        color: $search-product-results-count-color;
+        text-transform: $search-product-results-count-text-transform;
+        text-align: $search-product-results-count-text-align--medium-down;
+
+        @include breakpoint(large) {
+            display: none;
+        }
+
+        .c-results-count {
+            font: $search-product-results-count-font;
+
+            @include breakpoint(medium down) {
+                margin: $search-product-results-count-margin--medium-down;
+            }
+            
+            @include breakpoint(large) {
+                font: $search-product-results-count-font--large;
+            }
+        }
+
+        &.m-no-refinements {
+            @include breakpoint(large) {
+                display: flex;
+                justify-content: $search-product-results-count-no-refinements-justify-content;
+            }
+        }
+    }
+
+    .l-search__product-results-count-inline {
+        color: $search-results-count-inline-color;
+
+        @include breakpoint(medium down) {
+            flex: $search-results-count-inline-flex;
+            border-#{$global-right}: $search-results-count-inline-border-right;
+            justify-content: $search-results-count-inline-justify-content;
+        }
+
+        @include breakpoint(large) {
+            margin: $search-results-count-inline-margin;
+        }
+    }
+
+    .l-search__tools .l-search__product-results-count {
+        @include breakpoint(medium down) {
+            display: none;
+        }
+        @include breakpoint(large) {
+            color: $search-product-results-count-color--large;
+            display: block;
+            font: $search-product-results-count-font--large;
+            #{$global-left}: 0;
+            position: $search-product-results-count-position;
+            text-align: $search-product-results-count-text-align;
+            text-transform: $search-product-results-count-text-transform--large;
+            width: $search-product-results-count-text-width;
+        }
+    }
+
+    .l-search__product-results {
+        @include breakpoint(large) {
+            margin: $search-product-results-margin--large;
+        }
+    }
+
+    .l-search__product-results .c-product-grid {
+        padding: $search-product-results-padding;
+
+        @include breakpoint(large) {
+            border-top: $search-product-results-separator--large;
+            padding: $search-product-results-padding--large;
+        }
+    }
+
+    .l-search__pagination {
+        .c-load-more,
+        .c-pagination {
+            margin: $search-pagination-margin;
+            text-align: center;
+
+            @include breakpoint(large) {
+                margin: $search-pagination-margin--large;
+            }
+        }
+    }
+
+    .c-content-results {
+        min-width: 100%;
+
+        &.m-content-only {
+            .c-content-results__section:first-child {
+                // Fixed issue with child element `c-anchor` which has negative margin
+                margin-top: -1px;
+                padding-top: 1px;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    // EO search components context styling
+}

@@ -1,0 +1,212 @@
+$navigation-tile-border: none !default;
+$navigation-tile-border--large: null !default;
+$navigation-tile-padding: 0 !default;
+$navigation-tile-padding--large: null !default;
+$navigation-tile-margin: rem-calc(0 0 30) !default;
+$navigation-tile-margin--large: rem-calc(0 0 60) !default;
+// Navigation overlay
+$navigation-tile-overlay-is-enabled: true !default;
+$navigation-tile-overlay-padding: rem-calc(0 15) !default;
+$navigation-tile-overlay-text-align: center !default;
+$navigation-tile-overlay-align-items: center !default;
+$navigation-tile-overlay-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out !default;
+$navigation-tile-overlay-background: rgba(map.get($palette, light), 0.9) !default;
+$navigation-tile-overlay-border: null !default;
+// Content
+$navigation-tile-content-justify-content: center !default;
+/// Title
+$navigation-tile-title-max-lines: 2 !default;
+$navigation-tile-title-max-lines--large: null !default;
+$navigation-tile-title-line-height: 1.25 !default;
+$navigation-tile-title-line-height--large: $navigation-tile-title-line-height !default;
+$navigation-tile-title-font-size: rem-calc(14) !default;
+$navigation-tile-title-font-size--large: $navigation-tile-title-font-size !default;
+$navigation-tile-title-font: 500 #{$navigation-tile-title-font-size} / $navigation-tile-title-line-height fonts.$font-primary !default;
+$navigation-tile-title-font--large: 500 #{$navigation-tile-title-font-size--large} / $navigation-tile-title-line-height--large fonts.$font-primary !default;
+$navigation-tile-title-color: color(text) !default;
+$navigation-tile-title-color--large: null !default;
+$navigation-tile-title-text-transform: uppercase !default;
+$navigation-tile-title-text-transform--large: null !default;
+$navigation-tile-title-margin: rem-calc(12 0 0) !default;
+$navigation-tile-title-margin--large: rem-calc(20 0 0) !default;
+$navigation-tile-title-text-align: unset !default;
+$navigation-tile-title-text-align--large: unset !default;
+$navigation-tile-title-letter-spacing: null !default;
+/// Description
+$navigation-tile-description-max-lines: 4 !default;
+$navigation-tile-description-max-lines--large: null !default;
+$navigation-tile-description-line-height: 1.5 !default;
+$navigation-tile-description-line-height--large: $navigation-tile-description-line-height !default;
+$navigation-tile-description-font-size: rem-calc(12) !default;
+$navigation-tile-description-font-size--large: $navigation-tile-description-font-size !default;
+$navigation-tile-description-font: #{$navigation-tile-description-font-size} / $navigation-tile-description-line-height fonts.$font-primary !default;
+$navigation-tile-description-font--large: #{$navigation-tile-description-font-size--large} / $navigation-tile-description-line-height--large fonts.$font-primary !default;
+$navigation-tile-description-color: color(text) !default;
+$navigation-tile-description-color--large: null !default;
+$navigation-tile-description-text-transform: none !default;
+$navigation-tile-description-text-transform--large: null !default;
+$navigation-tile-description-margin: rem-calc(0 0 20) !default;
+$navigation-tile-description-margin--large: null !default;
+/// Button
+$navigation-tile-button-position: static !default;
+$navigation-tile-button-top: auto !default;
+$navigation-tile-button-right: auto !default;
+$navigation-tile-button-bottom: auto !default;
+$navigation-tile-button-left: auto !default;
+$navigation-tile-button-margin: null !default;
+$navigation-tile-button-padding: null !default;
+
+@mixin lora-components-navigation-tile {
+    .c-navigation-tile {
+        display: flex;
+        flex-flow: column;
+        position: relative;
+        text-decoration: none;
+        border: $navigation-tile-border;
+        padding: $navigation-tile-padding;
+        margin: $navigation-tile-margin;
+
+        @include breakpoint(large) {
+            border: $navigation-tile-border--large;
+            padding: $navigation-tile-padding--large;
+            margin: $navigation-tile-margin--large;
+
+            &:hover,
+            &:focus {
+                .c-navigation-tile__overlay,
+                .c-navigation-tile__alternative {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .c-navigation-tile__overlay {
+        display: none;
+
+        @include breakpoint(large) {
+            display: flex;
+            position: absolute;
+            top: 0;
+            #{$global-left}: 0;
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transition: $navigation-tile-overlay-transition;
+            padding: $navigation-tile-overlay-padding;
+            align-items: $navigation-tile-overlay-align-items;
+            text-align: $navigation-tile-overlay-text-align;
+            flex-flow: column;
+            border: $navigation-tile-overlay-border;
+
+            @if ($navigation-tile-overlay-is-enabled) {
+                background: $navigation-tile-overlay-background;
+            }
+        }
+    }
+
+    .c-navigation-tile__image {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .c-navigation-tile__alternative {
+        display: none;
+
+        @include breakpoint(large) {
+            @include absolute-center;
+
+            display: block;
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transition: $navigation-tile-overlay-transition;
+        }
+    }
+
+    .c-navigation-tile__content {
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+        justify-content: $navigation-tile-content-justify-content;
+    }
+
+    .c-navigation-tile__title {
+        @include text-style(
+            $color: (
+                small: $navigation-tile-title-color,
+                large: $navigation-tile-title-color--large
+            ),
+            $font: (
+                small: $navigation-tile-title-font,
+                large: $navigation-tile-title-font--large
+            ),
+            $margin: (
+                small: $navigation-tile-title-margin,
+                large: $navigation-tile-title-margin--large
+            ),
+            $text-align: (
+                small: $navigation-tile-title-text-align,
+                large: $navigation-tile-title-text-align--large
+            ),
+            $text-transform: (
+                small: $navigation-tile-title-text-transform,
+                large: $navigation-tile-title-text-transform--large
+            ),
+            $letter-spacing: (
+                small: $navigation-tile-title-letter-spacing
+            )
+        );
+        @include text-line-clamp($navigation-tile-title-max-lines);
+
+        width: 100%;
+
+        @include breakpoint(large) {
+            @include text-line-clamp($navigation-tile-title-max-lines--large);
+        }
+    }
+
+    .c-navigation-tile__description {
+        width: 100%;
+
+        @include text-style(
+            $color: (
+                small: $navigation-tile-description-color,
+                large: $navigation-tile-description-color--large
+            ),
+            $font: (
+                small: $navigation-tile-description-font,
+                large: $navigation-tile-description-font--large
+            ),
+            $margin: (
+                small: $navigation-tile-description-margin,
+                large: $navigation-tile-description-margin--large
+            ),
+            $text-transform: (
+                small: $navigation-tile-description-text-transform,
+                large: $navigation-tile-description-text-transform--large
+            )
+        );
+        @include text-line-clamp($navigation-tile-description-max-lines);
+
+        @include breakpoint(large) {
+            @include text-line-clamp($navigation-tile-description-max-lines--large);
+        }
+    }
+
+    .c-navigation-tile__button {
+        position: $navigation-tile-button-position;
+        top: $navigation-tile-button-top;
+        #{$global-right}: $navigation-tile-button-right;
+        bottom: $navigation-tile-button-bottom;
+        #{$global-left}: $navigation-tile-button-left;
+        margin: $navigation-tile-button-margin;
+        padding: $navigation-tile-button-padding;
+    }
+}

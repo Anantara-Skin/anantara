@@ -1,0 +1,11 @@
+$product-brand-color: color(text-secondary) !default;
+$product-brand-text-transform: uppercase !default;
+$product-brand-font: #{rem-calc(12)} / 1.2 fonts.$font-primary !default;
+
+@mixin lora-components-product-brand {
+    .c-product-brand {
+        color: $product-brand-color;
+        text-transform: $product-brand-text-transform;
+        font: $product-brand-font;
+    }
+}

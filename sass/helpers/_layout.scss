@@ -1,0 +1,35 @@
+/* stylelint-disable declaration-no-important */
+
+@mixin full-width-layout {
+    width: 100vw;
+    box-sizing: border-box;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+}
+
+@mixin lora-helpers-full-width {
+    $padding: map-get($grid-container-padding, large) !default;
+
+    .h-layout-full-screen {
+        @include full-width-layout;
+    }
+
+    .h-layout-full-screen-inner {
+        @include full-width-layout;
+
+        @include breakpoint(xlarge) {
+            padding-right: calc(50vw - (#{$grid-container / 2} - #{$padding / 2})) !important;
+            padding-left: calc(50vw - (#{$grid-container / 2} - #{$padding / 2})) !important;
+        }
+    }
+
+    // Mobile Safari does not support position: fixed when an input focused and virtual keyboard displayed.
+    // To force it work the same way as Mobile Chrome, using position: absolute, height: 100%
+    // Link for reference with additional info https://gist.github.com/avesus/957889b4941239490c6c441adbe32398
+    .h-layout-full-screen-absolute {
+        position: absolute;
+        width: 100%;
+        max-height: vh(100);
+        transform: translate3d(0, 0, 0);
+    }
+}

@@ -1,0 +1,88 @@
+// --------------------------------------------------
+// Main SCSS entry point
+// --------------------------------------------------
+
+// 1. Settings / Variables
+@use "./settings" as settings;
+@use "./base/fonts" as fonts;
+@use "./base/global" as global;
+
+// 2. Utilities / Functions / Mixins
+@use "./utilities/unit" as unit;
+@use "./utilities/animations" as animations;
+
+// 3. Base styles
+@use "./base/body" as body;
+@use "./base/paragraphs" as paragraphs;
+@use "./base/headings" as headings;
+@use "./base/forms" as forms;
+@use "./base/links" as links;
+@use "./base/lists" as lists;
+@use "./base/media" as media;
+
+// 4. Layout
+@use "./layout/header" as header;
+@use "./layout/footer" as footer;
+
+// 5. Components
+@use "./components/button" as button;
+@use "./components/carousel" as carousel;
+@use "./components/header/header-minicart-icon" as minicart;
+@use "./components/footer/footer-contacts" as footerContacts;
+@use "./components/footer/footer-copyright" as footerCopyright;
+@use "./components/footer/footer-links" as footerLinks;
+@use "./components/footer/footer-nav" as footerNav;
+@use "./components/footer/footer-social" as footerSocial;
+
+// --------------------------------------------------
+// Generate actual CSS
+// --------------------------------------------------
+
+// Example: global body styles
+body {
+  font-family: fonts.$font-primary, sans-serif;
+  font-size: global.$global-font-size;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: global.$global-text-color;
+  background-color: global.$global-background-color;
+}
+
+// Example: headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: fonts.$font-primary, sans-serif;
+  font-weight: 400;
+  margin: 0 0 rem-calc(16) 0;
+}
+
+// Example: links
+a {
+  color: global.$global-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: global.$global-link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+// Example: buttons (using mixin from components/button)
+@include button.button-default;
+
+// Example: header layout
+header {
+  @include header.header-layout;
+}
+
+// Example: footer layout
+footer {
+  @include footer.footer-layout;
+}
+
+// Example: carousel component
+.carousel {
+  @include carousel.carousel-style;
+}
+
+// You can continue adding real rules for other components...

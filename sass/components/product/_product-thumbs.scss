@@ -1,0 +1,65 @@
+$product-thumbs-video-asset-icon-height: rem-calc(26) !default;
+$product-thumbs-video-asset-icon-width: rem-calc(26) !default;
+$product-thumbs-video-asset-icon-height--large: null !default;
+$product-thumbs-video-asset-icon-width--large: null !default;
+$product-thumbs-360view-padding: rem-calc(15) !default;
+
+@mixin lora-components-product-thumbs {
+    .c-product-thumbs {
+        .c-product-detail-image__image-link {
+            height: 100%;
+            width: 100%;
+            display: block;
+            cursor: pointer;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            &.m-360view {
+                padding: $product-thumbs-360view-padding;
+            }
+        }
+
+        .c-video-asset {
+            height: 100%;
+            width: 100%;
+        }
+
+        .c-video-asset__container {
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .c-video-asset__link {
+            align-items: center;
+            display: flex;
+
+            &::after,
+            &::before {
+                height: $product-thumbs-video-asset-icon-height;
+                width: $product-thumbs-video-asset-icon-width;
+
+                @include breakpoint(large) {
+                    height: $product-thumbs-video-asset-icon-height--large;
+                    width: $product-thumbs-video-asset-icon-width--large;
+                }
+            }
+        }
+    }
+
+    .c-product-thumbs.m-horizontal .c-carousel__item {
+        height: auto;
+
+        img,
+        picture {
+            width: 100%;
+        }
+    }
+}

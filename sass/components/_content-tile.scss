@@ -1,0 +1,789 @@
+$content-tile-margin: rem-calc(0 0 15) !default;
+$content-tile-margin--large: 0 !default;
+$content-tile-align-items: flex-start !default;
+
+/// Space between sections on horizontal position
+$content-tile-gutter: (
+    default: (
+        small: rem-calc(20),
+        large: rem-calc(20),
+    ),
+    large: (
+        small: rem-calc(20),
+        large: rem-calc(130),
+    ),
+) !default;
+
+/// Space between sections on vertical position
+$content-tile-stack-gutter: rem-calc(20) !default;
+$content-tile-stack-box-shadow: null !default;
+
+$content-tile-link-text-decoration: none !default;
+$content-tile-link-color: null !default;
+
+/// Content width
+$content-tile-video-min-width: 45% !default;
+$content-tile-content-width: 100% !default;
+
+/// Title
+$content-tile-title-max-lines: 2 !default;
+$content-tile-title-max-lines--large: null !default;
+$content-tile-title-line-height: 1.25 !default;
+$content-tile-title-line-height--large: $content-tile-title-line-height !default;
+$content-tile-title-font-size: rem-calc(14) !default;
+$content-tile-title-font-size--large: $content-tile-title-font-size !default;
+$content-tile-title-font: 500 #{$content-tile-title-font-size} / $content-tile-title-line-height fonts.$font-primary !default;
+$content-tile-title-font--large: 500 #{$content-tile-title-font-size--large} / $content-tile-title-line-height--large fonts.$font-primary !default;
+$content-tile-title-color: color(text) !default;
+$content-tile-title-color--large: null !default;
+$content-tile-title-text-transform: uppercase !default;
+$content-tile-title-text-transform--large: null !default;
+$content-tile-title-margin: rem-calc(0 0 2) !default;
+$content-tile-title-margin--large: rem-calc(0 0 10) !default;
+$content-tile-title-letter-spacing: null !default;
+$content-tile-equal-rows-title-lines: 2 !default;
+$content-tile-equal-rows-title-lines--large: $content-tile-equal-rows-title-lines !default;
+$content-tile-equal-rows-title-height: $content-tile-title-line-height * $content-tile-title-font-size * $content-tile-equal-rows-title-lines !default;
+$content-tile-equal-rows-title-height--large: $content-tile-title-line-height--large * $content-tile-title-font-size--large * $content-tile-equal-rows-title-lines--large !default;
+$content-tile-rounded-border-radius: rem-calc(5) !default;
+$content-tile-rounded-border-radius--large: rem-calc(10) !default;
+// Tile Subtitle
+$content-tile-subtitle-margin: rem-calc(0 0 5) !default;
+$content-tile-subtitle-margin--large: null !default;
+$content-tile-subtitle-line-height: 1.25 !default;
+$content-tile-subtitle-line-height--large: $content-tile-title-line-height !default;
+$content-tile-subtitle-font-size: rem-calc(12) !default;
+$content-tile-subtitle-font-size--large: $content-tile-subtitle-font-size !default;
+$content-tile-subtitle-font: 600 #{$content-tile-subtitle-font-size} / $content-tile-subtitle-line-height fonts.$font-primary !default;
+$content-tile-subtitle-font--large: 600 #{$content-tile-subtitle-font-size--large} / $content-tile-subtitle-line-height--large fonts.$font-primary !default;
+$content-tile-equal-rows-subtitle-lines: 2 !default;
+$content-tile-equal-rows-subtitle-lines--large: $content-tile-equal-rows-subtitle-lines !default;
+$content-tile-equal-rows-subtitle-height: $content-tile-subtitle-line-height * $content-tile-subtitle-font-size * $content-tile-equal-rows-subtitle-lines !default;
+$content-tile-equal-rows-subtitle-height--large: $content-tile-subtitle-line-height--large * $content-tile-subtitle-font-size--large * $content-tile-equal-rows-subtitle-lines--large !default;
+/// Label
+$content-tile-label-font: 500 #{rem-calc(12)} / 1.25 fonts.$font-primary !default;
+$content-tile-label-font--large: null !default;
+$content-tile-label-color: color(text-secondary) !default;
+$content-tile-label-color--large: null !default;
+$content-tile-label-text-transform: uppercase !default;
+$content-tile-label-text-transform--large: null !default;
+$content-tile-label-margin: rem-calc(0 0 10) !default;
+$content-tile-label-margin--large: null !default;
+$content-tile-label-display: block !default;
+$content-tile-label-display--large: block !default;
+$content-tile-label-background: none !default;
+$content-tile-label-background--large: none !default;
+$content-tile-label-padding: 0 !default;
+$content-tile-label-padding--large: 0 !default;
+$content-tile-label-letter-spacing: null !default;
+$content-tile-label-border-radius: null !default;
+$content-tile-label-border: null !default;
+$content-tile-label-border--large: null !default;
+$content-tile-label-border-width: 0 !default;
+$content-tile-label-border-width--large: null !default;
+$content-tile-label-box-shadow: null !default;
+$content-tile-label-box-shadow--large: null !default;
+$content-tile-label-text-decoration: null !default;
+$content-tile-label-text-decoration--large: null !default;
+
+/// Description
+$content-tile-description-max-lines: 2 !default;
+$content-tile-description-max-lines--large: null !default;
+$content-tile-description-line-height: 1.5 !default;
+$content-tile-description-line-height--large: $content-tile-description-line-height !default;
+$content-tile-description-font-size: rem-calc(12) !default;
+$content-tile-description-font-size--large: $content-tile-description-font-size !default;
+$content-tile-description-font: #{$content-tile-description-font-size} / $content-tile-description-line-height fonts.$font-primary !default;
+$content-tile-description-font--large: #{$content-tile-description-font-size--large} / $content-tile-description-line-height--large fonts.$font-primary !default;
+$content-tile-description-color: color(text) !default;
+$content-tile-description-color--large: null !default;
+$content-tile-description-text-transform: none !default;
+$content-tile-description-text-transform--large: null !default;
+$content-tile-description-margin: rem-calc(0 0 10) !default;
+$content-tile-description-margin--large: null !default;
+$content-tile-description-letter-spacing: null !default;
+$content-tile-equal-rows-description-lines: 2 !default;
+$content-tile-equal-rows-description-lines--large: $content-tile-equal-rows-description-lines !default;
+$content-tile-equal-rows-description-height: $content-tile-description-line-height * $content-tile-description-font-size * $content-tile-equal-rows-description-lines !default;
+$content-tile-equal-rows-description-height--large: $content-tile-description-line-height--large * $content-tile-description-font-size--large * $content-tile-equal-rows-description-lines--large !default;
+$content-tile-description-padding: null !default;
+$content-tile-description-padding--large: null !default;
+$content-tile-content-shadow-box-shadow: rem-calc(0 16 40) rgba(color(text), 0.03) !default;
+$content-tile-content-shadow-margin: rem-calc(0 0 10) !default;
+$content-tile-content-shadow-padding: rem-calc(20 25) !default;
+$content-tile-content-shadow-background: null !default;
+
+/// Title Large
+$content-tile-large-title-font: 500 #{rem-calc(18)} fonts.$font-primary !default;
+$content-tile-large-title-font--large: #{rem-calc(36)} / 1 fonts.$font-primary !default;
+$content-tile-large-title-color: color(text) !default;
+$content-tile-large-title-color--large: $content-tile-large-title-color !default;
+$content-tile-large-title-letter-spacing: null !default;
+$content-tile-large-title-text-transform: uppercase !default;
+$content-tile-large-title-text-transform--large: none !default;
+$content-tile-large-title-margin: rem-calc(0 0 12) !default;
+$content-tile-large-title-margin--large: rem-calc(0 0 20) !default;
+// Tile image
+$content-tile-image-flex: 1 0 auto !default;
+$content-tile-image-flex--large: null !default;
+$content-tile-image-max-width: 60% !default;
+$content-tile-image-max-width--large: null !default;
+// Tile Content
+$content-tile-content-flex: null !default;
+$content-tile-content-flex--large: null !default;
+$content-tile-content-background: null !default;
+$content-tile-content-padding: null !default;
+// Tile Video
+$content-tile-video-icon: 'play' !default;
+$content-tile-video-icon-color: color(primary) !default;
+$content-tile-video-icon-height: rem-calc(20) !default;
+$content-tile-video-icon-width: rem-calc(20) !default;
+$content-tile-video-icon-height--large: rem-calc(35) !default;
+$content-tile-video-icon-width--large: rem-calc(35) !default;
+$content-tile-video-icon-filter: null !default;
+$content-tile-video-icon-background: map.get($palette, light) !default;
+$content-tile-video-icon-box-shadow: rem-calc(0 0 4 0) rgba(map.get($palette, dark), 0.2) !default;
+$content-tile-video-icon-border-radius: 50% !default;
+$content-tile-video-icon-opacity: 0.75 !default;
+$content-tile-video-icon-usesvg: false !default;
+/// Tile Featured
+$content-tile-featured-content-max-width: 100% !default;
+$content-tile-featured-content-max-width--large: 100% !default;
+$content-tile-featured-title-font: $content-tile-title-font !default;
+$content-tile-featured-title-font--large: $content-tile-featured-title-font !default;
+$content-tile-featured-title-margin: $content-tile-title-margin !default;
+$content-tile-featured-title-margin--large: $content-tile-title-margin--large !default;
+/// Label Large
+$content-tile-large-label-font: #{rem-calc(12)} / 1.5 fonts.$font-primary !default;
+$content-tile-large-label-font--large: 500 #{rem-calc(14)} fonts.$font-primary !default;
+$content-tile-large-label-color: color(primary) !default;
+$content-tile-large-label-color--large: $content-tile-large-label-color !default;
+$content-tile-large-label-text-transform: none !default;
+$content-tile-large-label-text-transform--large: uppercase !default;
+$content-tile-large-label-margin: rem-calc(0 0 7) !default;
+$content-tile-large-label-margin--large: rem-calc(0 0 15) !default;
+$content-tile-large-label-padding: null !default;
+$content-tile-large-label-border-left: null !default;
+$content-tile-large-label-box-shadow: null !default;
+$content-tile-large-label-max-width: null !default;
+$content-tile-large-label-text-decoration: null !default;
+$content-tile-large-label-background: null !default;
+
+/// Description Large
+$content-tile-large-description-font: #{rem-calc(12)} / 1.5 fonts.$font-primary !default;
+$content-tile-large-description-font--large: $content-tile-large-description-font !default;
+$content-tile-large-description-color: color(text) !default;
+$content-tile-large-description-color--large: $content-tile-large-description-color !default;
+$content-tile-large-description-text-transform: none !default;
+$content-tile-large-description-text-transform--large: $content-tile-large-description-text-transform !default;
+$content-tile-large-description-margin: rem-calc(0 0 25) !default;
+$content-tile-large-description-margin--large: $content-tile-large-description-margin !default;
+$content-tile-large-description-letter-spacing: null !default;
+// CTA
+$content-tile-actions-margin: rem-calc(15 0) !default;
+$content-tile-actions-margin--large: rem-calc(20 0 0) !default;
+
+$content-tile-image-autowidth-width: auto !default;
+/// Adds styles for a media object container.
+@mixin content-tile-container {
+    display: flex;
+    margin: $content-tile-margin;
+    align-items: $content-tile-align-items;
+    background: $content-tile-content-background;
+    padding: $content-tile-content-padding;
+
+    @include breakpoint(large) {
+        margin: $content-tile-margin--large;
+    }
+
+    // Override link style in case the whole media object is clickable element
+    &,
+    > a {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: inherit;
+        }
+    }
+}
+
+/// Adds styles for sections within a media object.
+/// @param {Number} $padding [$content-tile-section-padding] - Padding between sections.
+@mixin content-tile-section(
+    $padding: map-deep-get($content-tile-gutter, "default", "small"),
+    $padding--large: map-deep-get($content-tile-gutter, "default", "large"),
+    $inverse: false
+) {
+    @if ($inverse) {
+        &:last-child {
+            padding-#{$global-right}: $padding;
+            padding-#{$global-left}: $padding;
+
+            @include breakpoint(large) {
+                padding-#{$global-right}: $padding--large;
+                padding-#{$global-left}: 0;
+            }
+
+            // Add an equal padding on the other side for a full-width section (no need to align with a page wrapper)
+            .l-section.m-full-width & {
+                padding-#{$global-left}: $padding;
+
+                @include breakpoint(large) {
+                    padding-#{$global-left}: $padding--large;
+                }
+            }
+        }
+    }
+    @else {
+        &:last-child {
+            padding-#{$global-left}: $padding;
+
+            @include breakpoint(large) {
+                padding-#{$global-left}: $padding--large;
+            }
+
+            // Add an equal padding on the other side for a full-width section (no need to align with a page wrapper)
+            .l-section.m-full-width & {
+                padding-#{$global-right}: $padding;
+                padding-#{$global-left}: $padding;
+
+                @include breakpoint(large) {
+                    padding-#{$global-right}: $padding--large;
+                    padding-#{$global-left}: $padding--large;
+                }
+            }
+        }
+    }
+}
+
+@mixin content-tile-stack {
+    flex-basis: auto;
+    padding: 0;
+    padding-top: $content-tile-stack-gutter;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: $content-tile-stack-box-shadow;
+
+    &:first-child {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        flex-shrink: 0;
+    }
+
+    &:last-child {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+@mixin content-tile-dark-mode {
+    background: dark-mode-color(background);
+    color: dark-mode-color(text);
+
+    .c-content-tile__title,
+    .c-content-tile__label,
+    .c-content-tile__description {
+        color: dark-mode-color(text);
+
+        a {
+            color: dark-mode-color(text);
+        }
+    }
+}
+
+@mixin lora-components-content-tile {
+    .c-content-tile {
+        @include content-tile-container;
+
+        &.m-large {
+            .c-content-tile__section {
+                @include content-tile-section(
+                    $padding: map-deep-get($content-tile-gutter, "large", "small"),
+                    $padding--large: map-deep-get($content-tile-gutter, "large", "large")
+                );
+
+                flex: 1;
+            }
+
+            .c-content-tile__title {
+                @include text-style(
+                    $color: (
+                        small: $content-tile-large-title-color,
+                        large: $content-tile-large-title-color--large
+                    ),
+                    $font: (
+                        small: $content-tile-large-title-font,
+                        large: $content-tile-large-title-font--large
+                    ),
+                    $margin: (
+                        small: $content-tile-large-title-margin,
+                        large: $content-tile-large-title-margin--large
+                    ),
+                    $text-transform: (
+                        small: $content-tile-large-title-text-transform,
+                        large: $content-tile-large-title-text-transform--large
+                    ),
+                    $letter-spacing: (
+                        small: $content-tile-large-title-letter-spacing
+                    )
+                );
+            }
+
+            .c-content-tile__label {
+                @include text-style(
+                    $color: (
+                        small: $content-tile-large-label-color,
+                        large: $content-tile-large-label-color--large
+                    ),
+                    $font: (
+                        small: $content-tile-large-label-font,
+                        large: $content-tile-large-label-font--large
+                    ),
+                    $margin: (
+                        small: $content-tile-large-label-margin,
+                        large: $content-tile-large-label-margin--large
+                    ),
+                    $text-transform: (
+                        small: $content-tile-large-label-text-transform,
+                        large: $content-tile-large-label-text-transform--large
+                    ),
+                    $text-decoration: (
+                        small: $content-tile-large-label-text-decoration
+                    ),
+                    $padding: (
+                        small: $content-tile-large-label-padding
+                    )
+                );
+
+                border-left: $content-tile-large-label-border-left;
+                box-shadow: $content-tile-large-label-box-shadow;
+                max-width: $content-tile-large-label-max-width;
+                background: $content-tile-large-label-background;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+
+            .c-content-tile__description {
+                @include text-style(
+                    $color: (
+                        small: $content-tile-large-description-color,
+                        large: $content-tile-large-description-color--large
+                    ),
+                    $font: (
+                        small: $content-tile-large-description-font,
+                        large: $content-tile-large-description-font--large
+                    ),
+                    $margin: (
+                        small: $content-tile-large-description-margin,
+                        large: $content-tile-large-description-margin--large
+                    ),
+                    $text-transform: (
+                        small: $content-tile-large-description-text-transform,
+                        large: $content-tile-large-description-text-transform--large
+                    ),
+                    $letter-spacing: (
+                        small: $content-tile-large-description-letter-spacing
+                    )
+                );
+            }
+        }
+
+        &.m-inverse {
+            flex-flow: row-reverse;
+
+            .c-content-tile__section {
+                @include content-tile-section($inverse: true);
+            }
+
+            &.m-large {
+                .c-content-tile__section {
+                    @include content-tile-section(
+                        $padding: map-deep-get($content-tile-gutter, "large", "small"),
+                        $padding--large: map-deep-get($content-tile-gutter, "large", "large"),
+                        $inverse: true
+                    );
+                }
+            }
+        }
+
+        @each $size in $breakpoint-classes {
+            $range: if($size == 'large', null, only);
+
+            &.m-stack-for-#{$size} {
+                @include breakpoint ($size $range) {
+                    flex-flow: column;
+                }
+            }
+
+            &.m-stack-for-#{$size} .c-content-tile__section {
+                @include breakpoint ($size $range) {
+                    @include content-tile-stack;
+                }
+            }
+
+            &.m-stack-for-#{$size}-down {
+                @include breakpoint ($size down) {
+                    flex-flow: column;
+                }
+            }
+
+            &.m-stack-for-#{$size}-down .c-content-tile__section {
+                @include breakpoint ($size down) {
+                    @include content-tile-stack;
+                }
+            }
+        }
+
+        &.m-stack-for-all {
+            flex-flow: column;
+
+            .c-content-tile__section {
+                @include content-tile-stack;
+            }
+
+            .c-content-tile__content {
+                flex: 0 1 auto;
+            }
+        }
+
+        &.m-image-autowidth {
+            .c-content-tile__image {
+                width: $content-tile-image-autowidth-width;
+            }
+        }
+
+        &.m-v-align-middle {
+            align-items: center;
+        }
+
+        &.m-v-align-bottom {
+            align-items: flex-end;
+        }
+
+        &.m-video .c-content-tile__image {
+            position: relative;
+
+            &::before,
+            &::after {
+                @include absolute-center;
+
+                content: '';
+                height: $content-tile-video-icon-height;
+                width: $content-tile-video-icon-width;
+                pointer-events: none;
+                max-width: 50%;
+                max-height: 50%;
+
+                @include breakpoint(large) {
+                    height: $content-tile-video-icon-height--large;
+                    width: $content-tile-video-icon-width--large;
+                }
+            }
+
+            &::before {
+                background: $content-tile-video-icon-background;
+                box-shadow: $content-tile-video-icon-box-shadow;
+                border-radius: $content-tile-video-icon-border-radius;
+            }
+
+            &::after {
+                @include svg-icon($content-tile-video-icon, $content-tile-video-icon-color, contain, center, no-repeat, $usesvg: $content-tile-video-icon-usesvg);
+
+                filter: $content-tile-video-icon-filter;
+            }
+        }
+
+        &.m-featured {
+            .c-content-tile__content {
+                max-width: $content-tile-featured-content-max-width;
+
+                @include breakpoint(large) {
+                    max-width: $content-tile-featured-content-max-width--large;
+                }
+            }
+
+            .c-content-tile__title {
+                font: $content-tile-featured-title-font;
+                margin: $content-tile-featured-title-margin;
+
+                @include breakpoint(large) {
+                    font: $content-tile-featured-title-font--large;
+                    margin: $content-tile-featured-title-margin--large;
+                }
+            }
+        }
+
+        &.m-equal-columns {
+            .c-content-tile__section {
+                flex-basis: 50%;
+            }
+        }
+
+        &.m-equal-rows {
+            .c-content-tile__title,
+            .c-content-tile__title a {
+                min-height: $content-tile-equal-rows-title-height;
+
+                @include text-line-clamp($content-tile-equal-rows-title-lines);
+
+                @include breakpoint(large) {
+                    min-height: $content-tile-equal-rows-title-height--large;
+
+                    @include text-line-clamp($content-tile-equal-rows-title-lines--large);
+                }
+            }
+
+            .c-content-tile__subtitle {
+                min-height: $content-tile-equal-rows-subtitle-height;
+
+                @include text-line-clamp($content-tile-equal-rows-subtitle-lines);
+
+                @include breakpoint(large) {
+                    min-height: $content-tile-equal-rows-subtitle-height--large;
+
+                    @include text-line-clamp($content-tile-equal-rows-subtitle-lines--large);
+                }
+            }
+
+            .c-content-tile__description {
+                min-height: $content-tile-equal-rows-description-height;
+
+                @include text-line-clamp($content-tile-equal-rows-description-lines);
+
+                @include breakpoint(large) {
+                    min-height: $content-tile-equal-rows-description-height--large;
+
+                    @include text-line-clamp($content-tile-equal-rows-description-lines--large);
+                }
+            }
+        }
+
+        &.m-shadow {
+            .c-content-tile__content {
+                box-shadow: $content-tile-content-shadow-box-shadow;
+                margin: $content-tile-content-shadow-margin;
+                background: $content-tile-content-shadow-background;
+                padding: $content-tile-content-shadow-padding;
+
+                &:last-child {
+                    padding: $content-tile-content-shadow-padding;
+                }
+            }
+        }
+
+        &.m-dark {
+            @include content-tile-dark-mode;
+        }
+
+        &.m-dark.m-large {
+            @include content-tile-dark-mode;
+        }
+
+        &.m-rounded {
+            .c-content-tile__image {
+                border-radius: $content-tile-rounded-border-radius;
+                overflow: hidden;
+
+                @include breakpoint(large) {
+                    border-radius: $content-tile-rounded-border-radius--large;
+                }
+            }
+        }
+
+        &.m-plain {
+            margin: 0;
+        }
+    }
+
+    .c-content-tile__section {
+        @include content-tile-section;
+
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .c-content-tile__video {
+        min-width: $content-tile-video-min-width;
+    }
+
+    .c-content-tile__image {
+        position: relative;
+        flex: $content-tile-image-flex;
+        max-width: $content-tile-image-max-width;
+
+        @include breakpoint(large) {
+            flex: $content-tile-image-flex--large;
+            max-width: $content-tile-image-max-width--large;
+        }
+
+        a {
+            display: block; // need for focusHighlighter position
+        }
+    }
+
+    .c-content-tile__content {
+        width: $content-tile-content-width;
+        flex: $content-tile-content-flex;
+
+        @include breakpoint(large) {
+            flex: $content-tile-content-flex--large;
+        }
+    }
+
+    .c-content-tile__title {
+        @include text-style(
+            $color: (
+                small: $content-tile-title-color,
+                large: $content-tile-title-color--large
+            ),
+            $font: (
+                small: $content-tile-title-font,
+                large: $content-tile-title-font--large
+            ),
+            $margin: (
+                small: $content-tile-title-margin,
+                large: $content-tile-title-margin--large
+            ),
+            $text-transform: (
+                small: $content-tile-title-text-transform,
+                large: $content-tile-title-text-transform--large
+            ),
+            $letter-spacing: (
+                small: $content-tile-title-letter-spacing
+            )
+        );
+
+        a {
+            text-decoration: $content-tile-link-text-decoration;
+            color: $content-tile-link-color;
+        }
+    }
+
+    .c-content-tile__subtitle {
+        @include text-style(
+            $font: (
+                small: $content-tile-subtitle-font,
+                large: $content-tile-subtitle-font--large
+            ),
+            $margin: (
+                small: $content-tile-subtitle-margin,
+                large: $content-tile-subtitle-margin--large
+            )
+        );
+    }
+
+    .c-content-tile__label {
+        @include text-style(
+            $color: (
+                small: $content-tile-label-color,
+                large: $content-tile-label-color--large
+            ),
+            $font: (
+                small: $content-tile-label-font,
+                large: $content-tile-label-font--large
+            ),
+            $margin: (
+                small: $content-tile-label-margin,
+                large: $content-tile-label-margin--large
+            ),
+            $text-transform: (
+                small: $content-tile-label-text-transform,
+                large: $content-tile-label-text-transform--large
+            ),
+            $text-decoration: (
+                small: $content-tile-label-text-decoration,
+                large: $content-tile-label-text-decoration--large
+            ),
+            $padding: (
+                small: $content-tile-label-padding,
+                large: $content-tile-label-padding--large
+            ),
+            $letter-spacing: (
+                small: $content-tile-label-letter-spacing
+            )
+        );
+
+        display: $content-tile-label-display;
+        background: $content-tile-label-background;
+        border-radius: $content-tile-label-border-radius;
+        border: $content-tile-label-border;
+        border-width: $content-tile-label-border-width;
+        box-shadow: $content-tile-label-box-shadow;
+
+        @include breakpoint(large) {
+            display: $content-tile-label-display--large;
+            background: $content-tile-label-background--large;
+            border: $content-tile-label-border--large;
+            border-width: $content-tile-label-border-width--large;
+            box-shadow: $content-tile-label-box-shadow--large;
+        }
+    }
+
+    .c-content-tile__description {
+        @include text-style(
+            $color: (
+                small: $content-tile-description-color,
+                large: $content-tile-description-color--large
+            ),
+            $font: (
+                small: $content-tile-description-font,
+                large: $content-tile-description-font--large
+            ),
+            $margin: (
+                small: $content-tile-description-margin,
+                large: $content-tile-description-margin--large
+            ),
+            $text-transform: (
+                small: $content-tile-description-text-transform,
+                large: $content-tile-description-text-transform--large
+            ),
+            $padding: (
+                small: $content-tile-description-padding,
+                large: $content-tile-description-padding--large
+            ),
+            $letter-spacing: (
+                small: $content-tile-description-letter-spacing
+            )
+        );
+
+        a {
+            text-decoration: $content-tile-link-text-decoration;
+        }
+    }
+
+    .c-content-tile__actions {
+        margin: $content-tile-actions-margin;
+
+        @include breakpoint(large) {
+            margin: $content-tile-actions-margin--large;
+        }
+    }
+
+    .c-content-grid {
+        .c-content-tile__title,
+        .c-content-tile__title a {
+            @include text-line-clamp($content-tile-title-max-lines);
+
+            @include breakpoint(large) {
+                @include text-line-clamp($content-tile-title-max-lines--large);
+            }
+        }
+
+        .c-content-tile__description {
+            @include text-line-clamp($content-tile-description-max-lines);
+
+            @include breakpoint(large) {
+                @include text-line-clamp($content-tile-description-max-lines--large);
+            }
+        }
+    }
+}

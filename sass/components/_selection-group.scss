@@ -1,0 +1,346 @@
+$selection-group-collapse-padding: rem-calc(0 1 1 0) !default;
+$selection-group-collapse-item-wrapper-margin: rem-calc(0 -1 -1 0) !default;
+$selection-group-fit-content-flex-wrap: wrap !default;
+
+// Selection Group item wrapper
+$selection-group-item-wrapper-margin: rem-calc(0 0 16) !default;
+$selection-group-item-wrapper-margin--large: null !default;
+// Selection Group item
+$selection-group-item-border-width: rem-calc(1) !default;
+$selection-group-item-border: $selection-group-item-border-width solid color(border) !default;
+$selection-group-item-border-radius: null !default;
+$selection-group-item-padding: rem-calc(20 10) !default;
+$selection-group-item-text-align: center !default;
+$selection-group-item-background: map.get($palette, light) !default;
+// Secondary Selection
+$selection-group-item-secondary-box-shadow: null !default;
+$selection-group-item-secondary-padding: null !default;
+$selection-group-item-secondary-border-radius: null !default;
+$selection-group-item-secondary-border: null !default;
+$selection-group-item-active-secondary-border: null !default;
+$selection-group-item-active-before-secondary-border-radius: null !default;
+$selection-group-item-active-before-secondary-border: null !default;
+$selection-group-item-active-secondary-background: null !default;
+$selection-group-item-active-secondary-box-shadow: null !default;
+// Small Selection
+$selection-group-item-small-padding: rem-calc(13 16) !default;
+$selection-group-item-small-border-radius: rem-calc(4) !default;
+// Selection Group item active
+$selection-group-item-active-background: color(primary-background) !default;
+$selection-group-item-active-border-width: rem-calc(2) !default;
+$selection-group-item-active-before-border: $selection-group-item-active-border-width solid color(primary-active) !default;
+$selection-group-item-active-before-border-radius: null !default;
+$selection-group-item-active-title-font: null !default;
+// Selection Group item focus
+$selection-group-item-focus-before-border: rem-calc(3) solid color(primary-active) !default;
+// Selection Group item hover
+$selection-group-item-hover-border-color: null !default;
+$selection-group-item-hover-border-color--large: color(primary-active) !default;
+// Selection Group item image
+$selection-group-item-image-width: rem-calc(100) !default;
+$selection-group-item-image-margin: 0 auto rem-calc(5) !default;
+// Selection Group item info
+$selection-group-item-info-margin: rem-calc(0 0 10) !default;
+$selection-group-item-info-font: null !default;
+$selection-group-item-info-letter-spacing: null !default;
+
+// Selection Group item actions
+$selection-group-item-actions-justify-content: space-between !default;
+$selection-group-item-actions-margin: rem-calc(10 0 0) !default;
+$selection-group-item-actions-margin--large: 0 !default;
+$selection-group-item-actions-flex-direction--large: column !default;
+
+// Selection Group Gitle
+$selection-group-info-title-font: 500 #{rem-calc(14)} / 1.4 fonts.$font-primary !default;
+$selection-group-info-title-font--large: null !default;
+$selection-group-info-title-color: color(text) !default;
+$selection-group-info-title-color--large: null !default;
+$selection-group-info-title-text-transform: none !default;
+$selection-group-info-title-text-transform--large: null !default;
+$selection-group-info-title-margin: 0 !default;
+$selection-group-info-title-margin--large: null !default;
+$selection-group-info-title-letter-spacing: null !default;
+$selection-group-info-title-letter-spacing--large: null !default;
+
+/// Selection Group Subtitle
+$selection-group-info-subtitle-font: 300 #{rem-calc(12)} / 1.4 fonts.$font-primary !default;
+$selection-group-info-subtitle-font--large: null !default;
+$selection-group-info-subtitle-color: color(text-secondary) !default;
+$selection-group-info-subtitle-color--large: null !default;
+$selection-group-info-subtitle-margin: rem-calc(4 0 0) !default;
+$selection-group-info-subtitle-margin--large: null !default;
+$selection-group-info-subtitle-text-transform: null !default;
+// Radio selection
+$selection-group-radio-text-align: $global-left !default;
+$selection-group-radio-padding: rem-calc(12 20 12 40) !default;
+$selection-group-radio-field-margin: rem-calc(0 0 10 -30) !default;
+$selection-group-radio-secondary-padding: null !default;
+// Add more link
+$selection-group-add-more-icon-size: rem-calc(16) !default;
+$selection-group-add-more-icon-size--large: rem-calc(16) !default;
+$selection-group-add-more-icon-margin: rem-calc(0 8 3 0) !default;
+$selection-group-add-more-icon-margin--large: null !default;
+$selection-group-add-more-icon: plus !default;
+$selection-group-add-more-icon-color: color(primary) !default;
+$selection-group-add-more-icon-usesvg: true !default;
+// Geolocation
+$selection-group-geolocation-icon-size: rem-calc(16) !default;
+$selection-group-geolocation-icon-size--large: rem-calc(16) !default;
+$selection-group-geolocation-icon-margin: rem-calc(0 8 0 0) !default;
+$selection-group-geolocation-icon-margin--large: null !default;
+$selection-group-geolocation-icon: pin !default;
+$selection-group-geolocation-icon-color: color(primary) !default;
+$selection-group-geolocation-icon-usesvg: true !default;
+
+@mixin lora-components-selection-group {
+    .c-selection-group {
+        &.m-collapse {
+            padding: $selection-group-collapse-padding;
+
+            .c-selection-group__item-wrapper {
+                margin: $selection-group-collapse-item-wrapper-margin;
+            }
+        }
+
+        &.m-center {
+            justify-content: center;
+        }
+
+        &.m-fit-content {
+            flex-wrap: $selection-group-fit-content-flex-wrap;
+        }
+    }
+
+    .c-selection-group__item-wrapper {
+        margin: $selection-group-item-wrapper-margin;
+
+        @include breakpoint(large) {
+            margin: $selection-group-item-wrapper-margin--large;
+        }
+    }
+
+    .c-selection-group__item {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        border: $selection-group-item-border;
+        border-radius: $selection-group-item-border-radius;
+        padding: $selection-group-item-padding;
+        text-align: $selection-group-item-text-align;
+        background: $selection-group-item-background;
+
+        &.m-active {
+            z-index: 1; // stylelint-disable-line
+            background: $selection-group-item-active-background;
+
+            &::before {
+                content: '';
+                position: absolute;
+                #{$global-left}: -$selection-group-item-active-border-width;
+                top: -$selection-group-item-active-border-width;
+                #{$global-right}: -$selection-group-item-active-border-width;
+                bottom: -$selection-group-item-active-border-width;
+                border: $selection-group-item-active-before-border;
+                border-radius: $selection-group-item-active-before-border-radius;
+                pointer-events: none;
+            }
+
+            .c-selection-group__item-title {
+                font: $selection-group-item-active-title-font;
+            }
+        }
+
+        &.m-secondary {
+            box-shadow: $selection-group-item-secondary-box-shadow;
+            padding: $selection-group-item-secondary-padding;
+            border-radius: $selection-group-item-secondary-border-radius;
+            border: $selection-group-item-secondary-border;
+
+            &.m-active {
+                border: $selection-group-item-active-secondary-border;
+                background: $selection-group-item-active-secondary-background;
+                box-shadow: $selection-group-item-active-secondary-box-shadow;
+
+                &::before {
+                    border: $selection-group-item-active-before-secondary-border;
+                    border-radius: $selection-group-item-active-before-secondary-border-radius;
+                }
+            }
+        }
+
+        &:not(.m-static) {
+            cursor: pointer;
+
+            &:hover,
+            &.m-focus,
+            &:focus {
+                z-index: 1; // stylelint-disable-line
+                border-color: $selection-group-item-hover-border-color;
+
+                @include breakpoint(large) {
+                    border-color: $selection-group-item-hover-border-color--large;
+                }
+            }
+
+            &:focus,
+            &.m-focus {
+                &::before {
+                    border: $selection-group-item-focus-before-border;
+                }
+            }
+
+            .c-check-field__input {
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: -1;
+            }
+        }
+
+        &.m-paddingless {
+            padding: 0;
+        }
+
+        &.m-small {
+            padding: $selection-group-item-small-padding;
+            border-radius: $selection-group-item-small-border-radius;
+
+            &.m-active::before {
+                border-radius: $selection-group-item-small-border-radius;
+            }
+        }
+    }
+
+    .c-selection-group__item-image {
+        max-width: $selection-group-item-image-width;
+        margin: $selection-group-item-image-margin;
+    }
+
+    .c-selection-group__item-title {
+        display: block;
+
+        @include text-style(
+            $color: (
+                small: $selection-group-info-title-color,
+                large: $selection-group-info-title-color--large
+            ),
+            $font: (
+                small: $selection-group-info-title-font,
+                large: $selection-group-info-title-font--large
+            ),
+            $margin: (
+                small: $selection-group-info-title-margin,
+                large: $selection-group-info-title-margin--large
+            ),
+            $text-transform: (
+                small: $selection-group-info-title-text-transform,
+                large: $selection-group-info-title-text-transform--large
+            ),
+            $letter-spacing: (
+                small: $selection-group-info-title-letter-spacing,
+                large: $selection-group-info-title-letter-spacing--large
+            )
+        );
+    }
+
+    .c-selection-group__item-subtitle {
+        display: block;
+
+        @include text-style(
+            $color: (
+                small: $selection-group-info-subtitle-color,
+                large: $selection-group-info-subtitle-color--large
+            ),
+            $font: (
+                small: $selection-group-info-subtitle-font,
+                large: $selection-group-info-subtitle-font--large
+            ),
+            $margin: (
+                small: $selection-group-info-subtitle-margin,
+                large: $selection-group-info-subtitle-margin--large
+            ),
+            $text-transform: (
+                small: $selection-group-info-subtitle-text-transform
+            ),
+        );
+    }
+
+    .c-selection-group__item-actions {
+        display: flex;
+        justify-content: $selection-group-item-actions-justify-content;
+        margin: $selection-group-item-actions-margin;
+
+        @include breakpoint(large) {
+            margin: $selection-group-item-actions-margin--large;
+            flex-flow: $selection-group-item-actions-flex-direction--large;
+        }
+    }
+
+    .c-selection-group__item-info {
+        margin: $selection-group-item-info-margin;
+        font: $selection-group-item-info-font;
+        letter-spacing: $selection-group-item-info-letter-spacing;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .c-selection-group__radio {
+        padding: $selection-group-radio-padding;
+        text-align: $selection-group-radio-text-align;
+
+        &.m-secondary {
+            padding: $selection-group-radio-secondary-padding;
+        }
+    }
+
+    .c-selection-group__radio-field {
+        position: static;
+        margin: $selection-group-radio-field-margin;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .c-selection-group__add-more {
+        &::before {
+            @include svg-icon($selection-group-add-more-icon, $selection-group-add-more-icon-color, 100%, left, no-repeat, $usesvg: $selection-group-add-more-icon-usesvg);
+
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: $selection-group-add-more-icon-size;
+            width: $selection-group-add-more-icon-size;
+            margin: $selection-group-add-more-icon-margin;
+
+            @include breakpoint(large) {
+                height: $selection-group-add-more-icon-size--large;
+                width: $selection-group-add-more-icon-size--large;
+                margin: $selection-group-add-more-icon-margin--large;
+            }
+        }
+    }
+
+    .c-selection-group__geolocation {
+        &::before {
+            @include svg-icon($selection-group-geolocation-icon, $selection-group-geolocation-icon-color, contain, center, no-repeat, $usesvg: $selection-group-geolocation-icon-usesvg);
+
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: $selection-group-geolocation-icon-size;
+            width: $selection-group-geolocation-icon-size;
+            margin: $selection-group-geolocation-icon-margin;
+
+            @include breakpoint(large) {
+                height: $selection-group-geolocation-icon-size--large;
+                width: $selection-group-geolocation-icon-size--large;
+                margin: $selection-group-geolocation-icon-margin--large;
+            }
+        }
+    }
+}

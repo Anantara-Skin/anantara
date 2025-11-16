@@ -1,0 +1,109 @@
+// Intensity
+$product-intensity-align-items: center !default;
+$product-intensity-flex-gap: rem-calc(2 10) !default;
+$product-intensity-margin: rem-calc(0 0 15) !default;
+// Title
+$product-intensity-title-font: 700 #{rem-calc(12)} / #{rem-calc(14)} fonts.$font-primary !default;
+// Bullets
+$product-intensity-bullets-flex-gap: rem-calc(0 4) !default;
+// Bullet
+$product-intensity-bullet-height: rem-calc(11) !default;
+$product-intensity-bullet-width: rem-calc(8) !default;
+$product-intensity-bullet-border-radius: rem-calc(2) !default;
+$product-intensity-bullet-background: #9ba8b9 !default;
+$product-intensity-bullet-border-width: null !default;
+$product-intensity-bullet-border-color: null !default;
+$product-intensity-bullet-border-style: null !default;
+$product-intensity-bullet-active-border-color: null !default;
+// Active Bullet
+$product-intensity-bullet-active-background: color(primary) !default;
+// Themes
+$product-intensity-light-title-color: map.get($palette, light) !default;
+$product-intensity-light-bullet-background-color: color(disabled) !default;
+$product-intensity-light-bullet-active-background-color: map.get($palette, light) !default;
+$product-intensity-dark-title-color: map.get($palette, dark) !default;
+$product-intensity-dark-bullet-background-color: color(element-background) !default;
+$product-intensity-dark-bullet-active-background-color: map.get($palette, dark) !default;
+// Small bullets
+$product-intensity-small-flex-gap: rem-calc(2 4) !default;
+$product-intensity-small-margin: rem-calc(0 0 8) !default;
+$product-intensity-small-bullets-flex-gap: null !default;
+$product-intensity-small-bullet-height: rem-calc(8) !default;
+$product-intensity-small-bullet-width: rem-calc(8) !default;
+
+@mixin lora-components-product-intensity {
+    .c-product-intensity {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: $product-intensity-flex-gap;
+        align-items: $product-intensity-align-items;
+        margin: $product-intensity-margin;
+
+        &.m-light {
+            .c-product-intensity__label {
+                color: $product-intensity-light-title-color;
+            }
+
+            .c-product-intensity__bullet {
+                background-color: $product-intensity-light-bullet-background-color;
+            }
+
+            .c-product-intensity__bullet.m-active {
+                background-color: $product-intensity-light-bullet-active-background-color;
+            }
+        }
+
+        &.m-dark {
+            .c-product-intensity__label {
+                color: $product-intensity-dark-title-color;
+            }
+
+            .c-product-intensity__bullet {
+                background-color: $product-intensity-dark-bullet-background-color;
+            }
+
+            .c-product-intensity__bullet.m-active {
+                background-color: $product-intensity-dark-bullet-active-background-color;
+            }
+        }
+    }
+
+    .c-product-intensity__label {
+        font: $product-intensity-title-font;
+    }
+
+    .c-product-intensity__bullets {
+        display: flex;
+        gap: $product-intensity-bullets-flex-gap;
+    }
+
+    .c-product-intensity__bullet {
+        display: inline-block;
+        height: $product-intensity-bullet-height;
+        width: $product-intensity-bullet-width;
+        border-radius: $product-intensity-bullet-border-radius;
+        background: $product-intensity-bullet-background;
+        border-width: $product-intensity-bullet-border-width;
+        border-color: $product-intensity-bullet-border-color;
+        border-style: $product-intensity-bullet-border-style;
+
+        &.m-active {
+            background: $product-intensity-bullet-active-background;
+            border-color: $product-intensity-bullet-active-border-color;
+        }
+    }
+
+    .c-product-intensity.m-small {
+        gap: $product-intensity-small-flex-gap;
+        margin: $product-intensity-small-margin;
+
+        .c-product-intensity__bullets {
+            gap: $product-intensity-small-bullets-flex-gap;
+        }
+
+        .c-product-intensity__bullet {
+            height: $product-intensity-small-bullet-height;
+            width: $product-intensity-small-bullet-width;
+        }
+    }
+}

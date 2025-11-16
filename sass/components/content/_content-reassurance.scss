@@ -1,0 +1,90 @@
+$content-reassurance-padding: rem-calc(10 0) !default;
+$content-reassurance-padding--large: rem-calc(25 0) !default;
+$content-reassurance-item-padding: rem-calc(10 0) !default;
+$content-reassurance-item-padding--large: null !default;
+$content-reassurance-image-margin: rem-calc(0 10 0 0) !default;
+$content-reassurance-image-margin--large: null !default;
+$content-reassurance-image-max-width: null !default;
+$content-reassurance-image-max-width--large: null !default;
+$content-reassurance-image-max-height: null !default;
+$content-reassurance-image-max-height--large: null !default;
+$content-reassurance-image-border: null !default;
+$content-reassurance-image-border--large: null !default;
+$content-reassurance-image-border-radius: null !default;
+$content-reassurance-text-color: map.get($palette, light) !default;
+$content-reassurance-text-display: inline-block !default;
+$content-reassurance-text-font: #{rem-calc(12)} / 1.25 fonts.$font-primary !default;
+$content-reassurance-text-font--large: bold #{rem-calc(14)} / 1.25 fonts.$font-primary !default;
+$content-reassurance-fade: map.get($palette, dark) !default;
+$content-reassurance-item-flex-flow: row nowrap !default;
+$content-reassurance-text-text-transform: null !default;
+$content-reassurance-text-text-transform--large: null !default;
+$content-reassurance-description-font: #{rem-calc(12)} / 1.25 fonts.$font-primary !default;
+$content-reassurance-description-font--large: #{rem-calc(14)} / 1.25 fonts.$font-primary !default;
+$content-reassurance-description-text-transform: null !default;
+$content-reassurance-description-text-transform--large: null !default;
+
+@mixin lora-components-content-reassurance {
+    .c-content-reassurance {
+        padding: $content-reassurance-padding;
+
+        @include breakpoint(large) {
+            padding: $content-reassurance-padding--large;
+        }
+    }
+
+    .c-content-reassurance__item {
+        padding: $content-reassurance-item-padding;
+
+        @include breakpoint(large) {
+            padding: $content-reassurance-item-padding--large;
+        }
+    }
+
+    .c-content-reassurance__image {
+        margin: $content-reassurance-image-margin;
+        max-width: $content-reassurance-image-max-width;
+        max-height: $content-reassurance-image-max-height;
+        border: $content-reassurance-image-border;
+        border-radius: $content-reassurance-image-border-radius;
+
+        @include breakpoint(large) {
+            margin: $content-reassurance-image-margin--large;
+            max-width: $content-reassurance-image-max-width--large;
+            max-height: $content-reassurance-image-max-height--large;
+            border: $content-reassurance-image-border--large;
+        }
+    }
+
+    .c-content-reassurance__text {
+        display: $content-reassurance-text-display;
+        vertical-align: middle;
+
+        @include text-style(
+            $font: (
+                small: $content-reassurance-text-font,
+                large: $content-reassurance-text-font--large
+            ),
+            $color: (
+                small: $content-reassurance-text-color
+            ),
+            $text-transform: (
+                small: $content-reassurance-text-text-transform,
+                large: $content-reassurance-text-text-transform--large
+            )
+        );
+    }
+
+    .c-content-reassurance__description {
+        @include text-style(
+            $font: (
+                small: $content-reassurance-description-font,
+                large: $content-reassurance-description-font--large
+            ),
+            $text-transform: (
+                small: $content-reassurance-description-text-transform,
+                large: $content-reassurance-description-text-transform--large
+            )
+        );
+    }
+}

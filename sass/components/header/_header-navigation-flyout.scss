@@ -1,0 +1,124 @@
+@use "sass:map";
+@use '../../base/colors' as colors;
+@use '../../base/fonts' as fonts;
+@use '../../base/headings' as headings;
+@use '../../_settings' as settings;
+$header-navigation-flyout-border-top: 1px solid map.get(colors.$palette, border) !default;
+$header-navigation-flyout-elements-gutter: rem-calc(30) !default;
+$header-navigation-flyout-row-border-top: 1px solid map.get(colors.$palette, border) !default;
+$header-navigation-flyout-row-padding-bottom: rem-calc(25) !default;
+$header-navigation-flyout-row-padding-top: rem-calc(25) !default;
+// Category
+$header-navigation-flyout-category-flex-basis: 15% !default;
+$header-navigation-flyout-category-background: map.get(colors.$palette, light) !default;
+$header-navigation-flyout-category-padding: rem-calc(20) !default;
+$header-navigation-flyout-category-title-font: rem-calc(14) fonts.$font-primary !default;
+$header-navigation-flyout-category-title-margin: rem-calc(0 0 headings.$headings-margin-bottom) !default;
+$header-navigation-flyout-category-title-color: null !default;
+$header-navigation-flyout-category-title-text-transform: none !default;
+$header-navigation-flyout-category-list-list-style: none !default;
+$header-navigation-flyout-category-list-margin: 0 !default;
+$header-navigation-flyout-category-list-item-margin: null !default;
+$header-navigation-flyout-category-link-font: rem-calc(12) fonts.$font-primary !default;
+$header-navigation-flyout-category-link-text-decoration: underline !default;
+$header-navigation-flyout-category-link-color: null !default;
+$header-navigation-flyout-category-link-text-transform: null !default;
+// Push
+$header-navigation-flyout-push-flex-basis: 42.5% !default;
+$header-navigation-flyout-push-side-margin: rem-calc(50) !default;
+$header-navigation-flyout-push-title-color: map.get(colors.$palette, primary) !default;
+$header-navigation-flyout-push-title-font: rem-calc(14) fonts.$font-primary !default;
+$header-navigation-flyout-push-title-margin: rem-calc(0 0 headings.$headings-margin-bottom) !default;
+$header-navigation-flyout-push-title-text-transform: none !default;
+$header-navigation-flyout-push-description-font: rem-calc(12) fonts.$font-primary !default;
+$header-navigation-flyout-push-description-color: null !default;
+$header-navigation-flyout-push-description-white-space: null !default;
+$header-navigation-flyout-push-description-text-transform: null !default;
+$header-navigation-flyout-push-description-letter-spacing: null !default;
+$header-navigation-flyout-push-cta-font: rem-calc(12) fonts.$font-primary !default;
+$header-navigation-flyout-push-cta-min-width: null !default;
+$header-navigation-flyout-push-cta-text-transform: null !default;
+
+@mixin lora-components-navigation-flyout {
+    .c-navigation-flyout {
+        border-top: $header-navigation-flyout-border-top;
+    }
+
+    .c-navigation-flyout__row {
+        display: flex;
+        margin: 0 (-$header-navigation-flyout-elements-gutter);
+        padding-bottom: $header-navigation-flyout-row-padding-bottom;
+        padding-top: $header-navigation-flyout-row-padding-top;
+    }
+
+    .c-navigation-flyout__category {
+        background: $header-navigation-flyout-category-background;
+        flex-basis: $header-navigation-flyout-category-flex-basis;
+        margin: 0 ($header-navigation-flyout-elements-gutter / 2);
+        padding: $header-navigation-flyout-category-padding;
+    }
+
+    .c-navigation-flyout__category-title {
+        font: $header-navigation-flyout-category-title-font;
+        margin: $header-navigation-flyout-category-title-margin;
+        color: $header-navigation-flyout-category-title-color;
+        text-transform: $header-navigation-flyout-category-title-text-transform;
+    }
+
+    .c-navigation-flyout__category-list {
+        list-style: $header-navigation-flyout-category-list-list-style;
+        margin: $header-navigation-flyout-category-list-margin;
+    }
+
+    .c-navigation-flyout__category-item {
+        margin: $header-navigation-flyout-category-list-item-margin;
+    }
+
+    .c-navigation-flyout__category-link {
+        color: $header-navigation-flyout-category-link-color;
+        font: $header-navigation-flyout-category-link-font;
+        text-decoration: $header-navigation-flyout-category-link-text-decoration;
+        text-transform: $header-navigation-flyout-category-link-text-transform;
+    }
+
+    .c-navigation-flyout__push {
+        display: flex;
+        flex-basis: $header-navigation-flyout-push-flex-basis;
+        flex-grow: 1;
+        margin: 0 ($header-navigation-flyout-elements-gutter / 2);
+    }
+
+    .c-navigation-flyout__push-info {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        margin-#{$global-left}: $header-navigation-flyout-push-side-margin;
+        flex: 1 0 0%;
+    }
+
+    .c-navigation-flyout__push-title {
+        color: $header-navigation-flyout-push-title-color;
+        font: $header-navigation-flyout-push-title-font;
+        margin: $header-navigation-flyout-push-title-margin;
+        text-transform: $header-navigation-flyout-push-title-text-transform;
+    }
+
+    .c-navigation-flyout__push-description {
+        font: $header-navigation-flyout-push-description-font;
+        white-space: $header-navigation-flyout-push-description-white-space;
+        color: $header-navigation-flyout-push-description-color;
+        text-transform: $header-navigation-flyout-push-description-text-transform;
+        letter-spacing: $header-navigation-flyout-push-description-letter-spacing;
+    }
+
+    .c-navigation-flyout__push-cta {
+        align-self: flex-start;
+        font: $header-navigation-flyout-push-cta-font;
+        min-width: $header-navigation-flyout-push-cta-min-width;
+        text-transform: $header-navigation-flyout-push-cta-text-transform;
+    }
+
+    .c-navigation-flyout__push-image {
+        align-self: flex-start;
+    }
+}

@@ -1,0 +1,63 @@
+@use "sass:map";
+@use '../../base/colors' as colors;
+@use '../../base/fonts' as fonts;
+@use '../../base/body' as body;
+@use '../../settings' as settings;
+$header-wishlist-status-font-size: rem-calc(10) !default;
+$header-wishlist-status-link-icon: heart-outline !default;
+$header-wishlist-status-link-icon-usesvg: true !default;
+$header-wishlist-status-color: map.get(colors.$palette, light) !default;
+$header-wishlist-status-link-icon-active: heart !default;
+$header-wishlist-status-link-icon-active-usesvg: true !default;
+$header-wishlist-status-active-color: map.get(colors.$palette, primary-active) !default;
+$header-wishlist-status-width: rem-calc(24) !default;
+$header-wishlist-status-height: rem-calc(22) !default;
+$header-wishlist-status-counter-font: normal $header-wishlist-status-font-size body.$body-font-family !default;
+$header-wishlist-status-counter-right: rem-calc(-5) !default;
+$header-wishlist-status-counter-top: rem-calc(-2) !default;
+$header-wishlist-status-counter-width: rem-calc(13) !default;
+$header-wishlist-status-counter-height: rem-calc(13) !default;
+$header-wishlist-status-counter-border: rem-calc(1) solid map.get(colors.$palette, light) !default;
+$header-wishlist-status-counter-border-radius: 50% !default;
+$header-wishlist-status-counter-background-color: map.get(colors.$palette, secondary) !default;
+$header-wishlist-status-counter-color: map.get(colors.$palette, light) !default;
+
+@mixin lora-components-wishlist-status {
+    .c-wishlist-status__link {
+        position: relative;
+
+        &::before {
+            @include svg-icon($header-wishlist-status-link-icon, $header-wishlist-status-color, 100%, center, no-repeat, $usesvg: $header-wishlist-status-link-icon-usesvg);
+
+            content: '';
+            display: block;
+            height: $header-wishlist-status-height;
+            width: $header-wishlist-status-width;
+        }
+
+        &.m-active {
+            &::before {
+                @include svg-icon($header-wishlist-status-link-icon-active, $color: $header-wishlist-status-color, $usesvg: $header-wishlist-status-link-icon-active-usesvg);
+            }
+        }
+    }
+
+    .c-wishlist-status__counter {
+        font: $header-wishlist-status-counter-font;
+        position: absolute;
+        #{$global-right}: $header-wishlist-status-counter-right;
+        top: $header-wishlist-status-counter-top;
+        width: $header-wishlist-status-counter-width;
+        height: $header-wishlist-status-counter-height;
+        border: $header-wishlist-status-counter-border;
+        border-radius: $header-wishlist-status-counter-border-radius;
+        background-color: $header-wishlist-status-counter-background-color;
+        line-height: $header-wishlist-status-counter-height;
+        text-align: center;
+        color: $header-wishlist-status-counter-color;
+
+        &::before {
+            content: "!";
+        }
+    }
+}

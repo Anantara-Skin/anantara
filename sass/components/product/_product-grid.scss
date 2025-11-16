@@ -1,0 +1,227 @@
+// product grid variables
+$product-grid-gap: rem-calc(14) !default;
+$product-grid-gap--large: rem-calc(30) !default;
+$product-grid-gap-row: rem-calc(20) !default;
+$product-grid-gap-row--large: rem-calc(50) !default;
+/// Selectable tiles
+$product-grid-selectable-tiles-gap: rem-calc(0) !default;
+$product-grid-selectable-tiles-gap-large: rem-calc(16) !default;
+$product-grid-selectable-tiles-gap-row: rem-calc(8) !default;
+$product-grid-selectable-tiles-gap-row-large: rem-calc(24) !default;
+
+$product-grid-columns: 2 !default;
+$product-grid-columns--large: 3 !default;
+$product-grid-divider-enabled: false !default;
+$product-grid-divider: 1px solid color(border) !default;
+$product-grid-divider-offset: rem-calc(10) !default;
+$product-grid-background-color: map.get($palette, light) !default;
+$product-grid-tile-background: transparent !default;
+$product-grid-spot-min-size: 1 !default;
+$product-grid-spot-min-size--large: 1 !default;
+$product-grid-columns-no-sidebar: 2 !default;
+$product-grid-columns-no-sidebar--large: 4 !default;
+$product-grid-product-tile-padding: null !default;
+
+@mixin lora-helper-product-grid-columns(
+    $columns,
+    $columns-large,
+    $columns-no-sidebar: $product-grid-columns-no-sidebar,
+    $columns-no-sidebar-large: $product-grid-columns-no-sidebar--large
+) {
+    .c-product-grid {
+        grid-template-columns: repeat($columns, minmax(0, 1fr));
+
+        @include breakpoint(large) {
+            grid-template-columns: repeat($columns-large, minmax(0, 1fr));
+        }
+
+        .c-product-grid__tile {
+            // CSS Round() function to fix the case when the width is fractional DFCT0153973
+            // Used unquote to bypass the compiler conflict with SCSS Round() function
+            width: unquote("round(down, 100%, 1px)");
+            min-width: 0;
+        }
+
+        &.m-no-sidebar {
+            grid-template-columns: repeat($columns-no-sidebar minmax(0, 1fr));
+
+            @include breakpoint(large) {
+                grid-template-columns: repeat($columns-no-sidebar-large, minmax(0, 1fr));
+            }
+        }
+    }
+}
+
+@mixin lora-helper-product-grid-divider(
+    $divider,
+    $grid-gap,
+    $grid-gap-large,
+    $divider-background-last: $body-background
+) {
+    .c-product-grid {
+        @if ($divider) {
+            &::after {
+                width: $grid-gap / 2;
+                background: $divider-background-last;
+                bottom: -#{$product-grid-divider-offset};
+                content: "";
+                #{$global-right}: -$grid-gap / 2;
+                position: absolute;
+                top: 0;
+            }
+
+            @include breakpoint(large) {
+                &::after { // stylelint-disable-line
+                    #{$global-right}: -$grid-gap-large / 2;
+                }
+            }
+        }
+        @else {
+            &::after {
+                display: none;
+            }
+        }
+
+        .c-product-grid__tile {
+            @if ($divider) {
+                &::after {
+                    border-#{$global-right}: $product-grid-divider;
+                    bottom: -#{$product-grid-divider-offset};
+                    content: "";
+                    #{$global-right}: -$grid-gap / 2;
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                }
+
+                @include breakpoint(large) {
+                    &::after { // stylelint-disable-line
+                        #{$global-right}: -$grid-gap-large / 2;
+                    }
+                }
+            }
+            @else {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@mixin lora-helper-product-grid-gap(
+    $grid-gap,
+    $grid-gap-large,
+    $grid-gap-row,
+    $grid-gap-row-large
+) {
+    .c-product-grid {
+        grid-gap: $grid-gap-row $grid-gap;
+
+        @include breakpoint(large) {
+            grid-gap: $grid-gap-row-large $grid-gap-large;
+        }
+
+        .c-product-grid__tile {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+@mixin lora-helper-product-grid-spot(
+    $columns,
+    $columns-large,
+    $spot-size,
+    $spot-size-large) {
+    @for $i from 1 through $columns-large {
+        $spot-size: max($i, $spot-size);
+        $spot-size-large: max($i, $spot-size-large);
+
+        &.m-span-#{$i} {
+            width: auto;
+            @if $spot-size <= $columns {
+                grid-column: span $spot-size;
+            }
+            @else {
+                grid-column: span $columns;
+            }
+
+            @include breakpoint(large) {
+                width: auto;
+                grid-column: span $spot-size-large;
+            }
+        }
+    }
+
+    &.m-spot {
+        height: 100%;
+    }
+}
+
+@mixin lora-components-product-grid(
+    $columns: $product-grid-columns,
+    $columns-large: $product-grid-columns--large,
+    $divider: $product-grid-divider-enabled,
+    $grid-gap: $product-grid-gap,
+    $grid-gap-large: $product-grid-gap--large,
+    $grid-gap-row: $product-grid-gap-row,
+    $grid-gap-row-large: $product-grid-gap-row--large,
+    $columns-no-sidebar: $product-grid-columns-no-sidebar,
+    $columns-no-sidebar-large: $product-grid-columns-no-sidebar--large,
+) {
+    @include lora-helper-product-grid-columns($columns, $columns-large, $columns-no-sidebar, $columns-no-sidebar-large);
+    @include lora-helper-product-grid-divider($divider, $grid-gap, $grid-gap-large);
+    @include lora-helper-product-grid-gap($grid-gap, $grid-gap-large, $grid-gap-row, $grid-gap-row-large);
+
+    .c-product-grid {
+        position: relative;
+        width: 100%;
+        align-items: stretch;
+        display: grid;
+
+        /* autoprefixer: ignore next */
+        grid-auto-flow: row dense;
+
+        .c-product-grid__tile {
+            @include lora-helper-product-grid-spot($columns, $columns-large, $product-grid-spot-min-size, $product-grid-spot-min-size--large);
+
+            box-sizing: border-box;
+            display: block;
+            padding: $product-grid-product-tile-padding;
+
+            &.m-span-fullwidth {
+                width: 100%;
+                grid-column: 1 / -1;
+            }
+
+            &.m-hero,
+            &.m-spot {
+                padding: 0;
+            }
+        }
+
+        &.m-selectable-tiles {
+            grid-gap: $product-grid-selectable-tiles-gap-row $product-grid-selectable-tiles-gap;
+
+            @include breakpoint(large) {
+                grid-gap: $product-grid-selectable-tiles-gap-row-large $product-grid-selectable-tiles-gap-large;
+            }
+        }
+    }
+
+    .c-product-grid__tile {
+        position: relative;
+        background: $product-grid-tile-background;
+        height: 100%;
+    }
+
+    .c-product-grid__noresults {
+        grid-column: span 2;
+
+        @include breakpoint(large) {
+            grid-column: span 3;
+            position: relative;
+        }
+    }
+}

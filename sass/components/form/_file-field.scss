@@ -1,0 +1,47 @@
+// Deprecated components
+@use "../../100-deprecated/form/file-field";
+
+$form-file-field-label-font: bold rem-calc(14) fonts.$font-primary !default;
+$form-file-field-label-font--large: null !default;
+$form-file-field-label-margin: rem-calc(0 0 10) !default;
+$form-file-field-label-margin--large: null !default;
+// Secondary
+$form-file-field-secondary-padding: rem-calc(10 20 20) !default;
+$form-file-field-secondary-padding--large: rem-calc(10 20) !default;
+$form-file-field-secondary-border: 1px solid color(border) !default;
+
+@mixin lora-form-file-field {
+    .c-file-field__label {
+        @include text-truncate;
+
+        width: 100%;
+        font: $form-file-field-label-font;
+        margin: $form-file-field-label-margin;
+
+        @include breakpoint(large) {
+            font: $form-file-field-label-font--large;
+            margin: $form-file-field-label-margin--large;
+        }
+    }
+
+    .c-file-field__button {
+        width: auto;
+    }
+
+    .c-file-field.m-file-secondary {
+        padding: $form-file-field-secondary-padding;
+        border: $form-file-field-secondary-border;
+
+        @include breakpoint(large) {
+            padding: $form-file-field-secondary-padding--large;
+        }
+
+        .c-file-field__label {
+            @include breakpoint(large) {
+                width: auto;
+                flex: 1 1 0;
+                margin: 0;
+            }
+        }
+    }
+}

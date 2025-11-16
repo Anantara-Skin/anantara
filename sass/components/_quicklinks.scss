@@ -1,0 +1,319 @@
+$quicklinks-items-padding: rem-calc(15 0) !default;
+$quicklinks-items-padding--large: rem-calc(20 0) !default;
+$quicklinks-items-margin: 0 !default;
+$quicklinks-items-margin--large: null !default;
+$quicklinks-items-side-margin: rem-calc(15) !default;
+$quicklinks-link-secondary-items-side-margin: rem-calc(8) !default;
+// Content
+$quicklinks-link-padding: rem-calc(8 10) !default;
+$quicklinks-link-rounded-border-radius: rem-calc(20) !default;
+$quicklinks-link-border: 1px solid color(border) !default;
+$quicklinks-link-hover-border: 1px solid color(primary-active) !default;
+$quicklinks-link-color: color(text) !default;
+$quicklinks-link-hover-color: color(text) !default;
+$quicklinks-link-background-color: map.get($palette, light) !default;
+$quicklinks-link-hover-background-color: null !default;
+$quicklinks-link-transition: background 0.3s, color 0.3s, border 0.3s !default;
+$quicklinks-link-secondary-padding: rem-calc(10) !default;
+$quicklinks-link-secondary-gap: rem-calc(4) !default;
+// Image
+$quicklinks-image-margin: rem-calc(-3 -5) !default;
+$quicklinks-image-margin--large: null !default;
+$quicklinks-image-rounded-border-radius: 50% !default;
+// Label
+$quicklinks-label-font: #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$quicklinks-label-font--large: null !default;
+$quicklinks-label-text-decoration: null !default;
+$quicklinks-label-text-decoration--large: null !default;
+$quicklinks-label-side-margin: rem-calc(10) !default;
+// Selected
+$quicklinks-link-selected-background: null !default;
+$quicklinks-link-selected-color: null !default;
+$quicklinks-link-selected-border: 1px solid color(primary) !default;
+$quicklinks-link-selected-label-font: null !default;
+// Secondary
+$quicklinks-secondary-margin: rem-calc(0 -15) !default;
+$quicklinks-secondary-margin--large: 0 !default;
+$quicklinks-image-secondary-rounded-border-radius: 0 !default;
+/// Items
+$quicklinks-items-secondary-padding: rem-calc(5 0) !default;
+$quicklinks-items-secondary-padding--large: null !default;
+$quicklinks-items-secondary-margin: null !default;
+$quicklinks-items-secondary-margin--large: null !default;
+$quicklinks-items-secondary-side-margin: 0 !default;
+/// Item
+$quicklinks-item-secondary-border-right: 1px solid color(element-background) !default;
+$quicklinks-item-secondary-height: 100% !default;
+/// Link
+$quicklinks-link-secondary-border: 1px solid transparent !default;
+$quicklinks-link-secondary-padding: rem-calc(5 30 5 20) !default;
+$quicklinks-link-secondary-align-items: flex-start !default;
+/// Link Hover
+$quicklinks-link-hover-color: null !default;
+$quicklinks-link-secondary-hover-background: color(global-background) !default;
+$quicklinks-link-secondary-hover-border: null !default;
+// Link Selected
+$quicklinks-link-secondary-selected-background: null !default;
+$quicklinks-link-secondary-selected-color: null !default;
+$quicklinks-link-secondary-selected-border: 1px solid color(primary) !default;
+$quicklinks-link-secondary-selected-label-font: null !default;
+/// Label
+$quicklinks-label-secondary-font: 700 #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$quicklinks-label-secondary-font--large: null !default;
+$quicklinks-label-secondary-text-margin: rem-calc(0 0 5) !default;
+$quicklinks-label-secondary-text-margin--large: null !default;
+/// Description
+$quicklinks-description-secondary-color: color(text-secondary) !default;
+/// Image
+$quicklinks-image-secondary-margin: 0 !default;
+$quicklinks-image-secondary-margin--large: null !default;
+// Dark
+$quicklinks-dark-background-color: dark-mode-color(primary) !default;
+$quicklinks-dark-color: dark-mode-color(text) !default;
+$quicklinks-dark-link-hover-background-color: dark-mode-color(primary-active) !default;
+$quicklinks-dark-link-hover-color: dark-mode-color(text) !default;
+$quicklinks-dark-link-hover-border-color: dark-mode-color(border) !default;
+$quicklinks-link-dark-background-color: $quicklinks-dark-background-color !default;
+$quicklinks-link-dark-color: $quicklinks-dark-color !default;
+$quicklinks-link-dark-border-color: null !default;
+$quicklinks-link-dark-selected-border-color: dark-mode-color(border) !default;
+
+@mixin lora-components-quicklinks {
+    .c-quicklinks {
+        &.m-rounded {
+            .c-quicklinks__link {
+                border-radius: $quicklinks-link-rounded-border-radius;
+
+                &.m-secondary .c-quicklinks__image {
+                    border-radius: $quicklinks-image-secondary-rounded-border-radius;
+                }
+            }
+
+            .c-quicklinks__image {
+                border-radius: $quicklinks-image-rounded-border-radius;
+                overflow: hidden;
+            }
+        }
+
+        &.m-secondary {
+            margin: $quicklinks-secondary-margin;
+
+            @include breakpoint(large) {
+                margin: $quicklinks-secondary-margin--large;
+            }
+
+            .c-quicklinks__items {
+                padding: $quicklinks-items-secondary-padding;
+                margin: $quicklinks-items-secondary-margin;
+                gap: $quicklinks-items-secondary-side-margin;
+
+                @include breakpoint(large) {
+                    padding: $quicklinks-items-secondary-padding--large;
+                    margin: $quicklinks-items-secondary-margin--large;
+                }
+            }
+
+            .c-quicklinks__link {
+                align-items: $quicklinks-link-secondary-align-items;
+                border: $quicklinks-link-secondary-border;
+                padding: $quicklinks-link-secondary-padding;
+                height: 100%;
+
+                &:is(a):hover,
+                &:is(button):hover {
+                    color: $quicklinks-link-hover-color;
+                    background: $quicklinks-link-secondary-hover-background;
+                    border: $quicklinks-link-secondary-hover-border;
+                    cursor: pointer;
+                }
+            }
+
+            .c-quicklinks__link.m-selected {
+                background: $quicklinks-link-secondary-selected-background;
+                color: $quicklinks-link-secondary-selected-color;
+                border: $quicklinks-link-secondary-selected-border;
+
+                @media (forced-colors: active) {
+                    border: 1px solid Highlight;
+                }
+
+                .c-quicklinks__label {
+                    font: $quicklinks-link-secondary-selected-label-font;
+                }
+            }
+
+            .c-quicklinks__image {
+                margin: $quicklinks-image-secondary-margin;
+
+                @include breakpoint(large) {
+                    margin: $quicklinks-image-secondary-margin--large;
+                }
+            }
+
+            .c-quicklinks__item {
+                border-right: $quicklinks-item-secondary-border-right;
+                height: $quicklinks-item-secondary-height;
+            }
+
+            .c-quicklinks__label {
+                @include text-style(
+                    $font: (
+                        small: $quicklinks-label-secondary-font,
+                        large: $quicklinks-label-secondary-font--large
+                    ),
+                    $margin: (
+                        small: $quicklinks-label-secondary-text-margin,
+                        large: $quicklinks-label-secondary-text-margin--large
+                    ),
+                );
+            }
+
+            .c-quicklinks__description {
+                color: $quicklinks-description-secondary-color;
+            }
+        }
+
+        &.m-dark {
+            background: $quicklinks-dark-background-color;
+            color: $quicklinks-dark-color;
+
+            .c-quicklinks__link {
+                background: $quicklinks-link-dark-background-color;
+                color: $quicklinks-link-dark-color;
+                border-color: $quicklinks-link-dark-border-color;
+            }
+
+            .c-quicklinks__link.m-selected {
+                border-color: $quicklinks-link-dark-selected-border-color;
+            }
+
+            .c-quicklinks__link:is(a):hover {
+                color: $quicklinks-dark-link-hover-color;
+                background: $quicklinks-dark-link-hover-background-color;
+            }
+
+            .c-quicklinks__description {
+                color: inherit;
+            }
+        }
+    }
+
+    .c-quicklinks__items {
+        display: flex;
+        list-style: none;
+        gap: $quicklinks-items-side-margin;
+        padding: $quicklinks-items-padding;
+        margin: $quicklinks-items-margin;
+
+        @include breakpoint(large) {
+            padding: $quicklinks-items-padding--large;
+            margin: $quicklinks-items-margin--large;
+        }
+    }
+
+    .c-quicklinks__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        white-space: nowrap;
+        gap: $quicklinks-label-side-margin;
+        padding: $quicklinks-link-padding;
+        border: $quicklinks-link-border;
+        color: $quicklinks-link-color;
+        background: $quicklinks-link-background-color;
+        transition: $quicklinks-link-transition;
+
+        &:is(a):hover,
+        &:is(button):hover {
+            color: $quicklinks-link-hover-color;
+            background: $quicklinks-link-hover-background-color;
+            border: $quicklinks-link-hover-border;
+            cursor: pointer;
+        }
+
+        &.m-dark {
+            background: $quicklinks-link-dark-background-color;
+            color: $quicklinks-link-dark-color;
+            border-color: $quicklinks-link-dark-border-color;
+
+            &:is(a):hover,
+            &:is(button):hover {
+                color: $quicklinks-dark-link-hover-color;
+                background: $quicklinks-dark-link-hover-background-color;
+                border-color: $quicklinks-dark-link-hover-border-color;
+                cursor: pointer;
+            }
+
+            .c-quicklinks__description {
+                color: inherit;
+            }
+        }
+
+        &.m-selected {
+            background: $quicklinks-link-selected-background;
+            color: $quicklinks-link-selected-color;
+            border: $quicklinks-link-selected-border;
+
+            @media (forced-colors: active) {
+                border: 1px solid Highlight;
+            }
+
+            .c-quicklinks__label {
+                font: $quicklinks-link-selected-label-font;
+            }
+        }
+
+        &.m-stack {
+            flex-direction: column;
+
+            .c-quicklinks__image {
+                margin-bottom: 0;
+
+                &:last-child {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &.m-secondary {
+            padding: $quicklinks-link-secondary-padding;
+            gap: $quicklinks-link-secondary-gap;
+
+            .c-quicklinks__items {
+                gap: $quicklinks-link-secondary-items-side-margin;
+            }
+        }
+    }
+
+    .c-quicklinks__image {
+        line-height: 0;
+        font-size: 0;
+        width: max-content;
+        margin: $quicklinks-image-margin;
+
+        @include breakpoint(large) {
+            margin: $quicklinks-image-margin--large;
+        }
+
+        .c-quicklinks__link:not(.m-stack) &:first-child {
+            margin-right: 0;
+        }
+
+        .c-quicklinks__link:not(.m-stack) &:last-child {
+            margin-left: 0;
+        }
+    }
+
+    .c-quicklinks__label {
+        @include text-style(
+            $font: (
+                small: $quicklinks-label-font,
+                large: $quicklinks-label-font--large
+            ),
+            $text-decoration: (
+                small: $quicklinks-label-text-decoration,
+                large: $quicklinks-label-text-decoration--large
+            ),
+        );
+    }
+}

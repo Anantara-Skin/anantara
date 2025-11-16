@@ -1,0 +1,227 @@
+// If you want to change the default size of rating, change the font-size
+$rating-font-size: rem-calc(10) !default;
+$rating-color: color(primary) !default;
+$rating-color-active: $rating-color !default;
+$rating-hover-color-active: color(primary-active) !default;
+$rating-icon-active-usesvg: false !default;
+$rating-margin: null !default;
+// Icon
+$rating-icon: 'star-empty' !default;
+$rating-icon-active: 'star' !default;
+$rating-icon-margin: rem-calc(3) !default;
+$rating-icon-transition: background 0.3s ease-out !default;
+$rating-icon-usesvg: false !default;
+// Value
+$rating-value-margin: rem-calc(0 3) !default;
+$rating-value-font-size: rem-calc(12) !default;
+$rating-value-line-height: rem-calc(18) !default;
+$rating-value-color: color(text-secondary) !default;
+// Review Value
+$rating-review-value-color: color(primary) !default;
+$rating-review-value-margin: rem-calc(0 2) !default;
+$rating-review-value-text-decoration: underline !default;
+$rating-review-value-icon-before-content: "-" !default;
+$rating-review-value-icon-before-display: inline-block !default;
+$rating-review-value-icon-before-margin: rem-calc(0 4 0 0) !default;
+$rating-review-value-icon-before-color: map.get($palette, dark) !default;
+// Large
+$rating-large-font-size: rem-calc(33) !default;
+$rating-large-icon-margin: rem-calc(10) !default;
+$rating-large-value-margin: rem-calc(0 20) !default;
+$rating-large-value-font-size: rem-calc(33) !default;
+$rating-large-value-font-size--large: null !default;
+$rating-highlight-icon-margin: rem-calc(0 5 0 0) !default;
+$rating-highlight-icon-image-width: rem-calc(15) !default;
+$rating-highlight-icon-before-margin: rem-calc(0 5) !default;
+$rating-highlight-icon-before-content: "\2014" !default;
+$rating-highlight-icon-before-display: inline-block !default;
+
+// Medium
+$rating-medium-font-size: rem-calc(20) !default;
+$rating-medium-icon-margin: rem-calc(8) !default;
+$rating-medium-value-margin: rem-calc(0 10) !default;
+$rating-medium-value-font-size: rem-calc(18) !default;
+$rating-medium-value-font-size--large: null !default;
+// Themes
+$rating-light-color: map.get($palette, light) !default;
+$rating-dark-color: map.get($palette, dark) !default;
+
+@mixin lora-components-rating {
+    .c-rating {
+        display: inline-flex;
+        font-size: $rating-font-size;
+        margin: $rating-margin;
+        position: relative;
+        text-decoration: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        align-items: center;
+
+        &:is(a, button, label):hover {
+            .c-rating__star.m-active {
+                @include svg-icon($rating-icon-active, $rating-hover-color-active, cover, left center, no-repeat, $usesvg: $rating-icon-active-usesvg, $color-change: true);
+            }
+        }
+
+        &.m-light {
+            .c-rating__star {
+                @include svg-icon($rating-icon, $rating-light-color, cover, left center, no-repeat, $usesvg: $rating-icon-usesvg, $color-change: true);
+            }
+
+            .c-rating__star.m-active {
+                @include svg-icon($rating-icon-active, $rating-light-color, cover, left center, no-repeat, $usesvg: $rating-icon-active-usesvg, $color-change: true);
+            }
+
+            &:is(a, button, label):hover {
+                .c-rating__star.m-active {
+                    @include svg-icon($rating-icon-active, $rating-light-color, cover, left center, no-repeat, $usesvg: $rating-icon-active-usesvg, $color-change: true);
+                }
+            }
+
+            .c-rating__value,
+            .c-rating__review-value,
+            .c-rating__review-value::before,
+            .c-rating__noreviews {
+                color: $rating-light-color;
+            }
+        }
+
+        &.m-dark {
+            .c-rating__star {
+                @include svg-icon($rating-icon, $rating-dark-color, cover, left center, no-repeat, $usesvg: $rating-icon-usesvg, $color-change: true);
+            }
+
+            .c-rating__star.m-active {
+                @include svg-icon($rating-icon-active, $rating-dark-color, cover, left center, no-repeat, $usesvg: $rating-icon-active-usesvg, $color-change: true);
+            }
+
+            &:is(a, button, label):hover {
+                .c-rating__star.m-active {
+                    @include svg-icon($rating-icon-active, $rating-dark-color, cover, left center, no-repeat, $usesvg: $rating-icon-active-usesvg, $color-change: true);
+                }
+            }
+
+            .c-rating__value,
+            .c-rating__review-value,
+            .c-rating__review-value::before,
+            .c-rating__noreviews {
+                color: $rating-dark-color;
+            }
+        }
+    }
+
+    .c-rating.m-large {
+        font-size: $rating-large-font-size;
+
+        .c-rating__star:not(:first-child) {
+            margin-#{$global-left}: $rating-large-icon-margin;
+        }
+
+        .c-rating__value {
+            margin: $rating-large-value-margin;
+            font-size: $rating-large-value-font-size;
+
+            @include breakpoint(large) {
+                font-size: $rating-large-value-font-size--large;
+            }
+
+            &:first-child {
+                margin-#{$global-left}: 0;
+            }
+        }
+    }
+
+    .c-rating.m-medium {
+        font-size: $rating-medium-font-size;
+
+        .c-rating__star:not(:first-child) {
+            margin-#{$global-left}: $rating-medium-icon-margin;
+        }
+
+        .c-rating__value {
+            margin: $rating-medium-value-margin;
+            font-size: $rating-medium-value-font-size;
+
+            @include breakpoint(large) {
+                font-size: $rating-medium-value-font-size--large;
+            }
+
+            &:first-child {
+                margin-#{$global-left}: 0;
+            }
+        }
+    }
+
+    .c-rating__star {
+        @include svg-icon($rating-icon, $rating-color, cover, left center, no-repeat, $usesvg: $rating-icon-usesvg);
+
+        display: inline-block;
+        margin-#{$global-left}: $rating-icon-margin;
+        overflow: hidden;
+        position: relative;
+        // Font size, width, height should never be changed
+        // Manage star icons size by font-size in `.c-rating`
+        font-size: 1em; // stylelint-disable-line
+        height: 1em; // stylelint-disable-line
+        width: 1em; // stylelint-disable-line
+        transition: $rating-icon-transition;
+
+        &:first-child {
+            margin-#{$global-left}: 0;
+        }
+    }
+
+    .c-rating__star.m-active {
+        @include svg-icon($rating-icon-active, $rating-color-active, cover, left center, no-repeat, $usesvg: $rating-icon-active-usesvg);
+    }
+
+    .c-rating__star .c-rating__star {
+        #{$global-left}: 0;
+        margin-#{$global-left}: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+
+    .c-rating__value {
+        margin: $rating-value-margin;
+        font-size: $rating-value-font-size;
+        line-height: $rating-value-line-height;
+        color: $rating-value-color;
+
+        &:first-child {
+            margin-#{$global-left}: 0;
+        }
+
+        &:last-child {
+            margin-#{$global-right}: 0;
+        }
+    }
+
+    .c-rating__review-value {
+        color: $rating-review-value-color;
+        margin: $rating-review-value-margin;
+        text-decoration: $rating-review-value-text-decoration;
+
+        &::before {
+            content: $rating-review-value-icon-before-content;
+            display: $rating-review-value-icon-before-display;
+            margin: $rating-review-value-icon-before-margin;
+            color: $rating-review-value-icon-before-color;
+        }
+    }
+
+    .c-rating__highlight-icon {
+        margin: $rating-highlight-icon-margin;
+
+        &::before {
+            content: $rating-highlight-icon-before-content;
+            display: $rating-highlight-icon-before-display;
+            margin: $rating-highlight-icon-before-margin;
+        }
+    }
+
+    .c-rating__highlight-icon-image {
+        width: $rating-highlight-icon-image-width;
+    }
+}

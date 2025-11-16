@@ -1,0 +1,394 @@
+@use "../icon";
+@use "sass:map";
+@use '../../base/colors' as colors;
+@use '../../base/fonts' as fonts;
+@use '../../_settings' as settings;
+$header-user-link-padding: rem-calc(0) !default;
+$header-user-link-welcome-switch-margin: null !default;
+$header-user-link-welcome-login-margin: null !default;
+$header-user-link-text-decoration: none !default;
+$header-user-customer-text-transform: capitalize !default;
+$header-user-text-text-transform: capitalize !default;
+$header-user-link-account-icon: user !default;
+$header-user-link-account-icon-size: rem-calc(16) !default;
+$header-user-link-account-icon-color: map.get(colors.$palette, text) !default;
+$header-user-link-account-icon-hover-color: map.get(colors.$palette, primary) !default;
+$header-user-link-account-icon-is-mask: true !default;
+$header-user-link-account-icon-display: null !default;
+$header-user-link-account-text-display: null !default;
+$header-user-link-account-login-icon: user !default;
+$header-user-link-account-login-icon-width: rem-calc(16) !default;
+$header-user-link-account-login-icon-height: rem-calc(16) !default;
+$header-user-link-account-login-icon-color: map.get(colors.$palette, text) !default;
+$header-user-link-account-login-icon-is-mask: true !default;
+$header-user-link-account-login-icon-hover-color: map.get(colors.$palette, primary) !default;
+$header-user-link-account-login-icon-display: none !default;
+$header-user-link-account-login-text-display: null !default;
+$header-user-link-account-sticky-login-icon: user !default;
+$header-user-link-account-sticky-login-icon-color: map.get(colors.$palette, primary) !default;
+$header-user-link-account-sticky-login-icon-hover-color: map.get(colors.$palette, primary) !default;
+$header-user-link-account-sticky-login-icon-width: rem-calc(20) !default;
+$header-user-link-account-sticky-login-icon-height: rem-calc(19) !default;
+$header-user-link-account-welcome-switch-icon: user !default;
+$header-user-link-account-welcome-switch-icon-width: rem-calc(16) !default;
+$header-user-link-account-welcome-switch-icon-height: rem-calc(16) !default;
+$header-user-link-account-welcome-switch-icon-color: map.get(colors.$palette, text) !default;
+$header-user-link-account-welcome-switch-icon-is-mask: true !default;
+$header-user-link-account-welcome-switch-icon-hover-color: map.get(colors.$palette, primary) !default;
+$header-user-link-account-welcome-switch-icon-display: none !default;
+$header-user-link-account-welcome-switch-text-display: null !default;
+$header-user-link-account-welcome-login-icon: user !default;
+$header-user-link-account-welcome-login-icon-width: rem-calc(16) !default;
+$header-user-link-account-welcome-login-icon-height: rem-calc(16) !default;
+$header-user-link-account-welcome-login-icon-color: map.get(colors.$palette, text) !default;
+$header-user-link-account-welcome-login-icon-is-mask: true !default;
+$header-user-link-account-welcome-login-icon-hover-color: map.get(colors.$palette, primary) !default;
+$header-user-link-account-welcome-login-icon-display: none !default;
+$header-user-link-account-welcome-login-text-display: null !default;
+
+// User menu
+$header-user-list-wrapper-margin: rem-calc(30 10) !default;
+$header-user-list-margin: rem-calc(0 60) !default;
+$header-user-list-width: rem-calc(220) !default;
+$header-user-list-title-margin: rem-calc(0 0 5) !default;
+$header-user-list-item-font: #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$header-user-list-item-color: map.get(colors.$palette, text-secondary) !default;
+$header-user-list-item-link-color: map.get(colors.$palette, text-secondary) !default;
+$header-user-list-item-link-text-decoration: none !default;
+$header-user-list-item-link-hover-color: map.get(colors.$palette, primary) !default;
+$header-user-list-item-text-loyalty-status-margin: rem-calc(0 0 10) !default;
+$header-user-list-item-link-logout-text-decoration: underline !default;
+$header-user-list-item-link-logout-color: map.get(colors.$palette, text) !default;
+$header-user-list-item-link-logout-hover-color: map.get(colors.$palette, primary) !default;
+// User menu icons
+$header-user-list-item-icon-color: map.get(colors.$palette, text) !default;
+$header-user-list-item-loyalty-status-icon-color: $header-user-list-item-icon-color !default;
+$header-user-list-item-icon-hover-color: map.get(colors.$palette, primary) !default;
+$header-user-list-item-loyalty-status-icon-hover-color: $header-user-list-item-icon-hover-color !default;
+
+$header-user-list-item-loyalty-status-icon: 'gift' !default;
+$header-user-list-item-loyalty-status-icon-size: rem-calc(20) !default;
+$header-user-list-item-logout-icon: 'power-button' !default;
+$header-user-list-item-logout-icon-size: rem-calc(20) !default;
+$header-user-list-item-logout-icon-is-mask: true !default;
+$header-user-list-item-icon-svg-margin: rem-calc(0 15 0 0) !default;
+$header-user-list-item-loyalty-status-icon-is-mask: true !default;
+// User dark variation
+$header-user-dark-vertical-padding: rem-calc(8) !default;
+$header-user-dark-padding: $header-user-dark-vertical-padding rem-calc(10) !default;
+$header-user-dark-background: map.get(colors.$palette, primary) !default;
+$header-user-dark-color: map.get(colors.$palette, light) !default;
+$header-user-dark-border-radius: rem-calc(4) !default;
+
+@mixin lora-components-user {
+    .c-user {
+        display: flex;
+
+        .c-user__welcome-back {
+            display: flex;
+
+            .c-user__link.m-welcome-back-switch {
+                margin: $header-user-link-welcome-switch-margin;
+            }
+
+            .c-user__link.m-welcome-back-login {
+                margin: $header-user-link-welcome-login-margin;
+            }
+        }
+
+        .c-user__text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    /* stylelint-disable selector-max-compound-selectors */
+    .l-header:not(.m-sticked) .l-header__top-nav-item .c-user.m-dark {
+        padding: $header-user-dark-padding;
+        margin-top: -$header-user-dark-vertical-padding;
+        margin-bottom: -$header-user-dark-vertical-padding;
+        background: $header-user-dark-background;
+        border-radius: $header-user-dark-border-radius;
+        color: $header-user-dark-color;
+
+        a,
+        button {
+            color: $header-user-dark-color;
+
+            .c-icon__svg::before {
+                background-color: $header-user-dark-color;
+            }
+        }
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+
+    .c-user__link {
+        padding: $header-user-link-padding;
+        text-decoration: $header-user-link-text-decoration;
+    }
+
+    .c-user__link.m-logout {
+        @include breakpoint(medium down) {
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+    .c-user__link.m-my-account {
+        @include lora-helper-icon-svg(
+            $icon: $header-user-link-account-icon,
+            $size: $header-user-link-account-icon-size,
+            $color: $header-user-link-account-icon-color,
+            $is-mask: $header-user-link-account-icon-is-mask,
+        );
+
+        @if ($header-user-link-account-icon-hover-color != $header-user-link-account-icon-color) {
+            &:hover .c-icon__svg::before,
+            &:focus .c-icon__svg::before {
+                background-color: $header-user-link-account-icon-hover-color;
+            }
+        }
+
+        .c-icon {
+            display: $header-user-link-account-icon-display;
+        }
+
+        .c-user__text {
+            display: $header-user-link-account-text-display;
+        }
+    }
+
+    .c-user__link.m-login {
+        @include lora-helper-icon-svg(
+            $icon: $header-user-link-account-login-icon,
+            $color: $header-user-link-account-login-icon-color,
+            $is-mask: $header-user-link-account-login-icon-is-mask,
+        );
+
+        .c-icon__svg::before {
+            width: $header-user-link-account-login-icon-width;
+            height: $header-user-link-account-login-icon-height;
+        }
+
+        @if ($header-user-link-account-login-icon-hover-color != $header-user-link-account-login-icon-color) {
+            &:hover .c-icon__svg::before,
+            &:focus .c-icon__svg::before {
+                background-color: $header-user-link-account-login-icon-hover-color;
+            }
+        }
+
+        .c-icon {
+            display: $header-user-link-account-login-icon-display;
+        }
+
+        .m-sticked & {
+            @include lora-helper-icon-svg(
+                $icon: $header-user-link-account-login-icon,
+                $color: $header-user-link-account-sticky-login-icon-color,
+                $is-mask: $header-user-link-account-login-icon-is-mask,
+            );
+
+            .c-icon__svg::before {
+                width: $header-user-link-account-sticky-login-icon-width;
+                height: $header-user-link-account-sticky-login-icon-height;
+            }
+
+            @if ($header-user-link-account-sticky-login-icon-hover-color != $header-user-link-account-sticky-login-icon-color) {
+                &:hover .c-icon__svg::before,
+                &:focus .c-icon__svg::before {
+                    background-color: $header-user-link-account-sticky-login-icon-hover-color;
+                }
+            }
+
+            .c-icon {
+                display: block;
+            }
+        }
+
+        .c-user__text {
+            display: $header-user-link-account-login-text-display;
+        }
+    }
+
+    .c-user__link.m-welcome-back-switch {
+        @include lora-helper-icon-svg(
+            $icon: $header-user-link-account-welcome-switch-icon,
+            $color: $header-user-link-account-welcome-switch-icon-color,
+            $is-mask: $header-user-link-account-welcome-switch-icon-is-mask,
+        );
+
+        .c-icon__svg::before {
+            width: $header-user-link-account-welcome-switch-icon-width;
+            height: $header-user-link-account-welcome-switch-icon-height;
+        }
+
+        @if ($header-user-link-account-welcome-switch-icon-hover-color != $header-user-link-account-welcome-switch-icon-color) {
+            &:hover .c-icon__svg::before,
+            &:focus .c-icon__svg::before {
+                background-color: $header-user-link-account-welcome-switch-icon-hover-color;
+            }
+        }
+
+        .c-icon {
+            display: $header-user-link-account-welcome-switch-icon-display;
+        }
+
+        .c-user__text {
+            display: $header-user-link-account-welcome-switch-text-display;
+        }
+
+        .m-sticked & {
+            .c-user__text {
+                display: none;
+            }
+
+            .c-icon {
+                display: inherit;
+            }
+        }
+    }
+
+    .c-user__link.m-welcome-back-login {
+        @include lora-helper-icon-svg(
+            $icon: $header-user-link-account-welcome-login-icon,
+            $color: $header-user-link-account-welcome-login-icon-color,
+            $is-mask: $header-user-link-account-welcome-login-icon-is-mask,
+        );
+
+        .c-icon__svg::before {
+            width: $header-user-link-account-welcome-login-icon-width;
+            height: $header-user-link-account-welcome-login-icon-height;
+        }
+
+        @if ($header-user-link-account-welcome-login-icon-hover-color != $header-user-link-account-welcome-login-icon-color) {
+            &:hover .c-icon__svg::before,
+            &:focus .c-icon__svg::before {
+                background-color: $header-user-link-account-welcome-login-icon-hover-color;
+            }
+        }
+
+        .c-icon {
+            display: $header-user-link-account-welcome-login-icon-display;
+        }
+
+        .c-user__text {
+            display: $header-user-link-account-welcome-login-text-display;
+        }
+
+        .m-sticked & {
+            .c-user__text {
+                display: none;
+            }
+
+            .c-icon {
+                display: inherit;
+            }
+        }
+    }
+
+    .c-user__customer {
+        text-transform: $header-user-customer-text-transform;
+    }
+
+    .c-user__text.m-welcome-back-switch {
+        text-transform: $header-user-text-text-transform;
+    }
+
+    .c-user__authenticated-welcome {
+        display: flex;
+
+        @include breakpoint(medium down) {
+            flex-flow: column;
+            flex-grow: 1;
+        }
+    }
+
+    .c-user__list-wrapper {
+        margin: $header-user-list-wrapper-margin;
+    }
+
+    .c-user__list {
+        margin: $header-user-list-margin;
+        width: $header-user-list-width;
+    }
+
+    .c-user__list-title {
+        margin: $header-user-list-title-margin;
+    }
+
+    .c-user__list-item {
+        font: $header-user-list-item-font;
+        color: $header-user-list-item-color;
+    }
+
+    .c-user__list-item-link {
+        color: $header-user-list-item-link-color;
+        text-decoration: $header-user-list-item-link-text-decoration;
+
+        &:hover,
+        &:focus {
+            color: $header-user-list-item-link-hover-color;
+        }
+
+        &.m-logout {
+            color: $header-user-list-item-link-logout-color;
+
+            &:hover,
+            &:focus {
+                color: $header-user-list-item-link-logout-hover-color;
+            }
+
+            .c-user__list-item-text {
+                text-decoration: $header-user-list-item-link-logout-text-decoration;
+            }
+        }
+    }
+
+    .c-user__list-item-text {
+        &.m-loyalty-status {
+            margin: $header-user-list-item-text-loyalty-status-margin;
+        }
+    }
+
+    .c-user__list-item-icon {
+        display: inline-flex;
+
+        &.m-loyalty-status {
+            @include lora-helper-icon-svg(
+                $icon: $header-user-list-item-loyalty-status-icon,
+                $size: $header-user-list-item-loyalty-status-icon-size,
+                $color: $header-user-list-item-loyalty-status-icon-color,
+                $svg-selector: '.c-user__list-item-icon-svg',
+                $is-mask: $header-user-list-item-loyalty-status-icon-is-mask
+            );
+
+            @if ($header-user-list-item-loyalty-status-icon-hover-color != $header-user-list-item-loyalty-status-icon-color) {
+                &:hover .c-user__list-item-icon-svg::before,
+                &:focus .c-user__list-item-icon-svg::before {
+                    background-color: $header-user-list-item-loyalty-status-icon-hover-color;
+                }
+            }
+        }
+
+        &.m-logout {
+            @include lora-helper-icon-svg(
+                $icon: $header-user-list-item-logout-icon,
+                $size: $header-user-list-item-logout-icon-size,
+                $color: $header-user-list-item-icon-color,
+                $svg-selector: '.c-user__list-item-icon-svg',
+                $is-mask: $header-user-list-item-logout-icon-is-mask
+            );
+
+            @if ($header-user-list-item-icon-hover-color != $header-user-list-item-icon-color) {
+                &:hover .c-user__list-item-icon-svg::before,
+                &:focus .c-user__list-item-icon-svg::before {
+                    background-color: $header-user-list-item-icon-hover-color;
+                }
+            }
+        }
+    }
+
+    .c-user__list-item-icon-svg {
+        margin: $header-user-list-item-icon-svg-margin;
+    }
+}

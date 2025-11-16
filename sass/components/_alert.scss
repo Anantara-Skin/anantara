@@ -1,0 +1,295 @@
+/// Info alert
+/// @type Map
+$alert-info: (
+    background: color(info-secondary),
+    border: 1px solid color(info),
+    color: color(info),
+    icon: 'info',
+    icon-color: color(info)
+) !default;
+
+/// Success alert
+/// @type Map
+$alert-success: (
+    background: color(success-secondary),
+    border: 1px solid color(success),
+    color: color(success),
+    icon: 'success',
+    icon-color: color(success)
+) !default;
+
+/// Warning alert
+/// @type Map
+$alert-warning: (
+    background: color(warning-secondary),
+    border: 1px solid color(warning),
+    color: color(warning),
+    icon: 'alert',
+    icon-color: color(warning)
+) !default;
+
+/// Error alert
+/// @type Map
+$alert-error: (
+    background: color(error-secondary),
+    border: 1px solid color(alert),
+    color: color(alert),
+    icon: 'error',
+    icon-color: color(alert)
+) !default;
+
+/// Pending alert
+/// @type Map
+$alert-pending: (
+    background: color(info-secondary),
+    border: 1px solid color(info),
+    color: color(info),
+    icon: 'hour',
+    icon-color: color(info)
+) !default;
+
+/// Alert types classes. A map of classes to output in your CSS
+/// @type Map
+$alert-palette: (
+    info: $alert-info,
+    success: $alert-success,
+    warning: $alert-warning,
+    error: $alert-error,
+    pending: $alert-pending
+) !default;
+
+$alert-margin: rem-calc(20 0) !default;
+$alert-margin--large: null !default;
+$alert-padding: rem-calc(5 10) !default;
+$alert-padding--large: rem-calc(10 20) !default;
+$alert-background: color(global-background) !default;
+$alert-color: color(text) !default;
+$alert-font: #{rem-calc(12)} / #{rem-calc(20)} fonts.$font-primary !default;
+$alert-font--large: null !default;
+$alert-message-text-transform: null !default;
+$alert-message-font: null !default;
+$alert-message-letter-spacing: null !default;
+$alert-align-items: null !default;
+$alert-align-items--large: null !default;
+$alert-box-shadow: rem-calc(0 0 4 0) rgba(map.get($palette, dark), 0.2) !default;
+$alert-border: null !default;
+$alert-border-radius: rem-calc(4) !default;
+// Alert icon
+$alert-icon: "info" !default;
+$alert-icon-color: color(text) !default;
+$alert-icon-size: rem-calc(20) !default;
+$alert-icon-margin: rem-calc(0 10 0 0) !default;
+$alert-icon-margin--large: null !default;
+$alert-icon-usesvg: true !default;
+// Alert link
+$alert-link-margin: rem-calc(10 0 0) !default;
+$alert-link-margin--large: rem-calc(0 0 0 20) !default;
+$alert-link-inline-margin: rem-calc(0 0 0 20) !default;
+// Background image
+$alert-background-image-background: null !default;
+$alert-background-image-background--large: $alert-background-image-background !default;
+// Secondary
+$alert-secondary-box-shadow: none !default;
+$alert-secondary-border-radius: 0 !default;
+$alert-secondary-border: null !default;
+$alert-primary-has-border: false !default;
+$alert-secondary-has-border: true !default;
+// Tiny alert
+$alert-tiny-font: #{rem-calc(12)} / 1.2 fonts.$font-primary !default;
+$alert-tiny-font--large: null !default;
+$alert-tiny-box-shadow: none !default;
+$alert-tiny-border: null !default;
+$alert-tiny-padding: rem-calc(4 8) !default;
+$alert-tiny-padding--large: null !default;
+// Tiny alert icon
+$alert-tiny-icon-size: rem-calc(16) !default;
+$alert-tiny-icon-margin: rem-calc(0 4 0 0) !default;
+$alert-tiny-icon-margin--large: null !default;
+// Coupon alert icon
+$alert-coupon-icon-size: rem-calc(16) !default;
+$alert-coupon-icon-margin: rem-calc(0 8 0 0) !default;
+
+@mixin lora-helper-alert-style(
+    $background,
+    $border
+) {
+    background: $background;
+    
+    @if ($alert-primary-has-border) {
+        border: $border;
+    }
+}
+
+@mixin lora-helper-alert-secondary-style(
+    $border
+) {
+    @if ($alert-secondary-has-border) {
+        border: $border;
+    }
+}
+
+@mixin lora-components-alert {
+    .c-alert {
+        @include lora-helper-alert-style(
+            $alert-background,
+            $alert-border
+        );
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        margin: $alert-margin;
+        padding: $alert-padding;
+        font: $alert-font;
+        color: $alert-color;
+        align-items: $alert-align-items;
+        box-shadow: $alert-box-shadow;
+        border-radius: $alert-border-radius;
+
+        @include breakpoint(large) {
+            margin: $alert-margin--large;
+            padding: $alert-padding--large;
+            font: $alert-font--large;
+            align-items: $alert-align-items--large;
+        }
+
+        @each $name, $type in $alert-palette {
+            &.m-#{$name} {
+                @include lora-helper-alert-style(
+                    map-deep-get($alert-palette, $name, "background"),
+                    map-deep-get($alert-palette, $name, "border")
+                );
+            }
+        }
+
+        &.m-secondary {
+            border: $alert-secondary-border;
+            box-shadow: $alert-secondary-box-shadow;
+            border-radius: $alert-secondary-border-radius;
+
+            @each $name, $type in $alert-palette {
+                &.m-#{$name} {
+                    @include lora-helper-alert-secondary-style(
+                        map-deep-get($alert-palette, $name, "border"),
+                    );
+                }
+            }
+        }
+
+        &.m-background-image {
+            background: $alert-background-image-background;
+
+            @include breakpoint(large) {
+                background: $alert-background-image-background--large;
+            }
+        }
+
+        &.m-tiny {
+            flex-wrap: nowrap;
+            box-shadow: $alert-tiny-box-shadow;
+            border: $alert-tiny-border;
+            padding: $alert-tiny-padding;
+            font: $alert-tiny-font;
+
+            @include breakpoint(large) {
+                padding: $alert-tiny-padding--large;
+                font: $alert-tiny-font--large;
+            }
+        }
+    }
+
+    .c-alert.m-icon {
+        &::before {
+            @include svg-icon($alert-icon, $alert-icon-color, 100%, left, no-repeat, $usesvg: $alert-icon-usesvg);
+
+            content: '';
+            display: block;
+            flex: 0 0 auto;
+            height: $alert-icon-size;
+            width: $alert-icon-size;
+            margin: $alert-icon-margin;
+
+            @include breakpoint(large) {
+                margin: $alert-icon-margin--large;
+            }
+        }
+
+        @each $name, $type in $alert-palette {
+            &.m-#{$name}::before {
+                @include svg-icon(
+                    map-deep-get($alert-palette, $name, "icon"),
+                    map-deep-get($alert-palette, $name, "icon-color"),
+                    100%, left, no-repeat, $usesvg: $alert-icon-usesvg
+                );
+            }
+        }
+
+        &.m-tiny::before {
+            height: $alert-tiny-icon-size;
+            width: $alert-tiny-icon-size;
+            margin: $alert-tiny-icon-margin;
+
+            @include breakpoint(large) {
+                margin: $alert-tiny-icon-margin--large;
+            }
+        }
+
+        &.m-coupon::before {
+            height: $alert-coupon-icon-size;
+            width: $alert-coupon-icon-size;
+            margin: $alert-coupon-icon-margin;
+        }
+    }
+
+    .c-alert__message {
+        flex: 1;
+        text-transform: $alert-message-text-transform;
+        font: $alert-message-font;
+        letter-spacing: $alert-message-letter-spacing;
+    }
+
+    .c-alert__link {
+        flex: 1 0 100%;
+        margin: $alert-link-margin;
+
+        @include breakpoint(large) {
+            flex: 0 0 auto;
+            margin: $alert-link-margin--large;
+        }
+
+        &.m-inline {
+            flex: 0 1 auto;
+            margin: $alert-link-inline-margin;
+        }
+    }
+
+    .c-alert.m-plain {
+        margin: 0;
+    }
+
+    .c-alert.m-plain-top {
+        margin-top: 0;
+    }
+
+    .c-alert.m-plain-bottom {
+        margin-bottom: 0;
+    }
+
+    /* stylelint-disable declaration-no-important */
+    .c-alert.m-borderless {
+        padding: 0 !important;
+        border: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+    /* stylelint-enable declaration-no-important */
+
+    .c-alert.m-autosize {
+        display: inline-flex;
+        flex-basis: auto;
+    }
+
+    .c-alert__content {
+        flex-basis: 100%;
+    }
+}

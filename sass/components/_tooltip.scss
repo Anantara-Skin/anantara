@@ -1,0 +1,229 @@
+$tooltip-margin: 0 !default;
+$tooltip-min-width: rem-calc(110) !default;
+$tooltip-max-width: rem-calc(1200) !default;
+$tooltip-animation-offset: rem-calc(20) !default;
+$tooltip-transition-delay: 0.5s !default;
+$tooltip-border: 1px solid color(border) !default;
+$tooltip-border-radius: rem-calc(4) !default;
+$tooltip-loading-min-height: rem-calc(100) !default;
+$tooltip-loading-background: map.get($palette, light) !default;
+$tooltip-loading-opacity: 0.7 !default;
+$tooltip-medium-max-width: rem-calc(200) !default;
+$tooltip-small-fullwidth-margin: null !default;
+// Arrow
+$tooltip-arrow-size: rem-calc(15) !default;
+$tooltip-arrow-background: map.get($palette, light) !default;
+$tooltip-arrow-offset: rem-calc(4) !default;
+// Arialink
+$tooltip-arialink-text-position-top: rem-calc(1) !default;
+$tooltip-arialink-text-position-left: rem-calc(1) !default;
+$tooltip-arialink-text-decoration: none !default;
+$tooltip-arialink-background: map.get($palette, light) !default;
+$tooltip-arialink-outline: 1px solid !default;
+$tooltip-arialink-padding: rem-calc(0 5) !default;
+// Close button
+$tooltip-close-top: rem-calc(-20) !default;
+$tooltip-close-top--large: rem-calc(-10) !default;
+$tooltip-close-right: rem-calc(-10) !default;
+$tooltip-close-padding: rem-calc(0 5) !default;
+$tooltip-close-background: map.get($palette, light) !default;
+$tooltip-close-border: 1px solid color(border) !default;
+$tooltip-close-border-radius: 50% !default;
+// Content
+$tooltip-content-background: map.get($palette, light) !default;
+$tooltip-content-padding: rem-calc(10) !default;
+$tooltip-content-text-transform: null !default;
+$tooltip-content-box-shadow: null !default;
+// Title
+$tooltip-title-margin: rem-calc(0 -10 10) !default;
+$tooltip-title-padding: rem-calc(0 10 10) !default;
+$tooltip-title-border-bottom: 1px solid color(border) !default;
+
+@mixin lora-components-tooltip {
+    $positions-map: (
+        bottom: (
+            position: bottom,
+            tooltip-flex-direction: column,
+            arrow-margin: 0 0 (-$tooltip-arrow-size / 2) 0,
+            arrow-rotate: 45deg,
+            tooltip-padding-position: top,
+        ),
+        left: (
+            position: #{$global-left},
+            tooltip-flex-direction: row-reverse,
+            arrow-margin: 0 0 0 (-$tooltip-arrow-size / 2),
+            arrow-rotate: 135deg,
+            tooltip-padding-position: right,
+        ),
+        right: (
+            position: #{$global-right},
+            tooltip-flex-direction: row,
+            arrow-margin: 0 (-$tooltip-arrow-size / 2) 0 0,
+            arrow-rotate: -45deg,
+            tooltip-padding-position: left,
+        ),
+        top: (
+            position: top,
+            tooltip-flex-direction: column-reverse,
+            arrow-margin: (-$tooltip-arrow-size / 2) 0 0 0,
+            arrow-rotate: -135deg,
+            tooltip-padding-position: bottom,
+        ),
+    );
+
+    .c-tooltip {
+        display: flex;
+        flex-flow: column;
+        max-width: $tooltip-max-width;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        z-index: z(tooltip);
+
+        @include breakpoint(medium down) {
+            max-width: 100%;
+        }
+
+        &[data-popper-placement^="bottom"] {
+            transform: translate(0, $tooltip-animation-offset);
+            transition: $tooltip-transition-delay opacity, $tooltip-transition-delay transform;
+        }
+
+        &[data-popper-placement^="top"] {
+            transform: translate(0, -$tooltip-animation-offset);
+            transition: $tooltip-transition-delay opacity, $tooltip-transition-delay transform;
+        }
+    }
+
+    .c-tooltip__arrow {
+        background: $tooltip-arrow-background;
+        border: $tooltip-border;
+        border-bottom: 0;
+        border-#{$global-right}: 0;
+        height: $tooltip-arrow-size;
+        margin: 0;
+        position: relative !important; // stylelint-disable-line
+        transform: rotateZ(45deg);
+        transform-origin: 50%;
+        width: $tooltip-arrow-size;
+        z-index: 1; // stylelint-disable-line
+
+        &[data-hide] {
+            visibility: hidden;
+        }
+    }
+
+    .c-tooltip.m-active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        top: auto;
+
+        &[data-popper-placement^="bottom"],
+        &[data-popper-placement^="top"] {
+            transform: translate(0, $tooltip-margin);
+        }
+    }
+
+    .c-tooltip__arialink {
+        position: absolute;
+        display: flex;
+        top: $tooltip-arialink-text-position-top;
+        #{$global-left}: $tooltip-arialink-text-position-left;
+        z-index: 1; // stylelint-disable-line
+        text-decoration: $tooltip-arialink-text-decoration;
+        background: $tooltip-arialink-background;
+        outline: $tooltip-arialink-outline;
+        padding: $tooltip-arialink-padding;
+    }
+
+    .c-tooltip__close {
+        cursor: pointer;
+        position: absolute;
+        top: $tooltip-close-top;
+        #{$global-right}: $tooltip-close-right;
+        padding: $tooltip-close-padding;
+        background: $tooltip-close-background;
+        border: $tooltip-close-border;
+        border-radius: $tooltip-close-border-radius;
+
+        @include breakpoint(large) {
+            top: $tooltip-close-top--large;
+        }
+    }
+
+    .c-tooltip__content {
+        position: relative;
+        background: $tooltip-content-background;
+        border: $tooltip-border;
+        border-radius: $tooltip-border-radius;
+        max-width: 100%;
+        min-width: $tooltip-min-width;
+        padding: $tooltip-content-padding;
+        text-transform: $tooltip-content-text-transform;
+        box-shadow: $tooltip-content-box-shadow;
+    }
+
+    .c-tooltip__title {
+        margin: $tooltip-title-margin;
+        padding: $tooltip-title-padding;
+        border-bottom: $tooltip-title-border-bottom;
+    }
+
+    .c-tooltip.m-loading .c-tooltip__content {
+        min-height: $tooltip-loading-min-height;
+
+        &::before {
+            background: $tooltip-loading-background;
+            content: '';
+            height: 100%;
+            opacity: $tooltip-loading-opacity;
+            position: absolute;
+            width: 100%;
+            z-index: z(pageLoader, overlay);
+            top: 0;
+            right: 0;
+        } // Loader icon
+
+        &::after {
+            background: transparent url('#{$global-image-path}/#{$loader-image}') no-repeat 50% 50%;
+            content: '';
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: z(pageLoader, icon);
+
+            @include reduced-motion {
+                background: transparent url('#{$global-image-path}/#{$loader-image--reduced-motion}') no-repeat 50% 50%;
+            }
+        }
+    }
+
+    .c-tooltip.m-medium {
+        .c-tooltip__content {
+            width: $tooltip-medium-max-width;
+        }
+    } // Position modifiers
+    @each $position,
+        $position-vars in $positions-map {
+        .c-tooltip[data-popper-placement^="#{map-get($position-vars, position)}"] {
+            flex-flow: map-get($position-vars, tooltip-flex-direction);
+            padding-#{map-get($position-vars, tooltip-padding-position)}: $tooltip-arrow-offset;
+
+            .c-tooltip__arrow {
+                margin: map-get($position-vars, arrow-margin);
+                transform: rotateZ(map-get($position-vars, arrow-rotate));
+            }
+        }
+    }
+
+    .c-tooltip.m-small-fullwidth {
+        @include breakpoint(small only) {
+            width: 100%;
+            margin: $tooltip-small-fullwidth-margin;
+        }
+    }
+}

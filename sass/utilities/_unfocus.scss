@@ -1,0 +1,25 @@
+/* stylelint-disable declaration-no-important */
+@mixin unfocus {
+    ::-moz-focus-inner {
+        border: 0 !important;
+    }
+
+    :focus,
+    :focus-visible,
+    .c-check-field__input:focus + .c-check-field__label::before,
+    .c-check-field__input:focus + .c-check-field__label::after,
+    .c-check-field__input:focus-visible + .c-check-field__label::before,
+    .c-check-field__input:focus-visible + .c-check-field__label::after,
+    .c-rating-input__input:focus + .c-rating-input__label::before,
+    .c-rating-input__input:focus-visible + .c-rating-input__label::before {
+        outline: none !important;
+    }
+
+    .c-stepper-input__field:focus,
+    .c-stepper-input__plus:focus,
+    .c-stepper-input__minus:focus {
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+/* stylelint-enable declaration-no-important */
