@@ -1,0 +1,51 @@
+// Price
+$product-table-price-font: 500 #{rem-calc(14)} / 1 fonts.$font-primary !default;
+$product-table-price-font--large: null !default;
+$product-table-price-color: null !default;
+$product-table-price-text-transform: null !default;
+$product-table-price-value-old-margin: rem-calc(0 5 0 0) !default;
+$product-table-price-value-old-margin--large: rem-calc(0 0 5) !default;
+$product-table-price-value-old-color: color(text-secondary) !default;
+$product-table-price-value-old-text-decoration-color: null !default;
+$product-table-price-value-new-color: null !default;
+$product-table-price-value-old-font-weight: normal !default;
+$product-table-price-value-old-font: null !default;
+$product-table-price-value-old-letter-spacing: null !default;
+
+@mixin lora-components-product-table-price {
+    // Price component
+    .c-product-table__price {
+        font: $product-table-price-font;
+        color: $product-table-price-color;
+        text-transform: $product-table-price-text-transform;
+        white-space: nowrap;
+
+        @include breakpoint(large) {
+            font: $product-table-price-font--large;
+        }
+    }
+
+    .c-product-table__price-value {
+        &.m-old {
+            margin: $product-table-price-value-old-margin;
+            text-decoration: line-through $product-table-price-value-old-text-decoration-color;
+            color: $product-table-price-value-old-color;
+            font: $product-table-price-value-old-font;
+            font-weight: $product-table-price-value-old-font-weight;
+            letter-spacing: $product-table-price-value-old-letter-spacing;
+
+            @include breakpoint(large) {
+                display: inline-block;
+                margin: $product-table-price-value-old-margin--large;
+            }
+        }
+
+        &.m-new {
+            color: $product-table-price-value-new-color;
+        }
+    }
+
+    .c-product-table__price-capacity {
+        display: block;
+    }
+}

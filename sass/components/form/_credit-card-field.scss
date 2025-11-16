@@ -1,0 +1,66 @@
+$form-credit-card-field-unknown-icon: "card-logo-unknown" !default;
+$form-credit-card-field-amex-icon: "card-logo-amex" !default;
+$form-credit-card-field-discover-icon: "card-logo-discover" !default;
+$form-credit-card-field-master-icon: "card-logo-mastercard" !default;
+$form-credit-card-field-visa-icon: "card-logo-visa" !default;
+$form-credit-card-field-elo-icon: "card-logo-elo" !default;
+$form-credit-card-field-diners-icon: "card-logo-diners" !default;
+$form-credit-card-field-color: color(text) !default;
+$form-credit-card-field-padding-left: rem-calc(50) !default;
+$form-credit-card-field-top: rem-calc(6) !default;
+$form-credit-card-field-left: rem-calc(6) !default;
+$form-credit-card-field-width: rem-calc(38) !default;
+$form-credit-card-field-height: rem-calc(24) !default;
+$form-credit-card-field-label-left: rem-calc(46) !default;
+
+@mixin lora-form-credit-card-field {
+    .c-credit-card-field {
+        position: relative;
+        width: 100%;
+
+        input {
+            padding-#{$global-left}: $form-credit-card-field-padding-left;
+        }
+
+        &::before {
+            content: "";
+            background: transparent url('#{$global-icons-path}/#{$form-credit-card-field-unknown-icon}.svg') no-repeat center center;
+            background-size: contain;
+            height: $form-credit-card-field-height;
+            #{$global-left}: $form-credit-card-field-left;
+            position: absolute;
+            top: $form-credit-card-field-top;
+            width: $form-credit-card-field-width;
+        }
+
+        &.m-amex::before {
+            background-image: url('#{$global-icons-path}/#{$form-credit-card-field-amex-icon}.svg');
+        }
+
+        &.m-discover::before {
+            background-image: url('#{$global-icons-path}/#{$form-credit-card-field-discover-icon}.svg');
+        }
+
+        &.m-master::before {
+            background-image: url('#{$global-icons-path}/#{$form-credit-card-field-master-icon}.svg');
+        }
+
+        &.m-visa::before {
+            background-image: url('#{$global-icons-path}/#{$form-credit-card-field-visa-icon}.svg');
+        }
+
+        &.m-elo::before {
+            background-image: url('#{$global-icons-path}/#{$form-credit-card-field-elo-icon}.svg');
+        }
+
+        &.m-diners::before {
+            background-image: url('#{$global-icons-path}/#{$form-credit-card-field-diners-icon}.svg');
+        }
+    }
+
+    .c-credit-card-field__wrapper:not(.m-focus):not(.m-active) {
+        .c-text-field__label {
+            #{$global-left}: $form-credit-card-field-label-left;
+        }
+    }
+}

@@ -1,0 +1,215 @@
+$layout-section-margin-top: rem-calc(35) !default;
+$layout-section-margin-bottom: rem-calc(35) !default;
+$layout-section-margin-top--large: rem-calc(60) !default;
+$layout-section-margin-bottom--large: rem-calc(60) !default;
+
+// Section with divider
+$layout-section-divider: (
+    small: (
+        margin-top: rem-calc(20),
+        padding-top: rem-calc(20),
+        border-top: 1px solid color(border)
+    ),
+    medium: (
+        margin-top: rem-calc(20),
+        padding-top: rem-calc(20),
+        border-top: 1px solid color(border)
+    ),
+    large: (
+        margin-top: rem-calc(40),
+        padding-top: rem-calc(55),
+        border-top: 1px solid color(border)
+    )
+) !default;
+
+$layout-section-with-background: (
+    small: (
+        padding-top: rem-calc(20), // Side padding can be controlled by layout mixin
+        padding-bottom: rem-calc(40)
+    ),
+    medium: (
+        padding-top: rem-calc(20),
+        padding-bottom: rem-calc(40)
+    ),
+    large: (
+        padding-top: rem-calc(40),
+        padding-bottom: rem-calc(60)
+    )
+) !default;
+
+// Section secondary
+$layout-section-secondary-background: center / cover no-repeat color(global-background) !default;
+$layout-section-secondary-transition: background 0.3s ease-out !default;
+
+@mixin section-divider($size) {
+    margin-top: map-deep-get($layout-section-divider, $size, "margin-top");
+    padding-top: map-deep-get($layout-section-divider, $size, "padding-top");
+
+    &::before {
+        border-top: map-deep-get($layout-section-divider, $size, "border-top");
+        top: -#{map-deep-get($layout-section-divider, $size, "padding-top")};
+    }
+}
+
+@mixin section-divider-helper {
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        position: relative;
+    }
+}
+
+@mixin section-with-background($size, $background) {
+    background: $background;
+    transition: $layout-section-secondary-transition;
+
+    > .l-section__row,
+    > div > .l-section__row {
+        padding-bottom: map-deep-get($layout-section-with-background, $size, "padding-bottom");
+        padding-top: map-deep-get($layout-section-with-background, $size, "padding-top");
+    }
+}
+
+@mixin lora-layout-section {
+    .l-section {
+        &:not(.m-full-width) {
+            > .l-section__row,
+            > div > .l-section__row {
+                @include layout;
+            }
+        }
+
+        &:not(.m-plain) {
+            > .l-section__row,
+            > div > .l-section__row {
+                // Add margin only in case section is not empty
+                margin-top: $layout-section-margin-top;
+                margin-bottom: $layout-section-margin-bottom;
+
+                @include breakpoint(large) {
+                    margin-top: $layout-section-margin-top--large;
+                    margin-bottom: $layout-section-margin-bottom--large;
+                }
+            }
+        }
+
+        &.m-dark {
+            color: dark-mode-color(text);
+
+            @include breakpoint(small only) {
+                @include section-with-background(small, dark-mode-color(background));
+            }
+            @include breakpoint(medium only) {
+                @include section-with-background(medium, dark-mode-color(background));
+            }
+            @include breakpoint(large) {
+                @include section-with-background(large, dark-mode-color(background));
+            }
+        }
+
+        &.m-fullheight {
+            min-height: 100vh;
+        }
+
+        // Required for section paddings. The background is set inline.
+        &.m-has-background {
+            @include breakpoint(small only) {
+                @include section-with-background(small, null);
+            }
+            @include breakpoint(medium only) {
+                @include section-with-background(medium, null);
+            }
+            @include breakpoint(large) {
+                @include section-with-background(large, null);
+            }
+        }
+
+        &.m-divider-small {
+            > .l-section__row,
+            > div > .l-section__row {
+                @include breakpoint(small only) {
+                    @include section-divider-helper;
+                    @include section-divider(small);
+                }
+            }
+        }
+
+        &.m-divider-medium {
+            > .l-section__row,
+            > div > .l-section__row {
+                @include breakpoint(medium only) {
+                    @include section-divider-helper;
+                    @include section-divider(medium);
+                }
+            }
+        }
+
+        &.m-divider-large {
+            > .l-section__row,
+            > div > .l-section__row {
+                @include breakpoint(large) {
+                    @include section-divider-helper;
+                    @include section-divider(large);
+                }
+            }
+        }
+
+        &.m-divider {
+            > .l-section__row,
+            > div > .l-section__row {
+                @include section-divider-helper;
+
+                @include breakpoint(small only) {
+                    @include section-divider(small);
+                }
+                @include breakpoint(medium only) {
+                    @include section-divider(medium);
+                }
+                @include breakpoint(large) {
+                    @include section-divider(large);
+                }
+            }
+        }
+
+        /* stylelint-disable selector-max-compound-selectors */
+        &.m-plain[class*="m-divider"] {
+            > .l-section__row,
+            > div > .l-section__row {
+                margin-top: 0;
+            }
+        }
+        /* stylelint-enable selector-max-compound-selectors */
+
+        &.m-secondary-small {
+            @include breakpoint(small only) {
+                @include section-with-background(small, $layout-section-secondary-background);
+            }
+        }
+
+        &.m-secondary-medium {
+            @include breakpoint(medium only) {
+                @include section-with-background(medium, $layout-section-secondary-background);
+            }
+        }
+
+        &.m-secondary-large {
+            @include breakpoint(large) {
+                @include section-with-background(large, $layout-section-secondary-background);
+            }
+        }
+
+        &.m-secondary {
+            @include breakpoint(small only) {
+                @include section-with-background(small, $layout-section-secondary-background);
+            }
+            @include breakpoint(medium only) {
+                @include section-with-background(medium, $layout-section-secondary-background);
+            }
+            @include breakpoint(large) {
+                @include section-with-background(large, $layout-section-secondary-background);
+            }
+        }
+    }
+}

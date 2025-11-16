@@ -1,0 +1,28 @@
+/*------------------------------------*\
+        #PARAGRAPHS
+\*------------------------------------*/
+@use "sass:map";
+//stylelint-disable lora/variable-pattern
+/// Line height of text inside `<p>` elements.
+/// @type Number
+$paragraph-lineheight: 1.6 !default;
+
+/// Bottom margin of paragraphs.
+/// @type Number
+$paragraph-margin-bottom: 1rem !default;
+
+/// Text rendering method for paragraph text.
+/// @type String
+$paragraph-text-rendering: optimizeLegibility !default;
+
+/* stylelint-disable selector-max-type */
+@mixin lora-base-paragraphs {
+    p {
+        /* stylelint-disable-next-line scale-unlimited/declaration-strict-value */
+        font-size: inherit;
+        line-height: $paragraph-lineheight;
+        margin-bottom: $paragraph-margin-bottom;
+        text-rendering: $paragraph-text-rendering;
+    }
+}
+/* stylelint-enable */

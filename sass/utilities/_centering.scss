@@ -1,0 +1,31 @@
+/// Vertically centers the element inside of its first non-static parent,
+/// @link http://www.sitepoint.com/centering-with-sass/ Centering With Sass
+@mixin vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/// Horizontally centers the element inside of its first non-static parent,
+/// @link http://www.sitepoint.com/centering-with-sass/ Centering With Sass
+@mixin horizontal-center {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+/// Absolutely centers the element inside of its first non-static parent,
+/// @link http://www.sitepoint.com/centering-with-sass/ Centering With Sass
+@mixin absolute-center {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); // Fix blured text - NGLORA-2644
+}
+
+@mixin fixed-center {
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

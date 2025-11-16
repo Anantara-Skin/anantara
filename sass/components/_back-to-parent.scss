@@ -1,0 +1,152 @@
+$back-to-parent-color: color(text) !default;
+$back-to-parent-text-decoration: none !default;
+$back-to-parent-text-transform: null !default;
+$back-to-parent-color-hover: color(text-secondary) !default;
+$back-to-parent-background: color(element-background) !default;
+$back-to-parent-icon: "chevron2-left" !default;
+$back-to-parent-icon-vertical-align: middle !default;
+$back-to-parent-secondary-icon-vertical-align: $back-to-parent-icon-vertical-align !default;
+$back-to-parent-icon-width: rem-calc(6) !default;
+$back-to-parent-icon-height: rem-calc(10) !default;
+$back-to-parent-icon-margin: rem-calc(0 10 2 0) !default;
+$back-to-parent-padding: rem-calc(15) !default;
+$back-to-parent-secondary-padding: rem-calc(15 0) !default;
+$back-to-parent-secondary-padding--large: rem-calc(15 0) !default;
+$back-to-parent-font: #{rem-calc(12)} / 1 fonts.$font-primary !default;
+$back-to-parent-text-max-lines: 1 !default;
+$back-to-parent-letter-spacing: null !default;
+// Secondary
+$back-to-parent-secondary-background: none !default;
+$back-to-parent-secondary-background--large: null !default;
+$back-to-parent-secondary-color: color(text) !default;
+$back-to-parent-secondary-color-hover: color(primary-active) !default;
+$back-to-parent-secondary-text-transform: uppercase !default;
+$back-to-parent-secondary-font: bold #{rem-calc(12)} / 1 fonts.$font-primary !default;
+$back-to-parent-secondary-font--large: null !default;
+$back-to-parent-secondary-icon: "chevron-left" !default;
+$back-to-parent-secondary-icon-width: rem-calc(6) !default;
+$back-to-parent-secondary-icon-height: rem-calc(10) !default;
+
+// Border
+$back-to-parent-border-top: 1px solid color(border) !default;
+$back-to-parent-border-bottom: 1px solid color(border) !default;
+
+// Tertiary
+$back-to-parent-tertiary-background: color(primary) !default;
+$back-to-parent-tertiary-color: map.get($palette, light) !default;
+$back-to-parent-tertiary-color-hover: map.get($palette, light) !default;
+$back-to-parent-tertiary-icon: "chevron2-left" !default;
+
+// Usesvg
+$back-to-parent-icon-usesvg: true !default;
+$back-to-parent-secondary-icon-usesvg: true !default;
+$back-to-parent-tertiary-icon-usesvg: true !default;
+
+@mixin lora-components-back-to-parent {
+    .c-back-to-parent__link {
+        display: inline-block;
+        font: $back-to-parent-font;
+        padding: $back-to-parent-padding;
+        text-decoration: $back-to-parent-text-decoration;
+        text-transform: $back-to-parent-text-transform;
+        color: $back-to-parent-color;
+        letter-spacing: $back-to-parent-letter-spacing;
+    }
+
+    .c-back-to-parent__text {
+        @include text-line-clamp($back-to-parent-text-max-lines);
+
+        text-decoration: $back-to-parent-text-decoration;
+
+        &::before {
+            @include svg-icon($back-to-parent-icon, $back-to-parent-color, 100%, left, no-repeat, $usesvg: $back-to-parent-icon-usesvg);
+
+            content: "";
+            display: inline-block;
+            vertical-align: $back-to-parent-icon-vertical-align;
+            height: $back-to-parent-icon-height;
+            margin: $back-to-parent-icon-margin;
+            width: $back-to-parent-icon-width;
+        }
+
+        &:hover,
+        &:focus {
+            color: $back-to-parent-color-hover;
+
+            &::before {
+                @include svg-icon($back-to-parent-icon, $back-to-parent-color-hover, 98%, left, no-repeat, $color-change: true, $usesvg: $back-to-parent-icon-usesvg);
+            }
+        }
+    }
+
+    .c-back-to-parent {
+        background: $back-to-parent-background;
+
+        &.m-secondary {
+            background: $back-to-parent-secondary-background;
+
+            .c-back-to-parent__link {
+                font: $back-to-parent-secondary-font;
+                text-transform: $back-to-parent-secondary-text-transform;
+                padding: $back-to-parent-secondary-padding;
+
+                @include breakpoint(large) {
+                    font: $back-to-parent-secondary-font--large;
+                    padding: $back-to-parent-secondary-padding--large;
+                }
+
+                &::before {
+                    @include svg-icon($back-to-parent-secondary-icon, $back-to-parent-secondary-color, 100%, left, no-repeat, $usesvg: $back-to-parent-secondary-icon-usesvg);
+
+                    vertical-align: $back-to-parent-secondary-icon-vertical-align;
+                }
+
+                &:hover,
+                &:focus {
+                    color: $back-to-parent-secondary-color-hover;
+
+                    /* stylelint-disable max-nesting-depth */
+                    &::before {
+                        @include svg-icon($back-to-parent-secondary-icon, $back-to-parent-secondary-color-hover, 98%, left, no-repeat, $color-change: true, $usesvg: $back-to-parent-secondary-icon-usesvg);
+                    }
+                    /* stylelint-enable */
+                }
+            }
+
+            @include breakpoint(large) {
+                background: $back-to-parent-secondary-background--large;
+            }
+        }
+
+        &.m-border-top {
+            border-top: $back-to-parent-border-top;
+        }
+
+        &.m-border-bottom {
+            border-bottom: $back-to-parent-border-bottom;
+        }
+
+        &.m-tertiary {
+            background: $back-to-parent-tertiary-background;
+
+            .c-back-to-parent__link {
+                color: $back-to-parent-tertiary-color;
+
+                &::before {
+                    @include svg-icon($back-to-parent-tertiary-icon, $back-to-parent-tertiary-color, 100%, left, no-repeat, $usesvg: $back-to-parent-tertiary-icon-usesvg);
+                }
+
+                &:hover,
+                &:focus {
+                    color: $back-to-parent-tertiary-color-hover;
+
+                    /* stylelint-disable max-nesting-depth */
+                    &::before {
+                        @include svg-icon($back-to-parent-tertiary-icon, $back-to-parent-tertiary-color-hover, 98%, left, no-repeat, $color-change: true, $usesvg: $back-to-parent-tertiary-icon-usesvg);
+                    }
+                    /* stylelint-enable */
+                }
+            }
+        }
+    }
+}

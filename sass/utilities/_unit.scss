@@ -1,0 +1,128 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:meta';
+
+$global-font-size: 100% !default;
+
+/// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+@function strip-unit($num) {
+  @return math.div($num, $num * 0 + 1);
+}
+
+/// Converts one or more values into rems.
+/// Accepts a single value or a space-separated list of values.
+@function rem-calc($values, $base: null) {
+  $rem-values: ();
+  $list-length: list.length($values);
+
+  @if $base == null {
+    $base: $global-font-size;
+  }
+
+  // Convert % to px
+  @if math.unit($base) == '%' {
+    $base: math.div($base, 100%) * 16px;
+  }
+
+  // Convert rem to px
+  @if math.unit($base) == 'rem' {
+    $base: strip-unit($base) * 16px;
+  }
+
+  // Single value
+  @if $list-length == 1 {
+    @return -zf-to-rem(list.nth($values, 1), $base);
+  }
+
+  // Multiple values
+  @for $i from 1 through $list-length {
+    $rem-values: append($rem-values, -zf-to-rem(list.nth($values, $i), $base));
+  }
+
+  // RTL adjustment for 4-value shorthand
+  @if $list-length == 4 and $global-text-direction == 'rtl' {
+    $rem-values: list.nth($rem-values, 1) list.nth($rem-values, 4) list.nth($rem-values, 3) list.nth($rem-values, 2);
+  }
+
+  @return $rem-values;
+}
+
+/// Converts rem to px
+@function rem-to-px($value) {
+  @return floor(strip-unit($value) * 16px);
+}
+
+/// Converts px/rem/em to rem, for use in -zf-to-rem
+@function -zf-to-rem($value, $base: null) {
+  @if meta.type-of($value) != 'number' {
+    @warn "#{$value} was passed to rem-calc(), which is not a number.";
+    @return $value;
+  }
+
+  @if $base == null {
+    $base: $global-font-size;
+  }
+
+  // em to rem
+  @if math.unit($value) == 'em' {
+    $value: strip-unit($value) * 1rem;
+  }
+
+  // px or other units to rem
+  @if math.unit($value) != 'rem' {
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
+  }
+
+  @if $value == 0rem {
+    @return 0;
+  }
+
+  @return $value;
+}
+
+/// Converts a pixel, percentage, rem, or em value to a unitless number
+/// Useful for line heights or other ratios
+@function unitless-calc($value, $base: null) {
+  @if $base == null {
+    $base: $global-font-size;
+  }
+
+  // Normalize base to px
+  @if math.unit($base) == '%' {
+    $base: math.div($base, 100%) * 16px;
+  }
+  @if math.unit($base) == 'rem' or math.unit($base) == 'em' {
+    $base: strip-unit($base) * 16px;
+  }
+
+  // Normalize value to px
+  @if math.unit($value) == '%' {
+    $value: math.div($value, 100%) * $base;
+  }
+  @if math.unit($value) == 'rem' or math.unit($value) == 'em' {
+    $value: strip-unit($value) * $base;
+  }
+
+  @if math.unit($value) == 'px' {
+    @return math.div(strip-unit($value), strip-unit($base));
+  }
+
+  // Handle large unitless values (>10) as px
+  @if math.unitless($value) and $value > 10 {
+    @return math.div($value, strip-unit($base));
+  }
+
+  @return $value;
+}
+
+/// Converts value to ems for breakpoints
+@function -zf-bp-to-em($value) {
+  @if math.unit($value) == 'px' or math.unitless($value) {
+    $value: rem-calc($value, $base: 16px);
+  }
+  @return strip-unit($value) * 1em;
+}

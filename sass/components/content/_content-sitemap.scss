@@ -1,0 +1,131 @@
+// Site Map Title
+$content-sitemap-title-font: 500 #{rem-calc(18)} / 1.4 fonts.$font-primary !default;
+$content-sitemap-title-font-size--large: rem-calc(24) !default;
+$content-sitemap-title-font--large: $content-sitemap-title-font-size--large fonts.$font-primary !default;
+$content-sitemap-title-text-transform: uppercase !default;
+$content-sitemap-title-border-bottom: 1px solid color(border) !default;
+$content-sitemap-title-margin: 0 0 rem-calc(20) !default;
+$content-sitemap-title-margin--large: 0 0 rem-calc(40) !default;
+$content-sitemap-title-padding: 0 0 rem-calc(15) !default;
+$content-sitemap-title-padding--large: null !default;
+
+// Site Map Subtitle
+$content-sitemap-subtitle-font: 500 #{rem-calc(14)} / 1.4 fonts.$font-primary !default;
+$content-sitemap-subtitle-font-size--large: rem-calc(18) !default;
+$content-sitemap-subtitle-text-transform: uppercase !default;
+$content-sitemap-subtitle-border-bottom: 1px solid color(border) !default;
+$content-sitemap-subtitle-margin: 0 0 rem-calc(10) !default;
+$content-sitemap-subtitle-margin--large: 0 0 rem-calc(15) !default;
+$content-sitemap-subtitle-padding: 0 0 rem-calc(15) !default;
+$content-sitemap-subtitle-padding--large: null !default;
+
+// Site Map Items
+$content-sitemap-items-columns--large: 1 of 3 !default;
+$content-sitemap-items-margin: 0 0 rem-calc(30) !default;
+
+// Site Map Head Link
+$content-sitemap-head-link-font-size: null !default;
+$content-sitemap-head-link-font-weight: null !default;
+$content-sitemap-head-link-font: $content-sitemap-head-link-font-weight $content-sitemap-head-link-font-size !default;
+$content-sitemap-head-link-margin: 0 !default;
+$content-sitemap-head-link-color: null !default;
+$content-sitemap-head-link-text-transform: null !default;
+$content-sitemap-head-link-letter-spacing: null !default;
+
+// Site Map Link
+$content-sitemap-link-color: null !default;
+$content-sitemap-link-text-decoration: none !default;
+
+// Site Map List
+$content-sitemap-list-margin: 0 !default;
+$content-sitemap-list-item-margin: 0 0 rem-calc(10) !default;
+$content-sitemap-list-item-font-size--large: rem-calc(14) !default;
+
+@mixin lora-components-content-sitemap {
+    .c-sitemap__group {
+        @include breakpoint(large) {
+            @include grid;
+        }
+    }
+
+    .c-sitemap__title {
+        width: 100%;
+        border-bottom: $content-sitemap-title-border-bottom;
+
+        @include text-style(
+            $font: (
+                small: $content-sitemap-title-font,
+                large: $content-sitemap-title-font--large
+            ),
+            $margin: (
+                small: $content-sitemap-title-margin,
+                large: $content-sitemap-title-margin--large
+            ),
+            $padding: (
+                small: $content-sitemap-title-padding,
+                large: $content-sitemap-title-padding--large
+            ),
+            $text-transform: (
+                small: $content-sitemap-title-text-transform
+            )
+        );
+    }
+
+    .c-sitemap__subtitle {
+        border-bottom: $content-sitemap-subtitle-border-bottom;
+
+        @include text-style(
+            $font: (
+                small: $content-sitemap-subtitle-font
+            ),
+            $margin: (
+                small: $content-sitemap-subtitle-margin,
+                large: $content-sitemap-subtitle-margin--large
+            ),
+            $padding: (
+                small: $content-sitemap-subtitle-padding,
+                large: $content-sitemap-subtitle-padding--large
+            ),
+            $text-transform: (
+                small: $content-sitemap-subtitle-text-transform
+            )
+        );
+        @include breakpoint(large) {
+            font-size: $content-sitemap-subtitle-font-size--large;
+        }
+    }
+
+    .c-sitemap__items {
+        margin: $content-sitemap-items-margin;
+
+        @include breakpoint(large) {
+            @include cell($content-sitemap-items-columns--large);
+        }
+    }
+
+    .c-sitemap__head-link {
+        font: $content-sitemap-head-link-font;
+        margin: $content-sitemap-head-link-margin;
+        color: $content-sitemap-head-link-color;
+        text-transform: $content-sitemap-head-link-text-transform;
+        letter-spacing: $content-sitemap-head-link-letter-spacing;
+    }
+
+    .c-sitemap__link {
+        text-decoration: $content-sitemap-link-text-decoration;
+        color: $content-sitemap-link-color;
+    }
+
+    .c-sitemap__list {
+        list-style: none;
+        margin: $content-sitemap-list-margin;
+    }
+
+    .c-sitemap__list-item {
+        margin: $content-sitemap-list-item-margin;
+
+        @include breakpoint(large) {
+            font-size: $content-sitemap-list-item-font-size--large;
+        }
+    }
+}

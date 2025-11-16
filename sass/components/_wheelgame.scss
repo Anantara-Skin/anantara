@@ -1,0 +1,35 @@
+// wheel
+$wheelgame-canvas-wrapper-margin: rem-calc(70) 0 0 !default;
+$wheelgame-canvas-wrapper-margin--large: 0 !default;
+
+// canvas
+$wheelgame-background-origin: null !default;
+
+@mixin lora-components-wheelgame {
+    .c-wheelgame {
+        position: relative;
+    }
+
+    .c-wheelgame__canvas-wrapper {
+        margin: $wheelgame-canvas-wrapper-margin;
+
+        @include breakpoint(large) {
+            margin: $wheelgame-canvas-wrapper-margin--large;
+        }
+    }
+
+    .c-wheelgame__canvas {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-origin: $wheelgame-background-origin;
+        border-radius: 100%;
+        width: 100%;
+    }
+
+    .c-wheelgame__pointer {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

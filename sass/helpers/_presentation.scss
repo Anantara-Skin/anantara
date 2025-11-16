@@ -1,0 +1,45 @@
+/* stylelint-disable declaration-no-important */
+$main-background-colors: (
+    primary,
+    secondary,
+    dark,
+    light,
+    element-background,
+    global-background,
+    organism-background,
+    primary-background,
+    highlight,
+    alert,
+    info-secondary,
+    success-secondary,
+    warning-secondary,
+    error-secondary
+) !default;
+
+@mixin lora-helpers-presentation {
+    // Make a round shape, circle or oval (can be used for images)
+    .h-round {
+        border-radius: 50% !important;
+        overflow: hidden !important;
+    }
+}
+
+@mixin lora-helpers-background-color($colors: $main-background-colors) {
+    @each $color in $colors {
+        .h-bgcolor-#{$color} {
+            background-color: color($color) !important;
+        }
+    }
+
+    @each $color in $colors {
+        @each $size in $breakpoint-classes {
+            $range: if($size == 'large', null, only);
+            
+            @include breakpoint($size $range) {
+                .h-bgcolor-#{$color}-for-#{$size} {
+                    background-color: color($color) !important;
+                }
+            }
+        }
+    }
+}

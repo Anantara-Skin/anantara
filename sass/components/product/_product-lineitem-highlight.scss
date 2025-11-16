@@ -1,0 +1,341 @@
+@use "../highlight";
+
+$product-lineitem-highlight-padding: rem-calc(10) !default;
+$product-lineitem-highlight-padding--large: rem-calc(15 20) !default;
+$product-lineitem-highlight-margin: rem-calc(10 0) !default;
+$product-lineitem-highlight-margin--large: rem-calc(15 0) !default;
+$product-lineitem-highlight-color: null !default;
+$product-lineitem-highlight-color--large: null !default;
+$product-lineitem-highlight-background: $highlight-background !default;
+$product-lineitem-highlight-background--large: null !default;
+// Content
+$product-lineitem-highlight-content-flex: 1 1 0 !default;
+// Title
+$product-lineitem-highlight-title-color: null !default;
+$product-lineitem-highlight-title-color--large: null !default;
+$product-lineitem-highlight-title-font: bold #{rem-calc(14)} / #{rem-calc(21)} fonts.$font-primary !default;
+$product-lineitem-highlight-title-font--large: null !default;
+$product-lineitem-highlight-title-margin: rem-calc(0 0 22) !default;
+$product-lineitem-highlight-title-margin--large: null !default;
+$product-lineitem-highlight-title-border-bottom: null !default;
+$product-lineitem-highlight-title-padding: null !default;
+$product-lineitem-highlight-title-text-transform: null !default;
+// Section
+$product-lineitem-highlight-section-margin: rem-calc(10) !default;
+// Row
+$product-lineitem-highlight-row-align-items: center !default;
+$product-lineitem-highlight-row-gap: rem-calc(10) !default;
+$product-lineitem-highlight-row-margin: rem-calc(5) !default;
+$product-lineitem-highlight-row-first-margin: rem-calc(10) !default;
+
+// Image
+$product-lineitem-highlight-image-width: rem-calc(30) !default;
+$product-lineitem-highlight-image-margin: null !default;
+// Inner label
+$product-lineitem-highlight-label-inner-font: 700 #{rem-calc(12)} fonts.$font-primary !default;
+$product-lineitem-highlight-label-inner-font--large: null !default;
+// label
+$product-lineitem-highlight-label-color: map.get($palette, dark) !default;
+$product-lineitem-highlight-label-color--large: null !default;
+$product-lineitem-highlight-label-font: 500 #{rem-calc(12)}/1.25 fonts.$font-primary !default;
+$product-lineitem-highlight-label-font--large: null !default;
+$product-lineitem-highlight-label-margin: rem-calc(0 10 0 0) !default;
+$product-lineitem-highlight-label-margin--large: rem-calc(0 5 0 0) !default;
+$product-lineitem-highlight-label-text-transform: null !default;
+$product-lineitem-highlight-label-letter-spacing: null !default;
+// Text
+$product-lineitem-highlight-value-color: color(text-secondary) !default;
+$product-lineitem-highlight-value-color--large: null !default;
+$product-lineitem-highlight-value-font: #{rem-calc(12)}/1.25 fonts.$font-primary !default;
+$product-lineitem-highlight-value-font--large: null !default;
+$product-lineitem-highlight-value-margin: null !default;
+$product-lineitem-highlight-value-margin--large: null !default;
+$product-lineitem-highlight-value-text-transform: null !default;
+// Actions
+$product-lineitem-highlight-actions-justify-content: space-between !default;
+$product-lineitem-highlight-actions-justify-content--large: null !default;
+$product-lineitem-highlight-actions-align-items: center !default;
+$product-lineitem-highlight-actions-align-items--large: flex-end !default;
+$product-lineitem-highlight-actions-padding: rem-calc(10 0 0) !default;
+$product-lineitem-highlight-actions-padding--large: rem-calc(0 0 0 10) !default;
+$product-lineitem-highlight-actions-bottom-padding: rem-calc(10 0 0) !default;
+// Action
+$product-lineitem-highlight-action-color: color(text-secondary) !default;
+$product-lineitem-highlight-action-color--large: null !default;
+$product-lineitem-highlight-action-hover-color: color(primary) !default;
+$product-lineitem-highlight-action-font: #{rem-calc(12)} / 1.2 fonts.$font-primary !default;
+$product-lineitem-highlight-action-font--large: null !default;
+$product-lineitem-highlight-action-margin: null !default;
+$product-lineitem-highlight-action-margin--large: null !default;
+$product-lineitem-highlight-action-text-decoration: underline !default;
+$product-lineitem-highlight-action-text-decoration--large: null !default;
+$product-lineitem-highlight-action-text-transform: null !default;
+$product-lineitem-highlight-action-text-transform--large: null !default;
+$product-lineitem-highlight-action-letter-spacing: null !default;
+// Action icon
+/// Edit
+$product-lineitem-highlight-action-edit-icon: edit-2 !default;
+$product-lineitem-highlight-action-edit-icon-color: color(primary) !default;
+$product-lineitem-highlight-action-edit-icon-margin: rem-calc(0 5 0 0) !default;
+$product-lineitem-highlight-action-edit-icon-width: rem-calc(12) !default;
+$product-lineitem-highlight-action-edit-icon-height: rem-calc(12) !default;
+$product-lineitem-highlight-action-edit-icon-height--large: null !default;
+$product-lineitem-highlight-action-edit-icon-width--large: null !default;
+$product-lineitem-highlight-action-edit-icon-usesvg: true !default;
+/// Remove
+$product-lineitem-highlight-action-remove-icon: cross !default;
+$product-lineitem-highlight-action-remove-icon-color: color(primary) !default;
+$product-lineitem-highlight-action-remove-icon-margin: rem-calc(0 5 0 0) !default;
+$product-lineitem-highlight-action-remove-icon-width: rem-calc(12) !default;
+$product-lineitem-highlight-action-remove-icon-height: rem-calc(12) !default;
+$product-lineitem-highlight-action-remove-icon-height--large: null !default;
+$product-lineitem-highlight-action-remove-icon-width--large: null !default;
+$product-lineitem-highlight-action-remove-icon-usesvg: true !default;
+// Icon
+$product-lineitem-highlight-icon-size: rem-calc(10) !default;
+$product-lineitem-highlight-icon-margin: rem-calc(-3 5 0) !default;
+
+@mixin lora-components-product-lineitem-highlight {
+    .c-product-lineitem-highlight {
+        display: flex;
+        width: 100%;
+        padding: $product-lineitem-highlight-padding;
+        margin: $product-lineitem-highlight-margin;
+        background: $product-lineitem-highlight-background;
+        color: $product-lineitem-highlight-color;
+        flex-flow: column;
+
+        @include breakpoint(large) {
+            padding: $product-lineitem-highlight-padding--large;
+            margin: $product-lineitem-highlight-margin--large;
+            background: $product-lineitem-highlight-background--large;
+            color: $product-lineitem-highlight-color--large;
+            flex-flow: row;
+        }
+
+        &.m-actions-bottom {
+            flex-flow: column;
+
+            .c-product-lineitem-highlight__actions {
+                flex-flow: row;
+                padding: $product-lineitem-highlight-actions-bottom-padding;
+            }
+        }
+    }
+
+    .c-product-lineitem-highlight__content {
+        flex: $product-lineitem-highlight-content-flex;
+
+        &.m-inline {
+            display: flex;
+            align-items: baseline;
+        }
+    }
+
+    .c-product-lineitem-highlight__actions {
+        display: flex;
+        flex-flow: row;
+        justify-content: $product-lineitem-highlight-actions-justify-content;
+        align-items: $product-lineitem-highlight-actions-align-items;
+        padding: $product-lineitem-highlight-actions-padding;
+
+        @include breakpoint(large) {
+            flex-flow: column;
+            justify-content: $product-lineitem-highlight-actions-justify-content--large;
+            align-items: $product-lineitem-highlight-actions-align-items--large;
+            padding: $product-lineitem-highlight-actions-padding--large;
+        }
+    }
+
+    .c-product-lineitem-highlight__title {
+        @include text-style(
+            $color: (
+                small: $product-lineitem-highlight-title-color,
+                large: $product-lineitem-highlight-title-color--large
+            ),
+            $font: (
+                small: $product-lineitem-highlight-title-font,
+                large: $product-lineitem-highlight-title-font--large
+            ),
+            $padding: (
+                small: $product-lineitem-highlight-title-padding
+            ),
+            $text-transform: (
+                small: $product-lineitem-highlight-title-text-transform
+            ),
+            $margin: (
+                small: $product-lineitem-highlight-title-margin,
+                large: $product-lineitem-highlight-title-margin--large
+            )
+        );
+
+        border-bottom: $product-lineitem-highlight-title-border-bottom;
+    }
+
+    .c-product-lineitem-highlight__section {
+        & + & {
+            margin-top: $product-lineitem-highlight-section-margin;
+        }
+    }
+
+    .c-product-lineitem-highlight__row {
+        display: flex;
+        align-items: $product-lineitem-highlight-row-align-items;
+        gap: $product-lineitem-highlight-row-gap;
+
+        & + & {
+            margin-top: $product-lineitem-highlight-row-margin;
+        }
+
+        &:first-child {
+            margin-bottom: $product-lineitem-highlight-row-first-margin;
+        }
+    }
+
+    .c-product-lineitem-highlight__image {
+        display: inline-block;
+        width: $product-lineitem-highlight-image-width;
+        margin: $product-lineitem-highlight-image-margin;
+    }
+
+    .c-product-lineitem-highlight__label {
+        @include text-style(
+            $color: (
+                small: $product-lineitem-highlight-label-color,
+                large: $product-lineitem-highlight-label-color--large
+            ),
+            $font: (
+                small: $product-lineitem-highlight-label-font,
+                large: $product-lineitem-highlight-label-font--large
+            ),
+            $text-transform: (
+                small: $product-lineitem-highlight-label-text-transform
+            ),
+            $letter-spacing: (
+                small: $product-lineitem-highlight-label-letter-spacing
+            ),
+            $margin: (
+                small: $product-lineitem-highlight-label-margin,
+                large: $product-lineitem-highlight-label-margin--large
+            )
+        );
+    }
+
+    .c-product-lineitem-highlight__label-inner {
+        @include text-style(
+            $font: (
+                small: $product-lineitem-highlight-label-inner-font,
+                large: $product-lineitem-highlight-label-inner-font--large
+            )
+        );
+    }
+
+    .c-product-lineitem-highlight__value {
+        @include text-style(
+            $color: (
+                small: $product-lineitem-highlight-value-color,
+                large: $product-lineitem-highlight-value-color--large
+            ),
+            $font: (
+                small: $product-lineitem-highlight-value-font,
+                large: $product-lineitem-highlight-value-font--large
+            ),
+            $text-transform: (
+                small: $product-lineitem-highlight-value-text-transform
+            ),
+            $margin: (
+                small: $product-lineitem-highlight-value-margin,
+                large: $product-lineitem-highlight-value-margin--large
+            )
+        );
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .c-product-lineitem-highlight__action {
+        @include text-style(
+            $color: (
+                small: $product-lineitem-highlight-action-color,
+                large: $product-lineitem-highlight-action-color--large
+            ),
+            $font: (
+                small: $product-lineitem-highlight-action-font,
+                large: $product-lineitem-highlight-action-font--large
+            ),
+            $margin: (
+                small: $product-lineitem-highlight-action-margin,
+                large: $product-lineitem-highlight-action-margin--large
+            ),
+            $text-transform: (
+                small: $product-lineitem-highlight-action-text-transform,
+                large: $product-lineitem-highlight-action-text-transform--large
+            ),
+            $text-decoration: (
+                small: $product-lineitem-highlight-action-text-decoration,
+                large: $product-lineitem-highlight-action-text-decoration--large
+            ),
+            $letter-spacing: (
+                small: $product-lineitem-highlight-action-letter-spacing
+            )
+        );
+
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            color: $product-lineitem-highlight-action-hover-color;
+        }
+
+        &.m-edit {
+            &::before {
+                @include svg-icon($product-lineitem-highlight-action-edit-icon, $product-lineitem-highlight-action-edit-icon-color, 100%, center, no-repeat, $usesvg: $product-lineitem-highlight-action-edit-icon-usesvg);
+
+                content: '';
+                display: inline-block;
+                height: $product-lineitem-highlight-action-edit-icon-height;
+                width: $product-lineitem-highlight-action-edit-icon-width;
+                margin: $product-lineitem-highlight-action-edit-icon-margin;
+
+                @include breakpoint(large) {
+                    height: $product-lineitem-highlight-action-edit-icon-height--large;
+                    width: $product-lineitem-highlight-action-edit-icon-width--large;
+                }
+            }
+        }
+
+        &.m-remove {
+            &::before {
+                @include svg-icon($product-lineitem-highlight-action-remove-icon, $product-lineitem-highlight-action-remove-icon-color, 100%, center, no-repeat, $usesvg: $product-lineitem-highlight-action-remove-icon-usesvg);
+
+                content: '';
+                display: inline-block;
+                height: $product-lineitem-highlight-action-remove-icon-height;
+                width: $product-lineitem-highlight-action-remove-icon-width;
+                margin: $product-lineitem-highlight-action-remove-icon-margin;
+
+                @include breakpoint(large) {
+                    height: $product-lineitem-highlight-action-remove-icon-height--large;
+                    width: $product-lineitem-highlight-action-remove-icon-width--large;
+                }
+            }
+        }
+    }
+
+    .c-product-lineitem-highlight__icon {
+        width: $product-lineitem-highlight-icon-size;
+        height: $product-lineitem-highlight-icon-size;
+        margin: $product-lineitem-highlight-icon-margin;
+        background-size: cover;
+
+        &:first-child {
+            margin-#{$global-left}: 0;
+        }
+
+        &:last-child {
+            margin-#{$global-right}: 0;
+        }
+    }
+}

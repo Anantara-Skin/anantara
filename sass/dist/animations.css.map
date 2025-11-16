@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "../utilities/_animations.scss"
+  ],
+  "names": [],
+  "mappings": "AAGA;AAAA;AAAA;AAAA;AAAA;AAcA;AAAA;AAAA;AAAA;AAAA;AAgBA;AAAA;AAAA;AAAA;AASA;AAAA;AAAA",
+  "file": "animations.css"
+}

@@ -1,0 +1,88 @@
+$sidebar-navigation-title-text-transform: uppercase !default;
+$sidebar-navigation-title-text-transform--large: null !default;
+$sidebar-navigation-title-color: null !default;
+$sidebar-navigation-title-color--large: null !default;
+$sidebar-navigation-title-text-align: null !default;
+$sidebar-navigation-title-text-align--large: null !default;
+$sidebar-navigation-title-margin: rem-calc(0 0 20) !default;
+$sidebar-navigation-title-margin--large: null !default;
+$sidebar-navigation-title-font: #{rem-calc(24)} / 1 fonts.$font-primary !default;
+$sidebar-navigation-title-font--large: #{rem-calc(18)} / 1 fonts.$font-primary !default;
+$sidebar-navigation-title-letter-spacing: null !default;
+$sidebar-navigation-links-background: map.get($palette, light) !default;
+$sidebar-navigation-links-margin: rem-calc(0 -15 30) !default;
+$sidebar-navigation-links-margin--large: rem-calc(0 0 30) !default;
+$sidebar-navigation-wrapper-active-padding: rem-calc(20 0 0) !default;
+$sidebar-navigation-wrapper-padding--large: rem-calc(0) !default;
+$sidebar-navigation-wrapper-tag-margin: rem-calc(5 10 10 5) !default;
+$sidebar-navigation-button-padding: rem-calc(15 0) !default;
+$sidebar-navigation-links-padding: 0 !default;
+$sidebar-navigation-links-padding--large: 0 !default;
+
+@mixin lora-components-sidebar-navigation {
+    .c-sidebar-navigation__title {
+        @include text-style(
+            $font: (
+                small: $sidebar-navigation-title-font,
+                large: $sidebar-navigation-title-font--large
+            ),
+            $margin: (
+                small: $sidebar-navigation-title-margin,
+                large: $sidebar-navigation-title-margin--large
+            ),
+            $text-align: (
+                small: $sidebar-navigation-title-text-align,
+                large: $sidebar-navigation-title-text-align--large
+            ),
+            $text-transform: (
+                small: $sidebar-navigation-title-text-transform,
+                large: $sidebar-navigation-title-text-transform--large
+            ),
+            $letter-spacing: (
+                small: $sidebar-navigation-title-letter-spacing
+            ),
+            $color: (
+                small: $sidebar-navigation-title-color,
+                large: $sidebar-navigation-title-color--large
+            )
+        );
+    }
+
+    .c-sidebar-navigation__links {
+        background: $sidebar-navigation-links-background;
+        margin: $sidebar-navigation-links-margin;
+        padding: $sidebar-navigation-links-padding;
+
+        @include breakpoint(large) {
+            margin: $sidebar-navigation-links-margin--large;
+            padding: $sidebar-navigation-links-padding--large;
+        }
+    }
+
+    .c-sidebar-navigation__button {
+        @include hide-for(large);
+
+        padding: $sidebar-navigation-button-padding;
+    }
+
+    .c-sidebar-navigation__wrapper {
+        @include breakpoint(medium down) {
+            max-height: 0;
+            visibility: hidden;
+
+            &.m-active {
+                max-height: 100%;
+                padding: $sidebar-navigation-wrapper-active-padding;
+                visibility: visible;
+            }
+        }
+
+        @include breakpoint(large) {
+            padding: $sidebar-navigation-wrapper-padding--large;
+
+            .c-account__statuses .c-tag {
+                margin: $sidebar-navigation-wrapper-tag-margin;
+            }
+        }
+    }
+}

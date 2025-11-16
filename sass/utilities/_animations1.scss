@@ -1,0 +1,307 @@
+/* stylelint-disable declaration-no-important */
+// Image zoom
+$animation-image-zoom-scaling: 1.1 !default;
+$animation-image-zoom-duration: 0.5s !default;
+$animation-reduced-motion-list: (
+    rightSlideOut,
+    rightSlideIn,
+    leftSlideIn,
+    slideUpIn,
+    slideUpOut,
+    slideDownIn,
+    slideDownOut,
+    rightSlideOut,
+    leftSlideOut
+) !default;
+
+@mixin animate($name: null, $duration: 0.2s, $timing-function: linear) {
+    @if not $name {
+        @error "Animate mixin require a name as first parameter";
+    }
+
+    @if index($animation-reduced-motion-list, $name) {
+        @include reduced-motion {
+            transition: none;
+            animation-duration: 0ms;
+        }
+    }
+    
+    animation: $name $duration $timing-function;
+}
+
+@mixin lora-animations {
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes rightSlideIn {
+        from {
+            right: -100%;
+        }
+
+        to {
+            right: 0;
+        }
+    }
+
+    @keyframes leftSlideIn {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 0;
+        }
+    }
+
+    @keyframes slideUpIn {
+        0% {
+            bottom: -100%;
+        }
+
+        to {
+            bottom: 0;
+        }
+    }
+
+    @keyframes slideUpOut {
+        0% {
+            bottom: 0;
+        }
+
+        to {
+            bottom: -100%;
+        }
+    }
+
+    @keyframes slideDownIn {
+        0% {
+            top: -100%;
+        }
+
+        to {
+            top: 0;
+        }
+    }
+
+    @keyframes slideDownOut {
+        0% {
+            top: 0;
+        }
+
+        to {
+            top: -100%;
+        }
+    }
+
+    @keyframes rightSlideOut {
+        from {
+            right: 0;
+        }
+
+        to {
+            right: -100%;
+        }
+    }
+
+    @keyframes leftSlideOut {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: -100%;
+        }
+    }
+
+    @keyframes loader-spin {
+        0% {
+            transform: rotate(0);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+
+        50% {
+            transform: rotate(180deg);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes shake {
+        8%,
+        41% {
+            transform: translateX(-10px);
+        }
+
+        25%,
+        58% {
+            transform: translateX(10px);
+        }
+
+        75% {
+            transform: translateX(-5px);
+        }
+
+        92% {
+            transform: translateX(5px);
+        }
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .h-shake {
+        @include animate(shake, 0.5s);
+    }
+
+    .h-animate {
+        opacity: 0;
+    }
+
+    .h-slow {
+        animation-duration: 0.6s;
+    }
+
+    [class*="h-right-slide"] {
+        #{$global-right}: 0;
+        #{$global-left}: auto !important;
+    }
+
+    [class*="h-left-slide"] {
+        #{$global-left}: 0;
+        #{$global-right}: auto !important;
+    }
+
+    [class*="h-slide-up"] {
+        bottom: 0;
+        top: auto !important;
+    }
+
+    [class*="h-slide-down"] {
+        top: 0;
+        bottom: auto !important;
+    }
+
+    .h-fade-out {
+        @include animate(fadeOut);
+    }
+
+    .h-fade-in {
+        @include animate(fadeIn);
+    }
+
+    .h-right-slide-out {
+        @include animate(rightSlideOut);
+    }
+
+    .h-right-slide-in {
+        @include animate(rightSlideIn);
+    }
+
+    .h-left-slide-out {
+        @include animate(leftSlideOut);
+    }
+
+    .h-left-slide-in {
+        @include animate(leftSlideIn);
+    }
+
+    .h-slide-up-in {
+        @include animate(slideUpIn);
+    }
+
+    .h-slide-up-out {
+        @include animate(slideUpOut);
+    }
+
+    .h-slide-down-in {
+        @include animate(slideDownIn);
+    }
+
+    .h-slide-down-out {
+        @include animate(slideDownOut);
+    }
+
+    .h-loader-animation {
+        @include animate(loader-spin);
+    }
+
+    @include lora-animation-image-zoom();
+}
+
+// IMPORTANT: DO NOT USE mixins without JS, setting the max-height (e.g. Accordion.js)
+@mixin lora-animation-collapsed($transition: max-height 0.1s ease) {
+    // To make the expand/collapse functionality independent of a hardcoded max-height value please use JS definition of this value,
+    // and put it as inline (Ex: element.style.maxHeight = `${element.scrollHeight;}px`)
+    max-height: 0; // necessary only for initial element height
+    overflow: hidden;
+    visibility: hidden;
+    will-change: max-height, transition;
+    transition: $transition;
+
+    &.m-active {
+        visibility: visible;
+    }
+}
+
+// IMPORTANT: DO NOT USE mixins without JS, setting the max-height (e.g. Accordion.js)
+@mixin lora-animation-expanded($transition: max-height 0.1s ease) {
+    // To make the expand/collapse functionality independent of a hardcoded max-height value please use JS definition of this value,
+    // and put it as inline (Ex: element.style.maxHeight = `${element.scrollHeight;}px`)
+    overflow: hidden;
+    visibility: visible;
+    transition: $transition;
+
+    &.m-initialized:not(.m-active) {
+        overflow: visible;
+    }
+
+    &.m-active {
+        overflow: hidden;
+    }
+}
+
+@mixin lora-animation-image-zoom($scaling: $animation-image-zoom-scaling, $duration: $animation-image-zoom-duration) {
+    @include breakpoint(large) {
+        .h-zoom-in {
+            [class*="__image"] {
+                overflow: hidden;
+
+                img {
+                    transition: all $duration;
+                    backface-visibility: hidden;
+                    transform: translateZ(0);
+                }
+            }
+
+            &:hover [class*="__image"] img {
+                transform: scale($scaling);
+
+                @include reduced-motion {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

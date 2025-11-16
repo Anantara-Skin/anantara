@@ -1,0 +1,7 @@
+@mixin lora-helpers-list {
+    // Use to remove the bullets from an unordered list
+    .h-no-bullet {
+        margin-#{$global-left}: 0;
+        list-style: none;
+    }
+}

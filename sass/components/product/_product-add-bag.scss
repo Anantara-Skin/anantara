@@ -1,0 +1,157 @@
+@use "../button";
+$product-add-bag-price-after-margin: rem-calc(0 5) !default;
+$product-add-bag-font-size: rem-calc(14) !default;
+$product-add-bag-font-size--large: $product-add-bag-font-size !default;
+$product-add-bag-height: rem-calc(40) !default;
+$product-add-bag-height--large: $product-add-bag-height !default;
+$product-add-bag-letter-spacing--large: 0 !default;
+$product-add-bag-side-padding: rem-calc(5) !default;
+$product-add-bag-price-capacity-flex: 1 0 auto !default;
+$product-add-bag-price-capacity-color: inherit !default;
+$product-add-bag-price-capacity-padding: rem-calc(0 5) !default;
+$product-add-bag-price-capacity-font-size: rem-calc(11) !default;
+$product-add-bag-padding: rem-calc(5) !default;
+$product-add-bag-border: null !default;
+// Button with icon
+$product-add-bag-with-icon-padding: rem-calc(5 40 5 16) !default;
+$product-add-bag-with-icon-height: rem-calc(48) !default;
+$product-add-bag-with-icon-display: flex !default;
+$product-add-bag-with-icon-flex-flow: row nowrap !default;
+$product-add-bag-with-icon-justify-content: null !default;
+$product-add-bag-with-icon-align-items: center !default;
+/// Text
+$product-add-bag-with-icon-text-flex: 1 0 auto !default;
+$product-add-bag-with-icon-text-order: -1 !default;
+$product-add-bag-with-icon-text-align: $global-left !default;
+/// Price
+$product-add-bag-with-icon-price-flex: 0 0 auto !default;
+$product-add-bag-with-icon-price-order: null !default;
+$product-add-bag-with-icon-price-align: $global-right !default;
+$product-add-bag-with-icon-price-after-display: none !default;
+/// Icon
+$product-add-bag-with-icon-icon: basket !default;
+$product-add-bag-with-icon-icon-color: map.get($palette, light) !default;
+$product-add-bag-with-icon-icon-hover-color: map.get($palette, light) !default;
+$product-add-bag-with-icon-icon-size: rem-calc(16) !default;
+$product-add-bag-with-icon-icon-margin: 0 !default;
+$product-add-bag-with-icon-icon-left: false !default;
+$product-add-bag-with-icon-icon-position-right: rem-calc(16) !default;
+$product-add-bag-icon-list: (
+    outofstock: (
+        icon: preorder,
+        "icon-color": $product-add-bag-with-icon-icon-color,
+        "icon-color-hover": $product-add-bag-with-icon-icon-hover-color
+    ),
+    notifyme: (
+        icon: time,
+        "icon-color": $product-add-bag-with-icon-icon-color,
+        "icon-color-hover": $product-add-bag-with-icon-icon-hover-color
+    ),
+    preorder: (
+        icon: preorder,
+        "icon-color": $product-add-bag-with-icon-icon-color,
+        "icon-color-hover": $product-add-bag-with-icon-icon-hover-color
+    ),
+    backorder: (
+        icon: preorder,
+        "icon-color": $product-add-bag-with-icon-icon-color,
+        "icon-color-hover": $product-add-bag-with-icon-icon-hover-color
+    ),
+) !default;
+
+@mixin lora-components-product-add-bag {
+    .c-product-add-bag {
+        @include lora-helper-button;
+        @include lora-helper-button-expand;
+
+        font-size: $product-add-bag-font-size--large;
+        height: $product-add-bag-height--large;
+        letter-spacing: $product-add-bag-letter-spacing--large;
+        padding: $product-add-bag-padding;
+
+        @include breakpoint(medium down) {
+            font-size: $product-add-bag-font-size;
+            height: $product-add-bag-height;
+            padding-#{$global-left}: $product-add-bag-side-padding;
+            padding-#{$global-right}: $product-add-bag-side-padding;
+            border: $product-add-bag-border;
+        }
+
+        &.m-row-2 {
+            height: auto;
+        }
+    }
+
+    .c-product-add-bag__price {
+        .c-product-add-bag__price-after {
+            display: inline-block;
+            margin: $product-add-bag-price-after-margin;
+        }
+
+        .c-price-capacity {
+            flex: $product-add-bag-price-capacity-flex;
+            color: $product-add-bag-price-capacity-color;
+            padding: $product-add-bag-price-capacity-padding;
+            font-size: $product-add-bag-price-capacity-font-size;
+        }
+    }
+
+    .c-product-add-bag__form {
+        @include breakpoint(medium down) {
+            flex-grow: 1;
+        }
+    }
+
+    .c-product-add-bag.m-with-icon {
+        display: $product-add-bag-with-icon-display;
+        flex-flow: $product-add-bag-with-icon-flex-flow;
+        justify-content: $product-add-bag-with-icon-justify-content;
+        align-items: $product-add-bag-with-icon-align-items;
+        padding: $product-add-bag-with-icon-padding;
+        height: $product-add-bag-with-icon-height;
+
+        @include lora-helper-button-icon(
+            $icon: "#{$product-add-bag-with-icon-icon}",
+            $color: $product-add-bag-with-icon-icon-color,
+            $color-hover: $product-add-bag-with-icon-icon-hover-color,
+            $size: $product-add-bag-with-icon-icon-size,
+            $left: $product-add-bag-with-icon-icon-left
+        );
+        
+        @each $name, $type in $product-add-bag-icon-list {
+            &.m-#{$name} {
+                @include lora-helper-button-icon(
+                    $icon: map-deep-get($product-add-bag-icon-list, $name, "icon"),
+                    $color: map-deep-get($product-add-bag-icon-list, $name, "icon-color"),
+                    $color-hover: map-deep-get($product-add-bag-icon-list, $name, "icon-color-hover"),
+                    $size: $product-add-bag-with-icon-icon-size,
+                    $left: $product-add-bag-with-icon-icon-left
+                );
+            }
+        }
+
+        &::after {
+            @include vertical-center;
+
+            content: "";
+            #{$global-right}: $product-add-bag-with-icon-icon-position-right;
+            margin: $product-add-bag-with-icon-icon-margin;
+        }
+
+        .c-product-add-bag__text {
+            flex: $product-add-bag-with-icon-text-flex;
+            order: $product-add-bag-with-icon-text-order;
+            text-align: $product-add-bag-with-icon-text-align;
+        }
+    
+        .c-product-add-bag__price {
+            flex: $product-add-bag-with-icon-price-flex;
+            order: $product-add-bag-with-icon-price-order;
+            text-align: $product-add-bag-with-icon-price-align;
+        }
+    
+        .c-product-add-bag__price-after {
+            display: $product-add-bag-with-icon-price-after-display;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+$figure-text-align: center !default;
+// Image
+$figure-image-margin: rem-calc(0 0 10) !default;
+$figure-image-margin--large: rem-calc(0 0 10) !default;
+$figure-image-border: 2px solid transparent !default;
+$figure-image-padding: null !default;
+
+// Title
+$figure-title-color: color(text) !default;
+$figure-title-color--large: null !default;
+$figure-title-font: #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$figure-title-font--large: null !default;
+$figure-title-margin: 0 !default;
+$figure-title-margin--large: null !default;
+$figure-title-text-decoration: null !default;
+$figure-title-text-transform: null !default;
+$figure-title-letter-spacing: null !default;
+$figure-title-letter-spacing--large: null !default;
+
+// Active state
+$figure-active-image-border: 2px solid color(primary-active) !default;
+$figure-active-title-color: color(primary-active) !default;
+$figure-active-title-color--large: $figure-active-title-color !default;
+$figure-active-title-font-weight: null !default;
+$figure-active-image-padding: null !default;
+
+// Link
+$figure-link-image-hover-border: 2px solid color(primary-active) !default;
+$figure-link-title-hover-color: color(primary-active) !default;
+$figure-link-title-hover-color--large: $figure-link-title-hover-color !default;
+
+@mixin lora-components-figure {
+    .c-figure {
+        text-align: $figure-text-align;
+    }
+
+    .c-figure__image {
+        margin: $figure-image-margin;
+
+        @include breakpoint(large) {
+            margin: $figure-image-margin--large;
+        }
+
+        img {
+            border: $figure-image-border;
+            padding: $figure-image-padding;
+        }
+    }
+
+    .c-figure__title {
+        @include text-style(
+            $font: (
+                small: $figure-title-font,
+                large: $figure-title-font--large
+            ),
+            $margin: (
+                small: $figure-title-margin,
+                large: $figure-title-margin--large
+            ),
+            $letter-spacing: (
+                small: $figure-title-letter-spacing,
+                large: $figure-title-letter-spacing--large
+            ),
+            $text-transform: (
+                small: $figure-title-text-transform
+            ),
+            $text-decoration: (
+                small: $figure-title-text-decoration
+            ),
+            $color: (
+                small: $figure-title-color,
+                large: $figure-title-color--large
+            )
+        );
+    }
+
+    .c-figure.m-selected {
+        .c-figure__image img {
+            border: $figure-active-image-border;
+            padding: $figure-active-image-padding;
+        }
+
+        .c-figure__title {
+            color: $figure-active-title-color;
+            font-weight: $figure-active-title-font-weight;
+
+            @include breakpoint(large) {
+                color: $figure-active-title-color--large;
+            }
+        }
+    }
+
+    .c-figure.m-link {
+        cursor: pointer;
+
+        &:hover {
+            .c-figure__title {
+                color: $figure-link-title-hover-color;
+
+                @include breakpoint(large) {
+                    color: $figure-link-title-hover-color--large;
+                }
+            }
+        }
+
+        &.m-selected {
+            cursor: default;
+        }
+    }
+
+    .c-figure.m-circle {
+        .c-figure__image img {
+            border-radius: 50%;
+        }
+    }
+}

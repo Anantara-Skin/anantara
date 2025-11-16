@@ -1,0 +1,206 @@
+$social-share-padding: rem-calc(7 0) !default;
+$social-share-margin: 0 !default;
+$social-share-font-weight: 500 !default;
+$social-share-font-size: rem-calc(12) !default;
+$social-share-text-transform: uppercase !default;
+$social-share-item-border--large: none !default;
+$social-share-item-border: null !default;
+$social-share-item-border-radius: null !default;
+$social-share-item-padding: null !default;
+$social-share-item-border-radius--large: 0 !default;
+$social-share-item-padding--large: 0 !default;
+$social-share-item-color: null !default;
+$social-share-item-margin: rem-calc(0 20 0 0) !default;
+$social-share-item-margin--large: null !default;
+$social-share-item-white-space: nowrap !default;
+$social-share-item-display: inline-block !default;
+$social-share-icon-size: rem-calc(14) !default;
+$social-share-icon-color: color(primary) !default;
+$social-share-icon-hover-color: color(primary-active) !default;
+$social-share-icon-active-color: color(primary) !default;
+$social-share-icon-usesvg: true !default;
+$social-share-list: (twitter, facebook, pinterest, google, tumblr, reddit, linkedin, email, whatsapp, lineme, share-link) !default;
+$social-share-large-icon-size: rem-calc(20) !default;
+$social-share-large-icon-size--large: null !default;
+$social-share-large-item-margin: rem-calc(0 15 0 0) !default;
+$social-share-large-item-margin--large: $social-share-large-item-margin !default;
+$social-share-caption-font: null !default;
+$social-share-caption-margin: $social-share-item-margin !default;
+$social-share-caption-margin--large: $social-share-item-margin--large !default;
+$social-share-link-display: block !default;
+$social-share-flex-flow: null !default;
+$social-share-flex-flow--large: null !default;
+$social-share-justify-content: null !default;
+$social-share-caption-xlarge-font: #{rem-calc(14)} / 1 fonts.$font-primary !default;
+$social-share-caption-xlarge-text-transform: none !default;
+$social-share-caption-xlarge-margin: rem-calc(0 20 0 0) !default;
+$social-share-xlarge-item-margin: rem-calc(0 20 0 0) !default;
+$social-share-xlarge-item-margin--large: $social-share-xlarge-item-margin !default;
+$social-share-xlarge-icon-size: rem-calc(20) !default;
+$social-share-xlarge-icon-size--large: rem-calc(30) !default;
+$social-share-text-before-display: block !default;
+$social-share-text-before-size: rem-calc(30) !default;
+$social-share-text-before-color: color(primary) !default;
+$social-share-text-before-usesvg: true !default;
+$social-share-text-before-margin-right: rem-calc(20) !default;
+$social-share-text-display: flex !default;
+$social-share-text-align-items: center !default;
+$social-share-list-margin: 0 !default;
+
+@mixin lora-components-social-share {
+    .c-social-share {
+        display: flex;
+        flex-flow: $social-share-flex-flow;
+        font-size: $social-share-font-size;
+        font-weight: $social-share-font-weight;
+        margin: $social-share-margin;
+        padding: $social-share-padding;
+        text-transform: $social-share-text-transform;
+        justify-content: $social-share-justify-content;
+
+        @include breakpoint(large) {
+            flex-flow: $social-share-flex-flow--large;
+        }
+    }
+
+    .c-social-share__list {
+        display: flex;
+        margin: $social-share-list-margin;
+    }
+
+    .c-social-share__item {
+        display: $social-share-item-display;
+        margin: $social-share-item-margin;
+        white-space: $social-share-item-white-space;
+        border: $social-share-item-border;
+        border-radius: $social-share-item-border-radius;
+        padding: $social-share-item-padding;
+        color: $social-share-item-color;
+
+        @include breakpoint(large) {
+            margin: $social-share-item-margin--large;
+            border: $social-share-item-border--large;
+            border-radius: $social-share-item-border-radius--large;
+            padding: $social-share-item-padding--large;
+        }
+
+        &:last-child {
+            margin-#{$global-right}: 0;
+        }
+    }
+
+    .c-social-share__caption {
+        font: $social-share-caption-font;
+        margin: $social-share-caption-margin;
+
+        @include breakpoint(large) {
+            margin: $social-share-caption-margin--large;
+        }
+    }
+
+    .c-social-share__text {
+        display: $social-share-text-display;
+        align-items: $social-share-text-align-items;
+
+        @each $provider in $social-share-list {
+            &.m-#{$provider} {
+                &::before {
+                    @include svg-icon(#{$provider}, $social-share-text-before-color, 100%, center, no-repeat, $usesvg: $social-share-text-before-usesvg);
+
+                    content: "";
+                    display: $social-share-text-before-display;
+                    height: $social-share-text-before-size;
+                    width: $social-share-text-before-size;
+                    margin-right: $social-share-text-before-margin-right;
+                }
+            }
+        }
+    }
+
+    .c-social-share__link {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: $social-share-link-display;
+        height: $social-share-icon-size;
+        width: $social-share-icon-size;
+        cursor: pointer;
+
+        @each $provider in $social-share-list {
+            &.m-#{$provider} {
+                @include svg-icon(#{$provider}, $social-share-icon-color);
+
+                &:hover,
+                &:focus {
+                    @include svg-icon(#{$provider}, $social-share-icon-hover-color, 100%, left, no-repeat, $color-change: true, $usesvg: $social-share-icon-usesvg);
+                }
+
+                &:active {
+                    @include svg-icon(#{$provider}, $social-share-icon-active-color, $color-change: true, $usesvg: $social-share-icon-usesvg);
+                }
+            }
+        }
+    }
+
+    .c-social-share.m-large {
+        .c-social-share__caption {
+            display: none;
+        }
+
+        .c-social-share__item {
+            margin: $social-share-large-item-margin;
+
+            @include breakpoint(large) {
+                margin: $social-share-large-item-margin--large;
+            }
+
+            &:last-child {
+                margin-#{$global-right}: 0;
+            }
+        }
+
+        .c-social-share__link {
+            height: $social-share-large-icon-size;
+            min-width: $social-share-large-icon-size;
+            width: $social-share-large-icon-size;
+
+            @include breakpoint(large) {
+                height: $social-share-large-icon-size--large;
+                min-width: $social-share-large-icon-size--large;
+                width: $social-share-large-icon-size--large;
+            }
+        }
+    }
+
+    .c-social-share.m-xlarge {
+        .c-social-share__caption {
+            font: $social-share-caption-xlarge-font;
+            text-transform: $social-share-caption-xlarge-text-transform;
+            margin: $social-share-caption-xlarge-margin;
+        }
+
+        .c-social-share__item {
+            margin: $social-share-xlarge-item-margin;
+
+            @include breakpoint(large) {
+                margin: $social-share-xlarge-item-margin--large;
+            }
+
+            &:last-child {
+                margin-#{$global-right}: 0;
+            }
+        }
+
+        .c-social-share__link {
+            height: $social-share-xlarge-icon-size;
+            min-width: $social-share-xlarge-icon-size;
+            width: $social-share-xlarge-icon-size;
+
+            @include breakpoint(large) {
+                height: $social-share-xlarge-icon-size--large;
+                min-width: $social-share-xlarge-icon-size--large;
+                width: $social-share-xlarge-icon-size--large;
+            }
+        }
+    }
+}

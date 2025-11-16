@@ -1,0 +1,73 @@
+@use "../swatch";
+$product-variation-font: null !default;
+$product-variation-color: null !default;
+$product-variation-margin: 0 !default;
+$product-variation-margin--large: null !default;
+$product-variation-item-margin: rem-calc(0 0 4) !default;
+$product-variation-name-vertical-align: middle !default;
+$product-variation-value-vertical-align: middle !default;
+$product-variation-text-transform: null !default;
+$product-variation-letter-spacing: null !default;
+$product-variation-swatch-variation-margin: rem-calc(0 8 0 0) !default;
+$product-variation-letter-spacing: null !default;
+$product-variation-value-font: #{rem-calc(12)} / 1.2 fonts.$font-primary !default;
+
+@mixin lora-components-product-variation {
+    .c-product-variation {
+        margin: $product-variation-margin;
+        font: $product-variation-font;
+        color: $product-variation-color;
+        text-transform: $product-variation-text-transform;
+        letter-spacing: $product-variation-letter-spacing;
+
+        @include breakpoint(large) {
+            margin: $product-variation-margin--large;
+        }
+
+        .c-swatch {
+            @include lora-helper-swatch-size(small);
+            @include lora-helper-swatch-selected(transparent);
+
+            background-clip: padding-box;
+            cursor: default;
+            margin: $product-variation-swatch-variation-margin;
+        }
+
+        &.m-light {
+            .c-swatch {
+                border-color: map.get($palette, light);
+            }
+        }
+
+        &.m-dark {
+            .c-swatch {
+                border-color: map.get($palette, dark);
+            }
+        }
+    }
+
+    .c-product-variation__container {
+        width: 100%;
+    }
+
+    .c-product-variation__name {
+        vertical-align: $product-variation-name-vertical-align;
+    }
+
+    .c-product-variation__item {
+        margin: $product-variation-item-margin;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.m-color {
+            font-size: 0;
+        }
+    }
+
+    .c-product-variation__value {
+        vertical-align: $product-variation-value-vertical-align;
+        font: $product-variation-value-font;
+    }
+}

@@ -1,0 +1,332 @@
+$product-variations-carousel-link-min-height: rem-calc(50) !default;
+$product-variations-carousel-link-height: 100% !default;
+$product-variations-carousel-link-min-width: rem-calc(100) !default;
+$product-variations-carousel-link-min-width--large: 0 !default;
+$product-variations-carousel-link-width--large: 100% !default;
+$product-variations-carousel-link-padding: rem-calc(10) !default;
+$product-variations-carousel-link-color: map.get($palette, dark) !default;
+$product-variations-carousel-link-background: map.get($palette, light) !default;
+$product-variations-carousel-link-border: 1px solid color(border) !default;
+$product-variations-carousel-link-border-radius: rem-calc(4) !default;
+$product-variations-carousel-link-font: #{rem-calc(14)} / 1.25 fonts.$font-primary !default;
+$product-variations-carousel-link-align-items: center !default;
+$product-variations-carousel-link-letter-spacing: null !default;
+$product-variations-carousel-inner-with-badge-vertical-spacing: rem-calc(20) !default;
+//Secondary
+$product-variations-carousel-link-secondary-border: 0 !default;
+$product-variations-carousel-link-secondary-font: #{rem-calc(14)} / 1 fonts.$font-primary !default;
+$product-variations-carousel-link-secondary-color: color(text-secondary) !default;
+$product-variations-carousel-link-secondary-padding: rem-calc(5 8) !default;
+$product-variations-carousel-link-secondary-min-width: rem-calc(54) !default;
+$product-variations-carousel-link-secondary-min-height: auto !default;
+$product-variations-carousel-link-secondary-background: map.get($palette, light) !default;
+$product-variations-carousel-link-secondary-border-bottom: 1px solid map.get($palette, light) !default;
+$product-variations-carousel-link-secondary-border-radius: 0 !default;
+//Secondary selected
+$product-variations-carousel-link-secondary-selected-color: map.get($palette, dark) !default;
+$product-variations-carousel-link-secondary-selected-font-weight: bold !default;
+$product-variations-carousel-link-secondary-selected-border: none !default;
+$product-variations-carousel-link-secondary-selected-border-bottom: 1px solid map.get($palette, dark) !default;
+$product-variations-carousel-link-secondary-selected-border-radius: 0 !default;
+$product-variations-carousel-link-secondary-selected-background: map.get($palette, light) !default;
+//Secondary disabled
+$product-variations-carousel-link-secondary-disabled-background: map.get($palette, light) !default;
+$product-variations-carousel-link-secondary-disabled-color: color(text-secondary) !default;
+// Hover
+$product-variations-carousel-link-hover-background: null !default;
+$product-variations-carousel-link-hover-color: $product-variations-carousel-link-color !default;
+$product-variations-carousel-link-hover-border: null !default;
+// Selected state
+$product-variations-carousel-link-selected-color: null !default;
+$product-variations-carousel-link-selected-font: bold #{rem-calc(14)} / 1.25 fonts.$font-primary !default;
+$product-variations-carousel-link-selected-background: color(primary-background) !default;
+$product-variations-carousel-link-selected-border: 2px solid color(primary-active) !default;
+// Disabled state
+$product-variations-carousel-link-disabled-opacity: null !default;
+$product-variations-carousel-link-disabled-background: color(global-background) !default;
+$product-variations-carousel-link-disabled-color: color(disabled) !default;
+$product-variations-carousel-link-disabled-border: 1px solid color(disabled) !default;
+$product-variations-carousel-link-disabled-selected-border: 2px solid color(primary-active) !default;
+// Value
+$product-variations-carousel-value-white-space: normal !default;
+$product-variations-carousel-value-line-height: inherit !default;
+$product-variations-carousel-value-font-weight: inherit !default;
+// Price
+$product-variations-carousel-price-padding: 0 rem-calc(2) !default;
+$product-variations-carousel-price-color: color(text-secondary) !default;
+$product-variations-carousel-price-font-weight: normal !default;
+$product-variations-carousel-selected-price-value-color: null !default;
+$product-variations-carousel-selected-price-value-font-weight: null !default;
+$product-variations-carousel-disabled-price-value-color: null !default;
+// Label price
+$product-variations-carousel-label-product-price-capacity-flex-wrap: nowrap !default;
+$product-variations-carousel-label-product-price-capacity-font: #{rem-calc(14)} / 1.25 fonts.$font-primary !default;
+$product-variations-carousel-label-product-price-capacity-margin: rem-calc(0 0 0 3) !default;
+// Badge title
+$product-variations-carousel-link-badge-title-bottom: rem-calc(-10) !default;
+$product-variations-carousel-link-badge-title-margin: 0 !default;
+// Badge image
+$product-variations-carousel-link-badge-image-margin: 0 !default;
+$product-variations-carousel-link-badge-image-bottom: rem-calc(-15) !default;
+$product-variations-carousel-link-badge-image-max-width: null !default;
+// Variations Carousel
+$product-variations-carousel-link-with-image-width: 100% !default;
+$product-variations-carousel-link-with-image-width--large: null !default;
+$product-variations-carousel-link-with-image-min-width: null !default;
+$product-variations-carousel-link-with-image-min-width--large: null !default;
+$product-variations-carousel-link-with-image-border-radius: 0 !default;
+$product-variations-carousel-link-with-image-border-radius--large: null !default;
+$product-variations-carousel-link-with-image-padding: rem-calc(16 10) !default;
+$product-variations-carousel-link-with-image-padding--large: null !default;
+// Variations Carousel Image
+$product-variations-carousel-link-with-image-product-image-margin: rem-calc(0 0 4) !default;
+$product-variations-carousel-link-with-image-product-image-margin--large: null !default;
+// Variations Carousel Badge
+$product-variations-carousel-link-with-image-badge-title-left: 0 !default;
+$product-variations-carousel-link-with-image-badge-title-left--large: null !default;
+$product-variations-carousel-link-with-image-badge-title-top: rem-calc(4) !default;
+$product-variations-carousel-link-with-image-badge-title-top--large: null !default;
+$product-variations-carousel-link-with-image-badge-title-bottom: auto !default;
+$product-variations-carousel-link-with-image-badge-title-bottom--large: null !default;
+$product-variations-carousel-link-with-image-badge-title-transform: none !default;
+$product-variations-carousel-link-with-image-badge-title-transform--large: null !default;
+$product-variations-carousel-link-with-image-badge-title-padding: rem-calc(4 8) !default;
+$product-variations-carousel-link-with-image-badge-title-padding--large: null !default;
+// Variations Carousel Badge Image
+$product-variations-carousel-link-with-image-badge-image-left: rem-calc(4) !default;
+$product-variations-carousel-link-with-image-badge-image-left--large: null !default;
+$product-variations-carousel-link-with-image-badge-image-top: rem-calc(4) !default;
+$product-variations-carousel-link-with-image-badge-image-top--large: null !default;
+$product-variations-carousel-link-with-image-badge-image-bottom: auto !default;
+$product-variations-carousel-link-with-image-badge-image-bottom--large: null !default;
+$product-variations-carousel-link-with-image-badge-image-transform: none !default;
+$product-variations-carousel-link-with-image-badge-image-transform--large: null !default;
+$product-variations-carousel-link-with-image-badge-image-margin: 0 !default;
+$product-variations-carousel-link-with-image-badge-image-margin--large: null !default;
+
+@mixin lora-components-product-variations-carousel {
+    .c-variations-carousel__container {
+        width: 100%;
+    }
+
+    .c-variations-carousel {
+        .c-product-price__value {
+            padding: $product-variations-carousel-price-padding;
+            color: $product-variations-carousel-price-color;
+            font-weight: $product-variations-carousel-price-font-weight;
+        }
+
+        &.m-show-badge {
+            .c-carousel__inner {
+                padding: $product-variations-carousel-inner-with-badge-vertical-spacing 0;
+                margin: -$product-variations-carousel-inner-with-badge-vertical-spacing 0;
+            }
+        }
+
+        .c-carousel__item {
+            max-width: 100%;
+        }
+    }
+
+    .c-variations-carousel__label {
+        .c-product-price {
+            flex-wrap: $product-variations-carousel-label-product-price-capacity-flex-wrap;
+        }
+
+        .c-product-price__capacity {
+            font: $product-variations-carousel-label-product-price-capacity-font;
+            margin: $product-variations-carousel-label-product-price-capacity-margin;
+        }
+    }
+
+    .c-variations-carousel__link {
+        position: relative;
+        background: $product-variations-carousel-link-background;
+        color: $product-variations-carousel-link-color;
+        border: $product-variations-carousel-link-border;
+        border-radius: $product-variations-carousel-link-border-radius;
+        display: flex;
+        flex-flow: column;
+        font: $product-variations-carousel-link-font;
+        height: $product-variations-carousel-link-height;
+        justify-content: center;
+        min-width: $product-variations-carousel-link-min-width;
+        min-height: $product-variations-carousel-link-min-height;
+        padding: $product-variations-carousel-link-padding;
+        text-decoration: none;
+        align-items: $product-variations-carousel-link-align-items;
+        letter-spacing: $product-variations-carousel-link-letter-spacing;
+
+        @include breakpoint(large) {
+            min-width: $product-variations-carousel-link-min-width--large;
+            width: $product-variations-carousel-link-width--large;
+        }
+
+        &:hover {
+            background: $product-variations-carousel-link-hover-background;
+            color: $product-variations-carousel-link-hover-color;
+            border: $product-variations-carousel-link-hover-border;
+        }
+
+        &.m-selected {
+            background: $product-variations-carousel-link-selected-background;
+            border: $product-variations-carousel-link-selected-border;
+            color: $product-variations-carousel-link-selected-color;
+            font: $product-variations-carousel-link-selected-font;
+            pointer-events: none;
+
+            .c-product-price__value,
+            .c-price-capacity {
+                color: $product-variations-carousel-selected-price-value-color;
+                font-weight: $product-variations-carousel-selected-price-value-font-weight;
+            }
+        }
+
+        &.m-disabled {
+            opacity: $product-variations-carousel-link-disabled-opacity;
+            background: $product-variations-carousel-link-disabled-background;
+            color: $product-variations-carousel-link-disabled-color;
+            border: $product-variations-carousel-link-disabled-border;
+
+            .c-product-price__value,
+            .c-price-capacity {
+                color: $product-variations-carousel-disabled-price-value-color;
+            }
+
+            &.m-selected {
+                border: $product-variations-carousel-link-disabled-selected-border;
+            }
+        }
+
+        .c-product-badge__title {
+            @include horizontal-center;
+
+            bottom: $product-variations-carousel-link-badge-title-bottom;
+            margin: $product-variations-carousel-link-badge-title-margin;
+        }
+
+        .c-product-badge__image {
+            @include horizontal-center;
+
+            margin: $product-variations-carousel-link-badge-image-margin;
+            bottom: $product-variations-carousel-link-badge-image-bottom;
+            max-width: $product-variations-carousel-link-badge-image-max-width;
+        }
+
+        &.m-secondary {
+            border: $product-variations-carousel-link-secondary-border;
+            font: $product-variations-carousel-link-secondary-font;
+            color: $product-variations-carousel-link-secondary-color;
+            padding: $product-variations-carousel-link-secondary-padding;
+            min-width: $product-variations-carousel-link-secondary-min-width;
+            min-height: $product-variations-carousel-link-secondary-min-height;
+            background: $product-variations-carousel-link-secondary-background;
+            border-bottom: $product-variations-carousel-link-secondary-border-bottom;
+            border-radius: $product-variations-carousel-link-secondary-border-radius;
+
+            &.m-selected {
+                color: $product-variations-carousel-link-secondary-selected-color;
+                font-weight: $product-variations-carousel-link-secondary-selected-font-weight;
+                border: $product-variations-carousel-link-secondary-selected-border;
+                border-bottom: $product-variations-carousel-link-secondary-selected-border-bottom;
+                border-radius: $product-variations-carousel-link-secondary-selected-border-radius;
+                background: $product-variations-carousel-link-secondary-selected-background;
+            }
+
+            &.m-disabled {
+                border: none;
+                background: $product-variations-carousel-link-secondary-disabled-background;
+                color: $product-variations-carousel-link-secondary-disabled-color;
+
+                &.m-selected {
+                    border: $product-variations-carousel-link-secondary-selected-border;
+                    border-bottom: $product-variations-carousel-link-secondary-selected-border-bottom;
+                }
+            }
+
+            .c-variations-carousel__value {
+                @include text-truncate;
+
+                max-width: 100%;
+            }
+        }
+
+        &.m-with-image {
+            border-radius: $product-variations-carousel-link-with-image-border-radius;
+            padding: $product-variations-carousel-link-with-image-padding;
+            width: $product-variations-carousel-link-with-image-width;
+            min-width: $product-variations-carousel-link-with-image-min-width;
+
+            @include breakpoint(large) {
+                border-radius: $product-variations-carousel-link-with-image-border-radius--large;
+                padding: $product-variations-carousel-link-with-image-padding--large;
+                width: $product-variations-carousel-link-with-image-width--large;
+                min-width: $product-variations-carousel-link-with-image-min-width--large;
+            }
+
+            .c-product-image {
+                margin: $product-variations-carousel-link-with-image-product-image-margin;
+
+                @include breakpoint(large) {
+                    margin: $product-variations-carousel-link-with-image-product-image-margin--large;
+                }
+            }
+
+            .c-product-badge__title {
+                #{$global-left}: $product-variations-carousel-link-with-image-badge-title-left;
+                top: $product-variations-carousel-link-with-image-badge-title-top;
+                bottom: $product-variations-carousel-link-with-image-badge-title-bottom;
+                transform: $product-variations-carousel-link-with-image-badge-title-transform;
+                padding: $product-variations-carousel-link-with-image-badge-title-padding;
+
+                @include breakpoint(large) {
+                    #{$global-left}: $product-variations-carousel-link-with-image-badge-title-left--large;
+                    top: $product-variations-carousel-link-with-image-badge-title-top--large;
+                    bottom: $product-variations-carousel-link-with-image-badge-title-bottom--large;
+                    transform: $product-variations-carousel-link-with-image-badge-title-transform--large;
+                    padding: $product-variations-carousel-link-with-image-badge-title-padding--large;
+                }
+            }
+
+            @if $product-variations-carousel-link-with-image-badge-title-left == 0 {
+                .c-product-badge__title {
+                    border-top-#{$global-left}-radius: 0;
+                    border-bottom-#{$global-left}-radius: 0;
+                }
+            }
+            
+            /* stylelint-disable max-nesting-depth */
+            @if $product-variations-carousel-link-with-image-badge-title-left--large == 0 {
+                @include breakpoint(large) {
+                    .c-product-badge__title {
+                        border-top-#{$global-left}-radius: 0;
+                        border-bottom-#{$global-left}-radius: 0;
+                    }
+                }
+            }
+            /* stylelint-enable max-nesting-depth */
+
+            .c-product-badge__image {
+                #{$global-left}: $product-variations-carousel-link-with-image-badge-image-left;
+                top: $product-variations-carousel-link-with-image-badge-image-top;
+                bottom: $product-variations-carousel-link-with-image-badge-image-bottom;
+                transform: $product-variations-carousel-link-with-image-badge-image-transform;
+                margin: $product-variations-carousel-link-with-image-badge-image-margin;
+
+                @include breakpoint(large) {
+                    #{$global-left}: $product-variations-carousel-link-with-image-badge-image-left--large;
+                    top: $product-variations-carousel-link-with-image-badge-image-top--large;
+                    bottom: $product-variations-carousel-link-with-image-badge-image-bottom--large;
+                    transform: $product-variations-carousel-link-with-image-badge-image-transform--large;
+                    margin: $product-variations-carousel-link-with-image-badge-image-margin--large;
+                }
+            }
+        }
+    }
+
+    .c-variations-carousel__value {
+        white-space: $product-variations-carousel-value-white-space;
+        line-height: $product-variations-carousel-value-line-height;
+        font-weight: $product-variations-carousel-value-font-weight;
+    }
+}

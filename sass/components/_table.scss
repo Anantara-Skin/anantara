@@ -1,0 +1,147 @@
+// Table
+$table-width: 100% !default;
+$table-border: 1px solid color(border) !default;
+$table-border-collapse: collapse !default;
+$table-table-layout--medium-down: fixed !default;
+$table-margin: rem-calc(0 0 10) !default;
+$table-margin--large: rem-calc(0 0 20) !default;
+$table-borderless-border: none !default;
+// Row
+$table-row-border-bottom: 1px solid color(border) !default;
+// Cell
+$table-cell-font: #{rem-calc(12)} / 1.5 fonts.$font-primary !default;
+$table-cell-border: none !default;
+$table-cell-background: map.get($palette, light) !default;
+$table-cell-padding: rem-calc(12 5) !default;
+$table-cell-vertical-align: middle !default;
+$table-cell-text-align: center !default;
+$table-cell-color: color(text) !default;
+// Header
+/// Row
+$table-header-row-border: none !default;
+$table-header-row-background: color(element-background) !default;
+/// Row secondary
+$table-header-row-secondary-background: color(secondary) !default;
+/// Cell
+$table-header-cell-font: #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$table-header-cell-border: none !default;
+$table-header-cell-padding: rem-calc(10 5) !default;
+$table-header-cell-vertical-align: middle !default;
+$table-header-cell-text-align: center !default;
+$table-header-cell-color: color(text) !default;
+/// Cell secondary
+$table-header-cell-secondary-color: map.get($palette, light) !default;
+/// Cell link
+$table-cell-link-display: block !default;
+$table-cell-link-text-decoration: none !default;
+// Table Secondary
+$table-secondary-font: none !default;
+$table-secondary-border: none !default;
+$table-secondary-cell-font: null !default;
+$table-secondary-cell-padding: null !default;
+$table-secondary-cell-text-align: null !default;
+$table-secondary-header-cell-font: null !default;
+$table-secondary-header-cell-padding: null !default;
+$table-secondary-header-cell-text-align: null !default;
+$table-secondary-header-cell-text-transform: null !default;
+$table-secondary-link-font: null !default;
+$table-secondary-link-text-decoration: null !default;
+
+@mixin lora-components-table {
+    .c-table {
+        border-collapse: $table-border-collapse;
+        width: $table-width;
+        border: $table-border;
+        margin: $table-margin;
+
+        @include breakpoint(medium down) {
+            table-layout: $table-table-layout--medium-down;
+        }
+        @include breakpoint(large) {
+            margin: $table-margin--large;
+        }
+
+        &.m-secondary {
+            border: $table-secondary-border;
+
+            .c-table__header-cell {
+                font: $table-secondary-header-cell-font;
+                padding: $table-secondary-header-cell-padding;
+                text-align: $table-secondary-header-cell-text-align;
+                text-transform: $table-secondary-header-cell-text-transform;
+            }
+
+            .c-table__cell {
+                font: $table-secondary-cell-font;
+                padding: $table-secondary-cell-padding;
+                text-align: $table-secondary-cell-text-align;
+
+                a {
+                    font: $table-secondary-link-font;
+                    text-decoration: $table-secondary-link-text-decoration;
+                }
+            }
+        }
+
+        .c-table__cell-link {
+            display: $table-cell-link-display;
+            text-decoration: $table-cell-link-text-decoration;
+        }
+
+        &.m-borderless {
+            border: $table-borderless-border;
+        }
+    }
+
+    .c-table__wrapper {
+        &.m-scrollable-for-mobile {
+            @include breakpoint(medium down) {
+                overflow-x: auto;
+            }
+        }
+    }
+
+    // Header
+    .c-table__header-row {
+        border: $table-header-row-border;
+        background: $table-header-row-background;
+    }
+
+    .c-table__header-row.m-secondary {
+        background: $table-header-row-secondary-background;
+
+        .c-table__header-cell {
+            color: $table-header-cell-secondary-color;
+        }
+    }
+
+    .c-table__header-cell {
+        border: $table-header-cell-border;
+        color: $table-header-cell-color;
+        font: $table-header-cell-font;
+        padding: $table-header-cell-padding;
+        vertical-align: $table-header-cell-vertical-align;
+        text-align: $table-header-cell-text-align;
+
+        &.m-secondary {
+            background: $table-header-row-secondary-background;
+            color: $table-header-cell-secondary-color;
+        }
+    }
+
+    // Rows
+    .c-table__row {
+        border-bottom: $table-row-border-bottom;
+    }
+
+    // Cells
+    .c-table__cell {
+        border: $table-cell-border;
+        background: $table-cell-background;
+        color: $table-cell-color;
+        font: $table-cell-font;
+        padding: $table-cell-padding;
+        vertical-align: $table-cell-vertical-align;
+        text-align: $table-cell-text-align;
+    }
+}

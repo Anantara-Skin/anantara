@@ -1,0 +1,165 @@
+// Content List
+$content-list-padding: rem-calc(0 0 20) !default;
+$content-list-padding--large: rem-calc(30 0 0) !default;
+
+// Title
+$content-list-title-font: 500 #{rem-calc(18)} / 1.5 fonts.$font-primary !default;
+$content-list-title-font--large: #{rem-calc(30)} / 1.25 fonts.$font-primary !default;
+$content-list-title-margin: rem-calc(0 0 10) !default;
+$content-list-title-margin--large: rem-calc(0 0 17) !default;
+$content-list-title-text-align: $global-left !default;
+$content-list-title-text-align--large: center !default;
+$content-list-title-text-transform: uppercase !default;
+$content-list-title-text-transform--large: null !default;
+$content-list-title-color: null !default;
+$content-list-title-color--large: null !default;
+
+// Description
+$content-list-description-font: 500 #{rem-calc(14)} fonts.$font-primary !default;
+$content-list-description-font--large: 500 #{rem-calc(18)} fonts.$font-primary !default;
+$content-list-description-margin: rem-calc(0 0 10) !default;
+$content-list-description-margin--large: rem-calc(0 0 20) !default;
+$content-list-description-text-align: $global-left !default;
+$content-list-description-text-align--large: center !default;
+$content-list-description-text-transform: none !default;
+$content-list-description-text-transform--large: uppercase !default;
+$content-list-description-text-color: null !default;
+$content-list-description-text-color--large: null !default;
+$content-list-description-letter-spacing: null !default;
+$content-list-description-letter-spacing--large: null !default;
+
+// Items
+$content-list-items-margin: rem-calc(0) !default;
+
+// Article
+$content-list-article-margin: rem-calc(0 0 20) !default;
+$content-list-article-margin--large: rem-calc(0 0 50) !default;
+$content-list-article-padding: rem-calc(0 0 5) !default;
+$content-list-article-padding--large: rem-calc(0 0 50) !default;
+$content-list-article-border-bottom: $global-border !default;
+$content-list-article-border-bottom--large: $global-border !default;
+$content-list-article-margin-top: rem-calc(20) !default;
+$content-list-article-margin-top--large: rem-calc(20) !default;
+$content-list-article-padding-top: rem-calc(20) !default;
+$content-list-article-padding-top--large: rem-calc(20) !default;
+
+// First Article
+$content-list-article-first-margin: rem-calc(20 0) !default;
+$content-list-article-first-margin--large: rem-calc(30 0 50) !default;
+$content-list-article-first-padding: rem-calc(20 0 5) !default;
+$content-list-article-first-padding--large: rem-calc(50 0) !default;
+$content-list-article-border-top: $global-border !default;
+$content-list-article-border-top--large: 0 !default;
+
+// Last Article
+$content-list-article-last-margin: null !default;
+$content-list-article-last-margin--large: null !default;
+$content-list-article-last-padding: null !default;
+$content-list-article-last-padding--large: null !default;
+$content-list-article-last-border-bottom: null !default;
+$content-list-article-last-border-bottom--large: null !default;
+
+@mixin lora-components-content-list {
+    .c-content-list {
+        padding: $content-list-padding;
+
+        @include breakpoint(large) {
+            padding: $content-list-padding--large;
+        }
+    }
+
+    .c-content-list__title {
+        @include text-style(
+            $font: (
+                small: $content-list-title-font,
+                large: $content-list-title-font--large
+            ),
+            $margin: (
+                small: $content-list-title-margin,
+                large: $content-list-title-margin--large
+            ),
+            $text-align: (
+                small: $content-list-title-text-align,
+                large: $content-list-title-text-align--large
+            ),
+            $text-transform: (
+                small: $content-list-title-text-transform,
+                large: $content-list-title-text-transform--large
+            ),
+            $color: (
+                small: $content-list-title-color,
+                large: $content-list-title-color--large
+            )
+        );
+    }
+
+    .c-content-list__description {
+        @include text-style(
+            $font: (
+                small: $content-list-description-font,
+                large: $content-list-description-font--large
+            ),
+            $margin: (
+                small: $content-list-description-margin,
+                large: $content-list-description-margin--large
+            ),
+            $text-align: (
+                small: $content-list-description-text-align,
+                large: $content-list-description-text-align--large
+            ),
+            $text-transform: (
+                small: $content-list-description-text-transform,
+                large: $content-list-description-text-transform--large
+            ),
+            $color: (
+                small: $content-list-description-text-color,
+                large: $content-list-description-text-color--large
+            ),
+            $letter-spacing: (
+                small: $content-list-description-letter-spacing,
+                large: $content-list-description-letter-spacing--large
+            )
+        );
+    }
+
+    .c-content-list__items {
+        margin: $content-list-items-margin;
+    }
+
+    .c-content-list__article {
+        width: 100%;
+        margin: $content-list-article-margin;
+        padding: $content-list-article-padding;
+        border-bottom: $content-list-article-border-bottom;
+
+        &:first-child {
+            margin: $content-list-article-first-margin;
+            padding: $content-list-article-first-padding;
+            border-top: $content-list-article-border-top;
+        }
+
+        &:last-child {
+            margin: $content-list-article-last-margin;
+            padding: $content-list-article-last-padding;
+            border-bottom: $content-list-article-last-border-bottom;
+        }
+
+        @include breakpoint(large) {
+            margin: $content-list-article-margin--large;
+            padding: $content-list-article-padding--large;
+            border-bottom: $content-list-article-border-bottom--large;
+
+            &:first-child {
+                margin: $content-list-article-first-margin--large;
+                padding: $content-list-article-first-padding--large;
+                border-top: $content-list-article-border-top--large;
+            }
+
+            &:last-child {
+                margin: $content-list-article-last-margin--large;
+                padding: $content-list-article-last-padding--large;
+                border-bottom: $content-list-article-last-border-bottom--large;
+            }
+        }
+    }
+}

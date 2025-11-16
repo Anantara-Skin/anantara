@@ -1,0 +1,151 @@
+$quote-position: relative !default;
+$quote-position--large: null !default;
+$quote-margin: rem-calc(60) auto rem-calc(60) !default;
+$quote-margin--large: null !default;
+$quote-padding: rem-calc(0 25) !default;
+$quote-padding--large: null !default;
+$quote-max-width: 90% !default;
+$quote-max-width--large: rem-calc(300) !default;
+$quote-background: none !default;
+$quote-background--large: null !default;
+$quote-font: normal #{rem-calc(24)} / 1.15 fonts.$font-primary !default;
+$quote-font--large: null !default;
+$quote-text-align: $global-left !default;
+$quote-text-align--large: null !default;
+$quote-quotes: "\201C" "\201D" !default;
+$quote-color: null !default;
+
+$quote-open-position: absolute !default;
+$quote-open-position--large: null !default;
+$quote-open-top: rem-calc(-10) !default;
+$quote-open-top--large: null !default;
+$quote-open-left: 0 !default;
+$quote-open-left--large: null !default;
+$quote-open-font: normal #{rem-calc(40)} / 1 fonts.$font-primary !default;
+$quote-open-font--large: null !default;
+
+$quote-close-position: absolute !default;
+$quote-close-position--large: null !default;
+$quote-close-bottom: rem-calc(-33) !default;
+$quote-close-bottom--large: null !default;
+$quote-close-right: 0 !default;
+$quote-close-right--large: null !default;
+$quote-close-font: normal #{rem-calc(40)} / 1 fonts.$font-primary !default;
+$quote-close-font--large: null !default;
+
+$quote-author-position: absolute !default;
+$quote-author-position--large: null !default;
+$quote-author-bottom: rem-calc(-30) !default;
+$quote-author-bottom--large: null !default;
+$quote-author-left: 0 !default;
+$quote-author-left--large: null !default;
+$quote-author-font: normal #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$quote-author-font--large: null !default;
+$quote-author-color: color(text-secondary) !default;
+$quote-author-color--large: null !default;
+$quote-author-before-content: "\2014" !default;
+$quote-author-before-display: inline-block !default;
+$quote-author-before-display--large: null !default;
+$quote-author-before-margin: rem-calc(0 10 0 0) !default;
+$quote-author-before-margin--large: null !default;
+$quote-author-before-font: normal #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$quote-author-before-font--large: null !default;
+$quote-text-transform: null !default;
+
+@mixin lora-components-quote {
+    .c-quote {
+        position: $quote-position;
+        max-width: $quote-max-width;
+        background: $quote-background;
+        quotes: $quote-quotes;
+
+        @include breakpoint(large) {
+            position: $quote-position--large;
+            max-width: $quote-max-width--large;
+            background: $quote-background--large;
+        }
+        @include text-style(
+            $font: (
+                small: $quote-font,
+                large: $quote-font--large
+            ),
+            $margin: (
+                small: $quote-margin,
+                large: $quote-margin--large
+            ),
+            $padding: (
+                small: $quote-padding,
+                large: $quote-padding--large
+            ),
+            $text-align: (
+                small: $quote-text-align,
+                large: $quote-text-align--large
+            ),
+            $text-transform: (
+                small: $quote-text-transform
+            ),
+            $color: (
+                small: $quote-color
+            )
+        );
+
+        &::before {
+            content: open-quote;
+            position: $quote-open-position;
+            top: $quote-open-top;
+            #{$global-left}: $quote-open-left;
+            font: $quote-open-font;
+
+            @include breakpoint(large) {
+                position: $quote-open-position--large;
+                top: $quote-open-top--large;
+                #{$global-left}: $quote-open-left--large;
+                font: $quote-open-font--large;
+            }
+        }
+
+        &::after {
+            content: close-quote;
+            position: $quote-close-position;
+            bottom: $quote-close-bottom;
+            #{$global-right}: $quote-close-right;
+            font: $quote-close-font;
+
+            @include breakpoint(large) {
+                position: $quote-close-position--large;
+                bottom: $quote-close-bottom--large;
+                #{$global-right}: $quote-close-right--large;
+                font: $quote-close-font--large;
+            }
+        }
+    }
+
+    .c-quote__author {
+        position: $quote-author-position;
+        bottom: $quote-author-bottom;
+        #{$global-left}: $quote-author-left;
+        font: $quote-author-font;
+        color: $quote-author-color;
+
+        @include breakpoint(large) {
+            position: $quote-author-position--large;
+            bottom: $quote-author-bottom--large;
+            #{$global-left}: $quote-author-left--large;
+            font: $quote-author-font--large;
+            color: $quote-author-color--large;
+        }
+
+        &::before {
+            content: $quote-author-before-content;
+            display: $quote-author-before-display;
+            margin: $quote-author-before-margin;
+            font: $quote-author-before-font;
+
+            @include breakpoint(large) {
+                display: $quote-author-before-display--large;
+                margin: $quote-author-before-margin--large;
+                font: $quote-author-before-font--large;
+            }
+        }
+    }
+}

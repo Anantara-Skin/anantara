@@ -1,0 +1,129 @@
+$content-calendar-event-tile-caption-border: 1px solid color(organism-background) !default;
+$content-calendar-event-tile-caption-padding: rem-calc(15) !default;
+$content-calendar-event-tile-caption-padding--large: null !default;
+$content-calendar-event-tile-content-text-align: center !default;
+$content-calendar-event-tile-caption-border-radius: null !default;
+// Title
+$content-calendar-event-tile-title-margin: rem-calc(0 0 5) !default;
+$content-calendar-event-tile-title-margin--large: rem-calc(0 0 10) !default;
+$content-calendar-event-tile-title-font: 300 #{rem-calc(18)} / 1.5 fonts.$font-primary !default;
+$content-calendar-event-tile-title-font--large: 300 #{rem-calc(24)} / 1.5 fonts.$font-primary !default;
+$content-calendar-event-tile-title-color: color(disabled) !default;
+$content-calendar-event-tile-title-text-transform: uppercase !default;
+// Description
+$content-calendar-event-tile-description-font: 300 #{rem-calc(14)} / 1.5 fonts.$font-primary !default;
+$content-calendar-event-tile-description-font--large: 300 #{rem-calc(18)} / 1.5 fonts.$font-primary !default;
+$content-calendar-event-tile-description-color: color(disabled) !default;
+$content-calendar-event-tile-description-color--large: null !default;
+$content-calendar-event-tile-description-text-transform: null !default;
+// Active event tile
+$content-calendar-event-tile-active-caption-border: none !default;
+$content-calendar-event-tile-active-title-color: map.get($palette, light) !default;
+$content-calendar-event-tile-active-description-color: map.get($palette, light) !default;
+$content-calendar-event-tile-active-caption-padding: null !default;
+$content-calendar-event-tile-active-caption-padding--large: null !default;
+// Locked event tile
+$content-calendar-event-tile-locked-caption-border: none !default;
+$content-calendar-event-tile-locked-title-color: color(text) !default;
+$content-calendar-event-tile-locked-description-color: color(text-secondary) !default;
+
+@mixin lora-components-content-calendar-event-tile {
+    .c-calendar-event-tile {
+        position: relative;
+    }
+
+    .c-calendar-event-tile__image img {
+        width: 100%;
+    }
+
+    .c-calendar-event-tile__caption {
+        @include absolute-center;
+
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        height: 100%;
+        border: $content-calendar-event-tile-caption-border;
+        padding: $content-calendar-event-tile-caption-padding;
+        border-radius: $content-calendar-event-tile-caption-border-radius;
+
+        @include breakpoint(large) {
+            padding: $content-calendar-event-tile-caption-padding--large;
+        }
+    }
+
+    .c-calendar-event-tile__content {
+        text-align: $content-calendar-event-tile-content-text-align;
+        width: 100%;
+    }
+
+    .c-calendar-event-tile__title {
+        @include text-style(
+            $font: (
+                small: $content-calendar-event-tile-title-font,
+                large: $content-calendar-event-tile-title-font--large
+            ),
+            $color: (
+                small: $content-calendar-event-tile-title-color
+            ),
+            $margin: (
+                small: $content-calendar-event-tile-title-margin,
+                large: $content-calendar-event-tile-title-margin--large
+            ),
+            $text-transform: (
+                small: $content-calendar-event-tile-title-text-transform
+            )
+        );
+    }
+
+    .c-calendar-event-tile__description {
+        @include text-style(
+            $font: (
+                small: $content-calendar-event-tile-description-font,
+                large: $content-calendar-event-tile-description-font--large
+            ),
+            $color: (
+                small: $content-calendar-event-tile-description-color,
+                large: $content-calendar-event-tile-description-color--large
+            ),
+            $text-transform: (
+                small: $content-calendar-event-tile-description-text-transform
+            )
+        );
+    }
+
+    .c-calendar-event-tile.m-active {
+        cursor: pointer;
+
+        .c-calendar-event-tile__caption {
+            border: $content-calendar-event-tile-active-caption-border;
+            padding: $content-calendar-event-tile-active-caption-padding;
+
+            @include breakpoint(large) {
+                padding: $content-calendar-event-tile-active-caption-padding--large;
+            }
+        }
+
+        .c-calendar-event-tile__title {
+            color: $content-calendar-event-tile-active-title-color;
+        }
+
+        .c-calendar-event-tile__description {
+            color: $content-calendar-event-tile-active-title-color;
+        }
+    }
+
+    .c-calendar-event-tile.m-locked {
+        .c-calendar-event-tile__caption {
+            border: $content-calendar-event-tile-locked-caption-border;
+        }
+
+        .c-calendar-event-tile__title {
+            color: $content-calendar-event-tile-locked-title-color;
+        }
+
+        .c-calendar-event-tile__description {
+            color: $content-calendar-event-tile-locked-title-color;
+        }
+    }
+}

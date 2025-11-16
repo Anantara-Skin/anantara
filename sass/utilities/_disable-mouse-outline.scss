@@ -1,0 +1,6 @@
+/// Removes the focus ring around an element when a mouse input is detected.
+@mixin disable-mouse-outline {
+    [data-whatinput='mouse'] & {
+        outline: 0;
+    }
+}

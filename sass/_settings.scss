@@ -1,0 +1,198 @@
+//  LORA for Sites Settings
+//  -----------------------------
+@use "sass:map";
+@use "./base/colors" as colors;
+@use "./base/fonts" as fonts;
+// Global
+// ---------
+//stylelint-disable lora/variable-pattern
+$global-image-path: '../images';
+$global-icons-path: '../images/icons';
+$global-font-path: '../fonts';
+$global-mask-color: map.get(colors.$palette, dark);
+$global-placeholder-background-color: map.get(colors.$palette, element-background);
+$global-border: 1px solid map.get(colors.$palette, border);
+$global-shadow: none;
+$global-spacing: (
+    '0': 0,
+    '1': rem-calc(8),
+    '2': rem-calc(12),
+    '3': rem-calc(16),
+    '4': rem-calc(24),
+    '5': rem-calc(32),
+    '6': rem-calc(48),
+) !default;
+$global-margin-spacing: (
+    '0': 0,
+    '1': rem-calc(5),
+    '2': rem-calc(10),
+    '3': rem-calc(15),
+    '4': rem-calc(20),
+) !default;
+
+$global-font: (
+    primary: fonts.$font-primary,
+    secondary: fonts.$font-secondary
+) !default;
+
+$z-indexes-default: (
+    main: (
+        sectionNavStickyBar,
+    ),
+    footer: (
+        footerTop
+    ),
+    backTop: (),
+    pageLoader: (
+        overlay,
+        icon
+    ),
+    scrollDown: (
+        icon
+    ),
+    adalongOverlay: (),
+    adalongActiveThumbnail: (),
+    headerStickyBar: (),
+    filter: (),
+    header: (
+        navigation,
+        topnav,
+        sublayer,
+        meganav,
+        navigationTitle,
+        minicart,
+        simplesearchlarge,
+        simplesearchresultslarge,
+        hamburgerNavigation,
+        userMenu,
+        simplesearch
+    ),
+    headerMobileNavigation: (),
+    selectPanel: (),
+    selectPanelLabel: (),
+    skiplink: (),
+    search: (
+        sidebar
+    ),
+    carousel: (
+        zoom,
+        arrows,
+        pagination,
+        scrollbar
+    ),
+    scrollable: (
+        fade,
+        arrows
+    ),
+    modifaceVtoFrame: (),
+    toaster: (),
+    stickyBar: (),
+    filterStickyButton: (),
+    pdpStickyButton: (),
+    stickyBarCookie: (),
+    plpSidebar: (),
+    searchSidebar: (),
+    slidingPanelOverlaid: (),
+    overlay: (),
+    slidingPanel: (),
+    overlayElement: (),
+    toasterOverlayed: (),
+    modal: (
+        modalWrapperLoading,
+        modalActionsSticky,
+        close
+    ),
+    slidingPanelOverModal: (),
+    highlighterToolkit: (),
+    tooltip: (),
+    snackbar: (),
+    orientationMessage: (),
+    contentHero: (
+        caption,
+        videoControl
+    ),
+    personalization: (
+        accordionContent,
+        accordionHeading,
+        footer
+    ),
+    stepperInput: (
+        input,
+        label
+    ),
+    highlighter: (),
+);
+$z-indexes-custom: ();
+$z-indexes: map.merge($z-indexes-default, $z-indexes-custom);
+
+
+// Breakpoints
+// --------------
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xlarge: 1200px,
+);
+$breakpoint-classes: (small medium large xlarge);
+
+// The Grid
+// -----------
+
+$global-width: rem-calc(1200);
+$grid-container: $global-width;
+$grid-columns: 12;
+// Custom gutters for grid
+$grid-gutters: (
+    // tiny size of gutter
+    tiny: (
+        small: rem-calc(8),
+        large: rem-calc(12)
+    ),
+    // xsmall size of gutter
+    xsmall: (
+        small: rem-calc(12),
+        large: rem-calc(16)
+    ),
+    // small size of gutter
+    small: (
+        small: rem-calc(16),
+        large: rem-calc(20)
+    ),
+    // medium size of gutter
+    medium: (
+        small: rem-calc(20),
+        large: rem-calc(30)
+    ),
+    // large size of gutter
+    large: (
+        small: rem-calc(36),
+        large: rem-calc(46)
+    )
+);
+$grid-margin-gutters: (
+    small: rem-calc(30),
+    medium: rem-calc(30),
+    large: rem-calc(30)
+);
+$grid-container-max: $global-width;
+$xy-block-grid-max: 8;
+$grid-container-padding: (
+    small: rem-calc(30),
+    medium: rem-calc(30),
+    large: rem-calc(30)
+);
+
+// Text Direction
+// ---------------
+
+// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+// @type Keyword
+$global-text-direction: ltr;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+
+$is-motion-enabled: true !default;

@@ -1,0 +1,19 @@
+/* stylelint-disable declaration-no-important */
+
+////
+/// @group float
+////
+
+@mixin lora-helpers-float {
+    .h-float-left {
+        float: left !important;
+    }
+
+    .h-float-right {
+        float: right !important;
+    }
+
+    .h-clearfix {
+        @include clearfix;
+    }
+}

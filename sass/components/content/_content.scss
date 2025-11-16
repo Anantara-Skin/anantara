@@ -1,0 +1,80 @@
+// Titles
+$content-subtitle-font: #{rem-calc(16)} / 1 fonts.$font-primary !default;
+$content-subtitle-font--large: #{rem-calc(18)} / 1 fonts.$font-primary !default;
+$content-subtitle-text-transform: uppercase !default;
+$content-subtitle-color: null !default;
+$content-subtitle-margin: rem-calc(0 0 15) !default;
+$content-subtitle-margin--large: rem-calc(0 0 20) !default;
+$content-subtitle-display: block !default;
+$content-subtitle-display--large: block !default;
+$content-description-font-size: rem-calc(12) !default;
+$content-description-font-size--large: rem-calc(14) !default;
+$content-description-font-weight: null !default;
+$content-description-font-weight--large: null !default;
+$content-description-font: $content-description-font-weight #{$content-description-font-size} fonts.$font-primary !default;
+$content-description-font--large: $content-description-font-weight--large #{$content-description-font-size--large} fonts.$font-primary !default;
+$content-description-color: null !default;
+$content-description-color--large: null !default;
+$content-description-text-transform: null !default;
+$content-description-letter-spacing: null !default;
+$content-separate-title-text-transform: uppercase !default;
+$content-separate-title-margin: rem-calc(0 0 30) !default;
+$content-separate-title-margin--large: rem-calc(0 0 45) !default;
+
+@mixin lora-components-content {
+    .c-content__subtitle {
+        display: $content-subtitle-display;
+
+        @include breakpoint(large) {
+            display: $content-subtitle-display--large;
+        }
+        @include text-style(
+            $font: (
+                small: $content-subtitle-font,
+                large: $content-subtitle-font--large
+            ),
+            $color: (
+                small: $content-subtitle-color
+            ),
+            $margin: (
+                small: $content-subtitle-margin,
+                large: $content-subtitle-margin--large
+            ),
+            $text-transform: (
+                small: $content-subtitle-text-transform
+            )
+        );
+    }
+
+    .c-content__navigation-title {
+        @include hide-for(large);
+    }
+
+    .c-content__description {
+        @include text-style(
+            $font: (
+                small: $content-description-font,
+                large: $content-description-font--large
+            ),
+            $color: (
+                small: $content-description-color,
+                large: $content-description-color--large
+            ),
+            $text-transform: (
+                small: $content-description-text-transform
+            ),
+            $letter-spacing: (
+                small: $content-description-letter-spacing
+            )
+        );
+    }
+
+    .c-content__separate-title {
+        margin: $content-separate-title-margin;
+        text-transform: $content-separate-title-text-transform;
+
+        @include breakpoint(large) {
+            margin: $content-separate-title-margin--large;
+        }
+    }
+}

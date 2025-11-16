@@ -1,0 +1,59 @@
+@use "sass:map";
+
+// stylelint-disable lora/variable-pattern
+// stylelint-disable value-list-max-empty-lines, function-max-empty-lines
+
+// Default palette
+$palette-default: (
+  light: #fff,
+  dark: #202020,
+  transparent: transparent
+) !default;
+
+$palette-custom: () !default;
+
+// Merge palettes using sass:map
+$palette: map.merge($palette-default, $palette-custom) !default;
+
+// Dark mode colors
+$dark-mode-colors: (
+  background: #202020,
+  primary: #1c304a,
+  primary-active: #305686,
+  text: #fff,
+  border: #fff,
+  error: #ffd2d2
+) !default;
+
+// Semantic colors
+$semantic-colors-default: (
+  primary: #1c304a,
+  primary-active: #305686,
+  secondary: #013537,
+  secondary-active: #005e63,
+  text: map.get($palette, dark),
+  text-secondary: #5f5f5f,
+  success: #46bf81,
+  warning: #ffae00,
+  alert: #b40a0a,
+  disabled: #767676,
+  element-background: #d8d8d8,
+  global-background: #f3f3f3,
+  organism-background: #595959,
+  primary-background: #e0eafa,
+  border: #d8d8d8,
+  overlay: rgba(map.get($palette, dark), 0.5),
+  highlight: #b73300,
+  info: #05408d,
+  info-secondary: #e9eef6,
+  success-secondary: #d8efe3,
+  warning-secondary: #fff0d3,
+  error-secondary: #ffd2d2
+) !default;
+
+$semantic-colors-custom: () !default;
+
+// Merge semantic colors
+$semantic-colors: map.merge($semantic-colors-default, $semantic-colors-custom) !default;
+
+// stylelint-enable all

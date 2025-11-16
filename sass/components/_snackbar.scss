@@ -1,0 +1,94 @@
+// Deprecated components
+@use "../100-deprecated/snackbar";
+
+// snackbar
+$snackbar-padding: rem-calc(20 8) !default;
+$snackbar-text-align: center !default;
+$snackbar-position-bottom--medium-down: rem-calc(45) !default;
+// snackbar surface
+$snackbar-surface-background: color(primary) !default;
+$snackbar-surface-success-background: color(success) !default;
+$snackbar-surface-error-background: color(alert) !default;
+$snackbar-surface-warning-background: color(warning) !default;
+$snackbar-surface-border-radius: 2px !default;
+$snackbar-surface-color: map.get($palette, light) !default;
+$snackbar-surface-max-width: rem-calc(570) !default;
+$snackbar-surface-padding: rem-calc(15) !default;
+$snackbar-surface-text-align: center !default;
+// snackbar close
+$snackbar-close-padding: rem-calc(0 0 0 15) !default;
+$snackbar-close-icon-type: 'cross' !default;
+$snackbar-close-icon-size: 100% !default;
+$snackbar-close-icon-position: top !default;
+$snackbar-close-icon-repeat: no-repeat !default;
+$snackbar-close-icon-color: map.get($palette, light) !default;
+$snackbar-close-icon-usesvg: true !default;
+// snackbar label
+$snackbar-label-margin: rem-calc(0 15 0 0) !default;
+// snackbar content
+$snackbar-content-text-align: $snackbar-label-text-align !default;
+$snackbar-content-font: null !default;
+$snackbar-content-text-transform: null !default;
+$snackbar-text-transform: null !default;
+
+@mixin lora-components-snackbar {
+    .c-snackbar {
+        bottom: 0;
+        #{$global-left}: 0;
+        padding: $snackbar-padding;
+        pointer-events: none;
+        position: fixed;
+        #{$global-right}: 0;
+        text-align: $snackbar-text-align;
+        z-index: z(snackbar);
+        text-transform: $snackbar-text-transform;
+
+        @include breakpoint(medium down) {
+            bottom: $snackbar-position-bottom--medium-down;
+        }
+    }
+
+    .c-snackbar__surface {
+        background: $snackbar-surface-background;
+        border-radius: $snackbar-surface-border-radius;
+        color: $snackbar-surface-color;
+        display: inline-flex;
+        justify-content: space-between;
+        max-width: $snackbar-surface-max-width;
+        padding: $snackbar-surface-padding;
+        pointer-events: auto;
+        text-align: $snackbar-surface-text-align;
+        width: 100%;
+
+        .c-snackbar__close {
+            cursor: pointer;
+            padding: $snackbar-close-padding;
+            @include svg-icon($snackbar-close-icon-type, $snackbar-close-icon-color, $snackbar-close-icon-size, $snackbar-close-icon-position, $snackbar-close-icon-repeat, $usesvg: $snackbar-close-icon-usesvg);
+        }
+
+        &.m-success {
+            background: $snackbar-surface-success-background;
+        }
+
+        &.m-warning {
+            background: $snackbar-surface-warning-background;
+        }
+
+        &.m-error {
+            background: $snackbar-surface-error-background;
+        }
+    }
+
+    .c-snackbar__label {
+        display: inline-block;
+        margin: $snackbar-label-margin;
+        flex-basis: 100%;
+    }
+
+    .c-snackbar__content {
+        display: inline-block;
+        font: $snackbar-content-font;
+        text-align: $snackbar-content-text-align;
+        text-transform: $snackbar-content-text-transform;
+    }
+}

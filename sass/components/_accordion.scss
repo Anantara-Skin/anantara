@@ -1,0 +1,306 @@
+@use "sass:map"; 
+@use '../base/colors' as colors;
+@use '../base/fonts' as fonts;
+@use '../layout/header' as header;
+@use '../_settings' as settings;
+$accordion-item-border-bottom-collapsed: 1px solid map.get(colors.$palette, border) !default;
+$accordion-title-font: #{rem-calc(14)} / 1.4 fonts.$font-primary !default;
+$accordion-title-padding: rem-calc(15 60 15 0) !default;
+$accordion-title-margin: rem-calc(0) !default;
+$accordion-title-text-transform: uppercase !default;
+$accordion-title-text-transform--large: null !default;
+$accordion-title-text-align: settings.$global-left !default;
+$accordion-title-color: map.get(colors.$palette, text) !default;
+$accordion-title-color--large: null !default;
+$accordion-title-compact-padding-top: 0 !default;
+$accordion-title-compact-padding-bottom: 0 !default;
+$accordion-title-expanded-compact-padding-bottom: rem-calc(15) !default;
+$accordion-title-primary-color-expanded: map.get(colors.$palette, light) !default;
+$accordion-title-primary-background-color: map.get(colors.$palette, primary) !default;
+$accordion-title-primary-background-color-expanded: map.get(colors.$palette, primary-active) !default;
+$accordion-title-primary-collapsed-color: map.get(colors.$palette, light) !default;
+$accordion-title-primary-content-color: map.get(colors.$palette, dark) !default;
+$accordion-title-primary-content-background-color: map.get(colors.$palette, light) !default;
+// Accordion secondary
+$accordion-title-secondary-margin: rem-calc(0) !default;
+$accordion-title-secondary-padding: rem-calc(15 50 15 16) !default;
+$accordion-title-secondary-padding--large: null !default;
+$accordion-title-secondary-text-transform: none !default;
+$accordion-title-secondary-color-expanded: map.get(colors.$palette, light) !default;
+$accordion-title-secondary-background-color-expanded: map.get(colors.$palette, primary) !default;
+$accordion-title-secondary-font-weight-expanded: null !default;
+$accordion-title-secondary-collapsed-color: null !default;
+$accordion-title-secondary-collapsed-font: $accordion-title-font !default;
+$accordion-title-secondary-collapsed-font--large: $accordion-title-secondary-collapsed-font !default;
+$accordion-title-secondary-collapsed-letter-spacing: null !default;
+$accordion-icon: '✕' !default;
+$accordion-icon-expanded: '―' !default;
+$accordion-icon-transform: rotateZ(45deg) !default;
+$accordion-icon-expanded-transform: rotateZ(0) !default;
+$accordion-icon-font-size: rem-calc(12) !default;
+$accordion-icon-color: inherit !default;
+$accordion-icon-margin: rem-calc(0 20) !default;
+$accordion-icon-transition: transform 0.3s !default;
+$accordion-icon-width: rem-calc(20) !default;
+$accordion-transition-collapsed: max-height 0.1s ease !default;
+$accordion-transition-expanded: max-height 0.1s ease !default;
+$accordion-content-font-size: inherit !default;
+$accordion-content-font-size--large: $accordion-content-font-size !default;
+$accordion-content-inner-padding-collapsed: rem-calc(10 15) !default;
+$accordion-content-inner-padding-collapsed--large: rem-calc(20) !default;
+$accordion-item-collapsed-first-border-top: none !default;
+// Accordion with arrow
+$accordion-title-arrow-after-icon: 'chevron2-down' !default;
+$accordion-title-arrow-after-icon-usesvg: true !default;
+$accordion-title-arrow-after-icon-color: map.get(colors.$palette, primary) !default;
+$accordion-title-arrow-after-icon-width: rem-calc(12) !default;
+$accordion-title-arrow-after-icon-height: rem-calc(12) !default;
+$accordion-title-arrow-after-icon-margin-top: 0 !default;
+$accordion-title-arrow-after-icon-transform: translateY(-50%) !default;
+$accordion-title-arrow-after-icon-expanded-transform: translateY(-50%) rotate(180deg) !default;
+
+@mixin lora-helper-accordion-item-collapsed {
+    border-bottom: $accordion-item-border-bottom-collapsed;
+
+    &:first-child {
+        border-top: $accordion-item-collapsed-first-border-top;
+    }
+
+    & &:last-child { // Remove border for last nested accordion item
+        border-bottom: 0;
+    }
+}
+
+@mixin lora-helper-accordion-content-inner-collapsed {
+    padding: $accordion-content-inner-padding-collapsed;
+
+    @include breakpoint(large) {
+        padding: $accordion-content-inner-padding-collapsed--large;
+    }
+}
+
+@mixin lora-helper-accordion-control-expanded {
+    & > .c-accordion__icon::after {
+        content: $accordion-icon-expanded;
+        transform: $accordion-icon-expanded-transform;
+    }
+
+    &.m-compact {
+        padding-bottom: $accordion-title-expanded-compact-padding-bottom;
+    }
+
+    &.m-arrow {
+        & > .c-accordion__icon::after {
+            transform: $accordion-title-arrow-after-icon-expanded-transform;
+        }
+    }
+}
+
+@mixin lora-helper-accordion-control-collapsed {
+    position: relative;
+    width: 100%;
+    font: $accordion-title-font;
+    margin: $accordion-title-margin;
+    padding: $accordion-title-padding;
+    text-transform: $accordion-title-text-transform;
+    color: $accordion-title-color;
+    text-align: $accordion-title-text-align;
+
+    &:is(button),
+    &:is(a) {
+        cursor: pointer;
+    }
+
+    &.m-compact {
+        padding-top: $accordion-title-compact-padding-top;
+        padding-bottom: $accordion-title-compact-padding-bottom;
+    }
+
+    & > .c-accordion__icon::after {
+        position: absolute;
+        content: $accordion-icon;
+        #{$global-right}: 0;
+        top: 50%;
+        font-size: $accordion-icon-font-size;
+        margin: $accordion-icon-margin;
+        margin-top: -($accordion-icon-width/2);
+        text-align: center;
+        transform: $accordion-icon-transform;
+        transition: $accordion-icon-transition;
+        width: $accordion-icon-width;
+        color: $accordion-icon-color;
+    }
+
+    &.m-arrow {
+        & > .c-accordion__icon::after {
+            @include svg-icon($accordion-title-arrow-after-icon, $accordion-title-arrow-after-icon-color, 100%, left, no-repeat, $usesvg: $accordion-title-arrow-after-icon-usesvg);
+
+            content: '';
+            width: $accordion-title-arrow-after-icon-width;
+            height: $accordion-title-arrow-after-icon-height;
+            margin-top: $accordion-title-arrow-after-icon-margin-top;
+            transform: $accordion-title-arrow-after-icon-transform;
+        }
+    }
+
+    @include breakpoint(large) {
+        text-transform: $accordion-title-text-transform--large;
+        color: $accordion-title-color--large;
+    }
+}
+
+@mixin lora-helper-accordion-control-primary-collapsed {
+    color: $accordion-title-primary-collapsed-color;
+    background: $accordion-title-primary-background-color;
+
+    & > .c-accordion__icon::after {
+        color: inherit;
+    }
+
+    &.m-arrow {
+        & > .c-accordion__icon::after {
+            background-color: $accordion-title-primary-collapsed-color;
+        }
+    }
+}
+
+@mixin lora-helper-accordion-control-primary-expanded {
+    color: $accordion-title-primary-color-expanded;
+    background: $accordion-title-primary-background-color-expanded;
+
+    & > .c-accordion__icon::after {
+        color: inherit;
+    }
+
+    &.m-arrow {
+        & > .c-accordion__icon::after {
+            background-color: $accordion-title-primary-color-expanded;
+        }
+    }
+}
+
+@mixin lora-helper-accordion-control-primary-content {
+    color: $accordion-title-primary-content-color;
+    background: $accordion-title-primary-content-background-color;
+}
+
+@mixin lora-helper-accordion-control-secondary-collapsed {
+    margin: $accordion-title-secondary-margin;
+    padding: $accordion-title-secondary-padding;
+    text-transform: $accordion-title-secondary-text-transform;
+    font: $accordion-title-secondary-collapsed-font;
+    color: $accordion-title-secondary-collapsed-color;
+    letter-spacing: $accordion-title-secondary-collapsed-letter-spacing;
+
+    @include breakpoint(large) {
+        padding: $accordion-title-secondary-padding--large;
+        font: $accordion-title-secondary-collapsed-font--large;
+    }
+
+    & > .c-accordion__icon::after {
+        color: inherit;
+    }
+
+    &.m-arrow {
+        & > .c-accordion__icon::after {
+            background-color: $accordion-title-secondary-collapsed-color;
+        }
+    }
+}
+
+@mixin lora-helper-accordion-control-secondary-expanded {
+    color: $accordion-title-secondary-color-expanded;
+    background: $accordion-title-secondary-background-color-expanded;
+    font-weight: $accordion-title-secondary-font-weight-expanded;
+
+    & > .c-accordion__icon::after {
+        color: inherit;
+    }
+
+    &.m-arrow {
+        & > .c-accordion__icon::after {
+            background-color: $accordion-title-secondary-color-expanded;
+        }
+    }
+}
+
+@mixin lora-components-accordion {
+    .c-accordion {
+        visibility: visible;
+    }
+
+    .c-accordion__heading {
+        margin: 0;
+    }
+
+    .c-accordion__title {
+        @include lora-helper-accordion-control-collapsed;
+    }
+
+    .c-accordion__item {
+        @include lora-helper-accordion-item-collapsed;
+    }
+
+    .c-accordion__item.m-expanded > {
+        .c-accordion__title,
+        .c-accordion__heading .c-accordion__title {
+            @include lora-helper-accordion-control-expanded;
+        }
+
+        .c-accordion__content {
+            @include lora-animation-expanded($accordion-transition-expanded);
+        }
+    }
+
+    .c-accordion__item.m-expanded-on-load > {
+        .c-accordion__content {
+            max-height: none;
+        }
+    }
+
+    .c-accordion__content {
+        @include lora-animation-collapsed($accordion-transition-collapsed);
+
+        font-size: $accordion-content-font-size;
+
+        @include breakpoint(large) {
+            font-size: $accordion-content-font-size--large;
+        }
+    }
+
+    .c-accordion__content-inner {
+        @include lora-helper-accordion-content-inner-collapsed;
+    }
+
+    .c-accordion.m-primary {
+        .c-accordion__title {
+            @include lora-helper-accordion-control-primary-collapsed;
+        }
+
+        .c-accordion__content {
+            @include lora-helper-accordion-control-primary-content;
+        }
+        /* stylelint-disable selector-max-compound-selectors */
+        .c-accordion__item.m-expanded > {
+            .c-accordion__title,
+            .c-accordion__heading .c-accordion__title {
+                @include lora-helper-accordion-control-primary-expanded;
+            }
+        }
+        /* stylelint-enable selector-max-compound-selectors */
+    }
+
+    .c-accordion.m-secondary {
+        .c-accordion__title {
+            @include lora-helper-accordion-control-secondary-collapsed;
+        }
+        /* stylelint-disable selector-max-compound-selectors */
+        .c-accordion__item.m-expanded > {
+            .c-accordion__title,
+            .c-accordion__heading .c-accordion__title {
+                @include lora-helper-accordion-control-secondary-expanded;
+            }
+        }
+        /* stylelint-enable selector-max-compound-selectors */
+    }
+}

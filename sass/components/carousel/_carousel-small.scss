@@ -1,0 +1,35 @@
+$carousel-small-width: rem-calc(115) !default;
+$carousel-small-item-margin: rem-calc(0 5) !default;
+$carousel-small-padding: 0 !default;
+$carousel-small-content-padding: rem-calc(0 5) !default;
+$carousel-small-arrow-size: 'medium' !default;
+
+@mixin lora-components-carousel-small {
+    .c-carousel.m-style-small {
+        max-width: 100%;
+        padding: $carousel-small-padding;
+        width: $carousel-small-width;
+
+        .c-carousel__arrow-next,
+        .c-carousel__arrow-prev {
+            @include lora-helper-carousel-arrow-size($carousel-small-arrow-size);
+        }
+
+        &:not(.m-ready) .c-carousel__item {
+            display: inline-block;
+            margin: $carousel-small-item-margin;
+            width: auto;
+        }
+
+        .c-carousel__content.m-disabled {
+            justify-content: center;
+            padding: $carousel-small-content-padding;
+        }
+
+        &.m-unready {
+            .c-carousel__content {
+                justify-content: center;
+            }
+        }
+    }
+}

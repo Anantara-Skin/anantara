@@ -1,0 +1,736 @@
+$product-tile-horizontal-position: relative !default;
+$product-tile-horizontal-text-align: $global-left !default;
+
+// Figure and caption
+$product-tile-horizontal-figure-flex: 0 0 auto !default;
+$product-tile-horizontal-figure-width: rem-calc(70) !default;
+$product-tile-horizontal-figure-width--large: rem-calc(70) !default;
+$product-tile-horizontal-figure-offset: rem-calc(15) !default;
+$product-tile-horizontal-figure-margin: 0 $product-tile-horizontal-figure-offset 0 0 !default;
+$product-tile-horizontal-figure-offset--large: rem-calc(20) !default;
+$product-tile-horizontal-figure-margin--large: 0 $product-tile-horizontal-figure-offset--large 0 0 !default;
+/// Secondary
+$product-tile-horizontal-secondary-figure-width: rem-calc(90) !default;
+$product-tile-horizontal-secondary-figure-width--large: rem-calc(90) !default;
+$product-tile-horizontal-secondary-options-display: table !default;
+$product-tile-horizontal-secondary-options-display--large: null !default;
+$product-tile-horizontal-secondary-options-table-layout: fixed !default;
+$product-tile-horizontal-secondary-options-table-layout--large: null !default;
+$product-tile-horizontal-secondary-options-width: 100% !default;
+$product-tile-horizontal-secondary-options-width--large: null !default;
+$product-tile-horizontal-secondary-quantity-display: table-cell !default;
+$product-tile-horizontal-secondary-quantity-display--large: null !default;
+$product-tile-horizontal-secondary-quantity-vertical-align: middle !default;
+$product-tile-horizontal-secondary-quantity-vertical-align--large: null !default;
+$product-tile-horizontal-secondary-quantity-width: rem-calc(100) !default;
+$product-tile-horizontal-secondary-quantity-width--large: null !default;
+$product-tile-horizontal-secondary-price-display: table-cell !default;
+$product-tile-horizontal-secondary-price-display--large: null !default;
+$product-tile-horizontal-secondary-price-vertical-align: middle !default;
+$product-tile-horizontal-secondary-price-vertical-align--large: null !default;
+$product-tile-horizontal-secondary-price-width: rem-calc(100) !default;
+$product-tile-horizontal-secondary-price-width--large: null !default;
+$product-tile-horizontal-secondary-variations-display: table-cell !default;
+$product-tile-horizontal-secondary-variations-display--large: null !default;
+$product-tile-horizontal-secondary-variations-vertical-align: top !default;
+$product-tile-horizontal-secondary-variations-vertical-align--large: null !default;
+$product-tile-horizontal-secondary-variations-selected-vertical-align: middle !default;
+/// Tertiary
+$product-tile-horizontal-tertiary-figure-width: rem-calc(100) !default;
+$product-tile-horizontal-tertiary-figure-width--large: rem-calc(150) !default;
+$product-tile-horizontal-tertiary-large-figure-width--large: rem-calc(165) !default;
+$product-tile-horizontal-tertiary-large-figure-width: rem-calc(100) !default;
+/// Compact
+$product-tile-horizontal-compact-figure-offset: rem-calc(10) !default;
+$product-tile-horizontal-compact-figure-margin: 0 $product-tile-horizontal-compact-figure-offset 0 0 !default;
+$product-tile-horizontal-compact-figure-width: null !default;
+$product-tile-horizontal-compact-figure-width--large: null !default;
+// border
+$product-tile-horizontal-border-border: rem-calc(1) solid color(text) !default;
+$product-tile-horizontal-border-border-radius: rem-calc(4) !default;
+$product-tile-horizontal-border-margin: rem-calc(0 0 8) !default;
+$product-tile-horizontal-border-variation-section-margin: 0 !default;
+/// Image large
+$product-tile-horizontal-image-large-figure-width: rem-calc(165) !default;
+$product-tile-horizontal-image-large-figure-width--large: rem-calc(165) !default;
+
+// Name
+$product-tile-horizontal-name-font-size: rem-calc(14) !default;
+$product-tile-horizontal-name-font-size--large: $product-tile-horizontal-name-font-size !default;
+$product-tile-horizontal-name-font-weight: 500 !default;
+$product-tile-horizontal-name-font-family: fonts.$font-primary !default;
+$product-tile-horizontal-name-color: null !default;
+$product-tile-horizontal-name-line-height: 1.2 !default;
+$product-tile-horizontal-name-font: $product-tile-horizontal-name-font-weight #{$product-tile-horizontal-name-font-size} / $product-tile-horizontal-name-line-height $product-tile-horizontal-name-font-family !default;
+$product-tile-horizontal-name-link-text-transform: none !default;
+$product-tile-horizontal-name-link-color: null !default;
+$product-tile-horizontal-name-max-lines--large: 1 !default;
+$product-tile-horizontal-name-max-lines: 1 !default;
+$product-tile-horizontal-name-margin: 0 !default;
+$product-tile-horizontal-name-margin--large: null !default;
+$product-tile-horizontal-name-text-transform: none !default;
+$product-tile-horizontal-name-letter-spacing: null !default;
+// Subtitle
+$product-tile-horizontal-subtitle-color: color(text-secondary) !default;
+$product-tile-horizontal-subtitle-font-size: rem-calc(12) !default;
+$product-tile-horizontal-subtitle-font-size--large: rem-calc(12) !default;
+$product-tile-horizontal-subtitle-line-height: 1.6 !default;
+$product-tile-horizontal-subtitle-line-height--large: 1.6 !default;
+$product-tile-horizontal-subtitle-max-lines: 1 !default;
+$product-tile-horizontal-subtitle-max-lines--large: 1 !default;
+$product-tile-horizontal-subtitle-margin: null !default;
+$product-tile-horizontal-subtitle-margin--large: null !default;
+$product-tile-horizontal-subtitle-text-transform: null !default;
+$product-tile-horizontal-subtitle-letter-spacing: null !default;
+$product-tile-horizontal-subtitle-font-weight: null !default;
+// Tertiary
+$product-tile-horizontal-tertiary-subtitle-margin: 0 !default;
+$product-tile-horizontal-tertiary-subtitle-margin--large: null !default;
+$product-tile-horizontal-tertiary-subtitle-height: null !default;
+$product-tile-horizontal-tertiary-subtitle-height--large: auto !default;
+$product-tile-horizontal-tertiary-subtitle-max-lines: 3 !default;
+$product-tile-horizontal-tertiary-subtitle-max-lines--large: 3 !default;
+$product-tile-horizontal-tertiary-details-margin--large: 0 !default;
+// Compact
+$product-tile-horizontal-compact-name-margin--large: null !default;
+$product-tile-horizontal-compact-name-font-size: rem-calc(14) !default;
+$product-tile-horizontal-compact-subtitle-margin: null !default;
+$product-tile-horizontal-compact-details-margin--large: 0 !default;
+
+// Info
+$product-tile-horizontal-info-item-color: color(text) !default;
+$product-tile-horizontal-info-item-color--large: null !default;
+$product-tile-horizontal-info-item-font: 500 rem-calc(14) fonts.$font-primary !default;
+$product-tile-horizontal-info-item-padding: rem-calc(0 40 0 0) !default;
+$product-tile-horizontal-info-item-padding--large: rem-calc(10 15 0 0) !default;
+$product-tile-horizontal-info-item-border: none !default;
+$product-tile-horizontal-info-item-text-align: $global-right !default;
+$product-tile-horizontal-info-item-text-align--large: $global-right !default;
+$product-tile-horizontal-info-item-flex-grow--large: 1 !default;
+$product-tile-horizontal-info-item-font-weight--large: null !default;
+$product-tile-horizontal-info-display: flex !default;
+$product-tile-horizontal-info-align-items: baseline !default;
+$product-tile-horizontal-info-flex-grow: 1 !default;
+$product-tile-horizontal-info-flex--large: $product-tile-horizontal-info-flex-grow 0 50% !default;
+$product-tile-horizontal-tertiary-info-item-flex-grow--large: 0 !default;
+$product-tile-horizontal-info-width: 100% !default;
+$product-tile-horizontal-info-width--large: initial !default;
+$product-tile-horizontal-info-justify-content: space-between !default;
+$product-tile-horizontal-info-justify-content--large: initial !default;
+$product-tile-horizontal-info-margin: rem-calc(20 0 0) !default;
+$product-tile-horizontal-info-margin--large: 0 !default;
+$product-tile-horizontal-info-letter-spacing: null !default;
+$product-tile-horizontal-compact-info-margin: 0 !default;
+$product-tile-horizontal-compact-info-item-padding: 0 !default;
+// Quantity
+$product-tile-horizontal-quantity-display: null !default;
+$product-tile-horizontal-quantity-display--large: flex !default;
+$product-tile-horizontal-quantity-justify-content: null !default;
+$product-tile-horizontal-quantity-justify-content--large: flex-end !default;
+$product-tile-horizontal-quantity-flex-grow--large: null !default;
+// Price
+$product-tile-horizontal-price-font: 500 rem-calc(14) fonts.$font-primary !default;
+$product-tile-horizontal-compact-price-font-size: rem-calc(12) !default;
+$product-tile-horizontal-compact-pricepercapacity-font-size: rem-calc(11) !default;
+/// Price outside
+$product-tile-horizontal-price-outside-margin: rem-calc(0 0 20) !default;
+$product-tile-horizontal-details-grid-column-start--large: 2 !default;
+$product-tile-horizontal-details-grid-row-start--large: 1 !default;
+$product-tile-horizontal-details-grid-row-end--large: 4 !default;
+// Details
+$product-tile-horizontal-details-display--large: grid !default;
+$product-tile-horizontal-details-grid-template-columns--large: 1fr auto !default;
+$product-tile-horizontal-details-column-gap--large: rem-calc(10) !default;
+$product-tile-horizontal-details-margin--large: rem-calc(0 0 10) !default;
+// Description
+$product-tile-horizontal-description-flex: 0 0 100% !default;
+$product-tile-horizontal-description-flex--large: 0 0 50% !default;
+$product-tile-horizontal-table-description-flex--large: 0 1 auto !default;
+$product-tile-horizontal-table-info-flex--large: 1 0 auto !default;
+// Table
+$product-tile-horizontal-table-flex: 0 1 auto !default;
+$product-tile-horizontal-table-margin: rem-calc(10 0 0) !default;
+$product-tile-horizontal-table-flex-wrap--large: wrap !default;
+
+// Options, QTY, variations
+$product-tile-horizontal-options-display: flex !default;
+$product-tile-horizontal-variations-flex: 1 1 auto !default;
+$product-tile-horizontal-variations-padding: rem-calc(0 0 0 10) !default;
+$product-tile-horizontal-variations-padding--large: rem-calc(0 0 0 30) !default;
+$product-tile-horizontal-variation-margin: initial !default;
+$product-tile-horizontal-variation-margin--large: initial !default;
+$product-tile-horizontal-variations-margin: initial !default;
+$product-tile-horizontal-variations-margin--large: initial !default;
+$product-tile-horizontal-variations-dropdown-width: 100% !default;
+$product-tile-horizontal-variations-dropdown-margin: rem-calc(15 0 0 0) !default;
+$product-tile-horizontal-variation-font: null !default;
+$product-tile-horizontal-variation-font--large: null !default;
+$product-tile-horizontal-variation-text-transform: null !default;
+$product-tile-horizontal-variation-letter-spacing: null !default;
+$product-tile-horizontal-caption-flex: 1 1 auto !default;
+$product-tile-horizontal-actions-padding: rem-calc(15 0 0) !default;
+$product-tile-horizontal-actions-padding--large: null !default;
+// Badge
+$product-tile-horizontal-badge-position: absolute !default;
+$product-tile-horizontal-badge-left: 0 !default;
+$product-tile-horizontal-badge-left--large: null !default;
+$product-tile-horizontal-badge-top: 0 !default;
+$product-tile-horizontal-badge-top--large: null !default;
+$product-tile-horizontal-badge-text-transform: none !default;
+$product-tile-horizontal-badge-font: #{rem-calc(12)} fonts.$font-primary;
+$product-tile-horizontal-badge-color: null !default;
+$product-tile-horizontal-badge-text-align: $global-left !default;
+$product-tile-horizontal-badge-max-width: 40% !default;
+$product-tile-horizontal-badge-max-width--large: null !default;
+// Bundle
+$product-tile-horizontal-bundle-padding: 0 0 0 rem-calc($product-tile-horizontal-figure-width + $product-tile-horizontal-figure-offset) !default;
+$product-tile-horizontal-secondary-bundle-padding: 0 0 0 rem-calc($product-tile-horizontal-secondary-figure-width + $product-tile-horizontal-figure-offset) !default;
+$product-tile-horizontal-tertiary-bundle-padding: 0 0 0 rem-calc($product-tile-horizontal-tertiary-figure-width + $product-tile-horizontal-figure-offset) !default;
+// Product Rating
+$product-tile-horizontal-rating-display: flex !default;
+$product-tile-horizontal-rating-display--large: null !default;
+$product-tile-horizontal-rating-align-items: center !default;
+$product-tile-horizontal-rating-align-items--large: null !default;
+$product-tile-horizontal-rating-justify-content: null !default;
+$product-tile-horizontal-rating-justify-content--large: null !default;
+$product-tile-horizontal-rating-margin: null !default;
+$product-tile-horizontal-rating-margin--large: null !default;
+$product-tile-horizontal-rating-rating-margin: rem-calc(0 4 0 0) !default;
+$product-tile-horizontal-rating-rating-margin--large: null !default;
+$product-tile-horizontal-rating-rating-font-size: rem-calc(12) !default;
+$product-tile-horizontal-rating-rating-font-size--large: null !default;
+$product-tile-horizontal-rating-rating-star-margin: rem-calc(0 0 2 2) !default;
+$product-tile-horizontal-rating-review-value-icon-display: none !default;
+// variations group
+$product-tile-horizontal-variationsdropdown-margin: rem-calc(5 0 0) !default;
+$product-tile-horizontal-swatch-group-margin: rem-calc(0 0 5 0) !default;
+$product-tile-horizontal-add-bag-text-transform: capitalize !default;
+// Product swatch name
+$product-tile-horizontal-swatch-name-display: inline-flex !default;
+$product-tile-horizontal-swatch-name-align-items: baseline !default;
+$product-tile-horizontal-swatch-name-gap: rem-calc(0 3) !default;
+$product-tile-horizontal-swatch-name-margin: rem-calc(0 0 5) !default;
+
+@mixin lora-components-product-tile-horizontal {
+    .c-product-tile-horizontal {
+        position: $product-tile-horizontal-position;
+        text-align: $product-tile-horizontal-text-align;
+
+        &.m-secondary {
+            .c-product-tile-horizontal__figure {
+                width: $product-tile-horizontal-secondary-figure-width;
+
+                @include breakpoint(large) {
+                    width: $product-tile-horizontal-secondary-figure-width--large;
+                }
+            }
+
+            .c-product-tile-horizontal__options {
+                display: $product-tile-horizontal-secondary-options-display;
+                table-layout: $product-tile-horizontal-secondary-options-table-layout;
+                width: $product-tile-horizontal-secondary-options-width;
+
+                @include breakpoint(large) {
+                    display: $product-tile-horizontal-secondary-options-display--large;
+                    table-layout: $product-tile-horizontal-secondary-options-table-layout--large;
+                    width: $product-tile-horizontal-secondary-options-width--large;
+                }
+            }
+
+            .c-product-tile-horizontal__quantity {
+                display: $product-tile-horizontal-secondary-quantity-display;
+                vertical-align: $product-tile-horizontal-secondary-quantity-vertical-align;
+                width: $product-tile-horizontal-secondary-quantity-width;
+
+                @include breakpoint(large) {
+                    display: $product-tile-horizontal-secondary-quantity-display--large;
+                    vertical-align: $product-tile-horizontal-secondary-quantity-vertical-align--large;
+                    width: $product-tile-horizontal-secondary-quantity-width--large;
+                }
+            }
+
+            .c-product-tile-horizontal__price:not(.m-outside) {
+                display: $product-tile-horizontal-secondary-price-display;
+                vertical-align: $product-tile-horizontal-secondary-price-vertical-align;
+                width: $product-tile-horizontal-secondary-price-width;
+
+                @include breakpoint(large) {
+                    display: $product-tile-horizontal-secondary-price-display--large;
+                    vertical-align: $product-tile-horizontal-secondary-price-vertical-align--large;
+                    width: $product-tile-horizontal-secondary-price-width--large;
+                }
+            }
+
+            .c-product-tile-horizontal__variations {
+                display: $product-tile-horizontal-secondary-variations-display;
+                vertical-align: $product-tile-horizontal-secondary-variations-vertical-align;
+
+                @include breakpoint(large) {
+                    display: $product-tile-horizontal-secondary-variations-display--large;
+                    vertical-align: $product-tile-horizontal-secondary-variations-vertical-align--large;
+                }
+
+                &.m-selected {
+                    vertical-align: $product-tile-horizontal-secondary-variations-selected-vertical-align;
+                }
+            }
+
+            .c-product-tile-horizontal__bundle {
+                padding: $product-tile-horizontal-secondary-bundle-padding;
+            }
+        }
+
+        &.m-tertiary {
+            .c-product-tile-horizontal__figure {
+                width: $product-tile-horizontal-tertiary-figure-width;
+
+                @include breakpoint(large) {
+                    width: $product-tile-horizontal-tertiary-figure-width--large;
+                }
+
+                // stylelint-disable max-nesting-depth
+                &.m-large {
+                    width: $product-tile-horizontal-tertiary-large-figure-width;
+
+                    @include breakpoint(large) {
+                        width: $product-tile-horizontal-tertiary-large-figure-width--large;
+                    }
+                }
+                // stylelint-enable max-nesting-depth
+            }
+
+            .c-product-tile-horizontal__details {
+                @include breakpoint(large) {
+                    margin: $product-tile-horizontal-tertiary-details-margin--large;
+                }
+            }
+
+            .c-product-tile-horizontal__subtitle {
+                margin: $product-tile-horizontal-tertiary-subtitle-margin;
+                min-height: $product-tile-horizontal-tertiary-subtitle-height;
+
+                @include text-line-clamp($product-tile-horizontal-tertiary-subtitle-max-lines);
+
+                @include breakpoint(large) {
+                    min-height: $product-tile-horizontal-tertiary-subtitle-height--large;
+                    margin: $product-tile-horizontal-tertiary-subtitle-margin--large;
+
+                    @include text-line-clamp($product-tile-horizontal-tertiary-subtitle-max-lines--large);
+                }
+            }
+
+            .c-product-tile-horizontal__info-item {
+                @include breakpoint(large) {
+                    flex-grow: $product-tile-horizontal-tertiary-info-item-flex-grow--large;
+                }
+            }
+
+            .c-product-tile-horizontal__bundle {
+                padding: $product-tile-horizontal-tertiary-bundle-padding;
+            }
+
+            .c-product-tile-horizontal__inner {
+                position: relative;
+            }
+        }
+
+        &.m-border {
+            border: $product-tile-horizontal-border-border;
+            border-radius: $product-tile-horizontal-border-border-radius;
+
+            &:not(:last-child) {
+                margin: $product-tile-horizontal-border-margin;
+            }
+
+            .c-variation-section__content {
+                margin: $product-tile-horizontal-border-variation-section-margin;
+            }
+        }
+
+        &.m-compact {
+            .c-product-tile-horizontal__figure {
+                margin: $product-tile-horizontal-compact-figure-margin;
+                width: $product-tile-horizontal-compact-figure-width;
+
+                @include breakpoint(large) {
+                    width: $product-tile-horizontal-compact-figure-width--large;
+                }
+            }
+
+            .c-product-tile-horizontal__name {
+                font-size: $product-tile-horizontal-compact-name-font-size;
+                min-height: $product-tile-horizontal-name-line-height*$product-tile-horizontal-compact-name-font-size*$product-tile-horizontal-name-max-lines;
+
+                @include breakpoint(large) {
+                    margin: $product-tile-horizontal-compact-name-margin--large;
+                    min-height: $product-tile-horizontal-name-line-height*$product-tile-horizontal-compact-name-font-size*$product-tile-horizontal-name-max-lines--large;
+                }
+            }
+
+            .c-product-tile-horizontal__details {
+                @include breakpoint(large) {
+                    margin: $product-tile-horizontal-compact-details-margin--large;
+                }
+            }
+
+            .c-product-tile-horizontal__subtitle {
+                margin: $product-tile-horizontal-compact-subtitle-margin;
+                min-height: $product-tile-horizontal-name-line-height*$product-tile-horizontal-compact-name-font-size*$product-tile-horizontal-name-max-lines;
+            }
+
+            .c-product-tile-horizontal__info {
+                flex-flow: column;
+                margin: $product-tile-horizontal-compact-info-margin;
+            }
+
+            .c-product-tile-horizontal__info-item {
+                padding: $product-tile-horizontal-compact-info-item-padding;
+                text-align: $global-left;
+            }
+
+            .c-product-tile-horizontal__price {
+                font-size: $product-tile-horizontal-compact-price-font-size;
+            }
+
+            .c-product-tile-horizontal__pricepercapacity {
+                font-size: $product-tile-horizontal-compact-pricepercapacity-font-size;
+            }
+        }
+
+        &.m-image-large {
+            .c-product-tile-horizontal__figure {
+                width: $product-tile-horizontal-image-large-figure-width;
+
+                @include breakpoint(large) {
+                    width: $product-tile-horizontal-image-large-figure-width--large;
+                }
+            }
+        }
+
+        .c-product-add-bag__text {
+            text-transform: $product-tile-horizontal-add-bag-text-transform;
+        }
+    }
+
+    .c-product-tile-horizontal__inner {
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+    .c-product-tile-horizontal__figure {
+        flex: $product-tile-horizontal-figure-flex;
+        margin: $product-tile-horizontal-figure-margin;
+        width: $product-tile-horizontal-figure-width;
+
+        @include breakpoint(large) {
+            margin: $product-tile-horizontal-figure-margin--large;
+            width: $product-tile-horizontal-figure-width--large;
+        }
+
+        .c-product-tile__thumbnail {
+            margin: 0;
+        }
+    }
+
+    .c-product-tile-horizontal__table {
+        display: flex;
+        flex: $product-tile-horizontal-table-flex;
+        flex-flow: row wrap;
+        margin: $product-tile-horizontal-table-margin;
+        width: 100%;
+
+        @include breakpoint(large) {
+            flex-wrap: $product-tile-horizontal-table-flex-wrap--large;
+        }
+
+        @include breakpoint(large) {
+            &.m-width-auto {
+                flex-wrap: nowrap;
+
+                .c-product-tile-horizontal__description {
+                    flex: $product-tile-horizontal-table-description-flex--large;
+                }
+
+                .c-product-tile-horizontal__info {
+                    flex: $product-tile-horizontal-table-info-flex--large;
+                }
+            }
+        }
+    }
+
+    .c-product-tile-horizontal__caption {
+        flex: $product-tile-horizontal-caption-flex;
+        min-width: 0;
+    }
+
+    .c-product-tile-horizontal__actions {
+        padding: $product-tile-horizontal-actions-padding;
+
+        @include breakpoint(large) {
+            padding: $product-tile-horizontal-actions-padding--large;
+        }
+    }
+
+    .c-product-tile-horizontal__name {
+        display: block;
+        font: $product-tile-horizontal-name-font;
+        color: $product-tile-horizontal-name-color;
+        min-height: $product-tile-horizontal-name-line-height*$product-tile-horizontal-name-font-size*$product-tile-horizontal-name-max-lines;
+        margin: $product-tile-horizontal-name-margin;
+        text-transform: $product-tile-horizontal-name-text-transform;
+        letter-spacing: $product-tile-horizontal-name-letter-spacing;
+
+        @include text-line-clamp($product-tile-horizontal-name-max-lines);
+
+        @include breakpoint(large) {
+            min-height: $product-tile-horizontal-name-line-height*$product-tile-horizontal-name-font-size--large*$product-tile-horizontal-name-max-lines--large;
+            margin: $product-tile-horizontal-name-margin--large;
+            font-size: $product-tile-horizontal-name-font-size--large;
+
+            @include text-line-clamp($product-tile-horizontal-name-max-lines--large);
+        }
+
+        a {
+            @include text-line-clamp($product-tile-horizontal-name-max-lines);
+
+            text-decoration: none;
+            text-transform: $product-tile-horizontal-name-link-text-transform;
+            color: $product-tile-horizontal-name-link-color;
+
+            @include breakpoint(large) {
+                @include text-line-clamp($product-tile-horizontal-name-max-lines--large);
+            }
+        }
+    }
+
+    .c-product-tile-horizontal__info {
+        display: $product-tile-horizontal-info-display;
+        align-items: $product-tile-horizontal-info-align-items;
+        width: $product-tile-horizontal-info-width;
+        justify-content: $product-tile-horizontal-info-justify-content;
+        margin: $product-tile-horizontal-info-margin;
+        letter-spacing: $product-tile-horizontal-info-letter-spacing;
+
+        @include breakpoint(large) {
+            flex: $product-tile-horizontal-info-flex--large;
+            margin: $product-tile-horizontal-info-margin--large;
+            width: $product-tile-horizontal-info-width--large;
+            justify-content: $product-tile-horizontal-info-justify-content--large;
+        }
+
+        &.m-expand {
+            width: 100%;
+        }
+    }
+
+    .c-product-tile-horizontal__info-item {
+        border: $product-tile-horizontal-info-item-border;
+        color: $product-tile-horizontal-info-item-color;
+        font: $product-tile-horizontal-info-item-font;
+        padding: $product-tile-horizontal-info-item-padding;
+        text-align: $product-tile-horizontal-info-item-text-align;
+
+        @include breakpoint(medium down) {
+            display: inline-block;
+        }
+
+        @include breakpoint(large) {
+            flex-grow: $product-tile-horizontal-info-item-flex-grow--large;
+            padding: $product-tile-horizontal-info-item-padding--large;
+            text-align: $product-tile-horizontal-info-item-text-align--large;
+            font-weight: $product-tile-horizontal-info-item-font-weight--large;
+            color: $product-tile-horizontal-info-item-color--large;
+        }
+
+        &:last-child {
+            padding-#{$global-right}: 0;
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    .c-product-tile-horizontal__quantity {
+        display: $product-tile-horizontal-quantity-display;
+        justify-content: $product-tile-horizontal-quantity-justify-content;
+
+        @include breakpoint(large) {
+            display: $product-tile-horizontal-quantity-display--large;
+            justify-content: $product-tile-horizontal-quantity-justify-content--large;
+            flex-grow: $product-tile-horizontal-quantity-flex-grow--large;
+        }
+    }
+
+    .c-product-tile-horizontal__details {
+        @include breakpoint(large) {
+            display: $product-tile-horizontal-details-display--large;
+            grid-template-columns: $product-tile-horizontal-details-grid-template-columns--large;
+            column-gap: $product-tile-horizontal-details-column-gap--large;
+            margin: $product-tile-horizontal-details-margin--large;
+        }
+    }
+
+    .c-product-tile-horizontal__price {
+        font: $product-tile-horizontal-price-font;
+
+        &.m-outside {
+            margin: $product-tile-horizontal-price-outside-margin;
+
+            @include breakpoint(large) {
+                grid-column-start: $product-tile-horizontal-details-grid-column-start--large;
+                grid-row-start: $product-tile-horizontal-details-grid-row-start--large;
+                grid-row-end: $product-tile-horizontal-details-grid-row-end--large;
+            }
+        }
+    }
+
+    .c-product-tile-horizontal__description {
+        flex: $product-tile-horizontal-description-flex;
+
+        @include breakpoint(large) {
+            flex: $product-tile-horizontal-description-flex--large;
+        }
+
+        &.m-expand {
+            flex-basis: 100%;
+        }
+    }
+
+    .c-product-tile-horizontal__subtitle {
+        display: block;
+        font-size: $product-tile-horizontal-subtitle-font-size;
+        line-height: $product-tile-horizontal-subtitle-line-height;
+        color: $product-tile-horizontal-subtitle-color;
+        margin: $product-tile-horizontal-subtitle-margin;
+        text-transform: $product-tile-horizontal-subtitle-text-transform;
+        letter-spacing: $product-tile-horizontal-subtitle-letter-spacing;
+        font-weight: $product-tile-horizontal-subtitle-font-weight;
+        min-height: $product-tile-horizontal-subtitle-line-height*$product-tile-horizontal-subtitle-font-size*$product-tile-horizontal-subtitle-max-lines;
+
+        @include text-line-clamp($product-tile-horizontal-subtitle-max-lines);
+
+        @include breakpoint(large) {
+            font-size: $product-tile-horizontal-subtitle-font-size--large;
+            min-height: $product-tile-horizontal-subtitle-line-height--large*$product-tile-horizontal-subtitle-font-size--large*$product-tile-horizontal-subtitle-max-lines--large;
+            line-height: $product-tile-horizontal-subtitle-line-height--large;
+            margin: $product-tile-horizontal-subtitle-margin--large;
+
+            @include text-line-clamp($product-tile-horizontal-subtitle-max-lines--large);
+        }
+    }
+
+    .c-product-tile-horizontal__options {
+        display: $product-tile-horizontal-options-display;
+    }
+
+    .c-product-tile-horizontal__variation {
+        margin: $product-tile-horizontal-variation-margin;
+        font: $product-tile-horizontal-variation-font;
+        text-transform: $product-tile-horizontal-variation-text-transform;
+        letter-spacing: $product-tile-horizontal-variation-letter-spacing;
+
+        @include breakpoint(large) {
+            margin: $product-tile-horizontal-variation-margin--large;
+            font: $product-tile-horizontal-variation-font--large;
+        }
+    }
+
+    .c-product-tile-horizontal__variations {
+        flex: $product-tile-horizontal-variations-flex;
+        margin: $product-tile-horizontal-variations-margin;
+        padding: $product-tile-horizontal-variations-padding;
+
+        @include breakpoint(large) {
+            margin: $product-tile-horizontal-variations-margin--large;
+            padding: $product-tile-horizontal-variations-padding--large;
+        }
+
+        .c-product-main__variations-dropdown {
+            width: $product-tile-horizontal-variations-dropdown-width;
+
+            & + .c-product-main__variations-dropdown {
+                margin: $product-tile-horizontal-variations-dropdown-margin;
+            }
+        }
+    }
+
+    .c-product-tile-horizontal__badge {
+        position: $product-tile-horizontal-badge-position;
+        #{$global-left}: $product-tile-horizontal-badge-left;
+        top: $product-tile-horizontal-badge-top;
+        max-width: $product-tile-horizontal-badge-max-width;
+        font: $product-tile-horizontal-badge-font;
+        text-transform: $product-tile-horizontal-badge-text-transform;
+        color: $product-tile-horizontal-badge-color;
+        text-align: $product-tile-horizontal-badge-text-align;
+
+        @include breakpoint(large) {
+            #{$global-left}: $product-tile-horizontal-badge-left--large;
+            top: $product-tile-horizontal-badge-top--large;
+            max-width: $product-tile-horizontal-badge-max-width--large;
+        }
+    }
+
+    .c-product-tile-horizontal__variationsdropdown {
+        margin: $product-tile-horizontal-variationsdropdown-margin;
+    }
+
+    .c-product-tile-horizontal__swatch-group {
+        margin: $product-tile-horizontal-swatch-group-margin;
+    }
+
+    .c-product-tile-horizontal__swatch-name {
+        display: $product-tile-horizontal-swatch-name-display;
+        align-items: $product-tile-horizontal-swatch-name-align-items;
+        gap: $product-tile-horizontal-swatch-name-gap;
+        margin: $product-tile-horizontal-swatch-name-margin;
+        max-width: 100%;
+    }
+
+    .c-product-tile-horizontal__bundle {
+        padding: $product-tile-horizontal-bundle-padding;
+    }
+
+    .c-product-tile-horizontal__rating {
+        margin: $product-tile-horizontal-rating-margin;
+        display: $product-tile-horizontal-rating-display;
+        justify-content: $product-tile-horizontal-rating-justify-content;
+        align-items: $product-tile-horizontal-rating-align-items;
+
+        @include breakpoint(large) {
+            margin: $product-tile-horizontal-rating-margin--large;
+            display: $product-tile-horizontal-rating-display--large;
+            justify-content: $product-tile-horizontal-rating-justify-content--large;
+            align-items: $product-tile-horizontal-rating-align-items--large;
+        }
+
+        &:empty {
+            display: none;
+        }
+
+        .c-rating {
+            font-size: $product-tile-horizontal-rating-rating-font-size;
+            margin: $product-tile-horizontal-rating-rating-margin;
+
+            @include breakpoint(large) {
+                font-size: $product-tile-horizontal-rating-rating-font-size--large;
+                margin: $product-tile-horizontal-rating-rating-margin--large;
+            }
+        }
+
+        .c-rating__star {
+            margin: $product-tile-horizontal-rating-rating-star-margin;
+
+            &:first-child {
+                margin-#{$global-left}: 0;
+            }
+        }
+
+        .c-rating__review-value {
+            &::before {
+                display: $product-tile-horizontal-rating-review-value-icon-display;
+            }
+        }
+    }
+}
