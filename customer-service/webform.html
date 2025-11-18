@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <title>Webform</title>
@@ -95,7 +95,7 @@
         NetworkTracking.init(
           "/Webform/_ui/networks/tracking/NetworkTrackingServlet",
           "network",
-          "0660O000003FmoK"
+          "0660O000003FmoK",
         );
       } catch (x) {}
     </script>
@@ -144,7 +144,7 @@
             },
           },
           service: "Webform/apexremote",
-        })
+        }),
       );
     </script>
     <meta
@@ -832,7 +832,7 @@
                     " countryId:: " +
                     countryId +
                     " countryCode:: " +
-                    countryCode
+                    countryCode,
                 );
                 caseRecordType = result[i].Case_RecordType__c;
                 submitLabel = result[i].Submit_Label__c;
@@ -893,7 +893,7 @@
                       h++
                     ) {
                       buildPicklist.push(
-                        mapWebform[webformTranscos[j].WebformObjectField__c][h]
+                        mapWebform[webformTranscos[j].WebformObjectField__c][h],
                       );
                     }
                     buildPicklist.push(webformTranscos[j]);
@@ -927,7 +927,7 @@
             }
             setRtlIsrael();
           },
-          { escape: true }
+          { escape: true },
         );
       }
 
@@ -945,7 +945,7 @@
             $(
               "#errorMessage" +
                 $event.WebformTargetObject__c +
-                $event.data("field")
+                $event.data("field"),
             ).css("display", "none");
             console.log("IF je passe ici pour retirer erreur ");
             return true;
@@ -955,7 +955,7 @@
             $(
               "#errorMessage" +
                 $event.WebformTargetObject__c +
-                $event.data("field")
+                $event.data("field"),
             ).css("display", "block");
             return false;
           }
@@ -972,7 +972,7 @@
             $this.on("change", function (e) {
               checker($(this));
             });
-          }
+          },
         );
 
         $("span.clear-input").each(function (i, e) {
@@ -1054,7 +1054,7 @@
                 console.log(
                   "TEST : " +
                     $input.data("field") +
-                    $input.data("original-required")
+                    $input.data("original-required"),
                 );
                 if ($input.attr("data-original-required") === "true") {
                   $input.attr("required", true);
@@ -1167,13 +1167,13 @@
             var dateOfBirth = new Date(
               dateParts[2],
               dateParts[1] - 1,
-              dateParts[0]
+              dateParts[0],
             ).getTime();
             var now = new Date();
             var currentDate = new Date(
               now.getFullYear(),
               now.getMonth(),
-              now.getDate()
+              now.getDate(),
             ).getTime();
             var age = (currentDate - dateOfBirth) / oneYear;
             console.log("Age...", age);
@@ -1244,7 +1244,7 @@
             alert(
               "The file " +
                 file.name +
-                " is not autorized. Only images and pdf are allowed."
+                " is not autorized. Only images and pdf are allowed.",
             );
           } else {
             fileReader.onloadend = function (e) {
@@ -1383,11 +1383,11 @@
 
             var varObj = objectMap[objectField][listFields.length - 1];
             $(
-              "#errorMessage" + varObj.data("object") + varObj.data("field")
+              "#errorMessage" + varObj.data("object") + varObj.data("field"),
             ).css("display", "block");
             console.log(
               "CONSENT ERROR MESSAGE",
-              "#errorMessage" + varObj.data("object") + varObj.data("field")
+              "#errorMessage" + varObj.data("object") + varObj.data("field"),
             );
             submitWebform = false;
             fieldsError.push(objectMap[objectField][listFields.length - 1]);
@@ -1398,7 +1398,7 @@
         // modified for CBSD-7826: input[type="radio"]:checked - removed
         $("#webform")
           .find(
-            '.formValue, .formValueDate, input[type="radio"]:checked,input[type="checkbox"]:checked'
+            '.formValue, .formValueDate, input[type="radio"]:checked,input[type="checkbox"]:checked',
           )
           .each(function () {
             console.log("field :", $(this).data("object"));
@@ -1406,7 +1406,9 @@
             if ($(this).prop("required") && !$(this).val().trim()) {
               $(this).addClass("error");
               $(
-                "#errorMessage" + $(this).data("object") + $(this).data("field")
+                "#errorMessage" +
+                  $(this).data("object") +
+                  $(this).data("field"),
               ).css("display", "block");
               submitWebform = false;
               fieldsError.push($(this));
@@ -1415,7 +1417,9 @@
             } else {
               $(this).removeClass("error");
               $(
-                "#errorMessage" + $(this).data("object") + $(this).data("field")
+                "#errorMessage" +
+                  $(this).data("object") +
+                  $(this).data("field"),
               ).css("display", "none");
             }
 
@@ -1442,7 +1446,7 @@
             console.log(" case values :: ", caseObject);
             console.log(
               "valeur du subject " +
-                $("#inputPicklistSubject option:selected").text()
+                $("#inputPicklistSubject option:selected").text(),
             );
             const objectValidators =
               VALIDATORS[$(this).data("object")] || VALIDATORS["default"];
@@ -1453,18 +1457,20 @@
               "Je passe ici pour erreur avant ! object " +
                 $(this).data("object") +
                 " field :: " +
-                $(this).data("field")
+                $(this).data("field"),
             );
             console.log(
               "Puis Validator ",
-              VALIDATORS[$(this).data("object")] || VALIDATORS["default"]
+              VALIDATORS[$(this).data("object")] || VALIDATORS["default"],
             );
             console.log("Puis fieldValidator ", fieldValidator($(this)));
             if (fieldValidator && !fieldValidator($(this))) {
               console.log("Je passe ici pour erreur ! ");
               $(this).addClass("error");
               $(
-                "#errorMessage" + $(this).data("object") + $(this).data("field")
+                "#errorMessage" +
+                  $(this).data("object") +
+                  $(this).data("field"),
               ).css("display", "block");
               submitWebform = false;
             }
@@ -1626,7 +1632,7 @@
                 }
               }
             },
-            { escape: true }
+            { escape: true },
           );
         } else {
           $("#submitBtn").prop("disabled", false);
@@ -1638,7 +1644,7 @@
               let errorMsg = $(
                 "#errorMessage" +
                   errorField.data("object") +
-                  errorField.data("field")
+                  errorField.data("field"),
               ).html();
 
               //return errorField[0].nextSibling.innerHTML; commented for CBSD-7826
