@@ -2,7 +2,7 @@
   "use strict";
   System.register(
     [
-      "components/global/ThirdPartyLoader",
+      "components//dist/javascripts/components/global/ThirdPartyLoader.js",
       "toolbox/deepMerge",
       "services/EventEmitter",
       "toolbox/ajax",

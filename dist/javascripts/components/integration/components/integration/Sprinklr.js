@@ -1,4 +1,4 @@
-import ThirdPartyLoader from "components/global/ThirdPartyLoader";
+import ThirdPartyLoader from "components//dist/javascripts/components/global/ThirdPartyLoader.js";
 import { deepMerge } from "toolbox/deepMerge";
 import { Event } from "services/EventEmitter";
 import { ajax } from "toolbox/ajax";

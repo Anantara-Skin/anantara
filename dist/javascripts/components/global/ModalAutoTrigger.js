@@ -169,4 +169,4 @@
   );
   //# sourceMappingURL=ModalAutoTrigger.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/ModalAutoTrigger.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/ModalAutoTrigger.js.js

@@ -2,7 +2,7 @@
   "use strict";
   System.register(
     [
-      "components/global/AbstractField",
+      "components//dist/javascripts/components/global/AbstractField.js",
       "toolbox/ajax",
       "toolbox/deepMerge",
       "toolbox/validators",
@@ -251,4 +251,4 @@
   );
   //# sourceMappingURL=TextField.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/TextField.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/TextField.js.js

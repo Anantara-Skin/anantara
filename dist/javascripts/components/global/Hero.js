@@ -1,7 +1,7 @@
 (function (System, SystemJS) {
   "use strict";
   System.register(
-    ["components/global/PromotionTile", "toolbox/deepMerge"],
+    ["components//dist/javascripts/components/global/PromotionTile.js", "toolbox/deepMerge"],
     function (a) {
       "use strict";
       var b, c, d;
@@ -126,4 +126,4 @@
   );
   //# sourceMappingURL=Hero.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Hero.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/Hero.js.js

@@ -2,7 +2,7 @@
   "use strict";
   System.register(
     [
-      "components/global/ToolTip",
+      "components//dist/javascripts/components/global/ToolTip.js",
       "toolbox/event",
       "services/EventEmitter",
       "toolbox/ajax",
@@ -242,4 +242,4 @@
   );
   //# sourceMappingURL=PopOver.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/PopOver.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/PopOver.js.js

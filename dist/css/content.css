@@ -66,7 +66,7 @@
   margin: 1.25rem 0;
 }
 .l-search__panel {
-  border-bottom: 1px solid #fffef2;
+  border-bottom: 1px solid #FFFFFF;
   display: block;
   margin: 0 0 1.25rem;
   padding: 0 0 0.25rem;
@@ -75,7 +75,7 @@
   display: none;
 }
 .l-search__panel-items .l-search__panel-button {
-  border-right: 1px solid #fffef2;
+  border-right: 1px solid #FFFFFF;
   margin: 0 0 1rem;
 }
 .l-search__panel-items .l-search__panel-button:last-child {
@@ -124,7 +124,7 @@
   padding: 0;
 }
 .l-content.m-secondary {
-  background: #fffef2;
+  background: #FFFFFF;
   padding: 0;
 }
 .l-content.m-full-width .l-content__container {
@@ -158,7 +158,7 @@
   width: auto;
 }
 .l-content__section {
-  background: #fffef2;
+  background: #FFFFFF;
   margin: 0 -0.9375rem 0.125rem;
   padding: 0 0.9375rem 1.875rem;
 }
@@ -180,7 +180,7 @@
 }
 .c-carousel.m-style-hero .c-carousel__arrow-next:before,
 .c-carousel.m-style-hero .c-carousel__arrow-prev:before {
-  background-color: #fffef2;
+  background-color: #FFFFFF;
   -webkit-mask: url(../images/icons/chevron-right.svg) no-repeat left/100%;
   mask: url(../images/icons/chevron-right.svg) no-repeat left/100%;
 }
@@ -269,7 +269,7 @@
   background-color: #666;
 }
 .c-back-to-parent {
-  background: #fffef2;
+  background: #FFFFFF;
 }
 .c-back-to-parent.m-secondary {
   background: none;
@@ -305,20 +305,20 @@
   background: #333;
 }
 .c-back-to-parent.m-tertiary .c-back-to-parent__link {
-  color: #fffef2;
+  color: #FFFFFF;
 }
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:before {
-  background-color: #fffef2;
+  background-color: #FFFFFF;
   -webkit-mask: url(../images/icons/chevron2-left.svg) no-repeat left/100%;
   mask: url(../images/icons/chevron2-left.svg) no-repeat left/100%;
 }
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:focus,
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:hover {
-  color: #fffef2;
+  color: #FFFFFF;
 }
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:focus:before,
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:hover:before {
-  background-color: #fffef2;
+  background-color: #FFFFFF;
 }
 .c-stacked-links {
   list-style: none;
@@ -332,7 +332,7 @@
   border-top: none;
 }
 .c-stacked-links__item.m-active .c-stacked-links__link {
-  background: #fffef2;
+  background: #FFFFFF;
   color: #000;
   font:
     0.875rem/1.5 SuisseIntl-Medium,
@@ -375,18 +375,18 @@
 }
 .c-stacked-links__link.m-logout {
   background: #333;
-  color: #fffef2;
+  color: #FFFFFF;
   margin: 0;
 }
 .c-stacked-links__link.m-logout:hover {
   background: #000;
-  color: #fffef2;
+  color: #FFFFFF;
 }
 .c-stacked-links__link.m-logout:hover:after {
-  background-color: #fffef2;
+  background-color: #FFFFFF;
 }
 .c-stacked-links__link.m-logout:after {
-  background-color: #fffef2;
+  background-color: #FFFFFF;
   height: 1.25rem;
   margin: 0 1.25rem 0 0;
   -webkit-mask: url(../images/icons/none.svg) no-repeat right/100%;
@@ -401,7 +401,7 @@
   text-transform: none;
 }
 .c-sidebar-navigation__links {
-  background: #fffef2;
+  background: #FFFFFF;
   margin: 0 -0.9375rem 1.875rem;
   padding: 0;
 }
@@ -539,7 +539,7 @@
   background: #666;
 }
 .c-table__header-row.m-secondary .c-table__header-cell {
-  color: #fffef2;
+  color: #FFFFFF;
 }
 .c-table__header-cell {
   border: none;
@@ -553,13 +553,13 @@
 }
 .c-table__header-cell.m-secondary {
   background: #666;
-  color: #fffef2;
+  color: #FFFFFF;
 }
 .c-table__row {
   border-bottom: 1px solid rgba(51, 51, 51, 0.2);
 }
 .c-table__cell {
-  background: #fffef2;
+  background: #FFFFFF;
   border: none;
   color: #333;
   font:
@@ -1003,13 +1003,13 @@
 .c-simple-navigation,
 .c-simple-navigation__back-link {
   align-items: center;
-  background: #fffef2;
+  background: #FFFFFF;
   color: #333;
   display: flex;
 }
 .c-simple-navigation__back-link {
   align-self: stretch;
-  border-right: 1px solid #fffef2;
+  border-right: 1px solid #FFFFFF;
   cursor: pointer;
   flex: 0 0 2.5rem;
   justify-content: center;
@@ -1111,7 +1111,7 @@
 .c-simple-navigation__list-wrapper
   .c-scrollable__arrows.m-background-light
   .c-scrollable__arrow-prev {
-  background: #fffef2;
+  background: #FFFFFF;
   box-shadow: 0 0 0.1875rem rgba(51, 51, 51, 0.2);
 }
 .c-simple-navigation__list-wrapper
@@ -1148,7 +1148,7 @@
 .c-simple-navigation__list-wrapper
   .c-scrollable__arrows.m-dark-theme
   .c-scrollable__arrow-prev:before {
-  background-color: #fffef2;
+  background-color: #FFFFFF;
 }
 .c-simple-navigation__list-wrapper.m-arrows-inside .c-scrollable__arrow-prev {
   left: 0;
@@ -1472,12 +1472,12 @@
 .c-shoppable-image__tag:before {
   background: radial-gradient(
     circle,
-    #fffef2 0,
-    #fffef2 0.625rem,
+    #FFFFFF 0,
+    #FFFFFF 0.625rem,
     #333 0,
     #333 100%
   );
-  border: 0.25rem solid #fffef2;
+  border: 0.25rem solid #FFFFFF;
   border-radius: 50%;
   content: "";
   height: 2.25rem;
@@ -1605,7 +1605,7 @@
   .c-load-more__button:hover {
     background-color: #333;
     border: 0.0625rem solid #333;
-    color: #fffef2;
+    color: #FFFFFF;
     text-decoration: none;
   }
 }
@@ -2090,7 +2090,7 @@
     border-radius: 0;
   }
   .l-search__sidebar {
-    background: #fffef2;
+    background: #FFFFFF;
     height: 100%;
     left: 0;
     position: fixed;
@@ -2111,8 +2111,8 @@
   }
   .l-search__panel-items .l-search__panel-button {
     background-color: #333;
-    border: 1px solid #fffef2;
-    color: #fffef2;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
     font:
       0.75rem/1.2 SuisseIntl-Medium,
       sans-serif;
@@ -2306,7 +2306,7 @@
   .c-breadcrumbs.m-scrollable
     .c-scrollable__arrows.m-background-light
     .c-scrollable__arrow-prev {
-    background: #fffef2;
+    background: #FFFFFF;
     box-shadow: 0 0 0.1875rem rgba(51, 51, 51, 0.2);
   }
   .c-breadcrumbs.m-scrollable
@@ -2343,7 +2343,7 @@
   .c-breadcrumbs.m-scrollable
     .c-scrollable__arrows.m-dark-theme
     .c-scrollable__arrow-prev:before {
-    background-color: #fffef2;
+    background-color: #FFFFFF;
   }
   .c-breadcrumbs.m-scrollable.m-arrows-inside .c-scrollable__arrow-prev {
     left: 0;
@@ -2449,8 +2449,8 @@
 @media screen and (max-width: 63.99875em) and (hover: hover) {
   .l-search__panel-items .l-search__panel-button:hover {
     background-color: #333;
-    border: 1px solid #fffef2;
-    color: #fffef2;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
     text-decoration: none;
   }
   .l-search__panel-items .l-search__panel-button.m-link:hover {

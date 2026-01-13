@@ -562,7 +562,7 @@
                 updateComponents() {
                   if (this.content.offsetHeight > this.element.scrollHeight) {
                     const a = this.content.querySelectorAll(
-                      '[data-component="global/Carousel"]',
+                      '[data-component="/dist/javascripts/components/global/Carousel.js"]',
                     );
                     a.length &&
                       a.forEach((a) => {
@@ -591,4 +591,4 @@
   );
   //# sourceMappingURL=Modal.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Modal.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/Modal.js.js

@@ -489,7 +489,7 @@
     .m-focused
   ):not(.m-search-active):not(.m-search-suggestions-active)
   .c-simple-search__field::-moz-placeholder {
-  color: #fffef2;
+  color: #FFFFFF;
 }
 .header-transparent.m-transparent-light
   .l-header:not(:hover):not(.m-sticked):not(.m-sticked-compact):not(
@@ -579,7 +579,7 @@
     .m-focused
   ):not(.m-search-active):not(.m-search-suggestions-active)
   .l-header__top-nav-link {
-  color: #fffef2;
+  color: #FFFFFF;
 }
 .header-transparent.m-transparent-light
   .l-header:not(:hover):not(.m-sticked):not(.m-sticked-compact):not(
@@ -658,7 +658,7 @@
     .m-focused
   ):not(.m-search-active):not(.m-search-suggestions-active)
   .l-header__search-button:before {
-  background-color: #fffef2;
+  background-color: #FFFFFF;
 }
 .header-transparent.m-transparent-light
   .l-header:not(:hover):not(.m-sticked):not(.m-sticked-compact):not(
@@ -805,7 +805,7 @@
     ):not(.m-search-active):not(.m-search-suggestions-active)
     .l-header__top-nav-item
     > div:first-child:after {
-    background: #fffef2;
+    background: #FFFFFF;
   }
   .header-transparent.m-transparent-light
     .l-header:not(:hover):not(.m-sticked):not(.m-sticked-compact):not(
@@ -817,7 +817,7 @@
       .m-focused
     ):not(.m-search-active):not(.m-search-suggestions-active)
     .l-header__search-button {
-    border: 1px solid #fffef2;
+    border: 1px solid #FFFFFF;
   }
   .header-transparent.m-transparent-light
     .l-header:not(:hover):not(.m-sticked):not(.m-sticked-compact):not(

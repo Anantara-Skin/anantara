@@ -239,4 +239,4 @@
   );
   //# sourceMappingURL=ScrollSnapping.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/ScrollSnapping.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/ScrollSnapping.js.js

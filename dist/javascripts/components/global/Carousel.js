@@ -727,7 +727,7 @@ class A extends (n(t).with(v)) {
         }
         this.selectors.parentSlide && !this.selectors.parentSlide.classList.contains(this.classes.visible) || Array.from(this.slider.slides).forEach(t => {
             t.classList.contains(this.classes.visible) || this.state.expanded ? this.showElement(t, !1) : this.hideElement(t, !1),
-            t.querySelectorAll('[data-component="global/Carousel"]').forEach(t => {
+            t.querySelectorAll('[data-component="/dist/javascripts/components/global/Carousel.js"]').forEach(t => {
                 s.afterRegistered(t).then( () => {
                     u("carousel.update", t)
                 }

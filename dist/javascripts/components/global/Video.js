@@ -565,4 +565,4 @@
   );
   //# sourceMappingURL=Video.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Video.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/Video.js.js

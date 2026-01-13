@@ -621,4 +621,4 @@
   );
   //# sourceMappingURL=Header.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Header.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/Header.js.js

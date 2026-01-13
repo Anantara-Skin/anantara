@@ -2,7 +2,7 @@
   "use strict";
   System.register(
     [
-      "components/global/PopOver",
+      "components//dist/javascripts/components/global/PopOver.js",
       "services/EventEmitter",
       "toolbox/event",
       "services/Resources",
@@ -372,4 +372,4 @@
   );
   //# sourceMappingURL=ReminderToolTip.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/ReminderToolTip.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/ReminderToolTip.js.js

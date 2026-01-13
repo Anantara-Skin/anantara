@@ -5360,7 +5360,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     var t = this;
                     e.type || (e.type = "Modal");
                     var n =
-                      "Modal" === e.type ? "global/Modal" : "modal/" + e.type;
+                      "Modal" === e.type ? "/dist/javascripts/components/global/Modal.js" : "modal/" + e.type;
                     return r
                       .importComponent({ name: n, options: e.options })
                       .then(function (n) {

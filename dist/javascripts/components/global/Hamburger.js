@@ -104,7 +104,7 @@ class m extends r(e).with(l) {
     });
   }
   openAccordionItem(e) {
-    const t = e.closest('[data-component="global/Accordion"]');
+    const t = e.closest('[data-component="/dist/javascripts/components/global/Accordion.js"]');
     t &&
       c.afterRegistered(t).then(() => {
         const s = c.getComponent(t);

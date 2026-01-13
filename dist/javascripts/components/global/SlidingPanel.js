@@ -384,4 +384,4 @@
   );
   //# sourceMappingURL=SlidingPanel.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/SlidingPanel.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/SlidingPanel.js.js
