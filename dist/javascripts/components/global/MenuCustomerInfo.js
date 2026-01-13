@@ -64,4 +64,4 @@
   );
   //# sourceMappingURL=MenuCustomerInfo.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/MenuCustomerInfo.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/MenuCustomerInfo.js.js

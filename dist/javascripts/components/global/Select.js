@@ -4,7 +4,7 @@
     [
       "toolbox/ajax",
       "toolbox/mediaQuery",
-      "components/global/AbstractField",
+      "components//dist/javascripts/components/global/AbstractField.js",
       "toolbox/event",
       "services/EventEmitter",
       "toolbox/deepMerge",
@@ -1270,4 +1270,4 @@
   );
   //# sourceMappingURL=Select.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Select.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/Select.js.js

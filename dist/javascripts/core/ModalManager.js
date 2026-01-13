@@ -48,7 +48,7 @@ const e = new class {
     importModal(t) {
         const s = "Modal";
         t.type || (t.type = s);
-        const e = t.type === s ? `global/${s}` : `modal/${t.type}`;
+        const e = t.type === s ? `/dist/javascripts/components/global/${s}`.js : `modal/${t.type}`;
         return i.importComponent({
             name: e,
             options: t.options

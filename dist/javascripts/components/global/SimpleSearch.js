@@ -464,4 +464,4 @@
   );
   //# sourceMappingURL=SimpleSearch.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/SimpleSearch.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/SimpleSearch.js.js

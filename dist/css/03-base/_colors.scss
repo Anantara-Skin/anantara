@@ -1,6 +1,6 @@
 @use "@lora/03-base/colors";
 $palette-custom: (
-  light: #fffef2,
+  light: #FFFFFF,
   // White
   dark: #333, // Black
 );
@@ -52,7 +52,7 @@ $dark-mode-colors: (
   background: #333,
   primary: #333,
   primary-active: #000,
-  text: #fffef2,
-  border: #fffef2,
+  text: #FFFFFF,
+  border: #FFFFFF,
 );
 $semantic-colors: map.merge($semantic-colors-default, $semantic-colors-custom);

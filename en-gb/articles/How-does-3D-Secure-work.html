@@ -22,7 +22,7 @@
 <!-- Make the translated search clear button label available for use in JS -->
 <!-- See buildClearSearchButton() in script.js -->
 <script type="text/javascript">window.searchClearButtonLabelLocalized = "Clear search";</script>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="" crossorigin="anonymous"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -294,5 +294,135 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 });
 
 </script>
-</body>
+<script>
+        // Country to Currency mapping
+        const countryCurrencyMap = {
+            'ZA': { name: 'South Africa', currency: 'ZAR', symbol: 'R', lang: 'EN' },
+            'US': { name: 'United States', currency: 'USD', symbol: '$', lang: 'EN' },
+            'GB': { name: 'United Kingdom', currency: 'GBP', symbol: '£', lang: 'EN' },
+            'EU': { name: 'European Union', currency: 'EUR', symbol: '€', lang: 'EN' },
+            'AU': { name: 'Australia', currency: 'AUD', symbol: 'A$', lang: 'EN' },
+            'CA': { name: 'Canada', currency: 'CAD', symbol: 'C$', lang: 'EN' },
+            'JP': { name: 'Japan', currency: 'JPY', symbol: '¥', lang: 'EN' },
+            'CN': { name: 'China', currency: 'CNY', symbol: '¥', lang: 'EN' },
+            'IN': { name: 'India', currency: 'INR', symbol: '₹', lang: 'EN' },
+            'AE': { name: 'UAE', currency: 'AED', symbol: 'د.إ', lang: 'EN' },
+            'SG': { name: 'Singapore', currency: 'SGD', symbol: 'S$', lang: 'EN' },
+            'HK': { name: 'Hong Kong', currency: 'HKD', symbol: 'HK$', lang: 'EN' },
+        };
+
+        let currentCountryCode = 'ZA';
+        let detectedLocationData = null;
+
+        // Initialize on page load
+        async function initLocalization() {
+            try {
+                // Try to detect user's location via IP
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                
+                detectedLocationData = data;
+                currentCountryCode = data.country_code || 'ZA';
+                
+                // Update UI with detected location
+                updateLocationDisplay(currentCountryCode);
+                updateInfoPanel(data);
+                populateCountryList();
+                
+                // Update status
+                document.getElementById('statusBadge').textContent = 'Detected';
+                document.getElementById('statusBadge').classList.remove('loading');
+                document.getElementById('statusBadge').classList.add('detected');
+                
+            } catch (error) {
+                console.error('Location detection failed:', error);
+                // Fallback to default (South Africa)
+                currentCountryCode = 'ZA';
+                updateLocationDisplay('ZA');
+                populateCountryList();
+                
+                document.getElementById('statusBadge').textContent = 'Using Default';
+                document.getElementById('ipAddress').textContent = 'Unable to detect';
+            }
+        }
+
+        // Update the location display
+        function updateLocationDisplay(countryCode) {
+            const country = countryCurrencyMap[countryCode] || countryCurrencyMap['ZA'];
+            const displayText = `${country.symbol} - ${countryCode} (${country.lang})`;
+            document.getElementById('currentLocale').textContent = displayText;
+        }
+
+        // Update info panel with detected data
+        function updateInfoPanel(data) {
+            const country = countryCurrencyMap[data.country_code] || countryCurrencyMap['ZA'];
+            
+            document.getElementById('ipAddress').textContent = data.ip || 'Unknown';
+            document.getElementById('countryName').textContent = data.country_name || country.name;
+            document.getElementById('countryCode').textContent = data.country_code || 'ZA';
+            document.getElementById('currency').textContent = data.currency || country.currency;
+            document.getElementById('currencySymbol').textContent = country.symbol;
+            document.getElementById('language').textContent = country.lang;
+        }
+
+        // Populate country selection list
+        function populateCountryList() {
+            const container = document.getElementById('countryList');
+            
+            container.innerHTML = Object.entries(countryCurrencyMap).map(([code, data]) => `
+                <div class="country-item ${code === currentCountryCode ? 'active' : ''}" 
+                     onclick="selectCountry('${code}')">
+                    <span class="country-name">${data.name}</span>
+                    <span class="country-code">${data.symbol} ${code}</span>
+                </div>
+            `).join('');
+        }
+
+        // Select a country manually
+        function selectCountry(countryCode) {
+            currentCountryCode = countryCode;
+            updateLocationDisplay(countryCode);
+            populateCountryList();
+            toggleLocalizationMenu();
+            
+            // You can store this in localStorage for persistence
+            localStorage.setItem('selectedCountry', countryCode);
+            
+            console.log('Country changed to:', countryCode);
+            // Here you would typically update prices throughout the site
+        }
+
+        // Toggle localization menu
+        function toggleLocalizationMenu() {
+            const menu = document.getElementById('localizationMenu');
+            const button = document.getElementById('localizationButton');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            menu.classList.toggle('active');
+            button.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('localizationMenu');
+            const button = document.getElementById('localizationButton');
+            
+            if (!menu.contains(e.target) && !button.contains(e.target)) {
+                menu.classList.remove('active');
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Check for saved preference on load
+        function checkSavedPreference() {
+            const saved = localStorage.getItem('selectedCountry');
+            if (saved && countryCurrencyMap[saved]) {
+                currentCountryCode = saved;
+            }
+        }
+
+        // Initialize everything
+        checkSavedPreference();
+        initLocalization();
+        </script></body>
 </html>

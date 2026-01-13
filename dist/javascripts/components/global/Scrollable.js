@@ -356,4 +356,4 @@
   );
   //# sourceMappingURL=Scrollable.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Scrollable.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/Scrollable.js.js

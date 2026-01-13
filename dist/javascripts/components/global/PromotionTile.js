@@ -100,4 +100,4 @@
   );
   //# sourceMappingURL=PromotionTile.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/PromotionTile.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/PromotionTile.js.js

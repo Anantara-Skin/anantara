@@ -183,4 +183,4 @@
   );
   //# sourceMappingURL=Snackbar.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Snackbar.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/Snackbar.js.js

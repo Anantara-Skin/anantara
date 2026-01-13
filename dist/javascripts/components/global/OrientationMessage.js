@@ -44,4 +44,4 @@
   });
   //# sourceMappingURL=OrientationMessage.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/OrientationMessage.js
+//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/OrientationMessage.js.js
