@@ -3803,10 +3803,12 @@ label--middle {
   padding: 1.25rem 0;
 }
 .l-header {
-  background: transparent;
-  direction: ltr;
-  position: relative;
-  z-index: 10;
+ position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent !important;
 }
 .l-header.m-disabled .l-header__inner {
   transform: translateY(-100%);
@@ -3821,7 +3823,7 @@ body.m-hide-header-banner .l-header__banner {
   position: relative;
 }
 .l-header__main-area-wrapper {
-  background: #FFFFFF;
+  background: #ffffff00;
 }
 .l-header__main-area {
   align-content: stretch;
