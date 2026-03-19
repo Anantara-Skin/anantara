@@ -242,7 +242,7 @@
       }
     </style>
     <script>
-      ((window.lazySizesConfig = {
+      (window.lazySizesConfig = {
         lazyClass: "m-lazyload",
         loadedClass: "m-lazyloaded",
         preloadClass: "m-lazypreload",
@@ -254,7 +254,7 @@
           (window.lazySizesConfig.nativeLoading = {
             setLoadingAttribute: !0,
             disableListeners: !0,
-          }));
+          });
     </script>
     <script>
       window.performance && window.performance.mark("startStylesheetLoading");
@@ -275,9 +275,8 @@
       "serviceWorker" in navigator &&
         window.addEventListener("load", function () {
           navigator.serviceWorker.register("/worker.js").then(function (e) {
-            (window.lora.debug &&
-              console.info("[Service Worker] Registered", e),
-              n());
+            window.lora.debug && console.info("[Service Worker] Registered", e),
+              n();
           });
           var t = document.querySelector("[data-js-offline-warning]");
           function n(e) {
@@ -293,8 +292,8 @@
                   t.setAttribute("tabindex", "0"),
                   t.focus()));
           }
-          (window.addEventListener("online", n),
-            window.addEventListener("offline", n));
+          window.addEventListener("online", n),
+            window.addEventListener("offline", n);
         });
     </script>
     <script type="text/javascript">
@@ -662,82 +661,9 @@
                   />
                 </a>
               </div>
-              <div
-                class="l-header__search-cta-mobile"
-                role="search"
-                aria-label="Sitewide"
-              >
-                <buttonred
-                  class="l-header__search-button"
-                  data-analytics='{
-                                    "event":"uaevent",
-                                    "category":"internal search",
-                                    "action":"display",
-                                    "label":"search...",
-                                    "extraData":{
-                                        "event_name":"internal_search_click"
-                                    }
-                                }'
-                  aria-controls="headerSimpleSearch"
-                  aria-label="Search"
-                  data-js-header-search-cta
-                  aria-expanded="false"
-                >
-                  <span class="l-header__search-button-label">Search...</span>
-                </buttonr>
-              </div>
+
               <div class="l-header__top-nav m-left">
                 <ul class="l-header__top-nav-list">
-                  <li class="l-header__top-nav-item m-localization-info">
-                    <div class="c-select m-third">
-                      <button
-                        class="c-select__placeholder"
-                        id="localizationButton"
-                        aria-expanded="false"
-                        onclick="toggleLocalizationMenu()"
-                      >
-                        <span id="currentLocale">Loading...</span>
-                      </button>
-                      <div class="localization-menu" id="localizationMenu">
-                        <!-- Country list will populate here -->
-                      </div>
-                    </div>
-                  </li>
-                  <li class="l-header__top-nav-item m-stores">
-                    <a
-                      class="c-storeslink"
-                      href="/stores.html"
-                      data-component="/dist/javascripts/components/global/EventTrigger.js"
-                      data-component-options='{
-                                            "event":"click",
-                                            "skipPreventDefault":true
-                                        }'
-                      data-analytics='{
-                                            "events":[{
-                                                "category":"header",
-                                                "action":"select",
-                                                "label":"store locator",
-                                                "extraData":{
-                                                    "event_name":"header_click",
-                                                    "cta_name":"store locator"
-                                                }
-                                            },
-                                                    {
-                                                        "category":"store locator",
-                                                        "action":"find a store",
-                                                        "label":"header",
-                                                        "extraData":{
-                                                            "event_name":"store_locator",
-                                                            "position":"header"
-                                                        }
-                                                    }
-                                                    ]
-                                                }'
-                      aria-label="Stores"
-                    >
-                      <span class="c-storeslink__text">Stores</span>
-                    </a>
-                  </li>
                   <li class="l-header__top-nav-item m-stores">
                     <a
                       class="c-storeslink"
@@ -1772,7 +1698,7 @@
                               <div class="h-margin-bottom-3">
                                 <a
                                   class="c-button m-secondary m-alt m-readmore-light h-margin-bottom-4 m-expand-for-medium-down"
-                                  href="/above-us-steorra-fragrance.html"
+                                  href="/fragrance/floral/index.html"
                                   >Discover the scent
                                 </a>
                               </div>
