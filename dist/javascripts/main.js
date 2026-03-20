@@ -1,4 +1,4 @@
-System.register("javascripts/core/shims/support.js", [], function (e, t) {
+(System.register("javascripts/core/shims/support.js", [], function (e, t) {
   "use strict";
   function n() {
     var e = navigator.userAgent || navigator.vendor || window.opera;
@@ -90,7 +90,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
     function (e, t, n) {
       var o, i;
       this || self;
-      (o = "undefined" != typeof window ? window : {}),
+      ((o = "undefined" != typeof window ? window : {}),
         (i = (function (e, t, n) {
           "use strict";
           var o, i;
@@ -154,10 +154,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             },
             w = function (e, t, n) {
               var o = n ? s : "removeEventListener";
-              n && w(e, t),
+              (n && w(e, t),
                 m.forEach(function (n) {
                   e[o](n, t);
-                });
+                }));
             },
             C = function (e, n, i, r, a) {
               var s = t.createEvent("Event");
@@ -188,7 +188,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 n = n || e.offsetWidth;
                 n < i.minSize && t && !e._lazysizesWidth;
               )
-                (n = t.offsetWidth), (t = t.parentNode);
+                ((n = t.offsetWidth), (t = t.parentNode));
               return n;
             },
             S = (function () {
@@ -208,7 +208,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     ? o.apply(this, arguments)
                     : (r.push(o), n || ((n = !0), (t.hidden ? l : d)(a)));
                 };
-              return (s._lsFlush = a), s;
+              return ((s._lsFlush = a), s);
             })(),
             x = function (e, t) {
               return t
@@ -229,38 +229,38 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 r = i.throttleDelay,
                 a = i.ricTimeout,
                 s = function () {
-                  (t = !1), (o = n.now()), e();
+                  ((t = !1), (o = n.now()), e());
                 },
                 c =
                   f && a > 49
                     ? function () {
-                        f(s, { timeout: a }),
-                          a !== i.ricTimeout && (a = i.ricTimeout);
+                        (f(s, { timeout: a }),
+                          a !== i.ricTimeout && (a = i.ricTimeout));
                       }
                     : x(function () {
                         l(s);
                       }, !0);
               return function (e) {
                 var i;
-                (e = !0 === e) && (a = 33),
+                ((e = !0 === e) && (a = 33),
                   t ||
                     ((t = !0),
                     (i = r - (n.now() - o)) < 0 && (i = 0),
-                    e || i < 9 ? c() : l(c, i));
+                    e || i < 9 ? c() : l(c, i)));
               };
             },
             O = function (e) {
               var t,
                 o,
                 i = function () {
-                  (t = null), e();
+                  ((t = null), e());
                 },
                 r = function () {
                   var e = n.now() - o;
                   e < 99 ? l(r, 99 - e) : (f || i)(i);
                 };
               return function () {
-                (o = n.now()), t || (t = l(r, 99));
+                ((o = n.now()), t || (t = l(r, 99)));
               };
             },
             _ = (function () {
@@ -284,7 +284,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 F = 0,
                 W = -1,
                 H = function (e) {
-                  F--, (!e || F < 0 || !e.target) && (F = 0);
+                  (F--, (!e || F < 0 || !e.target) && (F = 0));
                 },
                 B = function (e) {
                   return (
@@ -406,13 +406,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 Y = function (e) {
                   var t,
                     n = e[c](i.srcsetAttr);
-                  (t = i.customMedia[e[c]("data-media") || e[c]("media")]) &&
+                  ((t = i.customMedia[e[c]("data-media") || e[c]("media")]) &&
                     e.setAttribute("media", t),
-                    n && e.setAttribute("srcset", n);
+                    n && e.setAttribute("srcset", n));
                 },
                 X = x(function (e, t, n, o, r) {
                   var a, s, u, d, f, h;
-                  (f = C(e, "lazybeforeunveil", t)).defaultPrevented ||
+                  ((f = C(e, "lazybeforeunveil", t)).defaultPrevented ||
                     (o &&
                       (n ? y(e, i.autosizesClass) : e.setAttribute("sizes", o)),
                     (s = e[c](i.srcsetAttr)),
@@ -442,15 +442,15 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     b(e, i.lazyClass),
                     S(function () {
                       var t = e.complete && e.naturalWidth > 1;
-                      (h && !t) ||
+                      ((h && !t) ||
                         (t && y(e, i.fastLoadedClass),
                         $(f),
                         (e._lazyCache = !0),
                         l(function () {
                           "_lazyCache" in e && delete e._lazyCache;
                         }, 9)),
-                        "lazy" == e.loading && F--;
-                    }, !0);
+                        "lazy" == e.loading && F--);
+                    }, !0));
                 }),
                 Z = function (e) {
                   if (!e._lazyRace) {
@@ -472,10 +472,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   }
                 },
                 ee = O(function () {
-                  (i.loadMode = 3), V();
+                  ((i.loadMode = 3), V());
                 }),
                 te = function () {
-                  3 == i.loadMode && (i.loadMode = 2), ee();
+                  (3 == i.loadMode && (i.loadMode = 2), ee());
                 },
                 ne = function () {
                   f ||
@@ -485,7 +485,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 };
               return {
                 _: function () {
-                  (j = n.now()),
+                  ((j = n.now()),
                     (o.elements = t.getElementsByClassName(i.lazyClass)),
                     (a = t.getElementsByClassName(
                       i.lazyClass + " " + i.preloadClass,
@@ -529,7 +529,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       : (u("load", ne),
                         t[s]("DOMContentLoaded", V),
                         l(ne, 2e4)),
-                    o.elements.length ? (Q(), S._lsFlush()) : V();
+                    o.elements.length ? (Q(), S._lsFlush()) : V());
                 },
                 checkElems: V,
                 unveil: Z,
@@ -572,8 +572,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 });
               return {
                 _: function () {
-                  (e = t.getElementsByClassName(i.autosizesClass)),
-                    u("resize", r);
+                  ((e = t.getElementsByClassName(i.autosizesClass)),
+                    u("resize", r));
                 },
                 checkElems: r,
                 updateElem: o,
@@ -602,7 +602,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           );
         })(o, o.document, Date)),
         (o.lazySizes = i),
-        "object" == typeof n && n.exports && (n.exports = i);
+        "object" == typeof n && n.exports && (n.exports = i));
     },
   ),
   System.registerDynamic(
@@ -612,7 +612,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
     function (e, t, n) {
       var o, i;
       this || self;
-      (o = t),
+      ((o = t),
         (i = function () {
           return (function (e) {
             function t(o) {
@@ -625,7 +625,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               );
             }
             var n = {};
-            return (t.m = e), (t.c = n), (t.p = "dist/"), t(0);
+            return ((t.m = e), (t.c = n), (t.p = "dist/"), t(0));
           })([
             function (e, t, n) {
               "use strict";
@@ -674,15 +674,17 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     m)
                   )
                     return (
-                      (p = (0, d.default)(p, h)), (0, l.default)(p, h.once), p
+                      (p = (0, d.default)(p, h)),
+                      (0, l.default)(p, h.once),
+                      p
                     );
                 },
                 g = function () {
-                  (p = (0, f.default)()), v();
+                  ((p = (0, f.default)()), v());
                 };
               e.exports = {
                 init: function (e) {
-                  (h = i(h, e)), (p = (0, f.default)());
+                  ((h = i(h, e)), (p = (0, f.default)()));
                   var t = document.all && !window.atob;
                   return (function (e) {
                     return (
@@ -694,10 +696,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     );
                   })(h.disable) || t
                     ? void p.forEach(function (e, t) {
-                        e.node.removeAttribute("data-aos"),
+                        (e.node.removeAttribute("data-aos"),
                           e.node.removeAttribute("data-aos-easing"),
                           e.node.removeAttribute("data-aos-duration"),
-                          e.node.removeAttribute("data-aos-delay");
+                          e.node.removeAttribute("data-aos-delay"));
                       })
                     : (h.disableMutationObserver ||
                         c.default.isSupported() ||
@@ -762,7 +764,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   function i(t) {
                     var n = d,
                       o = f;
-                    return (d = f = void 0), (g = t), (m = e.apply(o, n));
+                    return ((d = f = void 0), (g = t), (m = e.apply(o, n)));
                   }
                   function a(e) {
                     var n = e - v;
@@ -781,7 +783,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         ));
                   }
                   function u(e) {
-                    return (h = void 0), k && d ? i(e) : ((d = f = void 0), m);
+                    return (
+                      (h = void 0),
+                      k && d ? i(e) : ((d = f = void 0), m)
+                    );
                   }
                   function l() {
                     var e = C(),
@@ -789,11 +794,15 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     if (((d = arguments), (f = this), (v = e), n)) {
                       if (void 0 === h)
                         return (function (e) {
-                          return (g = e), (h = setTimeout(c, t)), y ? i(e) : m;
+                          return (
+                            (g = e),
+                            (h = setTimeout(c, t)),
+                            y ? i(e) : m
+                          );
                         })(v);
-                      if (E) return (h = setTimeout(c, t)), i(v);
+                      if (E) return ((h = setTimeout(c, t)), i(v));
                     }
-                    return void 0 === h && (h = setTimeout(c, t)), m;
+                    return (void 0 === h && (h = setTimeout(c, t)), m);
                   }
                   var d,
                     f,
@@ -813,9 +822,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       (p = (E = "maxWait" in n) ? b(r(n.maxWait) || 0, t) : p),
                       (k = "trailing" in n ? !!n.trailing : k)),
                     (l.cancel = function () {
-                      void 0 !== h && clearTimeout(h),
+                      (void 0 !== h && clearTimeout(h),
                         (g = 0),
-                        (d = v = f = h = void 0);
+                        (d = v = f = h = void 0));
                     }),
                     (l.flush = function () {
                       return void 0 === h ? m : u(C());
@@ -990,7 +999,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   function r(t) {
                     var n = d,
                       o = f;
-                    return (d = f = void 0), (g = t), (m = e.apply(o, n));
+                    return ((d = f = void 0), (g = t), (m = e.apply(o, n)));
                   }
                   function s(e) {
                     var n = e - v;
@@ -1009,7 +1018,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         ));
                   }
                   function u(e) {
-                    return (h = void 0), k && d ? r(e) : ((d = f = void 0), m);
+                    return (
+                      (h = void 0),
+                      k && d ? r(e) : ((d = f = void 0), m)
+                    );
                   }
                   function l() {
                     var e = w(),
@@ -1017,11 +1029,15 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     if (((d = arguments), (f = this), (v = e), n)) {
                       if (void 0 === h)
                         return (function (e) {
-                          return (g = e), (h = setTimeout(c, t)), C ? r(e) : m;
+                          return (
+                            (g = e),
+                            (h = setTimeout(c, t)),
+                            C ? r(e) : m
+                          );
                         })(v);
-                      if (E) return (h = setTimeout(c, t)), r(v);
+                      if (E) return ((h = setTimeout(c, t)), r(v));
                     }
-                    return void 0 === h && (h = setTimeout(c, t)), m;
+                    return (void 0 === h && (h = setTimeout(c, t)), m);
                   }
                   var d,
                     f,
@@ -1041,9 +1057,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       (p = (E = "maxWait" in o) ? y(i(o.maxWait) || 0, t) : p),
                       (k = "trailing" in o ? !!o.trailing : k)),
                     (l.cancel = function () {
-                      void 0 !== h && clearTimeout(h),
+                      (void 0 !== h && clearTimeout(h),
                         (g = 0),
-                        (d = v = f = h = void 0);
+                        (d = v = f = h = void 0));
                     }),
                     (l.flush = function () {
                       return void 0 === h ? m : u(w());
@@ -1095,12 +1111,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 ready: function (e, t) {
                   var r = window.document,
                     a = new (n())(o);
-                  (i = t),
+                  ((i = t),
                     a.observe(r.documentElement, {
                       childList: !0,
                       subtree: !0,
                       removedNodes: !0,
-                    });
+                    }));
                 },
               };
             },
@@ -1116,14 +1132,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   function e(e, t) {
                     for (var n = 0; n < t.length; n++) {
                       var o = t[n];
-                      (o.enumerable = o.enumerable || !1),
+                      ((o.enumerable = o.enumerable || !1),
                         (o.configurable = !0),
                         "value" in o && (o.writable = !0),
-                        Object.defineProperty(e, o.key, o);
+                        Object.defineProperty(e, o.key, o));
                     }
                   }
                   return function (t, n, o) {
-                    return n && e(t.prototype, n), o && e(t, o), t;
+                    return (n && e(t.prototype, n), o && e(t, o), t);
                   };
                 })(),
                 i =
@@ -1198,8 +1214,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               t.default = function (e, t) {
                 return (
                   e.forEach(function (e, n) {
-                    e.node.classList.add("aos-init"),
-                      (e.position = (0, o.default)(e.node, t.offset));
+                    (e.node.classList.add("aos-init"),
+                      (e.position = (0, o.default)(e.node, t.offset)));
                   }),
                   e
                 );
@@ -1257,7 +1273,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     n += e.offsetHeight / 2 + r;
                 }
                 return (
-                  a.anchorPlacement || a.offset || isNaN(t) || (i = t), n + i
+                  a.anchorPlacement || a.offset || isNaN(t) || (i = t),
+                  n + i
                 );
               };
             },
@@ -1269,11 +1286,11 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   var t = 0, n = 0;
                   e && !isNaN(e.offsetLeft) && !isNaN(e.offsetTop);
                 )
-                  (t +=
+                  ((t +=
                     e.offsetLeft - ("BODY" != e.tagName ? e.scrollLeft : 0)),
                     (n +=
                       e.offsetTop - ("BODY" != e.tagName ? e.scrollTop : 0)),
-                    (e = e.offsetParent);
+                    (e = e.offsetParent));
                 return { top: n, left: t };
               };
             },
@@ -1295,7 +1312,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           ? (n.exports = i())
           : "object" == typeof t
             ? (t.AOS = i())
-            : (o.AOS = i());
+            : (o.AOS = i()));
     },
   ),
   System.registerDynamic(
@@ -1381,10 +1398,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             },
             y = function (e, t, n) {
               var o = n ? "addEventListener" : "removeEventListener";
-              n && y(e, t),
+              (n && y(e, t),
                 f.forEach(function (n) {
                   e[o](n, t);
-                });
+                }));
             },
             b = function (e, n, i, r, a) {
               var s = t.createEvent("Event");
@@ -1415,7 +1432,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 n = n || e.offsetWidth;
                 n < i.minSize && t && !e._lazysizesWidth;
               )
-                (n = t.offsetWidth), (t = t.parentNode);
+                ((n = t.offsetWidth), (t = t.parentNode));
               return n;
             },
             k =
@@ -1452,14 +1469,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               var t,
                 o,
                 i = function () {
-                  (t = null), e();
+                  ((t = null), e());
                 },
                 r = function () {
                   var e = n.now() - o;
                   e < 99 ? c(r, 99 - e) : (l || i)(i);
                 };
               return function () {
-                (o = n.now()), t || (t = c(r, 99));
+                ((o = n.now()), t || (t = c(r, 99)));
               };
             },
             x = (function () {
@@ -1490,7 +1507,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 Q = 0,
                 V = -1,
                 $ = function (e) {
-                  Q--, (!e || Q < 0 || !e.target) && (Q = 0);
+                  (Q--, (!e || Q < 0 || !e.target) && (Q = 0));
                 },
                 J = function (e) {
                   return (
@@ -1601,24 +1618,24 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   (R = i.throttleDelay),
                   (q = i.ricTimeout),
                   (U = function () {
-                    (I = !1), (N = n.now()), P();
+                    ((I = !1), (N = n.now()), P());
                   }),
                   (F =
                     l && q > 49
                       ? function () {
-                          l(U, { timeout: q }),
-                            q !== i.ricTimeout && (q = i.ricTimeout);
+                          (l(U, { timeout: q }),
+                            q !== i.ricTimeout && (q = i.ricTimeout));
                         }
                       : j(function () {
                           c(U);
                         }, !0)),
                   function (e) {
                     var t;
-                    (e = !0 === e) && (q = 33),
+                    ((e = !0 === e) && (q = 33),
                       I ||
                         ((I = !0),
                         (t = R - (n.now() - N)) < 0 && (t = 0),
-                        e || t < 9 ? F() : c(F, t));
+                        e || t < 9 ? F() : c(F, t)));
                   }),
                 Z = function (e) {
                   var t = e.target;
@@ -1637,15 +1654,15 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 ne = function (e) {
                   var t,
                     n = e.getAttribute(i.srcsetAttr);
-                  (t =
+                  ((t =
                     i.customMedia[
                       e.getAttribute("data-media") || e.getAttribute("media")
                     ]) && e.setAttribute("media", t),
-                    n && e.setAttribute("srcset", n);
+                    n && e.setAttribute("srcset", n));
                 },
                 oe = j(function (e, t, n, o, r) {
                   var a, s, u, l, f, h;
-                  (f = b(e, "lazybeforeunveil", t)).defaultPrevented ||
+                  ((f = b(e, "lazybeforeunveil", t)).defaultPrevented ||
                     (o &&
                       (n ? v(e, i.autosizesClass) : e.setAttribute("sizes", o)),
                     (s = e.getAttribute(i.srcsetAttr)),
@@ -1676,15 +1693,15 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     g(e, i.lazyClass),
                     k(function () {
                       var t = e.complete && e.naturalWidth > 1;
-                      (h && !t) ||
+                      ((h && !t) ||
                         (t && v(e, i.fastLoadedClass),
                         Z(f),
                         (e._lazyCache = !0),
                         c(function () {
                           "_lazyCache" in e && delete e._lazyCache;
                         }, 9)),
-                        "lazy" == e.loading && Q--;
-                    }, !0);
+                        "lazy" == e.loading && Q--);
+                    }, !0));
                 }),
                 ie = function (e) {
                   if (!e._lazyRace) {
@@ -1709,10 +1726,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   }
                 },
                 re = S(function () {
-                  (i.loadMode = 3), X();
+                  ((i.loadMode = 3), X());
                 }),
                 ae = function () {
-                  3 == i.loadMode && (i.loadMode = 2), re();
+                  (3 == i.loadMode && (i.loadMode = 2), re());
                 },
                 se = function () {
                   f ||
@@ -1722,7 +1739,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 };
               return {
                 _: function () {
-                  (x = n.now()),
+                  ((x = n.now()),
                     (o.elements = t.getElementsByClassName(i.lazyClass)),
                     (a = t.getElementsByClassName(
                       i.lazyClass + " " + i.preloadClass,
@@ -1766,7 +1783,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       : (s("load", se),
                         t.addEventListener("DOMContentLoaded", X),
                         c(se, 2e4)),
-                    o.elements.length ? (Y(), k._lsFlush()) : X();
+                    o.elements.length ? (Y(), k._lsFlush()) : X());
                 },
                 checkElems: X,
                 unveil: ie,
@@ -1808,8 +1825,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               })),
               {
                 _: function () {
-                  (_ = t.getElementsByClassName(i.autosizesClass)),
-                    s("resize", D);
+                  ((_ = t.getElementsByClassName(i.autosizesClass)),
+                    s("resize", D));
                 },
                 checkElems: D,
                 updateElem: M,
@@ -1838,7 +1855,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             })
           );
         })(e, e.document, Date);
-        (e.lazySizes = o), "object" == typeof n && n.exports && (n.exports = o);
+        ((e.lazySizes = o),
+          "object" == typeof n && n.exports && (n.exports = o));
       })("undefined" != typeof window ? window : {});
     },
   ),
@@ -1850,14 +1868,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
       this || self;
       !(function (t, o) {
         var i = function () {
-          o(t.lazySizes), t.removeEventListener("lazyunveilread", i, !0);
+          (o(t.lazySizes), t.removeEventListener("lazyunveilread", i, !0));
         };
-        (o = o.bind(null, t, t.document)),
+        ((o = o.bind(null, t, t.document)),
           "object" == typeof n && n.exports
             ? o(e("../../lazysizes"))
             : t.lazySizes
               ? i()
-              : t.addEventListener("lazyunveilread", i, !0);
+              : t.addEventListener("lazyunveilread", i, !0));
       })(window, function (e, t, n) {
         "use strict";
         var o = "loading" in HTMLImageElement.prototype,
@@ -1914,7 +1932,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 !0,
               ));
         }
-        s.nativeLoading || (s.nativeLoading = {}),
+        (s.nativeLoading || (s.nativeLoading = {}),
           e.addEventListener &&
             e.MutationObserver &&
             (o || i) &&
@@ -1930,7 +1948,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   ("auto" == e.getAttribute("data-sizes") && !e.offsetWidth)
                 ) || (a ? a(e) : void 0)
               );
-            });
+            }));
       });
     },
   ),
@@ -1941,7 +1959,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
     function (e, t, n) {
       var o, i;
       this || self;
-      (o = t),
+      ((o = t),
         (i = function () {
           var e = function () {},
             t = {},
@@ -1951,12 +1969,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             if (e) {
               var i = o[e];
               if (((n[e] = t), i))
-                for (; i.length; ) i[0](e, t), i.splice(0, 1);
+                for (; i.length; ) (i[0](e, t), i.splice(0, 1));
             }
           }
           function r(t, n) {
-            t.call && (t = { success: t }),
-              n.length ? (t.error || e)(n) : (t.success || e)(t);
+            (t.call && (t = { success: t }),
+              n.length ? (t.error || e)(n) : (t.success || e)(t));
           }
           function a(t, n, o, i) {
             var r,
@@ -1969,11 +1987,11 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               p = t.replace(/[\?|#].*$/, ""),
               m = t.replace(/^(css|img|module|nomodule)!/, "");
             if (((i = i || 0), /(^css!|\.css$)/.test(p)))
-              ((c = u.createElement("link")).rel = "stylesheet"),
+              (((c = u.createElement("link")).rel = "stylesheet"),
                 (c.href = m),
                 (r = "hideFocus" in c) &&
                   c.relList &&
-                  ((r = 0), (c.rel = "preload"), (c.as = "style"));
+                  ((r = 0), (c.rel = "preload"), (c.as = "style")));
             else if (/(^img!|\.(png|gif|jpg|svg|webp)$)/.test(p))
               (c = u.createElement("img")).src = m;
             else if (
@@ -1985,7 +2003,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               if (!s) return n(t, "l");
               c.type = "module";
             } else if (/^nomodule!/.test(p) && s) return n(t, "l");
-            (c.onload =
+            ((c.onload =
               c.onerror =
               c.onbeforeload =
                 function (e) {
@@ -2002,7 +2020,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     return (c.rel = "stylesheet");
                   n(t, s, e.defaultPrevented);
                 }),
-              !1 !== f(t, c) && u.head.appendChild(c);
+              !1 !== f(t, c) && u.head.appendChild(c));
           }
           function s(e, n, o) {
             var s, c;
@@ -2033,7 +2051,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               })(
                 e,
                 function (e) {
-                  r(c, e), t && r({ success: t, error: n }, e), i(s, e);
+                  (r(c, e), t && r({ success: t, error: n }, e), i(s, e));
                 },
                 c,
               );
@@ -2054,12 +2072,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     u = c;
                   for (
                     i = function (e, n) {
-                      n.length && s.push(e), --u || t(s);
+                      (n.length && s.push(e), --u || t(s));
                     };
                     c--;
                   )
-                    (r = e[c]),
-                      (a = n[r]) ? i(r, a) : (o[r] = o[r] || []).push(i);
+                    ((r = e[c]),
+                      (a = n[r]) ? i(r, a) : (o[r] = o[r] || []).push(i));
                 })(e, function (e) {
                   r(t, e);
                 }),
@@ -2070,7 +2088,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               i(e, []);
             }),
             (s.reset = function () {
-              (t = {}), (n = {}), (o = {});
+              ((t = {}), (n = {}), (o = {}));
             }),
             (s.isDefined = function (e) {
               return e in t;
@@ -2078,7 +2096,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             s
           );
         }),
-        "object" == typeof t ? (n.exports = i()) : (o.loadjs = i());
+        "object" == typeof t ? (n.exports = i()) : (o.loadjs = i()));
     },
   ),
   System.register(
@@ -2132,13 +2150,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             if (("@dispatch" !== e && o("@dispatch", [e, i, t[e]]), t[e])) {
               var r,
                 a = {};
-              t[e].forEach(function (e) {
+              (t[e].forEach(function (e) {
                 var t = e(n, i);
                 t &&
                   "function" != typeof t.then &&
                   ((r = n = Object.assign({}, n, t)), Object.assign(a, t));
               }),
-                r && o("@changed", a);
+                r && o("@changed", a));
             }
           },
           i = {
@@ -2215,12 +2233,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             o(this, e);
             return i([
               function (e) {
-                e.on("@init", function () {
+                (e.on("@init", function () {
                   return t;
                 }),
                   e.on("update", function (e, t) {
                     return r(e, t);
-                  });
+                  }));
                 var o = Object.entries(a),
                   i = !0,
                   s = !1,
@@ -2245,7 +2263,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         );
                   }
                 } catch (e) {
-                  (s = !0), (c = e);
+                  ((s = !0), (c = e));
                 } finally {
                   try {
                     !i && l.return && l.return();
@@ -2273,9 +2291,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           },
         ],
         execute: function () {
-          (i = new n((o = { pid: null, services: [] }), {
+          ((i = new n((o = { pid: null, services: [] }), {
             setPid: function (e, t) {
-              return (e.pid = t), Object.assign({}, e);
+              return ((e.pid = t), Object.assign({}, e));
             },
             setServices: function (e, t) {
               return (
@@ -2287,7 +2305,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               return Object.assign({}, e, o);
             },
           })),
-            e("default", i);
+            e("default", i));
         },
       };
     },
@@ -2344,14 +2362,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             d = e.deepMerge;
           },
           function (e) {
-            (f = e.format), (p = e.formatByMediaQuery);
+            ((f = e.format), (p = e.formatByMediaQuery));
           },
           function (e) {
             m = e.default;
           },
         ],
         execute: function () {
-          (h = (function (e) {
+          ((h = (function (e) {
             function t(e) {
               var n =
                 arguments.length > 1 && void 0 !== arguments[1]
@@ -2384,34 +2402,34 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 {
                   key: "initState",
                   value: function () {
-                    (this.state.scriptLoaded = !1),
+                    ((this.state.scriptLoaded = !1),
                       (this.state.productImpressions = []),
                       (this.state.registeredProductImpressions = {}),
                       (this.state.registeredPromotionImpressions = {}),
                       (this.state.registeredUniqueEvent = {}),
                       (this.state.promoImpressions = {}),
                       (this.state.vtoInitializationEventTriggered = !1),
-                      (this.state.useDefaultDomain = !1);
+                      (this.state.useDefaultDomain = !1));
                   },
                 },
                 {
                   key: "bindEvents",
                   value: function () {
-                    u.on("analytics.event", this.onEvent.bind(this)),
+                    (u.on("analytics.event", this.onEvent.bind(this)),
                       u.on("global.update", this.onGlobalUpdate.bind(this)),
                       u.on("cart.updated", this.onCartUpdated.bind(this)),
                       this.options.isNGLCheckout ||
                         u.on(
                           "analytics.virtualPage",
                           this.onVirtualPage.bind(this),
-                        );
+                        ));
                   },
                 },
                 {
                   key: "initCache",
                   value: function () {
-                    (this.productTimeout = null),
-                      (this.promotionTimeout = null);
+                    ((this.productTimeout = null),
+                      (this.promotionTimeout = null));
                   },
                 },
                 {
@@ -2439,13 +2457,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         throw new Error(
                           "GTM ID is mandatory, make sure that ID is passed to GTM component",
                         );
-                      this.pushPageData(this.pageData),
+                      (this.pushPageData(this.pageData),
                         this.loadScript()
                           .then(this.onScriptLoaded.bind(this))
                           .catch(this.onScriptLoadFailed.bind(this)),
                         this.pageData.events &&
                           this.pushEvents(this.pageData.events),
-                        this.pushEvents(this.options.pageAnalytics);
+                        this.pushEvents(this.options.pageAnalytics));
                     }
                   },
                 },
@@ -2456,14 +2474,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       arguments.length > 1 && void 0 !== arguments[1]
                         ? arguments[1]
                         : {};
-                    e
+                    (e
                       ? "string" == typeof e
                         ? ((t = d({}, t)).event = e)
                         : "object" == typeof e && (t = d({}, e))
                       : console.error(
                           "The arguments passed to analytics.event are not correct",
                         ),
-                      this.pushEventData(t);
+                      this.pushEventData(t));
                   },
                 },
                 {
@@ -2539,8 +2557,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 {
                   key: "onScriptLoaded",
                   value: function () {
-                    (this.state.scriptLoaded = !0),
-                      this.pushSocialLoginStatus();
+                    ((this.state.scriptLoaded = !0),
+                      this.pushSocialLoginStatus());
                   },
                 },
                 {
@@ -2561,8 +2579,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       if (e.uniqueId) {
                         if (this.state.registeredUniqueEvent[e.uniqueId])
                           return;
-                        (this.state.registeredUniqueEvent[e.uniqueId] = !0),
-                          delete e.uniqueId;
+                        ((this.state.registeredUniqueEvent[e.uniqueId] = !0),
+                          delete e.uniqueId);
                       }
                       var t = window[this.options.gtmLayerName];
                       t && t.push(this.prepareData(e));
@@ -2594,7 +2612,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     return (
                       e &&
                       Object.keys(e).reduce(function (e, n) {
-                        return (e[n] = t.replaceDataKey(e[n])), e;
+                        return ((e[n] = t.replaceDataKey(e[n])), e);
                       }, e)
                     );
                   },
@@ -2630,7 +2648,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       Object.keys(e.extraData).forEach(function (t) {
                         o[t] = e.extraData[t];
                       });
-                    e.stock &&
+                    (e.stock &&
                       "discontinued" !== e.stock &&
                       (o.metric52 =
                         -1 !==
@@ -2650,9 +2668,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       e.customizations &&
                         (o.dimension153 = Object.values(e.customizations).join(
                           "::",
-                        ));
+                        )));
                     var i = Object.values(e.customizationDetails || {});
-                    i.length > 0 && (o.dimension154 = i.join("::")),
+                    (i.length > 0 && (o.dimension154 = i.join("::")),
                       e.placement && (o.list = e.placement),
                       e.position && (o.position = e.position),
                       e.collection &&
@@ -2667,7 +2685,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         (o.dimension168 = "activated::" + e.recommenderName),
                       "productDetail" === t &&
                         (m.dispatch("setPid", e.pid),
-                        e.services && m.dispatch("setServices", e.services));
+                        e.services && m.dispatch("setServices", e.services)));
                     var r = e.addToCartContexts,
                       a = {
                         lineitemrefillupsell: "product refill",
@@ -2735,7 +2753,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       if (e.eventType) this.pushByEventType(e);
                       else {
                         var n = !1;
-                        e.action ||
+                        (e.action ||
                           (console.error(
                             'The event "analytics.event" has to be sent with an "action" property',
                           ),
@@ -2751,7 +2769,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                               'The event "analytics.event" has to be sent with a "category" property',
                             ),
                             (n = !0)),
-                          n || this.pushEvent(e);
+                          n || this.pushEvent(e));
                       }
                     } else
                       console.error(
@@ -2776,7 +2794,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         this.pushPromoImpression(e);
                         break;
                       case "addProduct":
-                        "object" == typeof e.ecommerce &&
+                        ("object" == typeof e.ecommerce &&
                           ((e.ecommerce.add.products =
                             e.ecommerce.add.products.map(function (e) {
                               return t.getProductData(e, n);
@@ -2784,20 +2802,20 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           this.pageData &&
                             (e.ecommerce.currencyCode =
                               this.pageData.page.currencyCode)),
-                          this.pushData(e);
+                          this.pushData(e));
                         break;
                       case "removeProduct":
-                        (e.ecommerce.remove.products =
+                        ((e.ecommerce.remove.products =
                           e.ecommerce.remove.products.map(function (e) {
                             return t.getProductData(e, n);
                           })),
                           this.pageData &&
                             (e.ecommerce.currencyCode =
                               this.pageData.page.currencyCode),
-                          this.pushData(e);
+                          this.pushData(e));
                         break;
                       case "productDetail":
-                        (e.numberReviews = e.ecommerce.detail.products.length
+                        ((e.numberReviews = e.ecommerce.detail.products.length
                           ? e.ecommerce.detail.products[0].numberReviews
                           : null),
                           (e.ecommerce.detail.products =
@@ -2808,14 +2826,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           this.pageData &&
                             (e.ecommerce.currencyCode =
                               this.pageData.page.currencyCode),
-                          this.pushData(e);
+                          this.pushData(e));
                         break;
                       case "productClick":
-                        (e.ecommerce.click.products =
+                        ((e.ecommerce.click.products =
                           e.ecommerce.click.products.map(function (e) {
                             return t.getProductData(e, n);
                           })),
-                          this.pushEvent(e);
+                          this.pushEvent(e));
                         break;
                       case "social":
                         this.pushData({
@@ -2831,55 +2849,55 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         });
                         break;
                       case "checkout":
-                        (e.ecommerce.checkout.products =
+                        ((e.ecommerce.checkout.products =
                           e.ecommerce.checkout.products.map(function (e) {
                             return t.getProductData(e, n);
                           })),
-                          this.pushData(e);
+                          this.pushData(e));
                         break;
                       case "checkoutOption":
                         this.pushData(e);
                         break;
                       case "purchase":
-                        (e.ecommerce.purchase.products =
+                        ((e.ecommerce.purchase.products =
                           e.ecommerce.purchase.products.map(function (e) {
                             return t.getProductData(e, n, !0);
                           })),
-                          this.pushData(e);
+                          this.pushData(e));
                         break;
                       case "vtoInitialization":
-                        (e.ecommerce.detail.products =
+                        ((e.ecommerce.detail.products =
                           e.ecommerce.detail.products.map(function (e) {
                             return t.getProductData(e, n);
                           })),
                           this.pushData(e),
-                          (this.state.vtoInitializationEventTriggered = !0);
+                          (this.state.vtoInitializationEventTriggered = !0));
                         break;
                       case "chooseRetailer":
-                        (e.ecommerce.add.products =
+                        ((e.ecommerce.add.products =
                           e.ecommerce.add.products.map(function (e) {
                             return t.getProductData(e, n);
                           })),
-                          this.pushEvent(e);
+                          this.pushEvent(e));
                         break;
                       case "addToWishlist":
                       case "removeFromWishlist":
                       case "beginCheckout":
                       case "guestCheckout":
-                        (e.ecommerce.products = e.ecommerce.products.map(
+                        ((e.ecommerce.products = e.ecommerce.products.map(
                           function (e) {
                             return t.getProductData(e, n);
                           },
                         )),
-                          this.pushEvent(e);
+                          this.pushEvent(e));
                         break;
                       case "insideOurProducts":
-                        m.dispatch("setServices", { IOP: "activated" }),
-                          this.pushEvent(e);
+                        (m.dispatch("setServices", { IOP: "activated" }),
+                          this.pushEvent(e));
                         break;
                       case "beforeAfter":
-                        m.dispatch("setServices", { BA: "activated" }),
-                          this.pushEvent(e);
+                        (m.dispatch("setServices", { BA: "activated" }),
+                          this.pushEvent(e));
                         break;
                       case "extendedDatalayer":
                         this.pushData(e);
@@ -2891,7 +2909,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   value: function (e, t) {
                     var n = this,
                       o = void 0;
-                    (o = e.uniqueImpressionPerMaster
+                    ((o = e.uniqueImpressionPerMaster
                       ? t.id
                       : e.uniqueImpression
                         ? t.variant + "_" + t.id
@@ -2905,7 +2923,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         this.productTimeout &&
                           clearTimeout(this.productTimeout),
                         (this.productTimeout = setTimeout(function () {
-                          e.ecommerce || (e.ecommerce = {}),
+                          (e.ecommerce || (e.ecommerce = {}),
                             (e.ecommerce.impressions =
                               n.state.productImpressions),
                             (e.event = "nievent"),
@@ -2914,8 +2932,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                                 n.pageData.page.currencyCode),
                               (e.label = n.pageData.page.category)),
                             (n.state.productImpressions = []),
-                            n.pushEvent(e);
-                        }, this.options.impressionRefreshTimeout)));
+                            n.pushEvent(e));
+                        }, this.options.impressionRefreshTimeout))));
                   },
                 },
                 {
@@ -2932,7 +2950,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       if (this.state.registeredPromotionImpressions[s]) return;
                       this.state.registeredPromotionImpressions[s] = !0;
                     }
-                    this.state.promoImpressions[a] ||
+                    (this.state.promoImpressions[a] ||
                       (this.state.promoImpressions[a] = []),
                       e.promoObject.position ||
                         (e.promoObject.position =
@@ -2945,7 +2963,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       this.promotionTimeout &&
                         clearTimeout(this.promotionTimeout),
                       (this.promotionTimeout = setTimeout(function () {
-                        e.event || (e.event = "nievent"),
+                        (e.event || (e.event = "nievent"),
                           e.ecommerce || (e.ecommerce = {}),
                           (e.ecommerce.promoView = {}),
                           (e.ecommerce.promoView.promotions = Object.keys(
@@ -2954,8 +2972,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                             return e.concat(t.state.promoImpressions[n]);
                           }, [])),
                           t.pushEvent(e),
-                          (t.state.promoImpressions = {});
-                      }, this.options.impressionRefreshTimeout));
+                          (t.state.promoImpressions = {}));
+                      }, this.options.impressionRefreshTimeout)));
                   },
                 },
                 {
@@ -2971,9 +2989,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       eventLabel: e.label ? e.label.trim() : "",
                       ecommerce: e.ecommerce,
                     };
-                    e.extraData && Object.assign(t, e.extraData),
+                    (e.extraData && Object.assign(t, e.extraData),
                       window.lora.debug && console.info("Event data:", t),
-                      this.pushData(t);
+                      this.pushData(t));
                   },
                 },
                 {
@@ -2991,8 +3009,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                             virtualPageURL: e.virtualPageURL,
                             virtualPageTitle: e.virtualPageTitle,
                           };
-                          window.lora.debug && console.info("Modal data:", n),
-                            this.pushData(d(n, t));
+                          (window.lora.debug && console.info("Modal data:", n),
+                            this.pushData(d(n, t)));
                         } else
                           console.error(
                             "Modal has to send the virtualPageTitle to GTM",
@@ -3012,8 +3030,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         this.getGlobalPageData(e),
                         this.getCustomerData(e),
                       );
-                      window.lora.debug && console.info("Page data:", t),
-                        this.pushData(t);
+                      (window.lora.debug && console.info("Page data:", t),
+                        this.pushData(t));
                     } else
                       console.error(
                         "Broken datalayer detected, GTM tracking not possible",
@@ -3146,7 +3164,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     ) {
                       var n = e.customer.gender,
                         o = "nc";
-                      n && (o = 1 === n ? "m" : "f"),
+                      (n && (o = 1 === n ? "m" : "f"),
                         (t = d(t, {
                           uiGender: o,
                           uiPostalCode: e.customer.postalCode,
@@ -3164,7 +3182,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         e.customer.professionalStatus &&
                           (t.uiProfessionalStatus =
                             e.customer.professionalStatus),
-                        (t = d(t, e.customer.extended || {}));
+                        (t = d(t, e.customer.extended || {})));
                     } else
                       e.customer.ageRange &&
                         (t = d(t, { ageRange: e.customer.ageRange }));
@@ -3183,10 +3201,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       (t &&
                       -1 !== ["ngcheckout", "ngorderconfirmation"].indexOf(t)
                         ? e.forEach(function (e) {
-                            i.push(e.sampleCategory),
+                            (i.push(e.sampleCategory),
                               r.push(e.sampleName),
                               o.push(e.sampleSku),
-                              (a += e.sampleQuantity);
+                              (a += e.sampleQuantity));
                           })
                         : Object.keys(e).forEach(function (t) {
                             var n = e[t];
@@ -3198,12 +3216,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           }),
                       o.length)
                     ) {
-                      (n.sampleCategory = i.join("::")),
+                      ((n.sampleCategory = i.join("::")),
                         (n.sampleName = r.join("::")),
                         (n.sampleSku = o.join("::")),
                         t &&
                           "ngorderconfirmation" === t &&
-                          (n.sampleQuantity = a);
+                          (n.sampleQuantity = a));
                     }
                     return n;
                   },
@@ -3219,10 +3237,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     if (
                       (e.page.id && "ngcheckout" === e.page.id
                         ? e.bonusData.forEach(function (e) {
-                            o.push(e.bonusCategory),
+                            (o.push(e.bonusCategory),
                               i.push(e.bonusName),
                               n.push(e.bonusSku),
-                              r.push(e.type);
+                              r.push(e.type));
                           })
                         : Object.keys(e.lineitems).forEach(function (t) {
                             var a = e.lineitems[t];
@@ -3236,13 +3254,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           }),
                       n.length)
                     ) {
-                      (t.gwpCategory = o.join("::")),
+                      ((t.gwpCategory = o.join("::")),
                         (t.gwpName = i.join("::")),
                         (t.gwpSku = n.join("::")),
                         (t.gwpType = r.join("::")),
                         e.page.id &&
                           "ngorderconfirmation" === e.page.id &&
-                          (t.gwpQuantity = n.length);
+                          (t.gwpQuantity = n.length));
                     }
                     return t;
                   },
@@ -3381,7 +3399,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               t
             );
           })()),
-            e("default", h);
+            e("default", h));
         },
       };
     },
@@ -3429,13 +3447,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               !(t.body instanceof FormData))
           ) {
             var o = new FormData();
-            Object.entries(t.body).forEach(function (e) {
+            (Object.entries(t.body).forEach(function (e) {
               var t = n(e, 2),
                 i = t[0],
                 r = t[1];
               return o.append(i, r);
             }),
-              (t.body = o);
+              (t.body = o));
           }
           void 0 === t.showGlobalErrorMessage &&
             (t.showGlobalErrorMessage = !0);
@@ -3450,12 +3468,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             .then(h)
             .then(w)
             .then(function (n) {
-              return d(e, t), n;
+              return (d(e, t), n);
             })
             .catch(function (n) {
-              return d(e, t), Promise.reject(n);
+              return (d(e, t), Promise.reject(n));
             });
-          return l(e, t, f), f;
+          return (l(e, t, f), f);
         }),
         e("setDefaultHeaders", function (e) {
           r = s(e);
@@ -3473,7 +3491,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             },
           ],
           execute: function () {
-            (r = {}),
+            ((r = {}),
               (a = {}),
               (s = function (e) {
                 var t = {};
@@ -3493,7 +3511,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       t[u] = l;
                     }
                   } catch (e) {
-                    (i = !0), (r = e);
+                    ((i = !0), (r = e));
                   } finally {
                     try {
                       !o && s.return && s.return();
@@ -3578,7 +3596,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       : Promise.resolve({})
                 )
                   .then(function (e) {
-                    return t.showGlobalErrorMessage && f(e.errorMessage), e;
+                    return (t.showGlobalErrorMessage && f(e.errorMessage), e);
                   })
                   .then(p);
               }),
@@ -3602,7 +3620,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   if ("5" === ("" + o).charAt(0)) return g(t, e);
                   var c = new Error(n);
                   throw (
-                    ((c.errorMessage = n), (c.response = t), (c.status = o), c)
+                    (c.errorMessage = n),
+                    (c.response = t),
+                    (c.status = o),
+                    c
                   );
                 }
                 return t;
@@ -3618,7 +3639,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               (w = function (e) {
                 if (e && !1 === e.success) throw e;
                 return e;
-              });
+              }));
           },
         }
       );
@@ -3671,7 +3692,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 : "json" === r && (d = u + "?" + l),
             n(d).then(function (e) {
               var t = {};
-              return (t.content = e), (t.dataType = r), t;
+              return ((t.content = e), (t.dataType = r), t);
             })
           );
         }),
@@ -3725,19 +3746,19 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           if (i.controller === t.name)
             if ("function" == typeof t[i.method]) {
               var r = {};
-              /\./g.test(i.event) && (r.customEvent = !0),
+              (/\./g.test(i.event) && (r.customEvent = !0),
                 i.eventModifiers.includes("passive") && (r.passive = !0),
                 n(
                   i.event,
                   e,
                   function (e) {
-                    i.eventModifiers.includes("stop") && e.stopPropagation(),
+                    (i.eventModifiers.includes("stop") && e.stopPropagation(),
                       i.eventModifiers.includes("prevent") &&
                         e.preventDefault(),
-                      t[i.method](e);
+                      t[i.method](e));
                   },
                   r,
-                );
+                ));
             } else
               window.lora.debug &&
                 (console.info(e),
@@ -3831,7 +3852,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
       var n, o, i, r, a, s, c;
       function u(e) {
         if (!s)
-          return console.error("DataLayer.initialize must be called first"), {};
+          return (
+            console.error("DataLayer.initialize must be called first"),
+            {}
+          );
         var t = (e = e || document).querySelectorAll("[data-lora-datalayer]"),
           i = []
             .concat(n(t))
@@ -3859,7 +3883,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
       function l(e) {
         "undefined" != typeof window &&
           (!(function (e) {
-            (s = !0), e && !0 === e.debug && (a = !0);
+            ((s = !0), e && !0 === e.debug && (a = !0));
           })(e),
           (c = u()));
       }
@@ -3869,7 +3893,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
       function f(e, t) {
         if (!e) return null;
         var n = c.urls.baseEndpoint.replace("_endpoint_", e);
-        return t && (n = r(n, t)), n;
+        return (t && (n = r(n, t)), n);
       }
       function p() {
         var e =
@@ -3908,7 +3932,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             },
           ],
           execute: function () {
-            (a = !1),
+            ((a = !1),
               (s = !1),
               (c = {}),
               e("default", {
@@ -3918,7 +3942,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 getEndpointUrl: f,
                 getData: h,
                 get: m,
-              });
+              }));
           },
         }
       );
@@ -3956,7 +3980,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             r = e.Event;
           },
           function (e) {
-            (a = e.getResources), (s = e.fetchContent);
+            ((a = e.getResources), (s = e.fetchContent));
           },
           function (e) {
             c = e.deepMerge;
@@ -3968,14 +3992,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             l = e.default;
           },
           function (e) {
-            (d = e.on), (f = e.off), (p = e.trigger), (m = e.once);
+            ((d = e.on), (f = e.off), (p = e.trigger), (m = e.once));
           },
           function (e) {
             h = e.default;
           },
         ],
         execute: function () {
-          (v = (function () {
+          ((v = (function () {
             function e(t) {
               var n =
                   arguments.length > 1 && void 0 !== arguments[1]
@@ -3986,7 +4010,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 throw new Error(
                   "Your Class has to be instantiated with an HTMLElement",
                 );
-              (this.element = t),
+              ((this.element = t),
                 (this.name = this._getConstructorName()),
                 (this.selectors = {}),
                 (this.state = { isReloading: !1 }),
@@ -4026,7 +4050,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 this.initState(),
                 this._bindEvents(),
                 this.afterInit(),
-                this.options._lazyload && this.reload();
+                this.options._lazyload && this.reload());
             }
             return (
               i(e, [
@@ -4119,10 +4143,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       this.element.remove();
                     else {
                       var n = document.createElement("div");
-                      (n.innerHTML = e),
+                      ((n.innerHTML = e),
                         (t = n.querySelector("[data-component]")) &&
                           (r.emit("registry.registerElement", t),
-                          this.element.replaceWith(t));
+                          this.element.replaceWith(t)));
                     }
                     return t;
                   },
@@ -4133,8 +4157,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     if (e)
                       if ((t && (this.options = {}), e.breakpoints)) {
                         var n = this.getCurrentViewportOptions(e.breakpoints);
-                        (this.options = Object.assign({}, this.options, e)),
-                          n && (this.options = c(this.options, n));
+                        ((this.options = Object.assign({}, this.options, e)),
+                          n && (this.options = c(this.options, n)));
                       } else this.options = Object.assign({}, this.options, e);
                   },
                 },
@@ -4148,7 +4172,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           i = o[0],
                           r = o[1],
                           a = u.is(i);
-                        return a && (t = r), a;
+                        return (a && (t = r), a);
                       }),
                       t
                     );
@@ -4182,9 +4206,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           .createContextualFragment(
                             e[this.options.dataModelId],
                           );
-                        t.querySelector("[data-component]") &&
+                        (t.querySelector("[data-component]") &&
                           r.emit("registry.registerChildren", t),
-                          this.element.replaceWith(t);
+                          this.element.replaceWith(t));
                       }
                   },
                 },
@@ -4192,7 +4216,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   key: "_bindEvents",
                   value: function () {
                     var e = this;
-                    d(
+                    (d(
                       "component.validate",
                       this.element,
                       this.onComponentValidate.bind(this),
@@ -4210,13 +4234,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           },
                           this,
                         ),
-                      this.bindEvents();
+                      this.bindEvents());
                   },
                 },
                 {
                   key: "_reInit",
                   value: function () {
-                    this._initActions(),
+                    (this._initActions(),
                       this.initCache(),
                       this.initState(),
                       this._bindEvents(),
@@ -4226,7 +4250,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           "%c Reinit frozen component: ",
                           "color: Orange",
                           this.element,
-                        );
+                        ));
                   },
                 },
                 {
@@ -4252,14 +4276,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           .then(function (e) {
                             if (n.replaceChildren)
                               if (n.isPlainHTML)
-                                n.isAppend || (o.innerHTML = ""),
+                                (n.isAppend || (o.innerHTML = ""),
                                   (o.innerHTML += e),
-                                  r.emit("registry.registerChildren", o);
+                                  r.emit("registry.registerChildren", o));
                               else {
                                 var t = document.createDocumentFragment();
-                                t.appendChild(e),
+                                (t.appendChild(e),
                                   n.isAppend || (o.innerHTML = ""),
-                                  o.appendChild(t);
+                                  o.appendChild(t));
                               }
                             else o.replaceWith(e);
                             return e;
@@ -4296,7 +4320,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       .then(s.bind(this, t))
                       .then(this.onReload.bind(this))
                       .then(function (t) {
-                        return (e.state.isReloading = !1), t;
+                        return ((e.state.isReloading = !1), t);
                       })
                       .catch(this.onReloadFailed.bind(this));
                   },
@@ -4362,7 +4386,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   key: "_destroy",
                   value: function () {
                     var e = this;
-                    f("component.validate", this.element),
+                    (f("component.validate", this.element),
                       this.options._resizable &&
                         r.removeListener("page.resized", this.onResize, this),
                       this.options._scrollable &&
@@ -4387,7 +4411,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                             f(t, e.element);
                           },
                         ),
-                      this.destroy();
+                      this.destroy());
                   },
                 },
                 {
@@ -4409,14 +4433,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       i.forEach(function (o) {
                         t.element.querySelectorAll(o).forEach(function (t) {
                           var o = e.detail || {};
-                          (o.bubbles = !1),
+                          ((o.bubbles = !1),
                             t.hasAttribute("data-component") &&
                               (t.hasAttribute("data-component-id")
                                 ? p(n, t, o)
                                 : (r.emit("registry.registerElement", t),
                                   m("component.ready", t, function () {
                                     p(n, t, o);
-                                  })));
+                                  }))));
                         });
                       });
                   },
@@ -4457,24 +4481,24 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         t.content.INLINE_CONSENT
                       ) {
                         var n = document.createElement("div");
-                        n.setAttribute("data-js-inline-consent", ""),
+                        (n.setAttribute("data-js-inline-consent", ""),
                           n.classList.add(
                             "h-bgcolor-element-background",
                             "h-position-absolute",
                             "h-padding-3",
                           ),
                           (n.innerHTML = t.content.INLINE_CONSENT),
-                          e.element.appendChild(n);
+                          e.element.appendChild(n));
                         var o = e.element.getBoundingClientRect().height,
                           i = e.element.querySelector(
                             "[data-js-inline-consent]",
                           ),
                           a = i.getBoundingClientRect().height;
-                        (i.style.cssText =
+                        ((i.style.cssText =
                           "z-index: 1; width: 100%; height: 100%;"),
                           (e.element.style.cssText = "position: relative;"),
                           o < a && (e.element.style.minHeight = a + "px"),
-                          r.emit("registry.registerChildren", n);
+                          r.emit("registry.registerChildren", n));
                       } else
                         t.content.CONSENT &&
                           r.emit("snackbar.notify", {
@@ -4488,7 +4512,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               e
             );
           })()),
-            e("default", v);
+            e("default", v));
         },
       };
     },
@@ -4507,13 +4531,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
         var t = e.getAttribute("data-component-force");
         if (null === t) return !1;
         var o = "small";
-        return "" !== t && (o = t), n.is(o);
+        return ("" !== t && (o = t), n.is(o));
       }
       function r(e) {
         var t = e.getAttribute("data-component-unforce");
         if (null === t) return !1;
         var o = "small";
-        return "" !== t && (o = t), n.is(o);
+        return ("" !== t && (o = t), n.is(o));
       }
       return {
         setters: [
@@ -4630,7 +4654,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           },
         ],
         execute: function () {
-          (l = void 0),
+          ((l = void 0),
             (d = (function () {
               function e() {
                 return (
@@ -4653,13 +4677,13 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   {
                     key: "run",
                     value: function () {
-                      this._initObserver(), this._bindEvents();
+                      (this._initObserver(), this._bindEvents());
                     },
                   },
                   {
                     key: "_bindEvents",
                     value: function () {
-                      window.addEventListener(
+                      (window.addEventListener(
                         "load",
                         this.onWindowLoad.bind(this),
                       ),
@@ -4674,7 +4698,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         r.on(
                           "registry.registerChildren",
                           this.registerChildren.bind(this),
-                        );
+                        ));
                     },
                   },
                   {
@@ -4789,19 +4813,26 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                             ));
                         }
                       } else
-                        (n = e.name),
+                        ((n = e.name),
                           (o = e.options),
-                          e.elmt && ((i = !0), (e = e.elmt));
+                          e.elmt && ((i = !0), (e = e.elmt)));
                       return (
                         (e._loading = !0),
-                        SystemJS.import("components/" + n).then(function (r) {
+                        SystemJS.import(
+                          n.startsWith("/dist/javascripts/components/")
+                            ? n.replace(
+                                "/dist/javascripts/components/",
+                                "components/",
+                              )
+                            : "components/" + n,
+                        ).then(function (r) {
                           if (!r.default)
                             throw new Error(
                               "Export your " + n + " module as default",
                             );
                           var a = i ? e : null,
                             s = new r.default(a, o || {});
-                          return t.register(s), s;
+                          return (t.register(s), s);
                         })
                       );
                     },
@@ -4809,12 +4840,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   {
                     key: "_initObserver",
                     value: function () {
-                      u(this.componentSelector, {
+                      (u(this.componentSelector, {
                         registerElement: this.registerElement.bind(this),
                         registerChildren: this.registerChildren.bind(this),
                         unregister: this.unregister.bind(this),
                       }),
-                        this._initComponentObservers();
+                        this._initComponentObservers());
                     },
                   },
                   {
@@ -4842,7 +4873,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                             this.observer.observe(r);
                           }
                         } catch (e) {
-                          (t = !0), (n = e);
+                          ((t = !0), (n = e));
                         } finally {
                           try {
                             !e && i.return && i.return();
@@ -4857,7 +4888,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     key: "onViewport",
                     value: function (e) {
                       var t = this;
-                      e.forEach(function (e) {
+                      (e.forEach(function (e) {
                         var n = e.target;
                         if (
                           (e.intersectionRatio > t.observerOptions.threshold ||
@@ -4873,7 +4904,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         }
                       }),
                         this.unLoadComponentsCount <= 0 &&
-                          this.observer.disconnect();
+                          this.observer.disconnect());
                     },
                   },
                   {
@@ -4883,9 +4914,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         arguments.length > 1 && void 0 !== arguments[1]
                           ? arguments[1]
                           : this.observer;
-                      t.unobserve(e),
+                      (t.unobserve(e),
                         t === this.observer &&
-                          (this.unLoadComponentsCount -= 1);
+                          (this.unLoadComponentsCount -= 1));
                     },
                   },
                   {
@@ -4937,7 +4968,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           e.name +
                             " needs to extend from the Core Component Class",
                         );
-                      e.element.setAttribute("data-component-id", e.id),
+                      (e.element.setAttribute("data-component-id", e.id),
                         (e.element._id = e.id),
                         r.emit("component.register." + e.name, {
                           name: e.name,
@@ -4960,7 +4991,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                             "%c New component registered: ",
                             "color: DodgerBlue",
                             e,
-                          );
+                          ));
                     },
                   },
                   {
@@ -5055,7 +5086,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 e
               );
             })()),
-            e("default", new d());
+            e("default", new d()));
         },
       };
     },
@@ -5108,19 +5139,19 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           },
         ],
         execute: function () {
-          (r = function e() {
-            i(this, e),
+          ((r = function e() {
+            (i(this, e),
               (this.activeFocus = null),
               (this.lastScroll = null),
-              (this.removedIndex = null);
+              (this.removedIndex = null));
           }),
             (a = (function () {
               function e() {
                 if ((i(this, e), e.instance)) return e.instance;
-                (this.state = new r()),
+                ((this.state = new r()),
                   (this.stateStack = []),
                   (this.listeners = { "state.restore": new Map() }),
-                  (e.instance = this);
+                  (e.instance = this));
               }
               return (
                 o(e, [
@@ -5203,7 +5234,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   {
                     key: "addNewState",
                     value: function () {
-                      this.stateStack.push(this.state), (this.state = new r());
+                      (this.stateStack.push(this.state),
+                        (this.state = new r()));
                     },
                   },
                   {
@@ -5241,7 +5273,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 e
               );
             })()),
-            e("default", new a());
+            e("default", new a()));
         },
       };
     },
@@ -5277,20 +5309,20 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           },
         ],
         execute: function () {
-          (s = (function () {
+          ((s = (function () {
             function e() {
-              n(this, e),
+              (n(this, e),
                 (this.modalList = {}),
                 (this.waitModals = []),
                 this.bindEvents(),
-                (this.isOpeningModal = !1);
+                (this.isOpeningModal = !1));
             }
             return (
               o(e, [
                 {
                   key: "bindEvents",
                   value: function () {
-                    i.on("modal.open", this.onOpen.bind(this), this),
+                    (i.on("modal.open", this.onOpen.bind(this), this),
                       i.on(
                         "modal.open.before",
                         this.onBeforeOpen.bind(this),
@@ -5300,7 +5332,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         "modal.close.after",
                         this.onAfterClose.bind(this),
                         this,
-                      );
+                      ));
                   },
                 },
                 {
@@ -5314,7 +5346,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     )
                       return Promise.resolve();
                     if (((this.isOpeningModal = !0), this.currentModal)) {
-                      this.manageStacking(n), (this.nextModal = n);
+                      (this.manageStacking(n), (this.nextModal = n));
                       var o = [this.currentModal.close()];
                       return Promise.all(o)
                         .then(function () {
@@ -5341,7 +5373,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     if (
                       (e.closeAll &&
                         (this.waitModals = this.waitModals.filter(function (e) {
-                          return e.instance.element.remove(), !1;
+                          return (e.instance.element.remove(), !1);
                         })),
                       this.currentModal)
                     ) {
@@ -5360,7 +5392,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     var t = this;
                     e.type || (e.type = "Modal");
                     var n =
-                      "Modal" === e.type ? "/dist/javascripts/components/global/Modal.js" : "modal/" + e.type;
+                      "Modal" === e.type
+                        ? "global/Modal.js"
+                        : "modal/" + e.type;
                     return r
                       .importComponent({ name: n, options: e.options })
                       .then(function (n) {
@@ -5392,7 +5426,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     var e = this.waitModals.pop();
                     (e = (e && e.instance) || null) &&
                       e.open().then(function () {
-                        (e.enableStacking = !1), (e = null);
+                        ((e.enableStacking = !1), (e = null));
                       });
                   },
                 },
@@ -5405,7 +5439,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 {
                   key: "manageStacking",
                   value: function (e) {
-                    this.currentModal.options.isStackable &&
+                    (this.currentModal.options.isStackable &&
                     (e.options.enableStacking || e.enableStacking)
                       ? this.waitModals.push({
                           hasPendingSuccessor: !0,
@@ -5416,14 +5450,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                           this.waitModals.length - 1
                         ].hasPendingSuccessor = !0),
                       (this.currentModal.enableStacking =
-                        !!e.options.enableStacking);
+                        !!e.options.enableStacking));
                   },
                 },
               ]),
               e
             );
           })()),
-            e("default", new s());
+            e("default", new s()));
         },
       };
     },
@@ -5446,10 +5480,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               i = void 0;
             o <= n;
           )
-            (i = e[(o += 1)]),
+            ((i = e[(o += 1)]),
               t.appendChild(
                 "string" == typeof i ? document.createTextNode(i) : i,
-              );
+              ));
           return t;
         }
         throw new Error("DOM Exception 8");
@@ -5550,7 +5584,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           },
         ],
         execute: function () {
-          e(
+          (e(
             "mediaQuery",
             (i = {
               breakpoints: o,
@@ -5588,10 +5622,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 );
               },
               atLeast: function (e) {
-                return this.current || this._init(), this.matchQuery(e);
+                return (this.current || this._init(), this.matchQuery(e));
               },
               atMost: function (e) {
-                return this.current || this._init(), this.matchQuery(e, !1);
+                return (this.current || this._init(), this.matchQuery(e, !1));
               },
               matchQuery: function (e) {
                 var t =
@@ -5633,11 +5667,11 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                     if (!e) {
                       var n = o[t],
                         i = "only screen";
-                      (n.min || 0 === n.min) &&
+                      ((n.min || 0 === n.min) &&
                         (i += " and (min-width:  " + n.min + "px)"),
                         n.max && (i += " and (max-width:  " + n.max + "px)"),
                         window.matchMedia(i).matches &&
-                          ((e = n).name = t.toLowerCase());
+                          ((e = n).name = t.toLowerCase()));
                     }
                   }),
                   "object" == typeof e ? e.name : e
@@ -5645,7 +5679,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               },
             }),
           ),
-            e("mediaQuery", i);
+            e("mediaQuery", i));
         },
       };
     },
@@ -5750,14 +5784,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               function e(e, t) {
                 for (var n = 0; n < t.length; n++) {
                   var o = t[n];
-                  (o.enumerable = o.enumerable || !1),
+                  ((o.enumerable = o.enumerable || !1),
                     (o.configurable = !0),
                     "value" in o && (o.writable = !0),
-                    Object.defineProperty(e, o.key, o);
+                    Object.defineProperty(e, o.key, o));
                 }
               }
               return function (t, n, o) {
-                return n && e(t.prototype, n), o && e(t, o), t;
+                return (n && e(t.prototype, n), o && e(t, o), t);
               };
             })(),
           );
@@ -5800,7 +5834,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 "Super expression must either be null or a function, not " +
                   typeof t,
               );
-            (e.prototype = Object.create(t && t.prototype, {
+            ((e.prototype = Object.create(t && t.prototype, {
               constructor: {
                 value: e,
                 enumerable: !1,
@@ -5811,7 +5845,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               t &&
                 (Object.setPrototypeOf
                   ? Object.setPrototypeOf(e, t)
-                  : (e.__proto__ = t));
+                  : (e.__proto__ = t)));
           });
         },
       };
@@ -5824,7 +5858,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
     function (e, t, n) {
       var o, i;
       this || self;
-      (o = t),
+      ((o = t),
         (i = function () {
           "use strict";
           var e = {};
@@ -5834,7 +5868,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 n = "~";
               function o() {}
               function i(e, t, n) {
-                (this.fn = e), (this.context = t), (this.once = n || !1);
+                ((this.fn = e), (this.context = t), (this.once = n || !1));
               }
               function r(e, t, o, r, a) {
                 if ("function" != typeof o)
@@ -5856,9 +5890,9 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   : delete e._events[t];
               }
               function s() {
-                (this._events = new o()), (this._eventsCount = 0);
+                ((this._events = new o()), (this._eventsCount = 0));
               }
-              Object.create &&
+              (Object.create &&
                 ((o.prototype = Object.create(null)),
                 new o().__proto__ || (n = !1)),
                 (s.prototype.eventNames = function () {
@@ -5898,17 +5932,17 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                       (l.once && this.removeListener(e, l.fn, void 0, !0), d)
                     ) {
                       case 1:
-                        return l.fn.call(l.context), !0;
+                        return (l.fn.call(l.context), !0);
                       case 2:
-                        return l.fn.call(l.context, t), !0;
+                        return (l.fn.call(l.context, t), !0);
                       case 3:
-                        return l.fn.call(l.context, t, o), !0;
+                        return (l.fn.call(l.context, t, o), !0);
                       case 4:
-                        return l.fn.call(l.context, t, o, i), !0;
+                        return (l.fn.call(l.context, t, o, i), !0);
                       case 5:
-                        return l.fn.call(l.context, t, o, i, r), !0;
+                        return (l.fn.call(l.context, t, o, i, r), !0);
                       case 6:
-                        return l.fn.call(l.context, t, o, i, r, a), !0;
+                        return (l.fn.call(l.context, t, o, i, r, a), !0);
                     }
                     for (u = 1, c = new Array(d - 1); u < d; u++)
                       c[u - 1] = arguments[u];
@@ -5952,7 +5986,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 (s.prototype.removeListener = function (e, t, o, i) {
                   var r = n ? n + e : e;
                   if (!this._events[r]) return this;
-                  if (!t) return a(this, r), this;
+                  if (!t) return (a(this, r), this);
                   var s = this._events[r];
                   if (s.fn)
                     s.fn !== t ||
@@ -5984,7 +6018,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 (s.prototype.addListener = s.prototype.on),
                 (s.prefixed = n),
                 (s.EventEmitter = s),
-                (e.exports = s);
+                (e.exports = s));
             })({
               get exports() {
                 return e;
@@ -6001,7 +6035,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           : ((o =
               "undefined" != typeof globalThis
                 ? globalThis
-                : o || self).EventEmitter3 = i());
+                : o || self).EventEmitter3 = i()));
     },
   ),
   System.register(
@@ -6035,14 +6069,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           },
         ],
         execute: function () {
-          (s = (function (e) {
+          ((s = (function (e) {
             function t() {
               n(this, t);
               var e = i(
                 this,
                 (t.__proto__ || Object.getPrototypeOf(t)).call(this),
               );
-              return (e._eventState = {}), e;
+              return ((e._eventState = {}), e);
             }
             return (
               r(t, a),
@@ -6050,14 +6084,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 {
                   key: "emitStateUpdate",
                   value: function (e, t) {
-                    (this._eventState[e] = t), this.emit(e, t);
+                    ((this._eventState[e] = t), this.emit(e, t));
                   },
                 },
                 {
                   key: "onStateUpdate",
                   value: function (e, t, n) {
-                    this.on(e, t, n),
-                      this._eventState[e] && t.call(n, this._eventState[e]);
+                    (this.on(e, t, n),
+                      this._eventState[e] && t.call(n, this._eventState[e]));
                   },
                 },
               ]),
@@ -6065,7 +6099,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             );
           })()),
             e("Event", (c = new s())),
-            e("Event", c);
+            e("Event", c));
         },
       };
     },
@@ -6117,7 +6151,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         o = !0
                       );
                     } catch (e) {
-                      (i = !0), (r = e);
+                      ((i = !0), (r = e));
                     } finally {
                       try {
                         !o && s.return && s.return();
@@ -6188,7 +6222,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           throw new Error("Handler function is mandatory", t);
         var u = e.split(" "),
           l = [];
-        t instanceof HTMLElement ||
+        (t instanceof HTMLElement ||
         t instanceof window.Window ||
         t instanceof window.Document
           ? (l = [t])
@@ -6215,7 +6249,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 var n =
                   t.eventId ||
                   "event_" + Math.random().toString(36).substring(2, 16);
-                (t.eventId = n),
+                ((t.eventId = n),
                   (function (e, t, n, r, a) {
                     var c = t.eventId;
                     if (a) {
@@ -6227,18 +6261,18 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                         );
                       };
                     } else
-                      i[c] || (i[c] = {}),
-                        (i[c][e] = { fn: n, target: t, options: r });
+                      (i[c] || (i[c] = {}),
+                        (i[c][e] = { fn: n, target: t, options: r }));
                     if (s(e)) {
                       var l = e.split("."),
                         d = o(l, 1);
                       e = d[0];
                     }
                     t.addEventListener(e, n, r);
-                  })(e, t, r, a, c);
+                  })(e, t, r, a, c));
               }
             });
-          });
+          }));
       }
       return (
         e("on", l),
@@ -6250,7 +6284,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
         e("off", function (e, t, o) {
           var i =
             arguments.length > 3 && void 0 !== arguments[3] && arguments[3];
-          e &&
+          (e &&
             "string" != typeof e &&
             1 === arguments.length &&
             ((t = e), (e = "all")),
@@ -6268,7 +6302,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                   u(e, t, i);
                 });
               }
-            });
+            }));
         }),
         e("trigger", function (e, t) {
           var n =
@@ -6279,7 +6313,8 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 t = t || { bubbles: !1, cancelable: !1, detail: void 0 };
                 var n = document.createEvent("CustomEvent");
                 return (
-                  n.initCustomEvent(e, t.bubbles, t.cancelable, t.detail), n
+                  n.initCustomEvent(e, t.bubbles, t.cancelable, t.detail),
+                  n
                 );
               }
               "function" != typeof window.CustomEvent
@@ -6305,7 +6340,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             },
           ],
           execute: function () {
-            (i = {}),
+            ((i = {}),
               (r = !1),
               (a = [
                 "change",
@@ -6345,7 +6380,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 "seeked",
                 "beforeunload",
                 "hashchange",
-              ]);
+              ]));
           },
         }
       );
@@ -6361,11 +6396,11 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             r[a] = arguments[a];
           var s = this,
             c = n && !o;
-          clearTimeout(o),
+          (clearTimeout(o),
             (o = setTimeout(function () {
-              (o = null), n || e.apply(s, r);
+              ((o = null), n || e.apply(s, r));
             }, t)),
-            c && e.apply(s, r);
+            c && e.apply(s, r));
         };
       }),
       { setters: [], execute: function () {} }
@@ -6387,10 +6422,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               return new Date().getTime();
             },
           u = function () {
-            (s = !1 === n.leading ? 0 : c()),
+            ((s = !1 === n.leading ? 0 : c()),
               (o = null),
               (a = e.apply(i, r)),
-              o || ((r = null), (i = null));
+              o || ((r = null), (i = null)));
           };
         return function () {
           var l = c();
@@ -6442,7 +6477,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
       }
       function w() {
         var e, t;
-        (e = window.history.pushState),
+        ((e = window.history.pushState),
           (t = window.history.replaceState),
           (window.history.pushState = function () {
             for (var t = arguments.length, n = Array(t), o = 0; o < t; o++)
@@ -6476,12 +6511,12 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             function () {
               var e =
                 arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-              (l.is("medium down") || r()) &&
+              ((l.is("medium down") || r()) &&
                 ((g = document.documentElement.scrollTop),
                 window.scrollTo(0, 0),
                 document.documentElement.classList.add(v.modalActive)),
                 e && document.documentElement.classList.add(v.modalActive),
-                (y = !1);
+                (y = !1));
             },
             this,
           ),
@@ -6492,14 +6527,14 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 arguments.length > 0 && void 0 !== arguments[0]
                   ? arguments[0]
                   : {};
-              e.isUnblockScrollForAll &&
+              (e.isUnblockScrollForAll &&
                 document.documentElement.classList.remove(v.modalActive),
                 (l.is("medium down") || r()) &&
                   (document.documentElement.classList.remove(v.modalActive),
                   e.isInstantScroll
                     ? window.scroll({ top: g, behavior: "instant" })
                     : window.scrollTo(0, g)),
-                (y = !0);
+                (y = !0));
             },
             this,
           ),
@@ -6510,11 +6545,11 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 arguments.length > 0 && void 0 !== arguments[0]
                   ? arguments[0]
                   : {};
-              document.body.classList.add(v.fullScreenAbsolute),
+              (document.body.classList.add(v.fullScreenAbsolute),
                 "function" == typeof e.onEnable &&
                   setTimeout(function () {
                     e.onEnable();
-                  }, 100);
+                  }, 100));
             },
             this,
           ),
@@ -6529,7 +6564,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             "resize",
             window,
             m(function () {
-              b(), f.emit("page.resized", !0);
+              (b(), f.emit("page.resized", !0));
             }, 300),
           ),
           p(
@@ -6547,10 +6582,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
                 isUnblockScrollForAll: !0,
                 isInstantScroll: !0,
               });
-          });
+          }));
       }
       function C() {
-        w(),
+        (w(),
           i() || document.body.classList.add("no-apple-pay"),
           b(),
           n.run(),
@@ -6561,11 +6596,11 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             get: function () {
               return o.getData();
             },
-          });
+          }));
       }
       function E() {
         var e;
-        /debug/.test(window.location.search) && (window.lora.debug = !0),
+        (/debug/.test(window.location.search) && (window.lora.debug = !0),
           (e = "Firefox" === a().name),
           document.querySelectorAll("img").forEach(function (t) {
             var n = t.parentNode.querySelector("source"),
@@ -6590,10 +6625,10 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
               : "loading" !== document.readyState
           )
             ? C()
-            : document.addEventListener("DOMContentLoaded", C);
+            : document.addEventListener("DOMContentLoaded", C));
       }
       function k() {
-        (window.lora = d(window.lora, {
+        ((window.lora = d(window.lora, {
           version: "80.1.0",
           buildVersion: "786",
           mountedComponents: n.mountedComponents,
@@ -6605,7 +6640,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             });
           },
         })),
-          E();
+          E());
       }
       return {
         setters: [
@@ -6616,7 +6651,7 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
             o = e.default;
           },
           function (e) {
-            (i = e.applePay), (r = e.isIOS), (a = e.browserInfo);
+            ((i = e.applePay), (r = e.isIOS), (a = e.browserInfo));
           },
           function (e) {
             s = e.default;
@@ -6650,15 +6685,15 @@ System.register("javascripts/core/shims/support.js", [], function (e, t) {
           },
         ],
         execute: function () {
-          (window.lora = window.lora || {}),
+          ((window.lora = window.lora || {}),
             (v = {
               modalActive: "m-scroll-blocked",
               fullScreenAbsolute: "h-layout-full-screen-absolute",
             }),
             (g = 0),
             (y = !0),
-            Promise.all([u()]).then(k);
+            Promise.all([u()]).then(k));
         },
       };
     },
-  );
+  ));

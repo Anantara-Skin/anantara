@@ -1,7 +1,7 @@
 (function (System, SystemJS) {
   "use strict";
   System.register(
-    ["components//dist/javascripts/components/global/Form.js", "toolbox/deepMerge"],
+    ["components/global/Form.js", "toolbox/deepMerge"],
     function (a) {
       "use strict";
       var b, c, d;
@@ -59,4 +59,4 @@
   );
   //# sourceMappingURL=GeoRedirectForm.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/GeoRedirectForm.js.js
+//# sourceURL=/dist/javascripts/components/global/GeoRedirectForm.js.js
