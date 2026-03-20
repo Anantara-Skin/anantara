@@ -73,4 +73,4 @@
   );
   //# sourceMappingURL=SkipLink.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components//dist/javascripts/components/global/SkipLink.js.js
+//# sourceURL=/dist/javascripts/components/global/SkipLink.js.js

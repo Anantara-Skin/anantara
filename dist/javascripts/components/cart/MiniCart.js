@@ -3,7 +3,7 @@
   System.register(
     [
       "services/EventEmitter",
-      "components//dist/javascripts/components/global/SlidingPanel.js",
+      "components/global/SlidingPanel.js",
       "toolbox/deepMerge",
       "toolbox/event",
       "toolbox/mediaQuery",
