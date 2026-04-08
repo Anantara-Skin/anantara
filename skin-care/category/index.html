@@ -53,54 +53,7 @@
     <link href="/dist/css/category.css" rel="stylesheet">   
     <script>window.performance&&(window.performance.mark("endStylesheetLoading"),window.performance.measure("stylesheetsLoading","startStylesheetLoading","endStylesheetLoading"))</script>   
     <script>"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/worker.js").then(function(e){window.lora.debug&&console.info("[Service Worker] Registered",e),n()});var t=document.querySelector("[data-js-offline-warning]");function n(e){t&&(navigator.onLine?(document.documentElement.classList.remove("m-offline"),t.classList.add("m-closed"),t.setAttribute("aria-hidden","true"),t.removeAttribute("tabindex")):(document.documentElement.classList.add("m-offline"),t.classList.remove("m-closed"),t.setAttribute("aria-hidden","false"),t.setAttribute("tabindex","0"),t.focus()))}window.addEventListener("online",n),window.addEventListener("offline",n)})</script>
-<script type="text/javascript">//<!--
-/* <![CDATA[ (head-active_data.js) */
-var dw = (window.dw || {});
-dw.ac = {
-    _analytics: null,
-    _events: [],
-    _category: "",
-    _searchData: "",
-    _anact: "",
-    _anact_nohit_tag: "",
-    _analytics_enabled: "true",
-    _timeZone: "Europe/London",
-    _capture: function(configs) {
-        if (Object.prototype.toString.call(configs) === "[object Array]") {
-            configs.forEach(captureObject);
-            return;
-        }
-        dw.ac._events.push(configs);
-    },
-	capture: function() { 
-		dw.ac._capture(arguments);
-		// send to CQ as well:
-		if (window.CQuotient) {
-			window.CQuotient.trackEventsFromAC(arguments);
-		}
-	},
-    EV_PRD_SEARCHHIT: "searchhit",
-    EV_PRD_DETAIL: "detail",
-    EV_PRD_RECOMMENDATION: "recommendation",
-    EV_PRD_SETPRODUCT: "setproduct",
-    applyContext: function(context) {
-        if (typeof context === "object" && context.hasOwnProperty("category")) {
-        	dw.ac._category = context.category;
-        }
-        if (typeof context === "object" && context.hasOwnProperty("searchData")) {
-        	dw.ac._searchData = context.searchData;
-        }
-    },
-    setDWAnalytics: function(analytics) {
-        dw.ac._analytics = analytics;
-    },
-    eventsIsEmpty: function() {
-        return 0 == dw.ac._events.length;
-    }
-};
-/* ]]> */
-// -->
-</script>
+
 <script type="text/javascript">//<!--
 /* <![CDATA[ (head-cquotient.js) */
 var CQuotient = window.CQuotient = {};

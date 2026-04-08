@@ -37,6 +37,9 @@ import {
   addClass as A,
   $ as G,
 } from "./dom7.js";
+import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Lazy } from 'swiper';
+Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Lazy]);
+
 import { getWindow as B, getDocument as N } from "./ssr-window.js";
 const H = {
   addClass: A,

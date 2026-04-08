@@ -44,54 +44,7 @@
  <link rel="apple-touch-icon" sizes="180x180" href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dwf4e3c54b/images/app/homescreen192.png"> 
  <link href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dw7f7ed272/images/app/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> <link href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dwf29ba249/images/app/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> <link href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dwea6cfa13/images/app/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image"> <link href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dw86c7620f/images/app/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image"> <link href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dw617d7811/images/app/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> <link href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dw62d56d69/images/app/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> <link href="/on/demandware.static/Sites-aesop-uk-Site/-/default/dw9dbd6509/images/app/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> <script>window.lazySizesConfig= {"lazyClass":"m-lazyload","loadedClass":"m-lazyloaded","preloadClass":"m-lazypreload","init":false,"loadHidden":false,"loadMode":1},true&&(window.lazySizesConfig.nativeLoading={setLoadingAttribute:!0,disableListeners:!0})</script> 
  <script>window.performance&&window.performance.mark("startStylesheetLoading")</script>  <link href="/dist/css/commons.css" rel="stylesheet">  <link href="/dist/css/content.css" rel="stylesheet">   <script>window.performance&&(window.performance.mark("endStylesheetLoading"),window.performance.measure("stylesheetsLoading","startStylesheetLoading","endStylesheetLoading"))</script>   <script>"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/worker.js").then(function(e){window.lora.debug&&console.info("[Service Worker] Registered",e),n()});var t=document.querySelector("[data-js-offline-warning]");function n(e){t&&(navigator.onLine?(document.documentElement.classList.remove("m-offline"),t.classList.add("m-closed"),t.setAttribute("aria-hidden","true"),t.removeAttribute("tabindex")):(document.documentElement.classList.add("m-offline"),t.classList.remove("m-closed"),t.setAttribute("aria-hidden","false"),t.setAttribute("tabindex","0"),t.focus()))}window.addEventListener("online",n),window.addEventListener("offline",n)})</script>
-        <script type="text/javascript">//<!--
-/* <![CDATA[ (head-active_data.js) */
-var dw = (window.dw || {});
-dw.ac = {
-    _analytics: null,
-    _events: [],
-    _category: "",
-    _searchData: "",
-    _anact: "",
-    _anact_nohit_tag: "",
-    _analytics_enabled: "true",
-    _timeZone: "Europe/London",
-    _capture: function(configs) {
-        if (Object.prototype.toString.call(configs) === "[object Array]") {
-            configs.forEach(captureObject);
-            return;
-        }
-        dw.ac._events.push(configs);
-    },
-	capture: function() { 
-		dw.ac._capture(arguments);
-		// send to CQ as well:
-		if (window.CQuotient) {
-			window.CQuotient.trackEventsFromAC(arguments);
-		}
-	},
-    EV_PRD_SEARCHHIT: "searchhit",
-    EV_PRD_DETAIL: "detail",
-    EV_PRD_RECOMMENDATION: "recommendation",
-    EV_PRD_SETPRODUCT: "setproduct",
-    applyContext: function(context) {
-        if (typeof context === "object" && context.hasOwnProperty("category")) {
-        	dw.ac._category = context.category;
-        }
-        if (typeof context === "object" && context.hasOwnProperty("searchData")) {
-        	dw.ac._searchData = context.searchData;
-        }
-    },
-    setDWAnalytics: function(analytics) {
-        dw.ac._analytics = analytics;
-    },
-    eventsIsEmpty: function() {
-        return 0 == dw.ac._events.length;
-    }
-};
-/* ]]> */
-// -->
-</script>
+        
 <script type="text/javascript">//<!--
 /* <![CDATA[ (head-cquotient.js) */
 var CQuotient = window.CQuotient = {};

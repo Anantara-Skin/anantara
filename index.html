@@ -68,7 +68,6 @@
       content="Anantara offers skin, hair and body care formulations, and personal and home fragrances created with meticulous attention to detail. Browse the range online."
     />
     <meta property="og:url" content="/" />
-    <meta property="og:site_name" content="NGLORA" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="content" />
     <meta property="og:image" content="" />
@@ -136,50 +135,7 @@
         }
       ]
     </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Formulations for Skin, Hair & Body | Anantara SA",
-        "url": "/",
-        "inLanguage": "en",
-        "potentialAction": [
-          {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "/on/demandware.store/Sites-anantara-uk-Site/en_GB/Search-Show?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          }
-        ],
-        "additionalType": ["Service", "Organization"]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "LOREAL",
-        "url": "https://www.example.com",
-        "description": "L’Oréal, world leader in beauty: makeup, cosmetics, haircare, perfume.",
-        "telephone": "1234567890",
-        "logo": "https://www.example.com/logo.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "10 Hudson Yards",
-          "addressLocality": "NEW YORK",
-          "addressRegion": "NY",
-          "postalCode": "10001",
-          "addressCountry": "United States",
-          "sameAs": [
-            "https://www.facebook.com/Loreal",
-            "https://twitter.com/loreal",
-            "https://plus.google.com/+Loreal"
-          ]
-        }
-      }
-    </script>
+
     <link rel="canonical" href="/" />
     <link rel="alternate" hreflang="en-gb" href="/" />
     <link
@@ -242,7 +198,7 @@
       }
     </style>
     <script>
-      (window.lazySizesConfig = {
+      ((window.lazySizesConfig = {
         lazyClass: "m-lazyload",
         loadedClass: "m-lazyloaded",
         preloadClass: "m-lazypreload",
@@ -254,7 +210,7 @@
           (window.lazySizesConfig.nativeLoading = {
             setLoadingAttribute: !0,
             disableListeners: !0,
-          });
+          }));
     </script>
     <script>
       window.performance && window.performance.mark("startStylesheetLoading");
@@ -270,188 +226,6 @@
           "startStylesheetLoading",
           "endStylesheetLoading",
         ));
-    </script>
-    <script>
-      "serviceWorker" in navigator &&
-        window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/worker.js").then(function (e) {
-            window.lora.debug && console.info("[Service Worker] Registered", e),
-              n();
-          });
-          var t = document.querySelector("[data-js-offline-warning]");
-          function n(e) {
-            t &&
-              (navigator.onLine
-                ? (document.documentElement.classList.remove("m-offline"),
-                  t.classList.add("m-closed"),
-                  t.setAttribute("aria-hidden", "true"),
-                  t.removeAttribute("tabindex"))
-                : (document.documentElement.classList.add("m-offline"),
-                  t.classList.remove("m-closed"),
-                  t.setAttribute("aria-hidden", "false"),
-                  t.setAttribute("tabindex", "0"),
-                  t.focus()));
-          }
-          window.addEventListener("online", n),
-            window.addEventListener("offline", n);
-        });
-    </script>
-    <script type="text/javascript">
-      //<!--
-      /* <![CDATA[ (head-active_data.js) */
-      var dw = window.dw || {};
-      dw.ac = {
-        _analytics: null,
-        _events: [],
-        _category: "",
-        _searchData: "",
-        _anact: "",
-        _anact_nohit_tag: "",
-        _analytics_enabled: "true",
-        _timeZone: "Africa/Pretoria",
-        _capture: function (configs) {
-          if (Object.prototype.toString.call(configs) === "[object Array]") {
-            configs.forEach(captureObject);
-            return;
-          }
-          dw.ac._events.push(configs);
-        },
-        capture: function () {
-          dw.ac._capture(arguments);
-          // send to CQ as well:
-          if (window.CQuotient) {
-            window.CQuotient.trackEventsFromAC(arguments);
-          }
-        },
-        EV_PRD_SEARCHHIT: "searchhit",
-        EV_PRD_DETAIL: "detail",
-        EV_PRD_RECOMMENDATION: "recommendation",
-        EV_PRD_SETPRODUCT: "setproduct",
-        applyContext: function (context) {
-          if (
-            typeof context === "object" &&
-            context.hasOwnProperty("category")
-          ) {
-            dw.ac._category = context.category;
-          }
-          if (
-            typeof context === "object" &&
-            context.hasOwnProperty("searchData")
-          ) {
-            dw.ac._searchData = context.searchData;
-          }
-        },
-        setDWAnalytics: function (analytics) {
-          dw.ac._analytics = analytics;
-        },
-        eventsIsEmpty: function () {
-          return 0 == dw.ac._events.length;
-        },
-      };
-      /* ]]> */
-      // -->
-    </script>
-    <script type="text/javascript">
-      //<!--
-      /* <![CDATA[ (head-cquotient.js) */
-      var CQuotient = (window.CQuotient = {});
-      CQuotient.clientId = "aaqp-anantara-uk";
-      CQuotient.realm = "AAQP";
-      CQuotient.siteId = "anantara-uk";
-      CQuotient.instanceType = "prd";
-      CQuotient.locale = "en_GB";
-      CQuotient.fbPixelId = "__UNKNOWN__";
-      CQuotient.activities = [];
-      CQuotient.cqcid = "";
-      CQuotient.cquid = "";
-      CQuotient.cqeid = "";
-      CQuotient.cqlid = "";
-      CQuotient.apiHost = "api.cquotient.com";
-      /* Turn this on to test against Staging Einstein */
-      /* CQuotient.useTest= true; */
-      CQuotient.useTest = "true" === "false";
-      CQuotient.initFromCookies = function () {
-        var ca = document.cookie.split(";");
-        for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == " ") c = c.substring(1, c.length);
-          if (c.indexOf("cqcid=") == 0) {
-            CQuotient.cqcid = c.substring("cqcid=".length, c.length);
-          } else if (c.indexOf("cquid=") == 0) {
-            var value = c.substring("cquid=".length, c.length);
-            if (value) {
-              var split_value = value.split("|", 3);
-              if (split_value.length > 0) {
-                CQuotient.cquid = split_value[0];
-              }
-              if (split_value.length > 1) {
-                CQuotient.cqeid = split_value[1];
-              }
-              if (split_value.length > 2) {
-                CQuotient.cqlid = split_value[2];
-              }
-            }
-          }
-        }
-      };
-      CQuotient.getCQCookieId = function () {
-        if (window.CQuotient.cqcid == "") window.CQuotient.initFromCookies();
-        return window.CQuotient.cqcid;
-      };
-      CQuotient.getCQUserId = function () {
-        if (window.CQuotient.cquid == "") window.CQuotient.initFromCookies();
-        return window.CQuotient.cquid;
-      };
-      CQuotient.getCQHashedEmail = function () {
-        if (window.CQuotient.cqeid == "") window.CQuotient.initFromCookies();
-        return window.CQuotient.cqeid;
-      };
-      CQuotient.getCQHashedLogin = function () {
-        if (window.CQuotient.cqlid == "") window.CQuotient.initFromCookies();
-        return window.CQuotient.cqlid;
-      };
-      CQuotient.trackEventsFromAC = function (/* Object or Array */ events) {
-        try {
-          if (Object.prototype.toString.call(events) === "[object Array]") {
-            events.forEach(_trackASingleCQEvent);
-          } else {
-            CQuotient._trackASingleCQEvent(events);
-          }
-        } catch (err) {}
-      };
-      CQuotient._trackASingleCQEvent = function (/* Object */ event) {
-        if (event && event.id) {
-          if (event.type === dw.ac.EV_PRD_DETAIL) {
-            CQuotient.trackViewProduct({
-              id: "",
-              alt_id: event.id,
-              type: "raw_sku",
-            });
-          } // not handling the other dw.ac.* events currently
-        }
-      };
-      CQuotient.trackViewProduct = function (/* Object */ cqParamData) {
-        var cq_params = {};
-        cq_params.cookieId = CQuotient.getCQCookieId();
-        cq_params.userId = CQuotient.getCQUserId();
-        cq_params.emailId = CQuotient.getCQHashedEmail();
-        cq_params.loginId = CQuotient.getCQHashedLogin();
-        cq_params.product = cqParamData.product;
-        cq_params.realm = cqParamData.realm;
-        cq_params.siteId = cqParamData.siteId;
-        cq_params.instanceType = cqParamData.instanceType;
-        cq_params.locale = CQuotient.locale;
-        if (CQuotient.sendActivity) {
-          CQuotient.sendActivity(CQuotient.clientId, "viewProduct", cq_params);
-        } else {
-          CQuotient.activities.push({
-            activityType: "viewProduct",
-            parameters: cq_params,
-          });
-        }
-      };
-      /* ]]> */
-      // -->
     </script>
   </head>
   <body
@@ -538,7 +312,7 @@
                             "_lazyload":true,"reloadData":{
                                 "id":"headerbanner",
                                 "section":"header",
-                                "reloadUrl":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/CDSLazyload-header_headerbanner?data&#x3D;null&amp;id&#x3D;headerbanner&amp;section&#x3D;header"
+                                
                             }
                         }'
               class="h-ph-item"
@@ -552,70 +326,7 @@
               </div>
             </div>
           </div>
-          <div class="l-header__top" data-js-alt-tabindex="1">
-            <div
-              data-component="/dist/javascripts/components/global/ContentPanel.js"
-              data-component-options='{
-                            "closeTimeout":3000,
-                            "eventName":"globalMessage",
-                            "defaultMessage":"An error occured on the server, please try later or contact the customer service",
-                            "classNames":{
-                                "closedState":"m-closed"
-                            }
-                        }'
-              class="c-content-panel m-closed"
-            >
-              <div class="c-content-panel__inner" data-js-content>
-                An error occured on the server, please try later or contact the
-                customer service
-              </div>
-              <button
-                class="c-content-panel__close"
-                type="button"
-                data-js-close
-                aria-label="Close"
-              ></button>
-            </div>
-            <div
-              class="c-content-panel m-closed"
-              role="alert"
-              aria-live="polite"
-              aria-atomic="true"
-              data-type="error"
-              data-js-offline-warning
-            >
-              <div class="c-content-panel__inner m-x-center">
-                <span class="c-content-panel__text"
-                  ><!-- dwMarker="content" dwContentID="ea59dc616033d60aa33741115e" -->You're
-                  in offline mode with a limited website functionality. Please
-                  check your network connection.</span
-                >
-              </div>
-            </div>
-            <noscript aria-hidden="true">
-              <div class="c-content-panel" data-type="error">
-                <div class="c-content-panel__inner m-x-center">
-                  <span class="c-content-panel__text"
-                    ><!-- dwMarker="content" dwContentID="dc5d82a1856b186f634d099166" -->Javascript
-                    seems to be disabled in your browser. In order to get the
-                    best possible experience please enable Javascript and reload
-                    the page.</span
-                  >
-                </div>
-              </div>
-            </noscript>
-            <div
-              data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
-              data-component-options='{
-                            "_lazyload":true,
-                            "reloadData":{
-                                "id":"geodetect",
-                                "section":"common",
-                                "reloadUrl":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/CDSLazyload-common_geodetect?data&#x3D;&amp;id&#x3D;geodetect&amp;section&#x3D;common"
-                            }
-                        }'
-            ></div>
-          </div>
+
           <div class="l-header__main-area-wrapper" data-js-header-area-wrapper>
             <div class="l-header__main-area" data-js-anchor>
               <div class="l-header__logo" data-js-alt-tabindex="1">
@@ -2097,8 +1808,7 @@
                       For more information on how we use your personal data and
                       our use of personal data on social platforms, please see
                       our
-                      <a href="" target="_blank"
-                        ><b>privacy policy</b></a
+                      <a href="" target="_blank"><b>privacy policy</b></a
                       >. By subscribing, you confirm that you are aged 18 or
                       over.
                     </p>
