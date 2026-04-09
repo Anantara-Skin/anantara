@@ -5,7 +5,7 @@
 
 // Default palette
 $palette-default: (
-  light: #fff,
+  light: #ffffff00,
   dark: #202020,
   transparent: transparent
 ) !default;
@@ -37,7 +37,7 @@ $semantic-colors-default: (
   warning: #ffae00,
   alert: #b40a0a,
   disabled: #767676,
-  element-background: #d8d8d8,
+  element-background: transparent,
   global-background: #f3f3f3,
   organism-background: #595959,
   primary-background: #e0eafa,

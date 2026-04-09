@@ -4230,10 +4230,10 @@ body.m-hide-header-banner .l-header__banner {
   width: 100%;
 }
 .l-header.m-sticked .l-header__main-area-wrapper {
-  background: #FFFFFF;
+  background: transparent;
 }
 .l-header.m-sticked .l-header__main-area {
-  background: #FFFFFF;
+  background: transparent;
   flex-wrap: nowrap;
   position: relative;
 }
@@ -4244,7 +4244,7 @@ body.m-hide-header-banner .l-header__banner {
   background: transparent;
 }
 .l-header.m-sticked .l-header__hamburger {
-  background: #FFFFFF;
+  background: transparent;
 }
 .l-header.m-sticked .c-header-banner,
 .l-header.m-sticked .l-header__top-nav-item.m-email-signup,
@@ -22947,7 +22947,7 @@ a.c-footer-sticky-bar__item:hover {
     display: none;
   }
   .l-header__hamburger {
-    background: #FFFFFF;
+    background: transparent;
     border: none;
     border-width: 0.0625rem 0;
     display: flex;
