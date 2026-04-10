@@ -4145,6 +4145,7 @@ body.m-hide-header-banner .l-header__banner {
 }
 .l-header__top-nav-item {
   font-size: 0.75rem;
+  color: #f9f9f9;
 }
 .l-header__top-nav-item:empty {
   display: none;
@@ -4286,6 +4287,7 @@ body.m-hide-header-banner .l-header__banner {
 .l-header.m-sticked .c-minicart-icon__label {
   clip: rect(0, 0, 0, 0);
   height: 1px;
+  color: #f3f3f3;
   overflow: hidden;
   pointer-events: none;
   position: absolute;
@@ -6190,7 +6192,7 @@ body.m-hide-header-banner .l-header__banner {
   width: 100%;
 }
 .c-content-hero__caption {
-  margin: 0 auto;
+  margin-bottom:10px;
   max-width: 75rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -8058,6 +8060,7 @@ body.m-hide-header-banner .l-header__banner {
 .c-storeslink__text {
   margin: 0 0 0 0.625rem;
   order: 2;
+  color: #f6f5e8;
 }
 .c-snackbar {
   bottom: 0;
@@ -13451,11 +13454,12 @@ a.c-product-badge__category-title {
   display: flex;
 }
 .c-navigation__item-title.m-level-1 {
-  color: #333;
+  color: #fff;
   font:
     400 0.875rem/1.2 SuisseIntl,
     sans-serif;
   position: relative;
+
 }
 .c-navigation__item-title.m-level-2 {
   color: #333;
@@ -13814,6 +13818,7 @@ a.c-product-badge__category-title {
 .c-user .c-user__text {
   display: inline-block;
   vertical-align: middle;
+  color: #f0efe1;
 }
 .l-header:not(.m-sticked) .l-header__top-nav-item .c-user.m-dark {
   background: #333;
@@ -16883,8 +16888,9 @@ a.c-footer-sticky-bar__item:hover {
   }
   .c-content-hero__body {
     display: inline-block;
-    padding: 2.5rem 0 1.875rem;
+   
     width: 33.33333%;
+   padding-bottom: 5px;
   }
   .c-content-hero__body.m-width-25--large {
     width: 25%;
@@ -20697,6 +20703,7 @@ a.c-footer-sticky-bar__item:hover {
     clip: rect(0, 0, 0, 0);
     height: 1px;
     overflow: hidden;
+    color: #f3f3f3;
     pointer-events: none;
     position: absolute;
     width: 1px;
@@ -23439,6 +23446,7 @@ a.c-footer-sticky-bar__item:hover {
   .c-minicart-icon__label {
     margin: 0 0.25rem;
     order: 2;
+    color: #f3f3f3;
   }
   .c-minicart-icon__qty {
     order: 3;
