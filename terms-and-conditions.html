@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions | Anantara — Aureum Skincare</title>
+    <meta
+      name="description"
+      content="Terms and Conditions for anantara.africa, operated by Aureum Skincare. Please read carefully before using our website or purchasing our products."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f6f5e8;
+        --warm-white: #fffef2;
+        --dark: #1a1a18;
+        --mid: #3d3d38;
+        --muted: #7a7a72;
+        --accent: #c8a96e;
+        --border: #e0dfd0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--warm-white);
+        color: var(--dark);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      /* ── Header ── */
+      .site-header {
+        background-color: var(--warm-white);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .site-header .logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dark);
+        text-decoration: none;
+      }
+
+      .site-header .logo span {
+        font-weight: 300;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        display: block;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .header-nav a {
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .header-nav a:hover {
+        color: var(--dark);
+      }
+
+      /* ── Hero Banner ── */
+      .hero {
+        background-color: var(--cream);
+        padding: 80px 48px 64px;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "T&C";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 200px;
+        font-weight: 300;
+        color: var(--border);
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .hero-label {
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(36px, 5vw, 60px);
+        font-weight: 300;
+        line-height: 1.1;
+        color: var(--dark);
+        max-width: 600px;
+      }
+
+      .hero h1 em {
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      .hero-meta {
+        margin-top: 28px;
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .hero-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hero-meta span::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background: var(--accent);
+        display: inline-block;
+      }
+
+      /* ── Layout ── */
+      .page-wrapper {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 48px;
+      }
+
+      /* ── Sidebar ── */
+      .sidebar {
+        padding: 48px 40px 48px 0;
+        border-right: 1px solid var(--border);
+        position: sticky;
+        top: 81px;
+        height: fit-content;
+        align-self: start;
+      }
+
+      .sidebar-title {
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+
+      .sidebar nav a {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        text-decoration: none;
+        padding: 7px 0;
+        border-bottom: 1px solid transparent;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        line-height: 1.4;
+      }
+
+      .sidebar nav a:hover {
+        color: var(--dark);
+        border-bottom-color: var(--accent);
+      }
+
+      /* ── Main Content ── */
+      .content {
+        padding: 48px 0 80px 48px;
+      }
+
+      .section {
+        margin-bottom: 56px;
+        padding-bottom: 56px;
+        border-bottom: 1px solid var(--border);
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeUp 0.5s ease forwards;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .section:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .section:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .section:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .section:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .section:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .section:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+      .section:nth-child(7) {
+        animation-delay: 0.35s;
+      }
+      .section:nth-child(8) {
+        animation-delay: 0.4s;
+      }
+      .section:nth-child(9) {
+        animation-delay: 0.45s;
+      }
+      .section:nth-child(10) {
+        animation-delay: 0.5s;
+      }
+      .section:nth-child(11) {
+        animation-delay: 0.55s;
+      }
+      .section:nth-child(12) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section-number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .section h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: var(--dark);
+        margin-bottom: 18px;
+        line-height: 1.2;
+      }
+
+      .section p {
+        color: var(--mid);
+        margin-bottom: 14px;
+        font-size: 14.5px;
+      }
+
+      .section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .section ul,
+      .section ol {
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 14px;
+      }
+
+      .section ul li,
+      .section ol li {
+        padding: 6px 0 6px 20px;
+        position: relative;
+        color: var(--mid);
+        font-size: 14.5px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section ul li:last-child,
+      .section ol li:last-child {
+        border-bottom: none;
+      }
+
+      .section ul li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 12px;
+      }
+
+      .section ol {
+        counter-reset: item;
+      }
+
+      .section ol li {
+        counter-increment: item;
+      }
+
+      .section ol li::before {
+        content: counter(item) ".";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .highlight-box {
+        background-color: var(--cream);
+        border-left: 2px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+        font-size: 14px;
+        color: var(--mid);
+        font-style: italic;
+      }
+
+      strong {
+        font-weight: 500;
+        color: var(--dark);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+
+      a:hover {
+        border-bottom-color: var(--accent);
+      }
+
+      /* ── Footer ── */
+      .site-footer {
+        background-color: var(--dark);
+        color: var(--muted);
+        padding: 40px 48px;
+        text-align: center;
+      }
+
+      .site-footer .footer-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: var(--cream);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .site-footer p {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        line-height: 1.8;
+      }
+
+      .site-footer .footer-links {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .site-footer .footer-links a {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        border: none;
+        transition: color 0.2s;
+      }
+
+      .site-footer .footer-links a:hover {
+        color: var(--cream);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 16px 24px;
+        }
+
+        .hero {
+          padding: 48px 24px 40px;
+        }
+
+        .hero::before {
+          font-size: 100px;
+        }
+
+        .page-wrapper {
+          grid-template-columns: 1fr;
+          padding: 0 24px;
+        }
+
+        .sidebar {
+          position: static;
+          padding: 32px 0 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          margin-bottom: 32px;
+        }
+
+        .content {
+          padding: 32px 0 48px;
+        }
+
+        .site-footer {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <a href="/" class="logo">
+        Anantara
+        <span>by Aureum Skincare</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/skin-care.html">Shop</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-label">Legal</p>
+      <h1>Terms &amp; <em>Conditions</em></h1>
+      <div class="hero-meta">
+        <span>Effective: 1 January 2025</span>
+        <span>Last updated: April 2026</span>
+        <span>Jurisdiction: South Africa</span>
+      </div>
+    </section>
+
+    <!-- Page Body -->
+    <div class="page-wrapper">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <p class="sidebar-title">Contents</p>
+        <nav>
+          <a href="#introduction">01 — Introduction</a>
+          <a href="#company-info">02 — Company Information</a>
+          <a href="#acceptance">03 — Acceptance of Terms</a>
+          <a href="#products">04 — Products & Descriptions</a>
+          <a href="#orders">05 — Orders & Payment</a>
+          <a href="#shipping">06 — Shipping & Delivery</a>
+          <a href="#returns">07 — Returns & Refunds</a>
+          <a href="#intellectual-property">08 — Intellectual Property</a>
+          <a href="#privacy">09 — Privacy & Data</a>
+          <a href="#liability">10 — Limitation of Liability</a>
+          <a href="#governing-law">11 — Governing Law</a>
+          <a href="#contact">12 — Contact Us</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <div class="section" id="introduction">
+          <p class="section-number">01</p>
+          <h2>Introduction</h2>
+          <p>
+            Welcome to <strong>anantara.africa</strong>, the official online
+            home of the Anantara skincare range, operated by
+            <strong>Aureum Skincare (Pty) Ltd</strong>. These Terms and
+            Conditions govern your use of this website and any purchases you
+            make through it.
+          </p>
+          <p>
+            Please read these terms carefully before using our website or
+            placing an order. By accessing anantara.africa, you confirm that you
+            have read, understood and agree to be bound by these Terms and
+            Conditions in their entirety.
+          </p>
+          <div class="highlight-box">
+            If you do not agree to these terms, please do not use this website
+            or purchase our products.
+          </div>
+        </div>
+
+        <div class="section" id="company-info">
+          <p class="section-number">02</p>
+          <h2>Company Information</h2>
+          <p>This website is owned and operated by:</p>
+          <ul>
+            <li><strong>Company name:</strong> Aureum Skincare (Pty) Ltd</li>
+            <li><strong>Trading as:</strong> Anantara</li>
+            <li><strong>Website:</strong> anantara.africa</li>
+            <li><strong>Country of registration:</strong> South Africa</li>
+            <li>
+              <strong>Contact email:</strong>
+              <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>
+            </li>
+          </ul>
+          <p>
+            All references to "we", "us", "our" or "Anantara" in these terms
+            refer to Aureum Skincare (Pty) Ltd.
+          </p>
+        </div>
+
+        <div class="section" id="acceptance">
+          <p class="section-number">03</p>
+          <h2>Acceptance of Terms</h2>
+          <p>
+            By accessing or using anantara.africa, you agree to these Terms and
+            Conditions, our Privacy Policy, and any additional terms that may
+            apply to specific products or promotions offered on the site.
+          </p>
+          <p>
+            We reserve the right to amend these terms at any time. Changes will
+            be effective immediately upon posting to the website. Your continued
+            use of the site following any changes constitutes your acceptance of
+            the updated terms.
+          </p>
+          <p>
+            You must be 18 years of age or older to make a purchase on this
+            website. By placing an order, you confirm that you meet this age
+            requirement.
+          </p>
+        </div>
+
+        <div class="section" id="products">
+          <p class="section-number">04</p>
+          <h2>Products &amp; Descriptions</h2>
+          <p>
+            We make every effort to ensure that product descriptions, images,
+            and pricing on anantara.africa are accurate and up to date. However,
+            we do not warrant that product descriptions or other content on the
+            site is entirely error-free.
+          </p>
+          <p>All Anantara products are:</p>
+          <ul>
+            <li>Vegan — free from animal-derived ingredients</li>
+            <li>Cruelty-free — not tested on animals</li>
+            <li>Leaping Bunny approved</li>
+            <li>Formulated to support cleansing, hydration and skin health</li>
+          </ul>
+          <p>
+            Product images are for illustrative purposes only. Colours may vary
+            slightly due to screen display settings. We reserve the right to
+            withdraw any product from sale at any time without notice.
+          </p>
+          <p>
+            Prices are displayed in South African Rand (ZAR) and are inclusive
+            of VAT where applicable. Prices are subject to change without notice
+            prior to an order being confirmed.
+          </p>
+        </div>
+
+        <div class="section" id="orders">
+          <p class="section-number">05</p>
+          <h2>Orders &amp; Payment</h2>
+          <p>
+            When you place an order on anantara.africa, you are making an offer
+            to purchase the selected products. Your order is only confirmed once
+            you receive a confirmation email from us. We reserve the right to
+            decline or cancel any order at our discretion.
+          </p>
+          <p>We accept the following payment methods:</p>
+          <ul>
+            <li>Major credit and debit cards (Visa, Mastercard)</li>
+            <li>EFT (Electronic Funds Transfer)</li>
+            <li>
+              Secure online payment gateways as made available on the site
+            </li>
+          </ul>
+          <p>
+            All transactions are processed securely. We do not store your full
+            payment card details on our servers. By submitting your payment
+            information, you confirm that you are authorised to use the payment
+            method provided.
+          </p>
+          <p>
+            In the event of a pricing error on the website, we reserve the right
+            to cancel your order and offer you the product at the correct price,
+            or issue a full refund.
+          </p>
+        </div>
+
+        <div class="section" id="shipping">
+          <p class="section-number">06</p>
+          <h2>Shipping &amp; Delivery</h2>
+          <p>
+            We deliver to addresses within South Africa and selected
+            international destinations. Delivery timeframes and shipping fees
+            are displayed at checkout and may vary depending on your location
+            and the shipping method selected.
+          </p>
+          <ul>
+            <li>Standard delivery within South Africa: 3–5 business days</li>
+            <li>Express delivery within South Africa: 1–2 business days</li>
+            <li>
+              International delivery: 7–14 business days (subject to customs)
+            </li>
+          </ul>
+          <p>
+            Delivery timeframes are estimates only and are not guaranteed. We
+            are not liable for delays caused by third-party couriers, customs
+            processing, or circumstances beyond our control.
+          </p>
+          <p>
+            Risk of loss and title for products pass to you upon delivery. If
+            your order has not arrived within the stated timeframe, please
+            contact us at
+            <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>.
+          </p>
+          <p>
+            Complimentary shipping may be offered on qualifying orders. Such
+            promotions are subject to change at any time.
+          </p>
+        </div>
+
+        <div class="section" id="returns">
+          <p class="section-number">07</p>
+          <h2>Returns &amp; Refunds</h2>
+          <p>
+            We want you to be entirely satisfied with your Anantara purchase. If
+            for any reason you are not happy, please contact us within
+            <strong>14 days</strong> of receiving your order.
+          </p>
+          <p>To be eligible for a return:</p>
+          <ul>
+            <li>
+              The product must be unused and in its original, undamaged
+              packaging
+            </li>
+            <li>You must provide proof of purchase</li>
+            <li>The return must be initiated within 14 days of delivery</li>
+          </ul>
+          <p>
+            Products that have been opened, used, or damaged by the customer are
+            not eligible for return unless they are found to be faulty or not as
+            described.
+          </p>
+          <p>
+            Once we receive and inspect your return, we will notify you of the
+            approval or rejection of your refund. Approved refunds will be
+            processed within 7–10 business days to your original payment method.
+          </p>
+          <p>
+            Return shipping costs are the responsibility of the customer unless
+            the product is faulty or incorrectly sent. In such cases, we will
+            arrange and cover the cost of the return.
+          </p>
+          <div class="highlight-box">
+            To initiate a return, please contact our customer service team at
+            <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>
+            with your order number and reason for return.
+          </div>
+        </div>
+
+        <div class="section" id="intellectual-property">
+          <p class="section-number">08</p>
+          <h2>Intellectual Property</h2>
+          <p>
+            All content on anantara.africa — including but not limited to text,
+            images, logos, product names, graphic design, and code — is the
+            intellectual property of Aureum Skincare (Pty) Ltd or its licensors
+            and is protected by applicable intellectual property laws.
+          </p>
+          <p>
+            You may not reproduce, distribute, modify, display, or use any
+            content from this website for commercial purposes without our prior
+            written consent. Unauthorised use of our intellectual property may
+            result in legal action.
+          </p>
+          <p>
+            The Anantara name, logo, and associated brand elements are
+            trademarks of Aureum Skincare (Pty) Ltd. Nothing on this website
+            grants you any licence or right to use these trademarks.
+          </p>
+        </div>
+
+        <div class="section" id="privacy">
+          <p class="section-number">09</p>
+          <h2>Privacy &amp; Data</h2>
+          <p>
+            We are committed to protecting your personal information. The
+            collection, use, and storage of your data when using anantara.africa
+            is governed by our
+            <a href="/privacy-policy.html">Privacy Policy</a>, which forms part
+            of these Terms and Conditions.
+          </p>
+          <p>
+            By using our website, you consent to the collection and use of your
+            personal information as described in our Privacy Policy. We will
+            never sell your personal information to third parties.
+          </p>
+          <p>
+            We comply with the Protection of Personal Information Act (POPIA) of
+            South Africa. You have the right to access, correct, or request
+            deletion of your personal data at any time by contacting us at
+            <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>.
+          </p>
+        </div>
+
+        <div class="section" id="liability">
+          <p class="section-number">10</p>
+          <h2>Limitation of Liability</h2>
+          <p>
+            To the fullest extent permitted by law, Aureum Skincare (Pty) Ltd
+            shall not be liable for any direct, indirect, incidental,
+            consequential, or punitive damages arising from your use of
+            anantara.africa or our products.
+          </p>
+          <p>We do not warrant that:</p>
+          <ul>
+            <li>
+              The website will be available at all times or free from errors
+            </li>
+            <li>Defects will be corrected immediately</li>
+            <li>
+              The website or servers are free from viruses or other harmful
+              components
+            </li>
+          </ul>
+          <p>
+            Our products are formulated for general skincare use. We recommend
+            that you perform a patch test before using any new product,
+            particularly if you have sensitive or reactive skin. If irritation
+            occurs, discontinue use and consult a dermatologist or healthcare
+            professional.
+          </p>
+          <p>
+            Our liability to you in connection with any order shall not exceed
+            the total purchase price paid for the products in that order.
+          </p>
+        </div>
+
+        <div class="section" id="governing-law">
+          <p class="section-number">11</p>
+          <h2>Governing Law</h2>
+          <p>
+            These Terms and Conditions are governed by and construed in
+            accordance with the laws of the
+            <strong>Republic of South Africa</strong>. Any disputes arising from
+            or relating to these terms or your use of anantara.africa shall be
+            subject to the exclusive jurisdiction of the South African courts.
+          </p>
+          <p>
+            If any provision of these Terms and Conditions is found to be
+            unlawful, void, or unenforceable, that provision shall be deemed
+            severable and shall not affect the validity and enforceability of
+            the remaining provisions.
+          </p>
+          <p>
+            Our failure to enforce any provision of these terms shall not
+            constitute a waiver of our right to enforce that provision in the
+            future.
+          </p>
+        </div>
+
+        <div class="section" id="contact">
+          <p class="section-number">12</p>
+          <h2>Contact Us</h2>
+          <p>
+            If you have any questions, concerns, or complaints regarding these
+            Terms and Conditions or your experience with Anantara, please do not
+            hesitate to get in touch.
+          </p>
+          <ul>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>
+            </li>
+            <li>
+              <strong>Website:</strong>
+              <a href="https://anantara.africa">anantara.africa</a>
+            </li>
+            <li>
+              <strong>Customer service hours:</strong> Monday – Friday, 9:00 –
+              17:00 SAST
+            </li>
+          </ul>
+          <p>We aim to respond to all enquiries within 2 business days.</p>
+          <div class="highlight-box">
+            These Terms and Conditions were last reviewed and updated in April
+            2026. Aureum Skincare (Pty) Ltd reserves the right to update these
+            terms at any time.
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p class="footer-brand">Anantara</p>
+      <p>
+        © Aureum Skincare 2026. All rights reserved.<br />anantara.africa —
+        South Africa
+      </p>
+      <div class="footer-links">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
+        <a href="/customer-service/contact-us.html">Contact Us</a>
+        <a href="/skin-care.html">Shop</a>
+      </div>
+    </footer>
+  </body>
+</html>
