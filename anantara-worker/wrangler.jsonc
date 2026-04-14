@@ -1,23 +1,31 @@
 {
-	"name": "anantara-cart",
-	"main": "src/index.js",
-	"compatibility_date": "2024-01-01",
-	"kv_namespaces": [
-		
-		{
-			"binding": "anantara_cart",
-			"id": "b74f137164ce4ee092c7736ab59ec82c",
-			"remote": true
-		}
-	],
-	 "r2_buckets": [
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "anantara-cart",
+  "main": "src/index.js",
+  "compatibility_date": "2025-02-04",
+
+  // Enables logging in Cloudflare dashboard → Workers → Logs
+  "observability": {
+    "enabled": true
+  },
+
+  "kv_namespaces": [
+    {
+      "binding": "CART_KV",           // ✅ Must match env.CART_KV in your worker
+      "id": "b74f137164ce4ee092c7736ab59ec82c",
+      "preview_id": "b74f137164ce4ee092c7736ab59ec82c"  // Use same ID for local dev, or create a separate preview namespace
+    }
+  ],
+
+  "r2_buckets": [
     {
       "binding": "ANANTARA_IMAGES",
       "bucket_name": "anantara-images"
     }
   ],
-	"vars": {
-		"FIREBASE_PROJECT_ID": "anantara-212b9",
-		"ALLOWED_ORIGIN": "*"
-	}
+
+  "vars": {
+    "FIREBASE_PROJECT_ID": "anantara-212b9",
+    "ALLOWED_ORIGIN": "*"
+  }
 }

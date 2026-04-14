@@ -209,12 +209,16 @@
 
       // ── TOKEN HELPERS ─────────────────────────────────────
       function getCartToken() {
-        return document.cookie
-          .split(';')
-          .map(c => c.trim())
-          .find(c => c.startsWith('cart_token='))
-          ?.split('=')[1] || null;
-      }
+  // 1. Try cookie first
+  const fromCookie = document.cookie
+    .split(';')
+    .map(c => c.trim())
+    .find(c => c.startsWith('cart_token='))
+    ?.split('=')[1] || null;
+
+  // 2. Fallback to localStorage (needed on HTTP / local dev)
+  return fromCookie || localStorage.getItem('cart_token') || null;
+}
 
       function getFirebaseToken() {
         // AnantaraAuth is initialised by /js/firebase-auth-cart.js
@@ -225,13 +229,17 @@
 
       // ── API HELPERS ───────────────────────────────────────
       async function buildHeaders() {
-        const h = { 'Content-Type': 'application/json' };
-        const token = getCartToken();
-        if (token) h['X-Cart-Token'] = token;
-        const fbToken = await getFirebaseToken();
-        if (fbToken) h['Authorization'] = `Bearer ${fbToken}`;
-        return h;
-      }
+  const h = { 'Content-Type': 'application/json' };
+  const token = getCartToken();
+  if (token) h['X-Cart-Token'] = token;
+
+  // ✅ getIdToken() is async — must be awaited
+  const fbToken = typeof AnantaraAuth !== 'undefined'
+    ? await AnantaraAuth.getIdToken?.()   // await the Promise
+    : null;
+  if (fbToken) h['Authorization'] = `Bearer ${fbToken}`;
+  return h;
+}
 
       async function workerFetch(path, options = {}) {
         const headers = await buildHeaders();
@@ -246,18 +254,22 @@
 
       // ── FETCH CART ────────────────────────────────────────
       async function fetchCart() {
-        showLoading(true);
-        clearError();
-        try {
-          const data = await workerFetch('/cart', { method: 'GET' });
-          renderCart(data.items || []);
-        } catch (err) {
-          showError('Could not load your cart. Please refresh the page.');
-          console.error('fetchCart error:', err);
-        } finally {
-          showLoading(false);
-        }
-      }
+  showLoading(true);
+  clearError();
+  try {
+    const data = await workerFetch('/cart', { method: 'GET' });
+
+    // ✅ Persist token so future fetches work
+    if (data.token) localStorage.setItem('cart_token', data.token);
+
+    renderCart(data.items || []);
+  } catch (err) {
+    showError('Could not load your cart. Please refresh the page.');
+    console.error('fetchCart error:', err);
+  } finally {
+    showLoading(false);
+  }
+}
 
       // ── REMOVE ITEM ───────────────────────────────────────
       async function removeItem(pid, size, title) {

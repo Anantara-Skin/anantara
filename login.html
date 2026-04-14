@@ -171,7 +171,7 @@
                             </div>
                         </div>
                     </noscript>
-                    <div  >
+                    <div data-component="/dist/javascripts/components/global/ComponentPlaceholder.js" >
                     </div>
                 </div>
                 <div class="l-header__main-area-wrapper" data-js-header-area-wrapper>
@@ -283,7 +283,7 @@
                                     <div data-component="cart/MiniCart"  data-component-context="" >
                                         <div data-js-sliding-trigger>
                                             <div class="c-minicart-icon "
-                                                
+                                                data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
                                                 data-component-context="">
                                                 <button class="c-minicart-icon__link " aria-label="" type="button"
                                                     data-js-minicart-button> <i title="" class="c-minicart-icon__svg"
@@ -315,7 +315,7 @@
                             <div class="c-hamburger__content" id="hamburger-navigation" data-js-hamburger-content
                                 data-js-anchor-large>
                                 <div class='c-hamburger__item m-account'>
-                                    <div 
+                                    <div data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
                                          data-component-context="medium down" data-component-force>
                                     </div>
                                 </div>
@@ -1595,7 +1595,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Success! Redirect to account page
         alert("Account created successfully!");
-        window.location.href = "/my-account";
+        window.location.href = "/";
         
       } catch (error) {
         console.error("Registration error:", error);
@@ -1671,7 +1671,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log("User signed in successfully");
         alert("Signed in successfully!");
-        window.location.href = "/my-account";
+        window.location.href = "/";
         
       } catch (error) {
         console.error("Login error:", error);
