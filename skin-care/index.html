@@ -1548,7 +1548,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('ipAddress').textContent = 'Unable to detect';
             }
         }
+async function handleAddToCart(btn) {
+  const tile    = btn.closest('[data-analytics]');
+  const product = JSON.parse(tile.dataset.analytics).products[0];
 
+  // Pick up selected variant from dropdown if present
+  const select  = tile.querySelector('[data-js-field]');
+  const option  = select?.options[select.selectedIndex];
+  const pid     = option?.dataset.jsPid || product.pid;
+  const size    = option?.dataset.size  || product.size;
+
+  const span = btn.querySelector('span');
+  btn.disabled     = true;
+  span.textContent = 'Adding…';
+
+  try {
+    await addToCart({
+      pid,
+      url:      product.url,
+      name:     product.name,
+      subname:  product.subname,
+      price:    product.salePrice ?? product.price,
+      imageUrl: product.imgUrl,
+      size,
+    });
+
+    span.textContent = 'Added ✓';
+    setTimeout(() => {
+      span.textContent = 'Add to cart';
+      btn.disabled = false;
+    }, 2000);
+
+  } catch (err) {
+    console.error(err);
+    span.textContent = 'Failed — retry';
+    btn.disabled = false;
+  }
+}
         // Update the location display
         function updateLocationDisplay(countryCode) {
             const country = countryCurrencyMap[countryCode] || countryCurrencyMap['ZA'];

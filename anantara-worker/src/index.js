@@ -2,153 +2,222 @@ const CART_TTL_SECONDS = 60 * 60 * 24 * 30;
 const ALLOWED_ORIGINS = ['https://anantara.africa', 'http://127.0.0.1:5502', 'http://localhost:5502'];
 
 function corsHeaders(origin) {
-  return {
-    'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes(origin) ? origin : '',
-    'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Cart-Token',
-    'Access-Control-Allow-Credentials': 'true',
-  };
+	return {
+		'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes(origin) ? origin : '',
+		'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+		'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Cart-Token',
+		'Access-Control-Allow-Credentials': 'true',
+	};
 }
 
 function jsonResponse(data, status = 200, origin = '') {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
-  });
+	return new Response(JSON.stringify(data), {
+		status,
+		headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
+	});
 }
 
-function cartKey(token) { return `cart:${token}`; }
-function generateToken() { return crypto.randomUUID(); }
-
-// ── KV: GET ───────────────────────────────────────────────────
-async function getCart(token, env) {
-  const raw = await env.CART_KV.get(cartKey(token));  // KV GET
-  if (!raw) return { token, items: [], updatedAt: Date.now() };
-  return JSON.parse(raw);
+function generateToken() {
+	return crypto.randomUUID();
 }
 
-// ── KV: PUT ───────────────────────────────────────────────────
+// ── KV key: uid-based for signed-in, token-based for guests ──
+function cartKey(id) {
+	return `cart:${id}`;
+}
+
+// ── Verify Firebase ID token → returns { uid, email } or null ─
+async function verifyFirebaseToken(idToken, env) {
+	if (!idToken) return null;
+	try {
+		const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${env.FIREBASE_WEB_API_KEY}`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ idToken }),
+		});
+		if (!res.ok) return null;
+		const data = await res.json();
+		const user = data.users?.[0];
+		if (!user) return null;
+		return { uid: user.localId, email: user.email };
+	} catch {
+		return null;
+	}
+}
+
+// ── KV helpers ───────────────────────────────────────────────
+async function getCart(id, env) {
+	const raw = await env.CART_KV.get(cartKey(id));
+	if (!raw) return { id, items: [], updatedAt: Date.now() };
+	return JSON.parse(raw);
+}
+
 async function saveCart(cart, env) {
-  await env.CART_KV.put(cartKey(cart.token), JSON.stringify(cart), {  // KV PUT
-    expirationTtl: CART_TTL_SECONDS,
-  });
+	await env.CART_KV.put(cartKey(cart.id), JSON.stringify(cart), {
+		expirationTtl: CART_TTL_SECONDS,
+	});
 }
 
-async function syncToFirebase(cart, firebaseToken, env) {
-  if (!firebaseToken) return;
-  const projectId = env.FIREBASE_PROJECT_ID;
-  const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/carts/${cart.token}`;
-  const body = {
-    fields: {
-      token:     { stringValue: cart.token },
-      items:     { stringValue: JSON.stringify(cart.items) },
-      updatedAt: { integerValue: String(cart.updatedAt) },
-    },
-  };
-  await fetch(url, {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${firebaseToken}` },
-    body: JSON.stringify(body),
-  }).catch(() => {});
+// ── Merge anonymous cart into user cart on sign-in ───────────
+async function mergeGuestCart(guestToken, userCart, env) {
+	if (!guestToken) return userCart;
+	const guestCart = await env.CART_KV.get(cartKey(guestToken));
+	if (!guestCart) return userCart;
+
+	const guest = JSON.parse(guestCart);
+	for (const guestItem of guest.items) {
+		const idx = userCart.items.findIndex((i) => i.pid === guestItem.pid && i.size === guestItem.size);
+		if (idx > -1) {
+			// Add guest qty to existing item
+			userCart.items[idx].qty += guestItem.qty;
+		} else {
+			userCart.items.push(guestItem);
+		}
+	}
+
+	// Delete the old guest cart from KV
+	await env.CART_KV.delete(cartKey(guestToken));
+	return userCart;
+}
+
+// ── Sync to Firestore under carts/{uid} ──────────────────────
+async function syncToFirebase(cart, uid, firebaseToken, env) {
+	if (!uid || !firebaseToken) return; // ✅ only sync signed-in users
+
+	const projectId = env.FIREBASE_PROJECT_ID;
+	const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/carts/${uid}`; // ✅ uid not token
+
+	const body = {
+		fields: {
+			uid: { stringValue: uid },
+			cartId: { stringValue: cart.id },
+			items: { stringValue: JSON.stringify(cart.items) },
+			updatedAt: { integerValue: String(cart.updatedAt) },
+		},
+	};
+
+	await fetch(url, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+			Authorization: `Bearer ${firebaseToken}`,
+		},
+		body: JSON.stringify(body),
+	}).catch(() => {});
 }
 
 function parseCookie(cookieString, name) {
-  const match = cookieString.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : null;
+	const match = cookieString.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
+	return match ? decodeURIComponent(match[1]) : null;
 }
 
 export default {
-  async fetch(request, env, ctx) {
-    const origin = request.headers.get('Origin') || '';
+	async fetch(request, env, ctx) {
+		const origin = request.headers.get('Origin') || '';
 
-    if (request.method === 'OPTIONS') {
-      return new Response(null, { status: 204, headers: corsHeaders(origin) });
-    }
+		if (request.method === 'OPTIONS') {
+			return new Response(null, { status: 204, headers: corsHeaders(origin) });
+		}
 
-    try {
-      const url = new URL(request.url);
+		try {
+			const url = new URL(request.url);
 
-      let token = request.headers.get('X-Cart-Token') || parseCookie(request.headers.get('Cookie') || '', 'cart_token');
+			// Guest cart token (cookie or header)
+			const guestToken = request.headers.get('X-Cart-Token') || parseCookie(request.headers.get('Cookie') || '', 'cart_token');
 
-      const authHeader = request.headers.get('Authorization') || '';
-      const firebaseToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+			// Verify Firebase token → get uid
+			const authHeader = request.headers.get('Authorization') || '';
+			const rawIdToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+			const firebaseUser = await verifyFirebaseToken(rawIdToken, env);
 
-      // POST /cart/add
-      if (url.pathname === '/cart/add' && request.method === 'POST') {
-        const body = await request.json();
-        const { pid, url: productUrl, name, subname, price, imageUrl, size, qty = 1 } = body;
+			// ✅ Signed-in users use uid as cart ID; guests use their token
+			const cartId = firebaseUser?.uid || guestToken || generateToken();
+			const isUser = !!firebaseUser?.uid;
 
-        if (!pid || !productUrl) return jsonResponse({ error: 'pid and url are required' }, 400, origin);
+			// ── POST /cart/add ──────────────────────────────────────
+			if (url.pathname === '/cart/add' && request.method === 'POST') {
+				const body = await request.json();
+				const { pid, url: productUrl, name, subname, price, imageUrl, size, qty = 1 } = body;
 
-        if (!token) token = generateToken();
-        const cart = await getCart(token, env);
+				if (!pid || !productUrl) {
+					return jsonResponse({ error: 'pid and url are required' }, 400, origin);
+				}
 
-        const existingIdx = cart.items.findIndex((i) => i.pid === pid && i.size === size);
-        if (existingIdx > -1) {
-          cart.items[existingIdx].qty += qty;
-        } else {
-          cart.items.push({ pid, url: productUrl, name, subname, price, imageUrl, size, qty });
-        }
+				let cart = await getCart(cartId, env);
+				cart.id = cartId;
 
-        cart.updatedAt = Date.now();
-        await saveCart(cart, env);
-        ctx.waitUntil(syncToFirebase(cart, firebaseToken, env));
+				// Merge guest cart into user cart if just signed in
+				if (isUser && guestToken && guestToken !== cartId) {
+					cart = await mergeGuestCart(guestToken, cart, env);
+				}
 
-        const response = jsonResponse({ success: true, token, cart }, 200, origin);
-        response.headers.append('Set-Cookie', `cart_token=${token}; Path=/; Max-Age=${CART_TTL_SECONDS}; SameSite=None`);
-        return response;
-      }
+				const existingIdx = cart.items.findIndex((i) => i.pid === pid && i.size === size);
+				if (existingIdx > -1) {
+					cart.items[existingIdx].qty += qty;
+				} else {
+					cart.items.push({ pid, url: productUrl, name, subname, price, imageUrl, size, qty });
+				}
 
-      // GET /cart
-      if (url.pathname === '/cart' && request.method === 'GET') {
-        if (!token) return jsonResponse({ token: null, items: [] }, 200, origin);
-        const cart = await getCart(token, env);
-        return jsonResponse(cart, 200, origin);
-      }
+				cart.updatedAt = Date.now();
+				await saveCart(cart, env);
+				ctx.waitUntil(syncToFirebase(cart, firebaseUser?.uid, rawIdToken, env));
 
-      // POST /cart/remove
-      if (url.pathname === '/cart/remove' && request.method === 'POST') {
-        const { pid, size } = await request.json();
-        if (!token) return jsonResponse({ error: 'No cart' }, 400, origin);
-        const cart = await getCart(token, env);
-        cart.items = cart.items.filter((i) => !(i.pid === pid && i.size === size));
-        cart.updatedAt = Date.now();
-        await saveCart(cart, env);
-        ctx.waitUntil(syncToFirebase(cart, firebaseToken, env));
-        return jsonResponse({ success: true, cart }, 200, origin);
-      }
+				const response = jsonResponse({ success: true, token: cartId, cart }, 200, origin);
+				response.headers.append('Set-Cookie', `cart_token=${cartId}; Path=/; Max-Age=${CART_TTL_SECONDS}; SameSite=Lax`);
+				return response;
+			}
 
-      // POST /cart/update
-      if (url.pathname === '/cart/update' && request.method === 'POST') {
-        const { pid, size, qty } = await request.json();
-        if (!token) return jsonResponse({ error: 'No cart' }, 400, origin);
-        const cart = await getCart(token, env);
-        const item = cart.items.find((i) => i.pid === pid && i.size === size);
-        if (item) item.qty = Math.max(0, qty);
-        cart.items = cart.items.filter((i) => i.qty > 0);
-        cart.updatedAt = Date.now();
-        await saveCart(cart, env);
-        ctx.waitUntil(syncToFirebase(cart, firebaseToken, env));
-        return jsonResponse({ success: true, cart }, 200, origin);
-      }
+			// ── GET /cart ───────────────────────────────────────────
+			if (url.pathname === '/cart' && request.method === 'GET') {
+				if (!cartId) return jsonResponse({ id: null, items: [] }, 200, origin);
+				let cart = await getCart(cartId, env);
+				cart.id = cartId;
 
-      // DELETE /cart  ← KV DELETE
-      if (url.pathname === '/cart' && request.method === 'DELETE') {
-        if (token) await env.CART_KV.delete(cartKey(token));  // KV DELETE
-        return jsonResponse({ success: true }, 200, origin);
-      }
+				// Merge on GET too (e.g. user loads cart page right after login)
+				if (isUser && guestToken && guestToken !== cartId) {
+					cart = await mergeGuestCart(guestToken, cart, env);
+					await saveCart(cart, env);
+				}
 
-      // GET /cart/debug  ← KV LIST (remove in production!)
-      if (url.pathname === '/cart/debug' && request.method === 'GET') {
-        const allKeys = await env.CART_KV.list();             // KV LIST
-        return jsonResponse({ allKeys }, 200, origin);
-      }
+				return jsonResponse(cart, 200, origin);
+			}
 
-      return jsonResponse({ error: 'Not found' }, 404, origin);
+			// ── POST /cart/remove ───────────────────────────────────
+			if (url.pathname === '/cart/remove' && request.method === 'POST') {
+				const { pid, size } = await request.json();
+				const cart = await getCart(cartId, env);
+				cart.id = cartId;
+				cart.items = cart.items.filter((i) => !(i.pid === pid && i.size === size));
+				cart.updatedAt = Date.now();
+				await saveCart(cart, env);
+				ctx.waitUntil(syncToFirebase(cart, firebaseUser?.uid, rawIdToken, env));
+				return jsonResponse({ success: true, cart }, 200, origin);
+			}
 
-    } catch (err) {
-      console.error('Worker error:', err);
-      return jsonResponse({ error: err.message }, 500, origin);
-    }
-  },
+			// ── POST /cart/update ───────────────────────────────────
+			if (url.pathname === '/cart/update' && request.method === 'POST') {
+				const { pid, size, qty } = await request.json();
+				const cart = await getCart(cartId, env);
+				cart.id = cartId;
+				const item = cart.items.find((i) => i.pid === pid && i.size === size);
+				if (item) item.qty = Math.max(0, qty);
+				cart.items = cart.items.filter((i) => i.qty > 0);
+				cart.updatedAt = Date.now();
+				await saveCart(cart, env);
+				ctx.waitUntil(syncToFirebase(cart, firebaseUser?.uid, rawIdToken, env));
+				return jsonResponse({ success: true, cart }, 200, origin);
+			}
+
+			// ── DELETE /cart ────────────────────────────────────────
+			if (url.pathname === '/cart' && request.method === 'DELETE') {
+				await env.CART_KV.delete(cartKey(cartId));
+				return jsonResponse({ success: true }, 200, origin);
+			}
+
+			return jsonResponse({ error: 'Not found' }, 404, origin);
+		} catch (err) {
+			console.error('Worker error:', err);
+			return jsonResponse({ error: err.message }, 500, origin);
+		}
+	},
 };

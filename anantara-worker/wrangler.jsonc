@@ -26,6 +26,7 @@
 
   "vars": {
     "FIREBASE_PROJECT_ID": "anantara-212b9",
+	"FIREBASE_WEB_API_KEY": "AIzaSyDRXbVGU6aH2B18HcsJiCmbOb0LM0mxwws",
     "ALLOWED_ORIGIN": "*"
   }
 }

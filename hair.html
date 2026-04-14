@@ -4454,7 +4454,43 @@ async function addToCart(productData) {
   if (!res.ok) throw new Error('Cart add failed: ' + res.status);
   return res.json();
 }
+async function handleAddToCart(btn) {
+  const tile    = btn.closest('[data-analytics]');
+  const product = JSON.parse(tile.dataset.analytics).products[0];
 
+  // Pick up selected variant from dropdown if present
+  const select  = tile.querySelector('[data-js-field]');
+  const option  = select?.options[select.selectedIndex];
+  const pid     = option?.dataset.jsPid || product.pid;
+  const size    = option?.dataset.size  || product.size;
+
+  const span = btn.querySelector('span');
+  btn.disabled     = true;
+  span.textContent = 'Adding…';
+
+  try {
+    await addToCart({
+      pid,
+      url:      product.url,
+      name:     product.name,
+      subname:  product.subname,
+      price:    product.salePrice ?? product.price,
+      imageUrl: product.imgUrl,
+      size,
+    });
+
+    span.textContent = 'Added ✓';
+    setTimeout(() => {
+      span.textContent = 'Add to cart';
+      btn.disabled = false;
+    }, 2000);
+
+  } catch (err) {
+    console.error(err);
+    span.textContent = 'Failed — retry';
+    btn.disabled = false;
+  }
+}
 // ── EXTRACT PRODUCT DATA FROM TILE ───────────────────────────
 function extractProductFromTile(tile) {
   const pid = tile.dataset.pid || tile.dataset.jsTile || '';
