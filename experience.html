@@ -247,12 +247,15 @@
             window.addEventListener("offline", n);
         });
     </script>
-  </head>
+ <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-auth-cart.js"></script> </head>
   <body class="page-contentpage">
     <div
       data-component="analytics/ActiveData"
       data-component-force
-      data-component-options="{}"
+      
     ></div>
     <div
       class="c-scroll-snapping"
@@ -296,7 +299,7 @@
             href="#site-content"
             data-component="/dist/javascripts/components/global/EventTrigger.js"
             data-component-options='{"event":"click","skipPreventDefault":true}'
-            data-analytics="{}"
+            
             data-js-skip-to-content
             >Skip to content</a
           >
@@ -374,7 +377,7 @@
               </div>
             </noscript>
             <div
-              data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+              
             ></div>
           </div>
           <div class="l-header__main-area-wrapper" data-js-header-area-wrapper>
@@ -523,12 +526,12 @@
                     <div
                       data-component="cart/MiniCart"
                       data-component-context=""
-                      data-analytics="{}"
+                      
                     >
                       <div data-js-sliding-trigger>
                         <div
                           class="c-minicart-icon"
-                          data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                          
                           data-component-context=""
                         >
                           <button
@@ -591,7 +594,7 @@
                 >
                   <div class="c-hamburger__item m-account">
                     <div
-                      data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                      
                       data-component-context="medium down"
                       data-component-force
                     ></div>
@@ -1032,7 +1035,7 @@
                     class="c-content-hero l-section__row"
                     data-component="/dist/javascripts/components/global/Hero.js"
                     data-analytics='{"promoObject":{"id":"promotion","name":"Experience"}}'
-                    data-component-options="{}"
+                    
                   >
                     <div
                       class="c-content-hero__image-wrapper"
@@ -1046,7 +1049,7 @@
                           loop
                           playsinline
                           aria-hidden="true"
-                          poster="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
+                          poster="/dw/image/v2/AAQP_PRD/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
                           style="width: 100%; height: 100vh; object-fit: cover"
                         >
                           <source
@@ -1059,7 +1062,7 @@
                           />
                           <!-- Fallback image if video is not supported -->
                           <img
-                            src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
+                            src="/dw/image/v2/AAQP_PRD/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
                             alt="Anantara Category Top Banner"
                             style="width: 100%; height: 100%; object-fit: cover"
                           />
@@ -1182,7 +1185,7 @@
                             class="c-content-hero l-section__row m-unstack"
                             data-component="/dist/javascripts/components/global/Hero.js"
                             data-analytics='{"promoObject":{"id":"promotion","name":"Composure for the skin and senses"}}'
-                            data-component-options="{}"
+                            
                           >
                             <div
                               class="c-content-hero__image-wrapper"
@@ -1192,12 +1195,12 @@
                                 <picture>
                                   <source
                                     data-srcset="
-                    /images/travel-2.jpg?sw=1280&sh=770&sm=cut&q=70 1280w, 
-        /images/travel-2.jpg?sw=1792&sh=1078&sm=cut&q=70 1792w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w"
+                  https://images.anantara.africa/travel-2.jpg?sw=1280&sh=770&sm=cut&q=70 1280w, 
+      https://images.anantara.africa/travel-2.jpg?sw=1792&sh=1078&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:1024px)"
                                     width="2560"
@@ -1206,11 +1209,11 @@
                                   />
                                   <source
                                     data-srcset="/images/travel-2.jpg?sw=1280&sh=1280&sm=cut&q=70 1280w, 
-        /images/travel-2.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-2.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:768px)"
                                     width="2560"
@@ -1219,11 +1222,11 @@
                                   />
                                   <source
                                     data-srcset="/images/travel-2.jpg?sw=188&sh=188&sm=cut&q=70 188w, 
-        /images/travel-2.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
-        /images/travel-2.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
-        /images/travel-2.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
-        /images/travel-2.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
-        /images/travel-2.jpg?sw=750&sh=750&sm=cut&q=70 750w"
+      https://images.anantara.africa/travel-2.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
+      https://images.anantara.africa/travel-2.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
+      https://images.anantara.africa/travel-2.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
+      https://images.anantara.africa/travel-2.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
+      https://images.anantara.africa/travel-2.jpg?sw=750&sh=750&sm=cut&q=70 750w"
                                     sizes="100vw"
                                     media="(min-width:0)"
                                     width="375"
@@ -1267,7 +1270,7 @@
                           class="c-content-hero l-section__row m-unstack"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Composure for the skin and senses"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -1277,12 +1280,12 @@
                               <picture>
                                 <source
                                   data-srcset="
-                    /images/travel-2.jpg?sw=1280&sh=770&sm=cut&q=70 1280w, 
-        /images/travel-2.jpg?sw=1792&sh=1078&sm=cut&q=70 1792w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w"
+                  https://images.anantara.africa/travel-2.jpg?sw=1280&sh=770&sm=cut&q=70 1280w, 
+      https://images.anantara.africa/travel-2.jpg?sw=1792&sh=1078&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=1203&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:1024px)"
                                   width="2560"
@@ -1291,11 +1294,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-2.jpg?sw=1280&sh=1280&sm=cut&q=70 1280w, 
-        /images/travel-2.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-2.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-2.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:768px)"
                                   width="2560"
@@ -1304,11 +1307,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-2.jpg?sw=188&sh=188&sm=cut&q=70 188w, 
-        /images/travel-2.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
-        /images/travel-2.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
-        /images/travel-2.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
-        /images/travel-2.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
-        /images/travel-2.jpg?sw=750&sh=750&sm=cut&q=70 750w"
+      https://images.anantara.africa/travel-2.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
+      https://images.anantara.africa/travel-2.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
+      https://images.anantara.africa/travel-2.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
+      https://images.anantara.africa/travel-2.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
+      https://images.anantara.africa/travel-2.jpg?sw=750&sh=750&sm=cut&q=70 750w"
                                   sizes="100vw"
                                   media="(min-width:0)"
                                   width="375"
@@ -1336,7 +1339,7 @@
                           class="c-content-hero l-section__row m-no-image"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Composure for the skin and senses"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -1424,7 +1427,7 @@
                             class="c-content-hero l-section__row m-unstack"
                             data-component="/dist/javascripts/components/global/Hero.js"
                             data-analytics='{"promoObject":{"id":"promotion","name":"Corporate gifts"}}'
-                            data-component-options="{}"
+                            
                           >
                             <div
                               class="c-content-hero__image-wrapper"
@@ -1434,11 +1437,11 @@
                                 <picture
                                   ><source
                                     data-srcset="/images/2026/gifts.jpeg?sw=1280&sh=720&sm=cut&q=70 1280w, 
-        /images/2026/gifts.jpeg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w"
+      https://images.anantara.africa/2026/gifts.jpeg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:1024px)"
                                     width="2560"
@@ -1447,11 +1450,11 @@
                                   />
                                   <source
                                     data-srcset="/images/2026/gifts.jpeg?sw=1280&sh=1280&sm=cut&q=70 1280w, 
-        /images/2026/gifts.jpeg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w"
+      https://images.anantara.africa/2026/gifts.jpeg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:768px)"
                                     width="2560"
@@ -1460,11 +1463,11 @@
                                   />
                                   <source
                                     data-srcset="/images/2026/gifts.jpeg?sw=188&sh=188&sm=cut&q=70 188w, 
-        /images/2026/gifts.jpeg?sw=263&sh=263&sm=cut&q=70 263w, 
-        /images/2026/gifts.jpeg?sw=375&sh=375&sm=cut&q=70 375w, 
-        /images/2026/gifts.jpeg?sw=563&sh=563&sm=cut&q=70 563w, 
-        /images/2026/gifts.jpeg?sw=638&sh=638&sm=cut&q=70 638w, 
-        /images/2026/gifts.jpeg?sw=750&sh=750&sm=cut&q=70 750w"
+      https://images.anantara.africa/2026/gifts.jpeg?sw=263&sh=263&sm=cut&q=70 263w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=375&sh=375&sm=cut&q=70 375w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=563&sh=563&sm=cut&q=70 563w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=638&sh=638&sm=cut&q=70 638w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=750&sh=750&sm=cut&q=70 750w"
                                     sizes="100vw"
                                     media="(min-width:0)"
                                     width="375"
@@ -1567,7 +1570,7 @@
                           class="c-content-hero l-section__row"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Corporate gifts"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -1577,11 +1580,11 @@
                               <picture
                                 ><source
                                   data-srcset="/images/2026/gifts.jpeg?sw=1440&sh=810&sm=cut&q=70 1440w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w"
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=1125&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:1024px)"
                                   width="2880"
@@ -1590,11 +1593,11 @@
                                 />
                                 <source
                                   data-srcset="/images/2026/gifts.jpeg?sw=1440&sh=1440&sm=cut&q=70 1440w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w"
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=2000&sh=2000&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:768px)"
                                   width="2880"
@@ -1603,11 +1606,11 @@
                                 />
                                 <source
                                   data-srcset="/images/2026/gifts.jpeg?sw=188&sh=188&sm=cut&q=70 188w, 
-        /images/2026/gifts.jpeg?sw=263&sh=263&sm=cut&q=70 263w, 
-        /images/2026/gifts.jpeg?sw=375&sh=375&sm=cut&q=70 375w, 
-        /images/2026/gifts.jpeg?sw=563&sh=563&sm=cut&q=70 563w, 
-        /images/2026/gifts.jpeg?sw=638&sh=638&sm=cut&q=70 638w, 
-        /images/2026/gifts.jpeg?sw=750&sh=750&sm=cut&q=70 750w"
+      https://images.anantara.africa/2026/gifts.jpeg?sw=263&sh=263&sm=cut&q=70 263w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=375&sh=375&sm=cut&q=70 375w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=563&sh=563&sm=cut&q=70 563w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=638&sh=638&sm=cut&q=70 638w, 
+      https://images.anantara.africa/2026/gifts.jpeg?sw=750&sh=750&sm=cut&q=70 750w"
                                   sizes="100vw"
                                   media="(min-width:0)"
                                   width="375"
@@ -1635,7 +1638,7 @@
                           class="c-content-hero l-section__row m-no-image"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Corporate gifts"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -1775,7 +1778,7 @@
                             class="c-content-hero l-section__row m-unstack"
                             data-component="/dist/javascripts/components/global/Hero.js"
                             data-analytics='{"promoObject":{"id":"promotion","name":"Experience the Fragrance Armoire"}}'
-                            data-component-options="{}"
+                            
                           >
                             <div
                               class="c-content-hero__image-wrapper"
@@ -1785,11 +1788,11 @@
                                 <picture>
                                   <source
                                     data-srcset="/images/2026/results.jpeg?sw=424&sh=239&sm=cut&q=70 424w, 
-        /images/2026/results.jpeg?sw=594&sh=334&sm=cut&q=70 594w, 
-        /images/2026/results.jpeg?sw=848&sh=477&sm=cut&q=70 848w, 
-        /images/2026/results.jpeg?sw=1272&sh=716&sm=cut&q=70 1272w, 
-        /images/2026/results.jpeg?sw=1442&sh=811&sm=cut&q=70 1442w, 
-        /images/2026/results.jpeg?sw=1696&sh=954&sm=cut&q=70 1696w"
+      https://images.anantara.africa/2026/results.jpeg?sw=594&sh=334&sm=cut&q=70 594w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=848&sh=477&sm=cut&q=70 848w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1272&sh=716&sm=cut&q=70 1272w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1442&sh=811&sm=cut&q=70 1442w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1696&sh=954&sm=cut&q=70 1696w"
                                     sizes="100vw"
                                     media="(min-width:1024px)"
                                     width="848"
@@ -1798,11 +1801,11 @@
                                   />
                                   <source
                                     data-srcset="/images/2026/results.jpeg?sw=424&sh=424&sm=cut&q=70 424w, 
-        /images/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
-        /images/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
-        /images/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
-        /images/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
-        /images/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
+      https://images.anantara.africa/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
                                     sizes="100vw"
                                     media="(min-width:768px)"
                                     width="848"
@@ -1811,11 +1814,11 @@
                                   />
                                   <source
                                     data-srcset="/images/2026/results.jpeg?sw=424&sh=424&sm=cut&q=70 424w, 
-        /images/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
-        /images/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
-        /images/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
-        /images/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
-        /images/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
+      https://images.anantara.africa/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
                                     sizes="100vw"
                                     media="(min-width:0)"
                                     width="848"
@@ -1859,7 +1862,7 @@
                           class="c-content-hero l-section__row m-unstack"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Experience the Fragrance Armoire"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -1869,11 +1872,11 @@
                               <picture
                                 ><source
                                   data-srcset="/images/2026/results.jpeg?sw=424&sh=239&sm=cut&q=70 424w, 
-        /images/2026/results.jpeg?sw=594&sh=334&sm=cut&q=70 594w, 
-        /images/2026/results.jpeg?sw=848&sh=477&sm=cut&q=70 848w, 
-        /images/2026/results.jpeg?sw=1272&sh=716&sm=cut&q=70 1272w, 
-        /images/2026/results.jpeg?sw=1442&sh=811&sm=cut&q=70 1442w, 
-        /images/2026/results.jpeg?sw=1696&sh=954&sm=cut&q=70 1696w"
+      https://images.anantara.africa/2026/results.jpeg?sw=594&sh=334&sm=cut&q=70 594w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=848&sh=477&sm=cut&q=70 848w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1272&sh=716&sm=cut&q=70 1272w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1442&sh=811&sm=cut&q=70 1442w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1696&sh=954&sm=cut&q=70 1696w"
                                   sizes="100vw"
                                   media="(min-width:1024px)"
                                   width="848"
@@ -1882,11 +1885,11 @@
                                 />
                                 <source
                                   data-srcset="/images/2026/results.jpeg?sw=424&sh=424&sm=cut&q=70 424w, 
-        /images/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
-        /images/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
-        /images/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
-        /images/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
-        /images/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
+      https://images.anantara.africa/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
                                   sizes="100vw"
                                   media="(min-width:768px)"
                                   width="848"
@@ -1895,11 +1898,11 @@
                                 />
                                 <source
                                   data-srcset="/images/2026/results.jpeg?sw=424&sh=424&sm=cut&q=70 424w, 
-        /images/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
-        /images/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
-        /images/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
-        /images/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
-        /images/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
+      https://images.anantara.africa/2026/results.jpeg?sw=594&sh=594&sm=cut&q=70 594w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=848&sh=848&sm=cut&q=70 848w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1272&sh=1272&sm=cut&q=70 1272w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1442&sh=1442&sm=cut&q=70 1442w, 
+      https://images.anantara.africa/2026/results.jpeg?sw=1696&sh=1696&sm=cut&q=70 1696w"
                                   sizes="100vw"
                                   media="(min-width:0)"
                                   width="848"
@@ -1927,7 +1930,7 @@
                           class="c-content-hero l-section__row m-no-image"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Experience the Fragrance Armoire"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -2015,7 +2018,7 @@
                             class="c-content-hero l-section__row m-unstack"
                             data-component="/dist/javascripts/components/global/Hero.js"
                             data-analytics='{"promoObject":{"id":"promotion","name":"Gestures to enhance your experience"}}'
-                            data-component-options="{}"
+                            
                           >
                             <div
                               class="c-content-hero__image-wrapper"
@@ -2025,11 +2028,11 @@
                                 <picture>
                                   <source
                                     data-srcset="/images/travel-3.jpg?sw=1280&sh=720&sm=cut&q=70 1280w, 
-        /images/travel-3.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-3.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:1024px)"
                                     width="2560"
@@ -2038,11 +2041,11 @@
                                   />
                                   <source
                                     data-srcset="/images/travel-3.jpg?sw=1280&sh=1178&sm=cut&q=70 1280w, 
-        /images/travel-3.jpg?sw=1792&sh=1649&sm=cut&q=70 1792w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-3.jpg?sw=1792&sh=1649&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:768px)"
                                     width="2560"
@@ -2051,11 +2054,11 @@
                                   />
                                   <source
                                     data-srcset="/images/travel-3.jpg?sw=188&sh=173&sm=cut&q=70 188w, 
-        /images/travel-3.jpg?sw=263&sh=241&sm=cut&q=70 263w, 
-        /images/travel-3.jpg?sw=375&sh=345&sm=cut&q=70 375w, 
-        /images/travel-3.jpg?sw=563&sh=518&sm=cut&q=70 563w, 
-        /images/travel-3.jpg?sw=638&sh=587&sm=cut&q=70 638w, 
-        /images/travel-3.jpg?sw=750&sh=690&sm=cut&q=70 750w"
+      https://images.anantara.africa/travel-3.jpg?sw=263&sh=241&sm=cut&q=70 263w, 
+      https://images.anantara.africa/travel-3.jpg?sw=375&sh=345&sm=cut&q=70 375w, 
+      https://images.anantara.africa/travel-3.jpg?sw=563&sh=518&sm=cut&q=70 563w, 
+      https://images.anantara.africa/travel-3.jpg?sw=638&sh=587&sm=cut&q=70 638w, 
+      https://images.anantara.africa/travel-3.jpg?sw=750&sh=690&sm=cut&q=70 750w"
                                     sizes="100vw"
                                     media="(min-width:0)"
                                     width="375"
@@ -2159,7 +2162,7 @@
                           class="c-content-hero l-section__row"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Gestures to enhance your experience"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -2169,11 +2172,11 @@
                               <picture>
                                 <source
                                   data-srcset="/images/travel-3.jpg?sw=1280&sh=720&sm=cut&q=70 1280w, 
-        /images/travel-3.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-3.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:1024px)"
                                   width="2560"
@@ -2182,11 +2185,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-3.jpg?sw=1280&sh=1178&sm=cut&q=70 1280w, 
-        /images/travel-3.jpg?sw=1792&sh=1649&sm=cut&q=70 1792w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-3.jpg?sw=1792&sh=1649&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:768px)"
                                   width="2560"
@@ -2195,11 +2198,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-3.jpg?sw=188&sh=173&sm=cut&q=70 188w, 
-        /images/travel-3.jpg?sw=263&sh=241&sm=cut&q=70 263w, 
-        /images/travel-3.jpg?sw=375&sh=345&sm=cut&q=70 375w, 
-        /images/travel-3.jpg?sw=563&sh=518&sm=cut&q=70 563w, 
-        /images/travel-3.jpg?sw=638&sh=587&sm=cut&q=70 638w, 
-        /images/travel-3.jpg?sw=750&sh=690&sm=cut&q=70 750w"
+      https://images.anantara.africa/travel-3.jpg?sw=263&sh=241&sm=cut&q=70 263w, 
+      https://images.anantara.africa/travel-3.jpg?sw=375&sh=345&sm=cut&q=70 375w, 
+      https://images.anantara.africa/travel-3.jpg?sw=563&sh=518&sm=cut&q=70 563w, 
+      https://images.anantara.africa/travel-3.jpg?sw=638&sh=587&sm=cut&q=70 638w, 
+      https://images.anantara.africa/travel-3.jpg?sw=750&sh=690&sm=cut&q=70 750w"
                                   sizes="100vw"
                                   media="(min-width:0)"
                                   width="375"
@@ -2227,7 +2230,7 @@
                           class="c-content-hero l-section__row m-no-image"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Gestures to enhance your experience"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -2298,7 +2301,7 @@
                     class="c-content-hero l-section__row"
                     data-component="/dist/javascripts/components/global/Hero.js"
                     data-analytics='{"promoObject":{"id":"promotion","name":"Experience"}}'
-                    data-component-options="{}"
+                    
                   >
                     <div
                       class="c-content-hero__image-wrapper"
@@ -2312,7 +2315,7 @@
                           loop
                           playsinline
                           aria-hidden="true"
-                          poster="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
+                          poster="/dw/image/v2/AAQP_PRD/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
                           style="width: 100%; height: 100vh; object-fit: cover"
                         >
                           <source
@@ -2325,7 +2328,7 @@
                           />
                           <!-- Fallback image if video is not supported -->
                           <img
-                            src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
+                            src="/dw/image/v2/AAQP_PRD/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
                             alt="Anantara Category Top Banner"
                             style="width: 100%; height: 100%; object-fit: cover"
                           />
@@ -2436,7 +2439,7 @@
                             class="c-content-hero l-section__row m-unstack"
                             data-component="/dist/javascripts/components/global/Hero.js"
                             data-analytics='{"promoObject":{"id":"promotion","name":"Live assistance"}}'
-                            data-component-options="{}"
+                            
                           >
                             <div
                               class="c-content-hero__image-wrapper"
@@ -2446,11 +2449,11 @@
                                 <picture>
                                   <source
                                     data-srcset="/images/travel-1.jpg?sw=1280&sh=720&sm=cut&q=70 1280w, 
-        /images/travel-1.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-1.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:1024px)"
                                     width="2560"
@@ -2459,11 +2462,11 @@
                                   />
                                   <source
                                     data-srcset="/images/travel-1.jpg?sw=1280&sh=1280&sm=cut&q=70 1280w, 
-        /images/travel-1.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-1.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
                                     sizes="100vw"
                                     media="(min-width:768px)"
                                     width="2560"
@@ -2472,11 +2475,11 @@
                                   />
                                   <source
                                     data-srcset="/images/travel-1.jpg?sw=188&sh=188&sm=cut&q=70 188w, 
-        /images/travel-1.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
-        /images/travel-1.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
-        /images/travel-1.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
-        /images/travel-1.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
-        /images/travel-1.jpg?sw=750&sh=750&sm=cut&q=70 750w"
+      https://images.anantara.africa/travel-1.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
+      https://images.anantara.africa/travel-1.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
+      https://images.anantara.africa/travel-1.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
+      https://images.anantara.africa/travel-1.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
+      https://images.anantara.africa/travel-1.jpg?sw=750&sh=750&sm=cut&q=70 750w"
                                     sizes="100vw"
                                     media="(min-width:0)"
                                     width="375"
@@ -2520,7 +2523,7 @@
                           class="c-content-hero l-section__row m-unstack"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Live assistance"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -2530,11 +2533,11 @@
                               <picture
                                 ><source
                                   data-srcset="/images/travel-1.jpg?sw=1280&sh=720&sm=cut&q=70 1280w, 
-        /images/travel-1.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-1.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:1024px)"
                                   width="2560"
@@ -2543,11 +2546,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-1.jpg?sw=1280&sh=1280&sm=cut&q=70 1280w, 
-        /images/travel-1.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
-        /images/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-1.jpg?sw=1792&sh=1792&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-1.jpg?sw=2000&sh=2000&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:768px)"
                                   width="2560"
@@ -2556,11 +2559,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-1.jpg?sw=188&sh=188&sm=cut&q=70 188w, 
-        /images/travel-1.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
-        /images/travel-1.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
-        /images/travel-1.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
-        /images/travel-1.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
-        /images/travel-1.jpg?sw=750&sh=750&sm=cut&q=70 750w"
+      https://images.anantara.africa/travel-1.jpg?sw=263&sh=263&sm=cut&q=70 263w, 
+      https://images.anantara.africa/travel-1.jpg?sw=375&sh=375&sm=cut&q=70 375w, 
+      https://images.anantara.africa/travel-1.jpg?sw=563&sh=563&sm=cut&q=70 563w, 
+      https://images.anantara.africa/travel-1.jpg?sw=638&sh=638&sm=cut&q=70 638w, 
+      https://images.anantara.africa/travel-1.jpg?sw=750&sh=750&sm=cut&q=70 750w"
                                   sizes="100vw"
                                   media="(min-width:0)"
                                   width="375"
@@ -2588,7 +2591,7 @@
                           class="c-content-hero l-section__row m-no-image"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Live assistance"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -2674,7 +2677,7 @@
                             class="c-content-hero l-section__row m-unstack"
                             data-component="/dist/javascripts/components/global/Hero.js"
                             data-analytics='{"promoObject":{"id":"promotion","name":"Store locator"}}'
-                            data-component-options="{}"
+                            
                           >
                             <div
                               class="c-content-hero__image-wrapper"
@@ -2688,7 +2691,7 @@
                                   loop
                                   playsinline
                                   aria-hidden="true"
-                                  poster="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
+                                  poster="/dw/image/v2/AAQP_PRD/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
                                   style="
                                     width: 100%;
                                     height: 100vh;
@@ -2705,7 +2708,7 @@
                                   />
                                   <!-- Fallback image if video is not supported -->
                                   <img
-                                    src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
+                                    src="/dw/image/v2/AAQP_PRD/dw827765e8/images/pages/experience/Anantara_Experience_Page_Primary_Mobile_1088x1088px.jpg?sw=375&sh=375&sm=cut&q=70"
                                     alt="Anantara Category Top Banner"
                                     style="
                                       width: 100%;
@@ -2800,7 +2803,7 @@
                           class="c-content-hero l-section__row"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Store locator"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -2810,11 +2813,11 @@
                               <picture>
                                 <source
                                   data-srcset="/images/travel-3.jpg?sw=1280&sh=720&sm=cut&q=70 1280w, 
-        /images/travel-3.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-3.jpg?sw=1792&sh=1008&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1125&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:1024px)"
                                   width="2560"
@@ -2823,11 +2826,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-3.jpg?sw=1280&sh=1178&sm=cut&q=70 1280w, 
-        /images/travel-3.jpg?sw=1792&sh=1649&sm=cut&q=70 1792w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
-        /images/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w"
+      https://images.anantara.africa/travel-3.jpg?sw=1792&sh=1649&sm=cut&q=70 1792w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w, 
+      https://images.anantara.africa/travel-3.jpg?sw=2000&sh=1840&sm=cut&q=70 2000w"
                                   sizes="100vw"
                                   media="(min-width:768px)"
                                   width="2560"
@@ -2836,11 +2839,11 @@
                                 />
                                 <source
                                   data-srcset="/images/travel-3.jpg?sw=188&sh=173&sm=cut&q=70 188w, 
-        /images/travel-3.jpg?sw=263&sh=241&sm=cut&q=70 263w, 
-        /images/travel-3.jpg?sw=375&sh=345&sm=cut&q=70 375w, 
-        /images/travel-3.jpg?sw=563&sh=518&sm=cut&q=70 563w, 
-        /images/travel-3.jpg?sw=638&sh=587&sm=cut&q=70 638w, 
-        /images/travel-3.jpg?sw=750&sh=690&sm=cut&q=70 750w"
+      https://images.anantara.africa/travel-3.jpg?sw=263&sh=241&sm=cut&q=70 263w, 
+      https://images.anantara.africa/travel-3.jpg?sw=375&sh=345&sm=cut&q=70 375w, 
+      https://images.anantara.africa/travel-3.jpg?sw=563&sh=518&sm=cut&q=70 563w, 
+      https://images.anantara.africa/travel-3.jpg?sw=638&sh=587&sm=cut&q=70 638w, 
+      https://images.anantara.africa/travel-3.jpg?sw=750&sh=690&sm=cut&q=70 750w"
                                   sizes="100vw"
                                   media="(min-width:0)"
                                   width="375"
@@ -2868,7 +2871,7 @@
                           class="c-content-hero l-section__row m-no-image"
                           data-component="/dist/javascripts/components/global/Hero.js"
                           data-analytics='{"promoObject":{"id":"promotion","name":"Store locator"}}'
-                          data-component-options="{}"
+                          
                         >
                           <div
                             class="c-content-hero__image-wrapper"
@@ -2948,7 +2951,7 @@
                       class="c-content-hero l-section__row m-no-image m-stack--large"
                       data-component="/dist/javascripts/components/global/Hero.js"
                       data-analytics='{"promoObject":{"id":"promotion","name":"‘Change is the very condition of life.’"}}'
-                      data-component-options="{}"
+                      
                     >
                       <div
                         class="c-content-hero__image-wrapper"
@@ -3004,7 +3007,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/shipping.svg"
+                        src="https://images.anantara.africa/icons/shipping.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -3019,7 +3022,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/Secure_checkout.svg"
+                        src="https://images.anantara.africa/icons/Secure_checkout.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -3033,7 +3036,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/samples.svg"
+                        src="https://images.anantara.africa/icons/samples.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -3048,7 +3051,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/gift.svg"
+                        src="https://images.anantara.africa/icons/gift.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -3402,7 +3405,7 @@
               </div>
             </div>
             <img
-              src="/images/logo-small.png"
+              src="https://images.anantara.africa/logo-small.png"
               alt="Anantara logo"
               style="width: 30px; height: auto; padding-bottom: 12px"
             />
@@ -3474,7 +3477,7 @@
     <div
       class="c-orientation-message h-hidden"
       data-component="/dist/javascripts/components/global/OrientationMessage.js"
-      data-component-options="{}"
+      
       data-component-force
     >
       <div class="c-orientation-message__content h-text-align-center">
@@ -3535,7 +3538,7 @@
           "endJavascriptLoading",
         ));
     </script>
-    <!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+   
 
     <script
       type="text/javascript"
@@ -3543,7 +3546,7 @@
       async="async"
       onload="trackPage()"
     ></script>
-    <!-- Demandware Active Data (body_end-active_data.js) -->
+    
     <script
       src="/internal/jscript/dwac-21.7.js"
       type="text/javascript"
@@ -3723,5 +3726,104 @@
       checkSavedPreference();
       initLocalization();
     </script>
-  </body>
+   <script src="/js/cloudflare-image-loader.js"></script> 
+   <script>
+   function renderHeader(user) {
+  const right = document.getElementById('header-right');
+ 
+  if (!user) {
+    /* ── SIGNED OUT ── */
+    right.innerHTML = `
+      <a href="/signup.html" class="text-link">Email sign up</a>
+      <div class="divider"></div>
+ 
+      <!-- Cart: locked, no access -->
+      <div class="cart-locked" role="button" tabindex="0"
+           aria-label="Cart — sign in required">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        My cart
+        <span class="cart-tooltip">Sign in to access your cart</span>
+      </div>
+ 
+      <div class="divider"></div>
+ 
+      <!-- Account: sign in -->
+      <button class="account-btn" onclick="window.location.href='/login.html'"
+              aria-label="Sign in">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Sign in
+      </button>
+    `;
+ 
+  } else {
+    /* ── SIGNED IN ── */
+    const initials  = getInitials(user.displayName);
+    const firstName = getFirstName(user.displayName);
+ 
+    right.innerHTML = `
+      <div class="divider"></div>
+ 
+      <!-- Cart: active -->
+      <button class="cart-btn" onclick="window.location.href='/mycart.html'"
+              aria-label="View cart, 2 items">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        My cart
+        <span class="cart-count">2</span>
+      </button>
+ 
+      <div class="divider"></div>
+ 
+      <!-- User dropdown -->
+      <div class="user-menu" id="user-menu">
+        <button class="user-name-btn" onclick="toggleDropdown()"
+                aria-haspopup="true" aria-expanded="false" id="user-menu-btn">
+          <div class="avatar">${initials}</div>
+          <span class="user-greeting">Hi, ${firstName}</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+ 
+        <div class="user-dropdown" role="menu" id="user-dropdown">
+          <div class="dropdown-header">
+            <div class="dropdown-fullname">${user.displayName}</div>
+            <div class="dropdown-email">${user.email}</div>
+          </div>
+          <div class="dropdown-list">
+            ${menuItem('M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2', 'My orders', '/account/orders.html')}
+            ${menuItem('M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z', 'Wishlist', '/account/wishlist.html')}
+            ${menuItem('M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z M12 10m-3 0a3 3 0 106 0 3 3 0 00-6 0', 'Address book', '/account/addresses.html')}
+            ${menuItem('M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', 'Account settings', '/account/settings.html')}
+            <div class="dropdown-sep"></div>
+            <div class="dropdown-item signout" role="menuitem"
+                 onclick="handleSignOut()" tabindex="0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+                <polyline points="16 17 21 12 16 7"/>
+                <line x1="21" y1="12" x2="9" y2="12"/>
+              </svg>
+              Sign out
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+ 
+  </script>
+  
+</body>
 </html>

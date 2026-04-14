@@ -181,8 +181,8 @@
 .c-carousel.m-style-hero .c-carousel__arrow-next:before,
 .c-carousel.m-style-hero .c-carousel__arrow-prev:before {
   background-color: #FFFFFF;
-  -webkit-mask: url(../images/icons/chevron-right.svg) no-repeat left/100%;
-  mask: url(../images/icons/chevron-right.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/chevron-right.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/chevron-right.svg) no-repeat left/100%;
 }
 .c-carousel.m-style-hero .c-carousel__pagination {
   margin: 1.25rem 0 0;
@@ -255,8 +255,8 @@
   display: inline-block;
   height: 0.625rem;
   margin: 0 0.1875rem 0.125rem 0;
-  -webkit-mask: url(../images/icons/arrow-back.svg) no-repeat left/100%;
-  mask: url(../images/icons/arrow-back.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/arrow-back.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/arrow-back.svg) no-repeat left/100%;
   vertical-align: middle;
   width: 0.625rem;
 }
@@ -283,8 +283,8 @@
 }
 .c-back-to-parent.m-secondary .c-back-to-parent__link:before {
   background-color: #333;
-  -webkit-mask: url(../images/icons/chevron-left.svg) no-repeat left/100%;
-  mask: url(../images/icons/chevron-left.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/chevron-left.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/chevron-left.svg) no-repeat left/100%;
   vertical-align: middle;
 }
 .c-back-to-parent.m-secondary .c-back-to-parent__link:focus,
@@ -309,8 +309,8 @@
 }
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:before {
   background-color: #FFFFFF;
-  -webkit-mask: url(../images/icons/chevron2-left.svg) no-repeat left/100%;
-  mask: url(../images/icons/chevron2-left.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/chevron2-left.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/chevron2-left.svg) no-repeat left/100%;
 }
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:focus,
 .c-back-to-parent.m-tertiary .c-back-to-parent__link:hover {
@@ -357,8 +357,8 @@
   flex-shrink: 0;
   height: 0.75rem;
   margin: 0 0.9375rem 0 0;
-  -webkit-mask: url(../images/icons/chevron2-right.svg) no-repeat left/100%;
-  mask: url(../images/icons/chevron2-right.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/chevron2-right.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/chevron2-right.svg) no-repeat left/100%;
   width: 0.4375rem;
 }
 .c-stacked-links__link:hover {
@@ -389,8 +389,8 @@
   background-color: #FFFFFF;
   height: 1.25rem;
   margin: 0 1.25rem 0 0;
-  -webkit-mask: url(../images/icons/none.svg) no-repeat right/100%;
-  mask: url(../images/icons/none.svg) no-repeat right/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/none.svg) no-repeat right/100%;
+  mask: url(..https://images.anantara.africa/icons/none.svg) no-repeat right/100%;
   width: 1.25rem;
 }
 .c-sidebar-navigation__title {
@@ -683,8 +683,8 @@
 }
 .c-selection-group__add-more:before {
   margin: 0 0.5rem 0.1875rem 0;
-  -webkit-mask: url(../images/icons/plus.svg) no-repeat left/100%;
-  mask: url(../images/icons/plus.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/plus.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/plus.svg) no-repeat left/100%;
 }
 .c-selection-group__add-more:before,
 .c-selection-group__geolocation:before {
@@ -697,8 +697,8 @@
 }
 .c-selection-group__geolocation:before {
   margin: 0 0.5rem 0 0;
-  -webkit-mask: url(../images/icons/pin.svg) no-repeat center/contain;
-  mask: url(../images/icons/pin.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/pin.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/pin.svg) no-repeat center/contain;
 }
 .c-social-share {
   font-size: 0.75rem;
@@ -727,8 +727,8 @@
   display: flex;
 }
 .c-social-share__text.m-twitter:before {
-  -webkit-mask: url(../images/icons/twitter.svg) no-repeat center/100%;
-  mask: url(../images/icons/twitter.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/twitter.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/twitter.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-facebook:before,
 .c-social-share__text.m-twitter:before {
@@ -740,12 +740,12 @@
   width: 1.5rem;
 }
 .c-social-share__text.m-facebook:before {
-  -webkit-mask: url(../images/icons/facebook.svg) no-repeat center/100%;
-  mask: url(../images/icons/facebook.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/facebook.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/facebook.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-pinterest:before {
-  -webkit-mask: url(../images/icons/pinterest.svg) no-repeat center/100%;
-  mask: url(../images/icons/pinterest.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/pinterest.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/pinterest.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-google:before,
 .c-social-share__text.m-pinterest:before {
@@ -757,12 +757,12 @@
   width: 1.5rem;
 }
 .c-social-share__text.m-google:before {
-  -webkit-mask: url(../images/icons/google.svg) no-repeat center/100%;
-  mask: url(../images/icons/google.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/google.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/google.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-tumblr:before {
-  -webkit-mask: url(../images/icons/tumblr.svg) no-repeat center/100%;
-  mask: url(../images/icons/tumblr.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/tumblr.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/tumblr.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-reddit:before,
 .c-social-share__text.m-tumblr:before {
@@ -774,12 +774,12 @@
   width: 1.5rem;
 }
 .c-social-share__text.m-reddit:before {
-  -webkit-mask: url(../images/icons/reddit.svg) no-repeat center/100%;
-  mask: url(../images/icons/reddit.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/reddit.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/reddit.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-linkedin:before {
-  -webkit-mask: url(../images/icons/linkedin.svg) no-repeat center/100%;
-  mask: url(../images/icons/linkedin.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/linkedin.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/linkedin.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-email:before,
 .c-social-share__text.m-linkedin:before {
@@ -791,12 +791,12 @@
   width: 1.5rem;
 }
 .c-social-share__text.m-email:before {
-  -webkit-mask: url(../images/icons/email.svg) no-repeat center/100%;
-  mask: url(../images/icons/email.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/email.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/email.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-whatsapp:before {
-  -webkit-mask: url(../images/icons/whatsapp.svg) no-repeat center/100%;
-  mask: url(../images/icons/whatsapp.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/whatsapp.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/whatsapp.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-lineme:before,
 .c-social-share__text.m-whatsapp:before {
@@ -808,8 +808,8 @@
   width: 1.5rem;
 }
 .c-social-share__text.m-lineme:before {
-  -webkit-mask: url(../images/icons/lineme.svg) no-repeat center/100%;
-  mask: url(../images/icons/lineme.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/lineme.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/lineme.svg) no-repeat center/100%;
 }
 .c-social-share__text.m-share-link:before {
   background-color: #333;
@@ -817,8 +817,8 @@
   display: block;
   height: 1.5rem;
   margin-right: 0.5rem;
-  -webkit-mask: url(../images/icons/share-link.svg) no-repeat center/100%;
-  mask: url(../images/icons/share-link.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/share-link.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/share-link.svg) no-repeat center/100%;
   width: 1.5rem;
 }
 .c-social-share__link {
@@ -832,8 +832,8 @@
 }
 .c-social-share__link.m-twitter {
   background-color: #333;
-  -webkit-mask: url(../images/icons/twitter.svg) no-repeat center/contain;
-  mask: url(../images/icons/twitter.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/twitter.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/twitter.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-twitter:focus,
 .c-social-share__link.m-twitter:hover {
@@ -844,8 +844,8 @@
 }
 .c-social-share__link.m-facebook {
   background-color: #333;
-  -webkit-mask: url(../images/icons/facebook.svg) no-repeat center/contain;
-  mask: url(../images/icons/facebook.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/facebook.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/facebook.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-facebook:focus,
 .c-social-share__link.m-facebook:hover {
@@ -856,8 +856,8 @@
 }
 .c-social-share__link.m-pinterest {
   background-color: #333;
-  -webkit-mask: url(../images/icons/pinterest.svg) no-repeat center/contain;
-  mask: url(../images/icons/pinterest.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/pinterest.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/pinterest.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-pinterest:focus,
 .c-social-share__link.m-pinterest:hover {
@@ -868,8 +868,8 @@
 }
 .c-social-share__link.m-google {
   background-color: #333;
-  -webkit-mask: url(../images/icons/google.svg) no-repeat center/contain;
-  mask: url(../images/icons/google.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/google.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/google.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-google:focus,
 .c-social-share__link.m-google:hover {
@@ -880,8 +880,8 @@
 }
 .c-social-share__link.m-tumblr {
   background-color: #333;
-  -webkit-mask: url(../images/icons/tumblr.svg) no-repeat center/contain;
-  mask: url(../images/icons/tumblr.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/tumblr.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/tumblr.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-tumblr:focus,
 .c-social-share__link.m-tumblr:hover {
@@ -892,8 +892,8 @@
 }
 .c-social-share__link.m-reddit {
   background-color: #333;
-  -webkit-mask: url(../images/icons/reddit.svg) no-repeat center/contain;
-  mask: url(../images/icons/reddit.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/reddit.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/reddit.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-reddit:focus,
 .c-social-share__link.m-reddit:hover {
@@ -904,8 +904,8 @@
 }
 .c-social-share__link.m-linkedin {
   background-color: #333;
-  -webkit-mask: url(../images/icons/linkedin.svg) no-repeat center/contain;
-  mask: url(../images/icons/linkedin.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/linkedin.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/linkedin.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-linkedin:focus,
 .c-social-share__link.m-linkedin:hover {
@@ -916,8 +916,8 @@
 }
 .c-social-share__link.m-email {
   background-color: #333;
-  -webkit-mask: url(../images/icons/email.svg) no-repeat center/contain;
-  mask: url(../images/icons/email.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/email.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/email.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-email:focus,
 .c-social-share__link.m-email:hover {
@@ -928,8 +928,8 @@
 }
 .c-social-share__link.m-whatsapp {
   background-color: #333;
-  -webkit-mask: url(../images/icons/whatsapp.svg) no-repeat center/contain;
-  mask: url(../images/icons/whatsapp.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/whatsapp.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/whatsapp.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-whatsapp:focus,
 .c-social-share__link.m-whatsapp:hover {
@@ -940,8 +940,8 @@
 }
 .c-social-share__link.m-lineme {
   background-color: #333;
-  -webkit-mask: url(../images/icons/lineme.svg) no-repeat center/contain;
-  mask: url(../images/icons/lineme.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/lineme.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/lineme.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-lineme:focus,
 .c-social-share__link.m-lineme:hover {
@@ -952,8 +952,8 @@
 }
 .c-social-share__link.m-share-link {
   background-color: #333;
-  -webkit-mask: url(../images/icons/share-link.svg) no-repeat center/contain;
-  mask: url(../images/icons/share-link.svg) no-repeat center/contain;
+  -webkit-mask: url(..https://images.anantara.africa/icons/share-link.svg) no-repeat center/contain;
+  mask: url(..https://images.anantara.africa/icons/share-link.svg) no-repeat center/contain;
 }
 .c-social-share__link.m-share-link:focus,
 .c-social-share__link.m-share-link:hover {
@@ -1023,8 +1023,8 @@
   display: block;
   font-size: 1rem;
   height: 0.875rem;
-  -webkit-mask: url(../images/icons/back.svg) no-repeat left/100%;
-  mask: url(../images/icons/back.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/back.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/back.svg) no-repeat left/100%;
   width: 0.875rem;
 }
 .c-simple-navigation__back-link-text {
@@ -1058,8 +1058,8 @@
   content: "";
   display: block;
   height: 1rem;
-  -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-  mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
   width: 1rem;
 }
 .c-simple-navigation__list-wrapper .c-scrollable__arrow-next.m-disabled,
@@ -1086,8 +1086,8 @@
   .c-scrollable__arrow-prev:before {
   background-color: #333;
   height: 0.75rem;
-  -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-  mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
   width: 0.625rem;
 }
 .c-simple-navigation__list-wrapper.m-arrows-medium .c-scrollable__arrow-next,
@@ -1101,8 +1101,8 @@
   .c-scrollable__arrow-prev:before {
   background-color: #333;
   height: 1.25rem;
-  -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-  mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+  mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
   width: 1rem;
 }
 .c-simple-navigation__list-wrapper
@@ -1349,8 +1349,8 @@
   background-color: #333;
   content: "";
   height: 1rem;
-  -webkit-mask: url(../images/icons/chevron2-down.svg) no-repeat center/100%;
-  mask: url(../images/icons/chevron2-down.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/chevron2-down.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/chevron2-down.svg) no-repeat center/100%;
   pointer-events: none;
   position: absolute;
   right: 0;
@@ -1362,8 +1362,8 @@
 }
 .c-toggle-link[aria-expanded="true"]:after {
   background-color: #333;
-  -webkit-mask: url(../images/icons/chevron2-top.svg) no-repeat center/100%;
-  mask: url(../images/icons/chevron2-top.svg) no-repeat center/100%;
+  -webkit-mask: url(..https://images.anantara.africa/icons/chevron2-top.svg) no-repeat center/100%;
+  mask: url(..https://images.anantara.africa/icons/chevron2-top.svg) no-repeat center/100%;
   top: 0.125rem;
 }
 .c-content__subtitle {
@@ -2200,8 +2200,8 @@
     .c-scrollable__arrow-prev:before {
     background-color: #333;
     height: 0.75rem;
-    -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-    mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+    -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+    mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
     width: 0.625rem;
   }
   .c-simple-navigation__list-wrapper.m-arrows-medium-for-medium-down
@@ -2217,8 +2217,8 @@
     .c-scrollable__arrow-prev:before {
     background-color: #333;
     height: 1.25rem;
-    -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-    mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+    -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+    mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
     width: 1rem;
   }
   .c-simple-navigation__list-wrapper.m-arrows-inside-for-medium-down
@@ -2257,8 +2257,8 @@
     content: "";
     display: block;
     height: 1rem;
-    -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-    mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+    -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+    mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
     width: 1rem;
   }
   .c-breadcrumbs.m-scrollable .c-scrollable__arrow-next.m-disabled,
@@ -2283,8 +2283,8 @@
   .c-breadcrumbs.m-scrollable.m-arrows-small .c-scrollable__arrow-prev:before {
     background-color: #333;
     height: 0.75rem;
-    -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-    mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+    -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+    mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
     width: 0.625rem;
   }
   .c-breadcrumbs.m-scrollable.m-arrows-medium .c-scrollable__arrow-next,
@@ -2296,8 +2296,8 @@
   .c-breadcrumbs.m-scrollable.m-arrows-medium .c-scrollable__arrow-prev:before {
     background-color: #333;
     height: 1.25rem;
-    -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-    mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+    -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+    mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
     width: 1rem;
   }
   .c-breadcrumbs.m-scrollable
@@ -2471,8 +2471,8 @@
     .c-scrollable__arrow-prev:before {
     background-color: #333;
     height: 0.75rem;
-    -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-    mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+    -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+    mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
     width: 0.625rem;
   }
   .c-breadcrumbs.m-scrollable.m-arrows-medium-for-medium-down
@@ -2488,8 +2488,8 @@
     .c-scrollable__arrow-prev:before {
     background-color: #333;
     height: 1.25rem;
-    -webkit-mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
-    mask: url(../images/icons/arrow-forward.svg) no-repeat left/100%;
+    -webkit-mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
+    mask: url(..https://images.anantara.africa/icons/arrow-forward.svg) no-repeat left/100%;
     width: 1rem;
   }
   .c-breadcrumbs.m-scrollable.m-arrows-inside-for-medium-down

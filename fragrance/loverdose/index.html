@@ -51,18 +51,21 @@
 <script>"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/worker.js").then(function(e){window.lora.debug&&console.info("[Service Worker] Registered",e),n()});var t=document.querySelector("[data-js-offline-warning]");function n(e){t&&(navigator.onLine?(document.documentElement.classList.remove("m-offline"),t.classList.add("m-closed"),t.setAttribute("aria-hidden","true"),t.removeAttribute("tabindex")):(document.documentElement.classList.add("m-offline"),t.classList.remove("m-closed"),t.setAttribute("aria-hidden","false"),t.setAttribute("tabindex","0"),t.focus()))}window.addEventListener("online",n),window.addEventListener("offline",n)})</script>
 
 
-    </head>
-    <body class="page-search  " data-lora-datalayer="{&quot;page&quot;:{&quot;id&quot;:&quot;search&quot;,&quot;title&quot;:&quot;Loverdose | Fragrance | Anantara&quot;,&quot;description&quot;:&quot;Floral, balsamic and resinous, with ingredients such as Myrrh, Patchouli and Frankincense. Discover our&nbsp;opulent&nbsp;fragrances.&nbsp;&quot;,&quot;keywords&quot;:&quot;&quot;,&quot;currencyCode&quot;:&quot;GBP&quot;,&quot;stylesheets&quot;:[],&quot;category&quot;:&quot;product selector page&quot;,&quot;mainStylesheetId&quot;:&quot;category&quot;,&quot;ogImage&quot;:null,&quot;breadcrumbs&quot;:[&quot;Home&quot;,&quot;Fragrance&quot;,&quot;Category&quot;,&quot;Loverdose&quot;],&quot;locale&quot;:&quot;en_GB&quot;,&quot;url&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/Search-Show?cgid=opulent&quot;,&quot;seoLinks&quot;:{&quot;paginationLinks&quot;:{},&quot;canonicalLink&quot;:{},&quot;alternateLinks&quot;:[{&quot;lang&quot;:&quot;en-gb&quot;,&quot;url&quot;:{},&quot;customAlternateUrl&quot;:{}},{&quot;lang&quot;:&quot;en-ie&quot;,&quot;url&quot;:{},&quot;customAlternateUrl&quot;:{}}],&quot;_meta&quot;:{&quot;section&quot;:&quot;global&quot;,&quot;id&quot;:&quot;seolinks&quot;}}},&quot;locale&quot;:&quot;en_GB&quot;,&quot;version&quot;:&quot;v3&quot;,&quot;brand&quot;:&quot;Anantara&quot;,&quot;queryParams&quot;:{&quot;cgid&quot;:&quot;opulent&quot;},&quot;countryCode&quot;:&quot;GB&quot;,&quot;siteTypeLevel&quot;:&quot;main&quot;,&quot;siteSection&quot;:&quot;standard site&quot;,&quot;factory&quot;:&quot;NGL&quot;,&quot;extra&quot;:{&quot;uiInfluencer&quot;:&quot;not present&quot;},&quot;uiconfig&quot;:{&quot;motion&quot;:{&quot;modalsEnabled&quot;:true}},&quot;text&quot;:{&quot;close&quot;:&quot;Close&quot;},&quot;consentGroups&quot;:{},&quot;website_type&quot;:&quot;D2C&quot;,&quot;urls&quot;:{&quot;baseEndpoint&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/_endpoint_&quot;},&quot;currentCategory&quot;:{&quot;name&quot;:&quot;Loverdose&quot;},&quot;_eventName&quot;:&quot;page.metadata.ready&quot;}" data-cgid="opulent" >
+   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-auth-cart.js"></script> </head>
+    <body class="page-search  "  data-cgid="opulent" >
             
-<div data-lora-datalayer="{&quot;geoIPLocation&quot;:&quot;ZA&quot;,&quot;ecommerceStatus&quot;:&quot;viewer&quot;,&quot;customer&quot;:{&quot;loggedIn&quot;:false,&quot;isLoyaltyMember&quot;:&quot;false&quot;},&quot;utmParameters&quot;:{},&quot;sprinklrChatSettings&quot;:{&quot;appId&quot;:&quot;68beef755ea80571061d562c_app_2254663&quot;,&quot;skin&quot;:&quot;MODERN&quot;,&quot;disableAttachment&quot;:false,&quot;theme&quot;:{&quot;styles&quot;:{&quot;frame&quot;:{&quot;translateZ&quot;:0,&quot;zIndex&quot;:14},&quot;trigger&quot;:{&quot;yPadding&quot;:59,&quot;xPadding&quot;:10}}}}}"></div>
-<div data-component="analytics/ActiveData" data-component-force data-component-options="{&quot;activeDataContext&quot;:{&quot;category&quot;:&quot;opulent&quot;}}"></div>
+<div ></div>
+<div data-component="analytics/ActiveData" data-component-force ></div>
             <div class="c-scroll-snapping" data-component="/dist/javascripts/components/global/ScrollSnapping.js" data-component-force></div>
         <div class="c-overlay" data-component="/dist/javascripts/components/global/Overlay.js" data-component-force></div>
         <div class="c-snackbar" data-component="/dist/javascripts/components/global/Snackbar.js" data-component-force aria-live="polite" aria-atomic="true"></div>
         <div class="h-show-for-sr" data-js-sliding-aria-live aria-live="polite" aria-atomic="true"></div>
         <div class="h-show-for-sr" role="status" data-processing-text="Loading, please wait..." data-finished-text="Loading has been finished" data-js-global-status-message></div>
         <div data-js-app class="page">
-                <ul class="h-no-bullet m-plain" data-component="/dist/javascripts/components/global/SkipLink.js" data-component-force>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#site-content" data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{}"  data-js-skip-to-content  >Skip to content</a> </li>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#footer-nav" data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;skip to footer navigation&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;skip_to_content&quot;}}"  >Skip to footer navigation</a> </li>  </ul> 
+                <ul class="h-no-bullet m-plain" data-component="/dist/javascripts/components/global/SkipLink.js" data-component-force>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#site-content" data-component="/dist/javascripts/components/global/EventTrigger.js"    data-js-skip-to-content  >Skip to content</a> </li>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#footer-nav" data-component="/dist/javascripts/components/global/EventTrigger.js"    >Skip to footer navigation</a> </li>  </ul> 
    <header data-component="/dist/javascripts/components/global/Header.js" class="l-header " data-js-header  
      data-component-options="{
         &quot;hideOnScroll&quot;:true}" data-component-force 
@@ -104,7 +107,7 @@
                                 </div>
                         </div>
                     </noscript>
-                    <div data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                    <div 
                         
                         >
                     </div>
@@ -232,10 +235,10 @@
                                 <li class="l-header__top-nav-item m-minicart">
                                     <div data-component="cart/MiniCart"
                                         
-                                        data-component-context="" data-analytics="{}"
+                                        data-component-context="" 
                                         >
                                         <div data-js-sliding-trigger>
-                                            <div class="c-minicart-icon " data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                                            <div class="c-minicart-icon " 
                                                 
                                                 data-component-context=""> 
                                                 <button class="c-minicart-icon__link" 
@@ -268,7 +271,7 @@
                              <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false">☰</button>
                             <div class="c-hamburger__content" id="hamburger-navigation" data-js-hamburger-content data-js-anchor-large>
                                 <div class='c-hamburger__item m-account'>
-                                    <div data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                                    <div 
                                         
                                         data-component-context="medium down" data-component-force
                                         >
@@ -279,14 +282,8 @@
                                 </div>
                                <div class='c-hamburger__item m-navigation'>
                                     <div class="c-navigation__wrapper" data-component="/dist/javascripts/components/global/EventTrigger.js"
-                                        data-analytics="{
-                                            &quot;action&quot;:&quot;select&quot;
-                                        }"
-                                        data-component-options="{
-                                            &quot;isDelegate&quot;:true,
-                                            &quot;event&quot;:&quot;click&quot;,
-                                            &quot;skipPreventDefault&quot;:true
-                                        }"
+                                        
+                                        
                                         >
                                         <nav class="c-navigation" aria-label="Main menu" data-component="/dist/javascripts/components/global/Navigation.js"  
                                         data-component-options="{
@@ -323,48 +320,13 @@
                                                 </li>
                                                 <li class="c-navigation__item m-parent m-level-1 m-gifts"
                                                     data-category="gifts" data-js-accordion-item="1"
-                                                    data-analytics="{
-                                                        &quot;category&quot;:&quot;main menu navigation&quot;,
-                                                        &quot;action&quot;:&quot;select::open&quot;,
-                                                        &quot;label&quot;:&quot;gifts&quot;,
-                                                        &quot;extraData&quot;:{
-                                                            &quot;event_name&quot;:&quot;menu_accordion_click&quot;,
-                                                            &quot;click_area&quot;:&quot;burger menu&quot;,
-                                                            &quot;breadcrumb&quot;:&quot;gifts&quot;,
-                                                            &quot;event_detail&quot;:&quot;&quot;
-                                                        }
-                                                    }"
+                                                    
                                                     data-js-root-item
                                                     > 
                                                     <span  class="c-navigation__item-title m-accordion-control m-level-1 ">
                                                         <a class="c-navigation__link m-level-1" href="/gifts.html"
                                                             data-js-trigger
-                                                            data-analytics="{
-                                                                &quot;breakpoints&quot;: {
-                                                                    &quot;large down&quot;: {
-                                                                        &quot;category&quot;: &quot;main menu navigation&quot;,
-                                                                        &quot;action&quot;: &quot;select::burger menu&quot;,
-                                                                        &quot;label&quot;: &quot;gifts&quot;,
-                                                                        &quot;extraData&quot;: {
-                                                                            &quot;event_name&quot;: &quot;menu_click&quot;,
-                                                                            &quot;event_detail&quot;: &quot;text&quot;,
-                                                                            &quot;click_area&quot;: &quot;burger menu&quot;,
-                                                                            &quot;breadcrumb&quot;: &quot;gifts&quot;
-                                                                        }
-                                                                    },
-                                                                    &quot;xlarge&quot;: {
-                                                                        &quot;category&quot;: &quot;main menu navigation&quot;,
-                                                                        &quot;action&quot;: &quot;select::header&quot;,
-                                                                        &quot;label&quot;: &quot;gifts&quot;,
-                                                                        &quot;extraData&quot;: {
-                                                                            &quot;event_name&quot;: &quot;menu_click&quot;,
-                                                                            &quot;event_detail&quot;: &quot;text&quot;,
-                                                                            &quot;click_area&quot;: &quot;header&quot;,
-                                                                            &quot;breadcrumb&quot;: &quot;gifts&quot;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }"
+                                                            
 
                                                             data-title="Gifts"
                                                             > 
@@ -641,7 +603,7 @@
 <div class="l-header__localeselector">
 </div>
                 <span class="c-anchor h-show-for-sr" id="site-content" tabindex="-1">Main content</span>
-    <main class="l-plp" data-component="search/Search" data-component-options="{&quot;productPageSize&quot;:6,&quot;metaTitle&quot;:&quot;Loverdose | Fragrance | Anantara&quot;,&quot;metaDescription&quot;:&quot;Floral, balsamic and resinous, with ingredients such as Myrrh, Patchouli and Frankincense. Discover our&nbsp;opulent&nbsp;fragrances.&nbsp;&quot;,&quot;paginatedMetaTitle&quot;:&quot;Loverdose | Fragrance | Anantara - Page {pagingIndex}&quot;,&quot;paginatedMetaDescription&quot;:&quot;Floral, balsamic and resinous, with ingredients such as Myrrh, Patchouli and Frankincense. Discover our&nbsp;opulent&nbsp;fragrances.&nbsp; - Page {pagingIndex}&quot;,&quot;a11y&quot;:{&quot;ariaLiveOpened&quot;:&quot;The refinements  menu is opened&quot;,&quot;ariaLiveClosed&quot;:&quot;The refinements  menu is closed&quot;}}" data-component-force>
+    <main class="l-plp" data-component="search/Search"  data-component-force>
         <div class="l-plp__top">
              <div class="l-plp__slot-top">
                 <div class='c-plp-top-banner'><!-- dwMarker="slot" dwContentID="category-slot-top" dwContext="category" dwContextID="opulent"-->
@@ -653,7 +615,7 @@
     </div>  </div>
             </div>
             <div style="height: 150px;"></div>
-            <div data-component-options='{"dataModelId":"breadcrumbs","templateName":"common/breadcrumbs"}' data-component='search/SearchUpdater' class='l-plp__breadcrumbs h-show-for-large'>  <nav class="c-breadcrumbs m-scrollable " aria-label="Breadcrumbs" data-component="/dist/javascripts/components/global/Scrollable.js" data-component-options="{&quot;initialScrollPosition&quot;:&quot;end&quot;}" data-component-context="medium down"> <ol class="c-breadcrumbs__list" aria-label="You are here" data-js-scrollable-items>    <li class="c-breadcrumbs__item"> <a class="c-breadcrumbs__link" href="/"> 
+            <div data-component-options='{"dataModelId":"breadcrumbs","templateName":"common/breadcrumbs"}' data-component='search/SearchUpdater' class='l-plp__breadcrumbs h-show-for-large'>  <nav class="c-breadcrumbs m-scrollable " aria-label="Breadcrumbs" data-component="/dist/javascripts/components/global/Scrollable.js"  data-component-context="medium down"> <ol class="c-breadcrumbs__list" aria-label="You are here" data-js-scrollable-items>    <li class="c-breadcrumbs__item"> <a class="c-breadcrumbs__link" href="/"> 
                 <span class="c-breadcrumbs__text">Home</span> </a> 
                 <span class="c-breadcrumbs__item-separator" aria-hidden="true"></span> </li>      <li class="c-breadcrumbs__item"> <a class="c-breadcrumbs__link" href="/fragrance.html"> 
                 <span class="c-breadcrumbs__text">Fragrance</span> </a> 
@@ -671,14 +633,14 @@
                 </div>
                 <div class="l-plp__comparison-toggle"></div>
                 <div class="l-plp__results-count">
-                     <div class="c-results-count "  role="status" aria-live="polite" aria-atomic="true"  data-component="search/ResultsCount" data-component-options="{&quot;dataModelId&quot;:&quot;resultscount#toolssection&quot;,&quot;templateName&quot;:&quot;search/resultscount&quot;}" data-component-force>  2 products  </div>  
+                     <div class="c-results-count "  role="status" aria-live="polite" aria-atomic="true"  data-component="search/ResultsCount"  data-component-force>  2 products  </div>  
                 </div>
                 <div class="l-plp__sorting">
-                    <div class="c-sorting c-text-field m-float m-focus " data-component="search/Sorting" data-component-options="{&quot;dataModelId&quot;:&quot;sorting&quot;}" data-analytics="{&quot;action&quot;:&quot;sort&quot;,&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;label&quot;:&quot;best-matches&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;sort&quot;,&quot;filter_value&quot;:&quot;best-matches&quot;}}">  <label for="select-038582" class="c-sorting__label c-select__label c-text-field__label m-float">Sort by</label> <select class="c-sorting__field " aria-label="Sorting" data-js-sorting-field data-js-field name="sort-order" id="select-038582" autocomplete="off">  <option value="/fragrance/creed/delpinus/index.html?srule=best-matches" data-id="best-matches"  selected="selected"  > Featured </option>  <option value="/fragrance/creed/delpinus/index.html?srule=price-ascending" data-id="price-low-to-high"  > Price: low to high </option>  <option value="/fragrance/creed/delpinus/index.html?srule=price-descending" data-id="price-high-to-low"  > Price: high to low </option>  <option value="/fragrance/creed/delpinus/index.html?srule=name-a-z" data-id="product-name-a-z"  > Product name: A to Z </option>  <option value="/fragrance/creed/delpinus/index.html?srule=name-z-a" data-id="product-name-z-a"  > Product name: Z to A </option>  </select>  
+                    <div class="c-sorting c-text-field m-float m-focus " data-component="search/Sorting"  >  <label for="select-038582" class="c-sorting__label c-select__label c-text-field__label m-float">Sort by</label> <select class="c-sorting__field " aria-label="Sorting" data-js-sorting-field data-js-field name="sort-order" id="select-038582" autocomplete="off">  <option value="/fragrance/creed/delpinus/index.html?srule=best-matches" data-id="best-matches"  selected="selected"  > Featured </option>  <option value="/fragrance/creed/delpinus/index.html?srule=price-ascending" data-id="price-low-to-high"  > Price: low to high </option>  <option value="/fragrance/creed/delpinus/index.html?srule=price-descending" data-id="price-high-to-low"  > Price: high to low </option>  <option value="/fragrance/creed/delpinus/index.html?srule=name-a-z" data-id="product-name-a-z"  > Product name: A to Z </option>  <option value="/fragrance/creed/delpinus/index.html?srule=name-z-a" data-id="product-name-z-a"  > Product name: Z to A </option>  </select>  
                     </div> 
                 </div>
                 <div class="l-plp__refinements-cta ">
-                    <div class="c-refinements-toggler__wrapper" data-component="search/RefinementsToggler" data-component-options="{&quot;dataModelId&quot;:&quot;refinementsbutton&quot;,&quot;templateName&quot;:&quot;search/refinementsbutton&quot;,&quot;isSticky&quot;:false}"> <button type="button" class="c-refinements-toggler" aria-label="Open refinement menu" data-js-button data-js-sliding-trigger-refinements> Refine <span class="c-refinements-toggler__qty" data-js-qty></span> 
+                    <div class="c-refinements-toggler__wrapper" data-component="search/RefinementsToggler" > <button type="button" class="c-refinements-toggler" aria-label="Open refinement menu" data-js-button data-js-sliding-trigger-refinements> Refine <span class="c-refinements-toggler__qty" data-js-qty></span> 
                     </button>  
                         <div class="h-show-for-sr" data-js-refinements-aria aria-live="polite" aria-atomic="true"></div> 
                     </div>
@@ -686,22 +648,22 @@
             </div>
         </div>
             <div class="c-plp-top-banner__results-count ">
-                 <div class="c-results-count "  data-component="search/ResultsCount" data-component-options="{&quot;dataModelId&quot;:&quot;resultscount&quot;,&quot;templateName&quot;:&quot;search/resultscount&quot;}" data-component-force>  2 products  </div>  
+                 <div class="c-results-count "  data-component="search/ResultsCount"  data-component-force>  2 products  </div>  
             </div>
         <div class="l-plp__main ">
             <div class="l-plp__main-wrapper">
                     <aside class="l-plp__sidebar" data-js-search-refinements-panel>
                         <nav class="l-plp__refinements" aria-labelledby="refinement-nav-category">
-                             <section class="c-refinements" id="refinements" data-component="search/Refinements" data-component-force data-component-options="{&quot;url&quot;:&quot;/fragrance/creed/delpinus/index.html&quot;,&quot;resetUrl&quot;:&quot;/fragrance/creed/delpinus/index.html&quot;,&quot;appliedFiltersQty&quot;:0,&quot;dataModelId&quot;:&quot;refinements&quot;,&quot;a11y&quot;:{&quot;ariaLabelHide&quot;:&quot;Close refinements menu&quot;,&quot;ariaLiveClosed&quot;:&quot;The refinements  menu is closed&quot;},&quot;retainPanelOnReset&quot;:true}" >   <span id='refinement-nav-category' class='h-show-for-sr'> Loverdose  </span>   <ul class="c-refinement-category">  <li class="c-refinement-category__item m-parent" data-category="fragrance-category"> <a class="c-refinement-category__link" href="/fragrance/category/" data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{}" title="Category">Category</a> </li>   <li class="c-refinement-category__item" data-category="floral"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;label&quot;:&quot;Loverdose::Floral&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Loverdose::Floral&quot;}}" href="/fragrance/creed/eladaria/index.html" title="Floral">Floral</a> </li>  <li class="c-refinement-category__item" data-category="fresh"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;label&quot;:&quot;Loverdose::Fresh&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Loverdose::Fresh&quot;}}" href="/fragrance/creed/eladaria/index.html" title="Fresh">Fresh</a> </li>  <li class="c-refinement-category__item" data-category="woody"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;label&quot;:&quot;Loverdose::Woody&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Loverdose::Woody&quot;}}" href="/fragrance/creed/silver/index.html" title="Woody">Woody</a> </li>  <li class="c-refinement-category__item" data-category="opulent"> <a class="c-refinement-category__link m-selected" data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;label&quot;:&quot;Loverdose::Loverdose&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Loverdose::Loverdose&quot;}}" href="/fragrance/creed/delpinus/index.html" title="Loverdose">Loverdose</a> </li>  <li class="c-refinement-category__item" data-category="fragrance-all"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;label&quot;:&quot;Loverdose::See all Fragrance&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Loverdose::See all Fragrance&quot;}}" href="/fragrance/" title="See all Fragrance">See all Fragrance</a> </li>  </ul>   
-                                <div class="c-refinements__content" role="region" aria-labelledby="refinement-title" tabindex="-1" data-component="/dist/javascripts/components/global/Accordion.js" data-component-force="large" data-component-options="{&quot;multiExpand&quot;:false}" data-js-refinements-accordion data-js-refinements-content>  <header class="c-refinements__header h-flex h-text-align-items-center"> <p class="c-refinements__header-title" id="refinement-title" role="heading" aria-level="2">Refine</p> <button class="c-refinements__header-back" aria-label="Cancel and close refinements menu" data-js-refinements-back>Back</button>  </header>  
-                                <div class="c-refinement m-range " data-analytics="{&quot;label&quot;:&quot;Price&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Price&quot;}}" id="refinement-_price" data-js-accordion-item> 
+                             <section class="c-refinements" id="refinements" data-component="search/Refinements" data-component-force  >   <span id='refinement-nav-category' class='h-show-for-sr'> Loverdose  </span>   <ul class="c-refinement-category">  <li class="c-refinement-category__item m-parent" data-category="fragrance-category"> <a class="c-refinement-category__link" href="/fragrance/category/" data-component="/dist/javascripts/components/global/EventTrigger.js"   title="Category">Category</a> </li>   <li class="c-refinement-category__item" data-category="floral"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js"   href="/fragrance/creed/eladaria/index.html" title="Floral">Floral</a> </li>  <li class="c-refinement-category__item" data-category="fresh"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js"   href="/fragrance/creed/eladaria/index.html" title="Fresh">Fresh</a> </li>  <li class="c-refinement-category__item" data-category="woody"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js"   href="/fragrance/creed/silver/index.html" title="Woody">Woody</a> </li>  <li class="c-refinement-category__item" data-category="opulent"> <a class="c-refinement-category__link m-selected" data-component="/dist/javascripts/components/global/EventTrigger.js"   href="/fragrance/creed/delpinus/index.html" title="Loverdose">Loverdose</a> </li>  <li class="c-refinement-category__item" data-category="fragrance-all"> <a class="c-refinement-category__link " data-component="/dist/javascripts/components/global/EventTrigger.js"   href="/fragrance/" title="See all Fragrance">See all Fragrance</a> </li>  </ul>   
+                                <div class="c-refinements__content" role="region" aria-labelledby="refinement-title" tabindex="-1" data-component="/dist/javascripts/components/global/Accordion.js" data-component-force="large"  data-js-refinements-accordion data-js-refinements-content>  <header class="c-refinements__header h-flex h-text-align-items-center"> <p class="c-refinements__header-title" id="refinement-title" role="heading" aria-level="2">Refine</p> <button class="c-refinements__header-back" aria-label="Cancel and close refinements menu" data-js-refinements-back>Back</button>  </header>  
+                                <div class="c-refinement m-range "  id="refinement-_price" data-js-accordion-item> 
                                     <div class="c-refinement__title-wrapper" role="heading" aria-level="3"> <button type="button" class="c-refinement__title" id="refinement-title-_price" aria-controls="refinement-content-_price" aria-expanded="false" data-js-accordion-control> 
                                     <span class="c-refinement__title-text">Price</span>  <span class="c-accordion__icon" aria-hidden="true"></span> 
                                 </button> 
                                 </div> 
                                 <div class="c-refinement__content-wrapper" role="group" id="refinement-content-_price" aria-labelledby="refinement-title-_price" aria-hidden="true" data-js-accordion-container> 
                                     <div class="c-refinement__content"> 
-                                    <div class="c-range-slider " data-component="search/PriceRangeSlider" data-analytics="{&quot;label&quot;:&quot;Price&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Price&quot;}}" data-component-options="{&quot;baseUrl&quot;:&quot;/fragrance/creed/delpinus/index.html&quot;,&quot;displayValueTemplate&quot;:&quot;R1460.00&quot;,&quot;minParam&quot;:&quot;pmin&quot;,&quot;maxParam&quot;:&quot;pmax&quot;,&quot;minValue&quot;:81,&quot;maxValue&quot;:146,&quot;minSelected&quot;:81,&quot;maxSelected&quot;:146,&quot;rangeStep&quot;:1,&quot;fractionSeparator&quot;:&quot;.&quot;,&quot;thousandSeparator&quot;:&quot;,&quot;,&quot;refinementId&quot;:&quot;_price&quot;,&quot;isMoney&quot;:true}" data-component-force="medium down"> 
+                                    <div class="c-range-slider " data-component="search/PriceRangeSlider"   data-component-force="medium down"> 
                                     <div class="h-show-for-sr" id="range-label-_price">Price</div> 
                                 <div class="c-range-slider__inputs">  
                                 <div class="c-form__row m-group"> 
@@ -718,7 +680,7 @@
                         </div> 
                             </div> 
                         </div>   
-                        <div class="c-refinement" data-component="search/Refinement" data-analytics="{&quot;label&quot;:&quot;Aroma&quot;,&quot;action&quot;:&quot;filter&quot;,&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;use_filters&quot;,&quot;filter_type&quot;:&quot;filter&quot;,&quot;filter_value&quot;:&quot;Aroma&quot;}}" data-component-options="{&quot;selectedFilters&quot;:0,&quot;refinementId&quot;:&quot;scentFamily&quot;}" id="refinement-scentFamily" data-js-accordion-item> 
+                        <div class="c-refinement" data-component="search/Refinement"   id="refinement-scentFamily" data-js-accordion-item> 
                             <div class="c-refinement__title-wrapper" role="heading" aria-level="3"> <button type="button" class="c-refinement__title" aria-controls="refinement-content-scentFamily" aria-expanded="false" data-js-accordion-control id="refinement-title-scentFamily"> 
                                     <span class="c-refinement__title-text">Aroma</span>  <span class="c-accordion__icon" aria-hidden="true"></span> 
                                 </button> 
@@ -743,11 +705,11 @@
                     <!-- dwMarker="slot" dwContentID="product-recommendations-plp-top-category" dwContext="category" dwContextID="opulent"-->
                     <div class="l-plp__product-results">
                           <div class="c-product-grid  " data-js-container  
-                          data-analytics="{&quot;placement&quot;:&quot;list-result-range&quot;,&quot;promoObject&quot;:{&quot;creative&quot;:&quot;grid&quot;}}"  data-component="search/SearchGrid" data-component-force="large" data-component-options="{}" data-component-force>       
+                            data-component="search/SearchGrid" data-component-force="large"  data-component-force>       
                           <div class="c-product-tile__wrapper c-product-grid__tile " 
                           data-component="product/ProductTile" 
                           data-js-tile="9319944054927"  
-                          data-analytics="{&quot;products&quot;:[{&quot;pid&quot;:&quot;9319944054927&quot;,&quot;title&quot;:&quot;Loverdose diesel&quot;,&quot;description&quot;:&quot;&quot;,&quot;url&quot;:&quot;/above-us-steorra-eau-de-parfum/9319944054927.html&quot;,&quot;imgUrl&quot;:&quot;/dw33792482/images/products/FR32/Anantara_Fragrance_Above_Us_Steorra_50mL_NGL_Front_2000x2000px.png&quot;,&quot;currency&quot;:&quot;GBP&quot;,&quot;price&quot;:145,&quot;name&quot;:&quot;Loverdose diesel&quot;,&quot;subname&quot;:&quot;Musk, Amber&quot;,&quot;id&quot;:&quot;FR32&quot;,&quot;salePrice&quot;:145,&quot;brand&quot;:&quot;Anantara&quot;,&quot;category&quot;:&quot;others/category/opulent&quot;,&quot;productTopCategory&quot;:&quot;fragrance&quot;,&quot;variant&quot;:&quot;50 mL&quot;,&quot;size&quot;:&quot;50 mL&quot;,&quot;color&quot;:&quot;&quot;,&quot;fragrance&quot;:&quot;&quot;,&quot;autoReplenishmentInterval&quot;:&quot;not present&quot;,&quot;upc&quot;:&quot;9319944054927&quot;,&quot;regularPrice&quot;:145,&quot;isProductSet&quot;:false,&quot;isProductGroup&quot;:false,&quot;isBundle&quot;:false,&quot;bundleID&quot;:&quot;&quot;,&quot;rating&quot;:0,&quot;numberReviews&quot;:0,&quot;vtoState&quot;:&quot;not present&quot;,&quot;collection&quot;:[],&quot;customizations&quot;:{&quot;engraving&quot;:&quot;not present&quot;},&quot;badges&quot;:&quot;New addition&quot;,&quot;stock&quot;:&quot;in stock&quot;,&quot;remainingStock&quot;:null,&quot;recommenderName&quot;:&quot;&quot;}],&quot;sfb2cc&quot;:{&quot;impressionType&quot;:&quot;searchhit&quot;,&quot;pid&quot;:&quot;FR32&quot;,&quot;sku&quot;:&quot;9319944054927&quot;,&quot;recommenderName&quot;:&quot;&quot;}}"  data-pid="9319944054927"  data-component-options="{&quot;reloadData&quot;:{&quot;configid&quot;:&quot;searchgridNoLazyLoad&quot;,&quot;pid&quot;:&quot;9319944054927&quot;,&quot;showRating&quot;:true,&quot;showPricing&quot;:true,&quot;showAddToCartPricing&quot;:false,&quot;showAddToCartPricingBelowText&quot;:true,&quot;showShortDescription&quot;:true,&quot;showAddToCart&quot;:true,&quot;productPriceConfigId&quot;:&quot;producttile&quot;,&quot;showSizeVariationsAsList&quot;:false,&quot;productmainactionConfigID&quot;:&quot;producttile&quot;}}"   data-aos="fade-up"         >  
+                            data-pid="9319944054927"     data-aos="fade-up"         >  
                           <div class="c-product-tile " data-js-product-tile> 
                             <div class="c-product-tile__figure"> 
                             <div class="c-product-tile__thumbnail" data-js-product-thumbnail>   
@@ -758,32 +720,32 @@
                                 role="region" 
                                 aria-roledescription="carousel" 
                                 data-component-container data-js-carousel-container data-component="/dist/javascripts/components/global/Carousel.js"  
-                                data-component-options="{&quot;classNames&quot;:{&quot;arrows&quot;:&quot;m-inside&quot;,&quot;nextArrow&quot;:&quot;js-productimage__arrow-next&quot;,&quot;prevArrow&quot;:&quot;js-productimage__arrow-prev&quot;,&quot;scrollbar&quot;:&quot;js-productimage__scrollbar&quot;,&quot;pagination&quot;:&quot;js-productimage__pagination&quot;},&quot;bulletMessage&quot;:&quot;Go to slide&quot;,&quot;a11y&quot;:{&quot;carouselItemAriaLabel&quot;:&quot;Slide {0} of {1}&quot;,&quot;autoplayAriaLabelStop&quot;:&quot;Stop slide rotation&quot;,&quot;autoplayAriaLabelPlay&quot;:&quot;Start slide rotation&quot;,&quot;prevSlideMessage&quot;:&quot;Previous slide&quot;,&quot;nextSlideMessage&quot;:&quot;Next slide&quot;,&quot;slideLabelMessage&quot;:&quot;{{index}} of {{slidesLength}}&quot;},&quot;initialSlide&quot;:0,&quot;title&quot;:&quot;Go to Loverdose diesel product details&quot;,&quot;showArrows&quot;:true,&quot;loop&quot;:false,&quot;showScrollbar&quot;:true,&quot;lazy&quot;:true,&quot;loadPrevNext&quot;:true,&quot;forceLoadFirstImage&quot;:true,&quot;slidesPerView&quot;:1,&quot;spaceBetween&quot;:0,&quot;breakpoints&quot;:{&quot;medium down&quot;:{&quot;showArrows&quot;:false}}}"> 
+                                > 
                                 <div class="h-show-for-sr" aria-live="polite" aria-atomic="true" data-js-carousel-aria></div> 
-                                <div class="c-carousel__inner" data-js-carousel>     <div class="c-carousel__content " data-js-container  data-analytics="{&quot;promoObject&quot;:{&quot;creative&quot;:&quot;carousel&quot;},&quot;placement&quot;:&quot;others&quot;}"  >  
-                                    <div class="c-carousel__item " data-js-carousel-item role="group" aria-roledescription="slide"     data-analytics="{&quot;category&quot;:&quot;product selector page&quot;,&quot;action&quot;:&quot;select::carousel arrow::&quot;,&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_arrow_selected&quot;,&quot;click_action&quot;:&quot;&quot;,&quot;product_info&quot;:&quot;Loverdose diesel::9319944054927&quot;},&quot;swipeData&quot;:{&quot;action&quot;:&quot;select::carousel image::&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_selected&quot;}}}"  >      
+                                <div class="c-carousel__inner" data-js-carousel>     <div class="c-carousel__content " data-js-container    >  
+                                    <div class="c-carousel__item " data-js-carousel-item role="group" aria-roledescription="slide"       >      
                                     <img class="c-carousel__image" 
                                     alt="Loverdose diesel" 
                                     loading="lazy" 
                                     src="/images/loverdose1.jpg?sw=193&sfrm=png&q=70&bgcolor=fffef2"  
                             srcset="/images/loverdose1.jpg?sw=97&sfrm=png&q=70&bgcolor=fffef2 97w, 
-                            /images/loverdose1.jpg?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
-                            /images/loverdose1.jpg?sw=193&sfrm=png&q=70&bgcolor=fffef2 193w, 
-                            /images/loverdose1.jpg?sw=290&sfrm=png&q=70&bgcolor=fffef2 290w, 
-                            /images/loverdose1.jpg?sw=328&sfrm=png&q=70&bgcolor=fffef2 328w, 
-                            /images/loverdose1.jpg?sw=386&sfrm=png&q=70&bgcolor=fffef2 386w, 
-                            /images/loverdose1.jpg?sw=181&sfrm=png&q=70&bgcolor=fffef2 181w, 
-                            /images/loverdose1.jpg?sw=253&sfrm=png&q=70&bgcolor=fffef2 253w, 
-                            /images/loverdose1.jpg?sw=362&sfrm=png&q=70&bgcolor=fffef2 362w, 
-                            /images/loverdose1.jpg?sw=543&sfrm=png&q=70&bgcolor=fffef2 543w, 
-                            /images/loverdose1.jpg?sw=615&sfrm=png&q=70&bgcolor=fffef2 615w, 
-                            /images/loverdose1.jpg?sw=724&sfrm=png&q=70&bgcolor=fffef2 724w, 
-                            /images/loverdose1.jpg?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
-                            /images/loverdose1.jpg?sw=189&sfrm=png&q=70&bgcolor=fffef2 189w, 
-                            /images/loverdose1.jpg?sw=270&sfrm=png&q=70&bgcolor=fffef2 270w, 
-                            /images/loverdose1.jpg?sw=405&sfrm=png&q=70&bgcolor=fffef2 405w, 
-                            /images/loverdose1.jpg?sw=459&sfrm=png&q=70&bgcolor=fffef2 459w, 
-                            /images/loverdose1.jpg?sw=540&sfrm=png&q=70&bgcolor=fffef2 540w" 
+                          https://images.anantara.africa/loverdose1.jpg?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=193&sfrm=png&q=70&bgcolor=fffef2 193w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=290&sfrm=png&q=70&bgcolor=fffef2 290w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=328&sfrm=png&q=70&bgcolor=fffef2 328w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=386&sfrm=png&q=70&bgcolor=fffef2 386w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=181&sfrm=png&q=70&bgcolor=fffef2 181w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=253&sfrm=png&q=70&bgcolor=fffef2 253w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=362&sfrm=png&q=70&bgcolor=fffef2 362w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=543&sfrm=png&q=70&bgcolor=fffef2 543w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=615&sfrm=png&q=70&bgcolor=fffef2 615w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=724&sfrm=png&q=70&bgcolor=fffef2 724w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=189&sfrm=png&q=70&bgcolor=fffef2 189w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=270&sfrm=png&q=70&bgcolor=fffef2 270w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=405&sfrm=png&q=70&bgcolor=fffef2 405w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=459&sfrm=png&q=70&bgcolor=fffef2 459w, 
+                          https://images.anantara.africa/loverdose1.jpg?sw=540&sfrm=png&q=70&bgcolor=fffef2 540w" 
                             sizes="(min-width:1024px) 270px, (min-width:768px) 362px, (min-width:0) 193px" 
                             width="193" data-aspectratio="auto" />     
                         </div>   
@@ -792,46 +754,46 @@
                         aria-roledescription="slide"  
                         aria-label="Slide 2 of 7"   
                         data-index="1"    
-                        data-analytics="{&quot;category&quot;:&quot;product selector page&quot;,&quot;action&quot;:&quot;select::carousel arrow::&quot;,&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_arrow_selected&quot;,&quot;click_action&quot;:&quot;&quot;,&quot;product_info&quot;:&quot;Loverdose diesel::9319944054927&quot;},&quot;swipeData&quot;:{&quot;action&quot;:&quot;select::carousel image::&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_selected&quot;}}}"  >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/loverdose2.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  data-srcset="/images/loverdose2.jpg?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
-                                /images/loverdose2.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                                /images/loverdose2.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
-                                /images/loverdose2.jpg?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
-                                /images/loverdose2.jpg?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
-                                /images/loverdose2.jpg?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
-                                /images/loverdose2.jpg?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
-                                /images/loverdose2.jpg?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
-                                /images/loverdose2.jpg?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
-                                /images/loverdose2.jpg?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
-                                /images/loverdose2.jpg?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
-                                /images/loverdose2.jpg?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
-                                /images/loverdose2.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                                /images/loverdose2.jpg?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
-                                /images/loverdose2.jpg?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
-                                /images/loverdose2.jpg?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
-                                /images/loverdose2.jpg?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
-                                /images/loverdose2.jpg?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
+                          >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/loverdose2.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  data-srcset="/images/loverdose2.jpg?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
+                              https://images.anantara.africa/loverdose2.jpg?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
                                 data-sizes="(min-width:1024px) 270px, (min-width:768px) 362px, (min-width:0) 193px" 
                                 width="193" data-aspectratio="auto" />     </div>   
                                 <div class="c-carousel__item " data-js-carousel-item role="group" aria-roledescription="slide"  
                                 aria-label="Slide 3 of 7"   data-index="2"    
-                                data-analytics="{&quot;category&quot;:&quot;product selector page&quot;,&quot;action&quot;:&quot;select::carousel arrow::&quot;,&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_arrow_selected&quot;,&quot;click_action&quot;:&quot;&quot;,&quot;product_info&quot;:&quot;Loverdose diesel::9319944054927&quot;},&quot;swipeData&quot;:{&quot;action&quot;:&quot;select::carousel image::&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_selected&quot;}}}"  >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/opulent/grand-soir1.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  data-srcset="/images/opulent/grand-soir1.jpg?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
-                                /images/opulent/grand-soir1.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                                /images/opulent/grand-soir1.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
-                                /images/opulent/grand-soir1.jpg?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
-                                /images/opulent/grand-soir1.jpg?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
-                                /images/opulent/grand-soir1.jpg?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
-                                /images/opulent/grand-soir1.jpg?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
-                                /images/opulent/grand-soir1.jpg?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
-                                /images/opulent/grand-soir1.jpg?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
-                                /images/opulent/grand-soir1.jpg?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
-                                /images/opulent/grand-soir1.jpg?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
-                                /images/opulent/grand-soir1.jpg?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
-                                /images/opulent/grand-soir1.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                                /images/opulent/grand-soir1.jpg?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
-                                /images/opulent/grand-soir1.jpg?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
-                                /images/opulent/grand-soir1.jpg?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
-                                /images/opulent/grand-soir1.jpg?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
-                                /images/opulent/grand-soir1.jpg?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
+                                  >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/opulent/grand-soir1.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  data-srcset="/images/opulent/grand-soir1.jpg?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
+                              https://images.anantara.africa/opulent/grand-soir1.jpg?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
                                 data-sizes="(min-width:1024px) 270px, (min-width:768px) 362px, (min-width:0) 193px" 
                                 width="193" data-aspectratio="auto" />     </div>   
                                 <div class="c-carousel__item " 
@@ -839,53 +801,53 @@
                                 aria-roledescription="slide"  
                                 aria-label="Slide 4 of 7"   
                                 data-index="3"    
-                                data-analytics="{&quot;category&quot;:&quot;product selector page&quot;,&quot;action&quot;:&quot;select::carousel arrow::&quot;,&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_arrow_selected&quot;,&quot;click_action&quot;:&quot;&quot;,&quot;product_info&quot;:&quot;Loverdose diesel::9319944054927&quot;},&quot;swipeData&quot;:{&quot;action&quot;:&quot;select::carousel image::&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_selected&quot;}}}"  >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" 
+                                  >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" 
                                 src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" 
                                 loading="lazy" 
                                 data-src="/images/1080by1080/anantara-img532.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  
                                 data-srcset="/images/1080by1080/anantara-img532.png?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
-                               /images/1080by1080/anantara-img532.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                               /images/1080by1080/anantara-img532.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
-                               /images/1080by1080/anantara-img532.png?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
-                               /images/1080by1080/anantara-img532.png?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
-                               /images/1080by1080/anantara-img532.png?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
-                               /images/1080by1080/anantara-img532.png?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
-                               /images/1080by1080/anantara-img532.png?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
-                               /images/1080by1080/anantara-img532.png?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
-                               /images/1080by1080/anantara-img532.png?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
-                               /images/1080by1080/anantara-img532.png?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
-                               /images/1080by1080/anantara-img532.png?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
-                               /images/1080by1080/anantara-img532.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                               /images/1080by1080/anantara-img532.png?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
-                               /images/1080by1080/anantara-img532.png?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
-                               /images/1080by1080/anantara-img532.png?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
-                               /images/1080by1080/anantara-img532.png?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
-                               /images/1080by1080/anantara-img532.png?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
+                             https://images.anantara.africa/1080by1080/anantara-img532.png?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
                                data-sizes="(min-width:1024px) 270px, (min-width:768px) 362px, (min-width:0) 193px" width="193" data-aspectratio="auto" />     
                             </div>   
                             <div class="c-carousel__item " data-js-carousel-item role="group" aria-roledescription="slide"  
                             aria-label="Slide 5 of 7"   
                             data-index="4"    
-                            data-analytics="{&quot;category&quot;:&quot;product selector page&quot;,&quot;action&quot;:&quot;select::carousel arrow::&quot;,&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_arrow_selected&quot;,&quot;click_action&quot;:&quot;&quot;,&quot;product_info&quot;:&quot;Loverdose diesel::9319944054927&quot;},&quot;swipeData&quot;:{&quot;action&quot;:&quot;select::carousel image::&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_selected&quot;}}}"  >      <img class="c-carousel__image js-carousel__lazy" 
+                              >      <img class="c-carousel__image js-carousel__lazy" 
                             alt="Loverdose diesel" 
                             src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/1080by1080/anantara-img551.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  data-srcset="/images/1080by1080/anantara-img551.png?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
-                            /images/1080by1080/anantara-img551.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                            /images/1080by1080/anantara-img551.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
-                            /images/1080by1080/anantara-img551.png?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
-                            /images/1080by1080/anantara-img551.png?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
-                            /images/1080by1080/anantara-img551.png?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
-                            /images/1080by1080/anantara-img551.png?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
-                            /images/1080by1080/anantara-img551.png?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
-                            /images/1080by1080/anantara-img551.png?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
-                            /images/1080by1080/anantara-img551.png?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
-                            /images/1080by1080/anantara-img551.png?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
-                            /images/1080by1080/anantara-img551.png?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
-                            /images/1080by1080/anantara-img551.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                            /images/1080by1080/anantara-img551.png?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
-                            /images/1080by1080/anantara-img551.png?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
-                            /images/1080by1080/anantara-img551.png?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
-                            /images/1080by1080/anantara-img551.png?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
-                            /images/1080by1080/anantara-img551.png?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
+                          https://images.anantara.africa/1080by1080/anantara-img551.png?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
                             data-sizes="(min-width:1024px) 270px, (min-width:768px) 362px, (min-width:0) 193px" width="193" data-aspectratio="auto" />     
                         </div>   
                         <div class="c-carousel__item " 
@@ -893,24 +855,24 @@
                         aria-roledescription="slide"  
                         aria-label="Slide 6 of 7"   
                         data-index="5"    
-                        data-analytics="{&quot;category&quot;:&quot;product selector page&quot;,&quot;action&quot;:&quot;select::carousel arrow::&quot;,&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_arrow_selected&quot;,&quot;click_action&quot;:&quot;&quot;,&quot;product_info&quot;:&quot;Loverdose diesel::9319944054927&quot;},&quot;swipeData&quot;:{&quot;action&quot;:&quot;select::carousel image::&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_selected&quot;}}}"  >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/1080by1080/anantara-img397.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  data-srcset="/images/1080by1080/anantara-img397.png?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
-                        /images/1080by1080/anantara-img397.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                        /images/1080by1080/anantara-img397.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
-                        /images/1080by1080/anantara-img397.png?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
-                        /images/1080by1080/anantara-img397.png?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
-                        /images/1080by1080/anantara-img397.png?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
-                        /images/1080by1080/anantara-img397.png?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
-                        /images/1080by1080/anantara-img397.png?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
-                        /images/1080by1080/anantara-img397.png?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
-                        /images/1080by1080/anantara-img397.png?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
-                        /images/1080by1080/anantara-img397.png?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
-                        /images/1080by1080/anantara-img397.png?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
-                        /images/1080by1080/anantara-img397.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
-                        /images/1080by1080/anantara-img397.png?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
-                        /images/1080by1080/anantara-img397.png?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
-                        /images/1080by1080/anantara-img397.png?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
-                        /images/1080by1080/anantara-img397.png?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
-                        /images/1080by1080/anantara-img397.png?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
+                          >      <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/1080by1080/anantara-img397.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2"  data-srcset="/images/1080by1080/anantara-img397.png?sw=97&sfrm=jpg&q=70&bgcolor=fffef2 97w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=193&sfrm=jpg&q=70&bgcolor=fffef2 193w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=290&sfrm=jpg&q=70&bgcolor=fffef2 290w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=328&sfrm=jpg&q=70&bgcolor=fffef2 328w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=386&sfrm=jpg&q=70&bgcolor=fffef2 386w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=181&sfrm=jpg&q=70&bgcolor=fffef2 181w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=253&sfrm=jpg&q=70&bgcolor=fffef2 253w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=362&sfrm=jpg&q=70&bgcolor=fffef2 362w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=543&sfrm=jpg&q=70&bgcolor=fffef2 543w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=615&sfrm=jpg&q=70&bgcolor=fffef2 615w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=724&sfrm=jpg&q=70&bgcolor=fffef2 724w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=135&sfrm=jpg&q=70&bgcolor=fffef2 135w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=189&sfrm=jpg&q=70&bgcolor=fffef2 189w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=270&sfrm=jpg&q=70&bgcolor=fffef2 270w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=405&sfrm=jpg&q=70&bgcolor=fffef2 405w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=459&sfrm=jpg&q=70&bgcolor=fffef2 459w, 
+                      https://images.anantara.africa/1080by1080/anantara-img397.png?sw=540&sfrm=jpg&q=70&bgcolor=fffef2 540w" 
                         data-sizes="(min-width:1024px) 270px, (min-width:768px) 362px, (min-width:0) 193px" 
                         width="193" 
                         data-aspectratio="auto" />     
@@ -920,26 +882,26 @@
                     aria-roledescription="slide"  
                     aria-label="Slide 7 of 7"   
                     data-index="6"    
-                    data-analytics="{&quot;category&quot;:&quot;product selector page&quot;,&quot;action&quot;:&quot;select::carousel arrow::&quot;,&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_arrow_selected&quot;,&quot;click_action&quot;:&quot;&quot;,&quot;product_info&quot;:&quot;Loverdose diesel::9319944054927&quot;},&quot;swipeData&quot;:{&quot;action&quot;:&quot;select::carousel image::&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;carousel_selected&quot;}}}"  >      
+                      >      
                     <img class="c-carousel__image js-carousel__lazy" alt="Loverdose diesel" 
                     src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg==" loading="lazy" data-src="/images/1080by1080/anantara-img554.png?sw=193&sfrm=png&q=70&bgcolor=fffef2"  data-srcset="/images/1080by1080/anantara-img554.png?sw=97&sfrm=png&q=70&bgcolor=fffef2 97w, 
-                    /images/1080by1080/anantara-img554.png?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
-                    /images/1080by1080/anantara-img554.png?sw=193&sfrm=png&q=70&bgcolor=fffef2 193w, 
-                    /images/1080by1080/anantara-img554.png?sw=290&sfrm=png&q=70&bgcolor=fffef2 290w, 
-                    /images/1080by1080/anantara-img554.png?sw=328&sfrm=png&q=70&bgcolor=fffef2 328w, 
-                    /images/1080by1080/anantara-img554.png?sw=386&sfrm=png&q=70&bgcolor=fffef2 386w, 
-                    /images/1080by1080/anantara-img554.png?sw=181&sfrm=png&q=70&bgcolor=fffef2 181w, 
-                    /images/1080by1080/anantara-img554.png?sw=253&sfrm=png&q=70&bgcolor=fffef2 253w, 
-                    /images/1080by1080/anantara-img554.png?sw=362&sfrm=png&q=70&bgcolor=fffef2 362w, 
-                    /images/1080by1080/anantara-img554.png?sw=543&sfrm=png&q=70&bgcolor=fffef2 543w, 
-                    /images/1080by1080/anantara-img554.png?sw=615&sfrm=png&q=70&bgcolor=fffef2 615w, 
-                    /images/1080by1080/anantara-img554.png?sw=724&sfrm=png&q=70&bgcolor=fffef2 724w, 
-                    /images/1080by1080/anantara-img554.png?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
-                    /images/1080by1080/anantara-img554.png?sw=189&sfrm=png&q=70&bgcolor=fffef2 189w, 
-                    /images/1080by1080/anantara-img554.png?sw=270&sfrm=png&q=70&bgcolor=fffef2 270w, 
-                    /images/1080by1080/anantara-img554.png?sw=405&sfrm=png&q=70&bgcolor=fffef2 405w, 
-                    /images/1080by1080/anantara-img554.png?sw=459&sfrm=png&q=70&bgcolor=fffef2 459w, 
-                    /images/1080by1080/anantara-img554.png?sw=540&sfrm=png&q=70&bgcolor=fffef2 540w" 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=193&sfrm=png&q=70&bgcolor=fffef2 193w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=290&sfrm=png&q=70&bgcolor=fffef2 290w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=328&sfrm=png&q=70&bgcolor=fffef2 328w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=386&sfrm=png&q=70&bgcolor=fffef2 386w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=181&sfrm=png&q=70&bgcolor=fffef2 181w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=253&sfrm=png&q=70&bgcolor=fffef2 253w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=362&sfrm=png&q=70&bgcolor=fffef2 362w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=543&sfrm=png&q=70&bgcolor=fffef2 543w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=615&sfrm=png&q=70&bgcolor=fffef2 615w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=724&sfrm=png&q=70&bgcolor=fffef2 724w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=135&sfrm=png&q=70&bgcolor=fffef2 135w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=189&sfrm=png&q=70&bgcolor=fffef2 189w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=270&sfrm=png&q=70&bgcolor=fffef2 270w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=405&sfrm=png&q=70&bgcolor=fffef2 405w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=459&sfrm=png&q=70&bgcolor=fffef2 459w, 
+                  https://images.anantara.africa/1080by1080/anantara-img554.png?sw=540&sfrm=png&q=70&bgcolor=fffef2 540w" 
                     data-sizes="(min-width:1024px) 270px, (min-width:768px) 362px, (min-width:0) 193px" 
                     width="193" data-aspectratio="auto" />     
                 </div>   
@@ -960,15 +922,15 @@
     <div class="c-product-badge "  
     data-component="product/ProductBadge" 
     data-component-force   
-    data-component-options="{&quot;dataModelId&quot;:&quot;productbadge&quot;,&quot;isClientEnabled&quot;:false,&quot;productID&quot;:&quot;9319944054927&quot;,&quot;linksAnalytics&quot;:{&quot;action&quot;:&quot;select&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;badge_click&quot;}},&quot;recommendedBadge&quot;:{&quot;id&quot;:&quot;recommendedForYou&quot;,&quot;title&quot;:&quot;recommendedForYou&quot;}}"  data-js-product-badge>   <span class="c-product-badge__title">  New addition  </span>   </div>  
+      data-js-product-badge>   <span class="c-product-badge__title">  New addition  </span>   </div>  
 </div>   
-<div class="c-product-tile__wishlist">  <button class="c-add-to-wishlist m-small" aria-label="Add to cabinet Loverdose diesel" aria-pressed="false" data-component="product/AddToWishlist" data-analytics="{&quot;products&quot;:[{&quot;pid&quot;:&quot;9319944054927&quot;,&quot;title&quot;:&quot;Loverdose diesel&quot;,&quot;description&quot;:&quot;&quot;,&quot;url&quot;:&quot;/above-us-steorra-eau-de-parfum/9319944054927.html&quot;,&quot;imgUrl&quot;:&quot;/dw33792482/images/products/FR32/Anantara_Fragrance_Above_Us_Steorra_50mL_NGL_Front_2000x2000px.png&quot;,&quot;currency&quot;:&quot;GBP&quot;,&quot;price&quot;:145,&quot;name&quot;:&quot;Loverdose diesel&quot;,&quot;subname&quot;:&quot;Musk, Amber&quot;,&quot;id&quot;:&quot;FR32&quot;,&quot;salePrice&quot;:145,&quot;brand&quot;:&quot;Anantara&quot;,&quot;category&quot;:&quot;others/category/opulent&quot;,&quot;productTopCategory&quot;:&quot;fragrance&quot;,&quot;variant&quot;:&quot;50 mL&quot;,&quot;size&quot;:&quot;50 mL&quot;,&quot;color&quot;:&quot;&quot;,&quot;fragrance&quot;:&quot;&quot;,&quot;autoReplenishmentInterval&quot;:&quot;not present&quot;,&quot;upc&quot;:&quot;9319944054927&quot;,&quot;regularPrice&quot;:145,&quot;isProductSet&quot;:false,&quot;isProductGroup&quot;:false,&quot;isBundle&quot;:false,&quot;bundleID&quot;:&quot;&quot;,&quot;rating&quot;:0,&quot;numberReviews&quot;:0,&quot;vtoState&quot;:&quot;not present&quot;,&quot;collection&quot;:[],&quot;customizations&quot;:{&quot;engraving&quot;:&quot;not present&quot;},&quot;badges&quot;:&quot;New addition&quot;,&quot;stock&quot;:&quot;in stock&quot;,&quot;remainingStock&quot;:null}],&quot;label&quot;:&quot;Loverdose diesel::9319944054927&quot;,&quot;category&quot;:&quot;{{dataLayer.page.category}}&quot;}" data-component-options="{&quot;pid&quot;:&quot;9319944054927&quot;,&quot;url&quot;:{&quot;add&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/Wishlist-AddToWishList&quot;,&quot;remove&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/Wishlist-RemoveFromWishList&quot;},&quot;text&quot;:{&quot;title&quot;:{&quot;add&quot;:&quot;Add to Wishlist&quot;,&quot;remove&quot;:&quot;Remove from Wishlist&quot;},&quot;accessibility&quot;:{&quot;addAriaLabel&quot;:&quot;Add to cabinet Loverdose diesel&quot;,&quot;removeAriaLabel&quot;:&quot;Remove from cabinet Loverdose diesel&quot;}},&quot;isLabel&quot;:false,&quot;socialloginConfigId&quot;:&quot;wishlist&quot;}" > 
+<div class="c-product-tile__wishlist">  <button class="c-add-to-wishlist m-small" aria-label="Add to cabinet Loverdose diesel" aria-pressed="false" data-component="product/AddToWishlist"   > 
         <span class="c-add-to-wishlist__inner" data-js-wishlist-text title="Add to Wishlist"></span> 
     </button>   </div>  
 </div> 
     </div> 
     <div class="c-product-tile__caption"> 
-        <div class="c-product-tile__caption-inner">   <h2 class='c-product-tile__name'><a href="" data-js-product-name data-lora-datalayer="{&quot;products&quot;:{&quot;9319944054927&quot;:{&quot;name&quot;:&quot;Loverdose diesel&quot;}}}"    > Loverdose diesel </a></h2><p class='c-product-tile__description'> Musk, Amber </p>     <div class="c-product-tile__rating">  
+        <div class="c-product-tile__caption-inner">   <h2 class='c-product-tile__name'><a href="" data-js-product-name     > Loverdose diesel </a></h2><p class='c-product-tile__description'> Musk, Amber </p>     <div class="c-product-tile__rating">  
 
     </div>    
     <div class="c-product-tile__variations-group ">      
@@ -978,11 +940,11 @@
                 <div class="c-select__field">50 mL</div> 
             </div>   </div>    </div>     
             <div class="c-product-tile__promotion-callout"> 
-                <div data-component="product/ProductInfoUpdater" data-component-options="{&quot;templateName&quot;:&quot;product/productpromotions&quot;,&quot;dataModelId&quot;:&quot;productpromotions#producttile&quot;}" data-js-product-promotions>  
+                <div data-component="product/ProductInfoUpdater"  data-js-product-promotions>  
 
             </div>  </div>     
             <div class="c-product-tile__price  "> 
-                <div class="c-product-price "  data-component="product/ProductPrice"   data-component-options="{&quot;pid&quot;:&quot;9319944054927&quot;,&quot;hideStandardPrice&quot;:false,&quot;reloadData&quot;:{&quot;configid&quot;:&quot;producttile&quot;},&quot;dataModelId&quot;:&quot;productprice#producttile&quot;}"    >    <span class="c-product-price__label h-hidden " data-js-pricelabel>Old price</span> 
+                <div class="c-product-price "  data-component="product/ProductPrice"       >    <span class="c-product-price__label h-hidden " data-js-pricelabel>Old price</span> 
                 <span class="c-product-price__value m-old h-hidden "  data-js-standardprice></span> 
                 <span class="c-product-price__label h-hidden " data-js-pricelabel>New price</span>  
         <span class="c-product-price__value" data-js-saleprice>R1000.00</span>         
@@ -990,7 +952,7 @@
 </div>   
 </div>     
 <div class="c-product-tile__actions m-add-bag-enabled" data-js-producttile-actions>  
-    <div data-component="/dist/javascripts/components/global/ComponentPlaceholder.js" data-analytics="{}"  data-analytics-wait data-component-options="{&quot;_lazyload&quot;:true,&quot;reloadData&quot;:{&quot;id&quot;:&quot;productmainaction&quot;,&quot;section&quot;:&quot;product&quot;,&quot;configid&quot;:&quot;producttile&quot;,&quot;reloadUrl&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/CDSLazyload-product_productmainaction?configExtension&#x3D;%7b%22includePrice%22%3afalse%2c%22isPriceBelowText%22%3afalse%7d&amp;configid&#x3D;producttile&amp;data&#x3D;9319944054927&amp;id&#x3D;productmainaction&amp;pageId&#x3D;producttile&amp;section&#x3D;product&quot;}}">  <button class="c-button c-product-add-bag__button "> 
+    <div    data-analytics-wait >  <button class="c-button c-product-add-bag__button "> 
         <span>Add to cart</span> 
     </button>  
 </div>     </div>        </div> 
@@ -999,7 +961,7 @@
       </div>   
                     </div>
                     <div class="l-plp__pagination">
-                         <div data-component="search/Paging" data-component-force data-component-options="{&quot;templateName&quot;:&quot;search/paging&quot;,&quot;modelId&quot;:&quot;paging#plp&quot;,&quot;isInfiniteScroll&quot;:false,&quot;nextPageURL&quot;:&quot;&quot;,&quot;insertMode&quot;:true,&quot;isContentPaging&quot;:false,&quot;pagingType&quot;:&quot;loadmore&quot;,&quot;isLocalEvents&quot;:false}" class=" c-load-more  h-hidden ">  
+                         <div data-component="search/Paging" data-component-force  class=" c-load-more  h-hidden ">  
 
                          </div> 
                     </div>
@@ -1165,28 +1127,28 @@ request = null;
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/shipping.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/shipping.svg" alt="" />
 				<span class="c-content-reassurance__text">Complimentary <br class="h-show-for-small-only"> shipping</span>
 			</div>
 		</div>
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/Secure_checkout.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/Secure_checkout.svg" alt="" />
 				<span class="c-content-reassurance__text">Secure checkout</span>
 			</div>
 		</div>
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/samples.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/samples.svg" alt="" />
 				<span class="c-content-reassurance__text">Complimentary <br class="h-show-for-small-only"> samples</span>
 			</div>
 		</div>
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/gift.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/gift.svg" alt="" />
 				<span class="c-content-reassurance__text">Complimentary <br class="h-show-for-small-only"> gift wrapping</span>
 			</div>
 		</div>
@@ -1291,8 +1253,8 @@ request = null;
                     <div class="l-footer__newsletter">
                          <div class="c-simple-signup c-simple-signup__sms-signup">    <h2 class='c-simple-signup__title c-form__title '> Subscribe to Anantara Communications </h2>   
                             <div class="c-simple-signup__form "> <form action="/on/demandware.store/Sites-anantara-uk-Site/en_GB/Newsletter-SignUpSubmit" method="POST" name="newslettersignup" 
-                            data-component="/dist/javascripts/components/global/Form.js" class="c-form " data-component-options="{&quot;successModal&quot;:{&quot;classNames&quot;:{&quot;container&quot;:[&quot;m-medium&quot;]}},&quot;events&quot;:{&quot;success&quot;:&quot;signup.success&quot;,&quot;customSuccess&quot;:&quot;toaster.close&quot;},&quot;text&quot;:{&quot;accessibility&quot;:{&quot;processingStatusMessage&quot;:&quot;Newsletter signing up is in progress&quot;,&quot;finishedStatusMessage&quot;:&quot;Newsletter signing up has been finished&quot;},&quot;offlineErrorMessage&quot;:&quot;Network error. Please check your Internet connection and try again.&quot;}}" 
-                            data-analytics="{&quot;category&quot;:&quot;registration&quot;,&quot;action&quot;:&quot;newsletter&quot;,&quot;label&quot;:&quot;footer&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;newsletter_registration&quot;,&quot;referral&quot;:&quot;footer&quot;}}" data-has-active-csrf="true">          <!-- dwMarker="content" dwContentID="7eb48730f4775630ca4fcc5cc5" --><div class="c-check-field__label">Required (*)
+                            data-component="/dist/javascripts/components/global/Form.js" class="c-form "  
+                             data-has-active-csrf="true">          <!-- dwMarker="content" dwContentID="7eb48730f4775630ca4fcc5cc5" --><div class="c-check-field__label">Required (*)
     <br/>
     <br/>
     <p>Sign up to receive exclusive offers and culturally enriching updates from Anantara by email, SMS and other messaging services, and personalised ads from Anantara and our other brands as displayed on <a href="
@@ -1399,8 +1361,8 @@ request = null;
                                 </h2>
                             </div>
                             <div class="l-column m-large-auto">
-                                <div data-component="/dist/javascripts/components/global/PopOver.js" data-component-options="{&quot;triggerSelector&quot;:&quot;#localization-025175&quot;,&quot;showOnClick&quot;:true,&quot;destroyOnHide&quot;:false,&quot;targetContent&quot;:&quot;#localization-menu-085660&quot;,&quot;width&quot;:&quot;300&quot;,&quot;position&quot;:&quot;top-end&quot;,&quot;flip&quot;:false,&quot;enableAnalyticsOnShow&quot;:true,&quot;isInStickyHeader&quot;:false}" 
-                                data-analytics="{&quot;category&quot;:&quot;country selector&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;footer&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;country_selector_selected&quot;,&quot;click_area&quot;:&quot;footer&quot;}}"> 
+                                <div data-component="/dist/javascripts/components/global/PopOver.js"  
+                                > 
                                 <div class="c-select m-secondary"> <button class="c-select__placeholder h-color-light" 
                                     aria-label="Change location, currency or language - The current options are R - SA (EN)" aria-expanded="false" id="localization-025175"> R - ZAR (SA) </button> 
                                 </div> 
@@ -1415,7 +1377,7 @@ request = null;
                 </div>
                 
             </div>
-             <img src="/images/logo-small.png" alt="Anantara logo"
+             <img src="https://images.anantara.africa/logo-small.png" alt="Anantara logo"
                                                     style="width:30px;height: auto; padding-bottom:12px;" />
              
         </div>
@@ -1456,11 +1418,11 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 </footer>
 <!-- dwMarker="slot" dwContentID="slot-email-signup-toaster" dwContext="global"-->
-<button data-component-force data-component="/dist/javascripts/components/global/BackTop.js" class="c-back-top" aria-label="Back to top" title="Back to top" data-analytics="{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;back to top&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;skip_to_content&quot;}}"></button> 
+<button data-component-force data-component="/dist/javascripts/components/global/BackTop.js" class="c-back-top" aria-label="Back to top" title="Back to top" ></button> 
         </div>
         <div class="c-highlighter" data-component="/dist/javascripts/components/global/FocusHighlighter.js" data-component-force></div>
         <div class="error-messaging"></div>
-        <div class="c-orientation-message h-hidden" data-component="/dist/javascripts/components/global/OrientationMessage.js" data-component-options="{}" data-component-force> 
+        <div class="c-orientation-message h-hidden" data-component="/dist/javascripts/components/global/OrientationMessage.js"  data-component-force> 
             <div class="c-orientation-message__content h-text-align-center"> 
             <div class="c-orientation-message__image-wrapper"> <img class="c-orientation-message__image m-lazyload" alt="Orientation message" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy" data-src="/dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=152&sh=125&sm=cut&sfrm=png"  data-srcset="/dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=76&sh=63&sm=cut&sfrm=png 76w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=106&sh=88&sm=cut&sfrm=png 106w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=152&sh=125&sm=cut&sfrm=png 152w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=228&sh=188&sm=cut&sfrm=png 228w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=258&sh=213&sm=cut&sfrm=png 258w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=304&sh=250&sm=cut&sfrm=png 304w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=76&sh=63&sm=cut&sfrm=png 76w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=106&sh=88&sm=cut&sfrm=png 106w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=152&sh=125&sm=cut&sfrm=png 152w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=228&sh=188&sm=cut&sfrm=png 228w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=258&sh=213&sm=cut&sfrm=png 258w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=304&sh=250&sm=cut&sfrm=png 304w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=76&sh=63&sm=cut&sfrm=png 76w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=106&sh=88&sm=cut&sfrm=png 106w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=152&sh=125&sm=cut&sfrm=png 152w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=228&sh=188&sm=cut&sfrm=png 228w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=258&sh=213&sm=cut&sfrm=png 258w, /dw/image/v2/AAQP_PRD/dwe6e5bf88/images/landscape.png?sw=304&sh=250&sm=cut&sfrm=png 304w" data-sizes="(min-width:0) 152px, (min-width:768px) 152px, (min-width:1024px) 152px" width="152" height="125" data-aspectratio="1.216" /> 
         </div> 
@@ -1471,12 +1433,12 @@ document.addEventListener('DOMContentLoaded', () => {
 <script src="/dist/javascripts/vendors/system.js"></script> <script>System.config({baseURL:"/dist/"})</script>
 <script src="/dist/javascripts/system.config.js"></script>
 <script src="/dist/javascripts/main.js"></script> <script>System.import("/dist/javascripts/app.js")</script>  <script>window.performance&&(window.performance.mark("endJavascriptLoading"),window.performance.measure("javascriptsLoading","startJavascriptLoading","endJavascriptLoading"))</script> 
-         <div data-component="/dist/javascripts/components/global/Optanon.js" data-component-options="{&quot;changeSessionTrackingUrl&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/CookiesManagement-UpdateTrackingStatus&quot;,&quot;optanonCookieGroupsToDisableSFCCTracking&quot;:&quot;2&quot;,&quot;optanonDomainScriptID&quot;:&quot;&quot;,&quot;optanonCookieToggleInfoDisplayEnable&quot;:true,&quot;buttons&quot;:{&quot;confirmMyChoices&quot;:&quot;Confirm My Choices&quot;,&quot;allowAll&quot;:&quot;Allow All&quot;},&quot;styles&quot;:{&quot;confirmMyChoices&quot;:&quot;margin-top: 0;&quot;,&quot;allowAll&quot;:&quot;margin-left: 0;&quot;}}" data-component-force data-global-optanon></div>  
+         <div data-component="/dist/javascripts/components/global/Optanon.js"  data-component-force data-global-optanon></div>  
          <div data-component="integration/Sprinklr"  data-component-force data-integration-sprinklr></div> 
-    <!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+   
 
 <script type="text/javascript" src="/internal/jscript/dwanalytics-22.2.js" async="async" onload="trackPage()"></script>
-<!-- Demandware Active Data (body_end-active_data.js) -->
+
 <script src="/internal/jscript/dwac-21.7.js" type="text/javascript" async="async"></script><!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
 <script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async"></script>
 <script>
@@ -1629,5 +1591,70 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize everything
         checkSavedPreference();
         initLocalization();
-        </script></body>
+        </script> <script src="/js/cloudflare-image-loader.js"></script> <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Wire the header Account link to the Firebase login page
+      document.querySelectorAll(".c-user__link.m-login").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const user = AnantaraAuth.currentUser();
+          if (!user) {
+            // Redirect to your login page instead of the old Salesforce login
+            e.preventDefault();
+            window.location.href = "/login.html";
+          }
+          // If already logged in, fall through to /account.html
+        });
+      });
+ 
+      // Wire the minicart button to open the cart panel
+      document.querySelector("[data-js-minicart-button]")?.addEventListener("click", async () => {
+        const cart = await AnantaraCart.get();
+        // Render the cart panel — implement renderCartPanel() to match your design
+        renderCartPanel(cart);
+      });
+    });
+ 
+    /**
+     * Minimal cart panel renderer.
+     * Populates the .c-minicart element that already exists in your HTML.
+     */
+    function renderCartPanel(cart) {
+      const container = document.querySelector(".c-minicart");
+      if (!container) return;
+ 
+      if (!cart.items || cart.items.length === 0) {
+        container.innerHTML = `<p style="padding:24px;text-align:center;">Your cart is empty.</p>`;
+        return;
+      }
+ 
+      const rows = cart.items.map((item) => `
+        <div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #eee;">
+          <img src="${item.imageUrl}" alt="${item.name}" style="width:64px;height:64px;object-fit:cover;" />
+          <div style="flex:1;">
+            <p style="margin:0;font-weight:600;">${item.name}</p>
+            <p style="margin:4px 0;color:#666;font-size:14px;">${item.size}</p>
+            <p style="margin:0;">R${Number(item.price).toFixed(2)}</p>
+          </div>
+          <button
+            style="background:none;border:none;cursor:pointer;color:#999;"
+            onclick="AnantaraCart.remove('${item.pid}','${item.size}')"
+            aria-label="Remove ${item.name}"
+          >✕</button>
+        </div>
+      `).join("");
+ 
+      const total = cart.items.reduce((s, i) => s + (i.price * (i.qty || 1)), 0);
+ 
+      container.innerHTML = `
+        <div style="padding:24px;">
+          <h3 style="margin:0 0 16px;">My Cart (${cart.items.length})</h3>
+          ${rows}
+          <p style="font-weight:700;margin-top:16px;">Total: R${total.toFixed(2)}</p>
+          <a href="/mycart.html" style="display:block;text-align:center;padding:12px;background:#1a1a1a;color:#fff;text-decoration:none;margin-top:12px;">
+            View full cart
+          </a>
+        </div>
+      `;
+    }
+  </script></body>
 </html>

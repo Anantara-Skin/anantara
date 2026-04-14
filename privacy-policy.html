@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Anantara — Aureum Skincare</title>
+    <meta
+      name="description"
+      content="Privacy Policy for anantara.africa, operated by Aureum Skincare. Learn how we collect, use, and protect your personal information in accordance with POPIA."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f6f5e8;
+        --warm-white: #fffef2;
+        --dark: #1a1a18;
+        --mid: #3d3d38;
+        --muted: #7a7a72;
+        --accent: #c8a96e;
+        --border: #e0dfd0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--warm-white);
+        color: var(--dark);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      /* ── Header ── */
+      .site-header {
+        background-color: var(--warm-white);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .site-header .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .site-header .logo img {
+        height: 32px;
+        width: auto;
+      }
+
+      .header-nav a {
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .header-nav a:hover {
+        color: var(--dark);
+      }
+
+      /* ── Hero Banner ── */
+      .hero {
+        background-color: var(--cream);
+        padding: 80px 48px 64px;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "PP";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 200px;
+        font-weight: 300;
+        color: var(--border);
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .hero-label {
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(36px, 5vw, 60px);
+        font-weight: 300;
+        line-height: 1.1;
+        color: var(--dark);
+        max-width: 600px;
+      }
+
+      .hero h1 em {
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      .hero-meta {
+        margin-top: 28px;
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .hero-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hero-meta span::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background: var(--accent);
+        display: inline-block;
+      }
+
+      /* ── Layout ── */
+      .page-wrapper {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 48px;
+      }
+
+      /* ── Sidebar ── */
+      .sidebar {
+        padding: 48px 40px 48px 0;
+        border-right: 1px solid var(--border);
+        position: sticky;
+        top: 81px;
+        height: fit-content;
+        align-self: start;
+      }
+
+      .sidebar-title {
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+
+      .sidebar nav a {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        text-decoration: none;
+        padding: 7px 0;
+        border-bottom: 1px solid transparent;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        line-height: 1.4;
+      }
+
+      .sidebar nav a:hover {
+        color: var(--dark);
+        border-bottom-color: var(--accent);
+      }
+
+      /* ── Main Content ── */
+      .content {
+        padding: 48px 0 80px 48px;
+      }
+
+      .section {
+        margin-bottom: 56px;
+        padding-bottom: 56px;
+        border-bottom: 1px solid var(--border);
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeUp 0.5s ease forwards;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .section:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .section:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .section:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .section:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .section:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .section:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+      .section:nth-child(7) {
+        animation-delay: 0.35s;
+      }
+      .section:nth-child(8) {
+        animation-delay: 0.4s;
+      }
+      .section:nth-child(9) {
+        animation-delay: 0.45s;
+      }
+      .section:nth-child(10) {
+        animation-delay: 0.5s;
+      }
+      .section:nth-child(11) {
+        animation-delay: 0.55s;
+      }
+
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section-number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .section h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: var(--dark);
+        margin-bottom: 18px;
+        line-height: 1.2;
+      }
+
+      .section p {
+        color: var(--mid);
+        margin-bottom: 14px;
+        font-size: 14.5px;
+      }
+
+      .section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .section ul,
+      .section ol {
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 14px;
+      }
+
+      .section ul li,
+      .section ol li {
+        padding: 6px 0 6px 20px;
+        position: relative;
+        color: var(--mid);
+        font-size: 14.5px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section ul li:last-child,
+      .section ol li:last-child {
+        border-bottom: none;
+      }
+
+      .section ul li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 12px;
+      }
+
+      .section ol {
+        counter-reset: item;
+      }
+      .section ol li {
+        counter-increment: item;
+      }
+      .section ol li::before {
+        content: counter(item) ".";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .highlight-box {
+        background-color: var(--cream);
+        border-left: 2px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+        font-size: 14px;
+        color: var(--mid);
+        font-style: italic;
+      }
+
+      strong {
+        font-weight: 500;
+        color: var(--dark);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+
+      a:hover {
+        border-bottom-color: var(--accent);
+      }
+
+      /* ── Data Table ── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13.5px;
+      }
+
+      .data-table th {
+        text-align: left;
+        padding: 10px 14px;
+        background-color: var(--cream);
+        color: var(--dark);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .data-table td {
+        padding: 10px 14px;
+        color: var(--mid);
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* ── Footer ── */
+      .site-footer {
+        background-color: var(--dark);
+        color: var(--muted);
+        padding: 40px 48px;
+        text-align: center;
+      }
+
+      .site-footer .footer-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: var(--cream);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .site-footer p {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        line-height: 1.8;
+      }
+
+      .site-footer .footer-links {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .site-footer .footer-links a {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        border: none;
+        transition: color 0.2s;
+      }
+
+      .site-footer .footer-links a:hover {
+        color: var(--cream);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 16px 24px;
+        }
+        .hero {
+          padding: 48px 24px 40px;
+        }
+        .hero::before {
+          font-size: 100px;
+        }
+        .page-wrapper {
+          grid-template-columns: 1fr;
+          padding: 0 24px;
+        }
+        .sidebar {
+          position: static;
+          padding: 32px 0 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          margin-bottom: 32px;
+        }
+        .content {
+          padding: 32px 0 48px;
+        }
+        .site-footer {
+          padding: 32px 24px;
+        }
+        .data-table {
+          font-size: 12px;
+        }
+        .data-table th,
+        .data-table td {
+          padding: 8px 10px;
+        }
+      }
+    </style>
+ <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-auth-cart.js"></script> </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <a href="/" class="logo">
+        <img
+          src="data:image/svg+xml;base64,PHN2ZwogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmcxODIiCiAgIHdpZHRoPSI2MjgwIgogICBoZWlnaHQ9IjExNjIiCiAgIHZpZXdCb3g9IjAgMCA2MjgwIDExNjIiCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgaWQ9ImcxODgiPgogICAgPHBhdGggc3R5bGU9ImZpbGw6IzAwMDAwMCIgZD0iTSAzMjg0Ljc0NjksMzMyLjg3NjQzIEMgMzI0MS42MTcyLDI4OS43NDIyNiAzMjI1LDI3Mi41MDU1NSAzMjI1LDI3MC45MDIxMSBjIDAsLTEuNDI5OTUgMS4wMTM5LC0yLjc0NTU1IDIuODQ2MywtMy42OTMxIDYuMDI0MywtMy4xMTUyOCAzNS44NDU1LC0xMi41NzQ5OCAzOS42NDg4LC0xMi41NzcxOCAzLjkyMzYsLTAuMDAyIDQuNjcwOSwwLjY3MzMxIDQxLjc1LDM3Ljc0Mjc3IEwgMzM0NywzMzAuMTE5NjYgMzM4NC43NTQ5LDI5Mi4zNzQ2IGMgNDMuNDE4NiwtNDMuNDA3MzQgMzcuNzIwOCwtMzkuODk5MTUgNTUuNjczMSwtMzQuMjc4NjcgMTguNzE3Niw1Ljg2MDA3IDI4LjAxOTIsOS45ODE3MSAyOC40MTIxLDEyLjU4OTc5IDAuNDkyMSwzLjI2NjIgLTExOC4wODQ2LDEyMS45NDM4MSAtMTIxLjg0MDEsMTIxLjk0MzgxIC0xLjk4MDQsMCAtMTUuMDQxMSwtMTIuNTM2MTYgLTYyLjI1MzEsLTU5Ljc1MzEgeiIgLz4KICA8L2c+Cjwvc3ZnPgo="
+          width="120"
+          height="auto"
+          alt="Anantara"
+        />
+      </a>
+      <nav class="header-nav">
+        <a href="/skin-care.html">Shop</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-label">Legal</p>
+      <h1>Privacy <em>Policy</em></h1>
+      <div class="hero-meta">
+        <span>Effective: 1 January 2025</span>
+        <span>Last updated: April 2026</span>
+        <span>POPIA Compliant</span>
+      </div>
+    </section>
+
+    <!-- Page Body -->
+    <div class="page-wrapper">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <p class="sidebar-title">Contents</p>
+        <nav>
+          <a href="#introduction">01 — Introduction</a>
+          <a href="#information-we-collect">02 — Information We Collect</a>
+          <a href="#how-we-collect">03 — How We Collect It</a>
+          <a href="#how-we-use">04 — How We Use Your Data</a>
+          <a href="#legal-basis">05 — Legal Basis</a>
+          <a href="#sharing">06 — Sharing Your Data</a>
+          <a href="#cookies">07 — Cookies & Tracking</a>
+          <a href="#retention">08 — Data Retention</a>
+          <a href="#your-rights">09 — Your Rights</a>
+          <a href="#security">10 — Security</a>
+          <a href="#contact">11 — Contact & Complaints</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <div class="section" id="introduction">
+          <p class="section-number">01</p>
+          <h2>Introduction</h2>
+          <p>
+            At <strong>Anantara</strong>, operated by
+            <strong>Aureum Skincare (Pty) Ltd</strong>, we respect your privacy
+            and are committed to protecting your personal information. This
+            Privacy Policy explains what data we collect, why we collect it, how
+            we use it, and what rights you have in relation to it.
+          </p>
+          <p>
+            This policy applies to all personal information collected through
+            <strong>anantara.africa</strong>, our email communications, and any
+            other interactions you have with us.
+          </p>
+          <div class="highlight-box">
+            By using anantara.africa, you acknowledge that you have read and
+            understood this Privacy Policy. If you do not agree, please
+            discontinue use of the website.
+          </div>
+          <p>
+            We comply fully with the
+            <strong
+              >Protection of Personal Information Act 4 of 2013 (POPIA)</strong
+            >
+            of South Africa. Our Information Officer is responsible for ensuring
+            our compliance with applicable data protection legislation.
+          </p>
+        </div>
+
+        <div class="section" id="information-we-collect">
+          <p class="section-number">02</p>
+          <h2>Information We Collect</h2>
+          <p>We collect the following categories of personal information:</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Examples</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Identity data</strong></td>
+                <td>First name, last name</td>
+                <td>Account creation, order processing</td>
+              </tr>
+              <tr>
+                <td><strong>Contact data</strong></td>
+                <td>Email address, phone number, delivery address</td>
+                <td>Order fulfilment, customer support</td>
+              </tr>
+              <tr>
+                <td><strong>Transaction data</strong></td>
+                <td>Purchase history, order details, payment method type</td>
+                <td>Processing orders, refunds, records</td>
+              </tr>
+              <tr>
+                <td><strong>Technical data</strong></td>
+                <td>IP address, browser type, device type, pages visited</td>
+                <td>Site functionality, security, analytics</td>
+              </tr>
+              <tr>
+                <td><strong>Marketing data</strong></td>
+                <td>Email preferences, communication opt-ins</td>
+                <td>Sending relevant communications</td>
+              </tr>
+              <tr>
+                <td><strong>Profile data</strong></td>
+                <td>Account details, skin type preferences, wishlist</td>
+                <td>Personalised experience</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            We do <strong>not</strong> collect sensitive personal information
+            such as race, religion, health data, or biometric data. We do not
+            knowingly collect data from individuals under the age of 18.
+          </p>
+        </div>
+
+        <div class="section" id="how-we-collect">
+          <p class="section-number">03</p>
+          <h2>How We Collect Your Information</h2>
+          <p>
+            We collect personal information through various means, including:
+          </p>
+          <ul>
+            <li>
+              <strong>Directly from you</strong> — when you create an account,
+              place an order, sign up for our newsletter, contact customer
+              service, or complete a skin type quiz
+            </li>
+            <li>
+              <strong>Automatically</strong> — when you browse anantara.africa,
+              we collect technical and usage data via cookies and similar
+              tracking technologies
+            </li>
+            <li>
+              <strong>From third parties</strong> — such as payment processors,
+              delivery partners, and analytics providers, where permitted by law
+            </li>
+            <li>
+              <strong>From social media</strong> — if you interact with us via
+              Instagram, Facebook, LinkedIn, or Pinterest, we may receive
+              information in accordance with those platforms' privacy settings
+            </li>
+          </ul>
+        </div>
+
+        <div class="section" id="how-we-use">
+          <p class="section-number">04</p>
+          <h2>How We Use Your Information</h2>
+          <p>We use your personal information for the following purposes:</p>
+          <ul>
+            <li>
+              To process and fulfil your orders, including payment processing
+              and delivery
+            </li>
+            <li>To manage your account and provide customer support</li>
+            <li>
+              To send you order confirmations, shipping updates, and
+              service-related communications
+            </li>
+            <li>
+              To send you marketing communications, where you have opted in to
+              receive them
+            </li>
+            <li>
+              To personalise your experience on anantara.africa based on your
+              preferences and browsing history
+            </li>
+            <li>
+              To improve our website, products, and services through analytics
+              and feedback
+            </li>
+            <li>
+              To comply with legal obligations, including tax and consumer
+              protection laws
+            </li>
+            <li>
+              To detect and prevent fraud, unauthorised access, and other
+              illegal activities
+            </li>
+          </ul>
+          <p>
+            We will not use your personal information for any purpose that is
+            incompatible with the purposes for which it was originally
+            collected, without your prior consent.
+          </p>
+        </div>
+
+        <div class="section" id="legal-basis">
+          <p class="section-number">05</p>
+          <h2>Legal Basis for Processing</h2>
+          <p>
+            Under POPIA, we are required to have a lawful basis for processing
+            your personal information. We rely on the following grounds:
+          </p>
+          <ul>
+            <li>
+              <strong>Contractual necessity</strong> — processing required to
+              fulfil your order or provide services you have requested
+            </li>
+            <li>
+              <strong>Consent</strong> — for marketing communications and
+              non-essential cookies, where you have given us your explicit
+              consent
+            </li>
+            <li>
+              <strong>Legitimate interests</strong> — for analytics, fraud
+              prevention, and improving our products and services, where our
+              interests are not overridden by your rights
+            </li>
+            <li>
+              <strong>Legal obligation</strong> — where processing is required
+              to comply with applicable law, such as tax and consumer protection
+              regulations
+            </li>
+          </ul>
+          <p>
+            Where we rely on consent, you have the right to withdraw that
+            consent at any time. Withdrawing consent will not affect the
+            lawfulness of processing carried out before the withdrawal.
+          </p>
+        </div>
+
+        <div class="section" id="sharing">
+          <p class="section-number">06</p>
+          <h2>Sharing Your Information</h2>
+          <p>
+            We do not sell your personal information to third parties. We may
+            share your data with the following categories of recipients, only
+            where necessary and under appropriate data protection agreements:
+          </p>
+          <ul>
+            <li>
+              <strong>Delivery and logistics partners</strong> — to fulfil and
+              track your orders
+            </li>
+            <li>
+              <strong>Payment processors</strong> — to securely process your
+              transactions (we do not store full card details)
+            </li>
+            <li>
+              <strong>Email and marketing platforms</strong> — to send you
+              communications you have opted into
+            </li>
+            <li>
+              <strong>Analytics providers</strong> — to help us understand
+              website usage and improve our services
+            </li>
+            <li>
+              <strong>Legal and regulatory authorities</strong> — where required
+              by law, court order, or to protect the rights and safety of our
+              business or others
+            </li>
+            <li>
+              <strong>Professional advisors</strong> — such as lawyers,
+              auditors, and accountants, under confidentiality obligations
+            </li>
+          </ul>
+          <p>
+            All third parties with whom we share your data are required to
+            handle it in accordance with applicable data protection laws and our
+            instructions. They may not use your data for their own marketing
+            purposes.
+          </p>
+        </div>
+
+        <div class="section" id="cookies">
+          <p class="section-number">07</p>
+          <h2>Cookies &amp; Tracking Technologies</h2>
+          <p>
+            anantara.africa uses cookies and similar technologies to enhance
+            your browsing experience, analyse site performance, and deliver
+            relevant content. A cookie is a small text file stored on your
+            device when you visit a website.
+          </p>
+          <p>We use the following types of cookies:</p>
+          <ul>
+            <li>
+              <strong>Strictly necessary cookies</strong> — essential for the
+              website to function, including maintaining your shopping cart and
+              session. These cannot be disabled.
+            </li>
+            <li>
+              <strong>Analytical / performance cookies</strong> — help us
+              understand how visitors interact with our site, which pages are
+              most visited, and how we can improve performance.
+            </li>
+            <li>
+              <strong>Functional cookies</strong> — remember your preferences
+              such as language, currency, and location to personalise your
+              experience.
+            </li>
+            <li>
+              <strong>Marketing cookies</strong> — used to track your browsing
+              across sites and deliver targeted advertising relevant to your
+              interests. These are only set with your consent.
+            </li>
+          </ul>
+          <p>
+            You can manage your cookie preferences through our cookie settings
+            banner, which appears on your first visit to the site. You may also
+            adjust your browser settings to block or delete cookies, though this
+            may affect the functionality of the website.
+          </p>
+          <div class="highlight-box">
+            For more control over how cookies are managed on your device, visit
+            your browser's settings or a tool such as
+            <strong>aboutcookies.org</strong>.
+          </div>
+        </div>
+
+        <div class="section" id="retention">
+          <p class="section-number">08</p>
+          <h2>Data Retention</h2>
+          <p>
+            We retain your personal information only for as long as necessary to
+            fulfil the purposes for which it was collected, or as required by
+            law. The following general retention periods apply:
+          </p>
+          <ul>
+            <li>
+              <strong>Order and transaction records</strong> — retained for 5
+              years for tax and accounting purposes
+            </li>
+            <li>
+              <strong>Account information</strong> — retained for the duration
+              of your account, plus 2 years after closure
+            </li>
+            <li>
+              <strong>Marketing preferences and opt-in records</strong> —
+              retained for the duration of your consent, or until you withdraw
+              it
+            </li>
+            <li>
+              <strong>Customer service communications</strong> — retained for 3
+              years after the matter is resolved
+            </li>
+            <li>
+              <strong>Technical and analytics data</strong> — typically retained
+              for up to 26 months in anonymised form
+            </li>
+          </ul>
+          <p>
+            When your personal information is no longer required, we will
+            securely delete or anonymise it in accordance with our data
+            retention procedures.
+          </p>
+        </div>
+
+        <div class="section" id="your-rights">
+          <p class="section-number">09</p>
+          <h2>Your Rights</h2>
+          <p>
+            Under POPIA, you have the following rights in relation to your
+            personal information:
+          </p>
+          <ul>
+            <li>
+              <strong>Right of access</strong> — you may request a copy of the
+              personal information we hold about you
+            </li>
+            <li>
+              <strong>Right to correction</strong> — you may request that we
+              correct inaccurate or incomplete information
+            </li>
+            <li>
+              <strong>Right to deletion</strong> — you may request that we
+              delete your personal information, subject to our legal obligations
+              to retain certain records
+            </li>
+            <li>
+              <strong>Right to object</strong> — you may object to processing
+              based on legitimate interests, including direct marketing
+            </li>
+            <li>
+              <strong>Right to withdraw consent</strong> — where processing is
+              based on consent, you may withdraw it at any time
+            </li>
+            <li>
+              <strong>Right to data portability</strong> — you may request that
+              we provide your data in a structured, commonly used format
+            </li>
+            <li>
+              <strong>Right to lodge a complaint</strong> — you have the right
+              to complain to the Information Regulator of South Africa if you
+              believe your rights have been violated
+            </li>
+          </ul>
+          <p>
+            To exercise any of these rights, please contact us at
+            <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>. We
+            will respond to your request within 30 days. In certain
+            circumstances, we may need to verify your identity before processing
+            your request.
+          </p>
+          <div class="highlight-box">
+            To unsubscribe from marketing emails, simply click the "unsubscribe"
+            link at the bottom of any email from us, or contact us directly at
+            <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>.
+          </div>
+        </div>
+
+        <div class="section" id="security">
+          <p class="section-number">10</p>
+          <h2>Security</h2>
+          <p>
+            We take the security of your personal information seriously and have
+            implemented appropriate technical and organisational measures to
+            protect it against unauthorised access, loss, destruction, or
+            disclosure. These include:
+          </p>
+          <ul>
+            <li>
+              SSL/TLS encryption for all data transmitted through our website
+            </li>
+            <li>Secure, access-controlled servers and systems</li>
+            <li>Regular security reviews and vulnerability assessments</li>
+            <li>Staff training on data protection and privacy obligations</li>
+            <li>
+              Strict access controls limiting who within our organisation can
+              access personal data
+            </li>
+          </ul>
+          <p>
+            While we take every reasonable precaution, no method of transmission
+            over the internet or electronic storage is entirely secure. In the
+            event of a data breach that is likely to result in harm to you, we
+            will notify you and the Information Regulator in accordance with our
+            obligations under POPIA.
+          </p>
+          <p>
+            We do not store full payment card numbers. All card transactions are
+            processed by our certified payment processor, which complies with
+            PCI DSS security standards.
+          </p>
+        </div>
+
+        <div class="section" id="contact">
+          <p class="section-number">11</p>
+          <h2>Contact &amp; Complaints</h2>
+          <p>
+            If you have any questions, concerns, or requests regarding this
+            Privacy Policy or the way we handle your personal information,
+            please contact us:
+          </p>
+          <ul>
+            <li><strong>Company:</strong> Aureum Skincare (Pty) Ltd</li>
+            <li><strong>Trading as:</strong> Anantara</li>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:hello@anantara.africa">hello@anantara.africa</a>
+            </li>
+            <li>
+              <strong>Website:</strong>
+              <a href="https://anantara.africa">anantara.africa</a>
+            </li>
+            <li><strong>Hours:</strong> Monday – Friday, 9:00 – 17:00 SAST</li>
+          </ul>
+          <p>
+            If you are not satisfied with our response, you have the right to
+            lodge a complaint with the
+            <strong>Information Regulator of South Africa</strong>:
+          </p>
+          <ul>
+            <li>
+              <strong>Website:</strong>
+              <a
+                href="https://www.justice.gov.za/inforeg/"
+                target="_blank"
+                rel="noopener"
+                >www.justice.gov.za/inforeg</a
+              >
+            </li>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:inforeg@justice.gov.za">inforeg@justice.gov.za</a>
+            </li>
+          </ul>
+          <div class="highlight-box">
+            This Privacy Policy was last reviewed and updated in April 2026. We
+            reserve the right to update this policy at any time. The most
+            current version will always be available at
+            anantara.africa/privacy-policy.html.
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p class="footer-brand">Anantara</p>
+      <p>
+        © Aureum Skincare 2026. All rights reserved.<br />anantara.africa —
+        South Africa
+      </p>
+      <div class="footer-links">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
+        <a href="/customer-service/contact-us.html">Contact Us</a>
+        <a href="/skin-care.html">Shop</a>
+      </div>
+    </footer>
+   <script src="/js/cloudflare-image-loader.js"></script> <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Wire the header Account link to the Firebase login page
+      document.querySelectorAll(".c-user__link.m-login").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const user = AnantaraAuth.currentUser();
+          if (!user) {
+            // Redirect to your login page instead of the old Salesforce login
+            e.preventDefault();
+            window.location.href = "/login.html";
+          }
+          // If already logged in, fall through to /account.html
+        });
+      });
+ 
+      // Wire the minicart button to open the cart panel
+      document.querySelector("[data-js-minicart-button]")?.addEventListener("click", async () => {
+        const cart = await AnantaraCart.get();
+        // Render the cart panel — implement renderCartPanel() to match your design
+        renderCartPanel(cart);
+      });
+    });
+ 
+    /**
+     * Minimal cart panel renderer.
+     * Populates the .c-minicart element that already exists in your HTML.
+     */
+    function renderCartPanel(cart) {
+      const container = document.querySelector(".c-minicart");
+      if (!container) return;
+ 
+      if (!cart.items || cart.items.length === 0) {
+        container.innerHTML = `<p style="padding:24px;text-align:center;">Your cart is empty.</p>`;
+        return;
+      }
+ 
+      const rows = cart.items.map((item) => `
+        <div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #eee;">
+          <img src="${item.imageUrl}" alt="${item.name}" style="width:64px;height:64px;object-fit:cover;" />
+          <div style="flex:1;">
+            <p style="margin:0;font-weight:600;">${item.name}</p>
+            <p style="margin:4px 0;color:#666;font-size:14px;">${item.size}</p>
+            <p style="margin:0;">R${Number(item.price).toFixed(2)}</p>
+          </div>
+          <button
+            style="background:none;border:none;cursor:pointer;color:#999;"
+            onclick="AnantaraCart.remove('${item.pid}','${item.size}')"
+            aria-label="Remove ${item.name}"
+          >✕</button>
+        </div>
+      `).join("");
+ 
+      const total = cart.items.reduce((s, i) => s + (i.price * (i.qty || 1)), 0);
+ 
+      container.innerHTML = `
+        <div style="padding:24px;">
+          <h3 style="margin:0 0 16px;">My Cart (${cart.items.length})</h3>
+          ${rows}
+          <p style="font-weight:700;margin-top:16px;">Total: R${total.toFixed(2)}</p>
+          <a href="/mycart.html" style="display:block;text-align:center;padding:12px;background:#1a1a1a;color:#fff;text-decoration:none;margin-top:12px;">
+            View full cart
+          </a>
+        </div>
+      `;
+    }
+  </script></body>
+</html>

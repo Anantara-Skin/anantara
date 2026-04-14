@@ -258,7 +258,10 @@
             window.addEventListener("offline", n);
         });
     </script>
-  </head>
+ <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-auth-cart.js"></script> </head>
   <body
     class="page-search"
     data-lora-datalayer='{"page":{"id":"search","title":"Architecture and design","description":"","keywords":"","currencyCode":"GBP","stylesheets":["content"],"category":"product selector page","mainStylesheetId":"category","hasPDElements":true,"ogImage":null,"breadcrumbs":["Home","Library","Category","Architecture and design"],"locale":"en_GB","url":"/on/demandware.servlet/Sites-anantara-uk-Site/en_GB/__SYSTEM__Page-Render?cid=architecture-and-design&amp;params=%7b%22custom%22%3a%22%7b%5c%22pageId%5c%22%3a%5c%22search%5c%22%2c%5c%22pageCategory%5c%22%3a%5c%22product%20selector%20page%5c%22%2c%5c%22cgid%5c%22%3a%5c%22architecture-and-design%5c%22%2c%5c%22metaData%5c%22%3a%7b%7d%2c%5c%22updateContext%5c%22%3a%5c%22category%5c%22%2c%5c%22mainStylesheetId%5c%22%3a%5c%22category%5c%22%7d%22%2c%22aspect_attributes%22%3a%7b%22category%22%3a%22architecture-and-design%22%7d%7d&amp;vf=e197febc38533235f1ccdc9933167b56&amp;at=plp&amp;pt=clplayout","seoLinks":{"paginationLinks":null,"canonicalLink":{},"alternateLinks":[{"lang":"en-gb","url":{},"customAlternateUrl":{}},{"lang":"en-ie","url":{},"customAlternateUrl":{}}],"_meta":{"section":"global","id":"seolinks"}}},"locale":"en_GB","version":"v3","brand":"Anantara","queryParams":{"pt":"clplayout","at":"plp","vf":"e197febc38533235f1ccdc9933167b56","params":"{\"custom\":\"{\\\"pageId\\\":\\\"search\\\",\\\"pageCategory\\\":\\\"product selector page\\\",\\\"cgid\\\":\\\"architecture-and-design\\\",\\\"metaData\\\":{},\\\"updateContext\\\":\\\"category\\\",\\\"mainStylesheetId\\\":\\\"category\\\"}\",\"aspect_attributes\":{\"category\":\"architecture-and-design\"}}","cid":"architecture-and-design"},"countryCode":"GB","siteTypeLevel":"main","siteSection":"standard site","factory":"NGL","extra":{"uiInfluencer":"not present"},"uiconfig":{"motion":{"modalsEnabled":true}},"text":{"close":"Close"},"consentGroups":{},"website_type":"D2C","urls":{"baseEndpoint":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/_endpoint_"},"currentCategory":{"name":"Architecture and design"},"_eventName":"page.metadata.ready"}'
@@ -311,7 +314,7 @@
             href="#site-content"
             data-component="/dist/javascripts/components/global/EventTrigger.js"
             data-component-options='{"event":"click","skipPreventDefault":true}'
-            data-analytics="{}"
+            
             data-js-skip-to-content
             >Skip to content</a
           >
@@ -389,7 +392,7 @@
               </div>
             </noscript>
             <div
-              data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+              
               data-component-options='{
                             "_lazyload":true,
                             "reloadData":{
@@ -594,12 +597,12 @@
                                             ]
                                         }'
                       data-component-context=""
-                      data-analytics="{}"
+                      
                     >
                       <div data-js-sliding-trigger>
                         <div
                           class="c-minicart-icon"
-                          data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                          
                           data-component-options='{
                                                     "_lazyload":true,
                                                     "reloadData":{
@@ -670,7 +673,7 @@
                 >
                   <div class="c-hamburger__item m-account">
                     <div
-                      data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                      
                       data-component-options='{
                                             "_lazyload":true,
                                             "reloadData":{
@@ -1119,7 +1122,7 @@
             class="c-simple-navigation__list-wrapper m-arrows-inside m-arrows-medium"
             data-component="/dist/javascripts/components/global/Scrollable.js"
             data-component-context=""
-            data-component-options="{}"
+            
           >
             <ul
               class="c-simple-navigation__list m-subcategories"
@@ -1153,7 +1156,7 @@
                     class="c-content-hero l-section__row"
                     data-component="/dist/javascripts/components/global/Hero.js"
                     data-analytics='{"promoObject":{"id":"promotion","name":"Architecture and design"}}'
-                    data-component-options="{}"
+                    
                   >
                     <div
                       class="c-content-hero__image-wrapper"
@@ -1163,7 +1166,7 @@
                         <video
                           id="hero-video"
                           class="c-video-asset__video"
-                          poster="/on/demandware.static/-/Sites-anantara-uk-Library/default/dwaf13fcaf/images/homepage/Above_Us_Steorra_Cover_Hero_16x9.jpg"
+                          poster="/dwaf13fcaf/images/homepage/Above_Us_Steorra_Cover_Hero_16x9.jpg"
                           muted
                           playsinline
                           autoplay
@@ -1231,36 +1234,36 @@
                               >
                                 <picture
                                   ><source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw2bcf6f5c/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mid_Desktop.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:1024px)"
                                     width="540"
                                     height="360"
                                     data-aspectratio="1.5" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:768px)"
                                     width="540"
                                     height="400"
                                     data-aspectratio="1.35" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:0)"
                                     width="540"
@@ -1271,7 +1274,7 @@
                                     alt="The Fragrance Armoire: an uncommonly perfumed experience  Image"
                                     src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg=="
                                     loading="lazy"
-                                    data-src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=540&sh=400&sm=cut&q=70"
+                                    data-src="/dw/image/v2/AAQP_PRD/dwa8f9dde8/images/pages/the-athenaeum/Anantara_Fragrance_2024_Athenaeum_Armoire_Article_Secondary_2_Mobile.jpg?sw=540&sh=400&sm=cut&q=70"
                                     width="540"
                                     height="400"
                                 /></picture>
@@ -1316,36 +1319,36 @@
                               >
                                 <picture
                                   ><source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw0dee1e91/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary-Desktop.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:1024px)"
                                     width="540"
                                     height="360"
                                     data-aspectratio="1.5" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:768px)"
                                     width="540"
                                     height="400"
                                     data-aspectratio="1.35" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:0)"
                                     width="540"
@@ -1356,7 +1359,7 @@
                                     alt="Musings from The Rain Garden Image"
                                     src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg=="
                                     loading="lazy"
-                                    data-src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=540&sh=400&sm=cut&q=70"
+                                    data-src="/dw/image/v2/AAQP_PRD/dw6b946f73/images/pages/the-athenaeum/Anantara_Rain_Garden_Seongsu_Web_Primary.jpg?sw=540&sh=400&sm=cut&q=70"
                                     width="540"
                                     height="400"
                                 /></picture>
@@ -1400,36 +1403,36 @@
                               >
                                 <picture
                                   ><source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw33f3e527/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Desktop_1080x720px.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:1024px)"
                                     width="540"
                                     height="360"
                                     data-aspectratio="1.5" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:768px)"
                                     width="540"
                                     height="400"
                                     data-aspectratio="1.35" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:0)"
                                     width="540"
@@ -1440,7 +1443,7 @@
                                     alt="Celebrating Chuseok Image"
                                     src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg=="
                                     loading="lazy"
-                                    data-src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70"
+                                    data-src="/dw/image/v2/AAQP_PRD/dw1ac9ff14/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Harvest_Festival_2022_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70"
                                     width="540"
                                     height="400"
                                 /></picture>
@@ -1496,36 +1499,36 @@
                               >
                                 <picture
                                   ><source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=270&sh=180&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=378&sh=252&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=540&sh=360&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=810&sh=540&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=918&sh=612&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw7bdc5b2d/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Desktop_1080x720px.jpg?sw=1080&sh=720&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:1024px)"
                                     width="540"
                                     height="360"
                                     data-aspectratio="1.5" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:768px)"
                                     width="540"
                                     height="400"
                                     data-aspectratio="1.35" />
                                   <source
-                                    data-srcset="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
-        /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
+                                    data-srcset="/dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=270&sh=200&sm=cut&q=70 270w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=378&sh=280&sm=cut&q=70 378w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70 540w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=810&sh=600&sm=cut&q=70 810w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=918&sh=680&sm=cut&q=70 918w, 
+        /dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=1080&sh=800&sm=cut&q=70 1080w"
                                     sizes="540px"
                                     media="(min-width:0)"
                                     width="540"
@@ -1536,7 +1539,7 @@
                                     alt="Objects of inspiration Image"
                                     src="data:image/svg+xml;base64,PHN2ZwogICB3aWR0aD0iMjcwIgogICBoZWlnaHQ9IjI3MCIKICAgdmlld0JveD0iMCAwIDcxLjQzNzQ5OCA3MS40Mzc1IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICB4bWw6c3BhY2U9InByZXNlcnZlIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMyIiAvPjxnCiAgICAgaWQ9ImxheWVyMSI+PHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiNjY2NjY2M7c3Ryb2tlLXdpZHRoOjAuMTA0MzQxIgogICAgICAgZD0ibSAyMi4zNzU5MTUsNDguNjg4NjUyIGMgLTAuNDcxNjU2LC0wLjA5NjY3IC0wLjU3MDE1MiwtMC40NDc2MDMgLTAuMTI1NjM0LC0wLjQ0NzYwMyAwLjQ1NDE2NSwwIDEuMzQ0NDQ0LC0wLjQ4OTY3NSAxLjc2MDE3NCwtMC45NjgxMzcgMC41NDQyMTUsLTAuNjI2MzM5IDAuOTgxNDU5LC0xLjYwODAxOSAxLjgwOTExOCwtNC4wNjE3NTEgMS4wNzM1MDIsLTMuMTgyNTgyIDEuNjgwMTY2LC00LjMxMTA5MyAzLjAxODM5OCwtNS42MTQ4MjQgMC41NzQ5OTIsLTAuNTYwMTY0IDAuOTc5OTM2LC0wLjg0NjI4NiAxLjY0MDAwMSwtMS4xNTg3NTggMS4yNTk4OTksLTAuNTk2NDMyIDEuNjQyNzE4LC0wLjY3NzIyMiAzLjIzOTI1OSwtMC42ODM2IDEuNzg5ODExLC0wLjAwNjkgMi40MTUyOCwwLjA4NyAyLjQxNTI4LDAuMzYzNTUgMCwwLjEzOTE2MiAtMC4wNzI3LDAuMjAxMTc1IC0wLjIzNjI3NSwwLjIwMTU4NiAtMC41MDIzMzMsMC4wMDEzIC0xLjA2NDI5MywwLjIzOTI5NiAtMS40OTkyNTQsMC42MzUxMDcgLTAuNjQyMzIzLDAuNTg0NTI4IC0xLjE2OTI2LDEuNzA3MTExIC0yLjE0OTQ0OSw0LjU3OTE5MSAtMC40NjE1NDEsMS4zNTIzNjkgLTEuMDI2MDY2LDIuODE5OTk4IC0xLjI1NDUwNSwzLjI2MTQwNCAtMC45ODY2NCwxLjkwNjQ2MiAtMi4xNzEyOCwyLjk3MTg3NSAtNC4wMzAyNywzLjYyNDYzOSAtMC42NzcxNzUsMC4yMzc3ODYgLTAuOTM1NTgyLDAuMjY3NzA5IC0yLjUzOTEwOCwwLjI5Mzg3MyAtMC45ODE4NjQsMC4wMTU5MSAtMS45MDMzNDYsMC4wMDQ5IC0yLjA0NzczOCwtMC4wMjQ2MyB6IG0gMTcuMTE2OTkxLC0wLjM0MzkyNSBjIDAsLTAuMTk4NzYzIDAuMDcwMDEsLTAuMjA3MzU1IDEuNjkxNTc5LC0wLjIwNzM1NSBoIDEuNjkxNTc5IGwgLTAuMDY3NzQsLTAuMjY2NDg3IEMgNDIuNzcxMDc0LDQ3LjcyNDM0NiA0Mi40MzA0OTIsNDYuODI2MjcxIDQyLjA1MTQ5LDQ1Ljg3NTE3OCA0MC4yMDMyNDEsNDEuMjM3MTAzIDM5LjU1NjU2NiwzOS42MTYgMzkuMjMxNzk1LDM4LjgwNjcwMiBjIC0wLjE5NDUsLTAuNDg0Njc4IC0wLjY1OTU5NiwtMS42NTEwMTEgLTEuMDMzNTQ1LC0yLjU5MTg1IC0wLjM3Mzk1LC0wLjk0MDg0MyAtMC45NDk1NjgsLTIuMzg3MTAxIC0xLjI3OTE1MSwtMy4yMTM4OTkgLTEuNTkxNjQ1LC0zLjk5Mjg0MiAtMi4zNTQ0NTUsLTUuOTEzMTU4IC0yLjU4MzYwOSwtNi41MDQwMzQgLTAuMTM3ODg3LC0wLjM1NTU0MyAtMC4yNzg0MDQsLTAuNjQ3MTI3IC0wLjMxMjI2MywtMC42NDc5NiAtMC4wMzM4NiwtOC41OGUtNCAtMC4zMDY5ODUsMC41OTMzMDYgLTAuNjA2OTQyLDEuMzIwMzIyIC0wLjY1MDY4MiwxLjU3NzA2MiAtMC42ODA3OTMsMS42MjkxMTggLTAuODk1NDQ0LDEuNTQ3Nzk4IC0wLjEzMDkwNSwtMC4wNDk1OSAtMC4xNDUwMDMsLTAuMTE1MTQ3IC0wLjA2NDU3LC0wLjMwMDIyMSAwLjI4MjY0MSwtMC42NTAyNTUgMy44NzMyMTgsLTkuNTMyMzM2IDQuMDI3ODg5LC05Ljk2Mzg3OCAwLjE4MjU3MywtMC41MDkzODYgMC40MzI3NDQsLTAuMDQyMTMgMS44NDk3MzksMy40NTQ4MjggMC43OTcxMjksMS45NjcyMTkgMi43MDI0NDgsNi42NTU4ODIgNC4yMzQwNDEsMTAuNDE5MjUxIDEuNTMxNTksMy43NjMzNzEgMy4zMTI4OTcsOC4xNDg3ODcgMy45NTg0Niw5Ljc0NTM2NiAwLjY0NTU2MiwxLjU5NjU4NiAxLjMzMDA4NiwzLjI3NjEwOCAxLjUyMTE2MSwzLjczMjI3MyAwLjE5MTA3MywwLjQ1NjE2NyAwLjQ4Mjc1NCwxLjE2NzA1NSAwLjY0ODE3OCwxLjU3OTc1MiBsIDAuMzAwNzg2LDAuNzUwMzYyIDEuNDk2NDIxLDAuMDAxMyBjIDEuNDI1OTg0LDAuMDAxMyAxLjQ5NjQyNCwwLjAxMDggMS40OTY0MjQsMC4yMDg2MTYgMCwwLjIwNTAyIC0wLjA3MDAyLDAuMjA3MzU1IC02LjI0ODIyNywwLjIwNzM1NSAtNi4xNzgyMTcsMCAtNi4yNDgyMjQsLTAuMDAyMSAtNi4yNDgyMjQsLTAuMjA3MzU1IHoiCiAgICAgICBpZD0icGF0aDUxNyIgLz48L2c+PC9zdmc+Cg=="
                                     loading="lazy"
-                                    data-src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70"
+                                    data-src="/dw/image/v2/AAQP_PRD/dw0dd8c776/images/pages/the-athenaeum/Anantara_NGL_Athenaeum_Thumbnail_Objects_of_Inspiration_Mobile_1080x800px.jpg?sw=540&sh=400&sm=cut&q=70"
                                     width="540"
                                     height="400"
                                 /></picture>
@@ -1613,12 +1616,12 @@
                                       <picture
                                         ><source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:1024px)"
@@ -1627,12 +1630,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:768px)"
@@ -1641,12 +1644,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:0)"
@@ -1657,7 +1660,7 @@
                                           class=""
                                           alt="Icon"
                                           loading="lazy"
-                                          src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
+                                          src="/dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
                                           width="16"
                                           height="16" /></picture
                                     ></a>
@@ -1683,12 +1686,12 @@
                                       <picture
                                         ><source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:1024px)"
@@ -1697,12 +1700,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:768px)"
@@ -1711,12 +1714,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:0)"
@@ -1727,7 +1730,7 @@
                                           class=""
                                           alt="Icon"
                                           loading="lazy"
-                                          src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
+                                          src="/dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
                                           width="16"
                                           height="16" /></picture
                                     ></a>
@@ -1751,12 +1754,12 @@
                                       <picture
                                         ><source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:1024px)"
@@ -1765,12 +1768,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:768px)"
@@ -1779,12 +1782,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:0)"
@@ -1795,7 +1798,7 @@
                                           class=""
                                           alt="Icon"
                                           loading="lazy"
-                                          src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
+                                          src="/dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
                                           width="16"
                                           height="16" /></picture
                                     ></a>
@@ -1819,12 +1822,12 @@
                                       <picture
                                         ><source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:1024px)"
@@ -1833,12 +1836,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:768px)"
@@ -1847,12 +1850,12 @@
                                           data-aspectratio="1" />
                                         <source
                                           srcset="
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
-                                            /dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=10&sh=10&sm=cut 10w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=11&sh=11&sm=cut 11w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut 16w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=24&sh=24&sm=cut 24w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=27&sh=27&sm=cut 27w,
+                                            /dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=32&sh=32&sm=cut 32w
                                           "
                                           sizes="16px"
                                           media="(min-width:0)"
@@ -1863,7 +1866,7 @@
                                           class=""
                                           alt="Icon"
                                           loading="lazy"
-                                          src="/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-anantara-uk-Library/default/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
+                                          src="/dw/image/v2/AAQP_PRD/dwfa685f45/arrow-right.png?sw=16&sh=16&sm=cut"
                                           width="16"
                                           height="16" /></picture
                                     ></a>
@@ -1941,7 +1944,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/shipping.svg"
+                        src="https://images.anantara.africa/icons/shipping.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -1956,7 +1959,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/Secure_checkout.svg"
+                        src="https://images.anantara.africa/icons/Secure_checkout.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -1970,7 +1973,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/samples.svg"
+                        src="https://images.anantara.africa/icons/samples.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -1985,7 +1988,7 @@
                         width="52"
                         height="52"
                         class="c-content-reassurance__image m-lazyload"
-                        src="/images/icons/gift.svg"
+                        src="https://images.anantara.africa/icons/gift.svg"
                         alt=""
                       />
                       <span class="c-content-reassurance__text"
@@ -2339,7 +2342,7 @@
               </div>
             </div>
             <img
-              src="/images/logo-small.png"
+              src="https://images.anantara.africa/logo-small.png"
               alt="Anantara logo"
               style="width: 30px; height: auto; padding-bottom: 12px"
             />
@@ -2411,7 +2414,7 @@
     <div
       class="c-orientation-message h-hidden"
       data-component="/dist/javascripts/components/global/OrientationMessage.js"
-      data-component-options="{}"
+      
       data-component-force
     >
       <div class="c-orientation-message__content h-text-align-center">
@@ -2483,7 +2486,7 @@
       data-component-force
       data-integration-sprinklr
     ></div>
-    <!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+   
 
     <script
       type="text/javascript"
@@ -2491,7 +2494,7 @@
       async="async"
       onload="trackPage()"
     ></script>
-    <!-- Demandware Active Data (body_end-active_data.js) -->
+    
     <script
       src="/internal/jscript/dwac-21.7.js"
       type="text/javascript"
@@ -2671,5 +2674,70 @@
       checkSavedPreference();
       initLocalization();
     </script>
-  </body>
+   <script src="/js/cloudflare-image-loader.js"></script> <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Wire the header Account link to the Firebase login page
+      document.querySelectorAll(".c-user__link.m-login").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const user = AnantaraAuth.currentUser();
+          if (!user) {
+            // Redirect to your login page instead of the old Salesforce login
+            e.preventDefault();
+            window.location.href = "/login.html";
+          }
+          // If already logged in, fall through to /account.html
+        });
+      });
+ 
+      // Wire the minicart button to open the cart panel
+      document.querySelector("[data-js-minicart-button]")?.addEventListener("click", async () => {
+        const cart = await AnantaraCart.get();
+        // Render the cart panel — implement renderCartPanel() to match your design
+        renderCartPanel(cart);
+      });
+    });
+ 
+    /**
+     * Minimal cart panel renderer.
+     * Populates the .c-minicart element that already exists in your HTML.
+     */
+    function renderCartPanel(cart) {
+      const container = document.querySelector(".c-minicart");
+      if (!container) return;
+ 
+      if (!cart.items || cart.items.length === 0) {
+        container.innerHTML = `<p style="padding:24px;text-align:center;">Your cart is empty.</p>`;
+        return;
+      }
+ 
+      const rows = cart.items.map((item) => `
+        <div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #eee;">
+          <img src="${item.imageUrl}" alt="${item.name}" style="width:64px;height:64px;object-fit:cover;" />
+          <div style="flex:1;">
+            <p style="margin:0;font-weight:600;">${item.name}</p>
+            <p style="margin:4px 0;color:#666;font-size:14px;">${item.size}</p>
+            <p style="margin:0;">R${Number(item.price).toFixed(2)}</p>
+          </div>
+          <button
+            style="background:none;border:none;cursor:pointer;color:#999;"
+            onclick="AnantaraCart.remove('${item.pid}','${item.size}')"
+            aria-label="Remove ${item.name}"
+          >✕</button>
+        </div>
+      `).join("");
+ 
+      const total = cart.items.reduce((s, i) => s + (i.price * (i.qty || 1)), 0);
+ 
+      container.innerHTML = `
+        <div style="padding:24px;">
+          <h3 style="margin:0 0 16px;">My Cart (${cart.items.length})</h3>
+          ${rows}
+          <p style="font-weight:700;margin-top:16px;">Total: R${total.toFixed(2)}</p>
+          <a href="/mycart.html" style="display:block;text-align:center;padding:12px;background:#1a1a1a;color:#fff;text-decoration:none;margin-top:12px;">
+            View full cart
+          </a>
+        </div>
+      `;
+    }
+  </script></body>
 </html>

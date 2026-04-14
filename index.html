@@ -224,15 +224,18 @@
           "endStylesheetLoading",
         ));
     </script>
-  </head>
+ <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-auth-cart.js"></script> </head>
   <body
     class="page-homepage header-transparent m-transparent-light"
-    data-lora-datalayer="{}"
+    
   >
     <div
       data-component="analytics/GTM"
       data-component-force
-      data-component-options="{}"
+      
     ></div>
 
     <div
@@ -277,7 +280,7 @@
             href="#site-content"
             data-component="/dist/javascripts/components/global/EventTrigger.js"
             data-component-options='{"event":"click","skipPreventDefault":true}'
-            data-analytics="{}"
+            
             data-js-skip-to-content
             >Skip to content</a
           >
@@ -304,7 +307,7 @@
         <div class="l-header__inner" data-js-header-inner>
           <div class="l-header__banner" data-js-alt-tabindex="1">
             <div
-              data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+              
               data-component-options='{
                             "_lazyload":true,"reloadData":{
                                 "id":"headerbanner",
@@ -479,12 +482,12 @@
                                             ]
                                         }'
                       data-component-context=""
-                      data-analytics="{}"
+                      
                     >
                       <div data-js-sliding-trigger>
                         <div
                           class="c-minicart-icon"
-                          data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                          
                           data-component-options='{
                                                     "_lazyload":true,
                                                     "reloadData":{
@@ -555,7 +558,7 @@
                 >
                   <div class="c-hamburger__item m-account">
                     <div
-                      data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                      
                       data-component-options='{
                                             "_lazyload":true,
                                             "reloadData":{
@@ -1089,7 +1092,7 @@
             class="c-simple-navigation__list-wrapper m-arrows-inside m-arrows-medium"
             data-component="/dist/javascripts/components/global/Scrollable.js"
             data-component-context=""
-            data-component-options="{}"
+            
           >
             <ul
               class="c-simple-navigation__list"
@@ -1115,7 +1118,7 @@
                         <a class="c-simple-navigation__link "
                             href="/new-notable.html" data-js-navigation-item="new-notable"
                             data-js-navigation-analytics="new &amp; notable" data-js-trigger
-                            data-analytics="{&quot;breakpoints&quot;:{&quot;large down&quot;:{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select::header&quot;,&quot;label&quot;:&quot;new &amp; notable&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;menu_click&quot;,&quot;event_detail&quot;:&quot;text::image&quot;,&quot;click_area&quot;:&quot;header&quot;,&quot;breadcrumb&quot;:&quot;new &amp; notable&quot;}}}}">
+                            >
                             New &amp; Notable </a> 
                         </li>-->
               <li class="c-simple-navigation__item m-skin-care">
@@ -1217,7 +1220,7 @@
                       class="c-content-hero l-section__row m-unstack"
                       data-component="/dist/javascripts/components/global/Hero.js"
                       data-analytics='{"promoObject":{"id":"promotion","name":"Luxuriate In The Art Of Enduring Glow "}}'
-                      data-component-options="{}"
+                      
                     >
                       <div
                         class="c-content-hero__media-wrapper"
@@ -1242,7 +1245,7 @@
                                   >
                                     <meta
                                       itemprop="thumbnailUrl"
-                                      content="/on/demandware.static/-/Sites-anantara-uk-Library/default/dwaf13fcaf/images/homepage/Above_Us_Steorra_Cover_Hero_16x9.jpg"
+                                      content="/dwaf13fcaf/images/homepage/Above_Us_Steorra_Cover_Hero_16x9.jpg"
                                     />
                                     <meta
                                       itemprop="uploadDate"
@@ -1288,8 +1291,8 @@
                                       <picture>
                                         <source
                                           data-srcset="/images/medicube-cica.2_hwue5y.jpg?sw=960&sh=540&sm=cut&q=70 960w, 
-                                                                            /images/medicube-cica.2_hwue5y.jpg?sw=1344&sh=756&sm=cut&q=70 1344w, 
-                                                                            /images/medicube-cica.2_hwue5y.jpg?sw=1920&sh=1080&sm=cut&q=70 1920w"
+                                                                          https://images.anantara.africa/medicube-cica.2_hwue5y.jpg?sw=1344&sh=756&sm=cut&q=70 1344w, 
+                                                                          https://images.anantara.africa/medicube-cica.2_hwue5y.jpg?sw=1920&sh=1080&sm=cut&q=70 1920w"
                                           sizes="1920px"
                                           media="(min-width:1024px)"
                                           width="1920"
@@ -1484,7 +1487,7 @@
     <div
       class="c-orientation-message h-hidden"
       data-component="/dist/javascripts/components/global/OrientationMessage.js"
-      data-component-options="{}"
+      
       data-component-force
     >
       <div class="c-orientation-message__content h-text-align-center">
@@ -1549,14 +1552,14 @@
       data-component-force
       data-integration-sprinklr
     ></div>
-    <!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+   
     <script
       type="text/javascript"
       src="/internal/jscript/dwanalytics-22.2.js"
       async="async"
       onload="trackPage()"
     ></script>
-    <!-- Demandware Active Data (body_end-active_data.js) -->
+    
     <script
       src="/internal/jscript/dwac-21.7.js"
       type="text/javascript"
@@ -1585,63 +1588,63 @@
             <picture>
               <source
                 data-srcset="/images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=200&amp;sh=265&amp;sm=cut&amp;q=70 200w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=280&amp;sh=371&amp;sm=cut&amp;q=70 280w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=400&amp;sh=530&amp;sm=cut&amp;q=70 400w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=600&amp;sh=795&amp;sm=cut&amp;q=70 600w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=680&amp;sh=901&amp;sm=cut&amp;q=70 680w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=800&amp;sh=1060&amp;sm=cut&amp;q=70 800w"
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=280&amp;sh=371&amp;sm=cut&amp;q=70 280w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=400&amp;sh=530&amp;sm=cut&amp;q=70 400w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=600&amp;sh=795&amp;sm=cut&amp;q=70 600w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=680&amp;sh=901&amp;sm=cut&amp;q=70 680w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=800&amp;sh=1060&amp;sm=cut&amp;q=70 800w"
                 sizes="400px"
                 media="(min-width:1024px)"
                 width="400"
                 height="530"
                 data-aspectratio="0.7547169811320755"
                 srcset="
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=200&amp;sh=265&amp;sm=cut&amp;q=70  200w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=280&amp;sh=371&amp;sm=cut&amp;q=70  280w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=400&amp;sh=530&amp;sm=cut&amp;q=70  400w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=600&amp;sh=795&amp;sm=cut&amp;q=70  600w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=680&amp;sh=901&amp;sm=cut&amp;q=70  680w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=800&amp;sh=1060&amp;sm=cut&amp;q=70 800w
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=200&amp;sh=265&amp;sm=cut&amp;q=70  200w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=280&amp;sh=371&amp;sm=cut&amp;q=70  280w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=400&amp;sh=530&amp;sm=cut&amp;q=70  400w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=600&amp;sh=795&amp;sm=cut&amp;q=70  600w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=680&amp;sh=901&amp;sm=cut&amp;q=70  680w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=800&amp;sh=1060&amp;sm=cut&amp;q=70 800w
                 " />
               <source
                 data-srcset="/images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=288&amp;sh=240&amp;sm=cut&amp;q=70 288w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=403&amp;sh=336&amp;sm=cut&amp;q=70 403w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70 576w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=864&amp;sh=720&amp;sm=cut&amp;q=70 864w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=979&amp;sh=816&amp;sm=cut&amp;q=70 979w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=1152&amp;sh=960&amp;sm=cut&amp;q=70 1152w"
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=403&amp;sh=336&amp;sm=cut&amp;q=70 403w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70 576w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=864&amp;sh=720&amp;sm=cut&amp;q=70 864w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=979&amp;sh=816&amp;sm=cut&amp;q=70 979w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=1152&amp;sh=960&amp;sm=cut&amp;q=70 1152w"
                 sizes="576px"
                 media="(min-width:768px)"
                 width="576"
                 height="480"
                 data-aspectratio="1.2"
                 srcset="
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=288&amp;sh=240&amp;sm=cut&amp;q=70   288w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=403&amp;sh=336&amp;sm=cut&amp;q=70   403w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70   576w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=864&amp;sh=720&amp;sm=cut&amp;q=70   864w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=979&amp;sh=816&amp;sm=cut&amp;q=70   979w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=1152&amp;sh=960&amp;sm=cut&amp;q=70 1152w
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=288&amp;sh=240&amp;sm=cut&amp;q=70   288w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=403&amp;sh=336&amp;sm=cut&amp;q=70   403w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70   576w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=864&amp;sh=720&amp;sm=cut&amp;q=70   864w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=979&amp;sh=816&amp;sm=cut&amp;q=70   979w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=1152&amp;sh=960&amp;sm=cut&amp;q=70 1152w
                 " />
               <source
                 data-srcset="/images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=144&amp;sh=120&amp;sm=cut&amp;q=70 144w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=202&amp;sh=168&amp;sm=cut&amp;q=70 202w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=288&amp;sh=240&amp;sm=cut&amp;q=70 288w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=432&amp;sh=360&amp;sm=cut&amp;q=70 432w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=490&amp;sh=408&amp;sm=cut&amp;q=70 490w, 
-        /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70 576w"
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=202&amp;sh=168&amp;sm=cut&amp;q=70 202w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=288&amp;sh=240&amp;sm=cut&amp;q=70 288w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=432&amp;sh=360&amp;sm=cut&amp;q=70 432w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=490&amp;sh=408&amp;sm=cut&amp;q=70 490w, 
+      https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70 576w"
                 sizes="288px"
                 media="(min-width:0)"
                 width="288"
                 height="240"
                 data-aspectratio="1.2"
                 srcset="
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=144&amp;sh=120&amp;sm=cut&amp;q=70 144w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=202&amp;sh=168&amp;sm=cut&amp;q=70 202w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=288&amp;sh=240&amp;sm=cut&amp;q=70 288w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=432&amp;sh=360&amp;sm=cut&amp;q=70 432w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=490&amp;sh=408&amp;sm=cut&amp;q=70 490w,
-                  /images/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70 576w
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=144&amp;sh=120&amp;sm=cut&amp;q=70 144w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=202&amp;sh=168&amp;sm=cut&amp;q=70 202w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=288&amp;sh=240&amp;sm=cut&amp;q=70 288w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=432&amp;sh=360&amp;sm=cut&amp;q=70 432w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=490&amp;sh=408&amp;sm=cut&amp;q=70 490w,
+                https://images.anantara.africa/demo/Anantara%20Queer%20Library%20675x1080px.jpg?sw=576&amp;sh=480&amp;sm=cut&amp;q=70 576w
                 " />
               <img
                 class="m-lazyloaded"
@@ -1700,7 +1703,7 @@
                     </p>
                     <div class="c-form__row m-group" data-js-group="">
                       <div
-                        data-component-options="{}"
+                        
                         data-component="/dist/javascripts/components/global/TextField.js"
                         data-js-field-component="true"
                         class="c-field c-text-field m-float"
@@ -1758,7 +1761,7 @@
                     </div>
                     <div class="h-hidden c-form__row m-group" data-js-group="">
                       <div
-                        data-component-options="{}"
+                        
                         data-component="/dist/javascripts/components/global/AbstractField.js"
                         data-js-field-component="true"
                         class="c-field c-check-field m-checkbox"
@@ -1816,7 +1819,7 @@
                       </p>
                     </div>
                     <div
-                      data-component-options="{}"
+                      
                       class="m-autosize h-hidden c-field"
                     >
                       <button
@@ -1829,7 +1832,7 @@
                       </button>
                     </div>
                     <div
-                      data-component-options="{}"
+                      
                       class="h-hidden c-field c-text-field m-active"
                       data-component="/dist/javascripts/components/global/TextField.js"
                       data-js-field-component="true"
@@ -1846,7 +1849,7 @@
                       />
                     </div>
                     <div
-                      data-component-options="{}"
+                      
                       class="h-hidden c-field c-text-field"
                       data-component="/dist/javascripts/components/global/TextField.js"
                       data-js-field-component="true"
@@ -1861,7 +1864,7 @@
                         aria-label=" "
                       />
                     </div>
-                    <div data-component-options="{}" class="m-autosize c-field">
+                    <div  class="m-autosize c-field">
                       <button
                         type="submit"
                         class="m-autosize m-alt c-button"
@@ -1872,7 +1875,7 @@
                       </button>
                     </div>
                     <div
-                      data-component-options="{}"
+                      
                       class="h-hidden c-field c-text-field"
                       data-component="/dist/javascripts/components/global/TextField.js"
                       data-js-field-component="true"
@@ -1888,7 +1891,7 @@
                       />
                     </div>
                     <div
-                      data-component-options="{}"
+                      
                       class="h-hidden c-field c-text-field"
                       data-component="/dist/javascripts/components/global/TextField.js"
                       data-js-field-component="true"
@@ -1904,7 +1907,7 @@
                       />
                     </div>
                     <div
-                      data-component-options="{}"
+                      
                       class="h-hidden c-field c-text-field"
                       data-component="/dist/javascripts/components/global/TextField.js"
                       data-js-field-component="true"
@@ -2105,5 +2108,70 @@
       checkSavedPreference();
       initLocalization();
     </script>
-  </body>
+   <script src="/js/cloudflare-image-loader.js"></script> <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Wire the header Account link to the Firebase login page
+      document.querySelectorAll(".c-user__link.m-login").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const user = AnantaraAuth.currentUser();
+          if (!user) {
+            // Redirect to your login page instead of the old Salesforce login
+            e.preventDefault();
+            window.location.href = "/login.html";
+          }
+          // If already logged in, fall through to /account.html
+        });
+      });
+ 
+      // Wire the minicart button to open the cart panel
+      document.querySelector("[data-js-minicart-button]")?.addEventListener("click", async () => {
+        const cart = await AnantaraCart.get();
+        // Render the cart panel — implement renderCartPanel() to match your design
+        renderCartPanel(cart);
+      });
+    });
+ 
+    /**
+     * Minimal cart panel renderer.
+     * Populates the .c-minicart element that already exists in your HTML.
+     */
+    function renderCartPanel(cart) {
+      const container = document.querySelector(".c-minicart");
+      if (!container) return;
+ 
+      if (!cart.items || cart.items.length === 0) {
+        container.innerHTML = `<p style="padding:24px;text-align:center;">Your cart is empty.</p>`;
+        return;
+      }
+ 
+      const rows = cart.items.map((item) => `
+        <div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #eee;">
+          <img src="${item.imageUrl}" alt="${item.name}" style="width:64px;height:64px;object-fit:cover;" />
+          <div style="flex:1;">
+            <p style="margin:0;font-weight:600;">${item.name}</p>
+            <p style="margin:4px 0;color:#666;font-size:14px;">${item.size}</p>
+            <p style="margin:0;">R${Number(item.price).toFixed(2)}</p>
+          </div>
+          <button
+            style="background:none;border:none;cursor:pointer;color:#999;"
+            onclick="AnantaraCart.remove('${item.pid}','${item.size}')"
+            aria-label="Remove ${item.name}"
+          >✕</button>
+        </div>
+      `).join("");
+ 
+      const total = cart.items.reduce((s, i) => s + (i.price * (i.qty || 1)), 0);
+ 
+      container.innerHTML = `
+        <div style="padding:24px;">
+          <h3 style="margin:0 0 16px;">My Cart (${cart.items.length})</h3>
+          ${rows}
+          <p style="font-weight:700;margin-top:16px;">Total: R${total.toFixed(2)}</p>
+          <a href="/mycart.html" style="display:block;text-align:center;padding:12px;background:#1a1a1a;color:#fff;text-decoration:none;margin-top:12px;">
+            View full cart
+          </a>
+        </div>
+      `;
+    }
+  </script></body>
 </html>

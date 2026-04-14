@@ -52,17 +52,20 @@
     <script>window.performance&&(window.performance.mark("endStylesheetLoading"),window.performance.measure("stylesheetsLoading","startStylesheetLoading","endStylesheetLoading"))</script>   
     <script>"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/worker.js").then(function(e){window.lora.debug&&console.info("[Service Worker] Registered",e),n()});var t=document.querySelector("[data-js-offline-warning]");function n(e){t&&(navigator.onLine?(document.documentElement.classList.remove("m-offline"),t.classList.add("m-closed"),t.setAttribute("aria-hidden","true"),t.removeAttribute("tabindex")):(document.documentElement.classList.add("m-offline"),t.classList.remove("m-closed"),t.setAttribute("aria-hidden","false"),t.setAttribute("tabindex","0"),t.focus()))}window.addEventListener("online",n),window.addEventListener("offline",n)})</script>
 
-    </head>
-    <body class="page-contentpage  " data-lora-datalayer="{&quot;page&quot;:{&quot;id&quot;:&quot;contentpage&quot;,&quot;title&quot;:&quot;Contact us&quot;,&quot;description&quot;:&quot;We invite you to get in touch using your preferring contact method, or consult our frequently asked questions.&quot;,&quot;keywords&quot;:&quot;&quot;,&quot;currencyCode&quot;:&quot;GBP&quot;,&quot;stylesheets&quot;:[],&quot;parameterMap&quot;:{&quot;cid&quot;:&quot;contact-us&quot;},&quot;hasPDElements&quot;:true,&quot;breadcrumbs&quot;:[&quot;Home&quot;,&quot;Contact Us&quot;],&quot;locale&quot;:&quot;en_GB&quot;,&quot;url&quot;:&quot;/on/demandware.servlet/Sites-anantara-uk-Site/en_GB/__SYSTEM__Page-Render?cid=contact-us&amp;params=%7b%22custom%22%3a%22%7b%5c%22pageId%5c%22%3a%5c%22contentpage%5c%22%2c%5c%22httpParameterMap%5c%22%3a%7b%5c%22cid%5c%22%3a%5c%22contact-us%5c%22%7d%7d%22%2c%22aspect_attributes%22%3anull%7d&amp;vf=e55c9bbde04a971fe0c86553f5b7e517&quot;,&quot;seoLinks&quot;:{&quot;canonicalLink&quot;:{},&quot;alternateLinks&quot;:[{&quot;lang&quot;:&quot;en-gb&quot;,&quot;url&quot;:{},&quot;customAlternateUrl&quot;:{}},{&quot;lang&quot;:&quot;en-ie&quot;,&quot;url&quot;:{},&quot;customAlternateUrl&quot;:{}}],&quot;_meta&quot;:{&quot;section&quot;:&quot;global&quot;,&quot;id&quot;:&quot;seolinks&quot;}},&quot;robots&quot;:null},&quot;locale&quot;:&quot;en_GB&quot;,&quot;version&quot;:&quot;v3&quot;,&quot;brand&quot;:&quot;Anantara&quot;,&quot;queryParams&quot;:{&quot;vf&quot;:&quot;e55c9bbde04a971fe0c86553f5b7e517&quot;,&quot;params&quot;:&quot;{\&quot;custom\&quot;:\&quot;{\\\&quot;pageId\\\&quot;:\\\&quot;contentpage\\\&quot;,\\\&quot;httpParameterMap\\\&quot;:{\\\&quot;cid\\\&quot;:\\\&quot;contact-us\\\&quot;}}\&quot;,\&quot;aspect_attributes\&quot;:null}&quot;,&quot;cid&quot;:&quot;contact-us&quot;},&quot;countryCode&quot;:&quot;GB&quot;,&quot;siteTypeLevel&quot;:&quot;main&quot;,&quot;siteSection&quot;:&quot;standard site&quot;,&quot;factory&quot;:&quot;NGL&quot;,&quot;extra&quot;:{&quot;uiInfluencer&quot;:&quot;not present&quot;},&quot;uiconfig&quot;:{&quot;motion&quot;:{&quot;modalsEnabled&quot;:true}},&quot;text&quot;:{&quot;close&quot;:&quot;Close&quot;},&quot;consentGroups&quot;:{},&quot;website_type&quot;:&quot;D2C&quot;,&quot;urls&quot;:{&quot;baseEndpoint&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/_endpoint_&quot;},&quot;_eventName&quot;:&quot;page.metadata.ready&quot;}"  >
+   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-auth-cart.js"></script> </head>
+    <body class="page-contentpage  "   >
             
-<div data-lora-datalayer="{&quot;geoIPLocation&quot;:&quot;ZA&quot;,&quot;ecommerceStatus&quot;:&quot;viewer&quot;,&quot;customer&quot;:{&quot;loggedIn&quot;:false,&quot;isLoyaltyMember&quot;:&quot;false&quot;},&quot;utmParameters&quot;:{},&quot;sprinklrChatSettings&quot;:{&quot;appId&quot;:&quot;68beef755ea80571061d562c_app_2254663&quot;,&quot;skin&quot;:&quot;MODERN&quot;,&quot;disableAttachment&quot;:false,&quot;theme&quot;:{&quot;styles&quot;:{&quot;frame&quot;:{&quot;translateZ&quot;:0,&quot;zIndex&quot;:14},&quot;trigger&quot;:{&quot;yPadding&quot;:59,&quot;xPadding&quot;:10}}}}}"></div>
+<div ></div>
             <div class="c-scroll-snapping" data-component="/dist/javascripts/components/global/ScrollSnapping.js" data-component-force></div>
         <div class="c-overlay" data-component="/dist/javascripts/components/global/Overlay.js" data-component-force></div>
         <div class="c-snackbar" data-component="/dist/javascripts/components/global/Snackbar.js" data-component-force aria-live="polite" aria-atomic="true"></div>
         <div class="h-show-for-sr" data-js-sliding-aria-live aria-live="polite" aria-atomic="true"></div>
         <div class="h-show-for-sr" role="status" data-processing-text="Loading, please wait..." data-finished-text="Loading has been finished" data-js-global-status-message></div>
         <div data-js-app class="page">
-                <ul class="h-no-bullet m-plain" data-component="/dist/javascripts/components/global/SkipLink.js" data-component-force>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#site-content" data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{}"  data-js-skip-to-content  >Skip to content</a> </li>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#footer-nav" data-component="/dist/javascripts/components/global/EventTrigger.js" data-component-options="{&quot;event&quot;:&quot;click&quot;,&quot;skipPreventDefault&quot;:true}" data-analytics="{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;skip to footer navigation&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;skip_to_content&quot;}}"  >Skip to footer navigation</a> </li>  </ul> 
+                <ul class="h-no-bullet m-plain" data-component="/dist/javascripts/components/global/SkipLink.js" data-component-force>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#site-content" data-component="/dist/javascripts/components/global/EventTrigger.js"    data-js-skip-to-content  >Skip to content</a> </li>  <li data-js-alt-tabindex="1"> <a class="c-skip-link" href="#footer-nav" data-component="/dist/javascripts/components/global/EventTrigger.js"    >Skip to footer navigation</a> </li>  </ul> 
    <header data-component="/dist/javascripts/components/global/Header.js" class="l-header " data-js-header  
      data-component-options="{
         &quot;hideOnScroll&quot;:true}" data-component-force 
@@ -103,7 +106,7 @@
                                     please enable Javascript and reload the page.</span> </div>
                         </div>
                     </noscript>
-                    <div data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                    <div 
                         
                         >
                     </div>
@@ -231,10 +234,10 @@
                                 <li class="l-header__top-nav-item m-minicart">
                                     <div data-component="cart/MiniCart"
                                         
-                                        data-component-context="" data-analytics="{}"
+                                        data-component-context="" 
                                         >
                                         <div data-js-sliding-trigger>
-                                            <div class="c-minicart-icon " data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                                            <div class="c-minicart-icon " 
                                                 
                                                 data-component-context=""> 
                                                 <button class="c-minicart-icon__link" 
@@ -267,7 +270,7 @@
                              <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false">☰</button>
                             <div class="c-hamburger__content" id="hamburger-navigation" data-js-hamburger-content data-js-anchor-large>
                                 <div class='c-hamburger__item m-account'>
-                                    <div data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
+                                    <div 
                                         
                                         data-component-context="medium down" data-component-force
                                         >
@@ -278,14 +281,8 @@
                                 </div>
                                <div class='c-hamburger__item m-navigation'>
                                     <div class="c-navigation__wrapper" data-component="/dist/javascripts/components/global/EventTrigger.js"
-                                        data-analytics="{
-                                            &quot;action&quot;:&quot;select&quot;
-                                        }"
-                                        data-component-options="{
-                                            &quot;isDelegate&quot;:true,
-                                            &quot;event&quot;:&quot;click&quot;,
-                                            &quot;skipPreventDefault&quot;:true
-                                        }"
+                                        
+                                        
                                         >
                                         <nav class="c-navigation" aria-label="Main menu" data-component="/dist/javascripts/components/global/Navigation.js"  
                                         data-component-options="{
@@ -322,48 +319,13 @@
                                                 </li>
                                                 <li class="c-navigation__item m-parent m-level-1 m-gifts"
                                                     data-category="gifts" data-js-accordion-item="1"
-                                                    data-analytics="{
-                                                        &quot;category&quot;:&quot;main menu navigation&quot;,
-                                                        &quot;action&quot;:&quot;select::open&quot;,
-                                                        &quot;label&quot;:&quot;gifts&quot;,
-                                                        &quot;extraData&quot;:{
-                                                            &quot;event_name&quot;:&quot;menu_accordion_click&quot;,
-                                                            &quot;click_area&quot;:&quot;burger menu&quot;,
-                                                            &quot;breadcrumb&quot;:&quot;gifts&quot;,
-                                                            &quot;event_detail&quot;:&quot;&quot;
-                                                        }
-                                                    }"
+                                                    
                                                     data-js-root-item
                                                     > 
                                                     <span  class="c-navigation__item-title m-accordion-control m-level-1 ">
                                                         <a class="c-navigation__link m-level-1" href="/gifts.html"
                                                             data-js-trigger
-                                                            data-analytics="{
-                                                                &quot;breakpoints&quot;: {
-                                                                    &quot;large down&quot;: {
-                                                                        &quot;category&quot;: &quot;main menu navigation&quot;,
-                                                                        &quot;action&quot;: &quot;select::burger menu&quot;,
-                                                                        &quot;label&quot;: &quot;gifts&quot;,
-                                                                        &quot;extraData&quot;: {
-                                                                            &quot;event_name&quot;: &quot;menu_click&quot;,
-                                                                            &quot;event_detail&quot;: &quot;text&quot;,
-                                                                            &quot;click_area&quot;: &quot;burger menu&quot;,
-                                                                            &quot;breadcrumb&quot;: &quot;gifts&quot;
-                                                                        }
-                                                                    },
-                                                                    &quot;xlarge&quot;: {
-                                                                        &quot;category&quot;: &quot;main menu navigation&quot;,
-                                                                        &quot;action&quot;: &quot;select::header&quot;,
-                                                                        &quot;label&quot;: &quot;gifts&quot;,
-                                                                        &quot;extraData&quot;: {
-                                                                            &quot;event_name&quot;: &quot;menu_click&quot;,
-                                                                            &quot;event_detail&quot;: &quot;text&quot;,
-                                                                            &quot;click_area&quot;: &quot;header&quot;,
-                                                                            &quot;breadcrumb&quot;: &quot;gifts&quot;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }"
+                                                            
 
                                                             data-title="Gifts"
                                                             > 
@@ -605,10 +567,10 @@
                 <div class="experience-component experience-assets-hero"> 
                     <div class="c-content-hero l-section__row "  
                     data-component="/dist/javascripts/components/global/Hero.js" 
-                    data-analytics="{&quot;promoObject&quot;:{&quot;id&quot;:&quot;promotion&quot;,&quot;name&quot;:&quot;Contact us&quot;}}" data-component-options="{}">     <div class="c-content-hero__image-wrapper" data-js-hero-media> <div class="c-content-hero__image" >     
+                     >     <div class="c-content-hero__image-wrapper" data-js-hero-media> <div class="c-content-hero__image" >     
                        <video id="hero-video"
                                                                     class="c-video-asset__video"
-                                                                    poster="/on/demandware.static/-/Sites-anantara-uk-Library/default/dwaf13fcaf/images/homepage/Above_Us_Steorra_Cover_Hero_16x9.jpg"
+                                                                    poster="/dwaf13fcaf/images/homepage/Above_Us_Steorra_Cover_Hero_16x9.jpg"
                                                                     muted playsinline autoplay loop preload="metadata"
                                                                     style="width:100%;height:100vh;object-fit:cover;">
                                                                     <source src="/videos/skin~barrier.mp4" type="video/mp4">
@@ -628,148 +590,148 @@
     <p class="h-margin-bottom-2">
         <picture>
         <source 
-        srcset="/images/icons/chat-bubble.png?sw=13&sh=13&sm=cut 13w, 
-        /images/icons/chat-bubble.png?sw=18&sh=18&sm=cut 18w, 
-        /images/icons/chat-bubble.png?sw=25&sh=25&sm=cut 25w, 
-        /images/icons/chat-bubble.png?sw=38&sh=38&sm=cut 38w, 
-        /images/icons/chat-bubble.png?sw=43&sh=43&sm=cut 43w, 
-        /images/icons/chat-bubble.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
+        srcset="https://images.anantara.africa/icons/chat-bubble.png?sw=13&sh=13&sm=cut 13w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=18&sh=18&sm=cut 18w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=25&sh=25&sm=cut 25w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=38&sh=38&sm=cut 38w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=43&sh=43&sm=cut 43w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
         width="25" height="25" data-aspectratio="1" /> 
-        <source srcset="/images/icons/chat-bubble.png?sw=13&sh=13&sm=cut 13w, 
-        /images/icons/chat-bubble.png?sw=18&sh=18&sm=cut 18w, 
-        /images/icons/chat-bubble.png?sw=25&sh=25&sm=cut 25w, 
-        /images/icons/chat-bubble.png?sw=38&sh=38&sm=cut 38w, 
-        /images/icons/chat-bubble.png?sw=43&sh=43&sm=cut 43w, 
-        /images/icons/chat-bubble.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
+        <source srcset="https://images.anantara.africa/icons/chat-bubble.png?sw=13&sh=13&sm=cut 13w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=18&sh=18&sm=cut 18w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=25&sh=25&sm=cut 25w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=38&sh=38&sm=cut 38w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=43&sh=43&sm=cut 43w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
         width="25" height="25" data-aspectratio="1" /> 
-        <source srcset="/images/icons/chat-bubble.png?sw=13&sh=13&sm=cut 13w, 
-        /images/icons/chat-bubble.png?sw=18&sh=18&sm=cut 18w, 
-        /images/icons/chat-bubble.png?sw=25&sh=25&sm=cut 25w, 
-        /images/icons/chat-bubble.png?sw=38&sh=38&sm=cut 38w, 
-        /images/icons/chat-bubble.png?sw=43&sh=43&sm=cut 43w, 
-        /images/icons/chat-bubble.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
-        width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/chat-bubble.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
+        <source srcset="https://images.anantara.africa/icons/chat-bubble.png?sw=13&sh=13&sm=cut 13w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=18&sh=18&sm=cut 18w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=25&sh=25&sm=cut 25w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=38&sh=38&sm=cut 38w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=43&sh=43&sm=cut 43w, 
+      https://images.anantara.africa/icons/chat-bubble.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
+        width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/chat-bubble.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
 <span class="h-font-primary-medium  h-text-size-14">Live assistance</span>
 <p class="h-font-primary h-text-size-14 h-margin-top-1 h-margin-bottom-2">Hours of operation: Monday-Sunday, 9am - 5pm GMT.</p>
-<a href=#" onclick="window.sprChat('open')" class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Start conversation &nbsp <picture><source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
+<a href=#" onclick="window.sprChat('open')" class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Start conversation &nbsp <picture><source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
-    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
+    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
 <br class="h-hide-for-large"><br class="h-hide-for-large">
 </div></div>
     <div class="l-column  m-large-4"><div class="experience-component experience-assets-htmlcontent">
     <div class="contact-us-custom">
-<p class="h-margin-bottom-2"><picture><source srcset="/images/icons/whatsapp.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/whatsapp.png?sw=14&sh=14&sm=cut 14w, 
-    /images/icons/whatsapp.png?sw=20&sh=20&sm=cut 20w, 
-    /images/icons/whatsapp.png?sw=30&sh=30&sm=cut 30w, 
-    /images/icons/whatsapp.png?sw=34&sh=34&sm=cut 34w, 
-    /images/icons/whatsapp.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:1024px)" 
+<p class="h-margin-bottom-2"><picture><source srcset="https://images.anantara.africa/icons/whatsapp.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=14&sh=14&sm=cut 14w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=20&sh=20&sm=cut 20w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=30&sh=30&sm=cut 30w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=34&sh=34&sm=cut 34w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:1024px)" 
     width="20" height="20" data-aspectratio="1" /> 
-    <source srcset="/images/icons/whatsapp.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/whatsapp.png?sw=14&sh=14&sm=cut 14w, 
-    /images/icons/whatsapp.png?sw=20&sh=20&sm=cut 20w, 
-    /images/icons/whatsapp.png?sw=30&sh=30&sm=cut 30w, 
-    /images/icons/whatsapp.png?sw=34&sh=34&sm=cut 34w, 
-    /images/icons/whatsapp.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/whatsapp.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=14&sh=14&sm=cut 14w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=20&sh=20&sm=cut 20w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=30&sh=30&sm=cut 30w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=34&sh=34&sm=cut 34w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:768px)" 
     width="20" height="20" data-aspectratio="1" /> 
-    <source srcset="/images/icons/whatsapp.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/whatsapp.png?sw=14&sh=14&sm=cut 14w, 
-    /images/icons/whatsapp.png?sw=20&sh=20&sm=cut 20w, 
-    /images/icons/whatsapp.png?sw=30&sh=30&sm=cut 30w, 
-    /images/icons/whatsapp.png?sw=34&sh=34&sm=cut 34w, 
-    /images/icons/whatsapp.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:0)" 
-    width="20" height="20" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/whatsapp.png?sw=20&sh=20&sm=cut"  width="20" height="20" /></picture></p>
+    <source srcset="https://images.anantara.africa/icons/whatsapp.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=14&sh=14&sm=cut 14w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=20&sh=20&sm=cut 20w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=30&sh=30&sm=cut 30w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=34&sh=34&sm=cut 34w, 
+  https://images.anantara.africa/icons/whatsapp.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:0)" 
+    width="20" height="20" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/whatsapp.png?sw=20&sh=20&sm=cut"  width="20" height="20" /></picture></p>
 <span class="h-font-primary-medium  h-text-size-14">Send us a message on Whatsapp</span>
 <p class="h-font-primary h-text-size-14 h-margin-top-1 h-margin-bottom-2">Hours of operation: Monday-Sunday, 9am - 5pm GMT.</p>
-<a href="https://api.whatsapp.com/send?phone=447361488974&text=To%20begin%20speaking%20with%20a%20trained%20Anantara%20consultant,%20press%20the%20%27send%27%20button.&source=&data=&autoload=false" class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Start Conversation &nbsp <picture><source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
+<a href="https://api.whatsapp.com/send?phone=447361488974&text=To%20begin%20speaking%20with%20a%20trained%20Anantara%20consultant,%20press%20the%20%27send%27%20button.&source=&data=&autoload=false" class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Start Conversation &nbsp <picture><source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
-    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
+    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
 <!-- <img width="14" height="12" class="m-lazyload" src="https://staging-eu03-lorealsa.demandware.net/on/demandware.static/-/Sites-NGAnantara-Library/default/v7659c6db838aa42f9f328c6ed5ab47b87e909172/images/pages/contact%2Dus/arrow%2Dright.svg" alt="arrow right" /> -->
 </div>
 </div></div>
     <div class="l-column  m-large-4"><div class="experience-component experience-assets-htmlcontent">
     <div class="contact-us-custom">
-<p class="h-margin-bottom-2"><picture><source srcset="/images/icons/phone.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/phone.png?sw=14&sh=14&sm=cut 14w, 
-    /images/icons/phone.png?sw=20&sh=20&sm=cut 20w, 
-    /images/icons/phone.png?sw=30&sh=30&sm=cut 30w, 
-    /images/icons/phone.png?sw=34&sh=34&sm=cut 34w, 
-    /images/icons/phone.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:1024px)" 
+<p class="h-margin-bottom-2"><picture><source srcset="https://images.anantara.africa/icons/phone.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/phone.png?sw=14&sh=14&sm=cut 14w, 
+  https://images.anantara.africa/icons/phone.png?sw=20&sh=20&sm=cut 20w, 
+  https://images.anantara.africa/icons/phone.png?sw=30&sh=30&sm=cut 30w, 
+  https://images.anantara.africa/icons/phone.png?sw=34&sh=34&sm=cut 34w, 
+  https://images.anantara.africa/icons/phone.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:1024px)" 
     width="20" height="20" data-aspectratio="1" /> 
-    <source srcset="/images/icons/phone.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/phone.png?sw=14&sh=14&sm=cut 14w, 
-    /images/icons/phone.png?sw=20&sh=20&sm=cut 20w, 
-    /images/icons/phone.png?sw=30&sh=30&sm=cut 30w, 
-    /images/icons/phone.png?sw=34&sh=34&sm=cut 34w, 
-    /images/icons/phone.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/phone.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/phone.png?sw=14&sh=14&sm=cut 14w, 
+  https://images.anantara.africa/icons/phone.png?sw=20&sh=20&sm=cut 20w, 
+  https://images.anantara.africa/icons/phone.png?sw=30&sh=30&sm=cut 30w, 
+  https://images.anantara.africa/icons/phone.png?sw=34&sh=34&sm=cut 34w, 
+  https://images.anantara.africa/icons/phone.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:768px)" 
     width="20" height="20" data-aspectratio="1" /> 
-    <source srcset="/images/icons/phone.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/phone.png?sw=14&sh=14&sm=cut 14w, 
-    /images/icons/phone.png?sw=20&sh=20&sm=cut 20w, 
-    /images/icons/phone.png?sw=30&sh=30&sm=cut 30w, 
-    /images/icons/phone.png?sw=34&sh=34&sm=cut 34w, 
-    /images/icons/phone.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:0)" 
-    width="20" height="20" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/phone.png?sw=20&sh=20&sm=cut"  width="20" height="20" /></picture></p>
+    <source srcset="https://images.anantara.africa/icons/phone.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/phone.png?sw=14&sh=14&sm=cut 14w, 
+  https://images.anantara.africa/icons/phone.png?sw=20&sh=20&sm=cut 20w, 
+  https://images.anantara.africa/icons/phone.png?sw=30&sh=30&sm=cut 30w, 
+  https://images.anantara.africa/icons/phone.png?sw=34&sh=34&sm=cut 34w, 
+  https://images.anantara.africa/icons/phone.png?sw=40&sh=40&sm=cut 40w" sizes="20px" media="(min-width:0)" 
+    width="20" height="20" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/phone.png?sw=20&sh=20&sm=cut"  width="20" height="20" /></picture></p>
 <span class="h-font-primary-medium  h-text-size-14">Phone</span>
 <p class="h-font-primary h-text-size-14 h-margin-top-1 h-margin-bottom-2">Hours of operation: Monday-Friday, 9am - 5pm GMT. (excluding public holiday)
 </p>
-<a href="tel:+442036374577" class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Call us &nbsp <picture><source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
+<a href="tel:+442036374577" class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Call us &nbsp <picture><source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
-    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
+    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
 <!-- <img width="14" height="12" class="m-lazyload" src="https://staging-eu03-lorealsa.demandware.net/on/demandware.static/-/Sites-NGAnantara-Library/default/v7659c6db838aa42f9f328c6ed5ab47b87e909172/images/pages/contact%2Dus/arrow%2Dright.svg" alt="arrow right" /> -->
 </div>
 </div></div>
@@ -778,147 +740,147 @@
 </div><div data-index="2" class="l-column"><div class="l-row l-row-padding  m-gutter-small-for-small m-gutter-small-for-large h-text-justify-content-center h-text-justify-content-center-for-large h-text-align-items-center h-text-align-items-flex-start-for-large">
     <div class="l-column  m-large-4"><div class="experience-component experience-assets-htmlcontent">
     <div class="contact-us-custom">
-<p class="h-margin-bottom-2"><picture><source srcset="/images/icons/info.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/info.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/info.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/info.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/info.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/info.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
+<p class="h-margin-bottom-2"><picture><source srcset="https://images.anantara.africa/icons/info.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/info.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/info.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/info.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/info.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/info.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
     width="25" height="25" data-aspectratio="1" /> 
-    <source srcset="/images/icons/info.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/info.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/info.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/info.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/info.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/info.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/info.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/info.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/info.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/info.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/info.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/info.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
     width="25" height="25" data-aspectratio="1" /> 
-    <source srcset="/images/icons/info.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/info.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/info.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/info.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/info.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/info.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
-    width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/info.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
+    <source srcset="https://images.anantara.africa/icons/info.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/info.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/info.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/info.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/info.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/info.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
+    width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/info.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
 <span class="h-font-primary-medium  h-text-size-14">Enquiry form</span>
 <p class="h-font-primary h-text-size-14 h-margin-top-1 h-margin-bottom-2">We welcome your questions or feedback via our online form.</p>
-<a href="/customer-service/enquiry-form.html"  class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Submit an enquiry  &nbsp <picture><source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
+<a href="/customer-service/enquiry-form.html"  class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Submit an enquiry  &nbsp <picture><source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
-    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
+    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
 </div>
 <br class="h-hide-for-large"><br class="h-hide-for-large">
 </div></div>
     <div class="l-column  m-large-4"><div class="experience-component experience-assets-htmlcontent">
     <div class="contact-us-custom">
-<p class="h-margin-bottom-2"><picture><source srcset="/images/icons/location-pin.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/location-pin.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/location-pin.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/location-pin.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/location-pin.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/location-pin.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
+<p class="h-margin-bottom-2"><picture><source srcset="https://images.anantara.africa/icons/location-pin.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
     width="25" height="25" data-aspectratio="1" /> 
-    <source srcset="/images/icons/location-pin.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/location-pin.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/location-pin.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/location-pin.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/location-pin.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/location-pin.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/location-pin.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
     width="25" height="25" data-aspectratio="1" /> 
-    <source srcset="/images/icons/location-pin.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/location-pin.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/location-pin.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/location-pin.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/location-pin.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/location-pin.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
-    width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/location-pin.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
+    <source srcset="https://images.anantara.africa/icons/location-pin.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/location-pin.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
+    width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/location-pin.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
 <span class="h-font-primary-medium  h-text-size-14">Store locator</span>
 <p class="h-font-primary h-text-size-14 h-margin-top-1 h-margin-bottom-2">Visit a signature store for a personalised consultation.</p>
-<a href="/stores.html"  class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Find a store &nbsp <picture><source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
+<a href="/stores.html"  class="c-content-tile h-text-align-items-center h-font-primary-medium h-text-size-14 contact-link">Find a store &nbsp <picture><source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
-    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a></div>
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
+    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a></div>
 <br class="h-hide-for-large"><br class="h-hide-for-large">
 </div></div>
     <div class="l-column  m-large-4"><div class="experience-component experience-assets-htmlcontent">
     <div class="contact-us-custom">
-<p class="h-margin-bottom-2"><picture><source srcset="/images/icons/questionmark.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/questionmark.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/questionmark.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/questionmark.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/questionmark.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/questionmark.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
+<p class="h-margin-bottom-2"><picture><source srcset="https://images.anantara.africa/icons/questionmark.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:1024px)" 
     width="25" height="25" data-aspectratio="1" /> 
-    <source srcset="/images/icons/questionmark.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/questionmark.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/questionmark.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/questionmark.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/questionmark.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/questionmark.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/questionmark.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:768px)" 
     width="25" height="25" data-aspectratio="1" /> 
-    <source srcset="/images/icons/questionmark.png?sw=13&sh=13&sm=cut 13w, 
-    /images/icons/questionmark.png?sw=18&sh=18&sm=cut 18w, 
-    /images/icons/questionmark.png?sw=25&sh=25&sm=cut 25w, 
-    /images/icons/questionmark.png?sw=38&sh=38&sm=cut 38w, 
-    /images/icons/questionmark.png?sw=43&sh=43&sm=cut 43w, 
-    /images/icons/questionmark.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
-    width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/questionmark.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
+    <source srcset="https://images.anantara.africa/icons/questionmark.png?sw=13&sh=13&sm=cut 13w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=18&sh=18&sm=cut 18w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=25&sh=25&sm=cut 25w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=38&sh=38&sm=cut 38w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=43&sh=43&sm=cut 43w, 
+  https://images.anantara.africa/icons/questionmark.png?sw=50&sh=50&sm=cut 50w" sizes="25px" media="(min-width:0)" 
+    width="25" height="25" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/questionmark.png?sw=25&sh=25&sm=cut"  width="25" height="25" /></picture></p>
 <span class="h-font-primary-medium  h-text-size-14">Help centre</span>
 <p class="h-font-primary h-text-size-14 h-margin-top-1 h-margin-bottom-2">Find the answers to frequently asked questions, including information about orders, delivery and returns.</p>
-<a   class="c-content-tile h-font-primary-medium h-text-size-14 contact-link h-text-align-items-center" target="_blank">Explore help centre &nbsp <picture><source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
+<a   class="c-content-tile h-font-primary-medium h-text-size-14 contact-link h-text-align-items-center" target="_blank">Explore help centre &nbsp <picture><source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:1024px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:768px)" 
     width="16" height="16" data-aspectratio="1" /> 
-    <source srcset="/images/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
-    /images/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
-    /images/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
-    /images/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
-    /images/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
-    /images/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
-    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="/images/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
+    <source srcset="https://images.anantara.africa/icons/arrow-right.png?sw=10&sh=10&sm=cut 10w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=11&sh=11&sm=cut 11w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut 16w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=24&sh=24&sm=cut 24w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=27&sh=27&sm=cut 27w, 
+  https://images.anantara.africa/icons/arrow-right.png?sw=32&sh=32&sm=cut 32w" sizes="16px" media="(min-width:0)" 
+    width="16" height="16" data-aspectratio="1" /> <img class="" alt="Icon" loading="lazy" src="https://images.anantara.africa/icons/arrow-right.png?sw=16&sh=16&sm=cut"  width="16" height="16" /></picture></a>
 </div>
 </div></div>
 </div></div></div></div>    
@@ -939,7 +901,7 @@
 </div>
 <div class="experience-component experience-layouts-section">
     <div class="l-section  m-has-background  m-plain" style='background-color: #F6F5E8;' data-js-section>
-          <div class="c-section l-section__row "  data-js-layout data-analytics="{&quot;promoObject&quot;:{&quot;creative&quot;:&quot;‘please give me some good advice in your next letter. i promise not to follow it.’&quot;}}"  >   <div class="c-section__headings h-text-align-items-center">     <h2 class='c-section__title h-text-align-center'> <br>‘Please give me some good advice in your next letter. I promise not to follow it.’ </h2>    <p class="c-section__description h-text-align-center"><p class="h-text-bold h-text-size-14">Edna St. Vincent Millay</p></p>  </div>       </div>   
+          <div class="c-section l-section__row "  data-js-layout   >   <div class="c-section__headings h-text-align-items-center">     <h2 class='c-section__title h-text-align-center'> <br>‘Please give me some good advice in your next letter. I promise not to follow it.’ </h2>    <p class="c-section__description h-text-align-center"><p class="h-text-bold h-text-size-14">Edna St. Vincent Millay</p></p>  </div>       </div>   
     </div>
 </div>
 <div class="experience-component experience-layouts-section">
@@ -965,28 +927,28 @@
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/shipping.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/shipping.svg" alt="" />
 				<span class="c-content-reassurance__text">Complimentary <br class="h-show-for-small-only"> shipping</span>
 			</div>
 		</div>
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/Secure_checkout.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/Secure_checkout.svg" alt="" />
 				<span class="c-content-reassurance__text">Secure checkout</span>
 			</div>
 		</div>
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/samples.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/samples.svg" alt="" />
 				<span class="c-content-reassurance__text">Complimentary <br class="h-show-for-small-only"> samples</span>
 			</div>
 		</div>
 		<div class="l-column">
 			<div class="c-content-reassurance__item">
 				<img width="52" 
-                height="52" class="c-content-reassurance__image m-lazyload" src="/images/icons/gift.svg" alt="" />
+                height="52" class="c-content-reassurance__image m-lazyload" src="https://images.anantara.africa/icons/gift.svg" alt="" />
 				<span class="c-content-reassurance__text">Complimentary <br class="h-show-for-small-only"> gift wrapping</span>
 			</div>
 		</div>
@@ -1176,8 +1138,8 @@
                                 </h2>
                             </div>
                             <div class="l-column m-large-auto">
-                                <div data-component="/dist/javascripts/components/global/PopOver.js" data-component-options="{&quot;triggerSelector&quot;:&quot;#localization-025175&quot;,&quot;showOnClick&quot;:true,&quot;destroyOnHide&quot;:false,&quot;targetContent&quot;:&quot;#localization-menu-085660&quot;,&quot;width&quot;:&quot;300&quot;,&quot;position&quot;:&quot;top-end&quot;,&quot;flip&quot;:false,&quot;enableAnalyticsOnShow&quot;:true,&quot;isInStickyHeader&quot;:false}" 
-                                data-analytics="{&quot;category&quot;:&quot;country selector&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;footer&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;country_selector_selected&quot;,&quot;click_area&quot;:&quot;footer&quot;}}"> <div class="c-select m-secondary"> <button class="c-select__placeholder h-color-light" 
+                                <div data-component="/dist/javascripts/components/global/PopOver.js"  
+                                > <div class="c-select m-secondary"> <button class="c-select__placeholder h-color-light" 
                                     aria-label="Change location, currency or language - The current options are R - SA (EN)" aria-expanded="false" id="localization-025175"> R - ZAR (SA) </button> </div> <div class="h-hidden" id="localization-menu-085660">  </div> </div>
                             </div>
                         </div>
@@ -1186,7 +1148,7 @@
                 </div>
                 
             </div>
-             <img src="/images/logo-small.png" alt="Anantara logo"
+             <img src="https://images.anantara.africa/logo-small.png" alt="Anantara logo"
                                                     style="width:30px;height: auto; padding-bottom:12px;" />
              
         </div>
@@ -1227,11 +1189,11 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 </footer>
 <!-- dwMarker="slot" dwContentID="slot-email-signup-toaster" dwContext="global"-->
-<button data-component-force data-component="/dist/javascripts/components/global/BackTop.js" class="c-back-top" aria-label="Back to top" title="Back to top" data-analytics="{&quot;category&quot;:&quot;main menu navigation&quot;,&quot;action&quot;:&quot;select&quot;,&quot;label&quot;:&quot;back to top&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;skip_to_content&quot;}}"></button> 
+<button data-component-force data-component="/dist/javascripts/components/global/BackTop.js" class="c-back-top" aria-label="Back to top" title="Back to top" ></button> 
         </div>
         <div class="c-highlighter" data-component="/dist/javascripts/components/global/FocusHighlighter.js" data-component-force></div>
         <div class="error-messaging"></div>
-        <div class="c-orientation-message h-hidden" data-component="/dist/javascripts/components/global/OrientationMessage.js" data-component-options="{}" data-component-force> <div class="c-orientation-message__content h-text-align-center"> <div class="c-orientation-message__image-wrapper"> <img class="c-orientation-message__image m-lazyload" alt="Orientation message" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy" data-src="/dw/image/v2/AAQP_PRD/dw1b2f9b40/images/landscape.png?sw=152&sh=125&sm=cut&sfrm=png"  data-srcset="/dw/image/v2/AAQP_PRD/dw1b2f9b40/images/landscape.png?sw=76&sh=63&sm=cut&sfrm=png 76w, 
+        <div class="c-orientation-message h-hidden" data-component="/dist/javascripts/components/global/OrientationMessage.js"  data-component-force> <div class="c-orientation-message__content h-text-align-center"> <div class="c-orientation-message__image-wrapper"> <img class="c-orientation-message__image m-lazyload" alt="Orientation message" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy" data-src="/dw/image/v2/AAQP_PRD/dw1b2f9b40/images/landscape.png?sw=152&sh=125&sm=cut&sfrm=png"  data-srcset="/dw/image/v2/AAQP_PRD/dw1b2f9b40/images/landscape.png?sw=76&sh=63&sm=cut&sfrm=png 76w, 
             /dw/image/v2/AAQP_PRD/dw1b2f9b40/images/landscape.png?sw=106&sh=88&sm=cut&sfrm=png 106w, 
             /dw/image/v2/AAQP_PRD/dw1b2f9b40/images/landscape.png?sw=152&sh=125&sm=cut&sfrm=png 152w, 
             /dw/image/v2/AAQP_PRD/dw1b2f9b40/images/landscape.png?sw=228&sh=188&sm=cut&sfrm=png 228w, 
@@ -1255,11 +1217,11 @@ document.addEventListener('DOMContentLoaded', () => {
 <script src="/dist/javascripts/system.config.js"></script>
 <script src="/dist/javascripts/main.js"></script> <script>System.import("/dist/javascripts/app.js")</script>  
 <script>window.performance&&(window.performance.mark("endJavascriptLoading"),window.performance.measure("javascriptsLoading","startJavascriptLoading","endJavascriptLoading"))</script> 
-         <div data-component="/dist/javascripts/components/global/Optanon.js" data-component-options="{&quot;changeSessionTrackingUrl&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/CookiesManagement-UpdateTrackingStatus&quot;,&quot;optanonCookieGroupsToDisableSFCCTracking&quot;:&quot;2&quot;,&quot;optanonDomainScriptID&quot;:&quot;&quot;,&quot;optanonCookieToggleInfoDisplayEnable&quot;:true,&quot;buttons&quot;:{&quot;confirmMyChoices&quot;:&quot;Confirm My Choices&quot;,&quot;allowAll&quot;:&quot;Allow All&quot;},&quot;styles&quot;:{&quot;confirmMyChoices&quot;:&quot;margin-top: 0;&quot;,&quot;allowAll&quot;:&quot;margin-left: 0;&quot;}}" data-component-force data-global-optanon></div>  <div data-component="integration/Sprinklr" data-component-options="{&quot;url&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/Sprinklr-GetContentScript?ajax&#x3D;true&quot;,&quot;productsUrl&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/Sprinklr-GetCartProducts&quot;,&quot;conversationInfoUrl&quot;:&quot;/on/demandware.store/Sites-anantara-uk-Site/en_GB/Sprinklr-ConversationInfo&quot;,&quot;pageInitUrl&quot;:null,&quot;analytics&quot;:{&quot;event&quot;:&quot;uaevent&quot;,&quot;category&quot;:&quot;contentpage&quot;,&quot;action&quot;:&quot;live chat&quot;,&quot;label&quot;:&quot;rollout&quot;,&quot;extraData&quot;:{&quot;event_name&quot;:&quot;rollout_live_chat&quot;}}}" data-component-force data-integration-sprinklr></div> 
-    <!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+         <div data-component="/dist/javascripts/components/global/Optanon.js"  data-component-force data-global-optanon></div>  <div data-component="integration/Sprinklr"  data-component-force data-integration-sprinklr></div> 
+   
 
 <script type="text/javascript" src="/internal/jscript/dwanalytics-22.2.js" async="async" onload="trackPage()"></script>
-<!-- Demandware Active Data (body_end-active_data.js) -->
+
 <script src="/internal/jscript/dwac-21.7.js" type="text/javascript" async="async"></script><!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
 <script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async"></script>
 <script>
@@ -1426,5 +1388,70 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize everything
         checkSavedPreference();
         initLocalization();
-        </script></body>
+        </script> <script src="/js/cloudflare-image-loader.js"></script> <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Wire the header Account link to the Firebase login page
+      document.querySelectorAll(".c-user__link.m-login").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const user = AnantaraAuth.currentUser();
+          if (!user) {
+            // Redirect to your login page instead of the old Salesforce login
+            e.preventDefault();
+            window.location.href = "/login.html";
+          }
+          // If already logged in, fall through to /account.html
+        });
+      });
+ 
+      // Wire the minicart button to open the cart panel
+      document.querySelector("[data-js-minicart-button]")?.addEventListener("click", async () => {
+        const cart = await AnantaraCart.get();
+        // Render the cart panel — implement renderCartPanel() to match your design
+        renderCartPanel(cart);
+      });
+    });
+ 
+    /**
+     * Minimal cart panel renderer.
+     * Populates the .c-minicart element that already exists in your HTML.
+     */
+    function renderCartPanel(cart) {
+      const container = document.querySelector(".c-minicart");
+      if (!container) return;
+ 
+      if (!cart.items || cart.items.length === 0) {
+        container.innerHTML = `<p style="padding:24px;text-align:center;">Your cart is empty.</p>`;
+        return;
+      }
+ 
+      const rows = cart.items.map((item) => `
+        <div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #eee;">
+          <img src="${item.imageUrl}" alt="${item.name}" style="width:64px;height:64px;object-fit:cover;" />
+          <div style="flex:1;">
+            <p style="margin:0;font-weight:600;">${item.name}</p>
+            <p style="margin:4px 0;color:#666;font-size:14px;">${item.size}</p>
+            <p style="margin:0;">R${Number(item.price).toFixed(2)}</p>
+          </div>
+          <button
+            style="background:none;border:none;cursor:pointer;color:#999;"
+            onclick="AnantaraCart.remove('${item.pid}','${item.size}')"
+            aria-label="Remove ${item.name}"
+          >✕</button>
+        </div>
+      `).join("");
+ 
+      const total = cart.items.reduce((s, i) => s + (i.price * (i.qty || 1)), 0);
+ 
+      container.innerHTML = `
+        <div style="padding:24px;">
+          <h3 style="margin:0 0 16px;">My Cart (${cart.items.length})</h3>
+          ${rows}
+          <p style="font-weight:700;margin-top:16px;">Total: R${total.toFixed(2)}</p>
+          <a href="/mycart.html" style="display:block;text-align:center;padding:12px;background:#1a1a1a;color:#fff;text-decoration:none;margin-top:12px;">
+            View full cart
+          </a>
+        </div>
+      `;
+    }
+  </script></body>
 </html>
