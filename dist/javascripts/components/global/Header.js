@@ -12,10 +12,24 @@
       "mixins/Accessibility",
       "toolbox/object",
       "toolbox/device",
+      // ── Firebase ──────────────────────────────────────────────
+      "firebase/app",
+      "firebase/auth",
+      "config/firebaseConfig", // ← your project's config module
     ],
     function (a) {
       "use strict";
       var b, c, d, e, f, g, h, i, j, k, l, m, n;
+      // Firebase imports
+      var initializeApp,
+        getAuth,
+        onAuthStateChanged,
+        signInWithEmailAndPassword,
+        GoogleAuthProvider,
+        signInWithPopup,
+        signOut,
+        firebaseConfig;
+
       return (
         a("default", void 0),
         {
@@ -33,7 +47,7 @@
               e = a.mediaQuery;
             },
             function (a) {
-              (f = a.on), (g = a.off), (h = a.trigger);
+              ((f = a.on), (g = a.off), (h = a.trigger));
             },
             function (a) {
               i = a.animate;
@@ -49,6 +63,21 @@
             },
             function (a) {
               m = a.isKeyboardLikeClick;
+            },
+            // Firebase setters
+            function (a) {
+              getApp = a.getApp;;
+            },
+            function (a) {
+              getAuth = a.getAuth;
+              onAuthStateChanged = a.onAuthStateChanged;
+              signInWithEmailAndPassword = a.signInWithEmailAndPassword;
+              GoogleAuthProvider = a.GoogleAuthProvider;
+              signInWithPopup = a.signInWithPopup;
+              signOut = a.signOut;
+            },
+            function (a) {
+              firebaseConfig = a.default;
             },
           ],
           execute: function () {
@@ -79,9 +108,24 @@
                       b,
                     ),
                   );
+
+                try {
+                 this._firebaseApp  = getApp();
+                  this._auth = getAuth(this._firebaseApp);
+                  this._authUnsubscribe = null;
+                  } catch (e) {
+  console.warn("[Header] Firebase not yet initialized — auth features disabled.");
+  this._firebaseApp = null;
+  this._auth = null;
+}
                 }
+
+                // ─────────────────────────────────────────────────
+                // Lifecycle
+                // ─────────────────────────────────────────────────
+
                 initCache() {
-                  (this.sentinelObserver = null),
+                  ((this.sentinelObserver = null),
                     (this.headerObserver = null),
                     (this.animationTimeout = null),
                     (this.classNames = {
@@ -125,10 +169,12 @@
                       !e.is("xlarge") &&
                       (this.selectors.headerLogo = this.element.querySelector(
                         "[data-js-header-logo]",
-                      ));
+                      )));
+                      this.selectors.loginButton = this.element.querySelector("[data-js-header-login]");
                 }
+
                 initState() {
-                  (this.state.isSticky = !1),
+                  ((this.state.isSticky = !1),
                     (this.state.isDisabled = !1),
                     (this.state.wasDisabled = !1),
                     (this.state.searchOpened = !1),
@@ -137,10 +183,142 @@
                     (this.state.lastScrollTop = void 0),
                     (this.state.isHeaderTransparent = !1),
                     (this.state.isLogoAnimating = !1),
-                    (this.state.isKeyboardControl = !1);
+                    (this.state.isKeyboardControl = !1),
+                    // ── auth ────────────────────────────────────────
+                    (this.state.currentUser = null));
                 }
+
+                afterInit() {
+                  ((this.state.isHeaderTransparent =
+                    document.body.classList.contains("header-transparent")),
+                    this.options.enableSticky &&
+                      (super.saveOriginalTabIndex(),
+                      this.addHeaderObserver(),
+                      this.addSentinel()),
+                    this.options.enableAnimatedLogo &&
+                      !e.is("xlarge") &&
+                      this.animateLogo());
+
+                  // ── Start listening to Firebase auth state ─────
+                  if (this._auth) {
+  this._authUnsubscribe = onAuthStateChanged(
+                    this._auth,
+                    (user) => {
+                      this.state.currentUser = user || null;
+                      user ? this.updateHeader(user) : this.resetHeader();
+                    },
+                  );
+                }
+                }
+
+                // ─────────────────────────────────────────────────
+                // Auth — public API
+                // ─────────────────────────────────────────────────
+
+                /**
+                 * Sign in with Google popup.
+                 * Call from your HTML: header.signInWithGoogle()
+                 */
+                async signInWithGoogle() {
+                  const provider = new GoogleAuthProvider();
+                  try {
+                    await signInWithPopup(this._auth, provider);
+                  } catch (err) {
+                    console.error("[Header] Google sign-in failed:", err);
+                  }
+                }
+
+                /**
+                 * Sign in with email + password.
+                 * Call from your HTML: header.signInWithEmail(email, password)
+                 */
+                async signInWithEmail(email, password) {
+                  try {
+                    await signInWithEmailAndPassword(
+                      this._auth,
+                      email,
+                      password,
+                    );
+                  } catch (err) {
+                    console.error("[Header] Email sign-in failed:", err);
+                  }
+                }
+
+                /**
+                 * Sign out the current user.
+                 * Call from your HTML: header.signOutUser()
+                 */
+                async signOutUser() {
+                  try {
+                    await signOut(this._auth);
+                  } catch (err) {
+                    console.error("[Header] Sign-out failed:", err);
+                  }
+                }
+
+                // ─────────────────────────────────────────────────
+                // Auth — DOM helpers (private)
+                // ─────────────────────────────────────────────────
+
+                _getInitials(name) {
+                  return name
+                    .split(" ")
+                    .slice(0, 2)
+                    .map((p) => p[0].toUpperCase())
+                    .join("");
+                }
+
+                updateHeader(user) {
+                  const name = user.displayName || user.email;
+                  const initials = this._getInitials(name);
+
+                  this._setTextById("headerName", name);
+                  this._setTextById("headerInitials", initials);
+                  this._setTextById("dropdownName", name);
+                  this._setTextById("dropdownEmail", user.email);
+                  this._setTextById("dropdownInitials", initials);
+
+                  // Swap initials for photo on Google accounts
+                  if (user.photoURL) {
+                    ["headerAvatar", "dropdownAvatar"].forEach((id) => {
+                      const el = document.getElementById(id);
+                      if (el) {
+                        el.innerHTML = `<img src="${user.photoURL}" alt="${name}" />`;
+                      }
+                    });
+                  }
+
+                  // Let the rest of the app know
+                  d.emit("header.auth.signedIn", { user });
+                }
+
+                resetHeader() {
+                  this._setTextById("headerName", "");
+                  this._setTextById("headerInitials", "");
+                  this._setTextById("dropdownName", "");
+                  this._setTextById("dropdownEmail", "");
+                  this._setTextById("dropdownInitials", "");
+
+                  ["headerAvatar", "dropdownAvatar"].forEach((id) => {
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = "";
+                  });
+
+                  d.emit("header.auth.signedOut");
+                }
+
+                /** Safe getElementById + textContent setter */
+                _setTextById(id, value) {
+                  const el = document.getElementById(id);
+                  if (el) el.textContent = value;
+                }
+
+                // ─────────────────────────────────────────────────
+                // Everything below is unchanged from the original
+                // ─────────────────────────────────────────────────
+
                 bindEvents() {
-                  this.options.enableSticky &&
+                  (this.options.enableSticky &&
                     d.on(
                       "contentPanel.transition.ended",
                       this.updateHeight,
@@ -152,6 +330,8 @@
                         this.selectors.simpleSearchCta,
                         this.toggleSearchBar.bind(this),
                       ),
+                      this.selectors.loginButton &&
+  f("click", this.selectors.loginButton, this.signInWithGoogle.bind(this)),
                     f(
                       "keydown",
                       this.selectors.searchContainer,
@@ -180,19 +360,9 @@
                     d.on("global.close", this.onGlobalClose, this),
                     this.state.isHeaderTransparent &&
                       (d.on("header.focused", this.headerFocused, this),
-                      d.on("header.unfocused", this.headerUnfocused, this));
+                      d.on("header.unfocused", this.headerUnfocused, this)));
                 }
-                afterInit() {
-                  (this.state.isHeaderTransparent =
-                    document.body.classList.contains("header-transparent")),
-                    this.options.enableSticky &&
-                      (super.saveOriginalTabIndex(),
-                      this.addHeaderObserver(),
-                      this.addSentinel()),
-                    this.options.enableAnimatedLogo &&
-                      !e.is("xlarge") &&
-                      this.animateLogo();
-                }
+
                 headerFocused() {
                   this.element.classList.contains(this.classNames.focused) ||
                     this.element.classList.add(this.classNames.focused);
@@ -204,7 +374,7 @@
                 onKeyboardControl(a) {
                   switch (a.key) {
                     case "Tab":
-                      a.shiftKey ||
+                      (a.shiftKey ||
                         "last" !==
                           a.target.getAttribute("data-js-focus-order") ||
                         (this.isElementFocusable(this.triggerElement)
@@ -223,10 +393,10 @@
                                 this.triggerElement,
                                 this.onTriggerElementKeydown.bind(this),
                               ))
-                            : this.closeSearchBar());
+                            : this.closeSearchBar()));
                       break;
                     case "Escape":
-                      this.closeSearchBar(), this.triggerElement.focus();
+                      (this.closeSearchBar(), this.triggerElement.focus());
                       break;
                     default:
                   }
@@ -257,15 +427,15 @@
                       break;
                     }
                     case "Escape":
-                      this.closeSearchBar(),
-                        this.untrapFocusElement(this.triggerElement);
+                      (this.closeSearchBar(),
+                        this.untrapFocusElement(this.triggerElement));
                       break;
                     default:
                       a.shouldStopImmediatePropagation = !1;
                   }
                 }
                 addHeaderObserver() {
-                  (this.headerObserver = new IntersectionObserver(
+                  ((this.headerObserver = new IntersectionObserver(
                     (a) => {
                       const b = a[0];
                       1 > b.intersectionRatio && this.enableSticky();
@@ -273,31 +443,33 @@
                     { threshold: [0, 1] },
                   )),
                     this.selectors.anchorElement &&
-                      this.headerObserver.observe(this.selectors.anchorElement);
+                      this.headerObserver.observe(
+                        this.selectors.anchorElement,
+                      ));
                 }
                 checkHeaderHeight() {
                   const a = this.state.isDisabled
                     ? 0
                     : this.selectors.headerInner.getBoundingClientRect().height;
-                  ((!this.options.hideOnScroll &&
+                  (((!this.options.hideOnScroll &&
                     this.options.hideElementOnScroll) ||
                     this.state.wasDisabled !== this.state.isDisabled) &&
                     d.emit("header.updateHeight", {
                       height: a,
                       isSticky: !this.state.isDisabled,
                     }),
-                    (this.state.wasDisabled = this.state.isDisabled);
+                    (this.state.wasDisabled = this.state.isDisabled));
                 }
                 updateHeight(a) {
                   let b = "auto";
-                  this.state.isSticky &&
+                  (this.state.isSticky &&
                     (b = a || this.element.getBoundingClientRect().height),
                     (this.element.style.height =
                       "auto" === b ? b : "".concat(b, "px")),
-                    this.checkHeaderHeight();
+                    this.checkHeaderHeight());
                 }
                 toggleHamburger(a) {
-                  (this.state.hamburgerOpened = a),
+                  ((this.state.hamburgerOpened = a),
                     this.state.hamburgerOpened
                       ? this.element.classList.add(
                           this.classNames.hamburgerOpened,
@@ -306,21 +478,21 @@
                           this.element.classList.remove(
                             this.classNames.hamburgerOpened,
                           );
-                        }, 200);
+                        }, 200));
                 }
                 toggleSearchBar() {
                   let a =
                     0 < arguments.length && void 0 !== arguments[0]
                       ? arguments[0]
                       : {};
-                  (this._triggerElement = a.triggerElement),
+                  ((this._triggerElement = a.triggerElement),
                     (this.state.isKeyboardControl =
                       e.is("medium down") && a.isKeyboardControl
                         ? a.isKeyboardControl
                         : m(a)),
                     this.state.searchOpened
                       ? this.closeSearchBar()
-                      : this.openSearchBar();
+                      : this.openSearchBar());
                 }
                 get triggerElement() {
                   return this._triggerElement || this.selectors.simpleSearchCta;
@@ -340,12 +512,12 @@
                     e.is("xlarge") &&
                       d.emit("overlay.open", {
                         onClose: () => {
-                          h("simplesearch.overlay.closed", this.element, {
+                          (h("simplesearch.overlay.closed", this.element, {
                             bubbles: !0,
                           }),
                             h("simplesearch.results.hide", this.element, {
                               bubbles: !0,
-                            });
+                            }));
                         },
                       }),
                     d.emit("hamburger.menu.close"),
@@ -380,7 +552,7 @@
                     this.classNames;
                   d.emit("overlay.close");
                   const e = () => {
-                    d.emit("header.search.close"),
+                    (d.emit("header.search.close"),
                       (this.state.searchOpened = !1),
                       d.emitStateUpdate("simplesearch.state.updated", {
                         searchOpened: this.state.searchOpened,
@@ -390,7 +562,7 @@
                         this.selectors.simpleSearchCta.setAttribute(
                           "aria-expanded",
                           "false",
-                        );
+                        ));
                   };
                   return a
                     ? (e(), Promise.resolve())
@@ -409,7 +581,7 @@
                     )
                       return void this.toggleHeaderWrapperOnScroll();
                     const a = window.scrollY;
-                    a < this.state.lastScrollTop && this.state.isDisabled
+                    (a < this.state.lastScrollTop && this.state.isDisabled
                       ? (this.element.classList.remove(
                           this.classNames.disabled,
                         ),
@@ -420,24 +592,24 @@
                         (this.element.classList.add(this.classNames.disabled),
                         (this.state.isDisabled = !0)),
                       this.checkHeaderHeight(),
-                      (this.state.lastScrollTop = a);
+                      (this.state.lastScrollTop = a));
                   }
                 }
                 onSearchOverlayClosed() {
                   this.closeSearchBar();
                 }
                 onSearchClose(a) {
-                  this.closeSearchBar(),
-                    a && a.restoreFocus && this.triggerElement.focus();
+                  (this.closeSearchBar(),
+                    a && a.restoreFocus && this.triggerElement.focus());
                 }
                 onGlobalClose() {
                   this.closeSearchBar(!0);
                 }
                 onOpenSearchSuggestions() {
-                  this.element.classList.add(
+                  (this.element.classList.add(
                     this.classNames.searchSuggestionsOpened,
                   ),
-                    (this.state.searchSuggestionsOpened = !0);
+                    (this.state.searchSuggestionsOpened = !0));
                 }
                 onCloseSearchSuggestion() {
                   this.state.searchSuggestionsOpened &&
@@ -464,7 +636,7 @@
                       this.toggleHeaderWrapperOnScroll());
                 }
                 disableSticky() {
-                  (this.state.isSticky = !1),
+                  ((this.state.isSticky = !1),
                     (this.state.isDisabled = !1),
                     this.updateHeight("auto"),
                     this.element.classList.remove(this.classNames.sticked),
@@ -474,7 +646,7 @@
                     e.is("xlarge") && super.resetOriginalTabIndex(!0),
                     !this.options.hideOnScroll &&
                       this.options.hideElementOnScroll &&
-                      this.toggleHeaderWrapperOnScroll();
+                      this.toggleHeaderWrapperOnScroll());
                 }
                 toggleHeaderWrapperOnScroll() {
                   if (
@@ -482,7 +654,7 @@
                     this.options.hideElementOnScroll
                   ) {
                     const a = window.scrollY || 0;
-                    a > this.state.lastScrollTop
+                    (a > this.state.lastScrollTop
                       ? this.headerStickyHidden.forEach((a) => {
                           a.classList.add(this.classNames.hidden);
                         })
@@ -491,7 +663,7 @@
                           a.classList.remove(this.classNames.hidden);
                         }),
                       this.checkHeaderHeight(),
-                      (this.state.lastScrollTop = a);
+                      (this.state.lastScrollTop = a));
                   }
                 }
                 animateLogo() {
@@ -544,22 +716,26 @@
                     this.addSentinelObserver());
                 }
                 addSentinelObserver() {
-                  (this.sentinelObserver = new IntersectionObserver(
+                  ((this.sentinelObserver = new IntersectionObserver(
                     (a) => {
                       const b = a[0];
                       1 <= b.intersectionRatio && this.disableSticky();
                     },
                     { threshold: [1] },
                   )),
-                    this.sentinelObserver.observe(this.sentinel);
+                    this.sentinelObserver.observe(this.sentinel));
                 }
                 setAccessibility() {
-                  super.setAltTabIndex(),
+                  (super.setAltTabIndex(),
                     document.activeElement === document.body &&
-                      this.element.focus();
+                      this.element.focus());
                 }
+
                 destroy() {
-                  this.options.enableSticky &&
+                  // ── Unsubscribe Firebase auth listener first ───
+                  this._authUnsubscribe && this._authUnsubscribe();
+
+                  (this.options.enableSticky &&
                     (this.sentinelObserver &&
                       this.sentinelObserver.disconnect(),
                     this.headerObserver && this.headerObserver.disconnect(),
@@ -571,6 +747,7 @@
                     )),
                     g("click", this.selectors.simpleSearchCta),
                     g("keydown", this.selectors.searchContainer),
+                    g("click", this.selectors.loginButton),
                     g("simplesearch.results.show", this.element),
                     g("simplesearch.results.hide", this.element),
                     g("simplesearch.overlay.closed", this.element),
@@ -610,7 +787,7 @@
                         "header.unfocused",
                         this.headerUnfocused,
                         this,
-                      ));
+                      )));
                 }
               }),
             );
@@ -619,6 +796,4 @@
       );
     },
   );
-  //# sourceMappingURL=Header.js.map
 })(System, System);
-//# sourceURL=/dist/javascripts/components/global/Header.js.js

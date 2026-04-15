@@ -253,7 +253,8 @@
  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="/js/firebase-auth-cart.js"></script> </head>
+<script src="/js/firebase-auth-cart.js"></script>
+<script src="/js/add-to-cart.js"></script> </head>
   <body
     class="page-search"
     data-lora-datalayer='{"page":{"id":"search","title":"Facial Masks | For All Skin Types","description":"Hydrating formulations, from moisturisers and hydrators to vitamin-rich serums and facial oils. Complimentary online skin consultations and standard shipping available.","keywords":"","currencyCode":"GBP","stylesheets":[],"category":"product selector page","mainStylesheetId":"category","ogImage":null,"breadcrumbs":["Home","Skin Care","Category","Masks"],"locale":"en_GB","url":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/Search-Show?cgid=hydrators-and-moisturisers","seoLinks":{"paginationLinks":{"next":"?start=0&amp;sz=12"},"canonicalLink":{},"alternateLinks":[{"lang":"en-gb","url":{},"customAlternateUrl":{}},{"lang":"en-ie","url":{},"customAlternateUrl":{}}],"_meta":{"section":"global","id":"seolinks"}}},"locale":"en_GB","version":"v3","brand":"Anantara","queryParams":{"cgid":"hydrators-and-moisturisers"},"countryCode":"GB","siteTypeLevel":"main","siteSection":"standard site","factory":"NGL","extra":{"uiInfluencer":"not present"},"uiconfig":{"motion":{"modalsEnabled":true}},"text":{"close":"Close"},"consentGroups":{},"website_type":"D2C","urls":{"baseEndpoint":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/_endpoint_"},"currentCategory":{"name":"Masks"},"_eventName":"page.metadata.ready"}'
@@ -502,64 +503,113 @@
                 </ul>
               </div>
               <div class="l-header__top-nav m-right" data-js-alt-tabindex="3">
-                <ul class="l-header__top-nav-list">
-                  <li class="l-header__top-nav-item m-account">
-                    <div
-                      class="c-user"
-                      data-component="header/CustomerInfo"
-                      data-component-force
-                      data-js-reminder-tooltip-target
-                    >
-                      <div
-                        data-component="/dist/javascripts/components/global/ReminderToolTip.js"
-                        data-component-options='{
-                                                "text":"&lt;!-- dwMarker&#x3D;\"content\" dwContentID&#x3D;\"cef03680703e0f8034e9e0649b\" --&gt;&lt;div class&#x3D;\"h-text-align-center\"&gt;\r\n    &lt;p&gt;Log in or create a free account to enjoy all the benefits&lt;/p&gt;\r\n    &lt;div class&#x3D;\"c-button-group m-stacked h-margin-bottom-0\"&gt;\r\n    &lt;a href&#x3D;\"/login\" class&#x3D;\"c-button m-autosize h-margin-bottom-1\" data-component&#x3D;\"/dist/javascripts/components/global/EventTrigger\".js data-component-options&#x3D;&#x27;{\"event\": \"modal.open\",
-                                                     \"data\": {\"options\":                         \r\n{\"cssPath\": \"login.css\",
-                                                         \"ariaLabel\": \"Sign In or Create Account\",
-                                                          \"classNames\": {\"container\": [\"m-login\"] },
-                                                          \"contentUrl\": \"/login\"}}}&#x27;&gt;\r\n        Sign In\r\n    &lt;/a&gt;\r\n    &lt;a href&#x3D;\"/on/demandware.store/Sites-anantara-uk-Site/en_GB/Account-Registration?configId&#x3D;modal\" class&#x3D;\"c-button m-autosize m-secondary\" data-component&#x3D;\"/dist/javascripts/components/global/EventTrigger\".js data-component-options&#x3D;&#x27;{\"event\": \"modal.open\", \r\n\"data\": {\"options\": {\"cssPath\": \"registration.css\", \"classNames\": {\"container\": [\"m-registration\"] },\"contentUrl\": \"/on/demandware.store/Sites-anantara-uk-Site/en_GB/Account-Registration?configId&#x3D;modal\"}}}&#x27;&gt;\r\n        Create an Account\r\n    &lt;/a&gt;\r\n&lt;/div&gt;",
-                                                          "width":"200",
-                                                          "tooltipDisplayDurationSec":0,"reminderTooltipIntervalMin":30,"enableRuntimeReminderTooltip":true,"verifyActualityRequestData":{
-                                                            "section":"header",
-                                                            "id":"headercustomerinfo"},"cookieReminder":"customer-info-reminder",
-                                                            "reminderAnalytics":{
-                                                            "event":"nievent",
-                                                            "label":"tooltip",
-                                                            "category":"header",
-                                                            "action":"display::registration reminder",
-                                                            "extraData":{
-                                                            "event_name":"callout_registration_reminder_display"
-                                                        }
-                                                    },
-                                                    "headerAttachment":true,"showContentForSticky":false,"showOnClick":false}'
-                        data-component-force
-                      ></div>
-                      <a
-                        rel="nofollow"
-                        class="c-user__link m-login"
-                        aria-label="Account"
-                        href="/login.html?lcnfg&#x3D;O80%2FdU%2FGpumSIBTxd9JK%2Bw%3D%3D"
-                      >
-                        <i title="Account" class="c-icon h-hidden">
-                          <span class="c-icon__svg c-user__link-icon"> </span>
-                        </i>
-                        <span class="c-user__text m-login">Account</span>
-                      </a>
-                    </div>
-                  </li>
-                  <div class="l-header__top-nav-item m-email-signup">
-                    <a
-                      rel="nofollow"
-                      class="c-user__link m-login"
-                      aria-label="Email sign up"
-                      href="/signup.html"
-                    >
-                      <i title="Email sign up" class="c-icon h-hidden">
-                        <span class="c-icon__svg c-user__link-icon"> </span>
-                      </i>
-                      <span class="c-user__text m-login">Email sign up</span>
-                    </a>
-                  </div>
+  <ul class="l-header__top-nav-list">
+    
+    <!-- ACCOUNT / USER COMPONENT -->
+    <li class="l-header__top-nav-item m-account">
+      <div class="c-user" id="userComponent">
+        
+        <!-- LOGGED OUT: "Account" → links to login page -->
+        <div class="c-user__logged-out" id="userLoggedOut">
+          <a 
+            rel="nofollow" 
+            class="c-user__link m-login" 
+            href="/login.html"
+            id="accountLoginLink"
+          >
+            <i title="Account" class="c-icon h-hidden">
+              <span class="c-icon__svg c-user__link-icon"></span>
+            </i>
+            <span class="c-user__text m-login">Account</span>
+          </a>
+        </div>
+
+        <!-- LOGGED IN: "My Account" → opens dropdown -->
+        <div class="c-user__logged-in" id="userLoggedIn" style="display: none;">
+          <button 
+            class="c-user__dropdown-toggle" 
+            aria-expanded="false" 
+            aria-haspopup="true"
+            id="userDropdownToggle"
+          >
+            <span class="c-user__avatar" id="userAvatar">
+              <span class="c-user__initials" id="userInitials">--</span>
+              <img id="userPhoto" src="" alt="" style="display: none;">
+            </span>
+            <span class="c-user__name" id="userFirstName">User</span>
+            <span class="c-user__dropdown-arrow" aria-hidden="true">▼</span>
+          </button>
+
+          <!-- DROPDOWN MENU -->
+          <div 
+            class="c-user__dropdown-menu" 
+            role="menu" 
+            aria-labelledby="userDropdownToggle" 
+            id="userDropdownMenu" 
+            hidden
+          >
+            <div class="c-user__dropdown-header">
+              <span class="c-user__greeting">Hello, <strong id="userFullName">User</strong></span>
+              <span class="c-user__email" id="userEmail">user@email.com</span>
+            </div>
+            
+            <ul class="c-user__dropdown-list">
+              <li class="c-user__dropdown-item">
+                <a href="/account.html" class="c-user__dropdown-link" role="menuitem">
+                  <span class="c-user__dropdown-icon">👤</span>
+                  My Account
+                </a>
+              </li>
+              <li class="c-user__dropdown-item">
+                <a href="/wishlist.html" class="c-user__dropdown-link" role="menuitem">
+                  <span class="c-user__dropdown-icon">♡</span>
+                  Wishlist
+                  <span class="c-user__badge" id="wishlistCount">0</span>
+                </a>
+              </li>
+              <li class="c-user__dropdown-item">
+                <a href="/favorites.html" class="c-user__dropdown-link" role="menuitem">
+                  <span class="c-user__dropdown-icon">★</span>
+                  Favorites
+                  <span class="c-user__badge" id="favoritesCount" style="display: none;">0</span>
+                </a>
+              </li>
+              <li class="c-user__dropdown-item">
+                <a href="/orders.html" class="c-user__dropdown-link" role="menuitem">
+                  <span class="c-user__dropdown-icon">📦</span>
+                  Order History
+                </a>
+              </li>
+              <li class="c-user__dropdown-item">
+                <a href="/skin-profile.html" class="c-user__dropdown-link" role="menuitem">
+                  <span class="c-user__dropdown-icon">🧴</span>
+                  My Skin Profile
+                </a>
+              </li>
+              <li class="c-user__dropdown-divider"></li>
+              <li class="c-user__dropdown-item">
+                <a href="/account-settings.html" class="c-user__dropdown-link" role="menuitem">
+                  <span class="c-user__dropdown-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="c-user__dropdown-item">
+                <button 
+                  type="button" 
+                  class="c-user__dropdown-link c-user__signout" 
+                  role="menuitem"
+                  id="signOutBtn"
+                >
+                  <span class="c-user__dropdown-icon">→</span>
+                  Sign Out
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+                 
                   <li class="l-header__top-nav-item m-minicart">
                     <div
                       data-component="cart/MiniCart"
