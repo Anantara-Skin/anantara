@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmed | Anantara SA</title>
+    <link rel="icon" href="/images/app/favicon.png" />
+    <link href="/dist/css/commons.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="/js/firebase-auth-cart.js"></script>
+    <style>
+      :root {
+        --cream: #f6f5e8;
+        --cream-warm: #fef6ec;
+        --ink: #1a1a1a;
+        --ink-muted: #5a5a5a;
+        --ink-light: #9a9a9a;
+        --border: #e0dfd6;
+        --gold: #c9a96e;
+        --gold-light: #e8d5b0;
+        --white: #ffffff;
+        --green: #2d6a4f;
+        --green-light: #d8f3dc;
+        --font-serif: "Georgia", "Times New Roman", serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      /* ── HEADER ── */
+      .page-header {
+        background: var(--ink);
+        padding: 0 40px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header-logo {
+        color: var(--white);
+        font-family: var(--font-serif);
+        font-size: 22px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .header-nav {
+        display: flex;
+        gap: 24px;
+      }
+      .header-nav a {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .header-nav a:hover {
+        color: var(--white);
+      }
+
+      /* ── CONFIRMATION HERO ── */
+      .confirm-hero {
+        background: var(--ink);
+        padding: 72px 40px 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .confirm-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% 0%,
+          rgba(201, 169, 110, 0.12),
+          transparent 70%
+        );
+      }
+      .confirm-icon {
+        width: 72px;
+        height: 72px;
+        background: var(--green-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin: 0 auto 28px;
+        position: relative;
+        animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      @keyframes popIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .confirm-hero h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 400;
+        color: var(--white);
+        letter-spacing: 0.04em;
+        margin-bottom: 12px;
+        position: relative;
+      }
+      .confirm-hero p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 15px;
+        max-width: 460px;
+        margin: 0 auto 28px;
+        position: relative;
+      }
+      .order-num {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 10px 24px;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        position: relative;
+      }
+      .order-num strong {
+        color: var(--white);
+      }
+
+      /* ── STEPS PROGRESS ── */
+      .steps-track {
+        max-width: 640px;
+        margin: 40px auto 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .steps-track::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .track-fill {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 33%;
+        height: 2px;
+        background: var(--gold);
+        transition: width 1.5s ease;
+      }
+      .track-step {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        z-index: 1;
+      }
+      .track-dot {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .track-dot.done {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--ink);
+      }
+      .track-dot.active {
+        background: rgba(201, 169, 110, 0.15);
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .track-label {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .track-label.active {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* ── MAIN CONTENT ── */
+      .success-page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 40px 100px;
+      }
+      @media (max-width: 700px) {
+        .success-page {
+          padding: 40px 20px 80px;
+        }
+        .page-header {
+          padding: 0 20px;
+        }
+        .confirm-hero {
+          padding: 48px 20px 60px;
+        }
+      }
+
+      /* ── SUMMARY CARD ── */
+      .summary-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        margin-bottom: 32px;
+      }
+      .card-header {
+        padding: 20px 28px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card-title {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+      }
+      .card-body {
+        padding: 28px;
+      }
+
+      /* ── ORDER DETAILS ── */
+      .detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      @media (max-width: 600px) {
+        .detail-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .detail-group {
+      }
+      .detail-label {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-bottom: 6px;
+      }
+      .detail-value {
+        font-size: 14px;
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      .status-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        background: var(--green-light);
+        color: var(--green);
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      /* ── LOADING STATE ── */
+      .order-loading {
+        text-align: center;
+        padding: 60px;
+        color: var(--ink-muted);
+      }
+      .spin {
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--border);
+        border-top-color: var(--ink);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto 16px;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ── WHAT HAPPENS NEXT ── */
+      .next-steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 32px;
+      }
+      @media (max-width: 700px) {
+        .next-steps {
+          grid-template-columns: 1fr;
+        }
+      }
+      .next-step {
+        background: var(--white);
+        border: 1px solid var(--border);
+        padding: 24px;
+        text-align: center;
+      }
+      .next-step-icon {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+      .next-step-title {
+        font-family: var(--font-serif);
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 6px;
+      }
+      .next-step-text {
+        font-size: 13px;
+        color: var(--ink-muted);
+        line-height: 1.5;
+      }
+
+      /* ── ACTIONS ── */
+      .action-bar {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 48px;
+      }
+      .btn-primary {
+        padding: 14px 32px;
+        background: var(--ink);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-family: inherit;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover {
+        background: #333;
+      }
+      .btn-outline {
+        padding: 14px 32px;
+        background: none;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-family: inherit;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s;
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      /* ── RECOMMENDED ── */
+      .section-head {
+        font-family: var(--font-serif);
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      .reco-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 700px) {
+        .reco-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .reco-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        text-decoration: none;
+        color: var(--ink);
+        display: block;
+        transition: border-color 0.2s;
+      }
+      .reco-card:hover {
+        border-color: var(--ink);
+      }
+      .reco-img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        background: var(--cream-warm);
+        display: block;
+      }
+      .reco-info {
+        padding: 14px 16px;
+      }
+      .reco-name {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .reco-price {
+        font-size: 13px;
+        color: var(--ink-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="page-header">
+      <a href="/" class="header-logo">Anantara</a>
+      <nav class="header-nav">
+        <a href="/fragrance.html">Fragrance</a>
+        <a href="/skin-care.html">Skin Care</a>
+        <a href="/login.html">Account</a>
+      </nav>
+    </header>
+
+    <!-- CONFIRMATION HERO -->
+    <div class="confirm-hero">
+      <div class="confirm-icon">✓</div>
+      <h1>Order Confirmed</h1>
+      <p>Thank you for your order. We're preparing your fragrance with care.</p>
+      <div class="order-num">
+        Order <strong id="order-id-display">—</strong>
+      </div>
+
+      <!-- PROGRESS TRACKER -->
+      <div class="steps-track">
+        <div class="track-fill" id="track-fill"></div>
+        <div class="track-step">
+          <div class="track-dot done">✓</div>
+          <div class="track-label active">Ordered</div>
+        </div>
+        <div class="track-step">
+          <div class="track-dot active">⚙</div>
+          <div class="track-label active">Processing</div>
+        </div>
+        <div class="track-step">
+          <div class="track-dot">📦</div>
+          <div class="track-label">Dispatched</div>
+        </div>
+        <div class="track-step">
+          <div class="track-dot">🏠</div>
+          <div class="track-label">Delivered</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE BODY -->
+    <div class="success-page">
+      <!-- ORDER DETAIL CARD -->
+      <div class="summary-card">
+        <div class="card-header">
+          <span class="card-title">Order Details</span>
+          <span class="status-chip"
+            ><span class="status-dot"></span> Confirmed</span
+          >
+        </div>
+        <div class="card-body" id="order-body">
+          <div class="order-loading">
+            <div class="spin"></div>
+            <p>Loading order details…</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT HAPPENS NEXT -->
+      <div class="next-steps">
+        <div class="next-step">
+          <div class="next-step-icon">📧</div>
+          <div class="next-step-title">Confirmation Email</div>
+          <div class="next-step-text">
+            A detailed receipt has been sent to your email address.
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-icon">🌿</div>
+          <div class="next-step-title">Careful Preparation</div>
+          <div class="next-step-text">
+            Your order is being prepared with sustainable packaging.
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-icon">🚚</div>
+          <div class="next-step-title">Dispatch Notification</div>
+          <div class="next-step-text">
+            You'll receive a tracking number once your order ships.
+          </div>
+        </div>
+      </div>
+
+      <!-- RECOMMENDED PRODUCTS -->
+      <div style="margin-top: 56px">
+        <h2 class="section-head">You might also enjoy</h2>
+        <div class="reco-grid">
+          <a
+            href="/fragrance/creed/millesime-imperial/index.html"
+            class="reco-card"
+          >
+            <div
+              class="reco-img"
+              style="
+                background: var(--cream-warm);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+              "
+            >
+              🌸
+            </div>
+            <div class="reco-info">
+              <div class="reco-name">Millesime Imperial</div>
+              <div class="reco-price">R1,450.00</div>
+            </div>
+          </a>
+          <a href="/fragrance/creed/aventus/index.html" class="reco-card">
+            <div
+              class="reco-img"
+              style="
+                background: var(--cream);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+              "
+            >
+              🍎
+            </div>
+            <div class="reco-info">
+              <div class="reco-name">Creed Aventus</div>
+              <div class="reco-price">R1,450.00</div>
+            </div>
+          </a>
+          <a href="/fragrance/creed/oud-zarian/index.html" class="reco-card">
+            <div
+              class="reco-img"
+              style="
+                background: #f0ece4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+              "
+            >
+              🌙
+            </div>
+            <div class="reco-info">
+              <div class="reco-name">Creed Oud Zarian</div>
+              <div class="reco-price">R1,450.00</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="action-bar">
+        <a href="/fragrance.html" class="btn-primary">Continue Shopping</a>
+        <a href="/account-orders.html" class="btn-outline">View All Orders</a>
+      </div>
+    </div>
+
+    <script>
+      const WORKER = "https://anantara-cart.anantara-skin.workers.dev";
+
+      function fmt(n) {
+        return "R" + Number(n).toFixed(2);
+      }
+
+      function getParam(name) {
+        return new URLSearchParams(location.search).get(name);
+      }
+
+      async function getFBToken() {
+        try {
+          if (typeof AnantaraAuth !== "undefined" && AnantaraAuth.getIdToken)
+            return await AnantaraAuth.getIdToken();
+        } catch {}
+        return null;
+      }
+
+      async function init() {
+        const orderId = getParam("orderId");
+
+        // Show the order ID
+        if (orderId) {
+          document.getElementById("order-id-display").textContent =
+            orderId.slice(0, 8).toUpperCase() + "…";
+        } else {
+          document.getElementById("order-id-display").textContent = "N/A";
+        }
+
+        // Animate the track fill
+        setTimeout(() => {
+          document.getElementById("track-fill").style.width = "33%";
+        }, 400);
+
+        // Try to load order details from Firestore via Firebase
+        if (!orderId) {
+          renderFallback();
+          return;
+        }
+
+        const fbToken = await getFBToken();
+        if (!fbToken) {
+          renderFallback();
+          return;
+        }
+
+        try {
+          const res = await fetch(
+            `https://firestore.googleapis.com/v1/projects/${getFirebaseProjectId()}/databases/(default)/documents/orders/${orderId}`,
+            { headers: { Authorization: `Bearer ${fbToken}` } },
+          );
+          if (!res.ok) throw new Error("Order not found");
+          const doc = await res.json();
+          renderOrderDetails(doc, orderId);
+        } catch {
+          renderFallback(orderId);
+        }
+      }
+
+      function getFirebaseProjectId() {
+        // Pull from firebase config if available
+        try {
+          return firebase.app().options.projectId;
+        } catch {
+          return "your-firebase-project"; // fallback
+        }
+      }
+
+      function renderOrderDetails(doc, orderId) {
+        const fields = doc.fields || {};
+        const items = JSON.parse(fields.items?.stringValue || "[]");
+        const total = fields.total?.doubleValue || 0;
+        const status = fields.status?.stringValue || "pending";
+        const created = parseInt(fields.createdAt?.integerValue || "0");
+        const dateStr = created
+          ? new Date(created).toLocaleDateString("en-ZA", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          : "—";
+
+        const itemsHTML = items
+          .map(
+            (i) => `
+    <div style="display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);">
+      ${
+        i.imageUrl
+          ? `<img src="${i.imageUrl}" alt="${i.name}" style="width:52px;height:52px;object-fit:cover;background:var(--cream);">`
+          : `<div style="width:52px;height:52px;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:20px;">🌸</div>`
+      }
+      <div style="flex:1;">
+        <div style="font-size:14px;font-weight:500;">${i.name}</div>
+        <div style="font-size:12px;color:var(--ink-light);">${i.size || ""} · Qty ${i.qty || 1}</div>
+      </div>
+      <div style="font-size:14px;font-weight:600;">${fmt(i.price * (i.qty || 1))}</div>
+    </div>`,
+          )
+          .join("");
+
+        document.getElementById("order-body").innerHTML = `
+    <div class="detail-grid" style="margin-bottom:28px;">
+      <div class="detail-group">
+        <div class="detail-label">Order number</div>
+        <div class="detail-value" style="font-family:var(--font-serif);font-size:16px;">${orderId}</div>
+      </div>
+      <div class="detail-group">
+        <div class="detail-label">Order date</div>
+        <div class="detail-value">${dateStr}</div>
+      </div>
+      <div class="detail-group">
+        <div class="detail-label">Payment status</div>
+        <div class="detail-value">
+          <span class="status-chip">
+            <span class="status-dot"></span>
+            ${status.charAt(0).toUpperCase() + status.slice(1)}
+          </span>
+        </div>
+      </div>
+      <div class="detail-group">
+        <div class="detail-label">Order total</div>
+        <div class="detail-value" style="font-size:18px;font-weight:700;">${fmt(total)}</div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:12px;">Items Ordered</div>
+    ${itemsHTML}
+    <div style="display:flex;justify-content:flex-end;margin-top:16px;font-weight:700;font-size:16px;">
+      Total: ${fmt(total)}
+    </div>`;
+      }
+
+      function renderFallback(orderId) {
+        document.getElementById("order-body").innerHTML = `
+    <div class="detail-grid">
+      <div class="detail-group">
+        <div class="detail-label">Order number</div>
+        <div class="detail-value" style="font-family:var(--font-serif);font-size:16px;">
+          ${orderId || "—"}
+        </div>
+      </div>
+      <div class="detail-group">
+        <div class="detail-label">Status</div>
+        <div class="detail-value">
+          <span class="status-chip"><span class="status-dot"></span> Confirmed</span>
+        </div>
+      </div>
+      <div class="detail-group">
+        <div class="detail-label">Payment</div>
+        <div class="detail-value">Secured via Yoco</div>
+      </div>
+      <div class="detail-group">
+        <div class="detail-label">Delivery</div>
+        <div class="detail-value">3–5 business days</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding:16px;background:var(--cream);font-size:14px;color:var(--ink-muted);">
+      A detailed order confirmation has been sent to your email address. 
+      Visit <a href="/account-orders.html" style="color:var(--ink);">My Account</a> to track your order.
+    </div>`;
+      }
+
+      init();
+    </script>
+  </body>
+</html>

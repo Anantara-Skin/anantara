@@ -1,0 +1,1106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Anantara SA</title>
+    <link rel="icon" href="/images/app/favicon.png" />
+    <link href="/dist/css/commons.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="/js/firebase-auth-cart.js"></script>
+    <style>
+      :root {
+        --cream: #f6f5e8;
+        --cream-warm: #fef6ec;
+        --ink: #1a1a1a;
+        --ink-muted: #5a5a5a;
+        --ink-light: #9a9a9a;
+        --border: #e0dfd6;
+        --border-focus: #1a1a1a;
+        --gold: #c9a96e;
+        --gold-light: #e8d5b0;
+        --white: #ffffff;
+        --red: #c0392b;
+        --green: #27ae60;
+        --font-serif: "Georgia", "Times New Roman", serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      /* ── HEADER ── */
+      .checkout-header {
+        background: var(--ink);
+        padding: 0 40px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header-logo {
+        color: var(--white);
+        font-family: var(--font-serif);
+        font-size: 22px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .header-steps {
+        display: flex;
+        gap: 0;
+        align-items: center;
+      }
+      .step {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .step.active {
+        color: var(--white);
+      }
+      .step .num {
+        width: 22px;
+        height: 22px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+      }
+      .step-sep {
+        width: 40px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 0 12px;
+      }
+
+      /* ── LAYOUT ── */
+      .checkout-page {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 56px 40px 100px;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 60px;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .checkout-page {
+          grid-template-columns: 1fr;
+          padding: 32px 20px 80px;
+          gap: 40px;
+        }
+        .checkout-header {
+          padding: 0 20px;
+        }
+        .header-steps {
+          display: none;
+        }
+        /* Order summary goes last on mobile */
+        .checkout-summary {
+          order: 2;
+        }
+        .checkout-form-section {
+          order: 1;
+        }
+      }
+
+      /* ── SECTION TITLES ── */
+      .section-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+      .section-num {
+        width: 24px;
+        height: 24px;
+        background: var(--ink);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+
+      /* ── AUTH CHECK ── */
+      .auth-gate {
+        background: var(--cream-warm);
+        border: 1px solid var(--gold-light);
+        padding: 28px 32px;
+        margin-bottom: 36px;
+        text-align: center;
+      }
+      .auth-gate h3 {
+        font-family: var(--font-serif);
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+      .auth-gate p {
+        color: var(--ink-muted);
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+      .auth-gate .btn-row {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      /* ── FORM ELEMENTS ── */
+      .form-section {
+        margin-bottom: 40px;
+      }
+
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .field-row.single {
+        grid-template-columns: 1fr;
+      }
+      .field-row.triple {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field-label {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+      }
+      .field-label .req {
+        color: var(--red);
+        margin-left: 2px;
+      }
+
+      .field-input,
+      .field-select {
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        background: var(--white);
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--ink);
+        outline: none;
+        transition: border-color 0.2s;
+        width: 100%;
+        -webkit-appearance: none;
+      }
+      .field-input:focus,
+      .field-select:focus {
+        border-color: var(--border-focus);
+      }
+      .field-input.error {
+        border-color: var(--red);
+      }
+      .field-error {
+        font-size: 12px;
+        color: var(--red);
+        margin-top: 4px;
+      }
+
+      .field-select-wrap {
+        position: relative;
+      }
+      .field-select-wrap::after {
+        content: "↓";
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: var(--ink-muted);
+        font-size: 12px;
+      }
+
+      /* ── SHIPPING OPTIONS ── */
+      .shipping-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .shipping-option {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 18px;
+        border: 1px solid var(--border);
+        background: var(--white);
+        cursor: pointer;
+        transition: border-color 0.2s;
+      }
+      .shipping-option:hover {
+        border-color: var(--ink-muted);
+      }
+      .shipping-option.selected {
+        border-color: var(--ink);
+      }
+      .shipping-option input[type="radio"] {
+        accent-color: var(--ink);
+      }
+      .shipping-option-info {
+        flex: 1;
+      }
+      .shipping-option-name {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .shipping-option-desc {
+        font-size: 12px;
+        color: var(--ink-muted);
+      }
+      .shipping-option-price {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      /* ── PAYMENT NOTE ── */
+      .payment-info {
+        background: var(--white);
+        border: 1px solid var(--border);
+        padding: 24px;
+        text-align: center;
+      }
+      .payment-info .yoco-badge {
+        font-size: 13px;
+        color: var(--ink-muted);
+        margin-bottom: 8px;
+      }
+      .payment-info .payment-icons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 14px;
+      }
+      .payment-icon {
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        background: var(--cream);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--ink-muted);
+      }
+      .payment-info p {
+        font-size: 13px;
+        color: var(--ink-muted);
+        line-height: 1.5;
+      }
+      .payment-info strong {
+        color: var(--ink);
+      }
+
+      /* ── SUBMIT ── */
+      .place-order-btn {
+        width: 100%;
+        padding: 18px;
+        background: var(--ink);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        font-size: 13px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-family: inherit;
+        transition: background 0.2s;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .place-order-btn:hover {
+        background: #333;
+      }
+      .place-order-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .place-order-btn .btn-spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        display: none;
+      }
+      .place-order-btn.loading .btn-spinner {
+        display: block;
+      }
+      .place-order-btn.loading .btn-text {
+        display: none;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ── ORDER SUMMARY PANEL ── */
+      .checkout-summary {
+        background: var(--white);
+        border: 1px solid var(--border);
+      }
+      .summary-header {
+        padding: 20px 28px;
+        border-bottom: 1px solid var(--border);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .summary-total-preview {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .summary-body {
+        padding: 24px 28px;
+      }
+
+      .summary-items {
+        margin-bottom: 24px;
+      }
+      .summary-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .summary-item:last-child {
+        border-bottom: none;
+      }
+      .summary-item-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        background: var(--cream);
+        flex-shrink: 0;
+        position: relative;
+      }
+      .summary-item-img .qty-badge {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        width: 20px;
+        height: 20px;
+        background: var(--ink);
+        color: var(--white);
+        border-radius: 50%;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .summary-item-details {
+        flex: 1;
+      }
+      .summary-item-name {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+      .summary-item-sub {
+        font-size: 12px;
+        color: var(--ink-light);
+      }
+      .summary-item-price {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .summary-totals {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+      .st-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      .st-row .label {
+        color: var(--ink-muted);
+      }
+      .st-row.grand {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+      }
+      .free-chip {
+        background: var(--cream);
+        padding: 2px 8px;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      /* ── LOADING ── */
+      .page-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        flex-direction: column;
+        gap: 16px;
+        color: var(--ink-muted);
+      }
+      .load-spin {
+        width: 36px;
+        height: 36px;
+        border: 2px solid var(--border);
+        border-top-color: var(--ink);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      /* ── ERROR BANNER ── */
+      .error-banner {
+        background: #fdf0f0;
+        border: 1px solid #f5c6c6;
+        color: var(--red);
+        padding: 14px 18px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        display: none;
+      }
+      .error-banner.show {
+        display: block;
+      }
+
+      /* ── BUTTONS ── */
+      .btn-primary {
+        padding: 12px 28px;
+        background: var(--ink);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-family: inherit;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover {
+        background: #333;
+      }
+      .btn-outline {
+        padding: 12px 28px;
+        background: none;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-family: inherit;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s;
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      /* ── CANCELLED NOTICE ── */
+      .cancelled-notice {
+        background: #fff8e8;
+        border: 1px solid var(--gold-light);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 14px;
+        display: none;
+      }
+      .cancelled-notice.show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="checkout-header">
+      <a href="/" class="header-logo">Anantara</a>
+      <div class="header-steps">
+        <div class="step active">
+          <span class="num">1</span>
+          <span>Details</span>
+        </div>
+        <div class="step-sep"></div>
+        <div class="step" id="step-payment">
+          <span class="num">2</span>
+          <span>Payment</span>
+        </div>
+        <div class="step-sep"></div>
+        <div class="step">
+          <span class="num">3</span>
+          <span>Confirmation</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE LOADING STATE -->
+    <div class="page-loading" id="page-loading">
+      <div class="load-spin"></div>
+      <p>Loading checkout…</p>
+    </div>
+
+    <!-- MAIN CHECKOUT -->
+    <div class="checkout-page" id="checkout-main" style="display: none">
+      <!-- LEFT: FORM -->
+      <div class="checkout-form-section">
+        <!-- CANCELLED NOTICE -->
+        <div class="cancelled-notice" id="cancelled-notice">
+          ⚠️ Your payment was cancelled. You can try again below.
+        </div>
+
+        <!-- AUTH GATE -->
+        <div class="auth-gate" id="auth-gate" style="display: none">
+          <h3>Sign in to complete your order</h3>
+          <p>
+            Create an account or sign in to save your order history and enjoy
+            member benefits.
+          </p>
+          <div class="btn-row">
+            <a href="/login.html?redirect=checkout" class="btn-primary"
+              >Sign In</a
+            >
+            <a href="/signup.html?redirect=checkout" class="btn-outline"
+              >Create Account</a
+            >
+          </div>
+        </div>
+
+        <!-- ERROR BANNER -->
+        <div class="error-banner" id="error-banner"></div>
+
+        <!-- CONTACT -->
+        <div class="form-section">
+          <div class="section-label">
+            <span class="section-num">1</span>
+            Contact
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label"
+                >First name <span class="req">*</span></label
+              >
+              <input
+                class="field-input"
+                id="first-name"
+                type="text"
+                autocomplete="given-name"
+                required
+              />
+            </div>
+            <div class="field-group">
+              <label class="field-label"
+                >Last name <span class="req">*</span></label
+              >
+              <input
+                class="field-input"
+                id="last-name"
+                type="text"
+                autocomplete="family-name"
+                required
+              />
+            </div>
+          </div>
+          <div class="field-row single">
+            <div class="field-group">
+              <label class="field-label"
+                >Email address <span class="req">*</span></label
+              >
+              <input
+                class="field-input"
+                id="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+          <div class="field-row single">
+            <div class="field-group">
+              <label class="field-label">Phone number</label>
+              <input
+                class="field-input"
+                id="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+27"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- SHIPPING ADDRESS -->
+        <div class="form-section">
+          <div class="section-label">
+            <span class="section-num">2</span>
+            Shipping Address
+          </div>
+          <div class="field-row single">
+            <div class="field-group">
+              <label class="field-label"
+                >Street address <span class="req">*</span></label
+              >
+              <input
+                class="field-input"
+                id="address1"
+                type="text"
+                autocomplete="address-line1"
+                required
+              />
+            </div>
+          </div>
+          <div class="field-row single">
+            <div class="field-group">
+              <label class="field-label"
+                >Apartment, suite, etc. (optional)</label
+              >
+              <input
+                class="field-input"
+                id="address2"
+                type="text"
+                autocomplete="address-line2"
+              />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label">City <span class="req">*</span></label>
+              <input
+                class="field-input"
+                id="city"
+                type="text"
+                autocomplete="address-level2"
+                required
+              />
+            </div>
+            <div class="field-group">
+              <label class="field-label">Province</label>
+              <div class="field-select-wrap">
+                <select
+                  class="field-select field-input"
+                  id="province"
+                  autocomplete="address-level1"
+                >
+                  <option value="">Select province</option>
+                  <option>Gauteng</option>
+                  <option>Western Cape</option>
+                  <option>KwaZulu-Natal</option>
+                  <option>Eastern Cape</option>
+                  <option>Limpopo</option>
+                  <option>Mpumalanga</option>
+                  <option>Free State</option>
+                  <option>North West</option>
+                  <option>Northern Cape</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label">Postal code</label>
+              <input
+                class="field-input"
+                id="postal"
+                type="text"
+                autocomplete="postal-code"
+              />
+            </div>
+            <div class="field-group">
+              <label class="field-label">Country</label>
+              <div class="field-select-wrap">
+                <select class="field-select field-input" id="country">
+                  <option value="ZA">South Africa</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHIPPING METHOD -->
+        <div class="form-section">
+          <div class="section-label">
+            <span class="section-num">3</span>
+            Shipping Method
+          </div>
+          <div class="shipping-options">
+            <label class="shipping-option selected" id="ship-standard">
+              <input type="radio" name="shipping" value="standard" checked />
+              <div class="shipping-option-info">
+                <div class="shipping-option-name">Standard Shipping</div>
+                <div class="shipping-option-desc">3–5 business days</div>
+              </div>
+              <span class="shipping-option-price" id="standard-price"
+                >Calculating…</span
+              >
+            </label>
+            <label class="shipping-option" id="ship-express">
+              <input type="radio" name="shipping" value="express" />
+              <div class="shipping-option-info">
+                <div class="shipping-option-name">Express Shipping</div>
+                <div class="shipping-option-desc">1–2 business days</div>
+              </div>
+              <span class="shipping-option-price">R149.00</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- PAYMENT -->
+        <div class="form-section">
+          <div class="section-label">
+            <span class="section-num">4</span>
+            Payment
+          </div>
+          <div class="payment-info">
+            <div class="yoco-badge">Secured by <strong>Yoco</strong></div>
+            <p>
+              You'll be redirected to Yoco's secure payment page to complete
+              your purchase. We accept all major South African payment methods.
+            </p>
+            <div class="payment-icons">
+              <span class="payment-icon">VISA</span>
+              <span class="payment-icon">Mastercard</span>
+              <span class="payment-icon">EFT</span>
+              <span class="payment-icon">Instant EFT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <button
+          class="place-order-btn"
+          id="place-order-btn"
+          onclick="placeOrder()"
+        >
+          <div class="btn-spinner"></div>
+          <span class="btn-text">Continue to Payment</span>
+        </button>
+
+        <p
+          style="
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 14px;
+            line-height: 1.5;
+          "
+        >
+          By placing your order you agree to our
+          <a href="/terms-and-conditions.html" style="color: var(--ink-muted)"
+            >Terms of Sale</a
+          >
+          and
+          <a href="/privacy.html" style="color: var(--ink-muted)"
+            >Privacy Policy</a
+          >.
+        </p>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <div class="checkout-summary">
+        <div class="summary-header" onclick="toggleSummary()">
+          <span>Order Summary</span>
+          <span class="summary-total-preview" id="total-preview">—</span>
+        </div>
+        <div class="summary-body" id="summary-body">
+          <div class="summary-items" id="summary-items">
+            <!-- populated by JS -->
+          </div>
+          <div class="summary-totals" id="summary-totals">
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const WORKER = "https://anantara-cart.anantara-skin.workers.dev";
+      let cartData = null;
+      let currentUser = null;
+
+      // ── HELPERS ──────────────────────────────────────────────────
+      function getToken() {
+        return (
+          document.cookie
+            .split(";")
+            .map((c) => c.trim())
+            .find((c) => c.startsWith("cart_token="))
+            ?.split("=")[1] ||
+          localStorage.getItem("cart_token") ||
+          null
+        );
+      }
+      async function getFBToken() {
+        try {
+          if (typeof AnantaraAuth !== "undefined" && AnantaraAuth.getIdToken)
+            return await AnantaraAuth.getIdToken();
+        } catch {}
+        return null;
+      }
+      function fmt(n) {
+        return "R" + Number(n).toFixed(2);
+      }
+      function showError(msg) {
+        const el = document.getElementById("error-banner");
+        el.textContent = msg;
+        el.classList.add("show");
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      function toggleSummary() {
+        const body = document.getElementById("summary-body");
+        body.style.display = body.style.display === "none" ? "block" : "none";
+      }
+
+      // ── INIT ─────────────────────────────────────────────────────
+      async function init() {
+        // Check for cancelled payment
+        if (location.search.includes("cancelled=true")) {
+          document.getElementById("cancelled-notice").classList.add("show");
+        }
+
+        const token = getToken();
+        const fbToken = await getFBToken();
+        const headers = {};
+        if (token) headers["X-Cart-Token"] = token;
+        if (fbToken) headers["Authorization"] = `Bearer ${fbToken}`;
+
+        // Require auth to checkout
+        if (!fbToken) {
+          document.getElementById("page-loading").style.display = "none";
+          document.getElementById("checkout-main").style.display = "grid";
+          document.getElementById("auth-gate").style.display = "block";
+          document.getElementById("place-order-btn").disabled = true;
+          // Still try to load cart for summary
+        }
+
+        // Load cart
+        try {
+          const res = await fetch(WORKER + "/cart", {
+            credentials: "include",
+            headers,
+          });
+          cartData = await res.json();
+        } catch (e) {
+          document.getElementById("page-loading").style.display = "none";
+          document.getElementById("checkout-main").style.display = "grid";
+          showError("Unable to load your cart. Please go back and try again.");
+          return;
+        }
+
+        if (!cartData.items || cartData.items.length === 0) {
+          window.location.href = "/mycart.html";
+          return;
+        }
+
+        // Try to prefill email from Firebase
+        try {
+          if (typeof firebase !== "undefined" && firebase.auth) {
+            const user = firebase.auth().currentUser;
+            if (user) {
+              document.getElementById("email").value = user.email || "";
+              const parts = (user.displayName || "").split(" ");
+              if (parts[0])
+                document.getElementById("first-name").value = parts[0];
+              if (parts[1])
+                document.getElementById("last-name").value = parts
+                  .slice(1)
+                  .join(" ");
+            }
+          }
+        } catch {}
+
+        renderSummary();
+
+        document.getElementById("page-loading").style.display = "none";
+        document.getElementById("checkout-main").style.display = "grid";
+      }
+
+      // ── RENDER SUMMARY ────────────────────────────────────────────
+      function renderSummary() {
+        const items = cartData.items || [];
+        const subtotal = items.reduce((s, i) => s + i.price * (i.qty || 1), 0);
+        const shipping = subtotal >= 800 ? 0 : 99;
+        const total = subtotal + shipping;
+
+        document.getElementById("total-preview").textContent = fmt(total);
+        document.getElementById("standard-price").textContent =
+          shipping === 0 ? "FREE" : fmt(shipping);
+
+        document.getElementById("summary-items").innerHTML = items
+          .map(
+            (item) => `
+    <div class="summary-item">
+      <div class="summary-item-img" style="position:relative;">
+        ${
+          item.imageUrl
+            ? `<img src="${item.imageUrl}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;">`
+            : `<div style="width:100%;height:100%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:20px">🌸</div>`
+        }
+        <div class="qty-badge">${item.qty || 1}</div>
+      </div>
+      <div class="summary-item-details">
+        <div class="summary-item-name">${item.name}</div>
+        <div class="summary-item-sub">${item.size || ""}</div>
+      </div>
+      <div class="summary-item-price">${fmt(item.price * (item.qty || 1))}</div>
+    </div>`,
+          )
+          .join("");
+
+        document.getElementById("summary-totals").innerHTML = `
+    <div class="st-row">
+      <span class="label">Subtotal</span>
+      <span>${fmt(subtotal)}</span>
+    </div>
+    <div class="st-row">
+      <span class="label">Shipping</span>
+      ${shipping === 0 ? `<span class="free-chip">FREE</span>` : `<span>${fmt(shipping)}</span>`}
+    </div>
+    <div class="st-row grand">
+      <span>Total (ZAR)</span>
+      <span>${fmt(total)}</span>
+    </div>`;
+
+        window._checkoutTotal = total;
+      }
+
+      // ── PLACE ORDER ──────────────────────────────────────────────
+      async function placeOrder() {
+        document.getElementById("error-banner").classList.remove("show");
+
+        // Validate fields
+        const required = [
+          "first-name",
+          "last-name",
+          "email",
+          "address1",
+          "city",
+        ];
+        let valid = true;
+        required.forEach((id) => {
+          const el = document.getElementById(id);
+          if (!el.value.trim()) {
+            el.classList.add("error");
+            valid = false;
+          } else {
+            el.classList.remove("error");
+          }
+        });
+
+        if (!valid) {
+          showError("Please fill in all required fields.");
+          return;
+        }
+
+        const fbToken = await getFBToken();
+        if (!fbToken) {
+          showError("Please sign in to complete your purchase.");
+          return;
+        }
+
+        const btn = document.getElementById("place-order-btn");
+        btn.classList.add("loading");
+        btn.disabled = true;
+
+        const shippingAddress = {
+          firstName: document.getElementById("first-name").value,
+          lastName: document.getElementById("last-name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          line1: document.getElementById("address1").value,
+          line2: document.getElementById("address2").value,
+          city: document.getElementById("city").value,
+          province: document.getElementById("province").value,
+          postal: document.getElementById("postal").value,
+          country: "ZA",
+        };
+
+        try {
+          const res = await fetch(WORKER + "/checkout/create", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${fbToken}`,
+            },
+            body: JSON.stringify({
+              items: cartData.items,
+              shippingAddress,
+            }),
+          });
+
+          if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.error || "Payment provider error");
+          }
+
+          const { checkoutUrl, orderId } = await res.json();
+
+          // Activate "payment" step visually
+          document.getElementById("step-payment").classList.add("active");
+
+          // Redirect to Yoco
+          window.location.href = checkoutUrl;
+        } catch (err) {
+          btn.classList.remove("loading");
+          btn.disabled = false;
+          showError(err.message || "Something went wrong. Please try again.");
+        }
+      }
+
+      init();
+    </script>
+  </body>
+</html>
