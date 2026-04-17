@@ -255,6 +255,7 @@
     />
  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script src="/js/firebase-auth-cart.js"></script>
  </head>
@@ -421,194 +422,114 @@
   <ul class="l-header__top-nav-list">
     
     <!-- ACCOUNT / USER COMPONENT -->
-    <li class="l-header__top-nav-item m-account">
-      <div class="c-user" id="userComponent">
-        
-        <!-- LOGGED OUT: "Account" → links to login page -->
-        <div class="c-user__logged-out" id="userLoggedOut">
-          <a 
-            rel="nofollow" 
-            class="c-user__link m-login" 
-            href="/login.html"
-            id="accountLoginLink"
-          >
-            <i title="Account" class="c-icon h-hidden">
-              <span class="c-icon__svg c-user__link-icon"></span>
-            </i>
-            <span class="c-user__text m-login">Account</span>
-          </a>
+   <li class="l-header__top-nav-item m-account">
+  <div class="c-user" id="userComponent">
+
+    <!-- LOGGED OUT -->
+    <div class="c-user__logged-out" id="userLoggedOut">
+      <a rel="nofollow" class="c-user__link m-login" href="/login.html" id="accountLoginLink">
+        <i title="Account" class="c-icon h-hidden">
+          <span class="c-icon__svg c-user__link-icon"></span>
+        </i>
+        <span class="c-user__text m-login">Account</span>
+      </a>
+    </div>
+
+    <!-- LOGGED IN -->
+    <div class="c-user__logged-in" id="userLoggedIn" style="display: none;">
+      <button
+        class="c-user__dropdown-toggle"
+        aria-expanded="false"
+        aria-haspopup="true"
+        id="userDropdownToggle"
+      >
+        <span class="c-user__avatar" id="userAvatar">
+          <span class="c-user__initials" id="userInitials">--</span>
+          <img id="userPhoto" src="" alt="" style="display: none;">
+        </span>
+        <span class="c-user__name" id="userFirstName">User</span>
+        <span class="c-user__dropdown-arrow" aria-hidden="true">▼</span>
+      </button>
+
+      <!-- DROPDOWN MENU -->
+      <div
+        class="c-user__dropdown-menu"
+        role="menu"
+        aria-labelledby="userDropdownToggle"
+        id="userDropdownMenu"
+        hidden
+      >
+        <div class="c-user__dropdown-header">
+          <span class="c-user__greeting">Hello, <strong id="userFullName">User</strong></span>
+          <span class="c-user__email" id="userEmail">user@email.com</span>
         </div>
 
-        <!-- LOGGED IN: "My Account" → opens dropdown -->
-        <div class="c-user__logged-in" id="userLoggedIn" style="display: none;">
-          <button 
-            class="c-user__dropdown-toggle" 
-            aria-expanded="false" 
-            aria-haspopup="true"
-            id="userDropdownToggle"
-          >
-            <span class="c-user__avatar" id="userAvatar">
-              <span class="c-user__initials" id="userInitials">--</span>
-              <img id="userPhoto" src="" alt="" style="display: none;">
-            </span>
-            <span class="c-user__name" id="userFirstName">User</span>
-            <span class="c-user__dropdown-arrow" aria-hidden="true">▼</span>
-          </button>
-
-          <!-- DROPDOWN MENU -->
-          <div 
-            class="c-user__dropdown-menu" 
-            role="menu" 
-            aria-labelledby="userDropdownToggle" 
-            id="userDropdownMenu" 
-            hidden
-          >
-            <div class="c-user__dropdown-header">
-              <span class="c-user__greeting">Hello, <strong id="userFullName">User</strong></span>
-              <span class="c-user__email" id="userEmail">user@email.com</span>
-            </div>
-            
-            <ul class="c-user__dropdown-list">
-              <li class="c-user__dropdown-item">
-                <a href="/account.html" class="c-user__dropdown-link" role="menuitem">
-                  <span class="c-user__dropdown-icon">👤</span>
-                  My Account
-                </a>
-              </li>
-              <li class="c-user__dropdown-item">
-                <a href="/wishlist.html" class="c-user__dropdown-link" role="menuitem">
-                  <span class="c-user__dropdown-icon">♡</span>
-                  Wishlist
-                  <span class="c-user__badge" id="wishlistCount">0</span>
-                </a>
-              </li>
-              <li class="c-user__dropdown-item">
-                <a href="/favorites.html" class="c-user__dropdown-link" role="menuitem">
-                  <span class="c-user__dropdown-icon">★</span>
-                  Favorites
-                  <span class="c-user__badge" id="favoritesCount" style="display: none;">0</span>
-                </a>
-              </li>
-              <li class="c-user__dropdown-item">
-                <a href="/orders.html" class="c-user__dropdown-link" role="menuitem">
-                  <span class="c-user__dropdown-icon">📦</span>
-                  Order History
-                </a>
-              </li>
-              <li class="c-user__dropdown-item">
-                <a href="/skin-profile.html" class="c-user__dropdown-link" role="menuitem">
-                  <span class="c-user__dropdown-icon">🧴</span>
-                  My Skin Profile
-                </a>
-              </li>
-              <li class="c-user__dropdown-divider"></li>
-              <li class="c-user__dropdown-item">
-                <a href="/account-settings.html" class="c-user__dropdown-link" role="menuitem">
-                  <span class="c-user__dropdown-icon">⚙️</span>
-                  Settings
-                </a>
-              </li>
-              <li class="c-user__dropdown-item">
-                <button 
-                  type="button" 
-                  class="c-user__dropdown-link c-user__signout" 
-                  role="menuitem"
-                  id="signOutBtn"
-                >
-                  <span class="c-user__dropdown-icon">→</span>
-                  Sign Out
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <ul class="c-user__dropdown-list">
+          <li class="c-user__dropdown-item">
+            <a href="/account.html" class="c-user__dropdown-link" role="menuitem">
+              <span class="c-user__dropdown-icon">👤</span> My Account
+            </a>
+          </li>
+          <li class="c-user__dropdown-item">
+            <a href="/wishlist.html" class="c-user__dropdown-link" role="menuitem">
+              <span class="c-user__dropdown-icon">♡</span> Wishlist
+              <span class="c-user__badge" id="wishlistCount">0</span>
+            </a>
+          </li>
+          <li class="c-user__dropdown-item">
+            <a href="/favorites.html" class="c-user__dropdown-link" role="menuitem">
+              <span class="c-user__dropdown-icon">★</span> Favorites
+              <span class="c-user__badge" id="favoritesCount" style="display: none;">0</span>
+            </a>
+          </li>
+          <li class="c-user__dropdown-item">
+            <a href="/orders.html" class="c-user__dropdown-link" role="menuitem">
+              <span class="c-user__dropdown-icon">📦</span> Order History
+            </a>
+          </li>
+          <li class="c-user__dropdown-item">
+            <a href="/skin-profile.html" class="c-user__dropdown-link" role="menuitem">
+              <span class="c-user__dropdown-icon">🧴</span> My Skin Profile
+            </a>
+          </li>
+          <li class="c-user__dropdown-divider"></li>
+          <li class="c-user__dropdown-item">
+            <a href="/account-settings.html" class="c-user__dropdown-link" role="menuitem">
+              <span class="c-user__dropdown-icon">⚙️</span> Settings
+            </a>
+          </li>
+          <li class="c-user__dropdown-item">
+            <button
+              type="button"
+              class="c-user__dropdown-link c-user__signout"
+              role="menuitem"
+              id="signOutBtn"
+            >
+              <span class="c-user__dropdown-icon">→</span> Sign Out
+            </button>
+          </li>
+        </ul>
       </div>
-    </li>
+    </div>
+
+  </div>
+</li>
+                <li class="l-header__top-nav-item m-minicart">
+  <div class="c-minicart-icon">
+    <button
+      class="c-minicart-icon__link"
+      aria-label="View cart"
+      type="button"
+      onclick="window.location.href = '/mycart.html'"
+    >
+      <i class="c-minicart-icon__svg" aria-hidden="true"></i>
+      <span class="c-minicart-icon__label">My cart</span>
+      <span class="c-minicart-icon__qty" aria-hidden="true" id="cart-count">0</span>
+      <span class="h-show-for-sr" id="cart-count-sr">0 products in cart</span>
+    </button>
+  </div>
+</li> 
                  
-                  <li class="l-header__top-nav-item m-minicart">
-                    <div
-                      data-component="cart/MiniCart"
-                      data-component-options='{
-                                            "showOnProductAdded":true,
-                                            "classNames":{
-                                                "open":"h-right-slide-in",
-                                                "close":"h-right-slide-out"
-                                            },
-                                            "skipMiniCartOnClick":false,
-                                            "confirmationModal":{
-                                                "title":"Delete a product",
-                                                "contentUrl":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/CDSHtml-global_confirmmodal?configid&#x3D;cartitemconfirm&amp;id&#x3D;confirmmodal&amp;section&#x3D;global",
-                                                "classNames":{
-                                                    "container":[
-                                                    "m-medium"
-                                                    ]
-                                                },
-                                                "analytics":{
-                                                    "virtualPageURL":"/quick-view{{pathname}}/mini-cart/delete-product",
-                                                    "virtualPageTitle":"/quick-view/ mini cart delete product"
-                                                }
-                                            },
-                                            "url":{
-                                                "content":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/MiniCart-Show",
-                                                "cart":"/basket"
-                                            },
-                                            "ariaMessage":"minicart.current.aria.text",
-                                            "pagesExcluded":["cart"
-                                            ]
-                                        }'
-                      data-component-context=""
-                      
-                    >
-                      <div data-js-sliding-trigger>
-                        <div
-                          class="c-minicart-icon"
-                          data-component="/dist/javascripts/components/global/ComponentPlaceholder.js"
-                          data-component-options='{
-                                                    "_lazyload":true,
-                                                    "reloadData":{
-                                                        "id":"minicarticon",
-                                                        "section":"header",
-                                                        "reloadUrl":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/CDSLazyload-header_minicarticon?data&#x3D;&amp;id&#x3D;minicarticon&amp;section&#x3D;header"
-                                                    }
-                                                }'
-                          data-component-context=""
-                        >
-                          <button
-                            class="c-minicart-icon__link"
-                            aria-label="View cart"
-                            type="button"
-                            data-js-minicart-button
-                            onclick="window.location.href = '/mycart.html'"
-                          >
-                            <i
-                              title=""
-                              class="c-minicart-icon__svg"
-                              aria-hidden="true"
-                            ></i>
-                            <span class="c-minicart-icon__label">My cart</span>
-                            <span
-                              class="c-minicart-icon__qty"
-                              aria-hidden="true"
-                              >0</span
-                            >
-                            <span class="h-show-for-sr">0 product in cart</span>
-                          </button>
-                        </div>
-                      </div>
-                      <div
-                        class="c-sliding-panel h-bgcolor-light h-padding-0 m-side m-right"
-                        data-js-sliding-container
-                      >
-                        <span
-                          data-js-anchor
-                          tabindex="-1"
-                          class="c-anchor__overlay h-show-for-sr"
-                          >My cart
-                        </span>
-                        <div class="c-minicart" data-js-sliding-content></div>
-                      </div>
-                    </div>
-                  </li>
                 </ul>
                 <div class="l-header__top-nav-item m-search"></div>
               </div>
@@ -1064,91 +985,7 @@
               data-js-header-search-container
               id="headerSimpleSearch"
             >
-              <form
-                class="c-simple-search m-primary m-search-button-active"
-                action="/on/demandware.store/Sites-anantara-uk-Site/en_GB/Search-Show"
-                method="get"
-                name="simpleSearch"
-                role="search"
-                aria-label="Sitewide"
-                data-js-simple-search
-                data-component="/dist/javascripts/components/global/SimpleSearch.js"
-                data-component-options='{
-                        "apiUrl":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/Search-GetSuggestions?q&#x3D;",
-                        "contentUrl":"/on/demandware.store/Sites-anantara-uk-Site/en_GB/CDSHtml-common_suggestions?configid&#x3D;default&amp;id&#x3D;suggestions&amp;section&#x3D;common",
-                        "suggestionsMinChars":3,"isAutocompletion":false}'
-                data-component-force=""
-              >
-                <div class="c-simple-search__input-group">
-                  <input
-                    class="c-simple-search__field"
-                    aria-autocomplete="both"
-                    aria-controls="simpleSearchResults-044759"
-                    aria-expanded="false"
-                    autocomplete="off"
-                    data-js-search-input
-                    id="simpleSearch-044759"
-                    role="combobox"
-                    name="q"
-                    placeholder=""
-                    type="text"
-                    value=""
-                  />
-                  <label
-                    class="c-simple-search__search-label"
-                    for="simpleSearch-044759"
-                    >I&#x27;m looking for...</label
-                  >
-                  <button
-                    class="c-simple-search__button"
-                    data-js-search-submit
-                    type="submit"
-                  >
-                    <span class="c-simple-search__button-text">Search</span>
-                  </button>
-                  <button
-                    class="c-simple-search__close-button"
-                    data-js-search-close
-                    type="button"
-                  >
-                    <span class="c-simple-search__close-button-text"
-                      >Close</span
-                    >
-                  </button>
-                  <button
-                    class="c-simple-search__clear-button"
-                    data-js-search-clear
-                    type="button"
-                  >
-                    <span class="c-simple-search__clear-button-text"
-                      >Clear</span
-                    >
-                  </button>
-                  <input type="hidden" value="" name="lang" />
-                </div>
-                <div
-                  class="h-show-for-sr"
-                  aria-live="polite"
-                  aria-atomic="true"
-                  data-js-header-search-aria
-                ></div>
-                <div class="c-simple-search__results">
-                  <div
-                    class="c-simple-search__results-group"
-                    data-js-search-results-group
-                  >
-                    <div
-                      data-js-search-results
-                      id="simpleSearchResults-044759"
-                      class="c-simple-search__results-container"
-                    ></div>
-                    <div
-                      class="c-simple-search__results-list"
-                      data-js-search-content
-                    ></div>
-                  </div>
-                </div>
-              </form>
+             
             </div>
           </div>
         </div>
@@ -4912,24 +4749,11 @@
     </script>
    
 
-    <script
-      type="text/javascript"
-      src="/internal/jscript/dwanalytics-22.2.js"
-      async="async"
-      onload="trackPage()"
-    ></script>
+   
     
-    <script
-      src="/internal/jscript/dwac-21.7.js"
-      type="text/javascript"
-      async="async"
-    ></script>
+ 
     <!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
-    <script
-      src="https://cdn.cquotient.com/js/v2/gretel.min.js"
-      type="text/javascript"
-      async="async"
-    ></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const hamburgerBtn = document.querySelector(".hamburger-btn");
@@ -5099,7 +4923,8 @@
       checkSavedPreference();
       initLocalization();
     </script>
-   <script src="/js/cloudflare-image-loader.js"></script> <script>
+   <script src="/js/cloudflare-image-loader.js"></script>
+    <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Wire the header Account link to the Firebase login page
       document.querySelectorAll(".c-user__link.m-login").forEach((link) => {
