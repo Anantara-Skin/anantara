@@ -382,10 +382,6 @@
       /* ]]> */
       // -->
     </script>
- <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="/js/firebase-auth-cart.js"></script>
  </head>
   <body>
    <header
@@ -1305,55 +1301,7 @@
       </div>
     </footer>
 
-    <script>
-      // Update copyright year
-      document.getElementById("copyright").textContent =
-        `©Aureum Skincare ${new Date().getFullYear()}. All rights reserved.`;
-
-      // Form validation and submission
-      const form = document.getElementById("emailSignupForm");
-      const emailInput = document.getElementById("email");
-      const mobileInput = document.getElementById("mobile");
-      const submitBtn = document.getElementById("submitBtn");
-
-      // Enable/disable submit button based on form validity
-      function checkFormValidity() {
-        const isEmailValid = emailInput.checkValidity();
-        const isMobileValidOrEmpty =
-          !mobileInput.value || mobileInput.checkValidity();
-
-        submitBtn.disabled = !(isEmailValid && isMobileValidOrEmpty);
-      }
-
-      emailInput.addEventListener("input", checkFormValidity);
-      mobileInput.addEventListener("input", checkFormValidity);
-
-      // Initial check
-      checkFormValidity();
-
-      // Handle form submission
-      function handleSubmit(event) {
-        event.preventDefault();
-
-        const formData = {
-          email: emailInput.value,
-          mobile: mobileInput.value,
-          emailConsent: document.getElementById("emailConsent").checked,
-          smsConsent: document.getElementById("smsConsent").checked,
-        };
-
-        console.log("Form submitted:", formData);
-
-        // Show success message
-        alert(
-          "Thank you for subscribing! You will receive a confirmation email shortly.",
-        );
-
-        // Reset form
-        form.reset();
-        checkFormValidity();
-      }
-    </script>
+  
     <script>
       // Country to Currency mapping
       const countryCurrencyMap = {
@@ -1519,7 +1467,7 @@
     projectId: "anantara-212b9",
     storageBucket: "anantara-212b9.firebasestorage.app",
     messagingSenderId: "516807976298",
-    appId: "1:516807876298:web:313af6104989363f98b113"
+   appId: "1:516807976298:web:313af6104989363f98b113"
   };
 
   const app = initializeApp(firebaseConfig);
